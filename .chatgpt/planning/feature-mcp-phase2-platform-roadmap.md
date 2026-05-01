@@ -1,0 +1,159 @@
+# Feature Plan: MCP Phase 2 Platform Roadmap
+
+Branch for planning: `feature/mcp-agent-workspace`
+Implementation branch: `feature/mcp-phase2-platform-roadmap`
+Status: Planning
+Owner: Khachornchit Chief Architect → ChatGPT planning → Codex review/implementation
+
+## Problem Statement
+
+ChornPlanet now has a shared `.mcp` agent workspace, but the project needs an execution roadmap that turns the strategic direction into phase-by-phase implementation items.
+
+ChornPlanet is not only a website. It is intended to grow as:
+
+- a news / entertainment / technology follow-up media platform
+- a premium commerce platform
+- a civilization platform for lady/gentleman outfit and clothing presentation
+- a Smart Food web evolution layer
+- a luxury project showcase
+- an analytics-assisted growth platform
+
+The roadmap must help ChatGPT and Codex create feature plans and implementation branches that move ChornPlanet toward daily traffic growth:
+
+```text
+10K daily -> 100K -> 500K -> 1M
+```
+
+## Goals
+
+- Create a clear ChornPlanet platform roadmap.
+- Convert `.mcp` strategy into implementable phases.
+- Define phase order across content, commerce, Chorn DNA, analytics, SEO/LLM visibility, Smart Food, and automation.
+- Keep all future features aligned with current architecture direction: MongoDB-backed reusable content services, typed schemas, and reusable components.
+- Separate planning, draft generation, review, approval, and external publishing.
+- Give Codex a roadmap source before implementation branches are created.
+
+## Non-Goals
+
+- Do not implement daily auto-posting in this feature.
+- Do not publish to TikTok, Shopee, Lazada, Amazon, or any external platform.
+- Do not mutate Smart Food customer/order/payment data.
+- Do not introduce production authentication changes.
+- Do not replace the existing Next.js architecture.
+
+## Existing Architecture Review
+
+Current agent rules already state that ChornPlanet page content should move from hardcoded page data toward database-backed, reusable, scalable services.
+
+Target architecture pattern:
+
+```text
+Next.js Page / Route
+   ↓
+Content Loader / Server Service
+   ↓
+MongoDB Atlas Repository
+   ↓
+Typed Content Schema
+   ↓
+Reusable Page Components
+```
+
+The `.mcp` workspace now adds strategic operating areas:
+
+- product context
+- media automation
+- commerce
+- Chorn DNA authority
+- Smart Food evolution
+- analytics
+- SEO/LLM visibility
+- safety policies
+- tool contracts
+- workflows
+
+## Proposed Roadmap Structure
+
+Create a roadmap document such as:
+
+```text
+.mcp/roadmap/chornplanet-platform-roadmap.md
+```
+
+Recommended roadmap sections:
+
+1. Platform North Star
+2. Traffic Growth Stages
+3. Phase 1: Foundation and Repo Understanding
+4. Phase 2: SEO / LLM Visibility
+5. Phase 3: Content Draft Foundation
+6. Phase 4: Outfit / Civilization Posting Pipeline
+7. Phase 5: Metadata to MongoDB Migration
+8. Phase 6: Analytics Growth Foundation
+9. Phase 7: TikTok-first Commerce Linking
+10. Phase 8: Daily Media Digest Draft Pipeline
+11. Phase 9: Smart Food Login and Favorite Meal Planning
+12. Phase 10: Controlled Automation and Publishing
+13. Phase 11: Luxury Project Showcase and Commerce Expansion
+14. Risks and Approval Boundaries
+15. Feature Branch Queue
+
+## Suggested Phase Order
+
+```text
+1. mcp-repository-understanding-upgrade
+2. llm-visibility-files
+3. content-draft-foundation
+4. outfit-civilization-content-draft-pipeline
+5. metadata-mongodb-migration
+6. analytics-growth-foundation
+7. tiktok-product-linking-draft
+8. daily-media-digest-draft
+9. smartfood-line-login-planning
+10. controlled-publishing-automation
+```
+
+## Project Structure Guideline
+
+Possible new files:
+
+```text
+.mcp/roadmap/
+  chornplanet-platform-roadmap.md
+  feature-queue.md
+  growth-milestones.md
+```
+
+Avoid modifying production code in this planning-only feature unless the implementation plan explicitly requires route-visible roadmap content.
+
+## Testing Plan
+
+Documentation-only validation:
+
+- Confirm roadmap references existing `.mcp` resources, policies, tools, and workflows.
+- Confirm no secrets or production credentials are included.
+- Confirm roadmap separates draft workflows from external publishing workflows.
+- Confirm roadmap preserves MongoDB-backed content architecture direction.
+
+Optional checks if docs are surfaced in app routes:
+
+```bash
+yarn lint
+yarn build
+```
+
+## Risks and Open Questions
+
+- Which roadmap items should become immediate implementation features?
+- Should the roadmap be internal-only under `.mcp`, or partially surfaced on the public website?
+- Which analytics events are needed before traffic-growth decisions become data-driven?
+- Which commerce links should be tracked first: TikTok only, or TikTok plus owned product pages?
+
+## Acceptance Criteria
+
+- Roadmap document exists under `.mcp/roadmap/`.
+- Roadmap defines implementation phases and branch queue.
+- Roadmap references `.mcp` workflows and policies.
+- Roadmap includes traffic growth stages: 10K, 100K, 500K, 1M daily.
+- Roadmap keeps external publishing, marketplace writes, Smart Food mutations, and auth production changes behind explicit approval.
+- Codex can use this roadmap to create future implementation branches per planning item.
