@@ -32,7 +32,7 @@ The roadmap must help ChatGPT and Codex create feature plans and implementation 
 - Keep all future features aligned with current architecture direction: MongoDB-backed reusable content services, typed schemas, and reusable components.
 - Separate planning, draft generation, review, approval, and external publishing.
 - Give Codex a roadmap source before implementation branches are created.
-- Establish a closed-loop analytics feedback system so Google Search Console, Google Analytics, and other approved growth signals can automatically inform ChatGPT and Codex planning.
+- Establish an on-demand analytics feedback capability so Google Search Console, Google Analytics, and other approved growth signals can be queried through safe APIs/services and used by ChatGPT and Codex for planning and implementation decisions.
 
 ## Non-Goals
 
@@ -42,6 +42,7 @@ The roadmap must help ChatGPT and Codex create feature plans and implementation 
 - Do not introduce production authentication changes.
 - Do not replace the existing Next.js architecture.
 - Do not connect production Google Search Console or Google Analytics APIs without explicit approval and safe credential handling.
+- Do not require always-on daily monitoring; analytics access should support on-demand planning and improvement workflows first.
 
 ## Existing Architecture Review
 
@@ -91,7 +92,7 @@ Recommended roadmap sections:
 5. Phase 3: Content Draft Foundation
 6. Phase 4: Outfit / Civilization Posting Pipeline
 7. Phase 5: Metadata to MongoDB Migration
-8. Phase 6: Analytics Growth Foundation and Closed-Loop Feedback
+8. Phase 6: Analytics Growth Foundation and MCP-Invoked Data Access
 9. Phase 7: TikTok-first Commerce Linking
 10. Phase 8: Daily Media Digest Draft Pipeline
 11. Phase 9: Smart Food Login and Favorite Meal Planning
@@ -100,31 +101,97 @@ Recommended roadmap sections:
 14. Risks and Approval Boundaries
 15. Feature Branch Queue
 
-## Phase 6: Analytics Growth Foundation and Closed-Loop Feedback
+## Phase 6: Analytics Growth Foundation and MCP-Invoked Data Access
 
-Phase 6 should not be only event tracking.
+Phase 6 should not be only event tracking, and it should not start as an always-on daily monitor.
 
-It should become a closed-loop feedback system where approved analytics sources continuously help ChatGPT and Codex understand what is working, what is failing, and what feature planning should happen next.
+The core idea is to build safe internal application APIs under `src/app/api/...` and server-side functions under `server/...` that can connect to approved analytics sources such as Google Analytics and Google Search Console. Then ChatGPT and Codex can access those capabilities through the `.mcp` operating model when they need real data to create better planning files or implementation tasks.
 
-Target feedback loop:
+Target on-demand feedback loop:
 
 ```text
-Published content / page / product link / campaign
+ChatGPT / Codex needs growth insight
   ↓
-Google Search Console + Google Analytics + approved platform signals
+.mcp analytics tool contract / workflow
   ↓
-Automated aggregate metrics collection
+Internal Next.js API route under src/app/api/...
   ↓
-AI-readable growth summary
+Server service under server/...
   ↓
-ChatGPT feature planning recommendations
+Google Search Console + Google Analytics + approved signals
   ↓
-Codex implementation branch per approved feature
+Aggregate AI-readable result
+  ↓
+ChatGPT creates or updates .chatgpt/planning/feature-*.md
+  ↓
+Khachornchit approves priority
+  ↓
+Codex creates implementation branch per approved feature
   ↓
 New release / content / SEO / UX improvement
   ↓
-Measure again
+Data can be queried again when needed
 ```
+
+This is closed-loop improvement, but the loop is invoked when planning or validation is needed. It does not require automatic daily monitoring in the first implementation.
+
+### Proposed analytics API and service architecture
+
+Recommended structure:
+
+```text
+src/app/api/analytics/search-console/route.ts
+src/app/api/analytics/google-analytics/route.ts
+src/app/api/analytics/growth-summary/route.ts
+
+server/core/domain/analytics-query.entity.ts
+server/core/domain/analytics-growth-summary.entity.ts
+server/core/ports/search-console.interface.ts
+server/core/ports/google-analytics.interface.ts
+server/core/services/analytics-growth.service.ts
+server/adapters/outbound/google/search-console.repository.ts
+server/adapters/outbound/google/google-analytics.repository.ts
+```
+
+The exact structure should follow existing ChornPlanet server patterns after Codex inspects the repository.
+
+### Proposed API capabilities
+
+Initial safe API capabilities:
+
+```text
+GET /api/analytics/search-console
+  Purpose: read aggregate Search Console performance data.
+  Inputs: date range, page path, query filter, country/device optional.
+  Output: clicks, impressions, CTR, average position, top queries, top pages.
+
+GET /api/analytics/google-analytics
+  Purpose: read aggregate GA performance data.
+  Inputs: date range, route/content category/campaign optional.
+  Output: users, sessions, page views, engagement, traffic sources, events.
+
+GET /api/analytics/growth-summary
+  Purpose: combine Search Console + GA into an AI-readable improvement summary.
+  Inputs: date range, focus area such as SEO, content, outfit, commerce, Smart Food.
+  Output: opportunities, risks, recommended planning items, data gaps.
+```
+
+Write endpoints are not needed in Phase 6.
+
+### `.mcp` tool contract direction
+
+Add or refine tool contracts such as:
+
+```text
+analytics.query_search_console
+analytics.query_google_analytics
+analytics.create_growth_summary
+analytics.find_seo_opportunities
+analytics.find_content_improvement_opportunities
+analytics.find_technical_ux_opportunities
+```
+
+These tools should call the internal API/service layer or read approved exported reports. They should return aggregate, AI-readable summaries that ChatGPT and Codex can use for planning.
 
 ### Approved signal sources
 
@@ -156,11 +223,12 @@ Initial signal sources to plan for:
 
 ### AI-readable output
 
-The system should produce internal reports that both ChatGPT and Codex can use, such as:
+The system can return AI-readable summaries through API responses and may optionally persist internal reports when useful.
+
+Possible report files or generated summaries:
 
 ```text
-.mcp/analytics/reports/daily-growth-summary.md
-.mcp/analytics/reports/weekly-growth-summary.md
+.mcp/analytics/reports/on-demand-growth-summary.md
 .mcp/analytics/reports/search-console-opportunities.md
 .mcp/analytics/reports/content-improvement-backlog.md
 .mcp/analytics/reports/technical-seo-issues.md
@@ -180,14 +248,14 @@ These reports should help answer:
 
 ### Planning-to-implementation feedback rule
 
-Analytics reports should create feature ideas, not automatically change production.
+Analytics data should create feature ideas and implementation priorities, not automatically change production.
 
 Correct flow:
 
 ```text
-Analytics signal
+Analytics API query
   ↓
-AI summary
+AI-readable summary
   ↓
 ChatGPT creates or updates .chatgpt/planning/feature-*.md
   ↓
@@ -203,7 +271,9 @@ Codex creates implementation branch per feature
 - Prefer aggregate metrics.
 - Do not expose personal user data.
 - Do not invent metrics.
-- If data is unavailable, generate an instrumentation gap report instead of guessing.
+- If data is unavailable, return an instrumentation gap report instead of guessing.
+- Internal analytics APIs should require appropriate authorization or be limited to safe internal use.
+- Raw Google credentials should remain in environment variables or approved secret stores.
 
 ## Suggested Phase Order
 
@@ -214,7 +284,7 @@ Codex creates implementation branch per feature
 4. outfit-civilization-content-draft-pipeline
 5. metadata-mongodb-migration
 6. analytics-growth-foundation
-7. analytics-closed-loop-feedback
+7. analytics-mcp-data-access
 8. tiktok-product-linking-draft
 9. daily-media-digest-draft
 10. smartfood-line-login-planning
@@ -235,12 +305,32 @@ Possible new files:
   README.md
   metrics-map.md
   feedback-loop.md
+  api-contracts.md
   reports/
-    daily-growth-summary.md
-    weekly-growth-summary.md
+    on-demand-growth-summary.md
     search-console-opportunities.md
     content-improvement-backlog.md
     technical-seo-issues.md
+
+src/app/api/analytics/
+  search-console/route.ts
+  google-analytics/route.ts
+  growth-summary/route.ts
+
+server/core/domain/
+  analytics-query.entity.ts
+  analytics-growth-summary.entity.ts
+
+server/core/ports/
+  search-console.interface.ts
+  google-analytics.interface.ts
+
+server/core/services/
+  analytics-growth.service.ts
+
+server/adapters/outbound/google/
+  search-console.repository.ts
+  google-analytics.repository.ts
 ```
 
 Avoid modifying production code in this planning-only feature unless the implementation plan explicitly requires route-visible roadmap content.
@@ -253,8 +343,9 @@ Documentation-only validation:
 - Confirm no secrets or production credentials are included.
 - Confirm roadmap separates draft workflows from external publishing workflows.
 - Confirm roadmap preserves MongoDB-backed content architecture direction.
-- Confirm closed-loop analytics reports are aggregate, AI-readable, and planning-oriented.
+- Confirm analytics data access is aggregate, AI-readable, and planning-oriented.
 - Confirm Google Search Console / Google Analytics API access is approval-gated.
+- Confirm Phase 6 does not require automatic daily monitoring before on-demand querying is useful.
 
 Optional checks if docs are surfaced in app routes:
 
@@ -270,9 +361,10 @@ yarn build
 - Which analytics events are needed before traffic-growth decisions become data-driven?
 - Which commerce links should be tracked first: TikTok only, or TikTok plus owned product pages?
 - Which Google Search Console and Google Analytics properties should be treated as source-of-truth?
-- Should analytics summaries be generated daily, weekly, or both?
-- Should automated analytics reports live in `.mcp/analytics/reports/`, a database collection, or both?
+- Should analytics summaries be generated only on demand at first?
+- Should generated analytics summaries live only in API responses, `.mcp/analytics/reports/`, a database collection, or all three eventually?
 - Should ChatGPT consume analytics summaries manually first before any MCP server reads them automatically?
+- What authentication/authorization should protect internal analytics API routes?
 
 ## Acceptance Criteria
 
@@ -280,8 +372,10 @@ yarn build
 - Roadmap defines implementation phases and branch queue.
 - Roadmap references `.mcp` workflows and policies.
 - Roadmap includes traffic growth stages: 10K, 100K, 500K, 1M daily.
-- Roadmap defines Phase 6 as analytics foundation plus closed-loop feedback from Google Search Console, Google Analytics, and other approved signals.
-- Roadmap defines AI-readable analytics report outputs that ChatGPT and Codex can use for future planning and implementation prioritization.
+- Roadmap defines Phase 6 as analytics foundation plus MCP-invoked/on-demand data access from Google Search Console, Google Analytics, and other approved signals.
+- Roadmap proposes internal API routes under `src/app/api/...` and service functions under `server/...` for analytics data access.
+- Roadmap defines AI-readable analytics outputs that ChatGPT and Codex can use for future planning and implementation prioritization.
 - Roadmap keeps analytics credentials and API access behind explicit approval.
+- Roadmap clarifies that Phase 6 does not require daily monitoring first; it enables data gathering when ChatGPT/Codex need evidence for planning or implementation.
 - Roadmap keeps external publishing, marketplace writes, Smart Food mutations, and auth production changes behind explicit approval.
 - Codex can use this roadmap to create future implementation branches per planning item.
