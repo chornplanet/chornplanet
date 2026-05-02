@@ -40,9 +40,10 @@ The new layout must reposition ChornPlanet from a technical services/media websi
 - Redesign homepage layout according to the 15-section direction.
 - Preserve existing pages and 10-language capability where applicable.
 - Start the new concept practically with Thai and English content first.
-- Keep existing Smart City, Smart Mobility, Technology, AI Integration, and About content accessible through footer important links instead of the primary navigation.
-- Refactor `/about-chorn` into `/history` as the new history/about route.
-- Add `/history` to Footer → Important Links.
+- Keep existing Smart City, Smart Mobility, Technology, AI Integration, and legacy About content accessible through footer important links instead of the primary navigation.
+- Refactor `/about-chorn` into `/history` as the ChornPlanet history/origin route.
+- Add a new `/about` section/page that explains the new ChornPlanet platform concept.
+- Add both `/history` and `/about` to Footer → Important Links.
 - Add Luxury Project and Smart Food System project sections on the homepage with landing-page links.
 - Prepare future routes for World, Outfit, Media, Commerce, Smart Food, and Luxury.
 - Preserve existing SEO, metadata, sitemap, locale, SCSS, and responsive design patterns.
@@ -189,6 +190,7 @@ Recommended footer grouping:
 
 ```text
 Important Links
+- About
 - History
 - Smart City
 - Smart Mobility
@@ -199,6 +201,56 @@ Important Links
 ```
 
 This keeps existing content discoverable without diluting the new platform navigation.
+
+## New `/about` Section
+
+Create a new platform-level About section/page:
+
+```text
+/[locale]/about/
+```
+
+Purpose:
+
+`/about/` should explain what ChornPlanet is under the new platform concept, not only company background.
+
+Recommended positioning:
+
+```text
+ChornPlanet is a Luxury Civilization Media & Commerce Platform combining world-building, AI-assisted media, Chorn DNA-powered outfit/civilization content, premium commerce, Smart Food, luxury projects, and analytics-assisted growth.
+```
+
+Recommended content blocks:
+
+1. Platform Overview
+2. What ChornPlanet Combines
+   - World / Civilization
+   - Outfit / Civilization Clothing
+   - Media
+   - Commerce
+   - Smart Food
+   - Luxury Projects
+3. Chorn DNA Connection
+4. Smart Food Connection
+5. Commerce Direction
+6. Growth and Analytics Direction
+7. Vision / North Star
+
+Footer placement:
+
+```text
+Footer -> Important Links -> About
+```
+
+Implementation guidance:
+
+- `/about/` should be a new platform-about page.
+- `/history/` should describe origin/history/background.
+- `/about-chorn/` should be redirected or repositioned to `/history/`.
+- `/about/` and `/history/` should not duplicate the same content.
+- Add metadata for `/about/`.
+- Add `/about/` to UrlMaps/sitemap when indexable.
+- Thai and English should be refined first; preserve 10-language route compatibility.
 
 ## `/about-chorn` to `/history` Refactor
 
@@ -413,6 +465,7 @@ Recommended future routes:
 /[locale]/luxury/
 /[locale]/luxury/projects/
 
+/[locale]/about/
 /[locale]/history/
 ```
 
@@ -582,6 +635,7 @@ Platform
 - Luxury
 
 Important Links
+- About
 - History
 - Smart City
 - Smart Mobility
@@ -611,6 +665,7 @@ Footer should preserve existing important pages and reduce primary navigation cl
 
 - Create new primary navigation channels.
 - Move legacy navigation items to footer Important Links.
+- Add `/about/` and `/history/` to footer Important Links.
 - Add responsive mobile navigation design.
 - Preserve locale and trailing slash behavior.
 
@@ -620,11 +675,12 @@ Footer should preserve existing important pages and reduce primary navigation cl
 - Create reusable section/card components if practical.
 - Add Luxury Project and Smart Food System project sections with landing-page links.
 
-### Phase 3: `/history` Route
+### Phase 3: `/about` and `/history` Routes
 
-- Add `/[locale]/history/` route.
-- Reuse/refactor `/about-chorn/` content.
-- Add footer Important Link.
+- Add `/[locale]/about/` route for the new ChornPlanet platform concept.
+- Add `/[locale]/history/` route for origin/history/background.
+- Reuse/refactor `/about-chorn/` content into `/history/` where appropriate.
+- Add footer Important Links for both About and History.
 - Add redirect from `/about-chorn/` to `/history/` if practical.
 - Update metadata, UrlMaps, and sitemap.
 
@@ -658,6 +714,7 @@ Start with Thai and English refined content, but keep route compatibility for al
 
 - Add/update metadata for new routes.
 - Update sitemap/UrlMaps.
+- Ensure `/about/` defines new platform concept.
 - Ensure `/history/` metadata replaces `/about-chorn/` positioning.
 - Preserve existing metadata while migration to MongoDB is pending.
 
@@ -687,12 +744,18 @@ src/data/platform-home/
   PlatformHomeTH.ts
   index.ts
 
+src/data/platform-about/
+  PlatformAboutEN.ts
+  PlatformAboutTH.ts
+  index.ts
+
 src/app/[locale]/(desktop)/world/page.tsx
 src/app/[locale]/(desktop)/outfit/page.tsx
 src/app/[locale]/(desktop)/media/page.tsx
 src/app/[locale]/(desktop)/commerce/page.tsx
 src/app/[locale]/(desktop)/smart-food/page.tsx
 src/app/[locale]/(desktop)/luxury/page.tsx
+src/app/[locale]/(desktop)/about/page.tsx
 src/app/[locale]/(desktop)/history/page.tsx
 ```
 
@@ -719,6 +782,8 @@ Manual checks:
 - `/th/smart-food/`
 - `/en/luxury/`
 - `/th/luxury/`
+- `/en/about/`
+- `/th/about/`
 - `/en/history/`
 - `/th/history/`
 
@@ -733,22 +798,26 @@ SEO checks:
 
 - metadata exists for new route pages
 - UrlMaps/sitemap behavior updated
+- `/about/` metadata describes the new platform concept
 - `/about-chorn/` redirect behavior decided and tested
 
 ## Risks and Open Questions
 
 - Should `/about-chorn/` be redirected permanently to `/history/`, or kept as a legacy route with canonical link?
+- Should `/about/` and `/history/` both be implemented in the first pass, or should `/about/` be a simple landing page first?
 - Should the first implementation create all new landing routes, or only homepage + navigation first?
 - Should Smart Food and Luxury sections link to existing pages or new placeholder landing pages?
 - How much visual redesign should be done in the first feature before it becomes too large?
-- Should platform-home data start in `src/data/` or MongoDB-backed content service?
+- Should platform-home and platform-about data start in `src/data/` or MongoDB-backed content service?
 - Should non-Thai/English locales use English fallback for new sections initially?
 
 ## Acceptance Criteria
 
 - New primary navigation reflects platform channels, not legacy technical service categories.
 - Navigation is practical and responsive for desktop/tablet/mobile.
-- Smart City, Smart Mobility, Technology, AI Integration, and About are removed from primary nav and preserved in footer Important Links where applicable.
+- Smart City, Smart Mobility, Technology, AI Integration, and legacy About are removed from primary nav and preserved in footer Important Links where applicable.
+- `/about/` route exists and explains the new ChornPlanet platform concept.
+- `/about/` is added to footer Important Links.
 - `/history/` route exists and replaces/refactors `/about-chorn/` positioning.
 - `/history/` is added to footer Important Links.
 - Homepage includes Luxury Project and Smart Food System project sections with landing-page links.
