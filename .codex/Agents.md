@@ -304,7 +304,13 @@ Use this flow when preparing a fix, feature, docs update, or other task for prod
    git push chatgpt --delete <feature-branch>
    ```
 
-10. After shipping, return to a fresh branch for the next task.
+10. Delete the local feature branch after it has been merged and remote cleanup is complete:
+
+   ```text
+   git branch -d <feature-branch>
+   ```
+
+11. After shipping, return to a fresh branch for the next task.
 
 ## Deployment And Automation
 
