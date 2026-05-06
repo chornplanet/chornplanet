@@ -75,9 +75,20 @@ When ChatGPT or Codex starts work on ChornPlanet, read in this order:
 1. `.chatgpt/Agents.md` or `.codex/Agents.md`, depending on the agent.
 2. `.mcp/README.md`.
 3. `.mcp/manifest.yaml`.
-4. Relevant `.mcp/resources/`, `.mcp/policies/`, `.mcp/tools/`, and `.mcp/workflows/` files.
-5. Related `.chatgpt/planning/feature-*.md` file.
-6. Runtime app code, scripts, schemas, and content services.
+4. Relevant `.mcp/repository/` maps for routing, locales, styling, UX, metadata, content, server, and deployment context.
+5. Relevant `.mcp/resources/`, `.mcp/policies/`, `.mcp/tools/`, and `.mcp/workflows/` files.
+6. Related `.chatgpt/planning/feature-*.md` file.
+7. Runtime app code, scripts, schemas, and content services.
+
+## Repository understanding layer
+
+Practical codebase maps live in:
+
+```text
+.mcp/repository/
+```
+
+These files document the current Next.js routes, locale contract, SCSS/Tailwind usage, UX/UI patterns, navigation/layout, metadata/SEO, content loaders, server layers, deployment behavior, and phase-by-phase improvement path. Use them as shared repository maps, while `.codex/Agents.md` remains the Codex execution guide.
 
 ## Source-of-truth principle
 
@@ -101,4 +112,4 @@ Reusable Page Components
 
 Phase 1 is documentation and contract design only.
 
-It defines product context, policies, tool contracts, and workflows before introducing real MCP servers or automation that can post, publish, mutate commerce data, or call external platforms.
+It defines product context, repository maps, policies, tool contracts, and workflows before introducing real MCP servers or automation that can post, publish, mutate commerce data, or call external platforms.

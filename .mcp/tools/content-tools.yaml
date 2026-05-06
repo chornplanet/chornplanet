@@ -24,6 +24,16 @@ tools:
     purpose: Create draft post text, caption, and metadata.
     approval_required: false
 
+  content.review_content_domain:
+    status: proposed_contract
+    risk: low
+    mode: read_only_analysis
+    purpose: Review whether a content change should extend an existing src/lib/*-content domain and server content service.
+    approval_required: false
+    repository_context:
+      - .mcp/repository/content-data-map.md
+      - .mcp/repository/server-architecture-map.md
+
   content.create_image_prompt_draft:
     status: proposed_contract
     risk: low
@@ -51,3 +61,4 @@ principles:
   - Keep source tracking for factual content.
   - Avoid misleading AI-generated news visuals.
   - Preserve ChornPlanet editorial identity.
+  - Prefer typed content services and Mongo repositories over new hardcoded page arrays.

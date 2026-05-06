@@ -13,6 +13,32 @@ tools:
     purpose: Read architecture documents, planning files, and source-of-truth notes.
     approval_required: false
 
+  repo.read_repository_maps:
+    status: proposed_contract
+    risk: low
+    mode: read_only
+    purpose: Read .mcp/repository maps before planning or editing routes, locales, styles, content, metadata, server, or deployment behavior.
+    approval_required: false
+    sources:
+      - .mcp/repository/overview.md
+      - .mcp/repository/routing-map.md
+      - .mcp/repository/locale-i18n-map.md
+      - .mcp/repository/layout-navigation-map.md
+      - .mcp/repository/styling-map.md
+      - .mcp/repository/ux-ui-map.md
+      - .mcp/repository/metadata-seo-map.md
+      - .mcp/repository/content-data-map.md
+      - .mcp/repository/server-architecture-map.md
+      - .mcp/repository/deployment-map.md
+      - .mcp/repository/improvement-phase-map.md
+
+  repo.audit_route_metadata_locale_alignment:
+    status: proposed_contract
+    risk: low
+    mode: read_only_analysis
+    purpose: Check whether a public route has aligned page files, locale handling, metadata, sitemap entries, URL map entries, and image registry usage.
+    approval_required: false
+
   repo.run_lint:
     status: proposed_contract
     risk: medium
@@ -41,5 +67,11 @@ tools:
     status: proposed_contract
     risk: low
     mode: read_only
-    purpose: Detect whether new content belongs in MongoDB-backed content services instead of hardcoded page arrays.
+    purpose: Detect whether new content belongs in MongoDB-backed content services or src/lib/*-content loaders instead of hardcoded page arrays.
     approval_required: false
+
+principles:
+  - Read .mcp/repository maps before broad implementation.
+  - Use rg or structured file listings for repository inspection.
+  - Keep documentation-only repository map updates free of runtime behavior changes.
+  - Validate docs against real paths and avoid secrets.

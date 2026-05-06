@@ -35,9 +35,10 @@ Codex startup order:
 1. Read `.codex/Agents.md`.
 2. Read `.mcp/README.md`.
 3. Read `.mcp/manifest.yaml`.
-4. Read relevant `.mcp/resources/`, `.mcp/policies/`, `.mcp/tools/`, and `.mcp/workflows/` files.
-5. Read the relevant `.chatgpt/planning/feature-<feature-name>.md` file when the work is planned.
-6. Review runtime application code, scripts, schemas, and content services.
+4. Read relevant `.mcp/repository/` maps before route, locale, styling, UX, metadata, content, server, or deployment work.
+5. Read relevant `.mcp/resources/`, `.mcp/policies/`, `.mcp/tools/`, and `.mcp/workflows/` files.
+6. Read the relevant `.chatgpt/planning/feature-<feature-name>.md` file when the work is planned.
+7. Review runtime application code, scripts, schemas, and content services.
 
 For media automation, outfit/civilization posting, commerce, Smart Food, analytics, SEO/LLM visibility, or Chorn DNA work, also read the matching `.mcp/` resource, policy, tool contract, or workflow file before implementing.
 
@@ -92,7 +93,8 @@ Codex should:
 ## i18n Contract
 
 - Every user-facing content addition should support all 10 locales.
-- Feature data usually lives in `src/data/<feature>/` as one file per locale, for example `FeatureEN.ts`, `FeatureTH.ts`, and so on.
+- Runtime content usually flows through `src/lib/*-content/` loaders backed by `server/core` services and `server/adapters/outbound/mongo.repository` repositories.
+- If a feature uses temporary file-backed data, document whether it is seed data, fixtures, or a short-lived migration fallback.
 - Components should receive `lang: string` and read translated data from the relevant locale map or feature data object.
 - Do not hardcode English copy in shared components unless the component is intentionally non-localized.
 - Metadata must also be present for all 10 locales.
@@ -139,7 +141,7 @@ For a new localized public page:
 
 1. Add `page.tsx` under `src/app/[locale]/(desktop)/<route>/`.
 2. Read `lang` from `await headers()`.
-3. Add or reuse typed feature data under `src/data/`.
+3. Add or reuse typed content through `src/lib/*-content/` and the matching server content service when the content is durable.
 4. Add metadata for all 10 locales under `src/metadata/`.
 5. Include schema markup when the page is public/service-like.
 6. Add images to `src/image/ImageUrl.ts` when the route participates in existing image registries.
@@ -233,10 +235,10 @@ ChatGPT owns discovery, planning, architectural proposals, and scope definition.
 
 7. Khachornchit reviews or approves the final result when architectural or source-of-truth decisions are involved.
 
-8. After the feature is completed and merged, move the planning document to:
+8. After the feature is completed, move the planning document to:
 
    ```text
-   .chatgpt/archived/feature-<feature-name>.md
+   .chatgpt/achieved/feature-<feature-name>.md
    ```
 
 ## Architecture Rule
@@ -263,15 +265,46 @@ Avoid adding new hardcoded content arrays into page files unless explicitly temp
 
 Use this flow when preparing a fix, feature, docs update, or other task for production:
 
-1. Start from `main` and create a new task branch, for example `fix/contact-csp-map-embed`, `feature/<name>`, or `docs/<name>`.
-2. Implement the change on that branch and preserve any intended `.codex/` updates on the same branch.
-3. Verify the task branch with the smallest relevant checks, and run `npm run build` before merging production-facing changes.
-4. Switch back to `main`.
-5. Pull the latest main: `git pull origin main`.
-6. Merge the task branch into `main`.
-7. Run `npm run build` again on `main`.
-8. Push `main` to both remotes when the build passes: `git push origin main` and `git push origin korapak`.
-9. After shipping, return to step 1 for any new work. Always branch fresh from `main`.
+1. Start from the approved feature branch for the current task. When the user explicitly asks to continue from the current branch, finish the task on that branch.
+2. Implement the change on the feature branch and preserve any intended `.codex/` updates on the same branch.
+3. Move the completed planning document from `.chatgpt/planning/` to `.chatgpt/achieved/`.
+4. Verify the task branch with the smallest relevant checks, and run `npm run build` before merging production-facing runtime changes.
+5. Stage and commit the feature branch:
+
+   ```text
+   git add -A
+   git commit -m "<feature summary>"
+   ```
+
+6. Push the feature branch:
+
+   ```text
+   git push origin <feature-branch>
+   ```
+
+7. Ship to `main`:
+
+   ```text
+   git switch main
+   git pull origin main
+   git merge <feature-branch>
+   ```
+
+8. Push `main` to the required remotes:
+
+   ```text
+   git push origin main
+   git push chatgpt main
+   ```
+
+9. Delete the remote feature branch after `main` is pushed:
+
+   ```text
+   git push origin --delete <feature-branch>
+   git push chatgpt --delete <feature-branch>
+   ```
+
+10. After shipping, return to a fresh branch for the next task.
 
 ## Deployment And Automation
 

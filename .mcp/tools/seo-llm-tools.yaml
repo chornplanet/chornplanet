@@ -5,6 +5,12 @@ tools:
     mode: read_only_analysis
     purpose: Review page metadata, titles, descriptions, canonical structure, and content discoverability.
     approval_required: false
+    repository_context:
+      - .mcp/repository/metadata-seo-map.md
+      - src/metadata
+      - src/app/sitemap.ts
+      - src/app/robots.ts
+      - src/lib/UrlMaps.ts
 
   seo.create_content_cluster_plan:
     status: proposed_contract
@@ -34,8 +40,16 @@ tools:
     purpose: Review how AI assistants and search systems may understand ChornPlanet.
     approval_required: false
 
+  seo.audit_sitemap_route_coverage:
+    status: proposed_contract
+    risk: low
+    mode: read_only_analysis
+    purpose: Compare public page routes, dynamic content slugs, UrlMaps entries, and sitemap output expectations.
+    approval_required: false
+
 principles:
   - Improve discoverability without keyword stuffing.
   - Keep facts accurate and current.
   - Use structured content and clear source-of-truth pages.
   - Treat llm.txt and llm-full.txt as public-facing summaries that must not expose secrets.
+  - Keep metadata and sitemap behavior aligned across all 10 locales.

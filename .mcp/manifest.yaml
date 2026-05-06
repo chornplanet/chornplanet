@@ -14,6 +14,29 @@ current_architecture_direction:
     - Typed Content Schema
     - Reusable Page Components
 
+repository_understanding:
+  canonical_agent_maps:
+    directory: .mcp/repository
+    purpose: practical codebase maps for routes, locales, styling, UX, navigation, metadata, content, server, deployment, and implementation phases
+    read_before_runtime_edits: true
+  important_paths:
+    app_router: src/app
+    localized_public_pages: src/app/[locale]/(desktop)
+    api_routes: src/app/api
+    locale_source: src/lib/SiteUrlLocales.ts
+    proxy_locale_headers: src/proxy.ts
+    url_sitemap_map: src/lib/UrlMaps.ts
+    image_registry: src/image/ImageUrl.ts
+    metadata: src/metadata
+    content_loaders: src/lib/*-content
+    server_layers: server
+    styles: src/styles
+  implementation_bias:
+    - prefer existing SCSS and component patterns
+    - keep route, locale, metadata, sitemap, and content changes aligned
+    - avoid production behavior changes in documentation-only features
+    - treat .codex/Agents.md as Codex execution rules and .mcp/repository as shared repository maps
+
 product_goals:
   traffic_growth:
     stages:
@@ -100,4 +123,5 @@ phase1_scope:
   - define safety policies
   - define tool contracts
   - define workflows for media automation, outfit posting, commerce, Smart Food, analytics, SEO/LLM visibility
+  - define repository-understanding maps for safer planning and implementation
   - do not implement automatic posting or external platform mutation yet
