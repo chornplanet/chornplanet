@@ -27,6 +27,53 @@ tools:
     purpose: Create AI-assisted daily, weekly, or campaign growth reports from approved data.
     approval_required: false
 
+  analytics.query_search_console:
+    status: future_contract
+    risk: medium
+    mode: approval_gated_external_read
+    purpose: Query aggregate Google Search Console performance data through an approved internal API, export, or report.
+    approval_required: true
+    default_allowed: false
+    output: clicks, impressions, CTR, average position, top queries, top pages, data gaps
+
+  analytics.query_google_analytics:
+    status: future_contract
+    risk: medium
+    mode: approval_gated_external_read
+    purpose: Query aggregate Google Analytics performance data through an approved internal API, export, or report.
+    approval_required: true
+    default_allowed: false
+    output: users, sessions, page views, engagement, traffic sources, events, data gaps
+
+  analytics.create_growth_summary:
+    status: proposed_contract
+    risk: low
+    mode: analysis_generation
+    purpose: Combine approved aggregate analytics inputs into an AI-readable planning summary.
+    approval_required: false
+    output: opportunities, risks, recommended planning items, confidence, source coverage, data gaps
+
+  analytics.find_seo_opportunities:
+    status: proposed_contract
+    risk: low
+    mode: read_only_analysis
+    purpose: Find metadata, sitemap, query, CTR, and route opportunities from approved aggregate inputs.
+    approval_required: false
+
+  analytics.find_content_improvement_opportunities:
+    status: proposed_contract
+    risk: low
+    mode: read_only_analysis
+    purpose: Find content refresh, topic expansion, and internal-link opportunities from approved aggregate inputs.
+    approval_required: false
+
+  analytics.find_technical_ux_opportunities:
+    status: proposed_contract
+    risk: low
+    mode: read_only_analysis
+    purpose: Find route performance, UX, and technical SEO opportunities from approved aggregate inputs.
+    approval_required: false
+
   analytics.update_tracking_config:
     status: future_only
     risk: high
@@ -40,3 +87,6 @@ principles:
   - Do not expose personal user data.
   - Do not invent metrics.
   - If data is unavailable, recommend instrumentation.
+  - Use on-demand planning queries before always-on monitoring.
+  - Keep Google credentials in approved secret stores only.
+  - Analytics output can create planning items, but must not mutate production automatically.

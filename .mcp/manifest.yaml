@@ -37,6 +37,24 @@ repository_understanding:
     - avoid production behavior changes in documentation-only features
     - treat .codex/Agents.md as Codex execution rules and .mcp/repository as shared repository maps
 
+roadmap:
+  directory: .mcp/roadmap
+  primary: .mcp/roadmap/chornplanet-platform-roadmap.md
+  feature_queue: .mcp/roadmap/feature-queue.md
+  growth_milestones: .mcp/roadmap/growth-milestones.md
+  purpose: phase-by-phase platform roadmap for media, commerce, civilization, Smart Food, analytics, SEO/LLM visibility, automation, and luxury expansion
+
+analytics_workspace:
+  directory: .mcp/analytics
+  purpose: on-demand aggregate analytics contracts and report shapes for planning and prioritization
+  mode: documentation_contract_only
+  runtime_api_status: future_feature
+  approval_required_for:
+    - Google Search Console API connection
+    - Google Analytics API connection
+    - production analytics credentials
+    - internal analytics API authorization model
+
 product_goals:
   traffic_growth:
     stages:
@@ -73,6 +91,7 @@ product_goals:
     - Google Analytics integration
     - AI assistant for growth insight
     - SEO and LLM visibility through llm.txt and llm-full.txt
+    - on-demand aggregate growth summaries for planning
 
 external_authorities:
   chorn_dna_agents:

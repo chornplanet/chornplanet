@@ -90,6 +90,22 @@ Practical codebase maps live in:
 
 These files document the current Next.js routes, locale contract, SCSS/Tailwind usage, UX/UI patterns, navigation/layout, metadata/SEO, content loaders, server layers, deployment behavior, and phase-by-phase improvement path. Use them as shared repository maps, while `.codex/Agents.md` remains the Codex execution guide.
 
+## Roadmap and analytics layers
+
+Platform roadmap documents live in:
+
+```text
+.mcp/roadmap/
+```
+
+On-demand analytics planning contracts live in:
+
+```text
+.mcp/analytics/
+```
+
+The analytics layer is documentation and contract design first. It does not connect to Google Search Console, Google Analytics, Vercel, commerce, or social APIs by itself. Runtime analytics API routes and server services require explicit approval for credentials, authorization, and source-of-truth properties before implementation.
+
 ## Source-of-truth principle
 
 ChornPlanet should move from hardcoded page data toward database-backed, reusable, scalable services.
@@ -112,4 +128,4 @@ Reusable Page Components
 
 Phase 1 is documentation and contract design only.
 
-It defines product context, repository maps, policies, tool contracts, and workflows before introducing real MCP servers or automation that can post, publish, mutate commerce data, or call external platforms.
+It defines product context, repository maps, roadmap direction, analytics contracts, policies, tool contracts, and workflows before introducing real MCP servers or automation that can post, publish, mutate commerce data, or call external platforms.

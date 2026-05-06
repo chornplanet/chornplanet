@@ -17,7 +17,20 @@ Use analytics to help ChornPlanet grow from:
 3. Identify missing instrumentation.
 4. Review aggregate traffic and content performance.
 5. Connect performance to content categories, zones, products, or campaigns.
-6. Recommend one practical next action.
+6. Create an AI-readable summary with opportunities, risks, data gaps, and confidence.
+7. Recommend one practical next planning or implementation action.
+
+## On-demand feedback loop
+
+```text
+ChatGPT / Codex needs growth insight
+  -> .mcp analytics tool contract or workflow
+  -> approved internal API, export, or report
+  -> aggregate AI-readable summary
+  -> ChatGPT creates or updates .chatgpt/planning/feature-*.md
+  -> Khachornchit approves priority
+  -> Codex creates an implementation branch
+```
 
 ## AI assistant questions
 
@@ -42,9 +55,18 @@ Future analytics workflows should answer:
 - product promotion recommendation
 - instrumentation gap note
 
+Initial report shapes live under:
+
+```text
+.mcp/analytics/reports/
+```
+
 ## Rules
 
 - Prefer aggregate data.
 - Do not expose personal user data.
 - Do not invent metrics.
 - If data is unavailable, state the gap and recommend instrumentation.
+- Do not connect Google Search Console or Google Analytics APIs without explicit approval.
+- Do not make production changes automatically from analytics output.
+- Start with on-demand planning support before always-on daily monitoring.

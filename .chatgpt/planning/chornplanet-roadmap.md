@@ -291,6 +291,83 @@ Recommended next implementation features:
 11. `daily-media-digest-draft`
 12. `smartfood-line-login-planning`
 
+## Deferred Runtime Implementation Items From MCP Phase 2
+
+The `feature-mcp-phase2-platform-roadmap` implementation is documentation and contract design only. The following items are intentionally not implemented there and should become future planning files before runtime code is added.
+
+### Analytics Growth Foundation
+
+Future planning file:
+
+```text
+.chatgpt/planning/feature-analytics-growth-foundation.md
+```
+
+Scope:
+
+- aggregate analytics query model
+- growth summary report shape
+- instrumentation gap report shape
+- route/category metric map
+- report persistence decision: API response, `.mcp/analytics/reports/`, database collection, or a staged combination
+
+Non-goals until approval:
+
+- no Google credentials
+- no production API connection
+- no tracking config writes
+
+### Analytics MCP Data Access
+
+Future planning file:
+
+```text
+.chatgpt/planning/feature-analytics-mcp-data-access.md
+```
+
+Proposed future runtime structure:
+
+```text
+src/app/api/analytics/search-console/route.ts
+src/app/api/analytics/google-analytics/route.ts
+src/app/api/analytics/growth-summary/route.ts
+
+server/core/domain/analytics-query.entity.ts
+server/core/domain/analytics-growth-summary.entity.ts
+server/core/ports/search-console.interface.ts
+server/core/ports/google-analytics.interface.ts
+server/core/services/analytics-growth.service.ts
+server/adapters/outbound/google/search-console.repository.ts
+server/adapters/outbound/google/google-analytics.repository.ts
+```
+
+Required decisions before implementation:
+
+- Google Search Console source property
+- Google Analytics source property
+- credential storage and rotation path
+- internal API authorization model
+- allowed aggregate dimensions
+- whether generated summaries stay in API responses, `.mcp/analytics/reports/`, MongoDB, or all three
+
+Safety rules:
+
+- API access to Google Search Console and Google Analytics requires explicit approval.
+- Credentials must remain in environment variables or approved secret stores.
+- Prefer aggregate metrics.
+- Do not expose personal user data.
+- If data is unavailable, return an instrumentation gap report instead of guessing.
+
+### Always-On Monitoring
+
+Future planning file:
+
+```text
+.chatgpt/planning/feature-analytics-scheduled-monitoring.md
+```
+
+This should happen only after on-demand analytics access is useful and approved. Initial Phase 6 does not require automatic daily monitoring.
+
 ## Safety Rules
 
 - `.mcp` defines planning and contracts.
