@@ -20,6 +20,19 @@ const REQUIRED_LAYOUT_FIELDS = [
     'languageOptions',
 ] as const;
 
+const SMART_FOOD_AI_FOOTER_LABELS: Record<string, string> = {
+    da: 'Smart Food AI',
+    de: 'Smart Food KI',
+    en: 'Smart Food AI',
+    fi: 'Smart Food AI',
+    fr: 'Smart Food IA',
+    ja: 'スマートフードAI',
+    ko: '스마트 푸드 AI',
+    nl: 'Smart Food AI',
+    th: 'สมาร์ทฟู้ด AI',
+    zh: '智慧餐饮 AI',
+};
+
 function getLayoutContentTag(locale: string) {
     return `layout-content:${normalizeLayoutContentLocale(locale)}`;
 }
@@ -78,10 +91,32 @@ function normalizeSmartFoodAiFooterGroup<T extends { items: IFooterDetail[] }>(g
     };
 }
 
-function normalizeSmartFoodAiFooter(footer: IFooter): IFooter {
+function normalizeSmartFoodAiProjectGroup<T extends { items: IFooterDetail[] }>(locale: string, group: T): T {
+    const hasSmartFoodAi = group.items.some((item) => item.link === '/smart-food-ai/');
+
+    if (hasSmartFoodAi) {
+        return group;
+    }
+
+    return {
+        ...group,
+        items: [
+            {
+                label: SMART_FOOD_AI_FOOTER_LABELS[locale] ?? SMART_FOOD_AI_FOOTER_LABELS.en,
+                link: '/smart-food-ai/',
+            },
+            ...group.items,
+        ],
+    };
+}
+
+function normalizeSmartFoodAiFooter(locale: string, footer: IFooter): IFooter {
+    const normalizedLocale = normalizeLayoutContentLocale(locale);
+
     return {
         ...footer,
         important: normalizeSmartFoodAiFooterGroup(footer.important),
+        project: normalizeSmartFoodAiProjectGroup(normalizedLocale, footer.project),
         technology: normalizeSmartFoodAiFooterGroup(footer.technology),
     };
 }
@@ -90,7 +125,7 @@ function normalizeSmartFoodAiLayoutContent(content: LayoutContentPayload): Layou
     return {
         ...content,
         navbar: content.navbar.map(normalizeSmartFoodAiNavbarItem),
-        footer: normalizeSmartFoodAiFooter(content.footer),
+        footer: normalizeSmartFoodAiFooter(content.locale, content.footer),
     };
 }
 
