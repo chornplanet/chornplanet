@@ -57,7 +57,7 @@ export const MetaLinks: IMetaLinks = {
     smartFoodAi: {
         canonical: "/smart-food-ai/",
         image: {
-            url: "/images-opengraph/banner/chorn-banner.jpg" + MetadataImageVersion,
+            url: "/images-opengraph/smart-food/process1-chat-ordering.png" + MetadataImageVersion,
             alt: "Open graph image for Smart Food AI production platform",
         }
     },
