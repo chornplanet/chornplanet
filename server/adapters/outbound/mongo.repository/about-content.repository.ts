@@ -5,7 +5,7 @@ import {
     PartialAboutContentPayload,
 } from "@/core/domain/about-content.entity";
 import {AboutContentInterface} from "@/core/ports/about-content.interface";
-import {aboutContentCollection} from "@/infrastructure/db/infra.mongodb";
+import {aboutContentCollection, withMongoReadRetry} from "@/infrastructure/db/infra.mongodb";
 import {getNowTimeBangkokAsia} from "@/utils/timezone";
 
 export class AboutContentRepository implements AboutContentInterface {
@@ -25,15 +25,21 @@ export class AboutContentRepository implements AboutContentInterface {
 
     async findByLocale(locale: string): Promise<AboutContentResponse | null> {
         const normalizedLocale = normalizeAboutContentLocale(locale);
-        const document = await aboutContentCollection.findOne({locale: normalizedLocale});
+        const document = await withMongoReadRetry(
+            () => aboutContentCollection.findOne({locale: normalizedLocale}),
+            `about content ${normalizedLocale}`
+        );
         return document ? mapAboutContentResponse(document) : null;
     }
 
     async findAll(): Promise<AboutContentResponse[]> {
-        const documents = await aboutContentCollection
-            .find({})
-            .sort({locale: 1})
-            .toArray();
+        const documents = await withMongoReadRetry(
+            () => aboutContentCollection
+                .find({})
+                .sort({locale: 1})
+                .toArray(),
+            'about content list'
+        );
 
         return documents.map(mapAboutContentResponse);
     }

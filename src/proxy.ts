@@ -45,8 +45,17 @@ export function proxy(req: NextRequest) {
         return NextResponse.redirect(url);
     }
 
-    // Create a response and pass the locale via a custom header
-    const res = NextResponse.next();
+    // Pass locale context to Server Components through request headers.
+    const requestHeaders = new Headers(req.headers);
+    requestHeaders.set('x-cookie-consent', cookie_consent);
+    requestHeaders.set('x-locale', locale);
+    requestHeaders.set('x-pathname', pathname);
+
+    const res = NextResponse.next({
+        request: {
+            headers: requestHeaders,
+        },
+    });
     res.headers.set('x-cookie-consent', cookie_consent);
     res.headers.set('x-locale', locale);
     res.headers.set('x-pathname', pathname);

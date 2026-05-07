@@ -60,6 +60,8 @@ const options: MongoClientOptions = {
     maxPoolSize: 10,
     minPoolSize: 1,
     maxIdleTimeMS: 60_000,
+    serverSelectionTimeoutMS: 10_000,
+    connectTimeoutMS: 10_000,
     retryWrites: true,
 };
 
@@ -68,9 +70,35 @@ const globalForMongo = globalThis as typeof globalThis & {
 };
 
 export const client = globalForMongo.mongoClient ?? new MongoClient(uri, options);
+globalForMongo.mongoClient = client;
 
-if (process.env.NODE_ENV !== 'production') {
-    globalForMongo.mongoClient = client;
+function wait(milliseconds: number): Promise<void> {
+    return new Promise((resolve) => setTimeout(resolve, milliseconds));
+}
+
+export async function withMongoReadRetry<T>(
+    operation: () => Promise<T>,
+    context: string,
+    attempts = 3
+): Promise<T> {
+    let lastError: unknown;
+
+    for (let attempt = 1; attempt <= attempts; attempt += 1) {
+        try {
+            return await operation();
+        } catch (error) {
+            lastError = error;
+
+            if (attempt === attempts) {
+                break;
+            }
+
+            console.warn(`MongoDB read failed for ${context}. Retrying (${attempt}/${attempts})`, error);
+            await wait(150 * attempt);
+        }
+    }
+
+    throw lastError;
 }
 
 export const db = client.db(databaseName);

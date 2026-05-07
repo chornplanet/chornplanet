@@ -5,7 +5,7 @@ import {
     TechnicalExpertiseContentResponse,
 } from "@/core/domain/technical-expertise-content.entity";
 import {TechnicalExpertiseContentInterface} from "@/core/ports/technical-expertise-content.interface";
-import {technicalExpertiseContentCollection} from "@/infrastructure/db/infra.mongodb";
+import {technicalExpertiseContentCollection, withMongoReadRetry} from "@/infrastructure/db/infra.mongodb";
 import {getNowTimeBangkokAsia} from "@/utils/timezone";
 
 export class TechnicalExpertiseContentRepository implements TechnicalExpertiseContentInterface {
@@ -25,15 +25,21 @@ export class TechnicalExpertiseContentRepository implements TechnicalExpertiseCo
 
     async findByLocale(locale: string): Promise<TechnicalExpertiseContentResponse | null> {
         const normalizedLocale = normalizeTechnicalExpertiseContentLocale(locale);
-        const document = await technicalExpertiseContentCollection.findOne({locale: normalizedLocale});
+        const document = await withMongoReadRetry(
+            () => technicalExpertiseContentCollection.findOne({locale: normalizedLocale}),
+            `technical expertise content ${normalizedLocale}`
+        );
         return document ? mapTechnicalExpertiseContentResponse(document) : null;
     }
 
     async findAll(): Promise<TechnicalExpertiseContentResponse[]> {
-        const documents = await technicalExpertiseContentCollection
-            .find({})
-            .sort({locale: 1})
-            .toArray();
+        const documents = await withMongoReadRetry(
+            () => technicalExpertiseContentCollection
+                .find({})
+                .sort({locale: 1})
+                .toArray(),
+            'technical expertise content list'
+        );
 
         return documents.map(mapTechnicalExpertiseContentResponse);
     }

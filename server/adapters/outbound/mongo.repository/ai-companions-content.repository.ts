@@ -5,7 +5,7 @@ import {
     PartialAiCompanionsContentPayload,
 } from "@/core/domain/ai-companions-content.entity";
 import {AiCompanionsContentInterface} from "@/core/ports/ai-companions-content.interface";
-import {aiCompanionsContentCollection} from "@/infrastructure/db/infra.mongodb";
+import {aiCompanionsContentCollection, withMongoReadRetry} from "@/infrastructure/db/infra.mongodb";
 import {getNowTimeBangkokAsia} from "@/utils/timezone";
 
 export class AiCompanionsContentRepository implements AiCompanionsContentInterface {
@@ -25,15 +25,21 @@ export class AiCompanionsContentRepository implements AiCompanionsContentInterfa
 
     async findByLocale(locale: string): Promise<AiCompanionsContentResponse | null> {
         const normalizedLocale = normalizeAiCompanionsContentLocale(locale);
-        const document = await aiCompanionsContentCollection.findOne({locale: normalizedLocale});
+        const document = await withMongoReadRetry(
+            () => aiCompanionsContentCollection.findOne({locale: normalizedLocale}),
+            `AI companions content ${normalizedLocale}`
+        );
         return document ? mapAiCompanionsContentResponse(document) : null;
     }
 
     async findAll(): Promise<AiCompanionsContentResponse[]> {
-        const documents = await aiCompanionsContentCollection
-            .find({})
-            .sort({locale: 1})
-            .toArray();
+        const documents = await withMongoReadRetry(
+            () => aiCompanionsContentCollection
+                .find({})
+                .sort({locale: 1})
+                .toArray(),
+            'AI companions content list'
+        );
 
         return documents.map(mapAiCompanionsContentResponse);
     }

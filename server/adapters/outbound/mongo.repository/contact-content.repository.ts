@@ -5,7 +5,7 @@ import {
     PartialContactContentPayload,
 } from "@/core/domain/contact-content.entity";
 import {ContactContentInterface} from "@/core/ports/contact-content.interface";
-import {contactContentCollection} from "@/infrastructure/db/infra.mongodb";
+import {contactContentCollection, withMongoReadRetry} from "@/infrastructure/db/infra.mongodb";
 import {getNowTimeBangkokAsia} from "@/utils/timezone";
 
 export class ContactContentRepository implements ContactContentInterface {
@@ -25,15 +25,21 @@ export class ContactContentRepository implements ContactContentInterface {
 
     async findByLocale(locale: string): Promise<ContactContentResponse | null> {
         const normalizedLocale = normalizeContactContentLocale(locale);
-        const document = await contactContentCollection.findOne({locale: normalizedLocale});
+        const document = await withMongoReadRetry(
+            () => contactContentCollection.findOne({locale: normalizedLocale}),
+            `contact content ${normalizedLocale}`
+        );
         return document ? mapContactContentResponse(document) : null;
     }
 
     async findAll(): Promise<ContactContentResponse[]> {
-        const documents = await contactContentCollection
-            .find({})
-            .sort({locale: 1})
-            .toArray();
+        const documents = await withMongoReadRetry(
+            () => contactContentCollection
+                .find({})
+                .sort({locale: 1})
+                .toArray(),
+            'contact content list'
+        );
 
         return documents.map(mapContactContentResponse);
     }

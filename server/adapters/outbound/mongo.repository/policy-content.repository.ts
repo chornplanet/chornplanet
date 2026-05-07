@@ -5,7 +5,7 @@ import {
     PolicyContentResponse,
 } from "@/core/domain/policy-content.entity";
 import {PolicyContentInterface} from "@/core/ports/policy-content.interface";
-import {policyContentCollection} from "@/infrastructure/db/infra.mongodb";
+import {policyContentCollection, withMongoReadRetry} from "@/infrastructure/db/infra.mongodb";
 import {getNowTimeBangkokAsia} from "@/utils/timezone";
 
 export class PolicyContentRepository implements PolicyContentInterface {
@@ -25,15 +25,21 @@ export class PolicyContentRepository implements PolicyContentInterface {
 
     async findByLocale(locale: string): Promise<PolicyContentResponse | null> {
         const normalizedLocale = normalizePolicyContentLocale(locale);
-        const document = await policyContentCollection.findOne({locale: normalizedLocale});
+        const document = await withMongoReadRetry(
+            () => policyContentCollection.findOne({locale: normalizedLocale}),
+            `policy content ${normalizedLocale}`
+        );
         return document ? mapPolicyContentResponse(document) : null;
     }
 
     async findAll(): Promise<PolicyContentResponse[]> {
-        const documents = await policyContentCollection
-            .find({})
-            .sort({locale: 1})
-            .toArray();
+        const documents = await withMongoReadRetry(
+            () => policyContentCollection
+                .find({})
+                .sort({locale: 1})
+                .toArray(),
+            'policy content list'
+        );
 
         return documents.map(mapPolicyContentResponse);
     }

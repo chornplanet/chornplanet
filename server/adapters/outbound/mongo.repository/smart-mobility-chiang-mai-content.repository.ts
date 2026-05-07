@@ -5,7 +5,7 @@ import {
     SmartMobilityChiangMaiContentResponse,
 } from "@/core/domain/smart-mobility-chiang-mai-content.entity";
 import {SmartMobilityChiangMaiContentInterface} from "@/core/ports/smart-mobility-chiang-mai-content.interface";
-import {smartMobilityChiangMaiContentCollection} from "@/infrastructure/db/infra.mongodb";
+import {smartMobilityChiangMaiContentCollection, withMongoReadRetry} from "@/infrastructure/db/infra.mongodb";
 import {getNowTimeBangkokAsia} from "@/utils/timezone";
 
 export class SmartMobilityChiangMaiContentRepository implements SmartMobilityChiangMaiContentInterface {
@@ -25,12 +25,18 @@ export class SmartMobilityChiangMaiContentRepository implements SmartMobilityChi
 
     async findByLocaleAndSlug(locale: string, slug: string): Promise<SmartMobilityChiangMaiContentResponse | null> {
         const normalizedLocale = normalizeSmartMobilityChiangMaiContentLocale(locale);
-        const document = await smartMobilityChiangMaiContentCollection.findOne({locale: normalizedLocale, slug});
+        const document = await withMongoReadRetry(
+            () => smartMobilityChiangMaiContentCollection.findOne({locale: normalizedLocale, slug}),
+            `smart mobility Chiang Mai content ${normalizedLocale}/${slug}`
+        );
         return document ? mapSmartMobilityChiangMaiContentResponse(document) : null;
     }
 
     async findAll(): Promise<SmartMobilityChiangMaiContentResponse[]> {
-        const documents = await smartMobilityChiangMaiContentCollection.find({}).sort({locale: 1, slug: 1}).toArray();
+        const documents = await withMongoReadRetry(
+            () => smartMobilityChiangMaiContentCollection.find({}).sort({locale: 1, slug: 1}).toArray(),
+            'smart mobility Chiang Mai content list'
+        );
         return documents.map(mapSmartMobilityChiangMaiContentResponse);
     }
 

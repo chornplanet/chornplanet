@@ -5,7 +5,7 @@ import {
     PartialGalleryContentPayload,
 } from "@/core/domain/gallery-content.entity";
 import {GalleryContentInterface} from "@/core/ports/gallery-content.interface";
-import {galleryContentCollection} from "@/infrastructure/db/infra.mongodb";
+import {galleryContentCollection, withMongoReadRetry} from "@/infrastructure/db/infra.mongodb";
 import {getNowTimeBangkokAsia} from "@/utils/timezone";
 
 export class GalleryContentRepository implements GalleryContentInterface {
@@ -25,15 +25,21 @@ export class GalleryContentRepository implements GalleryContentInterface {
 
     async findByLocale(locale: string): Promise<GalleryContentResponse | null> {
         const normalizedLocale = normalizeGalleryContentLocale(locale);
-        const document = await galleryContentCollection.findOne({locale: normalizedLocale});
+        const document = await withMongoReadRetry(
+            () => galleryContentCollection.findOne({locale: normalizedLocale}),
+            `gallery content ${normalizedLocale}`
+        );
         return document ? mapGalleryContentResponse(document) : null;
     }
 
     async findAll(): Promise<GalleryContentResponse[]> {
-        const documents = await galleryContentCollection
-            .find({})
-            .sort({locale: 1})
-            .toArray();
+        const documents = await withMongoReadRetry(
+            () => galleryContentCollection
+                .find({})
+                .sort({locale: 1})
+                .toArray(),
+            'gallery content list'
+        );
 
         return documents.map(mapGalleryContentResponse);
     }

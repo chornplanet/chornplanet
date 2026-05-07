@@ -5,7 +5,7 @@ import {
     SmartCityChiangMaiContentResponse,
 } from "@/core/domain/smart-city-chiang-mai-content.entity";
 import {SmartCityChiangMaiContentInterface} from "@/core/ports/smart-city-chiang-mai-content.interface";
-import {smartCityChiangMaiContentCollection} from "@/infrastructure/db/infra.mongodb";
+import {smartCityChiangMaiContentCollection, withMongoReadRetry} from "@/infrastructure/db/infra.mongodb";
 import {getNowTimeBangkokAsia} from "@/utils/timezone";
 
 export class SmartCityChiangMaiContentRepository implements SmartCityChiangMaiContentInterface {
@@ -25,15 +25,21 @@ export class SmartCityChiangMaiContentRepository implements SmartCityChiangMaiCo
 
     async findByLocaleAndSlug(locale: string, slug: string): Promise<SmartCityChiangMaiContentResponse | null> {
         const normalizedLocale = normalizeSmartCityChiangMaiContentLocale(locale);
-        const document = await smartCityChiangMaiContentCollection.findOne({locale: normalizedLocale, slug});
+        const document = await withMongoReadRetry(
+            () => smartCityChiangMaiContentCollection.findOne({locale: normalizedLocale, slug}),
+            `smart city Chiang Mai content ${normalizedLocale}/${slug}`
+        );
         return document ? mapSmartCityChiangMaiContentResponse(document) : null;
     }
 
     async findAll(): Promise<SmartCityChiangMaiContentResponse[]> {
-        const documents = await smartCityChiangMaiContentCollection
-            .find({})
-            .sort({locale: 1, slug: 1})
-            .toArray();
+        const documents = await withMongoReadRetry(
+            () => smartCityChiangMaiContentCollection
+                .find({})
+                .sort({locale: 1, slug: 1})
+                .toArray(),
+            'smart city Chiang Mai content list'
+        );
 
         return documents.map(mapSmartCityChiangMaiContentResponse);
     }

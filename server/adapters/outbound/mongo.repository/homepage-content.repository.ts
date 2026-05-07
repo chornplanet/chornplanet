@@ -5,7 +5,7 @@ import {
     normalizeHomePageLocale,
 } from "@/core/domain/homepage-content.entity";
 import {HomePageContentInterface} from "@/core/ports/homepage-content.interface";
-import {homePageContentCollection} from "@/infrastructure/db/infra.mongodb";
+import {homePageContentCollection, withMongoReadRetry} from "@/infrastructure/db/infra.mongodb";
 import {getNowTimeBangkokAsia} from "@/utils/timezone";
 
 export class HomePageContentRepository implements HomePageContentInterface {
@@ -25,15 +25,21 @@ export class HomePageContentRepository implements HomePageContentInterface {
 
     async findByLocale(locale: string): Promise<HomePageContentResponse | null> {
         const normalizedLocale = normalizeHomePageLocale(locale);
-        const document = await homePageContentCollection.findOne({locale: normalizedLocale});
+        const document = await withMongoReadRetry(
+            () => homePageContentCollection.findOne({locale: normalizedLocale}),
+            `homepage content ${normalizedLocale}`
+        );
         return document ? mapHomePageContentResponse(document) : null;
     }
 
     async findAll(): Promise<HomePageContentResponse[]> {
-        const documents = await homePageContentCollection
-            .find({})
-            .sort({locale: 1})
-            .toArray();
+        const documents = await withMongoReadRetry(
+            () => homePageContentCollection
+                .find({})
+                .sort({locale: 1})
+                .toArray(),
+            'homepage content list'
+        );
 
         return documents.map(mapHomePageContentResponse);
     }

@@ -5,7 +5,7 @@ import {
     PartialLayoutContentPayload,
 } from "@/core/domain/layout-content.entity";
 import {LayoutContentInterface} from "@/core/ports/layout-content.interface";
-import {layoutContentCollection} from "@/infrastructure/db/infra.mongodb";
+import {layoutContentCollection, withMongoReadRetry} from "@/infrastructure/db/infra.mongodb";
 import {getNowTimeBangkokAsia} from "@/utils/timezone";
 
 export class LayoutContentRepository implements LayoutContentInterface {
@@ -25,15 +25,21 @@ export class LayoutContentRepository implements LayoutContentInterface {
 
     async findByLocale(locale: string): Promise<LayoutContentResponse | null> {
         const normalizedLocale = normalizeLayoutContentLocale(locale);
-        const document = await layoutContentCollection.findOne({locale: normalizedLocale});
+        const document = await withMongoReadRetry(
+            () => layoutContentCollection.findOne({locale: normalizedLocale}),
+            `layout content ${normalizedLocale}`
+        );
         return document ? mapLayoutContentResponse(document) : null;
     }
 
     async findAll(): Promise<LayoutContentResponse[]> {
-        const documents = await layoutContentCollection
-            .find({})
-            .sort({locale: 1})
-            .toArray();
+        const documents = await withMongoReadRetry(
+            () => layoutContentCollection
+                .find({})
+                .sort({locale: 1})
+                .toArray(),
+            'layout content list'
+        );
 
         return documents.map(mapLayoutContentResponse);
     }

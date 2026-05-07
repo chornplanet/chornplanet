@@ -157,6 +157,24 @@ For a new localized public page:
 - Keep secrets in environment variables. Do not commit `.env` files or new credentials.
 - OpenAI route/provider code exists in both `src/app/api/openai/...` and `server/adapters/outbound/openai/...`; inspect both before changing AI behavior.
 
+## Production Server Components Render Reliability
+
+Issue found on production: localized pages could intermittently show `This page could not load` with a production Server Components render digest, while localhost stayed healthy. The observed example was `/ja/smart-mobility/chiang-mai/vision-smart-mobility-northern-gateway/`.
+
+Root causes to check first:
+
+- Page/layout Server Components read MongoDB-backed content during render. Short MongoDB server selection, connection, or cold-start hiccups can throw during the RSC render and surface only as an omitted production digest.
+- `src/proxy.ts` must forward locale context on request headers, not only response headers. Server Components read `await headers()`, so `x-locale`, `x-cookie-consent`, and `x-pathname` need to be set through `NextResponse.next({ request: { headers } })`.
+
+Current fix pattern:
+
+- Reuse the Mongo client through `globalThis.mongoClient` in production as well as development.
+- Keep bounded MongoDB timeouts in `server/infrastructure/db/infra.mongodb.ts`.
+- Wrap runtime content reads with `withMongoReadRetry(...)` in `server/adapters/outbound/mongo.repository/*-content.repository.ts`.
+- Keep `src/proxy.ts` request-header forwarding intact when editing locale or cookie handling.
+
+When this production symptom appears again, inspect Vercel function logs by digest/time first, then check MongoDB connectivity, missing/incomplete content records, and proxy request headers before changing page components.
+
 ## Chorn DNA Authority
 
 When planning or implementing StoryGenProduct, AutoScene, ImagePrompt, VdoPrompt, StoryPostEngine, outfit, clothing, or civilization content, reference `.mcp/resources/chorn-dna-authority.md` and the external Chorn DNA authority described there.

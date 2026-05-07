@@ -5,7 +5,7 @@ import {
     SmartCityLandingContentResponse,
 } from "@/core/domain/smart-city-landing-content.entity";
 import {SmartCityLandingContentInterface} from "@/core/ports/smart-city-landing-content.interface";
-import {smartCityLandingContentCollection} from "@/infrastructure/db/infra.mongodb";
+import {smartCityLandingContentCollection, withMongoReadRetry} from "@/infrastructure/db/infra.mongodb";
 import {getNowTimeBangkokAsia} from "@/utils/timezone";
 
 export class SmartCityLandingContentRepository implements SmartCityLandingContentInterface {
@@ -25,15 +25,21 @@ export class SmartCityLandingContentRepository implements SmartCityLandingConten
 
     async findByLocaleAndSlug(locale: string, slug: string): Promise<SmartCityLandingContentResponse | null> {
         const normalizedLocale = normalizeSmartCityLandingContentLocale(locale);
-        const document = await smartCityLandingContentCollection.findOne({locale: normalizedLocale, slug});
+        const document = await withMongoReadRetry(
+            () => smartCityLandingContentCollection.findOne({locale: normalizedLocale, slug}),
+            `smart city landing content ${normalizedLocale}/${slug}`
+        );
         return document ? mapSmartCityLandingContentResponse(document) : null;
     }
 
     async findAll(): Promise<SmartCityLandingContentResponse[]> {
-        const documents = await smartCityLandingContentCollection
-            .find({})
-            .sort({locale: 1, slug: 1})
-            .toArray();
+        const documents = await withMongoReadRetry(
+            () => smartCityLandingContentCollection
+                .find({})
+                .sort({locale: 1, slug: 1})
+                .toArray(),
+            'smart city landing content list'
+        );
 
         return documents.map(mapSmartCityLandingContentResponse);
     }
