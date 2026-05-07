@@ -7,7 +7,33 @@ Owner: Khachornchit Chief Architect → ChatGPT planning → Codex review/implem
 
 ## Purpose
 
-This roadmap defines how ChornPlanet evolves as a platform across media, commerce, civilization storytelling, Smart Food evolution, analytics, SEO/LLM visibility, and multi-repository cooperation with Chorn DNA and later MenuMatch.
+This roadmap defines the next ChornPlanet platform evolution in two major phases:
+
+```text
+Phase 1 = Improve the existing layout with investor-facing production capability
+Phase 2 = Execute the broader ChornPlanet Roadmap and New Platform Layout
+```
+
+The immediate priority is to show that ChornPlanet is not only a concept or sample project. ChornPlanet should demonstrate a real AI-native production platform capability through the Smart Food AI project, starting from the current local business production launch in Chiang Mai.
+
+## Strategic Positioning
+
+ChornPlanet should communicate three layers clearly:
+
+```text
+1. Real production platform
+   - Smart Food AI is already connected to real local business direction in Chiang Mai.
+   - The platform can show practical AI-native product capability without exposing low-level technical internals.
+
+2. Premium civilization media and commerce platform
+   - World, Outfit, Media, Commerce, Smart Food, Luxury.
+   - Chorn DNA visual language and storytelling direction.
+
+3. Future multi-repository ecosystem
+   - ChornPlanet as the web/platform layer.
+   - Chorn DNA as the creative/DNA authority layer.
+   - MenuMatch as the Smart Food backend and conversational commerce layer.
+```
 
 ## Roles
 
@@ -17,7 +43,7 @@ Khachornchit owns final architecture direction, product direction, ChornPlanet p
 
 ### ChatGPT
 
-ChatGPT owns discovery, planning, architecture proposals, product strategy, and implementation handoff.
+ChatGPT owns discovery, planning, architecture proposals, product strategy, UI/content direction, and implementation handoff.
 
 ### Codex
 
@@ -25,7 +51,7 @@ Codex owns implementation, tests, validation, and preserving compatibility with 
 
 ## Current State
 
-ChornPlanet is a Next.js platform with `.mcp` support.
+ChornPlanet is a Next.js platform with `.mcp` support and a growing planning system under `.chatgpt/planning/`.
 
 Current platform direction:
 
@@ -43,17 +69,19 @@ Reusable Page Components
 
 ChornPlanet already declares Chorn DNA as an external authority for StoryGenProduct, AutoScene, ImagePrompt, VdoPrompt, StoryPostEngine, and Zone List resolution.
 
+MenuMatch can join as the Smart Food backend and conversational commerce source of truth.
+
 ## North Star
 
 ChornPlanet should become:
 
-- a media platform for news / entertainment / technology follow-up
-- a premium commerce platform
-- a civilization platform for lady/gentleman outfit and clothing presentation
-- a Smart Food web evolution layer
-- a luxury project showcase
+- a luxury civilization media and commerce platform
+- a premium product/story-commerce platform
+- an investor-facing AI-native production showcase
+- a Smart Food AI web evolution layer
+- a platform that can cooperate with Chorn DNA and MenuMatch through `.mcp` planning contracts and future REST/runtime contracts
 - an analytics-assisted growth platform
-- a platform that can cooperate with Chorn DNA and MenuMatch through `.mcp` and REST contracts
+- a future platform for tourism, mixed-use, luxury projects, smart city, and blockchain-enabled commerce stories
 
 Traffic growth target:
 
@@ -61,16 +89,261 @@ Traffic growth target:
 10K daily -> 100K -> 500K -> 1M
 ```
 
+## Roadmap Overview
+
+```text
+Phase 1
+  Smart Food AI on the existing layout
+  Goal: prove real production AI-native capability immediately
+
+Phase 2
+  Existing ChornPlanet Roadmap + New Platform Layout
+  Goal: complete the broader luxury civilization media/commerce platform redesign and ecosystem expansion
+```
+
+---
+
+# Phase 1: Smart Food AI Production Showcase on Existing Layout
+
+## Goal
+
+Add or improve features on the existing layout first, with Smart Food AI as the main Phase 1 feature.
+
+Smart Food AI should show that ChornPlanet is building a real AI-native platform, not only a sample project. It should attract investors, venture capital, CEOs, recruitment, HR, strategic partners, and future customers by presenting production readiness in a premium ChornPlanet style.
+
+## Main Feature
+
+Dedicated planning file:
+
+```text
+.chatgpt/planning/feature-smart-food-ai.md
+```
+
+Recommended implementation route:
+
+```text
+src/app/[locale]/smart-food-ai/page.tsx
+```
+
+Recommended component area:
+
+```text
+src/components/smart-food-ai/
+```
+
+## Phase 1 Scope Outline
+
+### 1. Smart Food AI Landing Page
+
+Create a new Smart Food AI landing page based on the existing AI/Fah, AI Solutions, and Home Feature page concepts.
+
+Possible starting composition:
+
+```tsx
+return (
+  <div className="smart-container-top">
+    <AiFahLandingPage lang={lang} fah={content.aiCompanions.fah} />
+    <AiSolutionsMain
+      lang={lang}
+      service={content.service}
+      llmSlides={content.media.llmSlides}
+    />
+    <HomeFeatureMain
+      lang={lang}
+      feature={content.feature}
+      featureImage={content.media.featureImage}
+      isHideTopTitle={true}
+    />
+  </div>
+);
+```
+
+Codex may rebuild this into dedicated Smart Food AI components and SCSS instead of directly reusing the existing components.
+
+### 2. Navbar Label Update
+
+Replace the existing primary navigation label:
+
+```text
+AI Integration -> Smart Food AI
+```
+
+Reason:
+
+- `AI Integration` already exists in the footer under Technology.
+- Primary navigation should highlight the real production capability and investor-facing Smart Food AI project.
+
+Recommended route:
+
+```text
+/[locale]/smart-food-ai/
+```
+
+### 3. Footer Link Update
+
+Change the footer label/link for AI Integration from:
+
+```text
+https://www.chornplanet.com/en/technical-expertise/ai-solutions/
+```
+
+to:
+
+```text
+https://www.chornplanet.com/en/ai-companions/fah/
+```
+
+### 4. Premium Poster-to-UI Storytelling
+
+Convert the Smart Food poster concept into responsive Next.js pages/components/SCSS.
+
+The page should explain:
+
+- how Smart Food AI works
+- end-to-end workflow
+- production launch from local business in Chiang Mai
+- key platform features
+- business value and readiness
+- ChornPlanet ability to build AI-native products
+
+It must not expose low-level technical detail such as LangGraph, LangChain, RAG, vector databases, model orchestration, or internal implementation specifics.
+
+### 5. Visual Direction
+
+Use ChornPlanet / Chorn DNA premium image direction:
+
+- young men/women, 19–22 years old
+- premium lifestyle and restaurant/food service atmosphere
+- modern Chiang Mai/local-business production context
+- luxury editorial but practical platform-readiness feeling
+- AI-native capability shown through UI, workflow, and service experience, not through raw technical diagrams
+
+### 6. Content Strategy
+
+Start with English-only content.
+
+Allowed first content options:
+
+```text
+Option A: hardcoded local content in the page/component layer
+Option B: existing content loader/server service pattern
+Option C: MongoDB Atlas content document before launch
+```
+
+Final launch target:
+
+```text
+Push final content to MongoDB Atlas before production launch.
+```
+
+### 7. Reference Sources
+
+Use MenuMatch for Smart Food capability direction:
+
+```text
+https://github.com/khachornchit/menumatch/blob/main/.chatgpt/Agents.md
+```
+
+Use Chorn DNA for premium visual/story direction:
+
+```text
+https://github.com/khachornchit/chorn-dna/blob/main/.chatgpt/Agents.md
+```
+
+### 8. Acceptance Criteria
+
+- `/[locale]/smart-food-ai/` exists and renders correctly.
+- Primary navigation label uses `Smart Food AI` instead of `AI Integration`.
+- Footer AI Integration link points to `/[locale]/ai-companions/fah/`.
+- Smart Food AI page communicates real production readiness from local business in Chiang Mai.
+- Page explains workflow, features, and business value without exposing low-level technical details.
+- UI is premium, responsive, and implemented with Next.js components and SCSS.
+- English content is ready first.
+- MongoDB Atlas content push is planned before production launch.
+
+---
+
+# Phase 2: Existing Roadmap + New Platform Layout
+
+## Goal
+
+Phase 2 contains the broader ChornPlanet platform evolution from the existing roadmap and New Platform Layout plan.
+
+Primary planning files:
+
+```text
+.chatgpt/planning/chornplanet-roadmap.md
+.chatgpt/planning/feature-new-platform-layout.md
+```
+
+Phase 2 should preserve and continue the previous roadmap direction, but execute it under the new platform layout strategy.
+
+## Phase 2 Platform Layout Direction
+
+Primary identity:
+
+```text
+ChornPlanet
+Luxury Civilization Media & Commerce Platform
+```
+
+Recommended primary navigation:
+
+```text
+World | Outfit | Media | Commerce | Smart Food | Luxury
+```
+
+Legacy technical pages should remain discoverable in the footer instead of dominating the primary navigation.
+
+## Existing Roadmap Items Preserved Under Phase 2
+
+The following previous roadmap directions remain valid under Phase 2:
+
+1. MCP Agent Workspace Foundation
+2. Repository Understanding and Platform Maps
+3. Multi-Repo MCP Integration Contract
+4. SEO and LLM Visibility
+5. Content Draft Foundation
+6. Outfit / Civilization Content Draft Pipeline
+7. Metadata to MongoDB Migration
+8. Analytics Growth Foundation and MCP-Invoked Data Access
+9. TikTok-first Commerce Linking
+10. Daily Media Digest Draft Pipeline
+11. Smart Food Evolution and MenuMatch Integration
+12. Controlled Automation and Publishing
+
+These should be implemented as separate feature plans and branches, not as one large feature.
+
+## Phase 2 New Feature Note
+
+Add a future feature direction:
+
+```text
+Crypto Currency and Blockchain Integration
+```
+
+Initial positioning:
+
+- future blockchain-enabled commerce story
+- future token/payment/loyalty exploration only after the core platform is stable
+- no production crypto payment, wallet custody, token launch, trading, or financial integration until a dedicated planning file, legal/compliance review, and explicit approval exist
+
+Recommended future planning file:
+
+```text
+.chatgpt/planning/feature-crypto-blockchain-integration.md
+```
+
 ## Multi-Repo Cooperation Model
 
-ChornPlanet should cooperate with Chorn DNA through two layers:
+ChornPlanet should cooperate with Chorn DNA and MenuMatch through two layers:
 
 ```text
 1. .mcp <-> .mcp
    Agent-level cooperation for planning, contracts, authority, policies, and workflows.
 
 2. REST <-> REST
-   Runtime cooperation between ChornPlanet Next.js and the future Chorn DNA Go backend.
+   Runtime cooperation between ChornPlanet Next.js, future Chorn DNA services, and MenuMatch backend services.
 ```
 
 ### ChornPlanet responsibility
@@ -79,12 +352,13 @@ ChornPlanet owns the platform layer:
 
 ```text
 - website and content platform
+- investor-facing showcase pages
 - content draft foundation
 - outfit/civilization content draft pipeline
 - commerce and marketplace linking direction
 - SEO and LLM visibility
 - analytics growth foundation
-- Smart Food web evolution
+- Smart Food AI web presentation
 - client adapters to external authority systems
 ```
 
@@ -97,276 +371,40 @@ Chorn DNA owns the DNA authority layer:
 - AutoScene validation
 - Zone List -> Zone File -> exactly one Sub-Zone
 - ImagePrompt / VdoPrompt / StoryPostEngine contract validation
-- Go backend validation APIs
+- premium ChornPlanet visual/story direction
 ```
 
-### Future MenuMatch responsibility
+### MenuMatch responsibility
 
-MenuMatch can join later as the Smart Food backend layer:
+MenuMatch owns or supports the Smart Food backend layer:
 
 ```text
 - menu matching
-- RAG/menu question answering
+- conversational commerce
 - order-related backend behavior
-- Smart Food conversational commerce
+- food/menu question answering
+- Smart Food production workflow direction
 ```
-
-## Roadmap Phases
-
-### Phase 1: MCP Agent Workspace Foundation
-
-Goal:
-
-Create `.mcp` as the shared agent workspace for ChatGPT and Codex.
-
-Deliverables:
-
-- `.mcp/README.md`
-- `.mcp/manifest.yaml`
-- resources, policies, tools, and workflows
-- planning files for platform roadmap and implementation queue
-
-### Phase 2: Repository Understanding and Platform Maps
-
-Goal:
-
-Create repository maps so agents understand routing, locales, SCSS/Tailwind, UX/UI, navigation, layout, metadata, server architecture, deployment, and improvement phases.
-
-Deliverables:
-
-```text
-.mcp/repository/
-  overview.md
-  routing-map.md
-  locale-i18n-map.md
-  layout-navigation-map.md
-  styling-map.md
-  ux-ui-map.md
-  metadata-seo-map.md
-  content-data-map.md
-  server-architecture-map.md
-  deployment-map.md
-  improvement-phase-map.md
-```
-
-### Phase 3: Multi-Repo MCP Integration Contract
-
-Goal:
-
-Define how ChornPlanet consumes Chorn DNA authority through `.mcp` before runtime APIs are implemented.
-
-Deliverables in ChornPlanet:
-
-```text
-.mcp/integrations/chorn-dna.md
-.mcp/tools/integration-tools.yaml
-.mcp/workflows/chorn-dna-integration.md
-.chatgpt/planning/feature-mcp-multi-repo.md
-```
-
-Expected deliverables in Chorn DNA:
-
-```text
-.mcp/integrations/chornplanet.md
-.chatgpt/planning/feature-mcp-multi-repo.md
-```
-
-### Phase 4: SEO and LLM Visibility
-
-Goal:
-
-Add public AI/search visibility files.
-
-Deliverables:
-
-```text
-/llm.txt
-/llm-full.txt
-```
-
-### Phase 5: Content Draft Foundation
-
-Goal:
-
-Create safe internal content draft model and workflow before automation or external publishing.
-
-Content types:
-
-- news
-- entertainment
-- technology
-- outfit
-- civilization clothing
-- commerce
-- Smart Food
-- luxury
-
-### Phase 6: Outfit / Civilization Content Draft Pipeline
-
-Goal:
-
-Use Chorn DNA authority to create draft-only outfit/civilization content plans.
-
-Runtime future flow:
-
-```text
-ChornPlanet draft request
-  ↓ REST
-Chorn DNA Go validation API
-  ↓
-valid/invalid DNA response
-  ↓
-ChornPlanet stores or updates draft
-```
-
-### Phase 7: Metadata to MongoDB Migration
-
-Goal:
-
-Migrate hardcoded metadata under `src/metadata` to MongoDB-backed metadata service with fallback.
-
-### Phase 8: Analytics Growth Foundation and MCP-Invoked Data Access
-
-Goal:
-
-Create on-demand analytics APIs and services so ChatGPT and Codex can gather data for planning and improvement.
-
-Sources:
-
-- Google Search Console
-- Google Analytics
-- Vercel / Speed Insights
-- future approved commerce/social signals
-
-### Phase 9: TikTok-first Commerce Linking
-
-Goal:
-
-Connect content drafts and product stories to TikTok-first product/linking strategy before expanding to Shopee, Lazada, Amazon, and owned commerce.
-
-### Phase 10: Daily Media Digest Draft Pipeline
-
-Goal:
-
-Create draft-first news / entertainment / technology digest pipeline.
-
-No external publishing until approval.
-
-### Phase 11: Smart Food Evolution and MenuMatch Integration
-
-Goal:
-
-Plan and later implement ChornPlanet <-> MenuMatch cooperation for Smart Food web experience.
-
-Possible future flow:
-
-```text
-ChornPlanet Next.js
-  ↓ REST
-MenuMatch FastAPI
-  ↓
-menu matching / favorite meals / food order flow
-```
-
-### Phase 12: Controlled Automation and Publishing
-
-Goal:
-
-Only after draft, validation, analytics, and approval workflows are stable, introduce controlled publishing automation.
 
 ## Immediate Feature Queue
 
 Recommended next implementation features:
 
-1. `feature-mcp-multi-repo`
-2. `mcp-repository-understanding-upgrade`
-3. `llm-visibility-files`
-4. `content-draft-foundation`
-5. `outfit-civilization-content-draft-pipeline`
-6. `metadata-mongodb-migration`
-7. `analytics-growth-foundation`
-8. `analytics-mcp-data-access`
-9. `chorn-dna-client-adapter`
-10. `tiktok-product-linking-draft`
-11. `daily-media-digest-draft`
-12. `smartfood-line-login-planning`
-
-## Deferred Runtime Implementation Items From MCP Phase 2
-
-The `feature-mcp-phase2-platform-roadmap` implementation is documentation and contract design only. The following items are intentionally not implemented there and should become future planning files before runtime code is added.
-
-### Analytics Growth Foundation
-
-Future planning file:
-
-```text
-.chatgpt/planning/feature-analytics-growth-foundation.md
-```
-
-Scope:
-
-- aggregate analytics query model
-- growth summary report shape
-- instrumentation gap report shape
-- route/category metric map
-- report persistence decision: API response, `.mcp/analytics/reports/`, database collection, or a staged combination
-
-Non-goals until approval:
-
-- no Google credentials
-- no production API connection
-- no tracking config writes
-
-### Analytics MCP Data Access
-
-Future planning file:
-
-```text
-.chatgpt/planning/feature-analytics-mcp-data-access.md
-```
-
-Proposed future runtime structure:
-
-```text
-src/app/api/analytics/search-console/route.ts
-src/app/api/analytics/google-analytics/route.ts
-src/app/api/analytics/growth-summary/route.ts
-
-server/core/domain/analytics-query.entity.ts
-server/core/domain/analytics-growth-summary.entity.ts
-server/core/ports/search-console.interface.ts
-server/core/ports/google-analytics.interface.ts
-server/core/services/analytics-growth.service.ts
-server/adapters/outbound/google/search-console.repository.ts
-server/adapters/outbound/google/google-analytics.repository.ts
-```
-
-Required decisions before implementation:
-
-- Google Search Console source property
-- Google Analytics source property
-- credential storage and rotation path
-- internal API authorization model
-- allowed aggregate dimensions
-- whether generated summaries stay in API responses, `.mcp/analytics/reports/`, MongoDB, or all three
-
-Safety rules:
-
-- API access to Google Search Console and Google Analytics requires explicit approval.
-- Credentials must remain in environment variables or approved secret stores.
-- Prefer aggregate metrics.
-- Do not expose personal user data.
-- If data is unavailable, return an instrumentation gap report instead of guessing.
-
-### Always-On Monitoring
-
-Future planning file:
-
-```text
-.chatgpt/planning/feature-analytics-scheduled-monitoring.md
-```
-
-This should happen only after on-demand analytics access is useful and approved. Initial Phase 6 does not require automatic daily monitoring.
+1. `feature-smart-food-ai`
+2. `feature-new-platform-layout`
+3. `feature-mcp-multi-repo`
+4. `mcp-repository-understanding-upgrade`
+5. `llm-visibility-files`
+6. `content-draft-foundation`
+7. `outfit-civilization-content-draft-pipeline`
+8. `metadata-mongodb-migration`
+9. `analytics-growth-foundation`
+10. `analytics-mcp-data-access`
+11. `chorn-dna-client-adapter`
+12. `tiktok-product-linking-draft`
+13. `daily-media-digest-draft`
+14. `smartfood-line-login-planning`
+15. `crypto-blockchain-integration-planning`
 
 ## Safety Rules
 
@@ -374,16 +412,20 @@ This should happen only after on-demand analytics access is useful and approved.
 - REST APIs execute runtime communication.
 - ChornPlanet must not duplicate Chorn DNA authority rules.
 - ChornPlanet should call Chorn DNA validation APIs when runtime validation exists.
+- Smart Food AI page may explain capability but must not expose internal technical architecture unnecessarily.
 - External publishing requires explicit approval.
 - Marketplace writes require explicit approval.
 - Smart Food customer/order/payment mutations require explicit approval.
 - Production authentication changes require explicit approval.
+- Crypto/blockchain runtime features require dedicated planning, legal/compliance review, and explicit approval.
 - Secrets and credentials must not be committed.
 
-## Acceptance Criteria
+## Roadmap Acceptance Criteria
 
-- Roadmap defines ChornPlanet platform direction.
-- Roadmap defines ChornPlanet <-> Chorn DNA cooperation through `.mcp <-> .mcp` and future `REST <-> REST`.
-- Roadmap preserves Chorn DNA as the authority for StoryGenProduct, AutoScene, and zone/sub-zone resolution.
-- Roadmap includes future MenuMatch integration as a later Smart Food phase.
-- Roadmap can be used by Codex to create implementation branches per feature.
+- Roadmap clearly separates Phase 1 and Phase 2.
+- Phase 1 prioritizes Smart Food AI on the existing layout.
+- Phase 1 references the dedicated feature plan.
+- Phase 2 preserves the existing roadmap and New Platform Layout direction.
+- Phase 2 includes the future Crypto Currency and Blockchain Integration note.
+- ChornPlanet, Chorn DNA, and MenuMatch responsibilities remain clearly separated.
+- The roadmap can be used by Codex to create implementation branches per feature.
