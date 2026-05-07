@@ -7,6 +7,7 @@ import {
 } from "@/core/domain/policy-content.entity";
 import {PolicyContentService} from "@/core/services/policy-content.service";
 import {PolicyContentRepository} from "@/adapters/outbound/mongo.repository/policy-content.repository";
+import {loadLocalizedContentWithFallback} from "@/lib/localized-content/localizedContentFallback";
 
 const policyContentService = new PolicyContentService(new PolicyContentRepository());
 const POLICY_CONTENT_LIST_TAG = 'policy-content';
@@ -64,6 +65,14 @@ export async function getPolicyContent(locale: string): Promise<PolicyContentPay
     );
 
     return getCachedContent();
+}
+
+export async function getPolicyContentForPublicPage(locale: string): Promise<PolicyContentPayload> {
+    return loadLocalizedContentWithFallback({
+        locale: normalizePolicyContentLocale(locale),
+        context: 'policy content public render',
+        load: getPolicyContent,
+    });
 }
 
 export async function getAllPolicyContent(): Promise<PolicyContentResponse[]> {

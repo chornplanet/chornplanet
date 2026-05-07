@@ -9,6 +9,7 @@ import {LayoutContentService} from "@/core/services/layout-content.service";
 import {LayoutContentRepository} from "@/adapters/outbound/mongo.repository/layout-content.repository";
 import {INavbar} from "@/lib/model/INavbar";
 import {IFooter, IFooterDetail} from "@/lib/model/IFooter";
+import {loadLocalizedContentWithFallback} from "@/lib/localized-content/localizedContentFallback";
 
 const layoutContentService = new LayoutContentService(new LayoutContentRepository());
 const LAYOUT_CONTENT_LIST_TAG = 'layout-content';
@@ -150,6 +151,14 @@ export async function getLayoutContent(locale: string): Promise<LayoutContentPay
     );
 
     return getCachedContent();
+}
+
+export async function getLayoutContentForPublicPage(locale: string): Promise<LayoutContentPayload> {
+    return loadLocalizedContentWithFallback({
+        locale: normalizeLayoutContentLocale(locale),
+        context: 'layout content public render',
+        load: getLayoutContent,
+    });
 }
 
 export async function getAllLayoutContent(): Promise<LayoutContentResponse[]> {

@@ -2,7 +2,7 @@ import React from "react";
 import CloudExperience from "@/components/Common/CloudExperience";
 import ServicesDetailsGitLab from "@/components/Services/cloud-devops/gitlab/ServicesDetailsGitLab";
 import {Metadata} from "next";
-import {getTechnicalExpertiseContent} from "@/lib/technical-expertise-content/technicalExpertiseContent.service";
+import {getTechnicalExpertiseContentForPublicPage} from "@/lib/technical-expertise-content/technicalExpertiseContent.service";
 import {SchemaMarkupServicePage} from "@/components/GoogleSchemaMarkup/SchemaMarkupServicePage";
 import {headers} from "next/headers";
 import {MetadataGitLab} from "@/metadata/main/devops/MetadataGitLab";
@@ -16,7 +16,7 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function Page() {
     const headers15 = await headers();
     const lang = headers15.get('x-locale') || 'en';
-    const technicalContent = await getTechnicalExpertiseContent(lang);
+    const technicalContent = await getTechnicalExpertiseContentForPublicPage(lang);
 
     return (
         <div className="smart-container-top">

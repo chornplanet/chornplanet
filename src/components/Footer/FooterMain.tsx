@@ -9,10 +9,10 @@ import FooterSmartCity from "@/components/Footer/smart-footer/FooterSmartCity";
 import FooterConnect from "@/components/Footer/smart-footer/FooterConnect";
 import FooterTechnology from "@/components/Footer/smart-footer/FooterTechnology";
 import {IFooter} from "@/lib/model/IFooter";
-import {getLayoutContent} from "@/lib/layout-content/layoutContent.service";
+import {getLayoutContentForPublicPage} from "@/lib/layout-content/layoutContent.service";
 
 export default async function FooterMain({lang, footer}: { lang: string, footer?: IFooter }) {
-    const resolvedFooter = footer ?? (await getLayoutContent(lang)).footer;
+    const resolvedFooter = footer ?? (await getLayoutContentForPublicPage(lang)).footer;
 
     return (
         <>

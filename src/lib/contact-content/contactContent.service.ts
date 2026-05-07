@@ -7,6 +7,7 @@ import {
 } from "@/core/domain/contact-content.entity";
 import {ContactContentService} from "@/core/services/contact-content.service";
 import {ContactContentRepository} from "@/adapters/outbound/mongo.repository/contact-content.repository";
+import {loadLocalizedContentWithFallback} from "@/lib/localized-content/localizedContentFallback";
 
 const contactContentService = new ContactContentService(new ContactContentRepository());
 const CONTACT_CONTENT_LIST_TAG = 'contact-content';
@@ -60,6 +61,14 @@ export async function getContactContent(locale: string): Promise<ContactContentP
     );
 
     return getCachedContent();
+}
+
+export async function getContactContentForPublicPage(locale: string): Promise<ContactContentPayload> {
+    return loadLocalizedContentWithFallback({
+        locale: normalizeContactContentLocale(locale),
+        context: 'contact content public render',
+        load: getContactContent,
+    });
 }
 
 export async function getAllContactContent(): Promise<ContactContentResponse[]> {

@@ -15,8 +15,8 @@ import UrbanSignals from '@/components/Home/UrbanSignals'
 import EditorialPositioning from '@/components/Home/EditorialPositioning'
 import {ISmartCityItem} from "@/lib/model/ISmartCity";
 import SmartCityMain from "@/components/SmartCity/ChiangMai/SmartCityMain";
-import {getHomePageContent} from "@/lib/homepage-content/homePageContent.service";
-import {getSmartCityChiangMaiContent} from "@/lib/smart-city-chiang-mai-content/smartCityChiangMaiContent.service";
+import {getHomePageContentForPublicPage} from "@/lib/homepage-content/homePageContent.service";
+import {getSmartCityChiangMaiContentForPublicPage} from "@/lib/smart-city-chiang-mai-content/smartCityChiangMaiContent.service";
 
 function getSlugFromPath(path: string): string | null {
     const segments = path.split('/').filter(Boolean);
@@ -32,7 +32,7 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function Home() {
     const headers15 = await headers();
     const lang = headers15.get('x-locale') || 'en';
-    const homePageContent = await getHomePageContent(lang);
+    const homePageContent = await getHomePageContentForPublicPage(lang);
     const localBusinessSchema = {
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
@@ -69,7 +69,7 @@ export default async function Home() {
     };
     const smartCityHighlightSlug = getSlugFromPath(homePageContent.smartCityHighlight.link);
     const smartCityContent = smartCityHighlightSlug
-        ? await getSmartCityChiangMaiContent(lang, smartCityHighlightSlug).catch(() => null)
+        ? await getSmartCityChiangMaiContentForPublicPage(lang, smartCityHighlightSlug).catch(() => null)
         : null;
     const smartCityItem: ISmartCityItem = smartCityContent?.item ?? homePageContent.smartCityHighlight;
 

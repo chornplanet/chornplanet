@@ -10,8 +10,8 @@ import HomeFeatureMain from "@/components/Features/HomeFeatureMain";
 
 import SmartCityMain from "@/components/SmartCity/ChiangMai/SmartCityMain";
 import {getMetaSmartCity} from "@/metadata/smart-city/getMetaSmartCity";
-import {getSmartCityChiangMaiContent} from "@/lib/smart-city-chiang-mai-content/smartCityChiangMaiContent.service";
-import {getAiCompanionsContent} from "@/lib/ai-companions-content/aiCompanionsContent.service";
+import {getSmartCityChiangMaiContentForPublicPage} from "@/lib/smart-city-chiang-mai-content/smartCityChiangMaiContent.service";
+import {getAiCompanionsContentForPublicPage} from "@/lib/ai-companions-content/aiCompanionsContent.service";
 
 export async function generateMetadata(
     {params}: { params: Promise<{ slug: string }> }
@@ -31,10 +31,10 @@ export default async function Page(
     const lang = headers15.get("x-locale") || "en";
 
     const {slug} = await params
-    const smartCityContent = await getSmartCityChiangMaiContent(lang, slug).catch(() => null);
+    const smartCityContent = await getSmartCityChiangMaiContentForPublicPage(lang, slug).catch(() => null);
     if (!smartCityContent?.item) notFound();
 
-    const aiContent = await getAiCompanionsContent(lang);
+    const aiContent = await getAiCompanionsContentForPublicPage(lang);
 
     return (
         <div className="container">

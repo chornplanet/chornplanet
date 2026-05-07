@@ -8,9 +8,9 @@ import AiSolutionsMain from "@/components/AiSolutions/AiSolutionsMain";
 import React from "react";
 import CloudExperience from "@/components/Common/CloudExperience";
 import HomeFeatureMain from "@/components/Features/HomeFeatureMain";
-import {getGalleryContent} from "@/lib/gallery-content/galleryContent.service";
-import {getTechnicalExpertiseContent} from "@/lib/technical-expertise-content/technicalExpertiseContent.service";
-import {getAiCompanionsContent} from "@/lib/ai-companions-content/aiCompanionsContent.service";
+import {getGalleryContentForPublicPage} from "@/lib/gallery-content/galleryContent.service";
+import {getTechnicalExpertiseContentForPublicPage} from "@/lib/technical-expertise-content/technicalExpertiseContent.service";
+import {getAiCompanionsContentForPublicPage} from "@/lib/ai-companions-content/aiCompanionsContent.service";
 
 export async function generateMetadata(): Promise<Metadata> {
     const headers15 = await headers();
@@ -21,9 +21,9 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function Page() {
     const headers15 = await headers();
     const lang = headers15.get('x-locale') || 'en';
-    const galleryContent = await getGalleryContent(lang);
-    const technicalContent = await getTechnicalExpertiseContent(lang);
-    const aiCompanionsContent = await getAiCompanionsContent(lang);
+    const galleryContent = await getGalleryContentForPublicPage(lang);
+    const technicalContent = await getTechnicalExpertiseContentForPublicPage(lang);
+    const aiCompanionsContent = await getAiCompanionsContentForPublicPage(lang);
 
     return (
         <div className="smart-container-top">

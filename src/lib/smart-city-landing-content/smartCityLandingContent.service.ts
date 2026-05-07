@@ -7,6 +7,7 @@ import {
 import {SmartCityLandingContentPayload} from "@/lib/model/ISmartCityLandingContent";
 import {SmartCityLandingContentService} from "@/core/services/smart-city-landing-content.service";
 import {SmartCityLandingContentRepository} from "@/adapters/outbound/mongo.repository/smart-city-landing-content.repository";
+import {loadLocalizedContentWithFallback} from "@/lib/localized-content/localizedContentFallback";
 
 const smartCityLandingContentService = new SmartCityLandingContentService(new SmartCityLandingContentRepository());
 const SMART_CITY_LANDING_CONTENT_LIST_TAG = 'smart-city-landing-content';
@@ -52,6 +53,17 @@ export async function getSmartCityLandingContent(locale: string, slug: string): 
     );
 
     return getCachedContent();
+}
+
+export async function getSmartCityLandingContentForPublicPage(
+    locale: string,
+    slug: string
+): Promise<SmartCityLandingContentPayload> {
+    return loadLocalizedContentWithFallback({
+        locale: normalizeSmartCityLandingContentLocale(locale),
+        context: `smart city landing content public render slug="${slug}"`,
+        load: (resolvedLocale) => getSmartCityLandingContent(resolvedLocale, slug),
+    });
 }
 
 export async function getAllSmartCityLandingContent(): Promise<SmartCityLandingContentResponse[]> {

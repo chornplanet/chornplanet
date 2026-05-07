@@ -4,7 +4,7 @@ import AiSolutionsMain from "@/components/AiSolutions/AiSolutionsMain";
 import {Metadata} from "next";
 import {headers} from "next/headers";
 import {MetadataLlmAi} from "@/metadata/main/MetadataLlmAi";
-import {getAiCompanionsContent} from "@/lib/ai-companions-content/aiCompanionsContent.service";
+import {getAiCompanionsContentForPublicPage} from "@/lib/ai-companions-content/aiCompanionsContent.service";
 
 export async function generateMetadata(): Promise<Metadata> {
     const headers15 = await headers();
@@ -15,7 +15,7 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function Page() {
     const headers15 = await headers();
     const lang = headers15.get('x-locale') || 'en';
-    const {service, demo, media} = await getAiCompanionsContent(lang);
+    const {service, demo, media} = await getAiCompanionsContentForPublicPage(lang);
 
     return (
         <div className="smart-container-top">

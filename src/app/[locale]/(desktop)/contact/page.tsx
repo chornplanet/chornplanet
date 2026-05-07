@@ -4,7 +4,7 @@ import {headers} from "next/headers";
 import ContactContent from "@/components/Contact/ContactContent";
 import React from "react";
 import {MetadataContact} from "@/metadata/main/MetadataContact";
-import {getContactContent} from "@/lib/contact-content/contactContent.service";
+import {getContactContentForPublicPage} from "@/lib/contact-content/contactContent.service";
 
 export async function generateMetadata(): Promise<Metadata> {
     const headers15 = await headers();
@@ -15,7 +15,7 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function Page() {
     const headers15 = await headers();
     const lang = headers15.get('x-locale') || 'en';
-    const contactContent = await getContactContent(lang);
+    const contactContent = await getContactContentForPublicPage(lang);
 
     return (
         <div className="smart-container-top">

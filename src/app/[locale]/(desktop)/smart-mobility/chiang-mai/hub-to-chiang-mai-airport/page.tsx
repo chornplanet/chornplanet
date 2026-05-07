@@ -6,8 +6,8 @@ import HomeFeatureMain from "@/components/Features/HomeFeatureMain";
 import HubToChiangMaiAirportMain
     from "@/components/SmartMobility/ChiangMai/Main/HubToChiangMaiAirportMain";
 import {MetaHubChiangMaiAirport} from "@/metadata/smart-mobility/chiang-mai/MetaHubChiangMaiAirport";
-import {getSmartMobilityChiangMaiContent} from "@/lib/smart-mobility-chiang-mai-content/smartMobilityChiangMaiContent.service";
-import {getAiCompanionsContent} from "@/lib/ai-companions-content/aiCompanionsContent.service";
+import {getSmartMobilityChiangMaiContentForPublicPage} from "@/lib/smart-mobility-chiang-mai-content/smartMobilityChiangMaiContent.service";
+import {getAiCompanionsContentForPublicPage} from "@/lib/ai-companions-content/aiCompanionsContent.service";
 
 export async function generateMetadata(): Promise<Metadata> {
     const headers15 = await headers();
@@ -19,8 +19,8 @@ export default async function Page() {
     const headers15 = await headers();
     const lang = headers15.get('x-locale') || 'en';
     const [content, aiContent] = await Promise.all([
-        getSmartMobilityChiangMaiContent(lang, 'hub-to-chiang-mai-airport'),
-        getAiCompanionsContent(lang),
+        getSmartMobilityChiangMaiContentForPublicPage(lang, 'hub-to-chiang-mai-airport'),
+        getAiCompanionsContentForPublicPage(lang),
     ]);
 
     return (

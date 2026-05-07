@@ -7,6 +7,7 @@ import {
 import {SmartMobilityChiangMaiContentPayload} from "@/lib/model/ISmartMobilityChiangMai";
 import {SmartMobilityChiangMaiContentService} from "@/core/services/smart-mobility-chiang-mai-content.service";
 import {SmartMobilityChiangMaiContentRepository} from "@/adapters/outbound/mongo.repository/smart-mobility-chiang-mai-content.repository";
+import {loadLocalizedContentWithFallback} from "@/lib/localized-content/localizedContentFallback";
 
 const smartMobilityChiangMaiContentService = new SmartMobilityChiangMaiContentService(new SmartMobilityChiangMaiContentRepository());
 const SMART_MOBILITY_CHIANG_MAI_CONTENT_LIST_TAG = 'smart-mobility-chiang-mai-content';
@@ -52,6 +53,17 @@ export async function getSmartMobilityChiangMaiContent(locale: string, slug: str
     );
 
     return getCachedContent();
+}
+
+export async function getSmartMobilityChiangMaiContentForPublicPage(
+    locale: string,
+    slug: string
+): Promise<SmartMobilityChiangMaiContentPayload> {
+    return loadLocalizedContentWithFallback({
+        locale: normalizeSmartMobilityChiangMaiContentLocale(locale),
+        context: `smart mobility Chiang Mai content public render slug="${slug}"`,
+        load: (resolvedLocale) => getSmartMobilityChiangMaiContent(resolvedLocale, slug),
+    });
 }
 
 export async function getAllSmartMobilityChiangMaiContent(): Promise<SmartMobilityChiangMaiContentResponse[]> {

@@ -5,8 +5,8 @@ import AiSolutionsMain from "@/components/AiSolutions/AiSolutionsMain";
 import HomeFeatureMain from "@/components/Features/HomeFeatureMain";
 import HubToDoiSuthepMain from "@/components/SmartMobility/ChiangMai/Main/HubToDoiSuthepMain";
 import {MetaHubDoiSuthep} from "@/metadata/smart-mobility/chiang-mai/MetaHubDoiSuthep";
-import {getSmartMobilityChiangMaiContent} from "@/lib/smart-mobility-chiang-mai-content/smartMobilityChiangMaiContent.service";
-import {getAiCompanionsContent} from "@/lib/ai-companions-content/aiCompanionsContent.service";
+import {getSmartMobilityChiangMaiContentForPublicPage} from "@/lib/smart-mobility-chiang-mai-content/smartMobilityChiangMaiContent.service";
+import {getAiCompanionsContentForPublicPage} from "@/lib/ai-companions-content/aiCompanionsContent.service";
 
 export async function generateMetadata(): Promise<Metadata> {
     const headers15 = await headers();
@@ -18,8 +18,8 @@ export default async function Page() {
     const headers15 = await headers();
     const lang = headers15.get('x-locale') || 'en';
     const [content, aiContent] = await Promise.all([
-        getSmartMobilityChiangMaiContent(lang, 'hub-to-doi-suthep'),
-        getAiCompanionsContent(lang),
+        getSmartMobilityChiangMaiContentForPublicPage(lang, 'hub-to-doi-suthep'),
+        getAiCompanionsContentForPublicPage(lang),
     ]);
 
     return (

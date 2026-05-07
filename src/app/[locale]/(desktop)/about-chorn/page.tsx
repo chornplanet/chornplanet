@@ -7,8 +7,8 @@ import {MetadataAbout} from "@/metadata/main/MetadataAbout";
 import HomeBackEndContainer from "@/components/Common/HomeBackEnd/HomeBackEndContainer";
 import HomeFrontEndContainer from "@/components/Common/HomeFrontEnd/HomeFrontEndContainer";
 import CloudInfraPageMain from "@/components/Services/cloud-infrastructure-systems-architecture/CloudInfraPageMain";
-import {getAboutContent} from "@/lib/about-content/aboutContent.service";
-import {getTechnicalExpertiseContent} from "@/lib/technical-expertise-content/technicalExpertiseContent.service";
+import {getAboutContentForPublicPage} from "@/lib/about-content/aboutContent.service";
+import {getTechnicalExpertiseContentForPublicPage} from "@/lib/technical-expertise-content/technicalExpertiseContent.service";
 
 export async function generateMetadata(): Promise<Metadata> {
     const headers15 = await headers();
@@ -19,8 +19,8 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function Page() {
     const headers15 = await headers();
     const lang = headers15.get('x-locale') || 'en';
-    const aboutContent = await getAboutContent(lang);
-    const technicalContent = await getTechnicalExpertiseContent(lang);
+    const aboutContent = await getAboutContentForPublicPage(lang);
+    const technicalContent = await getTechnicalExpertiseContentForPublicPage(lang);
 
     return (
         <div className="smart-container-top">

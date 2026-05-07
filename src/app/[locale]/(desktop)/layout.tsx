@@ -24,7 +24,7 @@ import "@/styles/flaticon.css";
 import "react-accessible-accordion/dist/fancy-example.css";
 import "swiper/swiper-bundle.css";
 import {SpeedInsights} from "@vercel/speed-insights/next"
-import {getLayoutContent} from "@/lib/layout-content/layoutContent.service";
+import {getLayoutContentForPublicPage} from "@/lib/layout-content/layoutContent.service";
 
 // SCSS Custom
 import "@/styles/style.scss";
@@ -66,7 +66,7 @@ export default async function RootLayout({children,}: Readonly<{ children: React
     const headers15 = await headers();
     const lang: string = headers15.get('x-locale') || 'en';
     const isCookieConsent: boolean = headers15.get('x-cookie-consent') != 'false';
-    const layoutContent = await getLayoutContent(lang);
+    const layoutContent = await getLayoutContentForPublicPage(lang);
 
     return (
         <html lang={lang} data-scroll-behavior="smooth">

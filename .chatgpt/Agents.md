@@ -113,7 +113,7 @@ Codex should:
 8. After the feature is completed and merged, move the planning document to:
 
    ```text
-   .chatgpt/archived/feature-<feature-name>.md
+   .chatgpt/achieved/feature-<feature-name>.md
    ```
 
 ## Architecture Rule
@@ -138,6 +138,14 @@ Avoid adding new hardcoded content arrays into page files unless explicitly temp
 
 When the feature relates to media automation, outfit/civilization posting, commerce, Smart Food, analytics, SEO/LLM visibility, or Chorn DNA integration, ChatGPT should reference the relevant `.mcp/` resource, policy, tool, or workflow file.
 
+## Localized MongoDB Render Reliability
+
+Public localized pages should not crash when non-English MongoDB content is missing, incomplete, or temporarily unavailable. Public render loaders should try the requested locale first, then English, then a static fallback when one exists. Strict loaders should remain available for admin tools, migration scripts, audit scripts, and tests.
+
+When production shows a generic Server Components digest page, check Vercel logs by digest/time first. Then check missing locale documents, incomplete fields, missing nested slug/content, MongoDB transient errors, and `src/proxy.ts` request-header forwarding for `x-locale`, `x-cookie-consent`, and `x-pathname`. Do not fix this symptom only by increasing MongoDB timeout.
+
+Use `npm run audit:locale-content` to check MongoDB-backed public content completeness across supported locales.
+
 ## Completion Rule
 
 A feature is considered complete only when:
@@ -147,4 +155,4 @@ A feature is considered complete only when:
 - Tests or validation steps are completed.
 - Khachornchit's architecture direction has been followed.
 - The feature branch is ready for pull request or merge.
-- The planning file is moved from `.chatgpt/planning/` to `.chatgpt/archived/` after completion.
+- The planning file is moved from `.chatgpt/planning/` to `.chatgpt/achieved/` after completion.

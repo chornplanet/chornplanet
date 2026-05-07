@@ -10,12 +10,12 @@ import CitySystems from '@/components/Home/CitySystems'
 import GlobalPatterns from '@/components/Home/GlobalPatterns'
 import UrbanSignals from '@/components/Home/UrbanSignals'
 import EditorialPositioning from '@/components/Home/EditorialPositioning'
-import {getHomePageContent} from "@/lib/homepage-content/homePageContent.service";
+import {getHomePageContentForPublicPage} from "@/lib/homepage-content/homePageContent.service";
 
 export default async function SmartCityPage() {
     const headers15 = await headers();
     const lang = headers15.get("x-locale") || "en";
-    const homePageContent = await getHomePageContent(lang);
+    const homePageContent = await getHomePageContentForPublicPage(lang);
     const smartCityMain = homePageContent.smartCityMain;
 
     return (

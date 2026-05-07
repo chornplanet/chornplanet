@@ -172,6 +172,8 @@ Current fix pattern:
 - Keep bounded MongoDB timeouts in `server/infrastructure/db/infra.mongodb.ts`.
 - Wrap runtime content reads with `withMongoReadRetry(...)` in `server/adapters/outbound/mongo.repository/*-content.repository.ts`.
 - Keep `src/proxy.ts` request-header forwarding intact when editing locale or cookie handling.
+- Public localized pages must use public-safe content loaders that try the requested locale first, then English, then a static fallback when one exists. Keep strict loaders for APIs, admin tools, migration scripts, audit scripts, and tests.
+- Use `npm run audit:locale-content` to check MongoDB-backed public content completeness across all supported locales. Do not fix this symptom only by increasing MongoDB timeout.
 
 When this production symptom appears again, inspect Vercel function logs by digest/time first, then check MongoDB connectivity, missing/incomplete content records, and proxy request headers before changing page components.
 

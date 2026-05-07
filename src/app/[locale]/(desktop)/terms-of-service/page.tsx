@@ -3,7 +3,7 @@ import {IPolicyContent} from "@/lib/model/IPolicy";
 import type {Metadata} from "next";
 import {headers} from "next/headers";
 import {MetadataTermOfService} from "@/metadata/main/MetadataTermOfService";
-import {getPolicyContent} from "@/lib/policy-content/policyContent.service";
+import {getPolicyContentForPublicPage} from "@/lib/policy-content/policyContent.service";
 
 export async function generateMetadata(): Promise<Metadata> {
     const headers15 = await headers();
@@ -14,7 +14,7 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function TermsOfService() {
     const headers15 = await headers();
     const lang = headers15.get('x-locale') || 'en';
-    const {termOfService} = await getPolicyContent(lang);
+    const {termOfService} = await getPolicyContentForPublicPage(lang);
 
     return (
         <div className="terms-of-service-area smart-container-top">

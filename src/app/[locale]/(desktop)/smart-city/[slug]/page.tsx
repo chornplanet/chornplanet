@@ -9,7 +9,7 @@ import WhyItMatters from "@/components/SmartCity/WhyItMatters";
 import RelatesSignals from "@/components/SmartCity/RelatesSignals";
 import {Metadata} from "next";
 import {getMetaSmartCityLanding} from "@/metadata/smart-city-landing/getMetaSmartCityLanding";
-import {getSmartCityLandingContent} from "@/lib/smart-city-landing-content/smartCityLandingContent.service";
+import {getSmartCityLandingContentForPublicPage} from "@/lib/smart-city-landing-content/smartCityLandingContent.service";
 
 export async function generateMetadata(
     {params}: { params: Promise<{ slug: string }> }
@@ -29,7 +29,7 @@ export default async function Page(
     const lang = headers15.get("x-locale") || "en";
 
     const {slug} = await params
-    const data = await getSmartCityLandingContent(lang, slug).catch(() => null);
+    const data = await getSmartCityLandingContentForPublicPage(lang, slug).catch(() => null);
 
     if (!data?.content) notFound();
 
