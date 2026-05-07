@@ -285,35 +285,36 @@ Use this flow when preparing a fix, feature, docs update, or other task for prod
 
 1. Start from the approved feature branch for the current task. When the user explicitly asks to continue from the current branch, finish the task on that branch.
 2. Implement the change on the feature branch and preserve any intended `.codex/` updates on the same branch.
-3. When the user gives the command `ship to main`, move the completed planning document from `.chatgpt/planning/` to `.chatgpt/achieved/` before shipping. If the planning file is already achieved, leave it there.
-4. Verify the task branch with the smallest relevant checks, and run `npm run build` before merging production-facing runtime changes.
-5. Stage and commit all current work on the feature branch:
+3. Verify the task branch with the smallest relevant checks, and run `npm run build` before merging production-facing runtime changes.
+4. Once the final response can say `Verification: npm run build passed.`, stage and commit all current work on the feature branch:
 
    ```text
    git add -A
    git commit -m "<feature summary>"
    ```
 
-6. Push the feature branch to the task remote:
+5. Push the feature branch to `origin` so Khachornchit can run another test pass:
 
    ```text
    git push origin <feature-branch>
    ```
 
-7. Merge the latest `origin/main` into the feature branch:
+6. Stop after pushing the feature branch unless Khachornchit has already provided an approval signal in the same request. Continue shipping only after an explicit approval signal such as `ship -> main`, `ship to main`, or equivalent.
+7. When shipping is approved, move the completed planning document from `.chatgpt/planning/` to `.chatgpt/achieved/` before shipping. If the planning file is already achieved or no matching planning file exists, leave planning files unchanged.
+8. Merge the latest `origin/main` into the feature branch:
 
    ```text
    git fetch origin
    git merge origin/main
    ```
 
-8. Push the updated feature branch:
+9. Push the updated feature branch:
 
    ```text
    git push origin <feature-branch>
    ```
 
-9. Merge the feature branch into the latest `origin/main`:
+10. Merge the feature branch into the latest `origin/main`:
 
    ```text
    git switch main
@@ -321,7 +322,7 @@ Use this flow when preparing a fix, feature, docs update, or other task for prod
    git merge <feature-branch>
    ```
 
-10. Push `main` to all required remotes:
+11. Push `main` to all required remotes:
 
    ```text
    git push origin main
@@ -329,20 +330,20 @@ Use this flow when preparing a fix, feature, docs update, or other task for prod
    git push korapak main
    ```
 
-11. Delete the remote feature branch after `main` is pushed:
+12. Delete the remote feature branch after `main` is pushed:
 
    ```text
    git push origin --delete <feature-branch>
    git push chatgpt --delete <feature-branch>
    ```
 
-12. Delete the local feature branch after it has been merged and remote cleanup is complete:
+13. Delete the local feature branch after it has been merged and remote cleanup is complete:
 
    ```text
    git branch -D <feature-branch>
    ```
 
-13. After shipping, stay on `main` or return to a fresh branch for the next task.
+14. After shipping, stay on `main` or return to a fresh branch for the next task.
 
 ## Deployment And Automation
 

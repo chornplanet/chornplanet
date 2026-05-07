@@ -6,6 +6,13 @@ export function sanitizeUUID(text: string): string {
 }
 
 export function IsActiveNavbar(pathname: string, navbar: INavbar): boolean {
+    const normalizedPathname = pathname.endsWith("/") ? pathname : `${pathname}/`;
+    const normalizedActiveLinks = navbar.activeLinks?.map((link) => link.endsWith("/") ? link : `${link}/`);
+
+    if (normalizedActiveLinks?.length) {
+        return normalizedActiveLinks.some((link) => normalizedPathname.endsWith(link));
+    }
+
     const pathnames = pathname.split("/");
     const firstPathname = pathnames[2] ?? "";
 

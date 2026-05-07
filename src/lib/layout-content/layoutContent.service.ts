@@ -56,10 +56,7 @@ function normalizeSmartFoodAiNavbarItem(item: INavbar): INavbar {
         group: 'AI Integration',
         label: 'Smart Food AI',
         link: '/smart-food-ai/',
-        activeLinks: [
-            ...(item.activeLinks ?? []),
-            '/smart-food-ai/',
-        ],
+        activeLinks: ['/smart-food-ai/'],
     };
 }
 
