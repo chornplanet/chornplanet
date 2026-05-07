@@ -22,7 +22,7 @@ export default function HamburgerButton() {
             data-toggle="collapse"
             data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent"
-            aria-expanded="false"
+            aria-expanded={!mobileMenuVisible}
             aria-label="Toggle navigation"
         >
             <span className="icon-bar top-bar"></span>
