@@ -22,6 +22,7 @@
     background-color: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(6px);
     min-width: 130px;
+    margin: 0;
     padding: 5px 0;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     z-index: 1000;
@@ -30,25 +31,36 @@
   .dropdown-langs li,
   .dropdown-langs a {
     float: none;
+    position: relative;
     color: white;
     padding: 8px 20px;
     text-decoration: none;
     display: block;
+    width: 100%;
     text-align: left;
-    transition: background-color 0.2s ease, color 0.2s ease;
+    transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
   }
 
   .dropdown-langs li:hover,
-  .dropdown-langs a:hover {
+  .dropdown-langs a:hover,
+  .dropdown-active {
     cursor: pointer;
     background: linear-gradient(135deg, #fd9b5f, #f28c38); // invert ends for interaction
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
-    transform: translateY(-1px);
   }
 
   .dropdown-active {
-    transform: scale(0.97);
-    background: linear-gradient(135deg, #fd9b5f, #f28c38); // invert ends for interaction
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+    font-weight: 700;
+  }
+
+  .dropdown-active::before {
+    position: absolute;
+    top: 8px;
+    bottom: 8px;
+    left: 8px;
+    width: 3px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.9);
+    content: "";
   }
 }
