@@ -94,6 +94,19 @@ export const UrlMaps: IUrlImageMap[] = [
         images: []
     },
 
+    // smart-food-ai
+    {
+        url: '/smart-food-ai/',
+        images: [
+            {
+                path: ImageUrl.banner.banner1.path
+            },
+            {
+                path: ImageUrl.home.slides[0].image1200
+            }
+        ]
+    },
+
     //smart-mobility
     {
         url: '/smart-mobility/chiang-mai/',

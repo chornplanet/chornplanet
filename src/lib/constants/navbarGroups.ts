@@ -26,6 +26,10 @@ export const NavbarGroups: INavbarGroup[] = [
         firstPathname: "ai-companions",
     },
     {
+        group: "AI Integration",
+        firstPathname: "smart-food-ai",
+    },
+    {
         group: "About",
         firstPathname: "about-chorn",
     },

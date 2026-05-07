@@ -52,6 +52,7 @@ import "@/styles/urban-signals.scss"
 import "@/styles/editorial-positioning.scss"
 import "@/styles/smart-city-slug.scss"
 import "@/styles/smart-city-main.scss"
+import "@/styles/smart-food-ai.scss"
 import "@/styles/footer.scss"
 
 // Start

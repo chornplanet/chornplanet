@@ -54,6 +54,13 @@ export const MetaLinks: IMetaLinks = {
             alt: "Open graph image for AI-Ploy - LINE Chat AI Integration",
         }
     },
+    smartFoodAi: {
+        canonical: "/smart-food-ai/",
+        image: {
+            url: "/images-opengraph/banner/chorn-banner.jpg" + MetadataImageVersion,
+            alt: "Open graph image for Smart Food AI production platform",
+        }
+    },
     cloudSolutions: {
         canonical: "/technical-expertise/cloud-infrastructure-systems-architecture/",
         image: {

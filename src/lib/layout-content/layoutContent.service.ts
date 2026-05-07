@@ -7,6 +7,8 @@ import {
 } from "@/core/domain/layout-content.entity";
 import {LayoutContentService} from "@/core/services/layout-content.service";
 import {LayoutContentRepository} from "@/adapters/outbound/mongo.repository/layout-content.repository";
+import {INavbar} from "@/lib/model/INavbar";
+import {IFooter, IFooterDetail} from "@/lib/model/IFooter";
 
 const layoutContentService = new LayoutContentService(new LayoutContentRepository());
 const LAYOUT_CONTENT_LIST_TAG = 'layout-content';
@@ -41,7 +43,58 @@ function assertCompleteLayoutContent(
         );
     }
 
-    return databaseContent as LayoutContentPayload;
+    return normalizeSmartFoodAiLayoutContent(databaseContent as LayoutContentPayload);
+}
+
+function normalizeSmartFoodAiNavbarItem(item: INavbar): INavbar {
+    if (item.group !== 'AI Integration' && item.label !== 'AI Integration') {
+        return item;
+    }
+
+    return {
+        ...item,
+        group: 'AI Integration',
+        label: 'Smart Food AI',
+        link: '/smart-food-ai/',
+        activeLinks: [
+            ...(item.activeLinks ?? []),
+            '/smart-food-ai/',
+        ],
+    };
+}
+
+function normalizeSmartFoodAiFooterItem(item: IFooterDetail): IFooterDetail {
+    if (item.label !== 'AI Integration' && item.link !== '/technical-expertise/ai-solutions/') {
+        return item;
+    }
+
+    return {
+        ...item,
+        link: '/ai-companions/fah/',
+    };
+}
+
+function normalizeSmartFoodAiFooterGroup<T extends { items: IFooterDetail[] }>(group: T): T {
+    return {
+        ...group,
+        items: group.items.map(normalizeSmartFoodAiFooterItem),
+    };
+}
+
+function normalizeSmartFoodAiFooter(footer: IFooter): IFooter {
+    return {
+        ...footer,
+        important: normalizeSmartFoodAiFooterGroup(footer.important),
+        technology: normalizeSmartFoodAiFooterGroup(footer.technology),
+    };
+}
+
+function normalizeSmartFoodAiLayoutContent(content: LayoutContentPayload): LayoutContentPayload {
+    return {
+        ...content,
+        navbar: content.navbar.map(normalizeSmartFoodAiNavbarItem),
+        footer: normalizeSmartFoodAiFooter(content.footer),
+    };
 }
 
 export async function getLayoutContent(locale: string): Promise<LayoutContentPayload> {
