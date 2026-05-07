@@ -180,8 +180,9 @@
 
 .footer-container {
   background:
-    radial-gradient(circle at 12% 20%, rgba(6, 199, 85, 0.16), transparent 34%),
-    linear-gradient(135deg, #07130f 0%, #101914 46%, #f7faf8 46%, #f7faf8 100%);
+    radial-gradient(circle at 10% 18%, rgba(6, 199, 85, 0.14), transparent 32%),
+    radial-gradient(circle at 88% 16%, rgba(15, 145, 255, 0.1), transparent 30%),
+    linear-gradient(135deg, #f7faf8 0%, #eef7f2 52%, #f8fbfa 100%);
 
   .footer-left {
     padding: 34px 24px 30px;
@@ -235,6 +236,7 @@
   .footer-right {
     gap: 10px 0;
     padding: 34px 0 24px;
+    background: rgba(247, 250, 248, 0.94);
 
     .footer-right-column {
       .single-footer-widget {
