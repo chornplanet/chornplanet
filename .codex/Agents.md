@@ -267,22 +267,35 @@ Use this flow when preparing a fix, feature, docs update, or other task for prod
 
 1. Start from the approved feature branch for the current task. When the user explicitly asks to continue from the current branch, finish the task on that branch.
 2. Implement the change on the feature branch and preserve any intended `.codex/` updates on the same branch.
-3. Move the completed planning document from `.chatgpt/planning/` to `.chatgpt/achieved/`.
+3. When the user gives the command `ship to main`, move the completed planning document from `.chatgpt/planning/` to `.chatgpt/achieved/` before shipping. If the planning file is already achieved, leave it there.
 4. Verify the task branch with the smallest relevant checks, and run `npm run build` before merging production-facing runtime changes.
-5. Stage and commit the feature branch:
+5. Stage and commit all current work on the feature branch:
 
    ```text
    git add -A
    git commit -m "<feature summary>"
    ```
 
-6. Push the feature branch:
+6. Push the feature branch to the task remote:
 
    ```text
    git push origin <feature-branch>
    ```
 
-7. Ship to `main`:
+7. Merge the latest `origin/main` into the feature branch:
+
+   ```text
+   git fetch origin
+   git merge origin/main
+   ```
+
+8. Push the updated feature branch:
+
+   ```text
+   git push origin <feature-branch>
+   ```
+
+9. Merge the feature branch into the latest `origin/main`:
 
    ```text
    git switch main
@@ -290,27 +303,28 @@ Use this flow when preparing a fix, feature, docs update, or other task for prod
    git merge <feature-branch>
    ```
 
-8. Push `main` to the required remotes:
+10. Push `main` to all required remotes:
 
    ```text
    git push origin main
    git push chatgpt main
+   git push korapak main
    ```
 
-9. Delete the remote feature branch after `main` is pushed:
+11. Delete the remote feature branch after `main` is pushed:
 
    ```text
    git push origin --delete <feature-branch>
    git push chatgpt --delete <feature-branch>
    ```
 
-10. Delete the local feature branch after it has been merged and remote cleanup is complete:
+12. Delete the local feature branch after it has been merged and remote cleanup is complete:
 
    ```text
-   git branch -d <feature-branch>
+   git branch -D <feature-branch>
    ```
 
-11. After shipping, return to a fresh branch for the next task.
+13. After shipping, stay on `main` or return to a fresh branch for the next task.
 
 ## Deployment And Automation
 

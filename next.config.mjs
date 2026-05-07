@@ -118,6 +118,10 @@ const nextConfig = {
                 destination: 'https://cdn.chornplanet.com/smart-city/:path*'
             },
             {
+                source: '/images-opengraph/smart-food/:path*',
+                destination: 'https://cdn.chornplanet.com/smart-food/:path*'
+            },
+            {
                 source: '/images-opengraph/:path*',
                 destination: 'https://cdn.chornplanet.com/images-opengraph/:path*'
             },
@@ -149,6 +153,13 @@ const nextConfig = {
             {
                 source: '/smart-city/:path*',
                 destination: 'https://cdn.chornplanet.com/smart-city/:path*',
+                permanent: true,
+            },
+
+            // Smart Food
+            {
+                source: '/smart-food/:path*',
+                destination: 'https://cdn.chornplanet.com/smart-food/:path*',
                 permanent: true,
             },
 
