@@ -18,7 +18,7 @@ export default async function Page() {
     const contactContent = await getContactContentForPublicPage(lang);
 
     return (
-        <div className="smart-container-top">
+        <div className="smart-container-top-contact">
             <ContactContent contact={contactContent.contact} socialLinks={contactContent.socialLinks}/>
             <SchemaMarkupServicePage
                 name="Contact | Chorn Planet - Software Development, AI Integration, Web3, and Blockchain"

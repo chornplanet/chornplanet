@@ -13,10 +13,12 @@ export default function ContactContent({
 }) {
     return (
         <>
-            <div className="about-area pb-70">
+            <div className="about-area contact-premium-area pb-70">
                 <div className="container">
-                    <h1>{contact.contactInfo.title}</h1>
-                    <div className="row">
+                    <div className="premium-page-heading contact-premium-heading">
+                        <h1>{contact.contactInfo.title}</h1>
+                    </div>
+                    <div className="row contact-premium-grid">
                         <ContactLeft/>
                         <ContactRight contact={contact} socialLinks={socialLinks}/>
                     </div>

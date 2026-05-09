@@ -33,6 +33,10 @@ const SMART_FOOD_AI_FOOTER_LABELS: Record<string, string> = {
     th: 'สมาร์ทฟู้ด AI',
     zh: '智慧餐饮 AI',
 };
+const YOUTUBE_FOOTER_LINK: IFooterDetail = {
+    label: 'Youtube',
+    link: 'https://www.youtube.com/@chornplanet',
+};
 
 function getLayoutContentTag(locale: string) {
     return `layout-content:${normalizeLayoutContentLocale(locale)}`;
@@ -57,7 +61,7 @@ function assertCompleteLayoutContent(
         );
     }
 
-    return normalizeSmartFoodAiLayoutContent(databaseContent as LayoutContentPayload);
+    return normalizeLayoutContent(databaseContent as LayoutContentPayload);
 }
 
 function normalizeSmartFoodAiNavbarItem(item: INavbar): INavbar {
@@ -127,6 +131,40 @@ function normalizeSmartFoodAiLayoutContent(content: LayoutContentPayload): Layou
         ...content,
         navbar: content.navbar.map(normalizeSmartFoodAiNavbarItem),
         footer: normalizeSmartFoodAiFooter(content.locale, content.footer),
+    };
+}
+
+function normalizeYoutubeFooterConnect(footer: IFooter): IFooter {
+    const hasYoutube = footer.connect.items.some((item) => item.link === YOUTUBE_FOOTER_LINK.link);
+
+    if (hasYoutube) {
+        return footer;
+    }
+
+    const tiktokIndex = footer.connect.items.findIndex((item) => {
+        const label = item.label.toLowerCase();
+        const link = item.link.toLowerCase();
+        return label === 'tiktok' || link.includes('tiktok.com/@chornplanet');
+    });
+
+    const connectItems = [...footer.connect.items];
+    connectItems.splice(tiktokIndex >= 0 ? tiktokIndex + 1 : connectItems.length, 0, YOUTUBE_FOOTER_LINK);
+
+    return {
+        ...footer,
+        connect: {
+            ...footer.connect,
+            items: connectItems,
+        },
+    };
+}
+
+function normalizeLayoutContent(content: LayoutContentPayload): LayoutContentPayload {
+    const smartFoodAiContent = normalizeSmartFoodAiLayoutContent(content);
+
+    return {
+        ...smartFoodAiContent,
+        footer: normalizeYoutubeFooterConnect(smartFoodAiContent.footer),
     };
 }
 

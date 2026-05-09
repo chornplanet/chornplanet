@@ -23,7 +23,7 @@ export default async function Page() {
     const technicalContent = await getTechnicalExpertiseContentForPublicPage(lang);
 
     return (
-        <div className="smart-container-top">
+        <div className="smart-container-top-about">
             <AboutContent about={aboutContent.about} media={aboutContent.media}/>
             <CloudInfraPageMain
                 lang={lang}

@@ -8,11 +8,19 @@ import {
 import {ContactContentService} from "@/core/services/contact-content.service";
 import {ContactContentRepository} from "@/adapters/outbound/mongo.repository/contact-content.repository";
 import {loadLocalizedContentWithFallback} from "@/lib/localized-content/localizedContentFallback";
+import {IContactSocialLink} from "@/lib/model/IContact";
 
 const contactContentService = new ContactContentService(new ContactContentRepository());
 const CONTACT_CONTENT_LIST_TAG = 'contact-content';
 const isDevelopment = process.env.NODE_ENV !== 'production';
 const REQUIRED_CONTACT_CONTENT_FIELDS = ['contact', 'socialLinks'] as const;
+const YOUTUBE_CONTACT_LINK: IContactSocialLink = {
+    label: 'Youtube',
+    href: 'https://www.youtube.com/@chornplanet',
+    iconClassName: 'bx bxl-youtube',
+    linkClassName: 'youtube',
+    displayText: 'youtube.com/@chornplanet',
+};
 
 function getContactContentTag(locale: string) {
     return `contact-content:${normalizeContactContentLocale(locale)}`;
@@ -37,7 +45,29 @@ function assertCompleteContactContent(
         );
     }
 
-    return databaseContent as ContactContentPayload;
+    return normalizeContactSocialLinks(databaseContent as ContactContentPayload);
+}
+
+function normalizeContactSocialLinks(content: ContactContentPayload): ContactContentPayload {
+    const hasYoutube = content.socialLinks.some((item) => item.href === YOUTUBE_CONTACT_LINK.href);
+
+    if (hasYoutube) {
+        return content;
+    }
+
+    const tiktokIndex = content.socialLinks.findIndex((item) => {
+        const label = item.label.toLowerCase();
+        const href = item.href.toLowerCase();
+        return label === 'tiktok' || href.includes('tiktok.com/@chornplanet');
+    });
+
+    const socialLinks = [...content.socialLinks];
+    socialLinks.splice(tiktokIndex >= 0 ? tiktokIndex + 1 : socialLinks.length, 0, YOUTUBE_CONTACT_LINK);
+
+    return {
+        ...content,
+        socialLinks,
+    };
 }
 
 export async function getContactContent(locale: string): Promise<ContactContentPayload> {

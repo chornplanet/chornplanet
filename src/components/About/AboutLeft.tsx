@@ -6,7 +6,7 @@ import {AboutContentMedia} from "@/lib/model/IAbout";
 
 export default function AboutLeft({media}: { media: AboutContentMedia }) {
     return (
-        <div className="col-lg-4">
+        <div className="col-lg-4 about-chorn-premium-media-col">
             <div className="about-image-warp contact-image about-image-wrapper">
                 <Image
                     src={media.mainImage.image750}
