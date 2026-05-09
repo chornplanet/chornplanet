@@ -15,7 +15,7 @@ export default function AboutContent({
       <div className="about-area about-chorn-premium-area pb-70">
         <div className="container">
           <div className="premium-page-heading about-chorn-premium-heading">
-            {/* <h1>{about.title}</h1> */}
+            <h1>{about.title} Chorn Planet</h1>
           </div>
           <div className="row about-chorn-premium-grid pt-2">
             <AboutLeft media={media} />
