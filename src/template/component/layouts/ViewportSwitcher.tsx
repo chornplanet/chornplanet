@@ -1,23 +1,28 @@
 'use client'
 
-import {useEffect, useState} from 'react'
+import {useSyncExternalStore, type ReactNode} from 'react'
 import MobileLayout from '@/template/component/layouts/MobileLayout'
 import DesktopLayout from '@/template/component/layouts/DesktopLayout'
 
-export default function ViewportSwitcher({children}: { children: React.ReactNode }) {
-    const [isMobile, setIsMobile] = useState(false)
-    const [mounted, setMounted] = useState(false)
+function subscribeToResize(callback: () => void) {
+    window.addEventListener('resize', callback)
+    return () => window.removeEventListener('resize', callback)
+}
 
-    useEffect(() => {
-        const updateSize = () => setIsMobile(window.innerWidth < 768)
-        updateSize()
+function getViewportSnapshot() {
+    return window.innerWidth < 768
+}
 
-        window.addEventListener('resize', updateSize)
-        setMounted(true)
-        return () => window.removeEventListener('resize', updateSize)
-    }, [])
+function getServerViewportSnapshot() {
+    return false
+}
 
-    if (!mounted) return null
+export default function ViewportSwitcher({children}: { children: ReactNode }) {
+    const isMobile = useSyncExternalStore(
+        subscribeToResize,
+        getViewportSnapshot,
+        getServerViewportSnapshot
+    )
 
     return isMobile ? <MobileLayout>{children}</MobileLayout> : <DesktopLayout>{children}</DesktopLayout>
 }

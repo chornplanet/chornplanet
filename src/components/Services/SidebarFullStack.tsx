@@ -2,26 +2,20 @@
 
 import React from "react";
 import Link from "next/link";
-import {useEffect, useState} from 'react';
+import {usePathname} from "next/navigation";
 import {IFullStackStack} from "@/lib/model/IFullStack";
 import Image from "next/image";
 import {IFullStack} from "@/lib/model/IFullStack";
 
 export default function SidebarFullStack({lang, fullStack}: { lang: string; fullStack: IFullStack }) {
-    const [currentUrl, setCurrentUrl] = useState('');
-
-    useEffect(() => {
-        if (typeof window !== 'undefined') {
-            setCurrentUrl(window.location.href);
-        }
-    }, [currentUrl]);
+    const pathname = usePathname();
 
     return (
         <>
             <div className="services-details-information ml-10 border-top">
                 <ul className="framework-list">
                     {fullStack.stacks.map((item: IFullStackStack, index: number) => {
-                        if (currentUrl.includes(item.link)) {
+                        if (pathname.includes(item.link)) {
                             return (
                                 <li key={index}>
                                     <Link href={'/' + lang + item.link} className="active">

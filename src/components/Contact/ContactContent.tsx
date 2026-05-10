@@ -11,12 +11,15 @@ export default function ContactContent({
     contact: IContact;
     socialLinks: IContactSocialLink[];
 }) {
+    const contactInfo = contact.contactInfo;
+    const title = contactInfo?.title || "Business Inquiries & Collaborations";
+
     return (
         <>
             <div className="about-area contact-premium-area pb-70">
                 <div className="container">
                     <div className="premium-page-heading contact-premium-heading">
-                        <h1>{contact.contactInfo.title}</h1>
+                        <h1>{title}</h1>
                     </div>
                     <div className="row contact-premium-grid">
                         <ContactLeft/>

@@ -2,6 +2,7 @@
 
 import '@/template/style/desktop/layout-desktop.scss'
 import React from 'react'
+import Link from 'next/link'
 
 export default function DesktopLayout({children}: { children: React.ReactNode }) {
     return (
@@ -12,9 +13,9 @@ export default function DesktopLayout({children}: { children: React.ReactNode })
                         Chorn Planet Food App
                     </div>
                     <nav>
-                        <a href="/food">Home</a>
-                        <a href="/food/orders">Orders</a>
-                        <a href="/food/account">Account</a>
+                        <Link href="/food">Home</Link>
+                        <Link href="/food/orders">Orders</Link>
+                        <Link href="/food/account">Account</Link>
                     </nav>
                 </div>
             </header>

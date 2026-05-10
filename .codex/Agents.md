@@ -135,6 +135,19 @@ export async function generateMetadata(): Promise<Metadata> {
 - Use `add-` prefixes for custom utility classes and `x-` prefixes for navbar variants, following existing conventions.
 - The desktop root `<html>` must keep `data-scroll-behavior="smooth"`.
 
+## Responsive UX And Visual Consistency
+
+Recent fixes on `/about-chorn/` and `/contact/` established the preferred pattern for premium content sections:
+
+- On mobile/tablet widths below `992px`, avoid nested card spacing that makes content feel squeezed. Flatten section grids when needed by removing outer grid padding, left/right margins, column gutters, decorative borders, background cards, and shadows.
+- Keep desktop and larger tablet layouts visually premium. Desktop grids may keep framed backgrounds, padding, borders, and shadows when they support hierarchy and do not reduce readability.
+- Images, headings, and paragraphs inside the same mobile section should align to the same readable content width. Do not let Bootstrap row negative margins, column gutters, or nested `.about-content` padding create inconsistent left/right edges.
+- On mobile, remove decorative borders when they force text into a narrow column. A border should never cost paragraph readability.
+- Keep font sizes consistent within a page section and across sibling sections on the same page. Use headings for hierarchy; avoid making the first body paragraph larger unless the design explicitly calls for a lead paragraph.
+- Keep body copy color consistent across the whole page. Prefer one readable muted text color for paragraphs, one stronger heading color, and one accent color for section labels or interactive states.
+- Scope page-specific typography and color normalization to the page wrapper when possible, such as `.smart-container-top-about`, instead of changing global typography.
+- After visual spacing changes, verify mobile behavior and keep desktop/tablet behavior intact with `npm run lint`, `npm run build`, and a localized dev URL check when practical.
+
 ## Page Creation Checklist
 
 For a new localized public page:
@@ -172,7 +185,10 @@ Current fix pattern:
 - Keep bounded MongoDB timeouts in `server/infrastructure/db/infra.mongodb.ts`.
 - Wrap runtime content reads with `withMongoReadRetry(...)` in `server/adapters/outbound/mongo.repository/*-content.repository.ts`.
 - Keep `src/proxy.ts` request-header forwarding intact when editing locale or cookie handling.
-- Public localized pages must use public-safe content loaders that try the requested locale first, then English, then a static fallback when one exists. Keep strict loaders for APIs, admin tools, migration scripts, audit scripts, and tests.
+- Public localized pages must use public-safe content loaders that try the requested locale first, then English, then a static fallback when one exists. Contact content now follows this pattern with an in-repo final fallback so `/contact/` can still render during transient MongoDB or locale-content failures.
+- Validate nested MongoDB content before rendering. Required top-level fields are not enough when components expect arrays or nested objects such as `contact.contactInfo.roles` or `socialLinks`.
+- Public page components should tolerate safe empty arrays/default titles when rendering optional content. A partial content record should degrade gracefully instead of crashing the page.
+- Keep strict loaders for APIs, admin tools, migration scripts, audit scripts, and tests.
 - Use `npm run audit:locale-content` to check MongoDB-backed public content completeness across all supported locales. Do not fix this symptom only by increasing MongoDB timeout.
 
 When this production symptom appears again, inspect Vercel function logs by digest/time first, then check MongoDB connectivity, missing/incomplete content records, and proxy request headers before changing page components.

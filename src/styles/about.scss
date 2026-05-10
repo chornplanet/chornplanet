@@ -569,8 +569,35 @@
 
     p:first-child {
       color: #1a2b23;
-      font-size: 1.1rem;
+      font-size: inherit;
     }
+  }
+}
+
+.smart-container-top-about {
+  color: #405049;
+
+  .about-chorn-premium-area .about-content p,
+  .services-area .cloud-infra-left.add-web-content p,
+  .digital-experience-area p {
+    color: #405049;
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+
+  .services-area .cloud-infra-left.add-web-content .feature-title,
+  .digital-experience-area .feature-list .feature-title {
+    color: #1a2b23;
+  }
+
+  .premium-page-heading h1,
+  .services-area h1,
+  .digital-experience-area .section-title h2 {
+    color: #101f19;
+  }
+
+  .digital-experience-area .section-title span {
+    color: #0d7d3a;
   }
 }
 
@@ -587,29 +614,64 @@
   }
 
   .contact-premium-area {
+    .contact-premium-grid {
+      margin-right: 0;
+      margin-left: 0;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      box-shadow: none;
+    }
+
+    .contact-col-left,
+    .contact-col-right {
+      padding-right: 0;
+      padding-left: 0;
+    }
+
     .contact-map-wrapper,
     .contact-map-wrapper iframe {
       min-height: 360px;
     }
 
     .contact-col-right {
-      padding: 20px;
+      padding-top: 0;
+      padding-bottom: 0;
     }
 
     .about-contact {
       margin-top: 18px;
       padding: 0;
+      border: 0;
+      background: transparent;
     }
   }
 
   .about-chorn-premium-area {
+    .about-chorn-premium-grid {
+      margin-right: 0;
+      margin-left: 0;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      box-shadow: none;
+    }
+
+    .about-chorn-premium-media-col,
+    .about-chorn-premium-copy-col {
+      padding-right: 0;
+      padding-left: 0;
+    }
+
     .about-image-wrapper {
       min-height: 380px;
     }
 
     .about-content {
       margin-top: 18px;
-      padding: 22px;
+      padding: 0;
+      border: 0;
+      background: transparent;
     }
   }
 }
@@ -627,8 +689,4 @@
     }
   }
 
-  .contact-premium-grid,
-  .about-chorn-premium-grid {
-    padding: 10px;
-  }
 }

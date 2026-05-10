@@ -18,11 +18,14 @@ export default function ContactRight({
     contact: IContact;
     socialLinks: IContactSocialLink[];
 }) {
+    const roles = contact.contactInfo?.roles || [];
+    const safeSocialLinks = socialLinks || [];
+
     return (
         <div className="col-lg-8 contact-col-right">
             <div className="about-content about-contact">
                 <div className="roles">
-                    {contact.contactInfo.roles.map((item, index) => {
+                    {roles.map((item, index) => {
                         return (
                             <div key={index} className="role">
                                 <h3>{item.title}<span>{item.span}</span></h3>
@@ -135,7 +138,7 @@ export default function ContactRight({
                 <div className="contact-social-container">
                     <h3>Social & GitHub</h3>
 
-                    {socialLinks.map((item) => (
+                    {safeSocialLinks.map((item) => (
                         <div key={item.href} className="contact-social-item">
                             <div className="about-icon-symbol">
                                 <a href={item.href}

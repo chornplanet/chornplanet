@@ -2,26 +2,20 @@
 
 import React from "react";
 import Link from "next/link";
-import {useEffect, useState} from 'react';
+import {usePathname} from "next/navigation";
 import {IDevOpsStack} from "@/lib/model/IDevOps";
 import Image from "next/image";
 import {IDevOps} from "@/lib/model/IDevOps";
 
 export default function SidebarDevOps({lang, devOps}: { lang: string; devOps: IDevOps }) {
-    const [currentUrl, setCurrentUrl] = useState('');
-
-    useEffect(() => {
-        if (typeof window !== 'undefined') {
-            setCurrentUrl(window.location.href);
-        }
-    }, [currentUrl]);
+    const pathname = usePathname();
 
     return (
         <>
             <div className="services-details-information ml-10 border-top">
                 <ul className="framework-list">
                     {devOps.stacks.map((item: IDevOpsStack, index: number) => {
-                        if (currentUrl.includes(item.link)) {
+                        if (pathname.includes(item.link)) {
                             return (
                                 <li key={index}>
                                     <Link href={'/' + lang + item.link} className="active">
