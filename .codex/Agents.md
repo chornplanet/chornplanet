@@ -135,13 +135,27 @@ export async function generateMetadata(): Promise<Metadata> {
 - Use `add-` prefixes for custom utility classes and `x-` prefixes for navbar variants, following existing conventions.
 - The desktop root `<html>` must keep `data-scroll-behavior="smooth"`.
 
-## Responsive UX And Visual Consistency
+## Reference Responsive UX and Visual Consistency
 
-Recent fixes on `/about-chorn/` and `/contact/` established the preferred pattern for premium content sections:
+Use the Smart Food AI page as the active reference for responsive UX, visual consistency, element structure, and SCSS style across desktop, tablet, and mobile views:
+
+```text
+src/app/[locale]/(desktop)/smart-food-ai/page.tsx
+src/components/SmartFoodAi/SmartFoodAiLandingPage.tsx
+src/styles/smart-food-ai.scss
+```
+
+Reference `src/app/[locale]/(desktop)/smart-food-ai/page.tsx` for the localized page route pattern, metadata loading, `headers()` locale lookup, and clean handoff into a page component.
+
+Reference `src/components/SmartFoodAi/SmartFoodAiLandingPage.tsx` for section structure and semantic element use, including `main`, `section`, `div`, heading tags, paragraphs, actions, repeated `article` cards, and `Image` components.
+
+Reference `src/styles/smart-food-ai.scss` for good fit across all views: responsive padding, margin, grid changes, font size, font color, heading/body color consistency, image sizing, section spacing, card spacing, and desktop/tablet/mobile breakpoints.
+
+Current preferred pattern for premium content sections:
 
 - On mobile/tablet widths below `992px`, avoid nested card spacing that makes content feel squeezed. Flatten section grids when needed by removing outer grid padding, left/right margins, column gutters, decorative borders, background cards, and shadows.
 - Keep desktop and larger tablet layouts visually premium. Desktop grids may keep framed backgrounds, padding, borders, and shadows when they support hierarchy and do not reduce readability.
-- Images, headings, and paragraphs inside the same mobile section should align to the same readable content width. Do not let Bootstrap row negative margins, column gutters, or nested `.about-content` padding create inconsistent left/right edges.
+- Images, headings, and paragraphs inside the same mobile section should align to the same readable content width. Do not let Bootstrap row negative margins, column gutters, or nested `.smart-food-ai-proof` padding create inconsistent left/right edges.
 - On mobile, remove decorative borders when they force text into a narrow column. A border should never cost paragraph readability.
 - Keep font sizes consistent within a page section and across sibling sections on the same page. Use headings for hierarchy; avoid making the first body paragraph larger unless the design explicitly calls for a lead paragraph.
 - Keep body copy color consistent across the whole page. Prefer one readable muted text color for paragraphs, one stronger heading color, and one accent color for section labels or interactive states.
