@@ -134,6 +134,8 @@ export async function generateMetadata(): Promise<Metadata> {
 - Avoid adding Tailwind utility-heavy markup to files that already follow SCSS component classes.
 - Use `add-` prefixes for custom utility classes and `x-` prefixes for navbar variants, following existing conventions.
 - The desktop root `<html>` must keep `data-scroll-behavior="smooth"`.
+- Before creating or renaming components, check spelling in filenames, exports, imports, and JSX usage. Prefer clear English names such as `HighlightSmartFood`; avoid carrying forward typos like `Hightlight`.
+- For the home hero and Smart Food highlight styling in `src/styles/smart-hero-section.scss`, keep the sharp-corner visual direction: do not add `border-radius`, and do not add borders around the Smart Hero image or Highlight Smart Food image/media block unless Khachornchit explicitly asks for that design change.
 
 ## Reference Responsive UX and Visual Consistency
 
