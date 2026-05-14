@@ -20,7 +20,7 @@ type HighlightSmartFoodUi = {
 const chatOrderingStep: ChatOrderingStep[] = [
   {
     lang: "en",
-    title: "Chat Ordering",
+    title: "AI Chat Ordering",
     text: "Customers can order through chat by selecting a meal, asking questions, or confirming their order in a simple conversation.",
     image: "/smart-food/process1-chat-ordering.png",
     alt: "Customer chat ordering interface for Smart Food",
@@ -28,7 +28,7 @@ const chatOrderingStep: ChatOrderingStep[] = [
   },
   {
     lang: "th",
-    title: "การสั่งอาหารผ่านแชต",
+    title: "การสั่งอาหารผ่านแชต AI",
     text: "ลูกค้าสามารถสั่งอาหารผ่านแชตได้ โดยเลือกเมนู สอบถามข้อมูล หรือยืนยันคำสั่งซื้อผ่านบทสนทนาที่เข้าใจง่าย",
     image: "/smart-food/process1-chat-ordering.png",
     alt: "หน้าจอการสั่งอาหารผ่านแชตของลูกค้าสำหรับ Smart Food",
@@ -36,7 +36,7 @@ const chatOrderingStep: ChatOrderingStep[] = [
   },
   {
     lang: "da",
-    title: "Chatbestilling",
+    title: "AI-chatbestilling",
     text: "Kunder kan bestille via chat ved at vælge et måltid, stille spørgsmål eller bekræfte deres bestilling i en enkel samtale.",
     image: "/smart-food/process1-chat-ordering.png",
     alt: "Kundegrænseflade til chatbestilling for Smart Food",
@@ -44,7 +44,7 @@ const chatOrderingStep: ChatOrderingStep[] = [
   },
   {
     lang: "de",
-    title: "Chat-Bestellung",
+    title: "KI-Chat-Bestellung",
     text: "Kunden können per Chat bestellen, indem sie ein Gericht auswählen, Fragen stellen oder ihre Bestellung in einem einfachen Gespräch bestätigen.",
     image: "/smart-food/process1-chat-ordering.png",
     alt: "Chat-Bestelloberfläche für Kunden von Smart Food",
@@ -52,7 +52,7 @@ const chatOrderingStep: ChatOrderingStep[] = [
   },
   {
     lang: "fi",
-    title: "Chat-tilaaminen",
+    title: "AI-chat-tilaaminen",
     text: "Asiakkaat voivat tilata chatin kautta valitsemalla aterian, esittämällä kysymyksiä tai vahvistamalla tilauksensa yksinkertaisessa keskustelussa.",
     image: "/smart-food/process1-chat-ordering.png",
     alt: "Asiakkaan chat-tilausnäkymä Smart Food -palvelussa",
@@ -60,7 +60,7 @@ const chatOrderingStep: ChatOrderingStep[] = [
   },
   {
     lang: "fr",
-    title: "Commande par chat",
+    title: "Commande par chat IA",
     text: "Les clients peuvent commander par chat en choisissant un repas, en posant des questions ou en confirmant leur commande dans une conversation simple.",
     image: "/smart-food/process1-chat-ordering.png",
     alt: "Interface de commande par chat pour les clients de Smart Food",
@@ -68,7 +68,7 @@ const chatOrderingStep: ChatOrderingStep[] = [
   },
   {
     lang: "ja",
-    title: "チャット注文",
+    title: "AIチャット注文",
     text: "顧客はチャットを通じて、食事を選択したり、質問したり、簡単な会話の中で注文を確認したりできます。",
     image: "/smart-food/process1-chat-ordering.png",
     alt: "Smart Food の顧客向けチャット注文インターフェース",
@@ -76,7 +76,7 @@ const chatOrderingStep: ChatOrderingStep[] = [
   },
   {
     lang: "ko",
-    title: "채팅 주문",
+    title: "AI 채팅 주문",
     text: "고객은 채팅을 통해 메뉴를 선택하고, 질문을 하거나, 간단한 대화 안에서 주문을 확인할 수 있습니다.",
     image: "/smart-food/process1-chat-ordering.png",
     alt: "Smart Food 고객용 채팅 주문 인터페이스",
@@ -84,7 +84,7 @@ const chatOrderingStep: ChatOrderingStep[] = [
   },
   {
     lang: "nl",
-    title: "Bestellen via chat",
+    title: "AI-chatbestelling",
     text: "Klanten kunnen via chat bestellen door een maaltijd te kiezen, vragen te stellen of hun bestelling in een eenvoudig gesprek te bevestigen.",
     image: "/smart-food/process1-chat-ordering.png",
     alt: "Chatbestelinterface voor klanten van Smart Food",
@@ -92,7 +92,7 @@ const chatOrderingStep: ChatOrderingStep[] = [
   },
   {
     lang: "zh_cn",
-    title: "聊天点餐",
+    title: "AI 聊天点餐",
     text: "客户可以通过聊天选择餐品、提出问题，或在简单对话中确认订单。",
     image: "/smart-food/process1-chat-ordering.png",
     alt: "Smart Food 客户聊天点餐界面",
@@ -177,38 +177,46 @@ function getHighlightSmartFoodUi(lang: string): HighlightSmartFoodUi {
   return highlightSmartFoodUi[lang] ?? highlightSmartFoodUi.en;
 }
 
-export default function HighlightSmartFood({lang}: { lang: string }) {
-    const step = getChatOrderingStep(lang);
-    const ui = getHighlightSmartFoodUi(lang);
-    const href = `/${lang}${step.link}`;
+export default function HighlightSmartFood({ lang }: { lang: string }) {
+  const step = getChatOrderingStep(lang);
+  const ui = getHighlightSmartFoodUi(lang);
+  const href = `/${lang}${step.link}`;
 
-    return (
-        <section id="smart-food-ai-highlight" className="highlight-smart-food" aria-labelledby="highlight-smart-food-title">
-            <div className="highlight-smart-food__grid">
-                <Link className="highlight-smart-food__media" href={href} aria-label={ui.imageAriaLabel}>
-                    <Image
-                        src={step.image}
-                        alt={step.alt}
-                        fill
-                        sizes="(max-width: 900px) 100vw, 46vw"
-                    />
-                </Link>
+  return (
+    <section
+      id="smart-food-ai-highlight"
+      className="highlight-smart-food"
+      aria-labelledby="highlight-smart-food-title"
+    >
+      <div className="highlight-smart-food__grid">
+        <Link
+          className="highlight-smart-food__media"
+          href={href}
+          aria-label={ui.imageAriaLabel}
+        >
+          <Image
+            src={step.image}
+            alt={step.alt}
+            fill
+            sizes="(max-width: 900px) 100vw, 46vw"
+          />
+        </Link>
 
-                <div className="highlight-smart-food__content">
-                    <p className="highlight-smart-food__eyebrow">{ui.eyebrow}</p>
-                    <h2 id="highlight-smart-food-title">{step.title}</h2>
-                    <p>{step.text}</p>
+        <div className="highlight-smart-food__content">
+          <p className="highlight-smart-food__eyebrow">{ui.eyebrow}</p>
+          <h2 id="highlight-smart-food-title">{step.title}</h2>
+          <p>{step.text}</p>
 
-                    <div className="highlight-smart-food__actions">
-                        <Link className="highlight-smart-food__button" href={href}>
-                            {ui.primaryAction}
-                        </Link>
-                        <Link className="highlight-smart-food__text-link" href={href}>
-                            {ui.secondaryAction}
-                        </Link>
-                    </div>
-                </div>
-            </div>
-        </section>
-    );
+          <div className="highlight-smart-food__actions">
+            <Link className="highlight-smart-food__button" href={href}>
+              {ui.primaryAction}
+            </Link>
+            <Link className="highlight-smart-food__text-link" href={href}>
+              {ui.secondaryAction}
+            </Link>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 }
