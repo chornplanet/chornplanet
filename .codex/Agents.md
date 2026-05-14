@@ -132,6 +132,7 @@ export async function generateMetadata(): Promise<Metadata> {
 - Main SCSS files include `globals.scss`, `style.scss`, `responsive.scss`, `addition.scss`, navbar `x-*` files, smart-city/smart-mobility feature files, and `footer.scss`.
 - Prefer existing SCSS patterns over new styling systems.
 - Avoid adding Tailwind utility-heavy markup to files that already follow SCSS component classes.
+- Every project update, fix, or feature addition must aim for best-practice UX/UI, responsive performance, and polished behavior across desktop, tablet, and mobile views.
 - Use `add-` prefixes for custom utility classes and `x-` prefixes for navbar variants, following existing conventions.
 - The desktop root `<html>` must keep `data-scroll-behavior="smooth"`.
 - Before creating or renaming components, check spelling in filenames, exports, imports, and JSX usage. Prefer clear English names such as `HighlightSmartFood`; avoid carrying forward typos like `Hightlight`.

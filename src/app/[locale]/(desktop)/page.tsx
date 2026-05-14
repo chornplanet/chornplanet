@@ -85,7 +85,7 @@ export default async function Home() {
       <main className="flex flex-col">
         <div className="container">
           <HeroSection lang={lang} data={homePageContent.heroSection} />
-          <HighlightSmartFood lang={lang}/>
+          <HighlightSmartFood lang={lang} />
           <SmartCityMain
             lang={lang}
             smartCityItem={smartCityItem}

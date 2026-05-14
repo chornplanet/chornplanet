@@ -37,6 +37,8 @@ const YOUTUBE_FOOTER_LINK: IFooterDetail = {
     label: 'Youtube',
     link: 'https://www.youtube.com/@chornplanet',
 };
+const TIKTOK_CONTENT_DEVELOPMENT_FOOTER_LINK = 'https://tiktok.com/@chornplanet';
+const TIKTOK_CONTENT_DEVELOPMENT_FOOTER_LABEL = 'TikTok Content Development';
 
 function getLayoutContentTag(locale: string) {
     return `layout-content:${normalizeLayoutContentLocale(locale)}`;
@@ -115,13 +117,30 @@ function normalizeSmartFoodAiProjectGroup<T extends { items: IFooterDetail[] }>(
     };
 }
 
+function normalizeTikTokContentDevelopmentProjectGroup<T extends { items: IFooterDetail[] }>(group: T): T {
+    return {
+        ...group,
+        items: group.items.map((item) => {
+            if (item.link !== TIKTOK_CONTENT_DEVELOPMENT_FOOTER_LINK) {
+                return item;
+            }
+
+            return {
+                ...item,
+                label: TIKTOK_CONTENT_DEVELOPMENT_FOOTER_LABEL,
+            };
+        }),
+    };
+}
+
 function normalizeSmartFoodAiFooter(locale: string, footer: IFooter): IFooter {
     const normalizedLocale = normalizeLayoutContentLocale(locale);
+    const projectWithSmartFoodAi = normalizeSmartFoodAiProjectGroup(normalizedLocale, footer.project);
 
     return {
         ...footer,
         important: normalizeSmartFoodAiFooterGroup(footer.important),
-        project: normalizeSmartFoodAiProjectGroup(normalizedLocale, footer.project),
+        project: normalizeTikTokContentDevelopmentProjectGroup(projectWithSmartFoodAi),
         technology: normalizeSmartFoodAiFooterGroup(footer.technology),
     };
 }
