@@ -50,19 +50,19 @@ const platformFeatures = [
 const businessValues = [
   {
     title: "Investor-ready proof",
-    text: "A visible platform story that shows Chorn Planet can move from concept to production-minded execution.",
+    text: "A visible platform story that shows Chorn Planet is moving from concept into real AI-native service delivery for business workflows.",
   },
   {
     title: "Local launch credibility",
-    text: "The story starts from real business context in Chiang Mai, with practical service operations in mind.",
+    text: "The platform is launched from a real local food business in Chiang Mai and supports practical customer service operations.",
   },
   {
-    title: "Recruitment signal",
-    text: "A clear technology product surface for builders, Recruitment audiences, and future platform collaborators.",
+    title: "AI-powered service signal",
+    text: "A concrete signal that Chorn Planet serves Smart Food customers through AI technology, not only as a concept but as an active business platform.",
   },
   {
     title: "Product expansion path",
-    text: "A foundation for future SaaS, ordering, commerce, analytics, and Smart Food ecosystem features.",
+    text: "A strong foundation for future SaaS, ordering, commerce, analytics, and Smart Food ecosystem features.",
   },
 ];
 
@@ -256,9 +256,12 @@ export default function SmartFoodAiLandingPage({ lang }: { lang: string }) {
               <p className="smart-food-ai-eyebrow">Business value</p>
               <h2>Why this matters for Chorn Planet</h2>
               <p>
-                The showcase gives investors, CEOs, Recruitment teams, and collaborators
-                a concrete signal that Chorn Planet can deliver AI-native
-                production platforms for real business workflows.
+                The showcase gives collaborators a concrete signal that Chorn
+                Planet builds and delivers AI-native production platforms for
+                real business workflows. Launched from a local food business in
+                Chiang Mai, Chorn Planet serves Smart Food customers with AI
+                technology and creates a practical path for growing real
+                business operations.
               </p>
             </div>
             <div className="smart-food-ai-value__cards">
@@ -272,7 +275,6 @@ export default function SmartFoodAiLandingPage({ lang }: { lang: string }) {
           </div>
         </div>
       </section>
-
     </main>
   );
 }
