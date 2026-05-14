@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 type ChatOrderingStep = {
   lang: string;
@@ -184,14 +185,14 @@ export default function HighlightSmartFood({lang}: { lang: string }) {
     return (
         <section id="smart-food-ai-highlight" className="highlight-smart-food" aria-labelledby="highlight-smart-food-title">
             <div className="highlight-smart-food__grid">
-                <a className="highlight-smart-food__media" href={href} aria-label={ui.imageAriaLabel}>
+                <Link className="highlight-smart-food__media" href={href} aria-label={ui.imageAriaLabel}>
                     <Image
                         src={step.image}
                         alt={step.alt}
                         fill
                         sizes="(max-width: 900px) 100vw, 46vw"
                     />
-                </a>
+                </Link>
 
                 <div className="highlight-smart-food__content">
                     <p className="highlight-smart-food__eyebrow">{ui.eyebrow}</p>
@@ -199,12 +200,12 @@ export default function HighlightSmartFood({lang}: { lang: string }) {
                     <p>{step.text}</p>
 
                     <div className="highlight-smart-food__actions">
-                        <a className="highlight-smart-food__button" href={href}>
+                        <Link className="highlight-smart-food__button" href={href}>
                             {ui.primaryAction}
-                        </a>
-                        <a className="highlight-smart-food__text-link" href={href}>
+                        </Link>
+                        <Link className="highlight-smart-food__text-link" href={href}>
                             {ui.secondaryAction}
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </div>

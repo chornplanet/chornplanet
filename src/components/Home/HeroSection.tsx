@@ -1,4 +1,5 @@
 import Image from "next/image"
+import Link from "next/link"
 import {IHeroSection} from "@/lib/model/ISmartCityMedia";
 
 export default function HeroSection({lang, data}: { lang: string; data: IHeroSection }) {
@@ -28,12 +29,12 @@ export default function HeroSection({lang, data}: { lang: string; data: IHeroSec
                     )}
 
                     <div className="smart-hero__cta">
-                        <a className="smart-hero__cta-primary" href={`/${lang}` + landingUrl}>
+                        <Link className="smart-hero__cta-primary" href={`/${lang}` + landingUrl}>
                             Read the story
-                        </a>
-                        <a className="smart-hero__cta-secondary" href="#smart-food-ai-highlight">
+                        </Link>
+                        <Link className="smart-hero__cta-secondary" href="#smart-food-ai-highlight">
                             View Smart Food AI
-                        </a>
+                        </Link>
                     </div>
                 </div>
 
