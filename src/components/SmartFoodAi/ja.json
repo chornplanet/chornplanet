@@ -1,1 +1,157 @@
-{"hero":{"eyebrow":"チェンマイ発の本番運用ショーケース","title":"Smart Food","lead":"チェンマイの地域事業から開始された、実際のAI-nativeフードプラットフォーム体験です。","support":"Chorn Planetは、会話型の食品探索、メニュー案内、注文準備済みワークフローを、実際のフードサービス業務の支援に適用します。","actionsLabel":"Smart Food AI ページセクション","actions":[{"label":"ワークフローを見る","href":"#smart-food-ai-workflow","variant":"primary"},{"label":"機能を見る","href":"#smart-food-ai-value","variant":"secondary"}],"visual":{"src":"/smart-food/smart-food-overview.png","alt":"チェンマイの地域事業体験向けSmart Food AIプラットフォームビジュアル","ariaLabel":"Smart Food AIのビジュアルストーリー"}},"proof":{"heading":{"eyebrow":"本番運用の根拠","title":"チェンマイの地域事業からプラットフォーム機能へ"},"paragraphs":["Smart Food AIは、顧客対応と運用の両面で実用的な価値を提供するよう設計されています。レストラン、カフェ、またはフードサービスチームは、顧客のチャット注文から、メニュー案内、支払い確認、キッチン準備、配送調整、サービス用サマリーまで進めることができます。","Smart Foodプラットフォームは、現金払い、銀行アプリによるQR Code決済、TrueMoney Wallet決済、Half-Half Plusなどの政府共同負担プログラムへの対応を含む複数の決済チャネルをサポートします。","顧客注文に加えて、プラットフォームは、キッチンワークフロー、配送サービス、注文管理、決済処理、支払い証憑の確認、会計、その他の内部プラットフォームシステムを備えた、スマートフード事業運営を支援するエンドツーエンドのフードオペレーションシステムとして構成されています。"],"image":{"src":"/smart-food/chat-ordering.png","alt":"Smart Foodチャット注文体験のプレビュー"},"cards":[{"index":"01","title":"地域事業の文脈","text":"汎用的なコンセプト画面ではなく、チェンマイの実際のサービス需要に基づいて構築されています。"},{"index":"02","title":"顧客向けの方向性","text":"食品探索、嗜好に基づく案内、明確なサービス導線に焦点を当てています。"},{"index":"03","title":"本番運用を意識したプラットフォーム","text":"将来的に注文、分析、コマースを接続できるプラットフォーム層として提示されています。"}]},"workflow":{"id":"smart-food-ai-workflow","heading":{"eyebrow":"エンドツーエンドのワークフロー","title":"体験の流れ"},"steps":[{"title":"AIチャット注文","text":"顧客はAIが支援するチャットを通じて、食事を選択したり、質問したり、簡単な会話の中で注文を確認したりできます。","image":{"src":"/smart-food/process1-chat-ordering.png","alt":"Smart Food顧客向けAIチャット注文インターフェース"}},{"title":"請求処理","text":"システムは注文合計を確認し、支払い証憑を受け取り、請求内容を確認してから注文を次の工程へ進めます。","image":{"src":"/smart-food/process2-bill-processing.png","alt":"Smart Foodの請求処理と支払い確認"}},{"title":"調理","text":"キッチンチームは、新鮮な食材、明確なワークフロー、一定の食品品質に基づいて、確認済みの注文を準備します。","image":{"src":"/smart-food/process3-cooking.png","alt":"確認済みのSmart Food注文を準備するキッチンチーム"}},{"title":"配送","text":"配達担当者は完成した注文を受け取り、サービスワークフローに従って顧客へ届けます。","image":{"src":"/smart-food/process4-delivery.png","alt":"配達担当者への引き渡しを含むSmart Food配送ワークフロー"}},{"title":"受け取り","text":"顧客は明確な引き渡しプロセスを通じて食品を受け取り、サービスの流れが完了します。","image":{"src":"/smart-food/process5-receiving.png","alt":"完成したSmart Food注文を受け取る顧客"}}]},"features":{"heading":{"eyebrow":"プラットフォーム機能","title":"実際のフードサービス体験のために構築"},"items":["自然な食品会話","メニュー探索とマッチング","お気に入り食事記憶の方向性","注文準備済みサマリー","地域事業運営の支援","将来的なLINE OAおよびウェブサイト注文の方向性","マルチチャネルプラットフォームへの対応準備","コンテンツからコマースへの成長可能性"]},"value":{"id":"smart-food-ai-value","heading":{"eyebrow":"事業価値","title":"これがChorn Planetにとって重要な理由","text":"このショーケースは、Chorn Planetが実際の事業ワークフロー向けにAI-nativeの本番プラットフォームを構築し提供できることを、協力者に具体的に示します。チェンマイの地域フード事業から開始され、Chorn PlanetはAI技術によりSmart Food顧客にサービスを提供し、事業運営の成長に向けた実用的な道筋を形成します。"},"cards":[{"title":"投資検討に耐える根拠","text":"Chorn Planetがコンセプトから事業ワークフロー向けAI-nativeサービス提供へ移行していることを示す、可視化されたプラットフォームストーリーです。"},{"title":"地域ローンチによる信頼性","text":"このプラットフォームはチェンマイの実際の地域フード事業から開始され、実務的な顧客サービス運用を支援します。"},{"title":"AI活用サービスのシグナル","text":"Chorn PlanetがAI技術を通じて、稼働中の事業プラットフォームとしてSmart Food顧客にサービスを提供していることを示す具体的なシグナルです。"},{"title":"製品拡張の道筋","text":"将来のSaaS、注文、コマース、分析、Smart Foodエコシステム機能の基盤です。"}]},"futureDirections":["ウェブサイト注文フロー","LINE OA接続","MenuMatchバックエンド連携","Smart Foodコマース層","分析支援による成長","Chorn Planetメディアおよびラグジュアリーエコシステムとの統合"]}
+{
+  "hero": {
+    "eyebrow": "チェンマイ発の本番運用ショーケース",
+    "title": "Smart Food",
+    "lead": "チェンマイの地域事業から開始された、実際のAI-nativeフードプラットフォーム体験です。",
+    "support": "Chorn Planetは、会話型の食品探索、メニュー案内、注文準備済みワークフローを、実際のフードサービス業務の支援に適用します。",
+    "actionsLabel": "Smart Food AI ページセクション",
+    "actions": [
+      {
+        "label": "ワークフローを見る",
+        "href": "#smart-food-ai-workflow",
+        "variant": "primary"
+      },
+      {
+        "label": "機能を見る",
+        "href": "#smart-food-ai-value",
+        "variant": "secondary"
+      }
+    ],
+    "visual": {
+      "src": "/smart-food/smart-food-overview.png",
+      "alt": "チェンマイの地域事業体験向けSmart Food AIプラットフォームビジュアル",
+      "ariaLabel": "Smart Food AIのビジュアルストーリー"
+    }
+  },
+  "proof": {
+    "heading": {
+      "eyebrow": "本番運用の根拠",
+      "title": "チェンマイの地域事業からプラットフォーム機能へ"
+    },
+    "paragraphs": [
+      "Smart Food AIは、顧客対応と運用の両面で実用的な価値を提供するよう設計されています。レストラン、カフェ、またはフードサービスチームは、顧客のチャット注文から、メニュー案内、支払い確認、キッチン準備、配送調整、サービス用サマリーまで進めることができます。",
+      "Smart Foodプラットフォームは、現金払い、銀行アプリによるQR Code決済、TrueMoney Wallet決済、Half-Half Plusなどの政府共同負担プログラムへの対応を含む複数の決済チャネルをサポートします。",
+      "顧客注文に加えて、プラットフォームは、キッチンワークフロー、配送サービス、注文管理、決済処理、支払い証憑の確認、会計、その他の内部プラットフォームシステムを備えた、スマートフード事業運営を支援するエンドツーエンドのフードオペレーションシステムとして構成されています。"
+    ],
+    "image": {
+      "src": "/smart-food/chat-ordering.png",
+      "alt": "Smart Foodチャット注文体験のプレビュー"
+    },
+    "cards": [
+      {
+        "index": "01",
+        "title": "地域事業の文脈",
+        "text": "汎用的なコンセプト画面ではなく、チェンマイの実際のサービス需要に基づいて構築されています。"
+      },
+      {
+        "index": "02",
+        "title": "顧客向けの方向性",
+        "text": "食品探索、嗜好に基づく案内、明確なサービス導線に焦点を当てています。"
+      },
+      {
+        "index": "03",
+        "title": "本番運用を意識したプラットフォーム",
+        "text": "将来的に注文、分析、コマースを接続できるプラットフォーム層として提示されています。"
+      }
+    ]
+  },
+  "workflow": {
+    "id": "smart-food-ai-workflow",
+    "heading": {
+      "eyebrow": "エンドツーエンドのワークフロー",
+      "title": "体験の流れ"
+    },
+    "steps": [
+      {
+        "title": "AIチャット注文",
+        "text": "顧客はAIが支援するチャットを通じて、食事を選択したり、質問したり、簡単な会話の中で注文を確認したりできます。",
+        "image": {
+          "src": "/smart-food/process1-chat-ordering.png",
+          "alt": "Smart Food顧客向けAIチャット注文インターフェース"
+        }
+      },
+      {
+        "title": "請求処理",
+        "text": "システムは注文合計を確認し、支払い証憑を受け取り、請求内容を確認してから注文を次の工程へ進めます。",
+        "image": {
+          "src": "/smart-food/process2-bill-processing.png",
+          "alt": "Smart Foodの請求処理と支払い確認"
+        }
+      },
+      {
+        "title": "調理",
+        "text": "キッチンチームは、新鮮な食材、明確なワークフロー、一定の食品品質に基づいて、確認済みの注文を準備します。",
+        "image": {
+          "src": "/smart-food/process3-cooking.png",
+          "alt": "確認済みのSmart Food注文を準備するキッチンチーム"
+        }
+      },
+      {
+        "title": "配送",
+        "text": "配達担当者は完成した注文を受け取り、サービスワークフローに従って顧客へ届けます。",
+        "image": {
+          "src": "/smart-food/process4-delivery.png",
+          "alt": "配達担当者への引き渡しを含むSmart Food配送ワークフロー"
+        }
+      },
+      {
+        "title": "受け取り",
+        "text": "顧客は明確な引き渡しプロセスを通じて食品を受け取り、サービスの流れが完了します。",
+        "image": {
+          "src": "/smart-food/process5-receiving.png",
+          "alt": "完成したSmart Food注文を受け取る顧客"
+        }
+      }
+    ]
+  },
+  "features": {
+    "heading": {
+      "eyebrow": "プラットフォーム機能",
+      "title": "実際のフードサービス体験のために構築"
+    },
+    "items": [
+      "自然な食品会話",
+      "メニュー探索とマッチング",
+      "お気に入り食事記憶の方向性",
+      "注文準備済みサマリー",
+      "地域事業運営の支援",
+      "将来的なLINE OAおよびウェブサイト注文の方向性",
+      "マルチチャネルプラットフォームへの対応準備",
+      "コンテンツからコマースへの成長可能性"
+    ]
+  },
+  "value": {
+    "id": "smart-food-ai-value",
+    "heading": {
+      "eyebrow": "事業価値",
+      "title": "これがChorn Planetにとって重要な理由",
+      "text": "このショーケースは、Chorn Planetが実際の事業ワークフロー向けにAI-nativeの本番プラットフォームを構築し提供できることを、協力者に具体的に示します。チェンマイの地域フード事業から開始され、Chorn PlanetはAI技術によりSmart Food顧客にサービスを提供し、事業運営の成長に向けた実用的な道筋を形成します。"
+    },
+    "cards": [
+      {
+        "title": "投資検討に耐える根拠",
+        "text": "Chorn Planetがコンセプトから事業ワークフロー向けAI-nativeサービス提供へ移行していることを示す、可視化されたプラットフォームストーリーです。"
+      },
+      {
+        "title": "地域ローンチによる信頼性",
+        "text": "このプラットフォームはチェンマイの実際の地域フード事業から開始され、実務的な顧客サービス運用を支援します。"
+      },
+      {
+        "title": "AI活用サービスのシグナル",
+        "text": "Chorn PlanetがAI技術を通じて、稼働中の事業プラットフォームとしてSmart Food顧客にサービスを提供していることを示す具体的なシグナルです。"
+      },
+      {
+        "title": "製品拡張の道筋",
+        "text": "将来のSaaS、注文、コマース、分析、Smart Foodエコシステム機能の基盤です。"
+      }
+    ]
+  },
+  "futureDirections": [
+    "ウェブサイト注文フロー",
+    "LINE OA接続",
+    "MenuMatchバックエンド連携",
+    "Smart Foodコマース層",
+    "分析支援による成長",
+    "Chorn Planetメディアおよびラグジュアリーエコシステムとの統合"
+  ]
+}

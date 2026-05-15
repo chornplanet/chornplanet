@@ -1,1 +1,148 @@
-{"hero":{"eyebrow":"来自清迈的生产级展示","title":"Smart Food","lead":"一个从清迈本地业务启动的真实 AI-native 食品平台体验。","support":"Chorn Planet 将对话式食品发现、菜单引导和订单就绪工作流应用于真实食品服务运营支持。","actionsLabel":"Smart Food AI 页面部分","actions":[{"label":"查看工作流","href":"#smart-food-ai-workflow","variant":"primary"},{"label":"查看能力","href":"#smart-food-ai-value","variant":"secondary"}],"visual":{"src":"/smart-food/smart-food-overview.png","alt":"面向清迈本地业务体验的 Smart Food AI 平台视觉","ariaLabel":"Smart Food AI 视觉叙事"}},"proof":{"heading":{"eyebrow":"生产级证明","title":"从清迈本地业务到平台能力"},"paragraphs":["Smart Food AI 旨在为客户侧和运营侧提供实际价值。餐厅、咖啡馆或食品服务团队可以从客户聊天点餐进入菜单引导、付款确认、厨房准备、配送协调和服务就绪摘要。","Smart Food 平台支持多种付款渠道，包括现金付款、通过银行应用进行 QR Code 付款、TrueMoney Wallet 付款，以及对 Half-Half Plus 等政府共同支付项目的支持。","除客户点餐外，该平台被构建为端到端食品运营系统，包含厨房工作流、配送服务、订单管理、付款处理、付款凭证核验、会计以及其他内部平台系统，用于支持 smart food 业务运营。"],"image":{"src":"/smart-food/chat-ordering.png","alt":"Smart Food 聊天点餐体验预览"},"cards":[{"index":"01","title":"本地业务背景","text":"围绕清迈真实服务需求构建，而不是通用概念界面。"},{"index":"02","title":"面向客户的方向","text":"聚焦食品发现、偏好引导以及清晰的服务路径。"},{"index":"03","title":"面向生产的的平台","text":"作为平台层呈现，后续可连接点餐、分析和商务功能。"}]},"workflow":{"id":"smart-food-ai-workflow","heading":{"eyebrow":"端到端工作流","title":"体验如何运作"},"steps":[{"title":"AI 聊天点餐","text":"客户可以通过 AI 辅助聊天选择餐品、提出问题，或在简单对话中确认订单。","image":{"src":"/smart-food/process1-chat-ordering.png","alt":"面向 Smart Food 客户的 AI 聊天点餐界面"}},{"title":"账单处理","text":"系统确认订单总额，接收付款凭证，并在订单进入下一步之前核验账单。","image":{"src":"/smart-food/process2-bill-processing.png","alt":"Smart Food 账单处理和付款核验"}},{"title":"烹饪","text":"厨房团队根据已确认订单，使用新鲜食材、清晰工作流和稳定的食品质量进行准备。","image":{"src":"/smart-food/process3-cooking.png","alt":"厨房团队正在准备已确认的 Smart Food 订单"}},{"title":"配送","text":"骑手领取已完成的订单，并按照服务工作流交付给客户。","image":{"src":"/smart-food/process4-delivery.png","alt":"包含骑手交接的 Smart Food 配送工作流"}},{"title":"收餐","text":"客户通过清晰的交接流程收到餐品，完成服务旅程。","image":{"src":"/smart-food/process5-receiving.png","alt":"客户收到已完成的 Smart Food 订单"}}]},"features":{"heading":{"eyebrow":"平台功能","title":"为真实食品服务体验而构建"},"items":["自然食品对话","菜单发现和匹配","常用餐品记忆方向","订单就绪摘要","本地业务运营支持","未来 LINE OA 和网站点餐方向","多渠道平台准备度","从内容到商务的增长潜力"]},"value":{"id":"smart-food-ai-value","heading":{"eyebrow":"业务价值","title":"这对 Chorn Planet 的意义","text":"该展示向协作者提供了一个具体信号：Chorn Planet 能够为真实业务工作流构建并交付 AI-native 生产平台。Chorn Planet 从清迈本地食品业务启动，通过 AI 技术服务 Smart Food 客户，并为业务运营增长建立实际路径。"},"cards":[{"title":"适合投资审查的证明","text":"一个可见的平台故事，显示 Chorn Planet 正从概念进入面向业务工作流的 AI-native 服务交付。"},{"title":"本地启动可信度","text":"该平台从清迈真实本地食品业务启动，并支持实际客户服务运营。"},{"title":"AI 驱动服务信号","text":"一个具体信号，表明 Chorn Planet 作为活跃业务平台，通过 AI 技术服务 Smart Food 客户。"},{"title":"产品扩展路径","text":"为未来 SaaS、点餐、商务、分析和 Smart Food 生态系统功能奠定基础。"}]},"futureDirections":["网站点餐流程","LINE OA 连接","MenuMatch 后端协作","Smart Food 商务层","分析辅助增长","Chorn Planet 媒体和 luxury 生态系统整合"]}
+{
+  "hero": {
+    "eyebrow": "来自清迈的生产级展示",
+    "title": "Smart Food",
+    "lead": "一个从清迈本地业务启动的真实 AI-native 食品平台体验。",
+    "support": "Chorn Planet 将对话式食品发现、菜单引导和订单就绪工作流应用于真实食品服务运营支持。",
+    "actionsLabel": "Smart Food AI 页面部分",
+    "actions": [
+      {
+        "label": "查看工作流",
+        "href": "#smart-food-ai-workflow",
+        "variant": "primary"
+      },
+      {
+        "label": "查看能力",
+        "href": "#smart-food-ai-value",
+        "variant": "secondary"
+      }
+    ],
+    "visual": {
+      "src": "/smart-food/smart-food-overview.png",
+      "alt": "面向清迈本地业务体验的 Smart Food AI 平台视觉",
+      "ariaLabel": "Smart Food AI 视觉叙事"
+    }
+  },
+  "proof": {
+    "heading": { "eyebrow": "生产级证明", "title": "从清迈本地业务到平台能力" },
+    "paragraphs": [
+      "Smart Food AI 旨在为客户侧和运营侧提供实际价值。餐厅、咖啡馆或食品服务团队可以从客户聊天点餐进入菜单引导、付款确认、厨房准备、配送协调和服务就绪摘要。",
+      "Smart Food 平台支持多种付款渠道，包括现金付款、通过银行应用进行 QR Code 付款、TrueMoney Wallet 付款，以及对 Half-Half Plus 等政府共同支付项目的支持。",
+      "除客户点餐外，该平台被构建为端到端食品运营系统，包含厨房工作流、配送服务、订单管理、付款处理、付款凭证核验、会计以及其他内部平台系统，用于支持 smart food 业务运营。"
+    ],
+    "image": {
+      "src": "/smart-food/chat-ordering.png",
+      "alt": "Smart Food 聊天点餐体验预览"
+    },
+    "cards": [
+      {
+        "index": "01",
+        "title": "本地业务背景",
+        "text": "围绕清迈真实服务需求构建，而不是通用概念界面。"
+      },
+      {
+        "index": "02",
+        "title": "面向客户的方向",
+        "text": "聚焦食品发现、偏好引导以及清晰的服务路径。"
+      },
+      {
+        "index": "03",
+        "title": "面向生产的的平台",
+        "text": "作为平台层呈现，后续可连接点餐、分析和商务功能。"
+      }
+    ]
+  },
+  "workflow": {
+    "id": "smart-food-ai-workflow",
+    "heading": { "eyebrow": "端到端工作流", "title": "体验如何运作" },
+    "steps": [
+      {
+        "title": "AI 聊天点餐",
+        "text": "客户可以通过 AI 辅助聊天选择餐品、提出问题，或在简单对话中确认订单。",
+        "image": {
+          "src": "/smart-food/process1-chat-ordering.png",
+          "alt": "面向 Smart Food 客户的 AI 聊天点餐界面"
+        }
+      },
+      {
+        "title": "账单处理",
+        "text": "系统确认订单总额，接收付款凭证，并在订单进入下一步之前核验账单。",
+        "image": {
+          "src": "/smart-food/process2-bill-processing.png",
+          "alt": "Smart Food 账单处理和付款核验"
+        }
+      },
+      {
+        "title": "烹饪",
+        "text": "厨房团队根据已确认订单，使用新鲜食材、清晰工作流和稳定的食品质量进行准备。",
+        "image": {
+          "src": "/smart-food/process3-cooking.png",
+          "alt": "厨房团队正在准备已确认的 Smart Food 订单"
+        }
+      },
+      {
+        "title": "配送",
+        "text": "骑手领取已完成的订单，并按照服务工作流交付给客户。",
+        "image": {
+          "src": "/smart-food/process4-delivery.png",
+          "alt": "包含骑手交接的 Smart Food 配送工作流"
+        }
+      },
+      {
+        "title": "收餐",
+        "text": "客户通过清晰的交接流程收到餐品，完成服务旅程。",
+        "image": {
+          "src": "/smart-food/process5-receiving.png",
+          "alt": "客户收到已完成的 Smart Food 订单"
+        }
+      }
+    ]
+  },
+  "features": {
+    "heading": { "eyebrow": "平台功能", "title": "为真实食品服务体验而构建" },
+    "items": [
+      "自然食品对话",
+      "菜单发现和匹配",
+      "常用餐品记忆方向",
+      "订单就绪摘要",
+      "本地业务运营支持",
+      "未来 LINE OA 和网站点餐方向",
+      "多渠道平台准备度",
+      "从内容到商务的增长潜力"
+    ]
+  },
+  "value": {
+    "id": "smart-food-ai-value",
+    "heading": {
+      "eyebrow": "业务价值",
+      "title": "这对 Chorn Planet 的意义",
+      "text": "该展示向协作者提供了一个具体信号：Chorn Planet 能够为真实业务工作流构建并交付 AI-native 生产平台。Chorn Planet 从清迈本地食品业务启动，通过 AI 技术服务 Smart Food 客户，并为业务运营增长建立实际路径。"
+    },
+    "cards": [
+      {
+        "title": "适合投资审查的证明",
+        "text": "一个可见的平台故事，显示 Chorn Planet 正从概念进入面向业务工作流的 AI-native 服务交付。"
+      },
+      {
+        "title": "本地启动可信度",
+        "text": "该平台从清迈真实本地食品业务启动，并支持实际客户服务运营。"
+      },
+      {
+        "title": "AI 驱动服务信号",
+        "text": "一个具体信号，表明 Chorn Planet 作为活跃业务平台，通过 AI 技术服务 Smart Food 客户。"
+      },
+      {
+        "title": "产品扩展路径",
+        "text": "为未来 SaaS、点餐、商务、分析和 Smart Food 生态系统功能奠定基础。"
+      }
+    ]
+  },
+  "futureDirections": [
+    "网站点餐流程",
+    "LINE OA 连接",
+    "MenuMatch 后端协作",
+    "Smart Food 商务层",
+    "分析辅助增长",
+    "Chorn Planet 媒体和 luxury 生态系统整合"
+  ]
+}

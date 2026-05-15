@@ -1,1 +1,157 @@
-{"hero":{"eyebrow":"Produktionscase fra Chiang Mai","title":"Smart Food","lead":"En reel AI-native madplatformoplevelse, lanceret fra en lokal virksomhed i Chiang Mai.","support":"Chorn Planet anvender samtalebaseret madopdagelse, menuguide og ordreklare arbejdsgange til at understøtte reelle madserviceoperationer.","actionsLabel":"Smart Food AI-sidesektioner","actions":[{"label":"Udforsk arbejdsgang","href":"#smart-food-ai-workflow","variant":"primary"},{"label":"Se kapacitet","href":"#smart-food-ai-value","variant":"secondary"}],"visual":{"src":"/smart-food/smart-food-overview.png","alt":"Smart Food AI-platformsvisualisering for en lokal forretningsoplevelse i Chiang Mai","ariaLabel":"Smart Food AI visuel fortælling"}},"proof":{"heading":{"eyebrow":"Produktionsbevis","title":"Fra lokal virksomhed i Chiang Mai til platformskapacitet"},"paragraphs":["Smart Food AI er designet til at give praktisk værdi for både kunder og drift. En restaurant, café eller madserviceteam kan gå fra kundens chatbestilling til menuguide, betalingsbekræftelse, køkkenforberedelse, leveringskoordinering og et serviceklart resumé.","Smart Food-platformen understøtter flere betalingskanaler, herunder kontant betaling, QR Code-betaling via bankapps, TrueMoney Wallet-betaling og støtte til offentlige medbetalingsprogrammer såsom Half-Half Plus.","Ud over kundebestilling er platformen struktureret som et end-to-end madoperationssystem med køkkenarbejdsgang, leveringstjeneste, ordrestyring, betalingsbehandling, kontrol af betalingskvitteringer, regnskab og andre interne platformsystemer, der understøtter smart food-forretningsdrift."],"image":{"src":"/smart-food/chat-ordering.png","alt":"Forhåndsvisning af Smart Food-chatbestilling"},"cards":[{"index":"01","title":"Lokal forretningskontekst","text":"Bygget omkring reelle servicebehov i Chiang Mai frem for en generisk konceptskærm."},{"index":"02","title":"Kunderettet retning","text":"Fokuseret på madopdagelse, præferencevejledning og en klar vej til service."},{"index":"03","title":"Produktionsorienteret platform","text":"Præsenteret som et platformslag, der senere kan forbinde bestilling, analyse og handel."}]},"workflow":{"id":"smart-food-ai-workflow","heading":{"eyebrow":"End-to-end arbejdsgang","title":"Sådan fungerer oplevelsen"},"steps":[{"title":"AI-chatbestilling","text":"Kunder kan bestille via AI-assisteret chat ved at vælge et måltid, stille spørgsmål eller bekræfte deres bestilling i en enkel samtale.","image":{"src":"/smart-food/process1-chat-ordering.png","alt":"AI-chatbestillingsinterface for Smart Food-kunder"}},{"title":"Fakturabehandling","text":"Systemet bekræfter ordretotalen, modtager betalingskvitteringen og kontrollerer regningen, før ordren går videre.","image":{"src":"/smart-food/process2-bill-processing.png","alt":"Smart Food-fakturabehandling og betalingskontrol"}},{"title":"Tilberedning","text":"Køkkenteamet forbereder den bekræftede ordre med friske ingredienser, en klar arbejdsgang og ensartet madkvalitet.","image":{"src":"/smart-food/process3-cooking.png","alt":"Køkkenteam forbereder en bekræftet Smart Food-ordre"}},{"title":"Levering","text":"Buddet afhenter den færdige ordre og leverer den til kunden i henhold til servicearbejdsgangen.","image":{"src":"/smart-food/process4-delivery.png","alt":"Smart Food-leveringsarbejdsgang med overdragelse til bud"}},{"title":"Modtagelse","text":"Kunden modtager maden gennem en tydelig overdragelsesproces, der afslutter serviceforløbet.","image":{"src":"/smart-food/process5-receiving.png","alt":"Kunde modtager en færdig Smart Food-ordre"}}]},"features":{"heading":{"eyebrow":"Platformsfunktioner","title":"Bygget til en reel madserviceoplevelse"},"items":["Naturlig madsamtale","Menuopdagelse og matching","Retning for hukommelse af favoritmåltider","Ordreklare resuméer","Driftsstøtte til lokal virksomhed","Fremtidig retning for LINE OA- og webstedsbestilling","Parathed til flerkanalsplatform","Vækstpotentiale fra indhold til handel"]},"value":{"id":"smart-food-ai-value","heading":{"eyebrow":"Forretningsværdi","title":"Hvorfor dette er vigtigt for Chorn Planet","text":"Casen giver samarbejdspartnere et konkret signal om, at Chorn Planet bygger og leverer AI-native produktionsplatforme til reelle forretningsarbejdsgange. Lanceret fra en lokal madvirksomhed i Chiang Mai betjener Chorn Planet Smart Food-kunder med AI-teknologi og skaber en praktisk vej for udvikling af forretningsdrift."},"cards":[{"title":"Investeringsklar dokumentation","text":"En synlig platformshistorie, der viser Chorn Planet i bevægelse fra koncept til AI-native servicelevering for forretningsarbejdsgange."},{"title":"Troværdighed fra lokal lancering","text":"Platformen er lanceret fra en reel lokal madvirksomhed i Chiang Mai og understøtter praktiske kundeserviceoperationer."},{"title":"Signal om AI-drevet service","text":"Et konkret signal om, at Chorn Planet betjener Smart Food-kunder gennem AI-teknologi som en aktiv forretningsplatform."},{"title":"Vej til produktudvidelse","text":"Et fundament for fremtidige SaaS-, bestillings-, handels-, analyse- og Smart Food-økosystemfunktioner."}]},"futureDirections":["Webstedsbestillingsflow","LINE OA-forbindelse","MenuMatch backend-samarbejde","Smart Food-handelslag","Analyseunderstøttet vækst","Integration med Chorn Planet-medier og luksusøkosystem"]}
+{
+  "hero": {
+    "eyebrow": "Produktionscase fra Chiang Mai",
+    "title": "Smart Food",
+    "lead": "En reel AI-native madplatformoplevelse, lanceret fra en lokal virksomhed i Chiang Mai.",
+    "support": "Chorn Planet anvender samtalebaseret madopdagelse, menuguide og ordreklare arbejdsgange til at understøtte reelle madserviceoperationer.",
+    "actionsLabel": "Smart Food AI-sidesektioner",
+    "actions": [
+      {
+        "label": "Udforsk arbejdsgang",
+        "href": "#smart-food-ai-workflow",
+        "variant": "primary"
+      },
+      {
+        "label": "Se kapacitet",
+        "href": "#smart-food-ai-value",
+        "variant": "secondary"
+      }
+    ],
+    "visual": {
+      "src": "/smart-food/smart-food-overview.png",
+      "alt": "Smart Food AI-platformsvisualisering for en lokal forretningsoplevelse i Chiang Mai",
+      "ariaLabel": "Smart Food AI visuel fortælling"
+    }
+  },
+  "proof": {
+    "heading": {
+      "eyebrow": "Produktionsbevis",
+      "title": "Fra lokal virksomhed i Chiang Mai til platformskapacitet"
+    },
+    "paragraphs": [
+      "Smart Food AI er designet til at give praktisk værdi for både kunder og drift. En restaurant, café eller madserviceteam kan gå fra kundens chatbestilling til menuguide, betalingsbekræftelse, køkkenforberedelse, leveringskoordinering og et serviceklart resumé.",
+      "Smart Food-platformen understøtter flere betalingskanaler, herunder kontant betaling, QR Code-betaling via bankapps, TrueMoney Wallet-betaling og støtte til offentlige medbetalingsprogrammer såsom Half-Half Plus.",
+      "Ud over kundebestilling er platformen struktureret som et end-to-end madoperationssystem med køkkenarbejdsgang, leveringstjeneste, ordrestyring, betalingsbehandling, kontrol af betalingskvitteringer, regnskab og andre interne platformsystemer, der understøtter smart food-forretningsdrift."
+    ],
+    "image": {
+      "src": "/smart-food/chat-ordering.png",
+      "alt": "Forhåndsvisning af Smart Food-chatbestilling"
+    },
+    "cards": [
+      {
+        "index": "01",
+        "title": "Lokal forretningskontekst",
+        "text": "Bygget omkring reelle servicebehov i Chiang Mai frem for en generisk konceptskærm."
+      },
+      {
+        "index": "02",
+        "title": "Kunderettet retning",
+        "text": "Fokuseret på madopdagelse, præferencevejledning og en klar vej til service."
+      },
+      {
+        "index": "03",
+        "title": "Produktionsorienteret platform",
+        "text": "Præsenteret som et platformslag, der senere kan forbinde bestilling, analyse og handel."
+      }
+    ]
+  },
+  "workflow": {
+    "id": "smart-food-ai-workflow",
+    "heading": {
+      "eyebrow": "End-to-end arbejdsgang",
+      "title": "Sådan fungerer oplevelsen"
+    },
+    "steps": [
+      {
+        "title": "AI-chatbestilling",
+        "text": "Kunder kan bestille via AI-assisteret chat ved at vælge et måltid, stille spørgsmål eller bekræfte deres bestilling i en enkel samtale.",
+        "image": {
+          "src": "/smart-food/process1-chat-ordering.png",
+          "alt": "AI-chatbestillingsinterface for Smart Food-kunder"
+        }
+      },
+      {
+        "title": "Fakturabehandling",
+        "text": "Systemet bekræfter ordretotalen, modtager betalingskvitteringen og kontrollerer regningen, før ordren går videre.",
+        "image": {
+          "src": "/smart-food/process2-bill-processing.png",
+          "alt": "Smart Food-fakturabehandling og betalingskontrol"
+        }
+      },
+      {
+        "title": "Tilberedning",
+        "text": "Køkkenteamet forbereder den bekræftede ordre med friske ingredienser, en klar arbejdsgang og ensartet madkvalitet.",
+        "image": {
+          "src": "/smart-food/process3-cooking.png",
+          "alt": "Køkkenteam forbereder en bekræftet Smart Food-ordre"
+        }
+      },
+      {
+        "title": "Levering",
+        "text": "Buddet afhenter den færdige ordre og leverer den til kunden i henhold til servicearbejdsgangen.",
+        "image": {
+          "src": "/smart-food/process4-delivery.png",
+          "alt": "Smart Food-leveringsarbejdsgang med overdragelse til bud"
+        }
+      },
+      {
+        "title": "Modtagelse",
+        "text": "Kunden modtager maden gennem en tydelig overdragelsesproces, der afslutter serviceforløbet.",
+        "image": {
+          "src": "/smart-food/process5-receiving.png",
+          "alt": "Kunde modtager en færdig Smart Food-ordre"
+        }
+      }
+    ]
+  },
+  "features": {
+    "heading": {
+      "eyebrow": "Platformsfunktioner",
+      "title": "Bygget til en reel madserviceoplevelse"
+    },
+    "items": [
+      "Naturlig madsamtale",
+      "Menuopdagelse og matching",
+      "Retning for hukommelse af favoritmåltider",
+      "Ordreklare resuméer",
+      "Driftsstøtte til lokal virksomhed",
+      "Fremtidig retning for LINE OA- og webstedsbestilling",
+      "Parathed til flerkanalsplatform",
+      "Vækstpotentiale fra indhold til handel"
+    ]
+  },
+  "value": {
+    "id": "smart-food-ai-value",
+    "heading": {
+      "eyebrow": "Forretningsværdi",
+      "title": "Hvorfor dette er vigtigt for Chorn Planet",
+      "text": "Casen giver samarbejdspartnere et konkret signal om, at Chorn Planet bygger og leverer AI-native produktionsplatforme til reelle forretningsarbejdsgange. Lanceret fra en lokal madvirksomhed i Chiang Mai betjener Chorn Planet Smart Food-kunder med AI-teknologi og skaber en praktisk vej for udvikling af forretningsdrift."
+    },
+    "cards": [
+      {
+        "title": "Investeringsklar dokumentation",
+        "text": "En synlig platformshistorie, der viser Chorn Planet i bevægelse fra koncept til AI-native servicelevering for forretningsarbejdsgange."
+      },
+      {
+        "title": "Troværdighed fra lokal lancering",
+        "text": "Platformen er lanceret fra en reel lokal madvirksomhed i Chiang Mai og understøtter praktiske kundeserviceoperationer."
+      },
+      {
+        "title": "Signal om AI-drevet service",
+        "text": "Et konkret signal om, at Chorn Planet betjener Smart Food-kunder gennem AI-teknologi som en aktiv forretningsplatform."
+      },
+      {
+        "title": "Vej til produktudvidelse",
+        "text": "Et fundament for fremtidige SaaS-, bestillings-, handels-, analyse- og Smart Food-økosystemfunktioner."
+      }
+    ]
+  },
+  "futureDirections": [
+    "Webstedsbestillingsflow",
+    "LINE OA-forbindelse",
+    "MenuMatch backend-samarbejde",
+    "Smart Food-handelslag",
+    "Analyseunderstøttet vækst",
+    "Integration med Chorn Planet-medier og luksusøkosystem"
+  ]
+}
