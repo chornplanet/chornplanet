@@ -133,16 +133,17 @@ This keeps primary Smart Mobility and Smart City Chiang Mai route content render
 
 Smart Mobility Chiang Mai metadata pages now use English metadata fallback when an unsupported locale key is requested.
 
-Dev routing follow-up:
+Dev and production routing follow-up:
 
-- A local `next dev` run showed a transient 404 for `/en/smart-mobility/chiang-mai/vision-smart-mobility-northern-gateway/` while the route existed in production build output.
-- Replaced the duplicated concrete Smart Mobility Chiang Mai slug pages with `src/app/[locale]/(desktop)/smart-mobility/chiang-mai/[slug]/page.tsx` as the single route entrypoint for known Smart Mobility Chiang Mai slugs.
-- The dynamic route uses the same metadata maps, primary components, MongoDB public loader, static fallback chain, and optional AI Companions wrapper in both development and production.
-- The dynamic route exports `generateStaticParams()` for the six known Smart Mobility Chiang Mai slugs. This gives Turbopack dev a concrete slug inventory and prevents first-request 404s after removing the old concrete slug folders.
+- A shipped `main` build still produced production server errors and local 404s for `/smart-mobility/chiang-mai/vision-smart-mobility-northern-gateway/` in multiple locales.
+- The dynamic `[slug]` route was removed for Smart Mobility Chiang Mai because the nested dynamic route was still fragile across dev and deployed builds.
+- The six known Smart Mobility Chiang Mai slugs now have explicit concrete route folders again, each delegating to the shared `smartMobilityChiangMaiPage.tsx` helper for metadata, MongoDB public loading, static fallback, and optional AI rendering.
+- The concrete route files are intentionally kept as route-entry shims only; shared behavior belongs in `src/app/[locale]/(desktop)/smart-mobility/chiang-mai/smartMobilityChiangMaiPage.tsx`.
 - Do not force static fallback content in `next dev`. Local development should still exercise MongoDB content first so missing or incomplete database records are visible while editing.
 - The parent `/smart-mobility/chiang-mai/` page now redirects to `/smart-mobility/chiang-mai/vision-smart-mobility-northern-gateway/` instead of re-exporting the child page.
-- After restarting the dev server, `/en/smart-mobility/chiang-mai/hub-to-chiang-mai-airport/` and `/en/smart-mobility/chiang-mai/vision-smart-mobility-northern-gateway/` each returned HTTP 200 locally on fresh dev checks.
+- After restarting the dev server, `/en/smart-mobility/chiang-mai/vision-smart-mobility-northern-gateway/`, `/th/smart-mobility/chiang-mai/vision-smart-mobility-northern-gateway/`, `/fr/smart-mobility/chiang-mai/vision-smart-mobility-northern-gateway/`, and `/ja/smart-mobility/chiang-mai/vision-smart-mobility-northern-gateway/` each returned HTTP 200 locally on sequential fresh dev checks.
 - The shared `loadLocalizedContentWithFallback` helper now bounds each requested-locale and English fallback load attempt with an 8s timeout before moving to the next fallback step. This prevents public pages from hanging for a full MongoDB retry cycle before static fallback content can render.
+- The optional AI Companions wrapper now uses the static AI companion payload for supplemental Smart Mobility and Smart City sections. This avoids starting extra MongoDB reads from optional public-route decoration and keeps primary route pages renderable even if shared AI content storage stalls.
 - Smart Mobility Chiang Mai MongoDB records may be partially populated by slug. The public loader now merges missing required nested fields, such as route `transportationModel` or `connectivityMatrix`, from the static per-slug fallback instead of throwing and replacing the whole page with static content. Full static fallback usage still logs; partial field repair is intentionally silent.
 
 The static fallback payloads are intentionally conservative availability bridges. MongoDB remains the source of truth and should still be repaired, reseeded, or audited for complete localized content.

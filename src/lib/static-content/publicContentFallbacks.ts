@@ -291,9 +291,14 @@ export function getFallbackAboutContent(locale: string): AboutContentPayload {
     };
 }
 
-export function getFallbackAiCompanionsContent(locale: string): AiCompanionsContentPayload {
+export function getFallbackAiCompanionsContent(
+    locale: string,
+    options: { log?: boolean } = {}
+): AiCompanionsContentPayload {
     const normalizedLocale = normalizeAiCompanionsContentLocale(locale);
-    logStaticFallback('AI companions content', normalizedLocale);
+    if (options.log !== false) {
+        logStaticFallback('AI companions content', normalizedLocale);
+    }
 
     return {
         locale: normalizedLocale,
