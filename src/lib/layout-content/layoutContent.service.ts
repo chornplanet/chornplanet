@@ -52,6 +52,20 @@ const TIKTOK_CONTENT_DEVELOPMENT_FOOTER_LABELS: Record<string, string> = {
     zh: 'TikTok 内容开发',
 };
 
+Object.assign(TIKTOK_CONTENT_DEVELOPMENT_FOOTER_LABELS, {
+    en: 'TikTok Creator',
+    th: 'TikTok ครีเอเตอร์',
+    da: 'TikTok-skaber',
+    de: 'TikTok-Creator',
+    fi: 'TikTok-sisällöntuottaja',
+    fr: 'Créateur TikTok',
+    ja: 'TikTokクリエイター',
+    ko: 'TikTok 크리에이터',
+    nl: 'TikTok-creator',
+    zh: 'TikTok 创作者',
+    zh_cn: 'TikTok 创作者',
+});
+
 function getLayoutContentTag(locale: string) {
     return `layout-content:${normalizeLayoutContentLocale(locale)}`;
 }
