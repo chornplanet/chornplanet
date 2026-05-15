@@ -9,6 +9,7 @@ import {
 import {SmartFoodAiContentService} from "@/core/services/smart-food-ai-content.service";
 import {SmartFoodAiContentRepository} from "@/adapters/outbound/mongo.repository/smart-food-ai-content.repository";
 import {loadLocalizedContentWithFallback} from "@/lib/localized-content/localizedContentFallback";
+import {getFallbackSmartFoodAiContent} from "@/lib/static-content/publicContentFallbacks";
 
 const smartFoodAiContentService = new SmartFoodAiContentService(new SmartFoodAiContentRepository());
 const SMART_FOOD_AI_CONTENT_LIST_TAG = 'smart-food-ai-content';
@@ -93,10 +94,13 @@ export async function getSmartFoodAiContent(locale: string): Promise<SmartFoodAi
 }
 
 export async function getSmartFoodAiContentForPublicPage(locale: string): Promise<SmartFoodAiContentPayload> {
+    const normalizedLocale = normalizeSmartFoodAiContentLocale(locale);
+
     return loadLocalizedContentWithFallback({
-        locale: normalizeSmartFoodAiContentLocale(locale),
+        locale: normalizedLocale,
         context: 'Smart Food AI content public render',
         load: getSmartFoodAiContent,
+        fallback: () => getFallbackSmartFoodAiContent(normalizedLocale),
     });
 }
 

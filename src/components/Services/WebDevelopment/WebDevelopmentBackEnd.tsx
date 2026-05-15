@@ -10,7 +10,7 @@ export default function WebDevelopmentBackEnd({lang, fullStack}: { lang: string,
         fullstack.stacks[3],
         fullstack.stacks[0],
         fullstack.stacks[2]
-    ]
+    ].filter(Boolean)
 
     return (
         <div className="services-area bg-fafafa pt-100 pb-70 addition-ptb-0">
@@ -20,12 +20,15 @@ export default function WebDevelopmentBackEnd({lang, fullStack}: { lang: string,
                         <Link href={'/' + lang + item.link}>
                             <div className="home-frontend-box">
                                 <div className="icon">
-                                    <Image
-                                        src={item.image}
-                                        alt={item.title}
-                                        width={150}
-                                        height={150}
-                                    />
+                                    {
+                                        item.image &&
+                                        <Image
+                                            src={item.image}
+                                            alt={item.title}
+                                            width={150}
+                                            height={150}
+                                        />
+                                    }
                                 </div>
 
                                 <h3> {item.title} </h3>

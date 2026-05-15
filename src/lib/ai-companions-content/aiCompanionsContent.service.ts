@@ -8,6 +8,7 @@ import {
 import {AiCompanionsContentService} from "@/core/services/ai-companions-content.service";
 import {AiCompanionsContentRepository} from "@/adapters/outbound/mongo.repository/ai-companions-content.repository";
 import {loadLocalizedContentWithFallback} from "@/lib/localized-content/localizedContentFallback";
+import {getFallbackAiCompanionsContent} from "@/lib/static-content/publicContentFallbacks";
 
 const aiCompanionsContentService = new AiCompanionsContentService(new AiCompanionsContentRepository());
 const AI_COMPANIONS_CONTENT_LIST_TAG = 'ai-companions-content';
@@ -64,10 +65,13 @@ export async function getAiCompanionsContent(locale: string): Promise<AiCompanio
 }
 
 export async function getAiCompanionsContentForPublicPage(locale: string): Promise<AiCompanionsContentPayload> {
+    const normalizedLocale = normalizeAiCompanionsContentLocale(locale);
+
     return loadLocalizedContentWithFallback({
-        locale: normalizeAiCompanionsContentLocale(locale),
+        locale: normalizedLocale,
         context: 'AI companions content public render',
         load: getAiCompanionsContent,
+        fallback: () => getFallbackAiCompanionsContent(normalizedLocale),
     });
 }
 

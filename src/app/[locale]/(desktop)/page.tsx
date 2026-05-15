@@ -27,7 +27,7 @@ function getSlugFromPath(path: string): string | null {
 export async function generateMetadata(): Promise<Metadata> {
   const headers15 = await headers();
   const lang = headers15.get("x-locale") || "en";
-  return MetadataHome[lang];
+  return MetadataHome[lang] ?? MetadataHome.en;
 }
 
 export default async function Home() {

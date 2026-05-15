@@ -8,6 +8,7 @@ import {
 import {PolicyContentService} from "@/core/services/policy-content.service";
 import {PolicyContentRepository} from "@/adapters/outbound/mongo.repository/policy-content.repository";
 import {loadLocalizedContentWithFallback} from "@/lib/localized-content/localizedContentFallback";
+import {getFallbackPolicyContent} from "@/lib/static-content/publicContentFallbacks";
 
 const policyContentService = new PolicyContentService(new PolicyContentRepository());
 const POLICY_CONTENT_LIST_TAG = 'policy-content';
@@ -68,10 +69,13 @@ export async function getPolicyContent(locale: string): Promise<PolicyContentPay
 }
 
 export async function getPolicyContentForPublicPage(locale: string): Promise<PolicyContentPayload> {
+    const normalizedLocale = normalizePolicyContentLocale(locale);
+
     return loadLocalizedContentWithFallback({
-        locale: normalizePolicyContentLocale(locale),
+        locale: normalizedLocale,
         context: 'policy content public render',
         load: getPolicyContent,
+        fallback: () => getFallbackPolicyContent(normalizedLocale),
     });
 }
 

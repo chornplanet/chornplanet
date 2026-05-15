@@ -15,8 +15,8 @@ export default function SmartMobilityChiangMaiRight(
                 <ul className="smart-right-list">
                     {
                         rightItems.map((item: ISmartImage, index) =>
-                            <Link key={index} href={'/' + lang + item.link}>
-                                <li className="smart-right-item">
+                            <li key={index} className="smart-right-item">
+                                <Link href={'/' + lang + item.link}>
                                     <div className="smart-right-image-wrapper">
                                         {
                                             item.media?.image_url &&
@@ -36,8 +36,8 @@ export default function SmartMobilityChiangMaiRight(
                                                 }</strong>
                                         </div>
                                     </div>
-                                </li>
-                            </Link>
+                                </Link>
+                            </li>
                         )
                     }
                 </ul>

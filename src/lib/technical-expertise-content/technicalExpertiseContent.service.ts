@@ -8,6 +8,7 @@ import {
 import {TechnicalExpertiseContentService} from "@/core/services/technical-expertise-content.service";
 import {TechnicalExpertiseContentRepository} from "@/adapters/outbound/mongo.repository/technical-expertise-content.repository";
 import {loadLocalizedContentWithFallback} from "@/lib/localized-content/localizedContentFallback";
+import {getFallbackTechnicalExpertiseContent} from "@/lib/static-content/publicContentFallbacks";
 
 const technicalExpertiseContentService =
     new TechnicalExpertiseContentService(new TechnicalExpertiseContentRepository());
@@ -74,10 +75,13 @@ export async function getTechnicalExpertiseContent(locale: string): Promise<Tech
 }
 
 export async function getTechnicalExpertiseContentForPublicPage(locale: string): Promise<TechnicalExpertiseContentPayload> {
+    const normalizedLocale = normalizeTechnicalExpertiseContentLocale(locale);
+
     return loadLocalizedContentWithFallback({
-        locale: normalizeTechnicalExpertiseContentLocale(locale),
+        locale: normalizedLocale,
         context: 'technical expertise content public render',
         load: getTechnicalExpertiseContent,
+        fallback: () => getFallbackTechnicalExpertiseContent(normalizedLocale),
     });
 }
 

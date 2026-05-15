@@ -8,6 +8,7 @@ import {
 import {HomePageContentService} from "@/core/services/homepage-content.service";
 import {HomePageContentRepository} from "@/adapters/outbound/mongo.repository/homepage-content.repository";
 import {loadLocalizedContentWithFallback} from "@/lib/localized-content/localizedContentFallback";
+import {getFallbackHomePageContent} from "@/lib/static-content/publicContentFallbacks";
 
 const homePageContentService = new HomePageContentService(new HomePageContentRepository());
 const HOME_PAGE_CONTENT_LIST_TAG = 'homepage-content';
@@ -77,10 +78,13 @@ export async function getHomePageContent(locale: string): Promise<HomePageConten
 }
 
 export async function getHomePageContentForPublicPage(locale: string): Promise<HomePageContentPayload> {
+    const normalizedLocale = normalizeHomePageLocale(locale);
+
     return loadLocalizedContentWithFallback({
-        locale: normalizeHomePageLocale(locale),
+        locale: normalizedLocale,
         context: 'homepage content public render',
         load: getHomePageContent,
+        fallback: () => getFallbackHomePageContent(normalizedLocale),
     });
 }
 
