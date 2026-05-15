@@ -1,6 +1,7 @@
 // src/components/Home/UrbanSignals.tsx
 
 import Image from "next/image"
+import Link from "next/link"
 import {IUrbanSignals} from "@/lib/model/ISmartCityMedia";
 
 export default function UrbanSignals({lang, data}: { lang: string; data: IUrbanSignals }) {
@@ -15,7 +16,7 @@ export default function UrbanSignals({lang, data}: { lang: string; data: IUrbanS
 
             <div className="urban-signals__grid">
                 {signals.map(signal => (
-                    <a
+                    <Link
                         key={signal.title}
                         href={`/${lang}` + signal.landingUrl}
                         className="urban-signals__item"
@@ -33,7 +34,7 @@ export default function UrbanSignals({lang, data}: { lang: string; data: IUrbanS
                             <h3>{signal.title}</h3>
                             <p>{signal.description}</p>
                         </div>
-                    </a>
+                    </Link>
                 ))}
             </div>
         </section>

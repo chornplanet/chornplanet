@@ -1,6 +1,7 @@
 // src/components/smart-city-media/GlobalPatterns.tsx
 
 import Image from "next/image"
+import Link from "next/link"
 import {IGlobalPatterns} from "@/lib/model/ISmartCityMedia";
 
 export default function GlobalPatterns({lang, data}: { lang: string; data: IGlobalPatterns }) {
@@ -15,7 +16,7 @@ export default function GlobalPatterns({lang, data}: { lang: string; data: IGlob
 
             <div className="global-patterns__signals">
                 {signals.map((signal, index) => (
-                    <a
+                    <Link
                         key={index}
                         href={`/${lang}` + signal.landingUrl}
                         className="global-patterns__signal"
@@ -32,7 +33,7 @@ export default function GlobalPatterns({lang, data}: { lang: string; data: IGlob
                             <h3>{signal.title}</h3>
                             <p>{signal.description}</p>
                         </div>
-                    </a>
+                    </Link>
                 ))}
             </div>
         </section>
