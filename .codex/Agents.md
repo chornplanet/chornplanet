@@ -38,9 +38,12 @@ Codex startup order:
 4. Read relevant `.mcp/repository/` maps before route, locale, styling, UX, metadata, content, server, or deployment work.
 5. Read relevant `.mcp/resources/`, `.mcp/policies/`, `.mcp/tools/`, and `.mcp/workflows/` files.
 6. Read the relevant `.chatgpt/planning/feature-<feature-name>.md` file when the work is planned.
-7. Review runtime application code, scripts, schemas, and content services.
+7. Read `.chatgpt/engine/ContentTranlation.md` when the feature involves website content, localization, multilingual copy, or MongoDB-backed translated content.
+8. Review runtime application code, scripts, schemas, and content services.
 
 For media automation, outfit/civilization posting, commerce, Smart Food, analytics, SEO/LLM visibility, or Chorn DNA work, also read the matching `.mcp/` resource, policy, tool contract, or workflow file before implementing.
+
+When `.chatgpt/Agents.md` defines a feature-specific workflow, Codex should sync to the necessary handoff items without duplicating that full workflow here. In practice, Codex must honor the active ChatGPT planning, content-generation, translation, TH review, regenerated EN, all-language sync, MongoDB migration, and completion requirements that apply to the current task.
 
 ## Commands
 

@@ -32,6 +32,12 @@ const CONTENT_CHECKS = [
         defaultCollection: 'layout_content',
         requiredFields: ['navbar', 'footer', 'consent', 'languageOptions'],
     },
+    {
+        label: 'smart-food-ai',
+        envKey: 'MONGODB_COLLECTION_SMART_FOOD_AI_CONTENT',
+        defaultCollection: 'smart_food_ai_content',
+        requiredFields: ['hero', 'proof', 'workflow', 'features', 'value', 'futureDirections'],
+    },
 ];
 
 function parseArgs() {

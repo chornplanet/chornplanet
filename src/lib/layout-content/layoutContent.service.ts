@@ -38,7 +38,18 @@ const YOUTUBE_FOOTER_LINK: IFooterDetail = {
     link: 'https://www.youtube.com/@chornplanet',
 };
 const TIKTOK_CONTENT_DEVELOPMENT_FOOTER_LINK = 'https://tiktok.com/@chornplanet';
-const TIKTOK_CONTENT_DEVELOPMENT_FOOTER_LABEL = 'TikTok Content Development';
+const TIKTOK_CONTENT_DEVELOPMENT_FOOTER_LABELS: Record<string, string> = {
+    da: 'TikTok-indholdsudvikling',
+    de: 'TikTok-Content-Entwicklung',
+    en: 'TikTok Content Development',
+    fi: 'TikTok-sisällön kehittäminen',
+    fr: 'Développement de contenu TikTok',
+    ja: 'TikTokコンテンツ開発',
+    ko: 'TikTok 콘텐츠 개발',
+    nl: 'TikTok-contentontwikkeling',
+    th: 'การพัฒนาคอนเทนต์ TikTok',
+    zh: 'TikTok 内容开发',
+};
 
 function getLayoutContentTag(locale: string) {
     return `layout-content:${normalizeLayoutContentLocale(locale)}`;
@@ -117,7 +128,9 @@ function normalizeSmartFoodAiProjectGroup<T extends { items: IFooterDetail[] }>(
     };
 }
 
-function normalizeTikTokContentDevelopmentProjectGroup<T extends { items: IFooterDetail[] }>(group: T): T {
+function normalizeTikTokContentDevelopmentProjectGroup<T extends { items: IFooterDetail[] }>(locale: string, group: T): T {
+    const label = TIKTOK_CONTENT_DEVELOPMENT_FOOTER_LABELS[locale] ?? TIKTOK_CONTENT_DEVELOPMENT_FOOTER_LABELS.en;
+
     return {
         ...group,
         items: group.items.map((item) => {
@@ -127,7 +140,7 @@ function normalizeTikTokContentDevelopmentProjectGroup<T extends { items: IFoote
 
             return {
                 ...item,
-                label: TIKTOK_CONTENT_DEVELOPMENT_FOOTER_LABEL,
+                label,
             };
         }),
     };
@@ -140,7 +153,7 @@ function normalizeSmartFoodAiFooter(locale: string, footer: IFooter): IFooter {
     return {
         ...footer,
         important: normalizeSmartFoodAiFooterGroup(footer.important),
-        project: normalizeTikTokContentDevelopmentProjectGroup(projectWithSmartFoodAi),
+        project: normalizeTikTokContentDevelopmentProjectGroup(normalizedLocale, projectWithSmartFoodAi),
         technology: normalizeSmartFoodAiFooterGroup(footer.technology),
     };
 }
