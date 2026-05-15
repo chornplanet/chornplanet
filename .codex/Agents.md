@@ -38,9 +38,12 @@ Codex startup order:
 4. Read relevant `.mcp/repository/` maps before route, locale, styling, UX, metadata, content, server, or deployment work.
 5. Read relevant `.mcp/resources/`, `.mcp/policies/`, `.mcp/tools/`, and `.mcp/workflows/` files.
 6. Read the relevant `.chatgpt/planning/feature-<feature-name>.md` file when the work is planned.
-7. Review runtime application code, scripts, schemas, and content services.
+7. Read `.chatgpt/engine/ContentTranlation.md` when the feature involves website content, localization, multilingual copy, or MongoDB-backed translated content.
+8. Review runtime application code, scripts, schemas, and content services.
 
 For media automation, outfit/civilization posting, commerce, Smart Food, analytics, SEO/LLM visibility, or Chorn DNA work, also read the matching `.mcp/` resource, policy, tool contract, or workflow file before implementing.
+
+When `.chatgpt/Agents.md` defines a feature-specific workflow, Codex should sync to the necessary handoff items without duplicating that full workflow here. In practice, Codex must honor the active ChatGPT planning, content-generation, translation, TH review, regenerated EN, all-language sync, MongoDB migration, and completion requirements that apply to the current task.
 
 ## Commands
 
@@ -157,6 +160,7 @@ Reference `src/styles/smart-food-ai.scss` for good fit across all views: respons
 Current preferred pattern for premium content sections:
 
 - On mobile/tablet widths below `992px`, avoid nested card spacing that makes content feel squeezed. Flatten section grids when needed by removing outer grid padding, left/right margins, column gutters, decorative borders, background cards, and shadows.
+- For home and editorial sections, use the same flat editorial section concept across breakpoints as the Smart Food highlight, Human Daily Flow, and Smart City main sections: no outer border, no wrapper background, no wrapper shadow, and no extra wrapper padding. Keep hierarchy through grid rhythm, typography, image scale, inner content spacing, and clear actions instead of a framed outer shell.
 - Keep desktop and larger tablet layouts visually premium. Desktop grids may keep framed backgrounds, padding, borders, and shadows when they support hierarchy and do not reduce readability.
 - Images, headings, and paragraphs inside the same mobile section should align to the same readable content width. Do not let Bootstrap row negative margins, column gutters, or nested `.smart-food-ai-proof` padding create inconsistent left/right edges.
 - On mobile, remove decorative borders when they force text into a narrow column. A border should never cost paragraph readability.

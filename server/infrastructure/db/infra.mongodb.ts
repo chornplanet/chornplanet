@@ -12,6 +12,7 @@ import {SmartCityChiangMaiContentRecord} from "@/core/domain/smart-city-chiang-m
 import {SmartMobilityChiangMaiContentRecord} from "@/core/domain/smart-mobility-chiang-mai-content.entity";
 import {TechnicalExpertiseContentRecord} from "@/core/domain/technical-expertise-content.entity";
 import {LayoutContentRecord} from "@/core/domain/layout-content.entity";
+import {SmartFoodAiContentRecord} from "@/core/domain/smart-food-ai-content.entity";
 
 const uri = process.env.MONGODB_URI;
 const databaseName = process.env.MONGODB_DATABASE;
@@ -39,6 +40,8 @@ const technicalExpertiseContentCollectionName =
     process.env.MONGODB_COLLECTION_TECHNICAL_EXPERTISE_CONTENT || 'technical_expertise_content';
 const layoutContentCollectionName =
     process.env.MONGODB_COLLECTION_LAYOUT_CONTENT || 'layout_content';
+const smartFoodAiContentCollectionName =
+    process.env.MONGODB_COLLECTION_SMART_FOOD_AI_CONTENT || 'smart_food_ai_content';
 
 if (!uri) {
     throw new Error('MONGODB_URI is required');
@@ -127,3 +130,5 @@ export const technicalExpertiseContentCollection: Collection<TechnicalExpertiseC
     db.collection(technicalExpertiseContentCollectionName);
 export const layoutContentCollection: Collection<LayoutContentRecord> =
     db.collection(layoutContentCollectionName);
+export const smartFoodAiContentCollection: Collection<SmartFoodAiContentRecord> =
+    db.collection(smartFoodAiContentCollectionName);

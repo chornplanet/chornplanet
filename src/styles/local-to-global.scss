@@ -1,22 +1,25 @@
 .local-to-global {
-  padding: 1.5rem 0;
+  padding: clamp(30px, 5vw, 56px) 0;
 }
 
 .local-to-global__intro {
   max-width: 1360px;
-  margin-bottom: 1.5rem;
+  margin-bottom: clamp(22px, 4vw, 34px);
 
   h2 {
-    font-size: 2.3rem;
-    font-weight: 600;
-    line-height: 1.2;
+    margin: 0;
+    color: rgba(6, 18, 14, 0.96);
+    font-size: clamp(2rem, 4vw, 4.1rem);
+    font-weight: 800;
+    line-height: 1.04;
   }
 
   p {
-    margin-top: 1.2rem;
-    font-size: 1.05rem;
+    max-width: 760px;
+    margin-top: 1rem;
+    font-size: clamp(1rem, 1.2vw, 1.14rem);
     color: var(--color-text-muted);
-    line-height: 1.6;
+    line-height: 1.7;
   }
 }
 
@@ -28,6 +31,17 @@
 
   @media (max-width: 900px) {
     grid-template-columns: 1fr;
+  }
+}
+
+.local-to-global__item {
+  min-width: 0;
+  color: inherit;
+  text-decoration: none;
+  transition: transform 160ms ease;
+
+  &:hover {
+    transform: translateY(-2px);
   }
 }
 
@@ -44,11 +58,13 @@
 
 .local-to-global__content {
   margin-top: 1.25rem;
-  max-width: 520px;
+  max-width: 620px;
 
   h3 {
+    margin: 0;
     font-size: 1.3rem;
-    font-weight: 500;
+    font-weight: 700;
+    line-height: 1.25;
   }
 
   p {
@@ -60,7 +76,7 @@
 }
 
 .local-to-global__footer {
-  margin-top: 3rem;
+  margin-top: clamp(28px, 5vw, 48px);
 
   a {
     text-decoration: underline;
@@ -70,5 +86,48 @@
     &:hover {
       opacity: 0.85;
     }
+  }
+}
+
+@media (max-width: 767px) {
+  .local-to-global {
+    padding: clamp(30px, 8vw, 48px) 0;
+  }
+
+  .local-to-global__intro {
+    margin-bottom: 20px;
+
+    h2 {
+      font-size: clamp(1.9rem, 8vw, 2.55rem);
+      line-height: 1.04;
+    }
+
+    p {
+      max-width: none;
+      margin-top: 14px;
+      font-size: 1rem;
+      line-height: 1.68;
+    }
+  }
+
+  .local-to-global__grid {
+    gap: 28px;
+  }
+
+  .local-to-global__item:hover {
+    transform: none;
+  }
+
+  .local-to-global__image {
+    aspect-ratio: 16 / 10;
+  }
+
+  .local-to-global__content {
+    max-width: none;
+    margin-top: 14px;
+  }
+
+  .local-to-global__footer {
+    margin-top: 28px;
   }
 }

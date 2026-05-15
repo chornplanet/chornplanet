@@ -1,23 +1,27 @@
 // src/components/smart-city-media/city-systems.scss
 
 .city-systems {
-  padding: 1.5rem 0;
+  padding: clamp(30px, 5vw, 56px) 0;
 }
 
 .city-systems__intro {
   max-width: 1360px;
-  margin: 0 auto 1.5rem auto;
+  margin: 0 auto clamp(22px, 4vw, 34px) auto;
 
   h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
+    margin: 0;
+    color: rgba(6, 18, 14, 0.96);
+    font-size: clamp(2rem, 4vw, 4.1rem);
+    font-weight: 800;
+    line-height: 1.04;
   }
 
   p {
-    max-width: 920px;
-    font-size: 1.05rem;
+    max-width: 760px;
+    margin-top: 1rem;
+    font-size: clamp(1rem, 1.2vw, 1.14rem);
     line-height: 1.7;
-    color: #444;
+    color: var(--color-text-muted);
   }
 }
 
@@ -32,8 +36,10 @@
 .city-systems__item {
   display: flex;
   flex-direction: column;
+  min-width: 0;
   text-decoration: none;
   color: inherit;
+  transition: transform 160ms ease;
 }
 
 .city-systems__image {
@@ -41,28 +47,32 @@
   width: 100%;
   aspect-ratio: 4 / 3;
   overflow: hidden;
+  transition: transform 160ms ease;
 }
 
 .city-systems__item:hover {
-  transform: translateY(-4px);
+  transform: translateY(-2px);
 }
 
 .city-systems__item:hover .city-systems__image {
-  transform: scale(1.05);
+  transform: scale(1.02);
 }
 
 .city-systems__content {
   margin-top: 1.25rem;
 
   h3 {
+    margin: 0;
     font-size: 1.25rem;
-    margin-bottom: 0.5rem;
+    font-weight: 700;
+    line-height: 1.25;
   }
 
   p {
+    margin-top: 0.6rem;
     font-size: 0.95rem;
     line-height: 1.6;
-    color: #555;
+    color: var(--color-text-muted);
   }
 }
 
@@ -75,6 +85,49 @@
 
   li {
     font-size: 0.75rem;
-    color: #777;
+    color: rgba(15, 18, 22, 0.58);
+  }
+}
+
+@media (max-width: 767px) {
+  .city-systems {
+    padding: clamp(30px, 8vw, 48px) 0;
+  }
+
+  .city-systems__intro {
+    margin-bottom: 20px;
+
+    h2 {
+      font-size: clamp(1.9rem, 8vw, 2.55rem);
+      line-height: 1.04;
+    }
+
+    p {
+      max-width: none;
+      margin-top: 14px;
+      font-size: 1rem;
+      line-height: 1.68;
+    }
+  }
+
+  .city-systems__grid {
+    gap: 28px;
+  }
+
+  .city-systems__item:hover,
+  .city-systems__item:hover .city-systems__image {
+    transform: none;
+  }
+
+  .city-systems__image {
+    aspect-ratio: 16 / 10;
+  }
+
+  .city-systems__content {
+    margin-top: 14px;
+  }
+
+  .city-systems__signals {
+    flex-wrap: wrap;
   }
 }

@@ -1,16 +1,36 @@
 import {Metadata} from "next";
 import {metadataLink} from "@/metadata/metadataLink/metadataLink";
 import {MetaLinks} from "@/metadata/metadataLink/MetaLinks";
+import {ISmartFoodAiMetadataContent} from "@/lib/model/ISmartFoodAiContent";
+import {normalizeSmartFoodAiContentLocale} from "@/core/domain/smart-food-ai-content.entity";
+import {getSmartFoodAiMetadataContent} from "@/lib/smart-food-ai-content/smartFoodAiContent.service";
 
-const title = "Smart Food AI | ChornPlanet Production Platform";
-const description = "Smart Food AI is a ChornPlanet production showcase for an AI-native food platform experience launched from local business in Chiang Mai.";
+async function loadMetadataContent(lang: string): Promise<ISmartFoodAiMetadataContent> {
+    const normalizedLocale = normalizeSmartFoodAiContentLocale(lang);
 
-function createMetadata(lang: string): Metadata {
+    try {
+        return await getSmartFoodAiMetadataContent(normalizedLocale);
+    } catch (localeError) {
+        console.error(`[metadata] Smart Food AI metadata failed for locale="${normalizedLocale}"`, localeError);
+    }
+
+    if (normalizedLocale !== 'en') {
+        try {
+            return await getSmartFoodAiMetadataContent('en');
+        } catch (fallbackError) {
+            console.error('[metadata] Smart Food AI metadata English fallback failed', fallbackError);
+        }
+    }
+
+    throw new Error(`[metadata] Smart Food AI metadata unavailable for locale="${normalizedLocale}"`);
+}
+
+function createMetadata(lang: string, content: ISmartFoodAiMetadataContent): Metadata {
     const links = metadataLink(lang, MetaLinks.smartFoodAi);
 
     return {
-        title,
-        description,
+        title: content.title,
+        description: content.description,
         alternates: links.alternates,
         authors: [
             {
@@ -18,30 +38,23 @@ function createMetadata(lang: string): Metadata {
             }
         ],
         openGraph: {
-            title: "Smart Food AI - ChornPlanet Production Platform",
-            description,
+            title: content.openGraphTitle,
+            description: content.description,
             images: links.openGraph.images,
             url: links.alternates.canonical,
             type: "website"
         },
         twitter: {
             card: "summary_large_image",
-            title,
-            description,
+            title: content.title,
+            description: content.description,
             images: links.twitter.images,
         },
     };
 }
 
-export const MetadataSmartFoodAi: Record<string, Metadata> = {
-    en: createMetadata("en"),
-    th: createMetadata("th"),
-    fr: createMetadata("fr"),
-    ja: createMetadata("ja"),
-    zh: createMetadata("zh"),
-    de: createMetadata("de"),
-    nl: createMetadata("nl"),
-    da: createMetadata("da"),
-    fi: createMetadata("fi"),
-    ko: createMetadata("ko"),
-};
+export async function getMetadataSmartFoodAi(lang: string): Promise<Metadata> {
+    const normalizedLocale = normalizeSmartFoodAiContentLocale(lang);
+    const content = await loadMetadataContent(normalizedLocale);
+    return createMetadata(normalizedLocale, content);
+}
