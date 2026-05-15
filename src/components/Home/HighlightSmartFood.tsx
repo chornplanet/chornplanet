@@ -91,7 +91,7 @@ const chatOrderingStep: ChatOrderingStep[] = [
     link: "/smart-food-ai/",
   },
   {
-    lang: "zh_cn",
+    lang: "zh",
     title: "AI 聊天点餐",
     text: "客户可以通过聊天选择餐品、提出问题，或在简单对话中确认订单。",
     image: "/smart-food/process1-chat-ordering.png",
@@ -164,10 +164,8 @@ const highlightSmartFoodUi: Record<string, HighlightSmartFoodUi> = {
 };
 
 function getChatOrderingStep(lang: string): ChatOrderingStep {
-  const contentLang = lang === "zh" ? "zh_cn" : lang;
-
   return (
-    chatOrderingStep.find((step) => step.lang === contentLang) ??
+    chatOrderingStep.find((step) => step.lang === lang) ??
     chatOrderingStep.find((step) => step.lang === "en") ??
     chatOrderingStep[0]
   );

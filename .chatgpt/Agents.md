@@ -146,6 +146,12 @@ When production shows a generic Server Components digest page, check Vercel logs
 
 Use `npm run audit:locale-content` to check MongoDB-backed public content completeness across supported locales.
 
+## Locale E2E Regression Policy
+
+The Playwright home locale-switching test in `tests/e2e/home-locale.spec.ts` is an on-demand regression test. It was added and executed once to verify the current language-switching behavior and homepage localized rendering across supported languages.
+
+Do not rerun this E2E test automatically for every future language or content update. Run it only when Khachornchit explicitly requests language regression testing, when the Navigation language switcher changes, when locale routing changes, or when a feature directly affects homepage localized rendering.
+
 ## Completion Rule
 
 A feature is considered complete only when:
