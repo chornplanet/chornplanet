@@ -8,6 +8,7 @@ import {SmartCityChiangMaiContentPayload} from "@/lib/model/ISmartCityChiangMai"
 import {SmartCityChiangMaiContentService} from "@/core/services/smart-city-chiang-mai-content.service";
 import {SmartCityChiangMaiContentRepository} from "@/adapters/outbound/mongo.repository/smart-city-chiang-mai-content.repository";
 import {loadLocalizedContentWithFallback} from "@/lib/localized-content/localizedContentFallback";
+import {getFallbackSmartCityChiangMaiContent} from "@/lib/static-content/publicContentFallbacks";
 
 const smartCityChiangMaiContentService = new SmartCityChiangMaiContentService(new SmartCityChiangMaiContentRepository());
 const SMART_CITY_CHIANG_MAI_CONTENT_LIST_TAG = 'smart-city-chiang-mai-content';
@@ -59,10 +60,13 @@ export async function getSmartCityChiangMaiContentForPublicPage(
     locale: string,
     slug: string
 ): Promise<SmartCityChiangMaiContentPayload> {
+    const normalizedLocale = normalizeSmartCityChiangMaiContentLocale(locale);
+
     return loadLocalizedContentWithFallback({
-        locale: normalizeSmartCityChiangMaiContentLocale(locale),
+        locale: normalizedLocale,
         context: `smart city Chiang Mai content public render slug="${slug}"`,
         load: (resolvedLocale) => getSmartCityChiangMaiContent(resolvedLocale, slug),
+        fallback: () => getFallbackSmartCityChiangMaiContent(normalizedLocale, slug),
     });
 }
 

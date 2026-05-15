@@ -15,6 +15,7 @@ export default function WebDevelopmentPageMain(
     {lang, content}: { lang: string, content: TechnicalExpertiseContentPayload }
 ) {
     const featureContent = content.feature;
+    const pageTitle = featureContent.stacks[2]?.title ?? featureContent.title ?? 'Web Development';
 
     return (
         <>
@@ -22,7 +23,7 @@ export default function WebDevelopmentPageMain(
                 <div className="container">
                     <div className="row justify-content-md-center">
                         <div className="row align-items-center align-items-center-custom">
-                            <h1>{featureContent.stacks[2].title}</h1>
+                            <h1>{pageTitle}</h1>
                             <WebDevelopmentLeft lang={lang} frontEnd={content.frontEnd} fullStack={content.fullStack}/>
                             <WebDevelopmentRight lang={lang}/>
                         </div>

@@ -8,7 +8,8 @@ import {SmartMobilityChiangMaiContentPayload} from "@/lib/model/ISmartMobilityCh
 import {SmartMobilityChiangMaiContentService} from "@/core/services/smart-mobility-chiang-mai-content.service";
 import {SmartMobilityChiangMaiContentRepository} from "@/adapters/outbound/mongo.repository/smart-mobility-chiang-mai-content.repository";
 import {loadLocalizedContentWithFallback} from "@/lib/localized-content/localizedContentFallback";
-import {ISmartRoute} from "@/lib/model/ISmartMobility";
+import {ISmartImage, ISmartRoute, ISmartSection, IVertiport} from "@/lib/model/ISmartMobility";
+import {getFallbackSmartMobilityChiangMaiContent} from "@/lib/static-content/publicContentFallbacks";
 
 const smartMobilityChiangMaiContentService = new SmartMobilityChiangMaiContentService(new SmartMobilityChiangMaiContentRepository());
 const SMART_MOBILITY_CHIANG_MAI_CONTENT_LIST_TAG = 'smart-mobility-chiang-mai-content';
@@ -22,68 +23,151 @@ function isCompleteConnectivityMatrix(value: SmartMobilityChiangMaiContentRespon
     return Boolean(value?.title && value?.description);
 }
 
+function isSmartMobilityContentList<T>(value: T[] | unknown): value is T[] {
+    return Array.isArray(value);
+}
+
+function isCompleteSectionContent(value: SmartMobilityChiangMaiContentResponse['primaryContent']): value is ISmartSection {
+    const section = value as ISmartSection | undefined;
+    return Boolean(section?.title && section?.description);
+}
+
 function isCompleteRouteContent(value: SmartMobilityChiangMaiContentResponse['primaryContent']): value is ISmartRoute {
     const route = value as ISmartRoute | undefined;
     return Boolean(
         route?.title &&
         route?.description &&
+        route?.link &&
         route?.transportationModel?.title &&
         route?.transportationModel?.description
     );
 }
 
-function getStaticSmartMobilityChiangMaiContentFallback(
+function isCompleteVertiportContent(value: SmartMobilityChiangMaiContentResponse['primaryContent']): value is IVertiport {
+    const vertiport = value as IVertiport | undefined;
+    return Boolean(
+        vertiport?.title &&
+        vertiport?.description &&
+        vertiport?.link &&
+        vertiport?.structureTitle &&
+        Array.isArray(vertiport.structure)
+    );
+}
+
+function mergeSmartSectionContent(
+    databaseContent: SmartMobilityChiangMaiContentResponse['primaryContent'],
+    fallbackContent: ISmartSection
+): ISmartSection {
+    const section = databaseContent as Partial<ISmartSection> | undefined;
+
+    return {
+        ...fallbackContent,
+        ...section,
+        title: section?.title || fallbackContent.title,
+        description: section?.description || fallbackContent.description,
+        link: section?.link || fallbackContent.link,
+        items: section?.items ?? fallbackContent.items,
+        media: {
+            ...fallbackContent.media,
+            ...section?.media,
+        },
+        safeStatement: section?.safeStatement ?? fallbackContent.safeStatement,
+    };
+}
+
+function mergeSmartRouteContent(
+    databaseContent: SmartMobilityChiangMaiContentResponse['primaryContent'],
+    fallbackContent: ISmartRoute
+): ISmartRoute {
+    const route = databaseContent as Partial<ISmartRoute> | undefined;
+
+    return {
+        ...fallbackContent,
+        ...route,
+        title: route?.title || fallbackContent.title,
+        description: route?.description || fallbackContent.description,
+        link: route?.link || fallbackContent.link,
+        contents: route?.contents ?? fallbackContent.contents,
+        transportationModel: {
+            ...fallbackContent.transportationModel,
+            ...route?.transportationModel,
+            title: route?.transportationModel?.title || fallbackContent.transportationModel.title,
+            description: route?.transportationModel?.description || fallbackContent.transportationModel.description,
+            contents: route?.transportationModel?.contents ?? fallbackContent.transportationModel.contents,
+            sections: route?.transportationModel?.sections ?? fallbackContent.transportationModel.sections,
+        },
+        media: {
+            ...fallbackContent.media,
+            ...route?.media,
+        },
+    };
+}
+
+function mergeVertiportContent(
+    databaseContent: SmartMobilityChiangMaiContentResponse['primaryContent'],
+    fallbackContent: IVertiport
+): IVertiport {
+    const vertiport = databaseContent as Partial<IVertiport> | undefined;
+
+    return {
+        ...fallbackContent,
+        ...vertiport,
+        title: vertiport?.title || fallbackContent.title,
+        description: vertiport?.description || fallbackContent.description,
+        link: vertiport?.link || fallbackContent.link,
+        structureTitle: vertiport?.structureTitle || fallbackContent.structureTitle,
+        structure: vertiport?.structure ?? fallbackContent.structure,
+        media: {
+            ...fallbackContent.media,
+            ...vertiport?.media,
+        },
+    };
+}
+
+function mergeSmartMobilityChiangMaiContentWithFallback(
     locale: string,
-    slug: string
+    slug: string,
+    databaseContent: SmartMobilityChiangMaiContentResponse
 ): SmartMobilityChiangMaiContentPayload {
-    if (slug === 'hub-to-chiang-mai-airport') {
-        return {
-            locale: normalizeSmartMobilityChiangMaiContentLocale(locale),
-            slug,
-            pageType: 'route',
-            primaryContent: {
-                title: 'Hub to Chiang Mai Airport',
-                description: 'A Smart Mobility route concept connecting the Chiang Mai urban hub with Chiang Mai International Airport through coordinated mobility service planning.',
-                link: '/smart-mobility/chiang-mai/hub-to-chiang-mai-airport/',
-                transportationModel: {
-                    title: 'Mobility service model',
-                    description: 'The route content is temporarily served from a static fallback while localized MongoDB content is unavailable or incomplete. This keeps the public page available and prevents localized render crashes.',
-                    sections: [
-                        {
-                            title: 'Urban hub connection',
-                            description: 'Connects the city hub with airport access planning for future smart mobility service coordination.'
-                        },
-                        {
-                            title: 'Airport access workflow',
-                            description: 'Supports structured route explanation, service handoff logic, and public-facing mobility communication.'
-                        },
-                        {
-                            title: 'MongoDB content fallback',
-                            description: 'The permanent content source should remain MongoDB. This fallback is a safety bridge for public rendering reliability.'
-                        }
-                    ]
-                },
-                media: {
-                    image_url: '/images/smart-city/chiang-mai-airport-smart-mobility.jpg',
-                    image_tags: ['Smart Mobility', 'Chiang Mai', 'Airport']
-                }
-            },
-            connectivityMatrix: {
-                title: 'Chiang Mai Smart Mobility Connectivity',
-                description: 'This page describes a mobility connection between the Chiang Mai urban hub and Chiang Mai International Airport. It uses safe static fallback content when database-backed localized content is missing or incomplete.'
-            },
-            safeStatement: {
-                title: 'Concept and service planning note',
-                description: 'This content explains a smart mobility planning framework and should not be interpreted as a guarantee of transport service availability, operating approval, or infrastructure deployment.'
-            },
-            rightItems: [],
-            bottomCards: []
-        };
+    const fallbackContent = getFallbackSmartMobilityChiangMaiContent(locale, slug, {log: false});
+    const fallbackPrimaryContent = fallbackContent.primaryContent;
+    let primaryContent: SmartMobilityChiangMaiContentPayload['primaryContent'];
+
+    if (databaseContent.pageType === 'route') {
+        primaryContent = mergeSmartRouteContent(
+            databaseContent.primaryContent,
+            fallbackPrimaryContent as ISmartRoute
+        );
+    } else if (databaseContent.pageType === 'vertiport') {
+        primaryContent = mergeVertiportContent(
+            databaseContent.primaryContent,
+            fallbackPrimaryContent as IVertiport
+        );
+    } else {
+        primaryContent = mergeSmartSectionContent(
+            databaseContent.primaryContent,
+            fallbackPrimaryContent as ISmartSection
+        );
     }
 
-    throw new Error(
-        `No static smart mobility Chiang Mai fallback configured for locale "${locale}" and slug "${slug}"`
-    );
+    return {
+        ...fallbackContent,
+        ...databaseContent,
+        locale: databaseContent.locale || fallbackContent.locale,
+        slug: databaseContent.slug || fallbackContent.slug,
+        pageType: databaseContent.pageType || fallbackContent.pageType,
+        primaryContent,
+        connectivityMatrix: isCompleteConnectivityMatrix(databaseContent.connectivityMatrix)
+            ? databaseContent.connectivityMatrix
+            : fallbackContent.connectivityMatrix,
+        safeStatement: databaseContent.safeStatement ?? fallbackContent.safeStatement,
+        rightItems: isSmartMobilityContentList<ISmartImage>(databaseContent.rightItems)
+            ? databaseContent.rightItems
+            : fallbackContent.rightItems,
+        bottomCards: isSmartMobilityContentList<ISmartSection | ISmartRoute>(databaseContent.bottomCards)
+            ? databaseContent.bottomCards
+            : fallbackContent.bottomCards,
+    };
 }
 
 function assertCompleteSmartMobilityChiangMaiContent(
@@ -91,32 +175,38 @@ function assertCompleteSmartMobilityChiangMaiContent(
     slug: string,
     databaseContent: SmartMobilityChiangMaiContentResponse | null
 ): SmartMobilityChiangMaiContentPayload {
-    if (!databaseContent?.primaryContent || !databaseContent.rightItems || !databaseContent.bottomCards) {
+    if (
+        !databaseContent?.primaryContent ||
+        !isSmartMobilityContentList(databaseContent.rightItems) ||
+        !isSmartMobilityContentList(databaseContent.bottomCards)
+    ) {
         throw new Error(
             `Smart mobility Chiang Mai content not found in MongoDB for locale "${locale}" and slug "${slug}" ` +
             `(database="${process.env.MONGODB_DATABASE}", collection="${process.env.MONGODB_COLLECTION_SMART_MOBILITY_CHIANG_MAI_CONTENT || 'smart_mobility_chiang_mai_content'}")`
         );
     }
 
-    if (databaseContent.pageType === 'route') {
-        const missingFields: string[] = [];
+    const mergedContent = mergeSmartMobilityChiangMaiContentWithFallback(locale, slug, databaseContent);
 
-        if (!isCompleteRouteContent(databaseContent.primaryContent)) {
-            missingFields.push('primaryContent.transportationModel');
-        }
-
-        if (!isCompleteConnectivityMatrix(databaseContent.connectivityMatrix)) {
-            missingFields.push('connectivityMatrix');
-        }
-
-        if (missingFields.length > 0) {
-            throw new Error(
-                `Smart mobility Chiang Mai route content is incomplete for locale "${locale}" and slug "${slug}". Missing fields: ${missingFields.join(', ')}`
-            );
-        }
+    if (mergedContent.pageType === 'route' && !isCompleteRouteContent(mergedContent.primaryContent)) {
+        throw new Error(
+            `Smart mobility Chiang Mai route content is incomplete for locale "${locale}" and slug "${slug}" after fallback merge.`
+        );
     }
 
-    return databaseContent as SmartMobilityChiangMaiContentPayload;
+    if (mergedContent.pageType === 'vertiport' && !isCompleteVertiportContent(mergedContent.primaryContent)) {
+        throw new Error(
+            `Smart mobility Chiang Mai vertiport content is incomplete for locale "${locale}" and slug "${slug}" after fallback merge.`
+        );
+    }
+
+    if (mergedContent.pageType !== 'route' && mergedContent.pageType !== 'vertiport' && !isCompleteSectionContent(mergedContent.primaryContent)) {
+        throw new Error(
+            `Smart mobility Chiang Mai section content is incomplete for locale "${locale}" and slug "${slug}" after fallback merge.`
+        );
+    }
+
+    return mergedContent;
 }
 
 export async function getSmartMobilityChiangMaiContent(locale: string, slug: string): Promise<SmartMobilityChiangMaiContentPayload> {
@@ -152,7 +242,7 @@ export async function getSmartMobilityChiangMaiContentForPublicPage(
         locale: normalizedLocale,
         context: `smart mobility Chiang Mai content public render slug="${slug}"`,
         load: (resolvedLocale) => getSmartMobilityChiangMaiContent(resolvedLocale, slug),
-        fallback: () => getStaticSmartMobilityChiangMaiContentFallback(normalizedLocale, slug),
+        fallback: () => getFallbackSmartMobilityChiangMaiContent(normalizedLocale, slug),
     });
 }
 

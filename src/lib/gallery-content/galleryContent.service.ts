@@ -8,6 +8,7 @@ import {
 import {GalleryContentService} from "@/core/services/gallery-content.service";
 import {GalleryContentRepository} from "@/adapters/outbound/mongo.repository/gallery-content.repository";
 import {loadLocalizedContentWithFallback} from "@/lib/localized-content/localizedContentFallback";
+import {getFallbackGalleryContent} from "@/lib/static-content/publicContentFallbacks";
 
 const galleryContentService = new GalleryContentService(new GalleryContentRepository());
 const GALLERY_CONTENT_LIST_TAG = 'gallery-content';
@@ -64,10 +65,13 @@ export async function getGalleryContent(locale: string): Promise<GalleryContentP
 }
 
 export async function getGalleryContentForPublicPage(locale: string): Promise<GalleryContentPayload> {
+    const normalizedLocale = normalizeGalleryContentLocale(locale);
+
     return loadLocalizedContentWithFallback({
-        locale: normalizeGalleryContentLocale(locale),
+        locale: normalizedLocale,
         context: 'gallery content public render',
         load: getGalleryContent,
+        fallback: () => getFallbackGalleryContent(normalizedLocale),
     });
 }
 

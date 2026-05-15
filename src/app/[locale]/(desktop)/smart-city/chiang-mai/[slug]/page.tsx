@@ -11,7 +11,7 @@ import HomeFeatureMain from "@/components/Features/HomeFeatureMain";
 import SmartCityMain from "@/components/SmartCity/ChiangMai/SmartCityMain";
 import {getMetaSmartCity} from "@/metadata/smart-city/getMetaSmartCity";
 import {getSmartCityChiangMaiContentForPublicPage} from "@/lib/smart-city-chiang-mai-content/smartCityChiangMaiContent.service";
-import {getAiCompanionsContentForPublicPage} from "@/lib/ai-companions-content/aiCompanionsContent.service";
+import {loadOptionalAiCompanionsContent} from "@/lib/ai-companions-content/optionalAiCompanionsContent";
 
 export async function generateMetadata(
     {params}: { params: Promise<{ slug: string }> }
@@ -21,7 +21,7 @@ export async function generateMetadata(
     const lang = headers15.get('x-locale') || 'en';
 
     const dataMap = getMetaSmartCity({lang})
-    return dataMap[slug];
+    return dataMap[slug] ?? dataMap['life-beneath-the-route'];
 }
 
 export default async function Page(
@@ -34,7 +34,7 @@ export default async function Page(
     const smartCityContent = await getSmartCityChiangMaiContentForPublicPage(lang, slug).catch(() => null);
     if (!smartCityContent?.item) notFound();
 
-    const aiContent = await getAiCompanionsContentForPublicPage(lang);
+    const aiContent = await loadOptionalAiCompanionsContent(lang, `smart-city-chiang-mai/${slug}`);
 
     return (
         <div className="container">
@@ -44,17 +44,22 @@ export default async function Page(
                 relatedItems={smartCityContent.relatedItems}
                 bottomContent={smartCityContent.bottomContent}
             />
-            <AiSolutionsMain
-                lang={lang}
-                service={aiContent.service}
-                llmSlides={aiContent.media.llmSlides}
-            />
-            <HomeFeatureMain
-                lang={lang}
-                feature={aiContent.feature}
-                featureImage={aiContent.media.featureImage}
-                isHideTopTitle={true}
-            />
+            {
+                aiContent &&
+                <>
+                    <AiSolutionsMain
+                        lang={lang}
+                        service={aiContent.service}
+                        llmSlides={aiContent.media.llmSlides}
+                    />
+                    <HomeFeatureMain
+                        lang={lang}
+                        feature={aiContent.feature}
+                        featureImage={aiContent.media.featureImage}
+                        isHideTopTitle={true}
+                    />
+                </>
+            }
         </div>
     );
 }

@@ -15,12 +15,15 @@ export default function WevDevelopmentFrontEnd({lang, frontEnd}: { lang: string,
                         <Link href={'/' + lang + item.link}>
                             <div className="home-frontend-box">
                                 <div className="icon">
-                                    <Image
-                                        src={item.image}
-                                        alt={item.title}
-                                        width={150}
-                                        height={150}
-                                    />
+                                    {
+                                        item.image &&
+                                        <Image
+                                            src={item.image}
+                                            alt={item.title}
+                                            width={150}
+                                            height={150}
+                                        />
+                                    }
                                 </div>
                                 <h3> {item.title} </h3>
                             </div>

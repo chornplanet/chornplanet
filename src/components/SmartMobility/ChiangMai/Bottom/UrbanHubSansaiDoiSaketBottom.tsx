@@ -33,11 +33,16 @@ export default function UrbanHubSansaiDoiSaketBottom(
                                 </div>
                                 <div className="feature-content">
                                     {item.description}
-                                    {item.contents && item.contents.map((item, index: number) => (
-                                        <li key={index} className="feature-item">
-                                            {item.title} - {item.description}
-                                        </li>
-                                    ))}
+                                    {
+                                        item.contents &&
+                                        <ul className="feature-list">
+                                            {item.contents.map((content, contentIndex: number) => (
+                                                <li key={contentIndex} className="feature-item">
+                                                    {content.title} - {content.description}
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    }
                                 </div>
                             </li>
                         ))

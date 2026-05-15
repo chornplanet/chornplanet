@@ -32,8 +32,8 @@ export default function SmartCityRight(
                 <ul className="smart-right-list">
                     {
                         filteredArray.map((item: ISmartCityItem, index) =>
-                            <Link key={index} href={'/' + lang + item.link}>
-                                <li className="smart-right-item">
+                            <li key={index} className="smart-right-item">
+                                <Link href={'/' + lang + item.link}>
                                     <div className="smart-right-image-wrapper">
                                         {
                                             <Image
@@ -52,8 +52,8 @@ export default function SmartCityRight(
                                                 }</strong>
                                         </div>
                                     </div>
-                                </li>
-                            </Link>
+                                </Link>
+                            </li>
                         )
                     }
                 </ul>

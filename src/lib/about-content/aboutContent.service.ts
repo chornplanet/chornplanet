@@ -8,6 +8,7 @@ import {
 import {AboutContentService} from "@/core/services/about-content.service";
 import {AboutContentRepository} from "@/adapters/outbound/mongo.repository/about-content.repository";
 import {loadLocalizedContentWithFallback} from "@/lib/localized-content/localizedContentFallback";
+import {getFallbackAboutContent} from "@/lib/static-content/publicContentFallbacks";
 
 const aboutContentService = new AboutContentService(new AboutContentRepository());
 const ABOUT_CONTENT_LIST_TAG = 'about-content';
@@ -64,10 +65,13 @@ export async function getAboutContent(locale: string): Promise<AboutContentPaylo
 }
 
 export async function getAboutContentForPublicPage(locale: string): Promise<AboutContentPayload> {
+    const normalizedLocale = normalizeAboutContentLocale(locale);
+
     return loadLocalizedContentWithFallback({
-        locale: normalizeAboutContentLocale(locale),
+        locale: normalizedLocale,
         context: 'about content public render',
         load: getAboutContent,
+        fallback: () => getFallbackAboutContent(normalizedLocale),
     });
 }
 
