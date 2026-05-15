@@ -39,6 +39,7 @@ export function mapSmartFoodAiContentResponse(
         locale: doc.locale,
         hero: doc.hero,
         proof: doc.proof,
+        metadata: doc.metadata,
         workflow: doc.workflow,
         features: doc.features,
         value: doc.value,

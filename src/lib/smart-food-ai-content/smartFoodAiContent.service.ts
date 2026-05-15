@@ -1,4 +1,5 @@
 import {unstable_cache, revalidateTag} from "next/cache";
+import {ISmartFoodAiMetadataContent} from "@/lib/model/ISmartFoodAiContent";
 import {
     normalizeSmartFoodAiContentLocale,
     PartialSmartFoodAiContentPayload,
@@ -19,6 +20,11 @@ const REQUIRED_SMART_FOOD_AI_CONTENT_FIELDS = [
     'features',
     'value',
     'futureDirections',
+] as const;
+const REQUIRED_SMART_FOOD_AI_METADATA_FIELDS = [
+    'title',
+    'description',
+    'openGraphTitle',
 ] as const;
 
 function getSmartFoodAiContentTag(locale: string) {
@@ -92,6 +98,50 @@ export async function getSmartFoodAiContentForPublicPage(locale: string): Promis
         context: 'Smart Food AI content public render',
         load: getSmartFoodAiContent,
     });
+}
+
+function assertCompleteSmartFoodAiMetadataContent(
+    locale: string,
+    databaseContent: SmartFoodAiContentResponse | null
+): ISmartFoodAiMetadataContent {
+    if (!databaseContent?.metadata) {
+        throw new Error(`Smart Food AI metadata not found in MongoDB for locale "${locale}"`);
+    }
+
+    const missingFields = REQUIRED_SMART_FOOD_AI_METADATA_FIELDS.filter(
+        (field) => !databaseContent.metadata?.[field]
+    );
+
+    if (missingFields.length > 0) {
+        throw new Error(
+            `Smart Food AI metadata is incomplete for locale "${locale}". Missing fields: ${missingFields.join(', ')}`
+        );
+    }
+
+    return databaseContent.metadata;
+}
+
+export async function getSmartFoodAiMetadataContent(locale: string): Promise<ISmartFoodAiMetadataContent> {
+    const normalizedLocale = normalizeSmartFoodAiContentLocale(locale);
+
+    if (isDevelopment) {
+        const databaseContent = await smartFoodAiContentService.findByLocale(normalizedLocale);
+        return assertCompleteSmartFoodAiMetadataContent(normalizedLocale, databaseContent);
+    }
+
+    const getCachedContent = unstable_cache(
+        async () => {
+            const databaseContent = await smartFoodAiContentService.findByLocale(normalizedLocale);
+            return assertCompleteSmartFoodAiMetadataContent(normalizedLocale, databaseContent);
+        },
+        ['smart-food-ai-metadata-by-locale', normalizedLocale],
+        {
+            revalidate: 3600,
+            tags: [SMART_FOOD_AI_CONTENT_LIST_TAG, getSmartFoodAiContentTag(normalizedLocale)],
+        }
+    );
+
+    return getCachedContent();
 }
 
 export async function getAllSmartFoodAiContent(): Promise<SmartFoodAiContentResponse[]> {

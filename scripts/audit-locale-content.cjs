@@ -36,7 +36,7 @@ const CONTENT_CHECKS = [
         label: 'smart-food-ai',
         envKey: 'MONGODB_COLLECTION_SMART_FOOD_AI_CONTENT',
         defaultCollection: 'smart_food_ai_content',
-        requiredFields: ['hero', 'proof', 'workflow', 'features', 'value', 'futureDirections'],
+        requiredFields: ['metadata', 'hero', 'proof', 'workflow', 'features', 'value', 'futureDirections'],
     },
 ];
 

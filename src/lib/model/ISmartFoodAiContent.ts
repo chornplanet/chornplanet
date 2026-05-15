@@ -32,7 +32,14 @@ export interface ISmartFoodAiSectionHeading {
   text?: string;
 }
 
+export interface ISmartFoodAiMetadataContent {
+  title: string;
+  description: string;
+  openGraphTitle: string;
+}
+
 export interface ISmartFoodAiContent {
+  metadata?: ISmartFoodAiMetadataContent;
   hero: {
     eyebrow: string;
     title: string;
