@@ -4,7 +4,9 @@ import React from "react";
 import {IImageUnit} from "@/image/model/IImageUnit";
 
 export default function HomeFeatureLeft({lang, featureImage}: { lang: string; featureImage?: IImageUnit }) {
-    const image = featureImage ?? ImageUrl.feature.morningSky;
+    const image = featureImage?.path?.trim()
+        ? featureImage
+        : ImageUrl.feature.morningSky;
 
     return (
         <div className="col-lg-6">
