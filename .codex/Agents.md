@@ -318,6 +318,8 @@ Avoid adding new hardcoded content arrays into page files unless explicitly temp
 
 Use this flow when preparing a fix, feature, docs update, or other task for production:
 
+When Khachornchit says `ship to main`, `ship -> main`, `ship`, or any alternative with the same meaning, Codex must treat it as approval to execute the complete ship flow below. Do not shortcut by committing directly on `main` or pushing only `origin/main` unless Khachornchit explicitly narrows the instruction.
+
 1. Start from the approved feature branch for the current task. When the user explicitly asks to continue from the current branch, finish the task on that branch.
 2. Implement the change on the feature branch and preserve any intended `.codex/` updates on the same branch.
 3. Verify the task branch with the smallest relevant checks, and run `npm run build` before merging production-facing runtime changes.
