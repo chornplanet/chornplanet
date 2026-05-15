@@ -1,6 +1,7 @@
 // src/components/Home/MobilityFocus.tsx
 
 import Image from "next/image"
+import Link from "next/link"
 import {IMobilityFocus} from "@/lib/model/ISmartCityMedia";
 
 export default function MobilityFocus({lang, data}: { lang: string; data: IMobilityFocus }) {
@@ -15,7 +16,7 @@ export default function MobilityFocus({lang, data}: { lang: string; data: IMobil
 
             <div className="mobility-focus__grid">
                 {signals.map(signal => (
-                    <a
+                    <Link
                         key={signal.title}
                         href={`/${lang}` + signal.landingUrl}
                         className="mobility-focus__item"
@@ -33,7 +34,7 @@ export default function MobilityFocus({lang, data}: { lang: string; data: IMobil
                             <h3>{signal.title}</h3>
                             <p>{signal.description}</p>
                         </div>
-                    </a>
+                    </Link>
                 ))}
             </div>
         </section>

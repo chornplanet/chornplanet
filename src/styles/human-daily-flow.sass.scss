@@ -1,80 +1,201 @@
 .human-daily-flow {
-  padding: 1.5rem 0;
-  background: var(--color-bg-muted);
+  margin: clamp(34px, 6vw, 72px) auto;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
 }
 
 .human-daily-flow__intro {
   text-align: left;
-  margin-bottom: 1.5rem;
   max-width: 1360px;
+  margin-bottom: clamp(22px, 4vw, 36px);
 
   h2 {
-    font-size: 2.2rem;
-    font-weight: 600;
-    line-height: 1.2;
+    max-width: 900px;
+    margin: 0;
+    color: rgba(6, 18, 14, 0.96);
+    font-size: clamp(2rem, 4vw, 4.35rem);
+    font-weight: 850;
+    letter-spacing: 0;
+    line-height: 1;
   }
 
   p {
-    margin-top: 1.2rem;
-    font-size: 1.05rem;
-    color: var(--color-text-muted);
-    line-height: 1.6;
+    max-width: 820px;
+    margin: 18px 0 0;
+    color: rgba(15, 18, 22, 0.66);
+    font-size: clamp(1rem, 1.2vw, 1.16rem);
+    line-height: 1.72;
   }
 }
 
 .human-daily-flow__grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(18px, 3vw, 28px);
   max-width: 1360px;
 
-  @media (max-width: 900px) {
+  @media (max-width: 991px) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @media (max-width: 640px) {
     grid-template-columns: 1fr;
-    gap: 3rem;
+    gap: 28px;
   }
 }
 
 .human-daily-flow__item {
-  display: block;
+  min-width: 0;
+}
+
+.human-daily-flow__link {
+  display: grid;
+  height: 100%;
+  grid-template-rows: auto 1fr;
+  border: 1px solid rgba(15, 18, 22, 0.1);
+  background: rgba(255, 255, 255, 0.78);
   color: inherit;
+  box-shadow: 0 10px 26px rgba(15, 18, 22, 0.05);
   text-decoration: none;
+  transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
 
   &:hover {
-    opacity: 0.92;
+    border-color: rgba(6, 199, 85, 0.28);
+    box-shadow: 0 16px 34px rgba(15, 18, 22, 0.1);
+    transform: translateY(-2px);
+  }
+
+  &:focus-visible {
+    outline: 2px solid rgba(15, 145, 255, 0.42);
+    outline-offset: 3px;
   }
 }
 
 .human-daily-flow__image {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 16 / 11;
   overflow: hidden;
+  background: rgba(6, 18, 14, 0.04);
 
-  @media (max-width: 900px) {
+  img {
+    object-fit: cover;
+    transition: transform 220ms ease;
+  }
+
+  @media (max-width: 640px) {
     aspect-ratio: 4 / 3;
   }
 }
 
-.human-daily-flow__item:hover {
-  transform: translateY(-4px);
-}
-
-.human-daily-flow__item:hover .human-daily-flow__image {
-  transform: scale(1.05);
-}
-
 .human-daily-flow__content {
-  margin-top: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  min-height: 252px;
+  padding: clamp(18px, 2.4vw, 24px);
 
   h3 {
-    font-size: 1.25rem;
-    font-weight: 500;
+    margin: 0;
+    color: rgba(6, 18, 14, 0.94);
+    font-size: clamp(1.15rem, 1.4vw, 1.42rem);
+    font-weight: 800;
+    letter-spacing: 0;
+    line-height: 1.18;
   }
 
   p {
-    margin-top: 0.6rem;
+    margin: 12px 0 0;
+    color: rgba(15, 18, 22, 0.64);
     font-size: 0.98rem;
-    color: var(--color-text-muted);
-    line-height: 1.55;
+    line-height: 1.62;
+  }
+
+  span {
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    margin-top: auto;
+    padding-top: 18px;
+    color: rgba(6, 69, 43, 0.82);
+    font-size: 0.94rem;
+    font-weight: 800;
+    line-height: 1.2;
+  }
+}
+
+.human-daily-flow__link:hover .human-daily-flow__image img {
+  transform: scale(1.035);
+}
+
+@media (max-width: 767px) {
+  .human-daily-flow {
+    margin: clamp(30px, 8vw, 48px) auto;
+  }
+
+  .human-daily-flow__intro {
+    margin-bottom: 22px;
+
+    h2 {
+      font-size: clamp(1.9rem, 8vw, 2.55rem);
+      line-height: 1.04;
+    }
+
+    p {
+      max-width: none;
+      margin-top: 14px;
+      font-size: 1rem;
+      line-height: 1.68;
+    }
+  }
+
+  .human-daily-flow__link {
+    display: block;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+
+    &:hover {
+      box-shadow: none;
+      transform: none;
+    }
+  }
+
+  .human-daily-flow__image {
+    aspect-ratio: 16 / 10;
+  }
+
+  .human-daily-flow__content {
+    min-height: auto;
+    padding: 16px 0 0;
+
+    h3 {
+      font-size: 1.18rem;
+      line-height: 1.24;
+    }
+
+    p {
+      margin-top: 9px;
+      font-size: 0.98rem;
+      line-height: 1.64;
+    }
+
+    span {
+      margin-top: 0;
+      padding-top: 14px;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .human-daily-flow__link,
+  .human-daily-flow__image img {
+    transition: none;
+  }
+
+  .human-daily-flow__link:hover,
+  .human-daily-flow__link:hover .human-daily-flow__image img {
+    transform: none;
   }
 }

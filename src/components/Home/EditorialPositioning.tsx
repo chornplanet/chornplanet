@@ -1,6 +1,7 @@
 // src/components/Home/EditorialPositioning.tsx
 
 import Image from "next/image"
+import Link from "next/link"
 import {IEditorialPositioning} from "@/lib/model/ISmartCityMedia";
 
 export default function EditorialPositioning({lang, data}: {
@@ -21,7 +22,7 @@ export default function EditorialPositioning({lang, data}: {
 
             <div className="editorial-positioning__grid">
                 {principles.map((principle) => (
-                    <a
+                    <Link
                         key={principle.title}
                         href={`/${lang}` + principle.landingUrl}
                         className="editorial-positioning__item"
@@ -40,7 +41,7 @@ export default function EditorialPositioning({lang, data}: {
                             <h3>{principle.title}</h3>
                             <p>{principle.description}</p>
                         </div>
-                    </a>
+                    </Link>
                 ))}
             </div>
         </section>

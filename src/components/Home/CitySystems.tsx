@@ -1,6 +1,7 @@
 // src/components/smart-city-media/CitySystems.tsx
 
 import Image from "next/image";
+import Link from "next/link";
 import {ICitySystems} from "@/lib/model/ISmartCityMedia";
 
 export default function CitySystems({lang, data}: { lang: string; data: ICitySystems }) {
@@ -15,7 +16,7 @@ export default function CitySystems({lang, data}: { lang: string; data: ICitySys
 
             <div className="city-systems__grid">
                 {systems.map((system, index) => (
-                    <a
+                    <Link
                         key={index}
                         href={`/${lang}` + system.landingUrl}
                         className="city-systems__item"
@@ -39,7 +40,7 @@ export default function CitySystems({lang, data}: { lang: string; data: ICitySys
                                 ))}
                             </ul>
                         </div>
-                    </a>
+                    </Link>
                 ))}
             </div>
         </section>

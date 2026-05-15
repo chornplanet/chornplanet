@@ -160,6 +160,7 @@ Reference `src/styles/smart-food-ai.scss` for good fit across all views: respons
 Current preferred pattern for premium content sections:
 
 - On mobile/tablet widths below `992px`, avoid nested card spacing that makes content feel squeezed. Flatten section grids when needed by removing outer grid padding, left/right margins, column gutters, decorative borders, background cards, and shadows.
+- For home and editorial sections, use the same flat editorial section concept across breakpoints as the Smart Food highlight, Human Daily Flow, and Smart City main sections: no outer border, no wrapper background, no wrapper shadow, and no extra wrapper padding. Keep hierarchy through grid rhythm, typography, image scale, inner content spacing, and clear actions instead of a framed outer shell.
 - Keep desktop and larger tablet layouts visually premium. Desktop grids may keep framed backgrounds, padding, borders, and shadows when they support hierarchy and do not reduce readability.
 - Images, headings, and paragraphs inside the same mobile section should align to the same readable content width. Do not let Bootstrap row negative margins, column gutters, or nested `.smart-food-ai-proof` padding create inconsistent left/right edges.
 - On mobile, remove decorative borders when they force text into a narrow column. A border should never cost paragraph readability.
