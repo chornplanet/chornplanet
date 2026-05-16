@@ -40,19 +40,6 @@ const YOUTUBE_FOOTER_LINK: IFooterDetail = {
 };
 const TIKTOK_CONTENT_DEVELOPMENT_FOOTER_LINK = 'https://tiktok.com/@chornplanet';
 const TIKTOK_CONTENT_DEVELOPMENT_FOOTER_LABELS: Record<string, string> = {
-    da: 'TikTok-indholdsudvikling',
-    de: 'TikTok-Content-Entwicklung',
-    en: 'TikTok Content Development',
-    fi: 'TikTok-sisällön kehittäminen',
-    fr: 'Développement de contenu TikTok',
-    ja: 'TikTokコンテンツ開発',
-    ko: 'TikTok 콘텐츠 개발',
-    nl: 'TikTok-contentontwikkeling',
-    th: 'การพัฒนาคอนเทนต์ TikTok',
-    zh: 'TikTok 内容开发',
-};
-
-Object.assign(TIKTOK_CONTENT_DEVELOPMENT_FOOTER_LABELS, {
     en: 'TikTok Creator',
     th: 'TikTok ครีเอเตอร์',
     da: 'TikTok-skaber',
@@ -63,8 +50,7 @@ Object.assign(TIKTOK_CONTENT_DEVELOPMENT_FOOTER_LABELS, {
     ko: 'TikTok 크리에이터',
     nl: 'TikTok-creator',
     zh: 'TikTok 创作者',
-    zh_cn: 'TikTok 创作者',
-});
+};
 
 function getLayoutContentTag(locale: string) {
     return `layout-content:${normalizeLayoutContentLocale(locale)}`;
