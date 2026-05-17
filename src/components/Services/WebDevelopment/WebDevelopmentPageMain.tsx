@@ -3,7 +3,6 @@ import WebDevelopmentRight from "@/components/Services/WebDevelopment/WebDevelop
 import WebDevelopmentBackEnd from "@/components/Services/WebDevelopment/WebDevelopmentBackEnd";
 import WevDevelopmentFrontEnd from "@/components/Services/WebDevelopment/WevDevelopmentFrontEnd";
 import WebDevelopmentDevOps from "@/components/Services/WebDevelopment/WebDevelopmentDevOps";
-import Web3PageMain from "@/components/Services/web3-blockchain-development/Web3PageMain";
 import { TechnicalExpertiseContentPayload } from "@/core/domain/technical-expertise-content.entity";
 
 export default function WebDevelopmentPageMain({
@@ -75,10 +74,6 @@ export default function WebDevelopmentPageMain({
         <div className="technology-premium-container">
           <WebDevelopmentDevOps lang={lang} devOps={content.devOps} />
         </div>
-      </section>
-
-      <section className="technology-premium-module technology-premium-module--web3">
-        <Web3PageMain lang={lang} web3={content.web3} />
       </section>
     </main>
   );
