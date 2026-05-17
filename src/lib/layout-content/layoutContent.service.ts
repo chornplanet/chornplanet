@@ -52,6 +52,156 @@ const TIKTOK_CONTENT_DEVELOPMENT_FOOTER_LABELS: Record<string, string> = {
     zh: 'TikTok 创作者',
 };
 
+const AI_LUXURY_PLATFORM_NAV_LABELS: Record<string, string> = {
+    en: 'AI Luxury Platform',
+    th: 'แพลตฟอร์ม AI Luxury',
+    da: 'AI Luxury-platform',
+    de: 'AI-Luxusplattform',
+    fi: 'AI Luxury -alusta',
+    fr: 'Plateforme AI Luxury',
+    ja: 'AIラグジュアリープラットフォーム',
+    ko: 'AI 럭셔리 플랫폼',
+    nl: 'AI Luxury-platform',
+    zh: 'AI 奢华平台',
+};
+
+type MainNavbarGroup = 'Home' | 'AI Luxury' | 'Smart City' | 'Smart Mobility' | 'Smart Food AI' | 'Technology';
+
+const MAIN_NAVBAR_LABELS: Record<MainNavbarGroup, Record<string, string>> = {
+    Home: {
+        en: 'Home',
+        th: 'หน้าแรก',
+        da: 'Hjem',
+        de: 'Startseite',
+        fi: 'Etusivu',
+        fr: 'Accueil',
+        ja: 'ホーム',
+        ko: '홈',
+        nl: 'Home',
+        zh: '首页',
+    },
+    'AI Luxury': {
+        en: 'AI Luxury Platform',
+        th: 'แพลตฟอร์ม AI Luxury',
+        da: 'AI Luxury-platform',
+        de: 'AI-Luxusplattform',
+        fi: 'AI Luxury -alusta',
+        fr: 'Plateforme AI Luxury',
+        ja: 'AIラグジュアリープラットフォーム',
+        ko: 'AI 럭셔리 플랫폼',
+        nl: 'AI Luxury-platform',
+        zh: 'AI 奢华平台',
+    },
+    'Smart City': {
+        en: 'Smart City',
+        th: 'สมาร์ตซิตี้',
+        da: 'Smart City',
+        de: 'Smart City',
+        fi: 'Smart City',
+        fr: 'Smart City',
+        ja: 'スマートシティ',
+        ko: '스마트 시티',
+        nl: 'Smart City',
+        zh: '智慧城市',
+    },
+    'Smart Mobility': {
+        en: 'Smart Mobility',
+        th: 'สมาร์ตโมบิลิตี้',
+        da: 'Smart Mobility',
+        de: 'Smart Mobility',
+        fi: 'Smart Mobility',
+        fr: 'Smart Mobility',
+        ja: 'スマートモビリティ',
+        ko: '스마트 모빌리티',
+        nl: 'Smart Mobility',
+        zh: '智慧出行',
+    },
+    'Smart Food AI': {
+        en: 'Smart Food AI',
+        th: 'สมาร์ตฟู้ด AI',
+        da: 'Smart Food AI',
+        de: 'Smart Food KI',
+        fi: 'Smart Food AI',
+        fr: 'Smart Food IA',
+        ja: 'スマートフードAI',
+        ko: '스마트 푸드 AI',
+        nl: 'Smart Food AI',
+        zh: '智慧餐饮 AI',
+    },
+    Technology: {
+        en: 'Technology',
+        th: 'เทคโนโลยี',
+        da: 'Teknologi',
+        de: 'Technologie',
+        fi: 'Teknologia',
+        fr: 'Technologie',
+        ja: 'テクノロジー',
+        ko: '기술',
+        nl: 'Technologie',
+        zh: '技术',
+    },
+};
+
+type MainNavbarItem = Pick<INavbar, 'group' | 'label' | 'link' | 'activeLinks'> & {
+    matchGroups?: string[];
+    matchLabels?: string[];
+    matchLinks?: string[];
+};
+
+const MAIN_NAVBAR_ITEMS: MainNavbarItem[] = [
+    {
+        group: 'Home',
+        label: 'Home',
+        link: '/',
+        activeLinks: [],
+        matchLinks: ['/'],
+    },
+    {
+        group: 'AI Luxury',
+        label: 'AI Luxury Platform',
+        link: '/ai-luxury',
+        activeLinks: [],
+        matchLabels: ['AI Luxury', 'AI Luxury Platform'],
+        matchLinks: ['/ai-luxury', '/ai-luxury/'],
+    },
+    {
+        group: 'Smart City',
+        label: 'Smart City',
+        link: '/smart-city/',
+        activeLinks: [],
+        matchLinks: ['/smart-city', '/smart-city/'],
+    },
+    {
+        group: 'Smart Mobility',
+        label: 'Smart Mobility',
+        link: '/smart-mobility/chiang-mai/',
+        activeLinks: [],
+        matchLinks: ['/smart-mobility', '/smart-mobility/', '/smart-mobility/chiang-mai/'],
+    },
+    {
+        group: 'Smart Food AI',
+        label: 'Smart Food AI',
+        link: '/smart-food-ai/',
+        activeLinks: [],
+        matchGroups: ['AI Integration', 'Smart Food AI'],
+        matchLabels: ['AI Integration', 'Smart Food AI'],
+        matchLinks: ['/smart-food-ai', '/smart-food-ai/', '/technical-expertise/ai-solutions/'],
+    },
+    {
+        group: 'Technology',
+        label: 'Technology',
+        link: '/technical-expertise/web-development/',
+        activeLinks: [],
+        matchLinks: [
+            '/technology',
+            '/technology/',
+            '/technical-expertise',
+            '/technical-expertise/ai-solutions/',
+            '/technical-expertise/web-development/',
+        ],
+    },
+];
+
 function getLayoutContentTag(locale: string) {
     return `layout-content:${normalizeLayoutContentLocale(locale)}`;
 }
@@ -147,6 +297,70 @@ function normalizeTikTokContentDevelopmentProjectGroup<T extends { items: IFoote
     };
 }
 
+function normalizeNavbarPath(path: string): string {
+    if (path === '/') {
+        return path;
+    }
+
+    return path.endsWith('/') ? path.slice(0, -1) : path;
+}
+
+function isMainNavbarGroup(group: string): group is MainNavbarGroup {
+    return group in MAIN_NAVBAR_LABELS;
+}
+
+function getMainNavbarLabel(group: string, locale: string, fallback: string): string {
+    if (!isMainNavbarGroup(group)) {
+        return fallback;
+    }
+
+    const labels = MAIN_NAVBAR_LABELS[group];
+    return labels[locale] ?? labels.en ?? fallback;
+}
+
+function getMainNavbarMatchLabels(group: string, fallbackLabels: string[]): string[] {
+    if (!isMainNavbarGroup(group)) {
+        return fallbackLabels;
+    }
+
+    return [...fallbackLabels, ...Object.values(MAIN_NAVBAR_LABELS[group])];
+}
+
+function normalizeMainNavbar(locale: string, navbar: INavbar[]): INavbar[] {
+    const normalizedLocale = normalizeLayoutContentLocale(locale);
+
+    return MAIN_NAVBAR_ITEMS.map((template) => {
+        const navbarTemplate: Pick<INavbar, 'group' | 'label' | 'link' | 'activeLinks'> = {
+            group: template.group,
+            label: getMainNavbarLabel(template.group, normalizedLocale, template.label),
+            link: template.link,
+            activeLinks: template.activeLinks,
+        };
+        const templateMatchGroups = [template.group, ...(template.matchGroups ?? [])];
+        const templateMatchLabels = getMainNavbarMatchLabels(template.group, [template.label, ...(template.matchLabels ?? [])]);
+        const templateMatchLinks = [template.link, ...(template.matchLinks ?? [])].map(normalizeNavbarPath);
+
+        const existingItem = navbar.find((item) => {
+            const itemLinks = [item.link, ...(item.activeLinks ?? [])].map(normalizeNavbarPath);
+
+            return templateMatchLabels.includes(item.label) ||
+                templateMatchGroups.includes(item.group) ||
+                itemLinks.some((link) => templateMatchLinks.includes(link));
+        });
+
+        return {
+            ...(existingItem ?? {
+                level: 0,
+                isSubmenu: false,
+                submenu: [],
+            }),
+            ...navbarTemplate,
+            isSubmenu: false,
+            submenu: [],
+        };
+    });
+}
+
 function normalizeSmartFoodAiFooter(locale: string, footer: IFooter): IFooter {
     const normalizedLocale = normalizeLayoutContentLocale(locale);
     const projectWithSmartFoodAi = normalizeSmartFoodAiProjectGroup(normalizedLocale, footer.project);
@@ -162,7 +376,7 @@ function normalizeSmartFoodAiFooter(locale: string, footer: IFooter): IFooter {
 function normalizeSmartFoodAiLayoutContent(content: LayoutContentPayload): LayoutContentPayload {
     return {
         ...content,
-        navbar: content.navbar.map(normalizeSmartFoodAiNavbarItem),
+        navbar: normalizeMainNavbar(content.locale, content.navbar.map(normalizeSmartFoodAiNavbarItem)),
         footer: normalizeSmartFoodAiFooter(content.locale, content.footer),
     };
 }

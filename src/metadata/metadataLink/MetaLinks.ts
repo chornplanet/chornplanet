@@ -47,6 +47,13 @@ export const MetaLinks: IMetaLinks = {
             alt: "Open graph image for AI-Fah - LINE Chat AI Integration",
         }
     },
+    aiLuxury: {
+        canonical: "/ai-luxury/",
+        image: {
+            url: "/images/ai-luxury/hero-ai-luxury-real-estate-platform.png",
+            alt: "Open graph image for Chorn Planet AI Luxury platform",
+        }
+    },
     aiPloy: {
         canonical: "/ai-companions/ploy/",
         image: {

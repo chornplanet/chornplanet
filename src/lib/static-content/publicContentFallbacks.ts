@@ -46,6 +46,101 @@ const fallbackText = {
     description: 'This page is temporarily using static fallback content while localized MongoDB content is unavailable.',
 };
 
+const AI_LUXURY_PLATFORM_NAV_LABELS: Record<string, string> = {
+    en: 'AI Luxury Platform',
+    th: 'แพลตฟอร์ม AI Luxury',
+    da: 'AI Luxury-platform',
+    de: 'AI-Luxusplattform',
+    fi: 'AI Luxury -alusta',
+    fr: 'Plateforme AI Luxury',
+    ja: 'AIラグジュアリープラットフォーム',
+    ko: 'AI 럭셔리 플랫폼',
+    nl: 'AI Luxury-platform',
+    zh: 'AI 奢华平台',
+};
+
+type MainNavbarGroup = 'Home' | 'AI Luxury' | 'Smart City' | 'Smart Mobility' | 'Smart Food AI' | 'Technology';
+
+const MAIN_NAVBAR_LABELS: Record<MainNavbarGroup, Record<string, string>> = {
+    Home: {
+        en: 'Home',
+        th: 'หน้าแรก',
+        da: 'Hjem',
+        de: 'Startseite',
+        fi: 'Etusivu',
+        fr: 'Accueil',
+        ja: 'ホーム',
+        ko: '홈',
+        nl: 'Home',
+        zh: '首页',
+    },
+    'AI Luxury': {
+        en: 'AI Luxury Platform',
+        th: 'แพลตฟอร์ม AI Luxury',
+        da: 'AI Luxury-platform',
+        de: 'AI-Luxusplattform',
+        fi: 'AI Luxury -alusta',
+        fr: 'Plateforme AI Luxury',
+        ja: 'AIラグジュアリープラットフォーム',
+        ko: 'AI 럭셔리 플랫폼',
+        nl: 'AI Luxury-platform',
+        zh: 'AI 奢华平台',
+    },
+    'Smart City': {
+        en: 'Smart City',
+        th: 'สมาร์ตซิตี้',
+        da: 'Smart City',
+        de: 'Smart City',
+        fi: 'Smart City',
+        fr: 'Smart City',
+        ja: 'スマートシティ',
+        ko: '스마트 시티',
+        nl: 'Smart City',
+        zh: '智慧城市',
+    },
+    'Smart Mobility': {
+        en: 'Smart Mobility',
+        th: 'สมาร์ตโมบิลิตี้',
+        da: 'Smart Mobility',
+        de: 'Smart Mobility',
+        fi: 'Smart Mobility',
+        fr: 'Smart Mobility',
+        ja: 'スマートモビリティ',
+        ko: '스마트 모빌리티',
+        nl: 'Smart Mobility',
+        zh: '智慧出行',
+    },
+    'Smart Food AI': {
+        en: 'Smart Food AI',
+        th: 'สมาร์ตฟู้ด AI',
+        da: 'Smart Food AI',
+        de: 'Smart Food KI',
+        fi: 'Smart Food AI',
+        fr: 'Smart Food IA',
+        ja: 'スマートフードAI',
+        ko: '스마트 푸드 AI',
+        nl: 'Smart Food AI',
+        zh: '智慧餐饮 AI',
+    },
+    Technology: {
+        en: 'Technology',
+        th: 'เทคโนโลยี',
+        da: 'Teknologi',
+        de: 'Technologie',
+        fi: 'Teknologia',
+        fr: 'Technologie',
+        ja: 'テクノロジー',
+        ko: '기술',
+        nl: 'Technologie',
+        zh: '技术',
+    },
+};
+
+function getMainNavbarLabel(group: MainNavbarGroup, locale: string): string {
+    const labels = MAIN_NAVBAR_LABELS[group];
+    return labels[locale] ?? labels.en;
+}
+
 function logStaticFallback(context: string, locale: string, slug?: string) {
     console.error(
         `[localized-content] Using static fallback for ${context} locale="${locale}"${slug ? ` slug="${slug}"` : ''}`
@@ -440,15 +535,23 @@ export function getFallbackHomePageContent(locale: string): HomePageContentPaylo
 export function getFallbackLayoutContent(locale: string): LayoutContentPayload {
     const normalizedLocale = normalizeLayoutContentLocale(locale);
     logStaticFallback('layout content', normalizedLocale);
-    const navItem: INavbar = {
-        group: 'Chorn Planet',
-        label: 'Home',
+    const createNavItem = (group: string, label: string, link: string): INavbar => ({
+        group,
+        label,
         level: 0,
-        link: '/',
-        activeLinks: ['/'],
+        link,
+        activeLinks: [],
         isSubmenu: false,
         submenu: [],
-    };
+    });
+    const navItems: INavbar[] = [
+        createNavItem('Home', getMainNavbarLabel('Home', normalizedLocale), '/'),
+        createNavItem('AI Luxury', getMainNavbarLabel('AI Luxury', normalizedLocale), '/ai-luxury'),
+        createNavItem('Smart City', getMainNavbarLabel('Smart City', normalizedLocale), '/smart-city/'),
+        createNavItem('Smart Mobility', getMainNavbarLabel('Smart Mobility', normalizedLocale), '/smart-mobility/chiang-mai/'),
+        createNavItem('Smart Food AI', getMainNavbarLabel('Smart Food AI', normalizedLocale), '/smart-food-ai/'),
+        createNavItem('Technology', getMainNavbarLabel('Technology', normalizedLocale), '/technical-expertise/web-development/'),
+    ];
     const footerItems = [
         {label: 'Home', link: '/'},
         {label: 'Contact', link: '/contact/'},
@@ -471,7 +574,7 @@ export function getFallbackLayoutContent(locale: string): LayoutContentPayload {
 
     return {
         locale: normalizedLocale,
-        navbar: [navItem],
+        navbar: navItems,
         footer,
         consent: {
             description: 'This site uses cookies to improve the public experience.',

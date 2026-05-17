@@ -11,6 +11,9 @@ export default function FooterConnect({lang, footer}: { lang: string, footer: IF
                 <ul className="quick-links ul-footer">
                     {footer.connect.items
                         .filter((item: IFooterDetail) => item.link !== undefined)
+                        .filter((item: IFooterDetail) => {
+                            return item.label.toLowerCase() !== "contact" && item.link !== "/contact/";
+                        })
                         .map((item: IFooterDetail, index: number) => {
 
                             if (item.link.startsWith("http")) {

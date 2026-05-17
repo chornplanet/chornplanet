@@ -1,41 +1,22 @@
 {
   "recommendations": [
-    // ── Core Language Support ──────────────────────────────────────────────
-    "dbaeumer.vscode-eslint",           // ESLint — real-time lint feedback
-    "esbenp.prettier-vscode",           // Prettier — code formatting
-    "ms-vscode.vscode-typescript-next", // Latest TypeScript language features
-
-    // ── Next.js / React ───────────────────────────────────────────────────
-    "burkeholland.simple-react-snippets", // React component/hook snippets
-    "dsznajder.es7-react-js-snippets",    // ES7+ React/Redux snippets
-
-    // ── CSS / SCSS / Tailwind ─────────────────────────────────────────────
-    "bradlc.vscode-tailwindcss",        // Tailwind CSS IntelliSense (autocomplete + hover docs)
-    "syler.sass-indented",              // SCSS syntax highlighting & IntelliSense
-    "mrmlnc.vscode-scss",              // SCSS cross-file variable/mixin resolution
-
-    // ── Git & Version Control ─────────────────────────────────────────────
-    "eamodio.gitlens",                  // GitLens — inline blame, history, comparisons
-    "mhutchie.git-graph",               // Git Graph — visual branch/commit graph
-
-    // ── Editor Experience ─────────────────────────────────────────────────
-    "christian-kohler.path-intellisense",  // Autocomplete for file paths
-    "formulahendry.auto-rename-tag",       // Auto-rename matching HTML/JSX tag
-    "steoates.autoimport",                 // Auto-import TypeScript/JS symbols
-    "streetsidesoftware.code-spell-checker", // Spell checker for code & comments
-
-    // ── i18n ──────────────────────────────────────────────────────────────
-    "lokalise.i18n-ally",               // i18n Ally — visualize translations inline
-
-    // ── MongoDB ───────────────────────────────────────────────────────────
-    "mongodb.mongodb-vscode",           // MongoDB for VS Code — query & explore Atlas
-
-    // ── Environment & Config ──────────────────────────────────────────────
-    "mikestead.dotenv",                 // .env file syntax highlighting & IntelliSense
-
-    // ── Productivity ──────────────────────────────────────────────────────
-    "aaron-bond.better-comments",       // Colour-coded comment annotations (TODO, FIXME, etc.)
-    "usernamehw.errorlens",             // Inline error/warning messages in the editor
-    "wayou.vscode-todo-highlight"       // Highlights TODO/FIXME in code
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "ms-vscode.vscode-typescript-next",
+    "bradlc.vscode-tailwindcss",
+    "syler.sass-indented",
+    "mrmlnc.vscode-scss",
+    "burkeholland.simple-react-snippets",
+    "dsznajder.es7-react-js-snippets",
+    "christian-kohler.path-intellisense",
+    "formulahendry.auto-rename-tag",
+    "steoates.autoimport",
+    "streetsidesoftware.code-spell-checker",
+    "lokalise.i18n-ally",
+    "mongodb.mongodb-vscode",
+    "mikestead.dotenv",
+    "aaron-bond.better-comments",
+    "usernamehw.errorlens",
+    "wayou.vscode-todo-highlight"
   ]
 }

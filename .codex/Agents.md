@@ -167,6 +167,7 @@ Current preferred pattern for premium content sections:
 - Keep font sizes consistent within a page section and across sibling sections on the same page. Use headings for hierarchy; avoid making the first body paragraph larger unless the design explicitly calls for a lead paragraph.
 - Keep body copy color consistent across the whole page. Prefer one readable muted text color for paragraphs, one stronger heading color, and one accent color for section labels or interactive states.
 - Scope page-specific typography and color normalization to the page wrapper when possible, such as `.smart-container-top-about`, instead of changing global typography.
+- For desktop responsive QA, include both `1536x864` and `1920x1080` viewports in addition to tablet and mobile checks. Hero and editorial headings should keep stable, intentional line counts across both desktop sizes; do not let viewport-scaled typography grow so much at `1920x1080` that text wraps into more rows than it does at `1536x864`.
 - After visual spacing changes, verify mobile behavior and keep desktop/tablet behavior intact with `npm run lint`, `npm run build`, and a localized dev URL check when practical.
 
 ## Page Creation Checklist

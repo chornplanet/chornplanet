@@ -1,27 +1,53 @@
 {
-  // ── Auto Save ─────────────────────────────────────────────────────────────
+  // Auto Save
   "files.autoSave": "afterDelay",
   "files.autoSaveDelay": 1000,
 
-  // ── Formatting ────────────────────────────────────────────────────────────
+  // Formatting
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
-  "[typescript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
-  "[typescriptreact]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
-  "[javascript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
-  "[javascriptreact]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
-  "[scss]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
-  "[css]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
-  "[json]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
-  "[jsonc]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "prettier.requireConfig": true,
+  "prettier.useEditorConfig": false,
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
 
-  // ── ESLint ────────────────────────────────────────────────────────────────
-  "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
+  // ESLint
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit"
   },
 
-  // ── Tailwind CSS IntelliSense ─────────────────────────────────────────────
+  // Tailwind CSS IntelliSense
   "tailwindCSS.includeLanguages": {
     "typescript": "html",
     "typescriptreact": "html"
@@ -31,21 +57,21 @@
     ["cn\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
   ],
 
-  // ── TypeScript ────────────────────────────────────────────────────────────
+  // TypeScript
   "typescript.preferences.importModuleSpecifier": "non-relative",
   "typescript.suggest.autoImports": true,
   "typescript.updateImportsOnFileMove.enabled": "always",
 
-  // ── i18n Ally ────────────────────────────────────────────────────────────
+  // i18n Ally
   "i18n-ally.localesPaths": ["src/data"],
   "i18n-ally.enabledFrameworks": ["react"],
   "i18n-ally.keystyle": "nested",
 
-  // ── Error Lens ────────────────────────────────────────────────────────────
+  // Error Lens
   "errorLens.enabledDiagnosticLevels": ["error", "warning"],
   "errorLens.followCursor": "allLines",
 
-  // ── Files ─────────────────────────────────────────────────────────────────
+  // Files
   "files.exclude": {
     "**/.next": true,
     "**/node_modules": true

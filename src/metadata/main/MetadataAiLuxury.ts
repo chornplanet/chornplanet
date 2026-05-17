@@ -1,37 +1,60 @@
 import { Metadata } from "next";
+import { metadataLink } from "@/metadata/metadataLink/metadataLink";
+import { MetaLinks } from "@/metadata/metadataLink/MetaLinks";
 
-const AI_LUXURY_TITLE = "AI Luxury Platform | Chorn Planet";
-const AI_LUXURY_DESCRIPTION =
-  "Chorn Planet AI Luxury creates AI-native platform readiness for premium real estate, hospitality, tourism, mixed-use destinations, and luxury lifestyle ventures.";
+type AiLuxuryMetadataContent = {
+  title: string;
+  description: string;
+  openGraphTitle: string;
+};
 
-export function getMetadataAiLuxury(): Metadata {
+const AI_LUXURY_METADATA: Record<"en", AiLuxuryMetadataContent> = {
+  en: {
+    title:
+      "AI Luxury Platform for Real Estate, Hospitality & Lifestyle Ventures Service wording inside page: AI Luxury Development",
+    description:
+      "Chorn Planet AI Luxury creates AI-native platform readiness for premium real estate, hospitality, tourism, mixed-use destinations, and luxury lifestyle ventures.",
+    openGraphTitle:
+      "AI Luxury Platform for Real Estate, Hospitality & Lifestyle Ventures",
+  },
+};
+
+function loadMetadataContent(): AiLuxuryMetadataContent {
+  return AI_LUXURY_METADATA.en;
+}
+
+function createMetadata(
+  lang: string,
+  content: AiLuxuryMetadataContent,
+): Metadata {
+  const links = metadataLink(lang, MetaLinks.aiLuxury);
+
   return {
-    title: AI_LUXURY_TITLE,
-    description: AI_LUXURY_DESCRIPTION,
+    title: content.title,
+    description: content.description,
+    alternates: links.alternates,
     authors: [
       {
         name: "Chorn Planet",
       },
     ],
     openGraph: {
-      title: "AI Luxury Platform for Real Estate, Hospitality & Lifestyle Ventures",
-      description: AI_LUXURY_DESCRIPTION,
-      url: "/ai-luxury/",
+      title: content.openGraphTitle,
+      description: content.description,
+      images: links.openGraph.images,
+      url: links.alternates.canonical,
       type: "website",
-      images: [
-        {
-          url: "/images/ai-luxury/hero-ai-luxury-real-estate-platform.webp",
-          width: 1200,
-          height: 630,
-          alt: "Chorn Planet AI Luxury platform for premium real estate and hospitality ventures",
-        },
-      ],
     },
     twitter: {
       card: "summary_large_image",
-      title: AI_LUXURY_TITLE,
-      description: AI_LUXURY_DESCRIPTION,
-      images: ["/images/ai-luxury/hero-ai-luxury-real-estate-platform.webp"],
+      title: content.title,
+      description: content.description,
+      images: links.twitter.images,
     },
   };
+}
+
+export async function getMetadataAiLuxury(lang = "en"): Promise<Metadata> {
+  const content = loadMetadataContent();
+  return createMetadata(lang, content);
 }

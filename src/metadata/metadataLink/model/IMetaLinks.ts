@@ -10,6 +10,7 @@ export interface IMetaLinks {
     aiAom: IMetaLink,
     aiCompanion: IMetaLink,
     aiFah: IMetaLink,
+    aiLuxury: IMetaLink,
     aiPloy: IMetaLink,
     smartFoodAi: IMetaLink,
     cloudSolutions: IMetaLink,
