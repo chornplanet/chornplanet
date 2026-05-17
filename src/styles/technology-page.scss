@@ -348,6 +348,12 @@
     display: block;
   }
 
+  .services-area > .container > .row > h1,
+  .services-area .container > .row > h1 {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
   .services-area h1 {
     max-width: 920px;
     margin: 0 0 24px;
