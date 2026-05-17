@@ -1,18 +1,21 @@
 import {Metadata} from "next";
-import {headers} from "next/headers";
-import {redirect} from "next/navigation";
-import {MetaVisionMobilityChiangMai} from "@/metadata/smart-mobility/chiang-mai/MetaVisionMobilityChiangMai";
+import {
+    generateSmartMobilityChiangMaiMetadata,
+    SmartMobilityChiangMaiPage,
+} from "./smartMobilityChiangMaiPage";
 
-export async function generateMetadata(): Promise<Metadata> {
-    const headers15 = await headers();
-    const lang = headers15.get('x-locale') || 'en';
+const slug = 'vision-smart-mobility-northern-gateway';
 
-    return MetaVisionMobilityChiangMai[lang] ?? MetaVisionMobilityChiangMai.en;
+export async function generateMetadata(
+    {params}: { params: Promise<{ locale: string }> }
+): Promise<Metadata> {
+    const {locale} = await params;
+    return generateSmartMobilityChiangMaiMetadata(slug, locale);
 }
 
-export default async function Page() {
-    const headers15 = await headers();
-    const lang = headers15.get('x-locale') || 'en';
-
-    redirect(`/${lang}/smart-mobility/chiang-mai/vision-smart-mobility-northern-gateway/`);
+export default async function Page(
+    {params}: { params: Promise<{ locale: string }> }
+) {
+    const {locale} = await params;
+    return <SmartMobilityChiangMaiPage locale={locale} slug={slug}/>;
 }

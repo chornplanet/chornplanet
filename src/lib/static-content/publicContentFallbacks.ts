@@ -599,7 +599,7 @@ export function getFallbackLayoutContent(locale: string): LayoutContentPayload {
         createNavItem('Home', getMainNavbarLabel('Home', normalizedLocale), '/'),
         createNavItem('AI Luxury', getMainNavbarLabel('AI Luxury', normalizedLocale), '/ai-luxury'),
         createNavItem('Smart City', getMainNavbarLabel('Smart City', normalizedLocale), '/smart-city/'),
-        createNavItem('Smart Mobility', getMainNavbarLabel('Smart Mobility', normalizedLocale), '/smart-mobility/chiang-mai/'),
+        createNavItem('Smart Mobility', getMainNavbarLabel('Smart Mobility', normalizedLocale), '/smart-mobility/chiang-mai/vision-smart-mobility-northern-gateway/'),
         createNavItem('Smart Food AI', getMainNavbarLabel('Smart Food AI', normalizedLocale), '/smart-food-ai/'),
         createNavItem('Technology', getMainNavbarLabel('Technology', normalizedLocale), '/technical-expertise/web-development/'),
     ];

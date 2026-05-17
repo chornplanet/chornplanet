@@ -174,9 +174,14 @@ const MAIN_NAVBAR_ITEMS: MainNavbarItem[] = [
     {
         group: 'Smart Mobility',
         label: 'Smart Mobility',
-        link: '/smart-mobility/chiang-mai/',
+        link: '/smart-mobility/chiang-mai/vision-smart-mobility-northern-gateway/',
         activeLinks: [],
-        matchLinks: ['/smart-mobility', '/smart-mobility/', '/smart-mobility/chiang-mai/'],
+        matchLinks: [
+            '/smart-mobility',
+            '/smart-mobility/',
+            '/smart-mobility/chiang-mai/',
+            '/smart-mobility/chiang-mai/vision-smart-mobility-northern-gateway/',
+        ],
     },
     {
         group: 'Smart Food AI',
