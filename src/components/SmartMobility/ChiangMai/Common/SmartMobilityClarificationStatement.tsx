@@ -5,7 +5,7 @@ export default function SmartMobilityClarificationStatement(
     {safeStatement}: { lang: string; safeStatement?: ISmartSection['safeStatement'] }
 ) {
     return (
-        <div>
+        <div className="smart-mobility-premium__statement">
             <strong>
                 {
                     safeStatement &&

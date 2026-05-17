@@ -14,6 +14,14 @@ export default function VisionChiangMaiMain(
     return (
         <div className="portfolio-details-area smart-container-top">
             <div className="container">
+                <div className="smart-mobility-premium__header">
+                    <div className="smart-mobility-premium__heading">
+                        <p className="smart-mobility-premium__eyebrow">Smart Mobility Chiang Mai</p>
+                        <h1>{vision.title}</h1>
+                    </div>
+                    <p>{vision.description}</p>
+                </div>
+
                 <div className="row">
                     <div className="col-lg-8">
                         <div className="portfolio-details-image neo-image-container">
@@ -31,13 +39,14 @@ export default function VisionChiangMaiMain(
                         <div className={"neo-tag"}>
                             {
                                 vision.media?.image_tags &&
-                                vision.media.image_tags.join(",")
+                                vision.media.image_tags.map((tag) => (
+                                    <span key={tag}>{tag}</span>
+                                ))
                             }
                         </div>
 
                         <VisionChiangMaiBottom
                             lang={lang}
-                            vision={vision}
                             safeStatement={content.safeStatement}
                         />
                         <SmartCityBottomImage lang={lang} bottomCards={content.bottomCards}/>

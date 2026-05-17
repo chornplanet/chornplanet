@@ -66,5 +66,9 @@ export async function SmartMobilityChiangMaiPage({
   const lang = locale || "en";
   const content = await getSmartMobilityChiangMaiContentForPublicPage(lang, slug);
 
-  return <>{renderPrimaryContent(slug, lang, content)}</>;
+  return (
+    <main className={`smart-mobility-premium smart-mobility-premium--${slug}`}>
+      {renderPrimaryContent(slug, lang, content)}
+    </main>
+  );
 }
