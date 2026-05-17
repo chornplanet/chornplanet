@@ -24,9 +24,16 @@ export default function ConsentCookieButton(
         gtag('js', new Date());
         gtag('config', GA_TRACKING_ID);
 
-        // setCookieConsent('cookie_consent', true)
         const oneYearInMilliseconds = 365 * 24 * 60 * 60 * 1000;
-        document.cookie = `cookie_consent=true; path=/; expires=${new Date(Date.now() + oneYearInMilliseconds).toUTCString()}; samesite=strict;`;
+        const secureAttribute = window.location.protocol === "https:" ? "Secure" : "";
+        document.cookie = [
+            "cookie_consent=true",
+            "Path=/",
+            `Expires=${new Date(Date.now() + oneYearInMilliseconds).toUTCString()}`,
+            "Max-Age=31536000",
+            "SameSite=Lax",
+            secureAttribute.trim(),
+        ].filter(Boolean).join("; ");
         dispatch(setCookieConsent());
     };
 
