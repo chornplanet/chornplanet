@@ -24,17 +24,25 @@ export default async function Page() {
     ]);
 
     return (
-        <div className="smart-container-top">
+        <div className="technology-page-shell">
             <WebDevelopmentPageMain
                 lang={lang}
                 content={content}
                 aiSolutionService={aiCompanionsContent.service}
                 aiSolutionSlides={aiCompanionsContent.media.llmSlides}
             />
-            
-            <HomeFeatureMain lang={lang} feature={content.feature} isHideTopTitle={true}/>
-            
-            <CloudExperience lang={lang} cloud={content.cloud}/>
+
+            <section className="technology-premium-module technology-premium-module--feature">
+                <div className="technology-premium-container">
+                    <HomeFeatureMain lang={lang} feature={content.feature} isHideTopTitle={true}/>
+                </div>
+            </section>
+
+            <section className="technology-premium-module technology-premium-module--cloud-experience">
+                <div className="technology-premium-container">
+                    <CloudExperience lang={lang} cloud={content.cloud}/>
+                </div>
+            </section>
             <SchemaMarkupServicePage
                 name="Web Development Services | Chorn Planet | Custom Software & Technology Solutions"
                 description="Explore Chorn Planet's web development services, including expertise in Next.js, React, Angular, Vue, and more. Chorn Planet offers tailored solutions for businesses across various domains such as Digital Marketing, Blockchain, E-Commerce, and more."
