@@ -331,6 +331,8 @@
 .technology-premium-module--ai,
 .technology-premium-module--cloud,
 .technology-premium-module--web3 {
+  overflow: hidden;
+
   .services-area {
     padding: 0;
   }
@@ -341,43 +343,123 @@
     max-width: 1240px;
   }
 
+  .services-area > .container > .row,
+  .services-area .container > .row {
+    display: block;
+  }
+
   .services-area h1 {
-    margin: 0 0 22px;
+    max-width: 920px;
+    margin: 0 0 24px;
     color: #101f19;
     font-size: clamp(2rem, 3vw, 3.2rem);
     font-weight: 900;
     line-height: 1.08;
   }
 
+  .align-items-center-custom {
+    display: grid;
+    grid-template-columns: minmax(0, 0.96fr) minmax(420px, 1.04fr);
+    align-items: center;
+    gap: 28px;
+    margin: 0 !important;
+    padding: 0;
+  }
+
+  .add-web-content,
+  .cloud-infra-left.add-web-content,
+  .frontend-images-side-container,
+  .cloud-infra-right {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+  }
+
   .add-web-content p,
   .cloud-infra-left.add-web-content p {
-    margin-bottom: 14px;
+    max-width: 720px;
+    margin: 0 0 14px;
     color: #405049;
     font-size: 1rem;
     line-height: 1.78;
   }
 
+  .add-web-content > p:last-of-type,
+  .cloud-infra-left.add-web-content > p:last-of-type {
+    margin-bottom: 0;
+  }
+
+  .feature-list {
+    display: grid;
+    gap: 12px;
+    margin: 20px 0 0;
+    padding: 0;
+  }
+
+  .feature-item {
+    margin: 0;
+    padding: 18px;
+    border: 1px solid rgba(11, 124, 96, 0.1);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.68);
+    box-shadow: 0 10px 22px rgba(22, 42, 34, 0.04);
+  }
+
+  .feature-icon-container {
+    align-items: flex-start;
+    gap: 10px;
+  }
+
   .feature-title {
     color: #14251d;
     font-weight: 900;
+    line-height: 1.28;
   }
 
   .feature-description {
+    margin: 8px 0 0;
     color: #45584f;
     line-height: 1.68;
   }
 
+  .frontend-images-side-container .grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    margin: 0;
+  }
+
   .frontend-images-side-unit {
     width: 100%;
+    aspect-ratio: 4 / 3;
     height: auto;
     border-radius: 0;
+    object-fit: cover;
     filter: saturate(0.96) contrast(1.04);
     box-shadow: 0 14px 30px rgba(22, 35, 30, 0.09);
   }
 
-  .align-items-center-custom {
-    margin-left: 0 !important;
-    padding-right: 0;
+  .cloud-infra-right {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(72px, 1fr));
+    gap: 12px;
+    align-content: center;
+
+    img {
+      width: 100%;
+      min-height: 92px;
+      padding: 18px;
+      border: 1px solid rgba(21, 45, 36, 0.08);
+      border-radius: 0;
+      background: rgba(255, 255, 255, 0.72);
+      object-fit: contain;
+      box-shadow: 0 10px 22px rgba(22, 42, 34, 0.04);
+    }
+  }
+
+  .default-shape {
+    display: none;
   }
 }
 
@@ -449,6 +531,31 @@
     font-size: 1rem;
     line-height: 1.72;
   }
+
+  .technology-premium-module--ai .align-items-center-custom,
+  .technology-premium-module--cloud .align-items-center-custom,
+  .technology-premium-module--web3 .align-items-center-custom {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .technology-premium-module--ai .services-area h1,
+  .technology-premium-module--cloud .services-area h1,
+  .technology-premium-module--web3 .services-area h1 {
+    margin-bottom: 18px;
+  }
+
+  .technology-premium-module--ai .feature-list,
+  .technology-premium-module--cloud .feature-list,
+  .technology-premium-module--web3 .feature-list {
+    margin-top: 16px;
+  }
+
+  .technology-premium-module--ai .feature-item,
+  .technology-premium-module--cloud .feature-item,
+  .technology-premium-module--web3 .feature-item {
+    padding: 16px;
+  }
 }
 
 @media (max-width: 575px) {
@@ -470,5 +577,22 @@
 
   .technology-hero__actions span {
     width: 100%;
+  }
+
+  .technology-premium-module--ai,
+  .technology-premium-module--cloud,
+  .technology-premium-module--web3 {
+    padding: 24px 0;
+
+    .frontend-images-side-container .grid,
+    .cloud-infra-right {
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+
+    .cloud-infra-right img {
+      min-height: 82px;
+      padding: 16px;
+    }
   }
 }
