@@ -7,7 +7,6 @@ import {headers} from "next/headers";
 import {MetadataWebDevelopment} from "@/metadata/main/MetadataWebDevelopment";
 import HomeFeatureMain from "@/components/Features/HomeFeatureMain";
 import {getTechnicalExpertiseContentForPublicPage} from "@/lib/technical-expertise-content/technicalExpertiseContent.service";
-import {getAiCompanionsContentForPublicPage} from "@/lib/ai-companions-content/aiCompanionsContent.service";
 
 export async function generateMetadata(): Promise<Metadata> {
     const headers15 = await headers();
@@ -18,18 +17,13 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function Page() {
     const headers15 = await headers();
     const lang = headers15.get('x-locale') || 'en';
-    const [content, aiCompanionsContent] = await Promise.all([
-        getTechnicalExpertiseContentForPublicPage(lang),
-        getAiCompanionsContentForPublicPage(lang),
-    ]);
+    const content = await getTechnicalExpertiseContentForPublicPage(lang);
 
     return (
         <div className="technology-page-shell">
             <WebDevelopmentPageMain
                 lang={lang}
                 content={content}
-                aiSolutionService={aiCompanionsContent.service}
-                aiSolutionSlides={aiCompanionsContent.media.llmSlides}
             />
 
             <section className="technology-premium-module technology-premium-module--feature">
