@@ -98,7 +98,7 @@
   margin-bottom: 14px;
   overflow: hidden;
   border: 1px solid var(--sm-line);
-  border-radius: 8px;
+  border-radius: 0;
   background: rgba(255, 255, 255, 0.86);
   box-shadow: 0 24px 56px rgba(22, 39, 32, 0.11);
 
@@ -192,14 +192,14 @@
 
 .smart-mobility-premium .smart-right-image-wrapper {
   overflow: hidden;
-  border-radius: 7px;
+  border-radius: 0;
   background: #eef4f1;
   box-shadow: 0 10px 22px rgba(22, 39, 32, 0.08);
 
   img {
     aspect-ratio: 16 / 11;
     object-fit: cover;
-    border-radius: 7px;
+    border-radius: 0;
     filter: saturate(0.96) contrast(1.04);
     transition: transform 0.28s ease, filter 0.28s ease;
   }
@@ -243,12 +243,12 @@
 }
 
 .smart-mobility-premium .vision-image-wrapper {
-  border-radius: 6px;
+  border-radius: 0;
 
   img {
     aspect-ratio: 16 / 10;
     object-fit: cover;
-    border-radius: 6px;
+    border-radius: 0;
     filter: saturate(0.96) contrast(1.04);
   }
 }
