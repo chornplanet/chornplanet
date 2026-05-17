@@ -398,6 +398,7 @@
 
   .feature-list {
     display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 12px;
     margin: 20px 0 0;
     padding: 0;
@@ -664,6 +665,7 @@
   .technology-premium-module--ai .feature-list,
   .technology-premium-module--cloud .feature-list,
   .technology-premium-module--web3 .feature-list {
+    grid-template-columns: 1fr;
     margin-top: 16px;
   }
 
