@@ -14,6 +14,7 @@ import {getFallbackLayoutContent} from "@/lib/static-content/publicContentFallba
 
 const layoutContentService = new LayoutContentService(new LayoutContentRepository());
 const LAYOUT_CONTENT_LIST_TAG = 'layout-content';
+const LAYOUT_CONTENT_CACHE_VERSION = '2026-05-17-ai-smart-food-label';
 const isDevelopment = process.env.NODE_ENV !== 'production';
 const REQUIRED_LAYOUT_FIELDS = [
     'navbar',
@@ -202,7 +203,7 @@ const MAIN_NAVBAR_ITEMS: MainNavbarItem[] = [
 ];
 
 function getLayoutContentTag(locale: string) {
-    return `layout-content:${normalizeLayoutContentLocale(locale)}`;
+    return `layout-content:${LAYOUT_CONTENT_CACHE_VERSION}:${normalizeLayoutContentLocale(locale)}`;
 }
 
 function assertCompleteLayoutContent(
@@ -439,7 +440,7 @@ export async function getLayoutContent(locale: string): Promise<LayoutContentPay
             const databaseContent = await layoutContentService.findByLocale(normalizedLocale);
             return assertCompleteLayoutContent(normalizedLocale, databaseContent);
         },
-        ['layout-content-by-locale', normalizedLocale],
+        ['layout-content-by-locale', LAYOUT_CONTENT_CACHE_VERSION, normalizedLocale],
         {
             revalidate: 3600,
             tags: [LAYOUT_CONTENT_LIST_TAG, getLayoutContentTag(normalizedLocale)],
@@ -479,7 +480,7 @@ export async function getAllLayoutContent(): Promise<LayoutContentResponse[]> {
                 return [];
             }
         },
-        ['layout-content-all'],
+        ['layout-content-all', LAYOUT_CONTENT_CACHE_VERSION],
         {
             revalidate: 3600,
             tags: [LAYOUT_CONTENT_LIST_TAG],
