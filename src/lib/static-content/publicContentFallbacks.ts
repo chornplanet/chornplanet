@@ -60,16 +60,16 @@ const AI_LUXURY_FOOTER_LABELS: Record<string, string> = {
 };
 
 const AI_SMART_FOOD_FOOTER_LABELS: Record<string, string> = {
-    en: 'AI Smart Food Platform',
-    th: 'แพลตฟอร์ม AI Smart Food',
-    da: 'AI Smart Food-platform',
-    de: 'AI-Smart-Food-Plattform',
-    fi: 'AI Smart Food -alusta',
-    fr: 'Plateforme AI Smart Food',
-    ja: 'AIスマートフードプラットフォーム',
-    ko: 'AI 스마트 푸드 플랫폼',
-    nl: 'AI Smart Food-platform',
-    zh: 'AI 智慧食品平台',
+    en: 'AI Smart Food',
+    th: 'AI Smart Food',
+    da: 'AI Smart Food',
+    de: 'AI Smart Food',
+    fi: 'AI Smart Food',
+    fr: 'AI Smart Food',
+    ja: 'AIスマートフード',
+    ko: 'AI 스마트 푸드',
+    nl: 'AI Smart Food',
+    zh: 'AI 智慧食品',
 };
 
 const TIKTOK_CREATOR_FOOTER_LABELS: Record<string, string> = {
@@ -137,16 +137,16 @@ const MAIN_NAVBAR_LABELS: Record<MainNavbarGroup, Record<string, string>> = {
         zh: '智慧出行',
     },
     'Smart Food AI': {
-        en: 'AI Smart Food Platform',
-        th: 'แพลตฟอร์ม AI Smart Food',
-        da: 'AI Smart Food-platform',
-        de: 'AI-Smart-Food-Plattform',
-        fi: 'AI Smart Food -alusta',
-        fr: 'Plateforme AI Smart Food',
-        ja: 'AIスマートフードプラットフォーム',
-        ko: 'AI 스마트 푸드 플랫폼',
-        nl: 'AI Smart Food-platform',
-        zh: 'AI 智慧食品平台',
+        en: 'AI Smart Food',
+        th: 'AI Smart Food',
+        da: 'AI Smart Food',
+        de: 'AI Smart Food',
+        fi: 'AI Smart Food',
+        fr: 'AI Smart Food',
+        ja: 'AIスマートフード',
+        ko: 'AI 스마트 푸드',
+        nl: 'AI Smart Food',
+        zh: 'AI 智慧食品',
     },
     Technology: {
         en: 'Technology',
