@@ -61,7 +61,16 @@
 }
 
 .technology-hero {
-  padding: 58px 0 34px;
+  padding: 58px 0 30px;
+
+  h1 {
+    max-width: 860px;
+    margin: 0;
+    color: #101f19;
+    font-size: clamp(2.75rem, 4.2vw, 4.75rem);
+    font-weight: 900;
+    line-height: 1;
+  }
 }
 
 .technology-hero__grid {
@@ -69,7 +78,7 @@
   grid-template-columns: minmax(0, 0.92fr) minmax(460px, 1.08fr);
   align-items: center;
   gap: 34px;
-  margin: 0;
+  margin: 22px 0 0;
   padding: 0;
   border: 0;
   border-radius: 0;
@@ -80,20 +89,11 @@
 .technology-hero__content {
   margin: 0;
   padding: 0;
-
-  h1 {
-    max-width: 780px;
-    margin: 0;
-    color: #101f19;
-    font-size: clamp(2.75rem, 4.2vw, 4.75rem);
-    font-weight: 900;
-    line-height: 1;
-  }
 }
 
 .technology-hero__lead {
   max-width: 720px;
-  margin: 22px 0 0;
+  margin: 0;
   color: #394c43;
   font-size: 1.08rem;
   line-height: 1.82;
@@ -140,6 +140,7 @@
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 8px;
+    margin: 0;
   }
 
   .frontend-images-side-unit {
@@ -195,7 +196,7 @@
 }
 
 .technology-premium-module {
-  padding: 10px 0;
+  padding: 28px 0;
 
   .container {
     width: 100%;
@@ -213,7 +214,7 @@
 }
 
 .technology-premium-module--foundation {
-  padding-top: 42px;
+  padding-top: 28px;
 }
 
 .technology-section-heading {
@@ -306,6 +307,7 @@
   .home-frontend-box {
     height: 100%;
     min-height: 100%;
+    margin-bottom: 0;
 
     &:hover {
       transform: translateY(-4px);
@@ -340,7 +342,7 @@
   }
 
   .services-area h1 {
-    margin-bottom: 22px;
+    margin: 0 0 22px;
     color: #101f19;
     font-size: clamp(2rem, 3vw, 3.2rem);
     font-weight: 900;
@@ -349,6 +351,7 @@
 
   .add-web-content p,
   .cloud-infra-left.add-web-content p {
+    margin-bottom: 14px;
     color: #405049;
     font-size: 1rem;
     line-height: 1.78;
@@ -365,6 +368,8 @@
   }
 
   .frontend-images-side-unit {
+    width: 100%;
+    height: auto;
     border-radius: 0;
     filter: saturate(0.96) contrast(1.04);
     box-shadow: 0 14px 30px rgba(22, 35, 30, 0.09);
@@ -378,7 +383,7 @@
 
 .technology-premium-module--feature,
 .technology-premium-module--cloud-experience {
-  padding: 34px 0;
+  padding: 28px 0;
   background: #f7faf8;
 }
 
@@ -407,9 +412,17 @@
     padding-top: 34px;
   }
 
-  .technology-hero__grid,
+  .technology-hero__grid {
+    gap: 18px;
+    margin-top: 18px;
+    padding: 0;
+  }
+
   .technology-foundation-copy {
-    padding: 18px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
   }
 
   .technology-hero__media .grid,
@@ -419,9 +432,22 @@
     grid-template-columns: 1fr;
   }
 
-  .technology-hero__content h1 {
-    font-size: 2.35rem;
-    line-height: 1.04;
+  .technology-hero h1,
+  .technology-section-heading h2,
+  .technology-premium-module--ai .services-area h1,
+  .technology-premium-module--cloud .services-area h1,
+  .technology-premium-module--web3 .services-area h1 {
+    font-size: 2.25rem;
+    line-height: 1.06;
+  }
+
+  .technology-hero__lead,
+  .technology-premium-page p,
+  .technology-premium-module--ai .add-web-content p,
+  .technology-premium-module--cloud .add-web-content p,
+  .technology-premium-module--web3 .add-web-content p {
+    font-size: 1rem;
+    line-height: 1.72;
   }
 }
 
@@ -438,6 +464,8 @@
 
   .technology-hero__actions {
     display: grid;
+    gap: 8px;
+    margin-top: 18px;
   }
 
   .technology-hero__actions span {
