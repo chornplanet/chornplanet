@@ -22,17 +22,29 @@ const REQUIRED_LAYOUT_FIELDS = [
     'languageOptions',
 ] as const;
 
-const SMART_FOOD_AI_FOOTER_LABELS: Record<string, string> = {
-    da: 'Smart Food AI',
-    de: 'Smart Food KI',
-    en: 'Smart Food AI',
-    fi: 'Smart Food AI',
-    fr: 'Smart Food IA',
-    ja: 'スマートフードAI',
-    ko: '스마트 푸드 AI',
-    nl: 'Smart Food AI',
-    th: 'สมาร์ทฟู้ด AI',
-    zh: '智慧餐饮 AI',
+const AI_LUXURY_FOOTER_LABELS: Record<string, string> = {
+    en: 'AI Luxury Platform',
+    th: 'แพลตฟอร์ม AI Luxury',
+    da: 'AI Luxury-platform',
+    de: 'AI-Luxusplattform',
+    fi: 'AI Luxury -alusta',
+    fr: 'Plateforme AI Luxury',
+    ja: 'AIラグジュアリープラットフォーム',
+    ko: 'AI 럭셔리 플랫폼',
+    nl: 'AI Luxury-platform',
+    zh: 'AI 奢华平台',
+};
+const AI_SMART_FOOD_FOOTER_LABELS: Record<string, string> = {
+    en: 'AI Smart Food Platform',
+    th: 'แพลตฟอร์ม AI Smart Food',
+    da: 'AI Smart Food-platform',
+    de: 'AI-Smart-Food-Plattform',
+    fi: 'AI Smart Food -alusta',
+    fr: 'Plateforme AI Smart Food',
+    ja: 'AIスマートフードプラットフォーム',
+    ko: 'AI 스마트 푸드 플랫폼',
+    nl: 'AI Smart Food-platform',
+    zh: 'AI 智慧食品平台',
 };
 const YOUTUBE_FOOTER_LINK: IFooterDetail = {
     label: 'Youtube',
@@ -50,19 +62,6 @@ const TIKTOK_CONTENT_DEVELOPMENT_FOOTER_LABELS: Record<string, string> = {
     ko: 'TikTok 크리에이터',
     nl: 'TikTok-creator',
     zh: 'TikTok 创作者',
-};
-
-const AI_LUXURY_PLATFORM_NAV_LABELS: Record<string, string> = {
-    en: 'AI Luxury Platform',
-    th: 'แพลตฟอร์ม AI Luxury',
-    da: 'AI Luxury-platform',
-    de: 'AI-Luxusplattform',
-    fi: 'AI Luxury -alusta',
-    fr: 'Plateforme AI Luxury',
-    ja: 'AIラグジュアリープラットフォーム',
-    ko: 'AI 럭셔리 플랫폼',
-    nl: 'AI Luxury-platform',
-    zh: 'AI 奢华平台',
 };
 
 type MainNavbarGroup = 'Home' | 'AI Luxury' | 'Smart City' | 'Smart Mobility' | 'Smart Food AI' | 'Technology';
@@ -260,40 +259,53 @@ function normalizeSmartFoodAiFooterGroup<T extends { items: IFooterDetail[] }>(g
     };
 }
 
-function normalizeSmartFoodAiProjectGroup<T extends { items: IFooterDetail[] }>(locale: string, group: T): T {
-    const hasSmartFoodAi = group.items.some((item) => item.link === '/smart-food-ai/');
+function normalizeTikTokProjectItem(locale: string, item?: IFooterDetail): IFooterDetail {
+    const label = TIKTOK_CONTENT_DEVELOPMENT_FOOTER_LABELS[locale] ?? TIKTOK_CONTENT_DEVELOPMENT_FOOTER_LABELS.en;
 
-    if (hasSmartFoodAi) {
-        return group;
-    }
+    return {
+        ...(item ?? {}),
+        label,
+        link: TIKTOK_CONTENT_DEVELOPMENT_FOOTER_LINK,
+    };
+}
+
+function isProjectLink(item: IFooterDetail, links: string[]): boolean {
+    const normalizedLink = normalizeNavbarPath(item.link);
+    return links.map(normalizeNavbarPath).includes(normalizedLink);
+}
+
+function isTikTokProjectLink(item: IFooterDetail): boolean {
+    return item.link.toLowerCase().includes('tiktok.com/@chornplanet');
+}
+
+function normalizeProjectGroup<T extends { items: IFooterDetail[] }>(locale: string, group: T): T {
+    const aiLuxuryLinks = ['/ai-luxury', '/ai-luxury/'];
+    const aiSmartFoodLinks = ['/smart-food-ai', '/smart-food-ai/'];
+    const aiLuxuryItem = group.items.find((item) => isProjectLink(item, aiLuxuryLinks));
+    const aiSmartFoodItem = group.items.find((item) => isProjectLink(item, aiSmartFoodLinks));
+    const tiktokItem = group.items.find(isTikTokProjectLink);
+    const remainingItems = group.items.filter((item) => {
+        return !isProjectLink(item, aiLuxuryLinks) &&
+            !isProjectLink(item, aiSmartFoodLinks) &&
+            !isTikTokProjectLink(item);
+    });
 
     return {
         ...group,
         items: [
             {
-                label: SMART_FOOD_AI_FOOTER_LABELS[locale] ?? SMART_FOOD_AI_FOOTER_LABELS.en,
+                ...(aiLuxuryItem ?? {}),
+                label: AI_LUXURY_FOOTER_LABELS[locale] ?? AI_LUXURY_FOOTER_LABELS.en,
+                link: '/ai-luxury',
+            },
+            {
+                ...(aiSmartFoodItem ?? {}),
+                label: AI_SMART_FOOD_FOOTER_LABELS[locale] ?? AI_SMART_FOOD_FOOTER_LABELS.en,
                 link: '/smart-food-ai/',
             },
-            ...group.items,
+            normalizeTikTokProjectItem(locale, tiktokItem),
+            ...remainingItems,
         ],
-    };
-}
-
-function normalizeTikTokContentDevelopmentProjectGroup<T extends { items: IFooterDetail[] }>(locale: string, group: T): T {
-    const label = TIKTOK_CONTENT_DEVELOPMENT_FOOTER_LABELS[locale] ?? TIKTOK_CONTENT_DEVELOPMENT_FOOTER_LABELS.en;
-
-    return {
-        ...group,
-        items: group.items.map((item) => {
-            if (item.link !== TIKTOK_CONTENT_DEVELOPMENT_FOOTER_LINK) {
-                return item;
-            }
-
-            return {
-                ...item,
-                label,
-            };
-        }),
     };
 }
 
@@ -363,12 +375,11 @@ function normalizeMainNavbar(locale: string, navbar: INavbar[]): INavbar[] {
 
 function normalizeSmartFoodAiFooter(locale: string, footer: IFooter): IFooter {
     const normalizedLocale = normalizeLayoutContentLocale(locale);
-    const projectWithSmartFoodAi = normalizeSmartFoodAiProjectGroup(normalizedLocale, footer.project);
 
     return {
         ...footer,
         important: normalizeSmartFoodAiFooterGroup(footer.important),
-        project: normalizeTikTokContentDevelopmentProjectGroup(normalizedLocale, projectWithSmartFoodAi),
+        project: normalizeProjectGroup(normalizedLocale, footer.project),
         technology: normalizeSmartFoodAiFooterGroup(footer.technology),
     };
 }

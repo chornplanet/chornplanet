@@ -46,7 +46,7 @@ const fallbackText = {
     description: 'This page is temporarily using static fallback content while localized MongoDB content is unavailable.',
 };
 
-const AI_LUXURY_PLATFORM_NAV_LABELS: Record<string, string> = {
+const AI_LUXURY_FOOTER_LABELS: Record<string, string> = {
     en: 'AI Luxury Platform',
     th: 'แพลตฟอร์ม AI Luxury',
     da: 'AI Luxury-platform',
@@ -57,6 +57,32 @@ const AI_LUXURY_PLATFORM_NAV_LABELS: Record<string, string> = {
     ko: 'AI 럭셔리 플랫폼',
     nl: 'AI Luxury-platform',
     zh: 'AI 奢华平台',
+};
+
+const AI_SMART_FOOD_FOOTER_LABELS: Record<string, string> = {
+    en: 'AI Smart Food Platform',
+    th: 'แพลตฟอร์ม AI Smart Food',
+    da: 'AI Smart Food-platform',
+    de: 'AI-Smart-Food-Plattform',
+    fi: 'AI Smart Food -alusta',
+    fr: 'Plateforme AI Smart Food',
+    ja: 'AIスマートフードプラットフォーム',
+    ko: 'AI 스마트 푸드 플랫폼',
+    nl: 'AI Smart Food-platform',
+    zh: 'AI 智慧食品平台',
+};
+
+const TIKTOK_CREATOR_FOOTER_LABELS: Record<string, string> = {
+    en: 'TikTok Creator',
+    th: 'TikTok ครีเอเตอร์',
+    da: 'TikTok-skaber',
+    de: 'TikTok-Creator',
+    fi: 'TikTok-sisällöntuottaja',
+    fr: 'Créateur TikTok',
+    ja: 'TikTokクリエイター',
+    ko: 'TikTok 크리에이터',
+    nl: 'TikTok-creator',
+    zh: 'TikTok 创作者',
 };
 
 type MainNavbarGroup = 'Home' | 'AI Luxury' | 'Smart City' | 'Smart Mobility' | 'Smart Food AI' | 'Technology';
@@ -139,6 +165,31 @@ const MAIN_NAVBAR_LABELS: Record<MainNavbarGroup, Record<string, string>> = {
 function getMainNavbarLabel(group: MainNavbarGroup, locale: string): string {
     const labels = MAIN_NAVBAR_LABELS[group];
     return labels[locale] ?? labels.en;
+}
+
+function getFallbackFooterProjectItems(locale: string) {
+    return [
+        {
+            label: AI_LUXURY_FOOTER_LABELS[locale] ?? AI_LUXURY_FOOTER_LABELS.en,
+            link: '/ai-luxury',
+        },
+        {
+            label: AI_SMART_FOOD_FOOTER_LABELS[locale] ?? AI_SMART_FOOD_FOOTER_LABELS.en,
+            link: '/smart-food-ai/',
+        },
+        {
+            label: TIKTOK_CREATOR_FOOTER_LABELS[locale] ?? TIKTOK_CREATOR_FOOTER_LABELS.en,
+            link: 'https://tiktok.com/@chornplanet',
+        },
+        {
+            label: 'Future Mobility Scenario',
+            link: '/smart-mobility/chiang-mai/',
+        },
+        {
+            label: 'Future Smart City Scenario',
+            link: '/smart-city/',
+        },
+    ];
 }
 
 function logStaticFallback(context: string, locale: string, slug?: string) {
@@ -566,7 +617,7 @@ export function getFallbackLayoutContent(locale: string): LayoutContentPayload {
         description: fallbackText.description,
         social: {title: 'Social', items: []},
         important: {title: 'Important', items: footerItems},
-        project: {title: 'Projects', items: []},
+        project: {title: 'Projects', items: getFallbackFooterProjectItems(normalizedLocale)},
         smartCity: {title: 'Smart City', items: []},
         technology: {title: 'Technology', items: []},
         connect: {title: 'Connect', items: []},
