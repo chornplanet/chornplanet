@@ -2,6 +2,28 @@ import React from "react";
 import {IFooter, IFooterDetail} from "@/lib/model/IFooter";
 import Link from "next/link";
 
+function normalizeProjectLink(link: string): string {
+    return link.endsWith("/") && link !== "/" ? link.slice(0, -1) : link;
+}
+
+function getProjectHighlightClass(item: IFooterDetail): string | undefined {
+    const link = normalizeProjectLink(item.link);
+
+    if (link === "/ai-luxury") {
+        return "footer-featured-link footer-featured-link--luxury";
+    }
+
+    if (link === "/smart-food-ai") {
+        return "footer-featured-link footer-featured-link--smart-food";
+    }
+
+    if (link.toLowerCase().includes("tiktok.com/@chornplanet")) {
+        return "footer-featured-link footer-featured-link--tiktok";
+    }
+
+    return undefined;
+}
+
 export default function FooterProjects({lang, footer}: { lang: string, footer: IFooter }) {
     return (
         <div className="footer-right-column footer-right-column--projects">
@@ -12,9 +34,10 @@ export default function FooterProjects({lang, footer}: { lang: string, footer: I
                     {footer.project.items
                         .filter((item: IFooterDetail) => item.link !== undefined)
                         .map((item: IFooterDetail, index: number) => {
+                            const highlightClassName = getProjectHighlightClass(item);
 
                             if (item.link.startsWith("http")) {
-                                return (<li key={index} className={item.link === '/smart-food-ai/' ? 'footer-featured-link' : undefined}>
+                                return (<li key={index} className={highlightClassName}>
                                     <Link href={item.link} target={'_blank'}>
                                         {item.label}
                                     </Link>
@@ -22,7 +45,7 @@ export default function FooterProjects({lang, footer}: { lang: string, footer: I
                             }
 
                             return (
-                                <li key={index} className={item.link === '/smart-food-ai/' ? 'footer-featured-link' : undefined}>
+                                <li key={index} className={highlightClassName}>
                                     <Link href={`/${lang}` + item.link}>
                                         {item.label}
                                     </Link>
