@@ -16,8 +16,8 @@ export default function CloudExperience(
             <div className="container">
                 <div className="row justify-content-center align-items-center">
                     {content.stacks.map((item: ICloudStack, index: any) => (
-                        <div key={index} className="col-lg-3 col-md-6 col-6">
-                            <div className="single-fun-fact-box">
+                        <div key={index} className="col-lg-3 col-md-6 col-6 cloud-icon-wrap">
+                            <div className="single-fun-fact-box cloud-single">
                                 <div className="icon">
                                     <Image
                                         className="hover-rotate"
