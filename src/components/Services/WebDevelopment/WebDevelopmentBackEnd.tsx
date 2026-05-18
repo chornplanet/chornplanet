@@ -4,12 +4,14 @@ import Image from "next/image";
 import Link from "next/link";
 import {IFullStack} from "@/lib/model/IFullStack";
 
+// 0-Nodejs, 1-Go, 2-Java, 3-Python
+
 export default function WebDevelopmentBackEnd({lang, fullStack}: { lang: string, fullStack: IFullStack }) {
     const fullstack = fullStack
     const displayItems = [
         fullstack.stacks[3],
         fullstack.stacks[0],
-        fullstack.stacks[2]
+        fullstack.stacks[1]
     ].filter(Boolean)
 
     return (
