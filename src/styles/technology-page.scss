@@ -108,7 +108,8 @@
   gap: 10px;
   margin-top: 24px;
 
-  span {
+  span,
+  a {
     display: inline-flex;
     align-items: center;
     min-height: 40px;
@@ -123,7 +124,34 @@
     color: #183329;
     font-size: 0.9rem;
     font-weight: 800;
+    text-decoration: none;
     box-shadow: 0 8px 18px rgba(22, 42, 34, 0.05);
+  }
+
+  .technology-hero__action--luxury {
+    border-color: rgba(191, 154, 76, 0.55);
+    background: linear-gradient(
+      135deg,
+      rgba(42, 32, 18, 0.96),
+      rgba(135, 98, 42, 0.92)
+    );
+    color: #fffaf0;
+    box-shadow:
+      0 12px 24px rgba(135, 98, 42, 0.18),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.16);
+  }
+
+  .technology-hero__action--food {
+    border-color: rgba(62, 158, 117, 0.5);
+    background: linear-gradient(
+      135deg,
+      rgba(12, 67, 51, 0.96),
+      rgba(30, 128, 91, 0.92)
+    );
+    color: #f4fff9;
+    box-shadow:
+      0 12px 24px rgba(18, 119, 82, 0.16),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.14);
   }
 }
 

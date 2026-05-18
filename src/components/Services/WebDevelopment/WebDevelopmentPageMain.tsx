@@ -1,22 +1,29 @@
 import React from "react";
+import Link from "next/link";
 import WebDevelopmentRight from "@/components/Services/WebDevelopment/WebDevelopmentRight";
 import WebDevelopmentBackEnd from "@/components/Services/WebDevelopment/WebDevelopmentBackEnd";
 import WevDevelopmentFrontEnd from "@/components/Services/WebDevelopment/WevDevelopmentFrontEnd";
 import WebDevelopmentDevOps from "@/components/Services/WebDevelopment/WebDevelopmentDevOps";
 import { TechnicalExpertiseContentPayload } from "@/core/domain/technical-expertise-content.entity";
+import aiPlatformDevelopment from "./aiPlatformDevelopment.json";
 
-const pageTitle = {
-  en: "AI Platform and Application Development",
-  th: "การพัฒนาแพลตฟอร์ม AI และแอปพลิเคชัน",
-  zh: "AI 平台与应用程序开发",
-  ja: "AIプラットフォームおよびアプリケーション開発",
-  ko: "AI 플랫폼 및 애플리케이션 개발",
-  fr: "Développement de plateformes IA et d’applications",
-  de: "Entwicklung von KI-Plattformen und Anwendungen",
-  es: "Desarrollo de plataformas de IA y aplicaciones",
-  it: "Sviluppo di piattaforme AI e applicazioni",
-  vi: "Phát triển nền tảng AI và ứng dụng",
+type AiPlatformDevelopmentLocale = keyof typeof aiPlatformDevelopment;
+const capabilityHighlightLinks: Record<string, string> = {
+  "AI Luxury Platform": "/ai-luxury",
+  "AI Smart Food": "/smart-food-ai",
 };
+const capabilityHighlightClasses: Record<string, string> = {
+  "AI Luxury Platform": "technology-hero__action--luxury",
+  "AI Smart Food": "technology-hero__action--food",
+};
+
+function getAiPlatformDevelopmentContent(lang: string) {
+  const normalizedLang = lang === "zh" ? "zh_cn" : lang;
+  return (
+    aiPlatformDevelopment[normalizedLang as AiPlatformDevelopmentLocale] ??
+    aiPlatformDevelopment.en
+  );
+}
 
 export default function WebDevelopmentPageMain({
   lang,
@@ -26,13 +33,12 @@ export default function WebDevelopmentPageMain({
   content: TechnicalExpertiseContentPayload;
 }) {
   const featureContent = content.feature;
-  const localizedPageTitle =
-    pageTitle[lang as keyof typeof pageTitle] ?? pageTitle.en;
-  const heroLead =
-    content.frontEnd.services.descriptions[0] ??
-    content.fullStack.services.descriptions[0] ??
-    featureContent.subTitle;
+  const langx = getAiPlatformDevelopmentContent(lang);
+  const localTitle = langx.title;
+  const localDescription = langx.description;
   const capabilityHighlights = [
+    "AI Luxury Platform",
+    "AI Smart Food",
     content.frontEnd.services.items[0]?.title ?? content.frontEnd.title,
     content.fullStack.services.items[0]?.title ?? content.fullStack.title,
     content.devOps.services.items[0]?.title ?? content.devOps.title,
@@ -44,11 +50,11 @@ export default function WebDevelopmentPageMain({
         <div className="technology-premium-container">
           <div>
             <p className="technology-eyebrow">{featureContent.span}</p>
-            <h1>{localizedPageTitle}</h1>
+            <h1>{localTitle}</h1>
           </div>
           <div className="technology-hero__grid">
             <div className="technology-hero__content">
-              <p className="technology-hero__lead">{heroLead}</p>
+              <p className="technology-hero__lead">{localDescription}</p>
             </div>
             <div
               className="technology-hero__media"
@@ -62,9 +68,20 @@ export default function WebDevelopmentPageMain({
             className="technology-hero__actions"
             aria-label="Technology capabilities"
           >
-            {capabilityHighlights.map((item) => (
-              <span key={item}>{item}</span>
-            ))}
+            {capabilityHighlights.map((item) => {
+              const className = capabilityHighlightClasses[item];
+              const href = capabilityHighlightLinks[item];
+
+              return href ? (
+                <Link className={className} href={`/${lang}${href}`} key={item}>
+                  {item}
+                </Link>
+              ) : (
+                <span className={className} key={item}>
+                  {item}
+                </span>
+              );
+            })}
           </div>
         </div>
       </section>
