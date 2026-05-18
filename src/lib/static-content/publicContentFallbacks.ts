@@ -46,6 +46,27 @@ const fallbackText = {
     description: 'This page is temporarily using static fallback content while localized MongoDB content is unavailable.',
 };
 
+const SMART_MOBILITY_CHIANG_MAI_FALLBACK_DESCRIPTIONS: Record<string, string> = {
+    'vision-smart-mobility-northern-gateway':
+        'An illustrative future mobility scenario exploring how Chiang Mai could evolve as a smart mobility and connectivity gateway within the Upper Mekong Subregion, integrating land, rail, and conceptual air mobility frameworks under long-term planning perspectives.',
+    'urban-hub-san-sai-doi-saket':
+        'A future-oriented urban mobility scenario illustrating a potential Smart Mobility Hub in the San Sai-Doi Saket corridor, exploring how transport, urban development, and regional connectivity could evolve over the long term.',
+    'hub-to-chiang-mai-airport':
+        'A future mobility scenario illustrating a potential urban connectivity corridor between a northern urban hub and Chiang Mai International Airport, presented for contextual and informational purposes only.',
+    'hub-to-doi-suthep':
+        'A conceptual future mobility scenario illustrating how Chiang Mai\'s urban mobility hub could connect to Doi Suthep through low-impact, culturally sensitive transport approaches.',
+    'hub-to-doi-inthanon':
+        'A long-term future mobility scenario illustrating how an urban mobility hub in Chiang Mai could connect to Doi Inthanon through evolving ground and air transport concepts.',
+    'vertiport-design':
+        'A future air mobility scenario illustrating how a vertiport could function as a Smart Air Mobility Gateway for Chiang Mai, with conceptual design, ground integration, and low-altitude air mobility explored as a long-term scenario.',
+};
+
+const SMART_MOBILITY_CHIANG_MAI_SCENARIO_NOTE = {
+    title: 'Conceptual scenario note',
+    description:
+        'This content is presented for informational scenario planning only and does not represent approved transport service availability, regulatory clearance, or implementation commitment.',
+};
+
 const AI_LUXURY_FOOTER_LABELS: Record<string, string> = {
     en: 'AI Luxury Platform',
     th: 'แพลตฟอร์ม AI Luxury',
@@ -234,16 +255,24 @@ function createSmartCityItem(slug = 'smart-city-fallback'): ISmartCityItem {
     };
 }
 
+function getSmartMobilityChiangMaiFallbackDescription(slug: string): string {
+    return SMART_MOBILITY_CHIANG_MAI_FALLBACK_DESCRIPTIONS[slug] ??
+        'A future-oriented smart mobility scenario for Chiang Mai, presented for contextual and informational purposes only.';
+}
+
 function createSmartSection(slug: string, title: string): ISmartSection {
+    const description = getSmartMobilityChiangMaiFallbackDescription(slug);
+
     return {
         title,
-        description: fallbackText.description,
+        description,
         link: `/smart-mobility/chiang-mai/${slug}/`,
         items: [
             {
-                title: 'Static fallback',
-                description: 'MongoDB content should be repaired or reseeded for this route.',
+                title: 'Scenario overview',
+                description,
             },
+            SMART_MOBILITY_CHIANG_MAI_SCENARIO_NOTE,
         ],
         media: {
             image_tags: ['Smart Mobility', 'Chiang Mai'],
@@ -258,12 +287,12 @@ function createSmartRoute(slug: string, title: string): ISmartRoute {
         ...section,
         link: section.link ?? `/smart-mobility/chiang-mai/${slug}/`,
         transportationModel: {
-            title: 'Mobility service model',
-            description: fallbackText.description,
+            title: 'Conceptual mobility model',
+            description: section.description,
             sections: [
                 {
-                    title: 'Fallback route content',
-                    description: 'The public page can continue rendering while database content is restored.',
+                    title: 'Planning context',
+                    description: SMART_MOBILITY_CHIANG_MAI_SCENARIO_NOTE.description,
                 },
             ],
         },
@@ -271,18 +300,20 @@ function createSmartRoute(slug: string, title: string): ISmartRoute {
 }
 
 function createVertiport(slug: string): IVertiport {
+    const description = getSmartMobilityChiangMaiFallbackDescription(slug);
+
     return {
         title: 'Vertiport Design',
-        description: fallbackText.description,
+        description,
         link: `/smart-mobility/chiang-mai/${slug}/`,
-        structureTitle: 'Static fallback structure',
+        structureTitle: 'Conceptual vertiport structure',
         structure: [
             {
-                title: 'Content restoration',
+                title: 'Planning context',
                 items: [
                     {
-                        title: 'MongoDB content repair',
-                        description: 'Restore localized vertiport content in MongoDB.',
+                        title: SMART_MOBILITY_CHIANG_MAI_SCENARIO_NOTE.title,
+                        description: SMART_MOBILITY_CHIANG_MAI_SCENARIO_NOTE.description,
                     },
                 ],
             },
@@ -792,12 +823,10 @@ export function getFallbackSmartMobilityChiangMaiContent(
         primaryContent,
         connectivityMatrix: {
             title: 'Chiang Mai Smart Mobility Connectivity',
-            description: fallbackText.description,
+            description:
+                'A conceptual connectivity view for Chiang Mai smart mobility scenarios across urban hubs, airport access, mountain destinations, and future air mobility concepts.',
         },
-        safeStatement: {
-            title: 'Concept and service planning note',
-            description: 'This fallback is a public rendering bridge and does not represent final transport service availability.',
-        },
+        safeStatement: SMART_MOBILITY_CHIANG_MAI_SCENARIO_NOTE,
         rightItems: [],
         bottomCards: [],
     };

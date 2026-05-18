@@ -14,6 +14,14 @@ export default function VertiportDesignMain(
     return (
         <div className="portfolio-details-area smart-container-top">
             <div className="container">
+                <div className="smart-mobility-premium__header">
+                    <div className="smart-mobility-premium__heading">
+                        <p className="smart-mobility-premium__eyebrow">Smart Mobility Chiang Mai</p>
+                        <h1>{vertiportDesign.title}</h1>
+                    </div>
+                    <p>{vertiportDesign.description}</p>
+                </div>
+
                 <div className="row">
                     <div className="col-lg-8">
                         <div className="portfolio-details-image neo-image-container">
@@ -31,7 +39,9 @@ export default function VertiportDesignMain(
                         <div className={"neo-tag"}>
                             {
                                 vertiportDesign.media?.image_tags &&
-                                vertiportDesign.media.image_tags.join(",")
+                                vertiportDesign.media.image_tags.map((tag) => (
+                                    <span key={tag}>{tag}</span>
+                                ))
                             }
                         </div>
 

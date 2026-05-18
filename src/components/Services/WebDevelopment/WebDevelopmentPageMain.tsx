@@ -5,6 +5,19 @@ import WevDevelopmentFrontEnd from "@/components/Services/WebDevelopment/WevDeve
 import WebDevelopmentDevOps from "@/components/Services/WebDevelopment/WebDevelopmentDevOps";
 import { TechnicalExpertiseContentPayload } from "@/core/domain/technical-expertise-content.entity";
 
+const pageTitle = {
+  en: "AI Platform and Application Development",
+  th: "การพัฒนาแพลตฟอร์ม AI และแอปพลิเคชัน",
+  zh: "AI 平台与应用程序开发",
+  ja: "AIプラットフォームおよびアプリケーション開発",
+  ko: "AI 플랫폼 및 애플리케이션 개발",
+  fr: "Développement de plateformes IA et d’applications",
+  de: "Entwicklung von KI-Plattformen und Anwendungen",
+  es: "Desarrollo de plataformas de IA y aplicaciones",
+  it: "Sviluppo di piattaforme AI e applicazioni",
+  vi: "Phát triển nền tảng AI và ứng dụng",
+};
+
 export default function WebDevelopmentPageMain({
   lang,
   content,
@@ -13,10 +26,8 @@ export default function WebDevelopmentPageMain({
   content: TechnicalExpertiseContentPayload;
 }) {
   const featureContent = content.feature;
-  const pageTitle =
-    featureContent.stacks[2]?.title ??
-    featureContent.title ??
-    "Web Development";
+  const localizedPageTitle =
+    pageTitle[lang as keyof typeof pageTitle] ?? pageTitle.en;
   const heroLead =
     content.frontEnd.services.descriptions[0] ??
     content.fullStack.services.descriptions[0] ??
@@ -33,7 +44,7 @@ export default function WebDevelopmentPageMain({
         <div className="technology-premium-container">
           <div>
             <p className="technology-eyebrow">{featureContent.span}</p>
-            <h1>{pageTitle}</h1>
+            <h1>{localizedPageTitle}</h1>
           </div>
           <div className="technology-hero__grid">
             <div className="technology-hero__content">
