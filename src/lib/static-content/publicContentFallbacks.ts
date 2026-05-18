@@ -14,7 +14,7 @@ import {IImageUnit} from "@/image/model/IImageUnit";
 import {IFooter} from "@/lib/model/IFooter";
 import {INavbar} from "@/lib/model/INavbar";
 import {ISmartCityItem} from "@/lib/model/ISmartCity";
-import {ISmartRoute, ISmartSection, IVertiport} from "@/lib/model/ISmartMobility";
+import {ISmartImage, ISmartRoute, ISmartSection, IVertiport} from "@/lib/model/ISmartMobility";
 import {normalizeAboutContentLocale} from "@/core/domain/about-content.entity";
 import {normalizeAiCompanionsContentLocale} from "@/core/domain/ai-companions-content.entity";
 import {normalizeGalleryContentLocale} from "@/core/domain/gallery-content.entity";
@@ -66,6 +66,21 @@ const SMART_MOBILITY_CHIANG_MAI_SCENARIO_NOTE = {
     description:
         'This content is presented for informational scenario planning only and does not represent approved transport service availability, regulatory clearance, or implementation commitment.',
 };
+
+const SMART_MOBILITY_CHIANG_MAI_TITLES: Record<string, string> = {
+    'vision-smart-mobility-northern-gateway': 'Vision Smart Mobility Northern Gateway',
+    'urban-hub-san-sai-doi-saket': 'Urban Hub San Sai Doi Saket',
+    'hub-to-chiang-mai-airport': 'Hub to Chiang Mai Airport',
+    'hub-to-doi-suthep': 'Hub to Doi Suthep',
+    'hub-to-doi-inthanon': 'Hub to Doi Inthanon',
+    'vertiport-design': 'Vertiport Design',
+};
+
+const SMART_MOBILITY_CHIANG_MAI_SLUGS = Object.keys(SMART_MOBILITY_CHIANG_MAI_TITLES);
+
+function getSmartMobilityChiangMaiImageUrl(slug: string): string {
+    return `/smart-mobility/chiang-mai/${slug}.png`;
+}
 
 const AI_LUXURY_FOOTER_LABELS: Record<string, string> = {
     en: 'AI Luxury Platform',
@@ -275,6 +290,7 @@ function createSmartSection(slug: string, title: string): ISmartSection {
             SMART_MOBILITY_CHIANG_MAI_SCENARIO_NOTE,
         ],
         media: {
+            image_url: getSmartMobilityChiangMaiImageUrl(slug),
             image_tags: ['Smart Mobility', 'Chiang Mai'],
         },
     };
@@ -319,9 +335,41 @@ function createVertiport(slug: string): IVertiport {
             },
         ],
         media: {
+            image_url: getSmartMobilityChiangMaiImageUrl(slug),
             image_tags: ['Smart Mobility', 'Vertiport'],
         },
     };
+}
+
+function createSmartMobilityRelatedItem(slug: string): ISmartImage {
+    return {
+        title: SMART_MOBILITY_CHIANG_MAI_TITLES[slug] ?? 'Smart Mobility Chiang Mai',
+        link: `/smart-mobility/chiang-mai/${slug}/`,
+        media: {
+            image_url: getSmartMobilityChiangMaiImageUrl(slug),
+            image_tags: ['Smart Mobility', 'Chiang Mai'],
+        },
+    };
+}
+
+function createSmartMobilityFallbackRelatedItems(currentSlug: string): ISmartImage[] {
+    return SMART_MOBILITY_CHIANG_MAI_SLUGS
+        .filter((slug) => slug !== currentSlug)
+        .map(createSmartMobilityRelatedItem);
+}
+
+function createSmartMobilityFallbackBottomCards(currentSlug: string): Array<ISmartSection | ISmartRoute> {
+    return SMART_MOBILITY_CHIANG_MAI_SLUGS
+        .filter((slug) => slug !== currentSlug)
+        .slice(0, 2)
+        .map((slug) => {
+            const title = SMART_MOBILITY_CHIANG_MAI_TITLES[slug] ?? 'Smart Mobility Chiang Mai';
+            return slug === 'hub-to-chiang-mai-airport' ||
+                slug === 'hub-to-doi-suthep' ||
+                slug === 'hub-to-doi-inthanon'
+                ? createSmartRoute(slug, title)
+                : createSmartSection(slug, title);
+        });
 }
 
 function createService() {
@@ -797,15 +845,7 @@ export function getFallbackSmartMobilityChiangMaiContent(
     if (log) {
         logStaticFallback('smart mobility Chiang Mai content', normalizedLocale, slug);
     }
-    const titles: Record<string, string> = {
-        'vision-smart-mobility-northern-gateway': 'Vision Smart Mobility Northern Gateway',
-        'urban-hub-san-sai-doi-saket': 'Urban Hub San Sai Doi Saket',
-        'hub-to-chiang-mai-airport': 'Hub to Chiang Mai Airport',
-        'hub-to-doi-suthep': 'Hub to Doi Suthep',
-        'hub-to-doi-inthanon': 'Hub to Doi Inthanon',
-        'vertiport-design': 'Vertiport Design',
-    };
-    const title = titles[slug] ?? 'Smart Mobility Chiang Mai';
+    const title = SMART_MOBILITY_CHIANG_MAI_TITLES[slug] ?? 'Smart Mobility Chiang Mai';
     const pageType =
         slug === 'vertiport-design' ? 'vertiport' :
             slug === 'vision-smart-mobility-northern-gateway' ? 'vision' :
@@ -827,8 +867,8 @@ export function getFallbackSmartMobilityChiangMaiContent(
                 'A conceptual connectivity view for Chiang Mai smart mobility scenarios across urban hubs, airport access, mountain destinations, and future air mobility concepts.',
         },
         safeStatement: SMART_MOBILITY_CHIANG_MAI_SCENARIO_NOTE,
-        rightItems: [],
-        bottomCards: [],
+        rightItems: createSmartMobilityFallbackRelatedItems(slug),
+        bottomCards: createSmartMobilityFallbackBottomCards(slug),
     };
 }
 

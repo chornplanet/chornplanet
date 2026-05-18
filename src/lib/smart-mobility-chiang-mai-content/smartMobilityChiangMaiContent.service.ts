@@ -8,7 +8,7 @@ import {SmartMobilityChiangMaiContentPayload} from "@/lib/model/ISmartMobilityCh
 import {SmartMobilityChiangMaiContentService} from "@/core/services/smart-mobility-chiang-mai-content.service";
 import {SmartMobilityChiangMaiContentRepository} from "@/adapters/outbound/mongo.repository/smart-mobility-chiang-mai-content.repository";
 import {loadLocalizedContentWithFallback} from "@/lib/localized-content/localizedContentFallback";
-import {ISmartImage, ISmartRoute, ISmartSection, IVertiport} from "@/lib/model/ISmartMobility";
+import {IMedia, ISmartImage, ISmartRoute, ISmartSection, IVertiport} from "@/lib/model/ISmartMobility";
 import {getFallbackSmartMobilityChiangMaiContent} from "@/lib/static-content/publicContentFallbacks";
 
 const smartMobilityChiangMaiContentService = new SmartMobilityChiangMaiContentService(new SmartMobilityChiangMaiContentRepository());
@@ -24,7 +24,28 @@ function isCompleteConnectivityMatrix(value: SmartMobilityChiangMaiContentRespon
 }
 
 function isSmartMobilityContentList<T>(value: T[] | unknown): value is T[] {
-    return Array.isArray(value);
+    return Array.isArray(value) && value.length > 0;
+}
+
+function mergeSmartMobilityMedia(
+    databaseMedia: IMedia | undefined,
+    fallbackMedia: IMedia | undefined
+): IMedia | undefined {
+    if (!databaseMedia) {
+        return fallbackMedia;
+    }
+
+    return {
+        ...fallbackMedia,
+        ...databaseMedia,
+        image_url: databaseMedia.image_url || fallbackMedia?.image_url,
+        image_path: databaseMedia.image_path || fallbackMedia?.image_path,
+        video_url: databaseMedia.video_url || fallbackMedia?.video_url,
+        video_path: databaseMedia.video_path || fallbackMedia?.video_path,
+        image_tags: Array.isArray(databaseMedia.image_tags) && databaseMedia.image_tags.length > 0
+            ? databaseMedia.image_tags
+            : fallbackMedia?.image_tags,
+    };
 }
 
 function isCompleteSectionContent(value: SmartMobilityChiangMaiContentResponse['primaryContent']): value is ISmartSection {
@@ -67,10 +88,7 @@ function mergeSmartSectionContent(
         description: section?.description || fallbackContent.description,
         link: section?.link || fallbackContent.link,
         items: section?.items ?? fallbackContent.items,
-        media: {
-            ...fallbackContent.media,
-            ...section?.media,
-        },
+        media: mergeSmartMobilityMedia(section?.media, fallbackContent.media),
         safeStatement: section?.safeStatement ?? fallbackContent.safeStatement,
     };
 }
@@ -96,10 +114,7 @@ function mergeSmartRouteContent(
             contents: route?.transportationModel?.contents ?? fallbackContent.transportationModel.contents,
             sections: route?.transportationModel?.sections ?? fallbackContent.transportationModel.sections,
         },
-        media: {
-            ...fallbackContent.media,
-            ...route?.media,
-        },
+        media: mergeSmartMobilityMedia(route?.media, fallbackContent.media),
     };
 }
 
@@ -117,10 +132,7 @@ function mergeVertiportContent(
         link: vertiport?.link || fallbackContent.link,
         structureTitle: vertiport?.structureTitle || fallbackContent.structureTitle,
         structure: vertiport?.structure ?? fallbackContent.structure,
-        media: {
-            ...fallbackContent.media,
-            ...vertiport?.media,
-        },
+        media: mergeSmartMobilityMedia(vertiport?.media, fallbackContent.media),
     };
 }
 
