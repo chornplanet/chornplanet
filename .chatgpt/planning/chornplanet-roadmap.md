@@ -1,9 +1,9 @@
 # ChornPlanet Roadmap
 
 Branch for planning: `feature/mcp-agent-workspace`
-Implementation branch recommendation: `feature/chornplanet-roadmap`
-Status: Planning
-Owner: Khachornchit Chief Architect -> ChatGPT planning -> Codex review/implementation
+Next implementation branch: `feature/new-platform-layout`
+Status: Ready for Codex implementation
+Owner: Khachornchit Chief Architect -> ChatGPT planning -> Codex implementation/review
 
 ## Purpose
 
@@ -11,13 +11,18 @@ This roadmap defines the next ChornPlanet platform evolution after the recent
 `/ai-luxury` and `/smart-food-ai` launches.
 
 ```text
-Completed = AI Luxury and Smart Food AI are now live platform capabilities
-Next = Execute the broader ChornPlanet Roadmap and New Platform Layout
+Completed = AI Luxury and Smart Food AI are live platform capabilities
+Next = Execute feature/new-platform-layout as the single next implementation step
 ```
 
-The immediate priority is to choose the next platform step that compounds these
-completed pages into clearer product positioning, stronger SEO/LLM visibility,
-and a more coherent premium platform architecture.
+The immediate priority is to refactor the public route structure into the new
+roadmap route group and transform the completed AI Luxury and Smart Food AI
+surfaces into the canonical Luxury and Smart Food platform channels.
+
+This document is the single roadmap planning structure for the next step. Do not
+create duplicate roadmap documents for this phase. Existing supporting plans may
+remain as references, but Codex should treat this file as the implementation
+source of truth for `feature/new-platform-layout`.
 
 ## Strategic Positioning
 
@@ -25,8 +30,8 @@ ChornPlanet should communicate three layers clearly:
 
 ```text
 1. Real production platform
-   - Smart Food AI is already represented as a public AI-native production showcase.
-   - AI Luxury is already represented as a premium AI companion/luxury platform direction.
+   - Smart Food is represented by the completed Smart Food AI foundation.
+   - Luxury is represented by the completed AI Luxury foundation.
    - The platform can show practical AI-native product capability without exposing low-level technical internals.
 
 2. Premium civilization media and commerce platform
@@ -108,62 +113,40 @@ Achieved
   Smart Food AI page
 
 Next
-  Existing ChornPlanet Roadmap + New Platform Layout
-  Goal: complete the broader luxury civilization media/commerce platform redesign and ecosystem expansion
+  feature/new-platform-layout
+  Goal: refactor platform routes into /(roadmap)/[locale]/... and establish the new platform channels
 ```
 
 ---
 
 # Achieved Items
 
-## `/ai-luxury`
+## Previous `/ai-luxury`
 
-- `/[locale]/ai-luxury/` has been implemented as a public premium AI Luxury platform page.
-- The page establishes ChornPlanet's luxury AI companion/platform direction.
-- The route is now part of the platform surface and should be treated as completed baseline work rather than an open roadmap item.
+- Previous route: `/(desktop)/[locale]/ai-luxury`.
+- New canonical route: `/(roadmap)/[locale]/luxury`.
+- Public URL target: `/[locale]/luxury/`.
+- The completed AI Luxury content foundation should be refined into the broader Luxury channel.
+- The Luxury channel should support luxury projects, smart city destination vision, future mobility, investment-facing stories, and premium lifestyle direction.
+- Treat the original AI Luxury launch as completed baseline work, not a page to duplicate.
 
-## `/smart-food-ai`
+## Previous `/smart-food-ai`
 
-- `/[locale]/smart-food-ai/` has been implemented as a public Smart Food AI showcase.
-- Primary navigation now highlights Smart Food AI as a real AI-native production capability.
-- The page communicates workflow, platform value, and local Chiang Mai business production direction without exposing unnecessary low-level internals.
-- Future Smart Food work should continue as integration, content growth, SEO/LLM visibility, analytics, and MenuMatch cooperation rather than first-page implementation.
-
----
-
-# Codex To ChatGPT
-
-ChatGPT should review the achieved `/ai-luxury` and `/smart-food-ai` pages as
-completed platform foundations, then recommend the next highest-leverage roadmap
-step.
-
-Please analyze:
-
-- Which next feature best compounds the completed AI Luxury and Smart Food AI surfaces.
-- Whether the next step should prioritize `feature-new-platform-layout`, `llm-visibility-files`, `content-draft-foundation`, analytics growth, or multi-repo MCP integration.
-- What implementation branch Codex should create next.
-- What acceptance criteria should define the next feature so Codex can implement it without reopening completed `/ai-luxury` or `/smart-food-ai` scope.
+- Previous route: `/(desktop)/[locale]/smart-food-ai`.
+- New canonical route: `/(roadmap)/[locale]/smart-food`.
+- Public URL target: `/[locale]/smart-food/`.
+- The completed Smart Food AI content foundation should be refined into the broader Smart Food channel.
+- The Smart Food channel should support Smart Food system project, food lifestyle, favorite meal concept, Line OA future, MenuMatch cooperation, and conversational commerce direction.
+- Treat the original Smart Food AI launch as completed baseline work, not a page to duplicate.
 
 ---
 
-# Next Phase: Existing Roadmap + New Platform Layout
+# Next Phase: `feature/new-platform-layout`
 
 ## Goal
 
-The next phase contains the broader ChornPlanet platform evolution from the
-existing roadmap and New Platform Layout plan.
-
-Primary planning files:
-
-```text
-.chatgpt/planning/chornplanet-roadmap.md
-.chatgpt/planning/feature-new-platform-layout.md
-```
-
-This phase should preserve and continue the previous roadmap direction, but
-execute it under the new platform layout strategy.
-
-## Platform Layout Direction
+Execute the broader ChornPlanet platform evolution under one coherent route and
+content structure.
 
 Primary identity:
 
@@ -172,7 +155,133 @@ ChornPlanet
 Luxury Civilization Media & Commerce Platform
 ```
 
-Recommended primary navigation:
+Primary navigation:
+
+```text
+World | Outfit | Media | Commerce | Smart Food | Luxury
+```
+
+The new route group for this roadmap phase must be:
+
+```text
+src/app/(roadmap)/[locale]/...
+```
+
+Do not create a separate duplicated roadmap document or a second competing page
+structure. Refactor and reuse the existing completed page foundations where
+possible.
+
+## Canonical Route Structure
+
+Codex should create or refactor the next public platform channels under the
+`(roadmap)` route group:
+
+```text
+src/app/(roadmap)/[locale]/world/page.tsx
+src/app/(roadmap)/[locale]/outfit/page.tsx
+src/app/(roadmap)/[locale]/media/page.tsx
+src/app/(roadmap)/[locale]/commerce/page.tsx
+src/app/(roadmap)/[locale]/smart-food/page.tsx
+src/app/(roadmap)/[locale]/luxury/page.tsx
+src/app/(roadmap)/[locale]/about/page.tsx
+src/app/(roadmap)/[locale]/history/page.tsx
+```
+
+Public URLs should remain clean:
+
+```text
+/[locale]/world/
+/[locale]/outfit/
+/[locale]/media/
+/[locale]/commerce/
+/[locale]/smart-food/
+/[locale]/luxury/
+/[locale]/about/
+/[locale]/history/
+```
+
+## Required Refactors
+
+### AI Luxury -> Luxury
+
+Refactor:
+
+```text
+src/app/(desktop)/[locale]/ai-luxury
+```
+
+Into:
+
+```text
+src/app/(roadmap)/[locale]/luxury
+```
+
+Guidance:
+
+- Reuse the strongest completed AI Luxury content and components where practical.
+- Reposition from a narrow AI Luxury page into the broader ChornPlanet Luxury channel.
+- Do not duplicate the page under both route groups unless a temporary redirect is required.
+- Preserve SEO value with redirect or canonical strategy from `/[locale]/ai-luxury/` to `/[locale]/luxury/`.
+- Update metadata, UrlMaps, sitemap, and internal links.
+
+### Smart Food AI -> Smart Food
+
+Refactor:
+
+```text
+src/app/(desktop)/[locale]/smart-food-ai
+```
+
+Into:
+
+```text
+src/app/(roadmap)/[locale]/smart-food
+```
+
+Guidance:
+
+- Reuse the strongest completed Smart Food AI content and components where practical.
+- Reposition from a narrow Smart Food AI page into the broader ChornPlanet Smart Food channel.
+- Do not duplicate the page under both route groups unless a temporary redirect is required.
+- Preserve SEO value with redirect or canonical strategy from `/[locale]/smart-food-ai/` to `/[locale]/smart-food/`.
+- Update metadata, UrlMaps, sitemap, and internal links.
+
+## Platform Channel Meanings
+
+### World
+
+For ChornPlanet civilization, zones, world-building, scene systems, and
+destination-like content.
+
+### Outfit
+
+For lady/gentleman outfit, civilization clothing, Chorn DNA-inspired fashion,
+and product story posts.
+
+### Media
+
+For news, entertainment, technology digest, AI/future lifestyle articles, and
+daily follow-up content.
+
+### Commerce
+
+For premium products, outfit commerce, grocery/online supermarket concepts,
+product stories, and TikTok-first marketplace direction.
+
+### Smart Food
+
+For Smart Food system project, food ordering concept, favorite meal, Line OA
+login future idea, food lifestyle content, and MenuMatch cooperation.
+
+### Luxury
+
+For luxury projects, smart city destination vision, Circular Mountain Crown,
+future mobility, real estate/lifestyle showcases, AI Luxury positioning, and
+investment-facing stories.
+
+## Navigation and Footer Direction
+
+Primary navigation should focus on platform channels:
 
 ```text
 World | Outfit | Media | Commerce | Smart Food | Luxury
@@ -181,9 +290,95 @@ World | Outfit | Media | Commerce | Smart Food | Luxury
 Legacy technical pages should remain discoverable in the footer instead of
 dominating the primary navigation.
 
+Recommended footer grouping:
+
+```text
+Important Links
+- About
+- History
+- Smart City
+- Smart Mobility
+- Technology
+- AI Integration
+- Technical Expertise
+- Contact
+```
+
+Footer should also expose platform channels:
+
+```text
+Platform
+- World
+- Outfit
+- Media
+- Commerce
+- Smart Food
+- Luxury
+```
+
+## Homepage Direction
+
+The homepage should communicate the new ChornPlanet concept as a platform/world,
+not a normal company profile site.
+
+Recommended first-pass homepage sections:
+
+```text
+1. Hero Civilization Campaign
+2. Today on ChornPlanet
+3. Civilization Outfit Collection
+4. Explore ChornPlanet Zones
+5. Premium Commerce
+6. Smart Food Experience
+7. Luxury Projects
+8. Daily Digest / Media
+```
+
+The first pass should be practical. Avoid making this feature too large by
+building complex detail pages, checkout flows, admin dashboards, runtime Chorn
+DNA validation, or publishing automation.
+
+## About and History
+
+Create or refactor these routes under the roadmap group:
+
+```text
+src/app/(roadmap)/[locale]/about/page.tsx
+src/app/(roadmap)/[locale]/history/page.tsx
+```
+
+### `/about/`
+
+`/[locale]/about/` should explain ChornPlanet as the new platform concept:
+
+```text
+ChornPlanet is a Luxury Civilization Media & Commerce Platform combining world-building, AI-assisted media, Chorn DNA-powered outfit/civilization content, premium commerce, Smart Food, luxury projects, and analytics-assisted growth.
+```
+
+### `/history/`
+
+`/[locale]/history/` should describe origin/history/background.
+
+If `/[locale]/about-chorn/` exists, refactor or redirect it to `/[locale]/history/`
+so `/about/` and `/history/` do not duplicate the same concept.
+
+## Language Strategy
+
+Start with refined Thai and English content.
+
+Preserve the existing 10-language routing and localization structure:
+
+```text
+da, de, en, fi, fr, ja, ko, nl, th, zh
+```
+
+For non-Thai/English locales, preserve existing fallback or translated behavior
+where practical. Do not remove locale support.
+
 ## Existing Roadmap Items Preserved
 
-The following previous roadmap directions remain valid:
+The following previous roadmap directions remain valid, but should be implemented
+as later separate feature plans/branches after the layout refactor:
 
 1. MCP Agent Workspace Foundation
 2. Repository Understanding and Platform Maps
@@ -198,10 +393,7 @@ The following previous roadmap directions remain valid:
 11. Smart Food Evolution and MenuMatch Integration
 12. Controlled Automation and Publishing
 
-These should be implemented as separate feature plans and branches, not as one
-large feature.
-
-## New Feature Note
+## Future Feature Note
 
 Add a future feature direction:
 
@@ -245,7 +437,8 @@ ChornPlanet owns the platform layer:
 - commerce and marketplace linking direction
 - SEO and LLM visibility
 - analytics growth foundation
-- Smart Food AI web presentation
+- Smart Food web presentation
+- Luxury platform presentation
 - client adapters to external authority systems
 ```
 
@@ -277,7 +470,7 @@ MenuMatch owns or supports the Smart Food backend layer:
 
 Recommended next implementation features:
 
-1. `feature-new-platform-layout`
+1. `feature/new-platform-layout`
 2. `llm-visibility-files`
 3. `content-draft-foundation`
 4. `feature-mcp-multi-repo`
@@ -299,6 +492,7 @@ Recommended next implementation features:
 - ChornPlanet must not duplicate Chorn DNA authority rules.
 - ChornPlanet should call Chorn DNA validation APIs when runtime validation exists.
 - Smart Food AI and AI Luxury are completed page foundations; future work should extend them through platform integration, content quality, analytics, and visibility rather than reopening the initial page-build scope.
+- Do not duplicate completed `/ai-luxury` and `/smart-food-ai` pages into competing routes. Refactor them into `/luxury/` and `/smart-food/`.
 - External publishing requires explicit approval.
 - Marketplace writes require explicit approval.
 - Smart Food customer/order/payment mutations require explicit approval.
@@ -306,12 +500,21 @@ Recommended next implementation features:
 - Crypto/blockchain runtime features require dedicated planning, legal/compliance review, and explicit approval.
 - Secrets and credentials must not be committed.
 
-## Roadmap Acceptance Criteria
+## Acceptance Criteria for `feature/new-platform-layout`
 
-- Roadmap clearly separates achieved page foundations from the next platform phase.
-- Achieved items summarize `/ai-luxury` and `/smart-food-ai` without carrying long completed implementation briefs.
-- The next phase preserves the existing roadmap and New Platform Layout direction.
-- The next phase includes the future Crypto Currency and Blockchain Integration note.
-- The `Codex To ChatGPT` section gives ChatGPT a clear prompt for recommending the next implementation step.
-- ChornPlanet, Chorn DNA, and MenuMatch responsibilities remain clearly separated.
-- The roadmap can be used by Codex to create implementation branches per feature.
+- The roadmap remains one seamless planning structure in this file.
+- The next implementation branch is clearly `feature/new-platform-layout`.
+- New public platform channels are implemented under `src/app/(roadmap)/[locale]/...`.
+- Primary navigation uses World / Outfit / Media / Commerce / Smart Food / Luxury.
+- Legacy technical pages are preserved in footer links where applicable.
+- `/(desktop)/[locale]/ai-luxury` is refactored to `/(roadmap)/[locale]/luxury` or redirected/canonicalized cleanly.
+- `/(desktop)/[locale]/smart-food-ai` is refactored to `/(roadmap)/[locale]/smart-food` or redirected/canonicalized cleanly.
+- Public URLs target `/[locale]/luxury/` and `/[locale]/smart-food/`.
+- `/[locale]/world/`, `/[locale]/outfit/`, `/[locale]/media/`, `/[locale]/commerce/`, `/[locale]/smart-food/`, `/[locale]/luxury/`, `/[locale]/about/`, and `/[locale]/history/` work.
+- Homepage communicates “Luxury Civilization Media & Commerce Platform”.
+- Homepage links to Smart Food and Luxury project sections.
+- Thai and English content are refined first.
+- Existing 10-language routing support is preserved.
+- Metadata, UrlMaps, sitemap, redirects, and internal links are updated or explicitly handled.
+- `yarn lint` passes.
+- `yarn build` passes.
