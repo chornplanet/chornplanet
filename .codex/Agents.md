@@ -45,6 +45,26 @@ For media automation, outfit/civilization posting, commerce, Smart Food, analyti
 
 When `.chatgpt/Agents.md` defines a feature-specific workflow, Codex should sync to the necessary handoff items without duplicating that full workflow here. In practice, Codex must honor the active ChatGPT planning, content-generation, translation, TH review, regenerated EN, all-language sync, MongoDB migration, and completion requirements that apply to the current task.
 
+# Critical
+
+Every feature, fix, or content migration must check for route-level render reliability across all related public pages, not only the page where the symptom was first reported.
+
+Before deployment or shipping to `main`, Codex must run a regression pass appropriate to the change and confirm it passes. For production-facing runtime changes, this means at minimum:
+
+- `npm run lint`
+- `npm run build`
+- Any targeted route/content audit, e2e test, or manual localized URL check that matches the touched feature area
+
+For MongoDB-backed public content, metadata, layout, or image changes, verify that each public-safe loader still follows this fallback chain:
+
+```text
+requested locale -> English -> static in-repo fallback
+```
+
+Static fallbacks must be render-safe. Do not pass empty image paths, missing arrays, or incomplete nested objects into React components or `next/image`. If a static fallback is needed, use a valid local placeholder asset or a component-level placeholder so production Server Components never fail with a generic digest because optional live content is unavailable.
+
+When fixing a production Server Components render error, inspect the same failure pattern across every feature family touched by the shared loader, shared fallback data, metadata generator, layout, navbar, footer, image model, or route group. The fix is not complete until the regression risk is addressed at the shared source or explicitly documented as route-specific.
+
 ## Commands
 
 - Install dependencies with the package manager already represented by the lockfiles in the workspace. `package.json` declares Yarn 4, while `package-lock.json` is present too; do not churn lockfiles unless the task requires dependency changes.
@@ -400,6 +420,7 @@ Use the smallest useful set, then expand if the blast radius is larger:
 
 - `npm run lint`
 - `npm run build`
+- Regression pass for every touched feature/fix item before deployment, including targeted e2e/manual localized route checks when page rendering, metadata, images, routing, MongoDB-backed content, or layout changed.
 - Manual dev check with `npm run dev` for pages with visual, routing, image, or schema changes.
 - Inspect `git diff --check` if whitespace or generated content changed.
 - For new pages, verify `/sitemap.xml` behavior after the dev/build check when practical.

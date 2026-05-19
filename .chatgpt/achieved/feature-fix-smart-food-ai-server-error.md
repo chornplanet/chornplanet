@@ -117,3 +117,11 @@ Implemented in this branch:
 - Changed metadata loading to return static fallback instead of throwing after database-backed metadata attempts fail.
 - Added `SmartFoodAiImage` wrapper in `SmartFoodAiLandingPage.tsx`.
 - Replaced direct `Image` usage inside Smart Food AI page sections with safe wrapper usage.
+- Added shared static fallback image hardening in `src/lib/static-content/publicContentFallbacks.ts` so fallback-backed public pages use `/fallback-content.svg` instead of empty image paths.
+- Added `public/fallback-content.svg` as the in-repo placeholder asset for render-safe static fallback content.
+- Added a `# Critical` reliability rule in `.codex/Agents.md` requiring every feature/fix to check route-level render reliability, shared fallback risks, and regression checks before deployment.
+
+## Validation
+
+- `npm run build` passed after clearing a stale generated `.next` cache.
+- `npm run lint` passed with existing non-blocking `<img>` warnings in Smart City and Smart Mobility components.
