@@ -6,31 +6,35 @@ export const NavbarGroups: INavbarGroup[] = [
         firstPathname: "",
     },
     {
-        group: "AI Luxury",
-        firstPathname: "ai-luxury",
+        group: "World",
+        firstPathname: "world",
     },
     {
-        group: "Smart Mobility",
-        firstPathname: "smart-mobility",
+        group: "Luxury",
+        firstPathname: "luxury",
     },
     {
-        group: "Smart City",
-        firstPathname: "smart-city",
+        group: "Smart Food",
+        firstPathname: "smart-food",
     },
     {
-        group: "Technology",
-        firstPathname: "technology",
+        group: "Outfit",
+        firstPathname: "outfit",
     },
     {
-        group: "Technology",
-        firstPathname: "technical-expertise",
+        group: "Media",
+        firstPathname: "media",
     },
     {
-        group: "AI Integration",
-        firstPathname: "ai-companions",
+        group: "Commerce",
+        firstPathname: "commerce",
     },
     {
-        group: "Smart Food AI",
+        group: "Smart Food",
         firstPathname: "smart-food-ai",
+    },
+    {
+        group: "Luxury",
+        firstPathname: "ai-luxury",
     },
 ]

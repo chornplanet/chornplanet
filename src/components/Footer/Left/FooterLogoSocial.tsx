@@ -12,8 +12,8 @@ export default function FooterLogoSocial({lang, footer}: { lang: string, footer:
                     <Image
                         src={ImageUrl.logo.md.path}
                         alt={ImageUrl.logo.md.title}
-                        width={100}
-                        height={100}
+                        width={128}
+                        height={128}
                     />
                 </Link>
 

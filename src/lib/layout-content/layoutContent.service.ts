@@ -65,83 +65,16 @@ const TIKTOK_CONTENT_DEVELOPMENT_FOOTER_LABELS: Record<string, string> = {
     zh: 'TikTok 创作者',
 };
 
-type MainNavbarGroup = 'Home' | 'AI Luxury' | 'Smart City' | 'Smart Mobility' | 'Smart Food AI' | 'Technology';
+type MainNavbarGroup = 'World' | 'Outfit' | 'Media' | 'Commerce' | 'Smart Food' | 'Luxury';
 
 const MAIN_NAVBAR_LABELS: Record<MainNavbarGroup, Record<string, string>> = {
-    Home: {
-        en: 'Home',
-        th: 'หน้าแรก',
-        da: 'Hjem',
-        de: 'Startseite',
-        fi: 'Etusivu',
-        fr: 'Accueil',
-        ja: 'ホーム',
-        ko: '홈',
-        nl: 'Home',
-        zh: '首页',
-    },
-    'AI Luxury': {
-        en: 'AI Luxury Platform',
-        th: 'แพลตฟอร์ม AI Luxury',
-        da: 'AI Luxury-platform',
-        de: 'AI-Luxusplattform',
-        fi: 'AI Luxury -alusta',
-        fr: 'Plateforme AI Luxury',
-        ja: 'AIラグジュアリープラットフォーム',
-        ko: 'AI 럭셔리 플랫폼',
-        nl: 'AI Luxury-platform',
-        zh: 'AI 奢华平台',
-    },
-    'Smart City': {
-        en: 'Smart City',
-        th: 'สมาร์ตซิตี้',
-        da: 'Smart City',
-        de: 'Smart City',
-        fi: 'Smart City',
-        fr: 'Smart City',
-        ja: 'スマートシティ',
-        ko: '스마트 시티',
-        nl: 'Smart City',
-        zh: '智慧城市',
-    },
-    'Smart Mobility': {
-        en: 'Smart Mobility',
-        th: 'สมาร์ตโมบิลิตี้',
-        da: 'Smart Mobility',
-        de: 'Smart Mobility',
-        fi: 'Smart Mobility',
-        fr: 'Smart Mobility',
-        ja: 'スマートモビリティ',
-        ko: '스마트 모빌리티',
-        nl: 'Smart Mobility',
-        zh: '智慧出行',
-    },
-    'Smart Food AI': {
-        en: 'AI Smart Food',
-        th: 'AI Smart Food',
-        da: 'AI Smart Food',
-        de: 'AI Smart Food',
-        fi: 'AI Smart Food',
-        fr: 'AI Smart Food',
-        ja: 'AIスマートフード',
-        ko: 'AI 스마트 푸드',
-        nl: 'AI Smart Food',
-        zh: 'AI 智慧食品',
-    },
-    Technology: {
-        en: 'Technology',
-        th: 'เทคโนโลยี',
-        da: 'Teknologi',
-        de: 'Technologie',
-        fi: 'Teknologia',
-        fr: 'Technologie',
-        ja: 'テクノロジー',
-        ko: '기술',
-        nl: 'Technologie',
-        zh: '技术',
-    },
+    World: {en: 'World', th: 'World', da: 'World', de: 'World', fi: 'World', fr: 'World', ja: 'World', ko: 'World', nl: 'World', zh: 'World'},
+    Outfit: {en: 'Outfit', th: 'Outfit', da: 'Outfit', de: 'Outfit', fi: 'Outfit', fr: 'Outfit', ja: 'Outfit', ko: 'Outfit', nl: 'Outfit', zh: 'Outfit'},
+    Media: {en: 'Media', th: 'Media', da: 'Media', de: 'Media', fi: 'Media', fr: 'Media', ja: 'Media', ko: 'Media', nl: 'Media', zh: 'Media'},
+    Commerce: {en: 'Commerce', th: 'Commerce', da: 'Commerce', de: 'Commerce', fi: 'Commerce', fr: 'Commerce', ja: 'Commerce', ko: 'Commerce', nl: 'Commerce', zh: 'Commerce'},
+    'Smart Food': {en: 'Smart Food', th: 'Smart Food', da: 'Smart Food', de: 'Smart Food', fi: 'Smart Food', fr: 'Smart Food', ja: 'Smart Food', ko: 'Smart Food', nl: 'Smart Food', zh: 'Smart Food'},
+    Luxury: {en: 'Luxury', th: 'Luxury', da: 'Luxury', de: 'Luxury', fi: 'Luxury', fr: 'Luxury', ja: 'Luxury', ko: 'Luxury', nl: 'Luxury', zh: 'Luxury'},
 };
-
 type MainNavbarItem = Pick<INavbar, 'group' | 'label' | 'link' | 'activeLinks'> & {
     matchGroups?: string[];
     matchLabels?: string[];
@@ -150,63 +83,51 @@ type MainNavbarItem = Pick<INavbar, 'group' | 'label' | 'link' | 'activeLinks'> 
 
 const MAIN_NAVBAR_ITEMS: MainNavbarItem[] = [
     {
-        group: 'Home',
-        label: 'Home',
-        link: '/',
+        group: 'World',
+        label: 'World',
+        link: '/world/',
         activeLinks: [],
-        matchLinks: ['/'],
+        matchLinks: ['/world', '/world/'],
     },
     {
-        group: 'AI Luxury',
-        label: 'AI Luxury Platform',
-        link: '/ai-luxury',
+        group: 'Luxury',
+        label: 'Luxury',
+        link: '/luxury/',
         activeLinks: [],
         matchLabels: ['AI Luxury', 'AI Luxury Platform'],
-        matchLinks: ['/ai-luxury', '/ai-luxury/'],
+        matchLinks: ['/luxury', '/luxury/', '/ai-luxury', '/ai-luxury/'],
     },
     {
-        group: 'Smart City',
-        label: 'Smart City',
-        link: '/smart-city/',
-        activeLinks: [],
-        matchLinks: ['/smart-city', '/smart-city/'],
-    },
-    {
-        group: 'Smart Mobility',
-        label: 'Smart Mobility',
-        link: '/smart-mobility/chiang-mai/vision-smart-mobility-northern-gateway/',
-        activeLinks: [],
-        matchLinks: [
-            '/smart-mobility',
-            '/smart-mobility/',
-            '/smart-mobility/chiang-mai/',
-            '/smart-mobility/chiang-mai/vision-smart-mobility-northern-gateway/',
-        ],
-    },
-    {
-        group: 'Smart Food AI',
-        label: 'AI Smart Food',
-        link: '/smart-food-ai/',
+        group: 'Smart Food',
+        label: 'Smart Food',
+        link: '/smart-food/',
         activeLinks: [],
         matchGroups: ['AI Integration', 'Smart Food AI'],
         matchLabels: ['AI Integration', 'Smart Food AI', 'AI Smart Food Platform', 'AI Smart Food'],
-        matchLinks: ['/smart-food-ai', '/smart-food-ai/', '/technical-expertise/ai-solutions/'],
+        matchLinks: ['/smart-food', '/smart-food/', '/smart-food-ai', '/smart-food-ai/'],
     },
     {
-        group: 'Technology',
-        label: 'Technology',
-        link: '/technical-expertise/web-development/',
+        group: 'Outfit',
+        label: 'Outfit',
+        link: '/outfit/',
         activeLinks: [],
-        matchLinks: [
-            '/technology',
-            '/technology/',
-            '/technical-expertise',
-            '/technical-expertise/ai-solutions/',
-            '/technical-expertise/web-development/',
-        ],
+        matchLinks: ['/outfit', '/outfit/'],
+    },
+    {
+        group: 'Media',
+        label: 'Media',
+        link: '/media/',
+        activeLinks: [],
+        matchLinks: ['/media', '/media/'],
+    },
+    {
+        group: 'Commerce',
+        label: 'Commerce',
+        link: '/commerce/',
+        activeLinks: [],
+        matchLinks: ['/commerce', '/commerce/'],
     },
 ];
-
 function getLayoutContentTag(locale: string) {
     return `layout-content:${LAYOUT_CONTENT_CACHE_VERSION}:${normalizeLayoutContentLocale(locale)}`;
 }
@@ -423,12 +344,58 @@ function normalizeYoutubeFooterConnect(footer: IFooter): IFooter {
     };
 }
 
+function normalizePlatformFooter(footer: IFooter): IFooter {
+    return {
+        ...footer,
+        important: {
+            title: 'Important Links',
+            items: [
+                {label: 'About', link: '/about/'},
+                {label: 'History', link: '/history/'},
+                {label: 'Smart City', link: '/smart-city/'},
+                {label: 'Smart Mobility', link: '/smart-mobility/chiang-mai/vision-smart-mobility-northern-gateway/'},
+                {label: 'Technology', link: '/technical-expertise/web-development/'},
+                {label: 'Contact', link: '/contact/'},
+            ],
+        },
+        project: {
+            title: 'Projects',
+            items: [
+                {label: 'Luxury Project', link: '/luxury/'},
+                {label: 'Smart Food System', link: '/smart-food/'},
+                {label: 'Outfit Scene', link: '/outfit/'},
+                {label: 'Chorn Planet', link: '/'},
+            ],
+        },
+        smartCity: {
+            title: 'Platform',
+            items: [
+                {label: 'World', link: '/world/'},
+                {label: 'Luxury', link: '/luxury/'},
+                {label: 'Smart Food', link: '/smart-food/'},
+                {label: 'Outfit', link: '/outfit/'},
+                {label: 'Media', link: '/media/'},
+                {label: 'Commerce', link: '/commerce/'},
+            ],
+        },
+        technology: {
+            title: 'Commerce',
+            items: [
+                {label: 'Outfit Commerce', link: '/commerce/'},
+                {label: 'TikTok Soon', link: 'https://tiktok.com/@chornplanet'},
+                {label: 'Grocery Soon', link: '/commerce/'},
+                {label: 'Marketplace Links Soon', link: '/commerce/'},
+            ],
+        },
+    };
+}
+
 function normalizeLayoutContent(content: LayoutContentPayload): LayoutContentPayload {
     const smartFoodAiContent = normalizeSmartFoodAiLayoutContent(content);
 
     return {
         ...smartFoodAiContent,
-        footer: normalizeYoutubeFooterConnect(smartFoodAiContent.footer),
+        footer: normalizePlatformFooter(normalizeYoutubeFooterConnect(smartFoodAiContent.footer)),
     };
 }
 

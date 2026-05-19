@@ -9,11 +9,11 @@ function normalizeProjectLink(link: string): string {
 function getProjectHighlightClass(item: IFooterDetail): string | undefined {
     const link = normalizeProjectLink(item.link);
 
-    if (link === "/ai-luxury") {
+    if (link === "/ai-luxury" || link === "/luxury") {
         return "footer-featured-link footer-featured-link--luxury";
     }
 
-    if (link === "/smart-food-ai") {
+    if (link === "/smart-food-ai" || link === "/smart-food") {
         return "footer-featured-link footer-featured-link--smart-food";
     }
 

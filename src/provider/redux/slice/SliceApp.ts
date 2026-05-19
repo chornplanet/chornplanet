@@ -14,6 +14,9 @@ export const sliceApp = createSlice({
         toggleMobileMenuVisible: (state) => {
             state.mobileMenuVisible = !state.mobileMenuVisible;
         },
+        setMobileMenuVisible: (state, action: { payload: boolean }) => {
+            state.mobileMenuVisible = action.payload;
+        },
         toggleLanguageMenuVisible: (state) => {
             state.languageMenuVisible = !state.languageMenuVisible;
         },
@@ -31,6 +34,7 @@ export const sliceApp = createSlice({
 
 export const {
     setLanguageOption,
+    setMobileMenuVisible,
     toggleMobileMenuVisible,
     toggleLanguageMenuVisible,
     setCookieConsent,

@@ -14,10 +14,66 @@ export const UrlMaps: IUrlImageMap[] = [
         ]
     },
     {
-        url: '/about-chorn/',
+        url: '/about/',
         images: [
             {
                 path: ImageUrl.about.image750
+            }
+        ]
+    },
+    {
+        url: '/history/',
+        images: [
+            {
+                path: ImageUrl.gallery.main.image750
+            }
+        ]
+    },
+    {
+        url: '/world/',
+        images: [
+            {
+                path: ImageUrl.home.slides[1].image750
+            }
+        ]
+    },
+    {
+        url: '/outfit/',
+        images: [
+            {
+                path: ImageUrl.gallery.slides[1].image750
+            }
+        ]
+    },
+    {
+        url: '/media/',
+        images: [
+            {
+                path: ImageUrl.llm.slides[0].image750
+            }
+        ]
+    },
+    {
+        url: '/commerce/',
+        images: [
+            {
+                path: ImageUrl.feature.suvarnabhumi.path
+            }
+        ]
+    },
+    {
+        url: '/smart-food/',
+        images: [
+            {
+                path: ImageUrl.banner.banner1.path
+            }
+        ]
+    },
+    {
+        url: '/luxury/',
+        images: [
+            {
+                path: "/smart-mobility/chiang-mai/vision-smart-mobility-northern-gateway.png"
             }
         ]
     },
@@ -92,19 +148,6 @@ export const UrlMaps: IUrlImageMap[] = [
     {
         url: '/smart-city/',
         images: []
-    },
-
-    // smart-food-ai
-    {
-        url: '/smart-food-ai/',
-        images: [
-            {
-                path: ImageUrl.banner.banner1.path
-            },
-            {
-                path: ImageUrl.home.slides[0].image1200
-            }
-        ]
     },
 
     //smart-mobility

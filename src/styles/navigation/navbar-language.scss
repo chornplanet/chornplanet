@@ -1,0 +1,105 @@
+.navbar-langs {
+  order: 2;
+  position: relative;
+  z-index: 1100;
+  flex: 0 0 auto;
+
+  .language-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 132px;
+    min-height: 40px;
+    padding: 8px 12px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    font-size: 14px;
+    font-weight: 750;
+    line-height: 1.2;
+    letter-spacing: 0;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 10px 22px rgba(0, 0, 0, 0.18);
+    transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+
+    &:hover {
+      border-color: rgba(255, 255, 255, 0.34);
+      background: rgba(255, 255, 255, 0.16);
+      transform: translateY(-1px);
+    }
+  }
+
+  .dropdown-langs {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    min-width: 180px;
+    max-height: min(420px, calc(100vh - 120px));
+    margin: 0;
+    padding: 8px;
+    overflow-y: auto;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    background: rgba(9, 18, 15, 0.94);
+    backdrop-filter: blur(14px);
+    box-shadow: 0 22px 48px rgba(0, 0, 0, 0.34);
+    z-index: 1200;
+  }
+
+  .dropdown-langs li,
+  .dropdown-langs a {
+    float: none;
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 10px 12px;
+    color: rgba(255, 255, 255, 0.86);
+    text-align: left;
+    text-decoration: none;
+    line-height: 1.25;
+    transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .dropdown-langs li:hover,
+  .dropdown-langs a:hover,
+  .dropdown-active {
+    cursor: pointer;
+    background: linear-gradient(135deg, #4fd9ff, #5a68ff);
+    color: #ffffff;
+    box-shadow: 0 8px 18px rgba(79, 217, 255, 0.24);
+  }
+
+  .dropdown-active {
+    font-weight: 800;
+  }
+
+  .dropdown-active::before {
+    position: absolute;
+    top: 10px;
+    bottom: 10px;
+    left: 6px;
+    width: 3px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.92);
+    content: "";
+  }
+
+  @media (max-width: 420px) {
+    .language-button {
+      min-width: 112px;
+      padding-right: 10px;
+      padding-left: 10px;
+      font-size: 13px;
+    }
+
+    .dropdown-langs {
+      right: -52px;
+      min-width: 172px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    order: 3;
+  }
+}

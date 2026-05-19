@@ -1,4 +1,4 @@
-import "@/styles/about.scss"
+import "@/styles/pages/about.scss"
 import Image from "next/image"
 import React from "react";
 import BottomImageLeft from "@/components/About/BottomImage/BottomImageLeft";

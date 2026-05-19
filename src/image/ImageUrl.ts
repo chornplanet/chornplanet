@@ -514,33 +514,33 @@ export const ImageUrl: IImageUrl = {
     },
     logo: {
         lg: {
-            title: "Chorn Planet's logo lg-size",
-            path: "/images/logo/chorn-logo-2025-circle-lg.png"
+            title: "Chorn Planet romance constellation logo lg-size",
+            path: "/images/logo/logo-romance-male.png"
         },
         md: {
-            title: "Chorn Planet's logo md-size",
-            path: "/images/logo/chorn-logo-2025-circle-md.png"
+            title: "Chorn Planet romance constellation logo md-size",
+            path: "/images/logo/logo-romance-male.png"
         },
         sm: {
-            title: "Chorn Planet's logo sm-size",
-            path: "/images/logo/chorn-logo-2025-circle-sm.png"
+            title: "Chorn Planet romance constellation logo sm-size",
+            path: "/images/logo/logo-romance-male.png"
         },
         business: {
-            title: "Chorn Planet's business logo",
-            path: "/images/logo/chorn-logo-2025-circle-md.png"
+            title: "Chorn Planet romance constellation business logo",
+            path: "/images/logo/logo-romance-male.png"
         },
         rec: {
             sm: {
-                title: "Chorn Planet's rectangle logo sm-size",
-                path: "/images/logo/chorn-logo-2025-rec-white-sm.png"
+                title: "Chorn Planet romance constellation logo sm-size",
+                path: "/images/logo/logo-romance-male.png"
             },
             md: {
-                title: "Chorn Planet's rectangle logo md-size",
-                path: "/images/logo/chorn-logo-2025-rec-white-md.png"
+                title: "Chorn Planet romance constellation logo md-size",
+                path: "/images/logo/logo-romance-male.png"
             },
             lg: {
-                title: "Chorn Planet's rectangle logo lg-size",
-                path: "/images/logo/chorn-logo-2025-rec-white-lg.png"
+                title: "Chorn Planet romance constellation logo lg-size",
+                path: "/images/logo/logo-romance-male.png"
             },
         },
         line: {

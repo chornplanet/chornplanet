@@ -47,7 +47,7 @@ export default function FooterTechnology({lang, footer}: { lang: string, footer:
                         .filter(shouldShowTechnologyItem)
                         .map((item: IFooterDetail, index: number) => (
                             <li key={index}>
-                                <Link href={'/' + lang + item.link}>
+                                <Link href={item.link.startsWith("http") ? item.link : '/' + lang + item.link}>
                                     {getTechnologyItemLabel(item, lang)}
                                 </Link>
                             </li>

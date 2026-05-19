@@ -20,8 +20,8 @@ export default function NavbarContainer(
                             <Image
                                 src={ImageUrl.logo.rec.md.path}
                                 alt={ImageUrl.logo.rec.md.title}
-                                width={200}
-                                height={100}
+                                width={128}
+                                height={128}
                             />
                         </Link>
 

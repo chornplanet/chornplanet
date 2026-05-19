@@ -1,4 +1,4 @@
-import "@/styles/about.scss"
+import "@/styles/pages/about.scss"
 
 import React from "react";
 import {
