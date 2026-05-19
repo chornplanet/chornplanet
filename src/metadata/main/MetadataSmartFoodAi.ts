@@ -5,6 +5,13 @@ import {ISmartFoodAiMetadataContent} from "@/lib/model/ISmartFoodAiContent";
 import {normalizeSmartFoodAiContentLocale} from "@/core/domain/smart-food-ai-content.entity";
 import {getSmartFoodAiMetadataContent} from "@/lib/smart-food-ai-content/smartFoodAiContent.service";
 
+const STATIC_SMART_FOOD_AI_METADATA_FALLBACK: ISmartFoodAiMetadataContent = {
+    title: 'Smart Food AI | Chorn Planet',
+    description:
+        'Smart Food AI presents ChornPlanet\'s AI-native food service direction with public fallback metadata when live content is temporarily unavailable.',
+    openGraphTitle: 'Smart Food AI',
+};
+
 async function loadMetadataContent(lang: string): Promise<ISmartFoodAiMetadataContent> {
     const normalizedLocale = normalizeSmartFoodAiContentLocale(lang);
 
@@ -22,7 +29,8 @@ async function loadMetadataContent(lang: string): Promise<ISmartFoodAiMetadataCo
         }
     }
 
-    throw new Error(`[metadata] Smart Food AI metadata unavailable for locale="${normalizedLocale}"`);
+    console.warn(`[metadata] Smart Food AI metadata using static fallback for locale="${normalizedLocale}"`);
+    return STATIC_SMART_FOOD_AI_METADATA_FALLBACK;
 }
 
 function createMetadata(lang: string, content: ISmartFoodAiMetadataContent): Metadata {

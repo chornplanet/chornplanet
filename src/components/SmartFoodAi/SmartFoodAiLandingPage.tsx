@@ -1,5 +1,50 @@
 import Image from "next/image";
-import {ISmartFoodAiContent} from "@/lib/model/ISmartFoodAiContent";
+import {ISmartFoodAiImage, ISmartFoodAiContent} from "@/lib/model/ISmartFoodAiContent";
+
+function SmartFoodAiImage({
+  image,
+  className,
+  width,
+  height,
+  fill = false,
+  priority = false,
+  sizes,
+}: {
+  image: ISmartFoodAiImage;
+  className?: string;
+  width?: number;
+  height?: number;
+  fill?: boolean;
+  priority?: boolean;
+  sizes?: string;
+}) {
+  if (!image.src) {
+    return <div className={className} aria-label={image.alt} role="img" />;
+  }
+
+  if (fill) {
+    return (
+      <Image
+        src={image.src}
+        alt={image.alt}
+        fill
+        priority={priority}
+        sizes={sizes}
+      />
+    );
+  }
+
+  return (
+    <Image
+      src={image.src}
+      alt={image.alt}
+      width={width ?? 1200}
+      height={height ?? 800}
+      priority={priority}
+      sizes={sizes}
+    />
+  );
+}
 
 export default function SmartFoodAiLandingPage({ content }: { content: ISmartFoodAiContent }) {
   return (
@@ -34,9 +79,8 @@ export default function SmartFoodAiLandingPage({ content }: { content: ISmartFoo
               className="smart-food-ai-hero__visual"
               aria-label={content.hero.visual.ariaLabel}
             >
-              <Image
-                src={content.hero.visual.src}
-                alt={content.hero.visual.alt}
+              <SmartFoodAiImage
+                image={content.hero.visual}
                 width={1200}
                 height={800}
                 priority
@@ -62,9 +106,8 @@ export default function SmartFoodAiLandingPage({ content }: { content: ISmartFoo
               ))}
             </div>
             <div className="smart-food-ai-section-heading__right">
-              <Image
-                src={content.proof.image.src}
-                alt={content.proof.image.alt}
+              <SmartFoodAiImage
+                image={content.proof.image}
                 width={900}
                 height={760}
                 sizes="(max-width: 991px) 100vw, 42vw"
@@ -98,9 +141,8 @@ export default function SmartFoodAiLandingPage({ content }: { content: ISmartFoo
                 className="smart-food-ai-workflow__item"
               >
                 <div className="smart-food-ai-workflow__image">
-                  <Image
-                    src={step.image.src}
-                    alt={step.image.alt}
+                  <SmartFoodAiImage
+                    image={step.image}
                     fill
                     sizes="(max-width: 767px) 100vw, (max-width: 1199px) 50vw, 33vw"
                   />

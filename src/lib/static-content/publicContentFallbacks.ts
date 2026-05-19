@@ -27,18 +27,20 @@ import {normalizeSmartFoodAiContentLocale} from "@/core/domain/smart-food-ai-con
 import {normalizeSmartMobilityChiangMaiContentLocale} from "@/core/domain/smart-mobility-chiang-mai-content.entity";
 import {normalizeTechnicalExpertiseContentLocale} from "@/core/domain/technical-expertise-content.entity";
 
+const STATIC_FALLBACK_IMAGE_SRC = '/fallback-content.svg';
+
 const EMPTY_RESPONSIVE_IMAGE: IImageResponsiveUnit = {
     title: 'Chorn Planet static fallback image',
-    image375: '',
-    image750: '',
-    image1200: '',
-    large: '',
-    thumbnail: '',
+    image375: STATIC_FALLBACK_IMAGE_SRC,
+    image750: STATIC_FALLBACK_IMAGE_SRC,
+    image1200: STATIC_FALLBACK_IMAGE_SRC,
+    large: STATIC_FALLBACK_IMAGE_SRC,
+    thumbnail: STATIC_FALLBACK_IMAGE_SRC,
 };
 
 const EMPTY_IMAGE_UNIT: IImageUnit = {
     title: 'Chorn Planet static fallback image',
-    path: '',
+    path: STATIC_FALLBACK_IMAGE_SRC,
 };
 
 const fallbackText = {
@@ -264,7 +266,7 @@ function createSmartCityItem(slug = 'smart-city-fallback'): ISmartCityItem {
         ],
         link: `/smart-city/chiang-mai/${slug}/`,
         media: {
-            image_url: '',
+            image_url: STATIC_FALLBACK_IMAGE_SRC,
             image_tags: ['Smart City', 'Chiang Mai'],
         },
     };
@@ -437,7 +439,7 @@ function createAiLanding(name: string) {
     return {
         name,
         category: 'AI Companion',
-        thumbnail: '',
+        thumbnail: STATIC_FALLBACK_IMAGE_SRC,
         pages: {
             landing: {
                 link: `/ai-companions/${name.toLowerCase()}/`,
@@ -564,7 +566,7 @@ export function getFallbackGalleryContent(locale: string): GalleryContentPayload
 export function getFallbackHomePageContent(locale: string): HomePageContentPayload {
     const normalizedLocale = normalizeHomePageLocale(locale);
     logStaticFallback('homepage content', normalizedLocale);
-    const image = {url: '', alt: 'Static fallback'};
+    const image = {url: STATIC_FALLBACK_IMAGE_SRC, alt: 'Static fallback'};
     const dailyFlow = {
         title: 'Daily flow',
         paragraph: fallbackText.description,
@@ -774,7 +776,7 @@ export function getFallbackSmartCityLandingContent(locale: string, slug: string)
 export function getFallbackSmartFoodAiContent(locale: string): SmartFoodAiContentPayload {
     const normalizedLocale = normalizeSmartFoodAiContentLocale(locale);
     logStaticFallback('Smart Food AI content', normalizedLocale);
-    const image = {src: '', alt: 'Static fallback'};
+    const image = {src: STATIC_FALLBACK_IMAGE_SRC, alt: 'Static fallback'};
     const heading = {
         eyebrow: 'Static fallback',
         title: 'Smart Food AI',
