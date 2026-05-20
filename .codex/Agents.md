@@ -61,7 +61,11 @@ For MongoDB-backed public content, metadata, layout, or image changes, verify th
 requested locale -> English -> static in-repo fallback
 ```
 
+Public pages must target 100% available production content through the normal Next.js rendering/data strategy. Do not treat static fallback as an acceptable steady state, a content source of truth, or a substitute for complete localized content. Static fallback is a worst-case safety net for transient content/database unavailability only; after adding or changing fallback behavior, also verify the normal requested-locale and English content paths still work and remain the preferred rendering path.
+
 Static fallbacks must be render-safe. Do not pass empty image paths, missing arrays, or incomplete nested objects into React components or `next/image`. If a static fallback is needed, use a valid local placeholder asset or a component-level placeholder so production Server Components never fail with a generic digest because optional live content is unavailable.
+
+Public static fallbacks must also be production-safe copy, not engineering diagnostics. Do not expose wording such as `Static fallback`, `Restore Content`, `Repair or reseed`, `MongoDB content unavailable`, collection names, seed status, or internal recovery instructions to public visitors. Feature-specific public pages should use dedicated product-facing fallback modules under the feature namespace when generic fallback wording would leak maintenance details; keep metadata fallback aligned with the page fallback.
 
 When fixing a production Server Components render error, inspect the same failure pattern across every feature family touched by the shared loader, shared fallback data, metadata generator, layout, navbar, footer, image model, or route group. The fix is not complete until the regression risk is addressed at the shared source or explicitly documented as route-specific.
 

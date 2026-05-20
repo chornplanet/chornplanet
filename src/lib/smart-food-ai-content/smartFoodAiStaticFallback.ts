@@ -39,7 +39,7 @@ export function getSmartFoodAiStaticFallback(locale: string): SmartFoodAiContent
             heading: {
                 eyebrow: 'Production direction',
                 title: 'Built for real food-service operations',
-                text: 'When database content is temporarily unavailable, this production-safe fallback still presents the correct public product direction.',
+                text: 'Smart Food AI presents a clear product direction for AI-native food-service operations, customer communication, and business workflow support.',
             },
             paragraphs: [
                 'Smart Food AI supports restaurant and food-service teams that need accurate menu communication, order readiness, payment confirmation, and operational follow-up.',
@@ -131,7 +131,7 @@ export function getSmartFoodAiStaticFallback(locale: string): SmartFoodAiContent
             ],
         },
         futureDirections: [
-            'Connect the public page to complete localized MongoDB content when the content record is available.',
+            'Continue expanding localized Smart Food AI content for partners, customers, and future product stories.',
             'Continue improving Smart Food AI as a production-ready food-service platform surface.',
             'Preserve safe public wording without exposing internal technical architecture.',
         ],
