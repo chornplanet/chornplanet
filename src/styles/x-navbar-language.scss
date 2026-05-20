@@ -35,7 +35,7 @@
     position: absolute;
     top: calc(100% + 10px);
     right: 0;
-    min-width: 180px;
+    min-width: 220px;
     max-height: min(420px, calc(100vh - 120px));
     margin: 0;
     padding: 8px;
@@ -94,8 +94,8 @@
     }
 
     .dropdown-langs {
-      right: -52px;
-      min-width: 172px;
+      right: -36px;
+      min-width: min(240px, calc(100vw - 24px));
     }
   }
 

@@ -9,8 +9,10 @@ import {LayoutContentService} from "@/core/services/layout-content.service";
 import {LayoutContentRepository} from "@/adapters/outbound/mongo.repository/layout-content.repository";
 import {INavbar} from "@/lib/model/INavbar";
 import {IFooter, IFooterDetail} from "@/lib/model/IFooter";
+import {ILanguageOption} from "@/lib/model/ILanguage";
 import {loadLocalizedContentWithFallback} from "@/lib/localized-content/localizedContentFallback";
 import {getFallbackLayoutContent} from "@/lib/static-content/publicContentFallbacks";
+import {LanguageOptionList, LanguageOptionRecord} from "@/lib/constants/languageOptions";
 
 const layoutContentService = new LayoutContentService(new LayoutContentRepository());
 const LAYOUT_CONTENT_LIST_TAG = 'layout-content';
@@ -429,7 +431,24 @@ function normalizeLayoutContent(content: LayoutContentPayload): LayoutContentPay
     return {
         ...smartFoodAiContent,
         footer: normalizeYoutubeFooterConnect(smartFoodAiContent.footer),
+        languageOptions: normalizeLanguageOptions(smartFoodAiContent.languageOptions),
     };
+}
+
+function normalizeLanguageOptions(languageOptions: ILanguageOption[] = []): ILanguageOption[] {
+    const optionsByLanguage = new Map(
+        languageOptions
+            .filter((option) => option?.language && LanguageOptionRecord[option.language])
+            .map((option) => [option.language, option])
+    );
+
+    return LanguageOptionList.map((defaultOption) => ({
+        ...defaultOption,
+        ...(optionsByLanguage.get(defaultOption.language) ?? {}),
+        language: defaultOption.language,
+        label: defaultOption.label,
+        locale: defaultOption.locale,
+    }));
 }
 
 export async function getLayoutContent(locale: string): Promise<LayoutContentPayload> {

@@ -7,6 +7,7 @@ import {useDispatch} from "react-redux";
 import {useLanguageMenuVisible, useLanguageOption} from "@/provider/hooks/hookStateApp";
 import {ILanguageOption} from "@/lib/model/ILanguage";
 import {useRouter} from "next/navigation";
+import {LanguageOptionRecord} from "@/lib/constants/languageOptions";
 
 export default function LanguageButton(
     {lang, languageOptions}: { lang: string, languageOptions: ILanguageOption[] }
@@ -16,18 +17,27 @@ export default function LanguageButton(
     const languageMenuVisible = useLanguageMenuVisible()
     const router = useRouter()
     const selectedLanguageOption =
-        languageOptions.find((translate) => translate.language === languageOption.language) ??
         languageOptions.find((translate) => translate.language === lang) ??
+        languageOptions.find((translate) => translate.language === languageOption?.language) ??
+        LanguageOptionRecord[lang] ??
         languageOption;
 
     const changeLanguage = (languageOption: ILanguageOption) => {
-        dispatch(setLanguageOption(languageOption));
+        const normalizedLanguageOption = LanguageOptionRecord[languageOption.language];
+
+        if (!normalizedLanguageOption) {
+            return;
+        }
+
+        dispatch(setLanguageOption(normalizedLanguageOption));
         dispatch(toggleLanguageMenuVisible());
 
         const pathSegments = window.location.pathname.split("/");
         const currentPath = pathSegments.slice(2).join("/") || "";
+        const search = window.location.search;
+        const hash = window.location.hash;
 
-        router.push(`/${languageOption.language}/${currentPath}`);
+        router.push(`/${normalizedLanguageOption.language}/${currentPath}${search}${hash}`);
     }
 
     return (
@@ -45,8 +55,8 @@ export default function LanguageButton(
             {
                 languageMenuVisible &&
                 <ul className="dropdown-langs">
-                    {languageOptions.map((translate, index) =>
-                        <li key={index}
+                    {languageOptions.map((translate) =>
+                        <li key={translate.language}
                             className={translate.language == lang ? 'dropdown-active' : ''}
                             onClick={() => changeLanguage(translate)}
                         >

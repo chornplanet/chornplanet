@@ -26,6 +26,7 @@ import {normalizeSmartCityLandingContentLocale} from "@/core/domain/smart-city-l
 import {normalizeSmartFoodAiContentLocale} from "@/core/domain/smart-food-ai-content.entity";
 import {normalizeSmartMobilityChiangMaiContentLocale} from "@/core/domain/smart-mobility-chiang-mai-content.entity";
 import {normalizeTechnicalExpertiseContentLocale} from "@/core/domain/technical-expertise-content.entity";
+import {LanguageOptionList} from "@/lib/constants/languageOptions";
 
 const STATIC_FALLBACK_IMAGE_SRC = '/fallback-content.svg';
 
@@ -714,10 +715,7 @@ export function getFallbackLayoutContent(locale: string): LayoutContentPayload {
             policyLabel: 'Privacy Policy',
             buttonText: 'Accept',
         },
-        languageOptions: [
-            {language: 'English', label: 'EN', locale: 'en'},
-            {language: 'Thai', label: 'TH', locale: 'th'},
-        ],
+        languageOptions: LanguageOptionList,
     };
 }
 

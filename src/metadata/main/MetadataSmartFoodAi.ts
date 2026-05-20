@@ -4,7 +4,7 @@ import {MetaLinks} from "@/metadata/metadataLink/MetaLinks";
 import {ISmartFoodAiMetadataContent} from "@/lib/model/ISmartFoodAiContent";
 import {normalizeSmartFoodAiContentLocale} from "@/core/domain/smart-food-ai-content.entity";
 import {getSmartFoodAiMetadataContent} from "@/lib/smart-food-ai-content/smartFoodAiContent.service";
-import {SMART_FOOD_AI_STATIC_METADATA_FALLBACK} from "@/lib/smart-food-ai-content/smartFoodAiStaticFallback";
+import {getSmartFoodAiStaticMetadataFallback} from "@/lib/smart-food-ai-content/smartFoodAiStaticFallback";
 
 async function loadMetadataContent(lang: string): Promise<ISmartFoodAiMetadataContent> {
     const normalizedLocale = normalizeSmartFoodAiContentLocale(lang);
@@ -13,6 +13,11 @@ async function loadMetadataContent(lang: string): Promise<ISmartFoodAiMetadataCo
         return await getSmartFoodAiMetadataContent(normalizedLocale);
     } catch (localeError) {
         console.error(`[metadata] Smart Food AI metadata failed for locale="${normalizedLocale}"`, localeError);
+    }
+
+    if (normalizedLocale === 'th') {
+        console.warn(`[metadata] Smart Food AI metadata using Thai static fallback for locale="${normalizedLocale}"`);
+        return getSmartFoodAiStaticMetadataFallback(normalizedLocale);
     }
 
     if (normalizedLocale !== 'en') {
@@ -24,7 +29,7 @@ async function loadMetadataContent(lang: string): Promise<ISmartFoodAiMetadataCo
     }
 
     console.warn(`[metadata] Smart Food AI metadata using production-safe static fallback for locale="${normalizedLocale}"`);
-    return SMART_FOOD_AI_STATIC_METADATA_FALLBACK;
+    return getSmartFoodAiStaticMetadataFallback(normalizedLocale);
 }
 
 function createMetadata(lang: string, content: ISmartFoodAiMetadataContent): Metadata {
