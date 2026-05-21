@@ -26,11 +26,12 @@ import {normalizeSmartCityLandingContentLocale} from "@/core/domain/smart-city-l
 import {normalizeSmartFoodAiContentLocale} from "@/core/domain/smart-food-ai-content.entity";
 import {normalizeSmartMobilityChiangMaiContentLocale} from "@/core/domain/smart-mobility-chiang-mai-content.entity";
 import {normalizeTechnicalExpertiseContentLocale} from "@/core/domain/technical-expertise-content.entity";
+import {LanguageOptionList} from "@/lib/constants/languageOptions";
 
 const STATIC_FALLBACK_IMAGE_SRC = '/fallback-content.svg';
 
 const EMPTY_RESPONSIVE_IMAGE: IImageResponsiveUnit = {
-    title: 'Chorn Planet static fallback image',
+    title: 'Chorn Planet platform image',
     image375: STATIC_FALLBACK_IMAGE_SRC,
     image750: STATIC_FALLBACK_IMAGE_SRC,
     image1200: STATIC_FALLBACK_IMAGE_SRC,
@@ -39,13 +40,13 @@ const EMPTY_RESPONSIVE_IMAGE: IImageResponsiveUnit = {
 };
 
 const EMPTY_IMAGE_UNIT: IImageUnit = {
-    title: 'Chorn Planet static fallback image',
+    title: 'Chorn Planet platform image',
     path: STATIC_FALLBACK_IMAGE_SRC,
 };
 
 const fallbackText = {
     title: 'Chorn Planet',
-    description: 'This page is temporarily using static fallback content while localized MongoDB content is unavailable.',
+    description: 'Chorn Planet presents digital products, AI services, smart city concepts, and platform engineering capabilities from Chiang Mai to global audiences.',
 };
 
 const SMART_MOBILITY_CHIANG_MAI_FALLBACK_DESCRIPTIONS: Record<string, string> = {
@@ -239,29 +240,29 @@ function logStaticFallback(context: string, locale: string, slug?: string) {
 function createPolicy(title: string) {
     return {
         title,
-        subTitle: 'Static fallback notice',
+        subTitle: 'Platform policy summary',
         description: fallbackText.description,
         contents: [
             {
-                title: 'Temporary content source',
-                description: 'MongoDB remains the source of truth. This static fallback exists only to keep the public page available.',
+                title: 'Policy direction',
+                description: 'This page presents the current public policy direction for Chorn Planet visitors and partners.',
                 details: [],
             },
         ],
     };
 }
 
-function createSmartCityItem(slug = 'smart-city-fallback'): ISmartCityItem {
+function createSmartCityItem(slug = 'smart-city-overview'): ISmartCityItem {
     return {
-        sceneNumber: 'Fallback',
-        sceneName: 'Smart City fallback',
+        sceneNumber: 'Overview',
+        sceneName: 'Smart City Overview',
         title: 'Smart City Chiang Mai',
-        concept: 'Public render fallback',
+        concept: 'Urban intelligence and future city planning',
         description: fallbackText.description,
         features: [
             {
-                title: 'Localized content fallback',
-                description: 'Requested locale and English content were unavailable or incomplete.',
+                title: 'Smart City direction',
+                description: 'A public overview of smart city, mobility, and civic platform ideas for Chiang Mai.',
             },
         ],
         link: `/smart-city/chiang-mai/${slug}/`,
@@ -380,8 +381,8 @@ function createService() {
         description: fallbackText.description,
         services: [
             {
-                title: 'Fallback service summary',
-                description: 'Supplemental AI content is temporarily unavailable.',
+                title: 'AI product strategy',
+                description: 'Plan, design, and implement practical AI-enabled services for customer experience and operations.',
             },
         ],
         demo: {
@@ -392,11 +393,11 @@ function createService() {
                 href: '/contact/',
             },
             procedure: {
-                title: 'Fallback procedure',
+                title: 'Service workflow',
                 steps: [
                     {
-                        title: 'Restore content',
-                        description: 'Repair or reseed the AI Companions MongoDB record.',
+                        title: 'Understand the use case',
+                        description: 'Clarify the audience, workflow, data needs, and business outcome before implementation.',
                     },
                 ],
             },
@@ -409,19 +410,19 @@ function createFeature() {
     const stacks = [
         {
             title: 'Front End Development',
-            description: 'Public pages render with conservative static fallback content.',
+            description: 'Craft responsive, accessible, and polished user interfaces for public product experiences.',
             link: '/technical-expertise/front-end-developer/',
             icon: 'flaticon-check',
         },
         {
             title: 'Full Stack Development',
-            description: 'Public pages render with conservative static fallback content.',
+            description: 'Build reliable application layers that connect user experience, APIs, data, and operations.',
             link: '/technical-expertise/full-stack-developer/',
             icon: 'flaticon-check',
         },
         {
             title: 'Web Development',
-            description: 'Public pages render with conservative static fallback content.',
+            description: 'Deliver modern websites and service pages with strong performance and maintainable structure.',
             link: '/technical-expertise/web-development/',
             icon: 'flaticon-check',
         },
@@ -429,7 +430,7 @@ function createFeature() {
 
     return {
         title: 'Digital Product Development',
-        span: 'Static fallback',
+        span: 'Platform capability',
         subTitle: fallbackText.description,
         stacks,
     };
@@ -449,7 +450,7 @@ function createAiLanding(name: string) {
         title: `${name} AI Companion`,
         features: [
             {
-                title: 'Static fallback',
+                title: 'AI companion experience',
                 description: fallbackText.description,
                 items: [],
             },
@@ -473,7 +474,7 @@ function createTechStack(title: string, link: string) {
         link,
         features: [
             {title: 'Overview', description: fallbackText.description, list: []},
-            {title: 'Use cases', description: fallbackText.description, list: ['Static fallback']},
+            {title: 'Use cases', description: fallbackText.description, list: ['Product delivery', 'Platform engineering']},
             {title: 'Delivery note', description: fallbackText.description, list: []},
         ],
         faqs: [],
@@ -487,8 +488,8 @@ function createServiceGroup(title: string) {
         descriptions: [fallbackText.description],
         items: [
             {
-                title: 'Static fallback',
-                description: 'Restore MongoDB content for complete service detail.',
+                title: 'Service capability',
+                description: 'Chorn Planet supports product planning, implementation, integration, and delivery readiness.',
             },
         ],
     };
@@ -506,7 +507,7 @@ export function getFallbackAboutContent(locale: string): AboutContentPayload {
             subTitle: fallbackText.description,
             description: [
                 {
-                    title: 'Content fallback',
+                    title: 'Platform overview',
                     description: fallbackText.description,
                 },
             ],
@@ -566,12 +567,12 @@ export function getFallbackGalleryContent(locale: string): GalleryContentPayload
 export function getFallbackHomePageContent(locale: string): HomePageContentPayload {
     const normalizedLocale = normalizeHomePageLocale(locale);
     logStaticFallback('homepage content', normalizedLocale);
-    const image = {url: STATIC_FALLBACK_IMAGE_SRC, alt: 'Static fallback'};
+    const image = {url: STATIC_FALLBACK_IMAGE_SRC, alt: 'Chorn Planet platform overview'};
     const dailyFlow = {
         title: 'Daily flow',
         paragraph: fallbackText.description,
         image,
-        category: 'fallback',
+        category: 'platform',
         signalFocus: ['content reliability'],
         landingUrl: '/smart-city/',
     };
@@ -583,10 +584,10 @@ export function getFallbackHomePageContent(locale: string): HomePageContentPaylo
             paragraph: fallbackText.description,
             softTexts: [],
             image,
-            purpose: 'Public render fallback',
-            narrativeRole: 'fallback',
+            purpose: 'Platform overview',
+            narrativeRole: 'overview',
             section: 'hero',
-            category: 'fallback',
+            category: 'platform',
             signalFocus: ['content reliability'],
             landingUrl: '/smart-city/',
         },
@@ -596,20 +597,20 @@ export function getFallbackHomePageContent(locale: string): HomePageContentPaylo
             morningFlow: dailyFlow,
             middayFlow: dailyFlow,
             eveningFlow: dailyFlow,
-            purpose: 'Public render fallback',
-            narrativeRole: 'fallback',
+            purpose: 'Platform overview',
+            narrativeRole: 'overview',
             section: 'daily-flow',
-            category: 'fallback',
+            category: 'platform',
             lang: normalizedLocale,
         },
         localToGlobal: {
             headline: 'Local to Global',
             paragraph: fallbackText.description,
             items: [],
-            purpose: 'Public render fallback',
-            narrativeRole: 'fallback',
+            purpose: 'Platform overview',
+            narrativeRole: 'overview',
             section: 'local-to-global',
-            category: 'fallback',
+            category: 'platform',
             signalFocus: ['content reliability'],
             landingUrl: '/smart-city/',
             lang: normalizedLocale,
@@ -659,8 +660,8 @@ export function getFallbackHomePageContent(locale: string): HomePageContentPaylo
                 items: [],
             },
         },
-        smartCityHighlight: createSmartCityItem('smart-city-fallback'),
-        smartCityTags: ['Smart City', 'Fallback'],
+        smartCityHighlight: createSmartCityItem('smart-city-overview'),
+        smartCityTags: ['Smart City', 'Platform'],
     };
 }
 
@@ -714,10 +715,7 @@ export function getFallbackLayoutContent(locale: string): LayoutContentPayload {
             policyLabel: 'Privacy Policy',
             buttonText: 'Accept',
         },
-        languageOptions: [
-            {language: 'English', label: 'EN', locale: 'en'},
-            {language: 'Thai', label: 'TH', locale: 'th'},
-        ],
+        languageOptions: LanguageOptionList,
     };
 }
 
@@ -744,7 +742,7 @@ export function getFallbackSmartCityChiangMaiContent(locale: string, slug: strin
         relatedItems: [],
         bottomContent: {
             safeStatement: {
-                title: 'Static fallback note',
+                title: 'Scenario note',
                 description: fallbackText.description,
             },
             bottomCards: [],
@@ -763,7 +761,7 @@ export function getFallbackSmartCityLandingContent(locale: string, slug: string)
             heroObservation: {
                 headline: 'Smart City Signal',
                 paragraphs: [fallbackText.description],
-                tags: ['Smart City', 'Fallback'],
+                tags: ['Smart City', 'Chiang Mai'],
                 cta: {
                     label: 'Back to Smart City',
                     href: '/smart-city/',
@@ -776,9 +774,9 @@ export function getFallbackSmartCityLandingContent(locale: string, slug: string)
 export function getFallbackSmartFoodAiContent(locale: string): SmartFoodAiContentPayload {
     const normalizedLocale = normalizeSmartFoodAiContentLocale(locale);
     logStaticFallback('Smart Food AI content', normalizedLocale);
-    const image = {src: STATIC_FALLBACK_IMAGE_SRC, alt: 'Static fallback'};
+    const image = {src: STATIC_FALLBACK_IMAGE_SRC, alt: 'Smart Food AI service workflow'};
     const heading = {
-        eyebrow: 'Static fallback',
+        eyebrow: 'AI-native food service platform',
         title: 'Smart Food AI',
         text: fallbackText.description,
     };
@@ -791,17 +789,18 @@ export function getFallbackSmartFoodAiContent(locale: string): SmartFoodAiConten
             openGraphTitle: 'Smart Food AI',
         },
         hero: {
-            eyebrow: 'Smart Food AI',
+            eyebrow: 'AI-native food service platform',
             title: 'Smart Food AI',
-            lead: fallbackText.description,
-            support: 'MongoDB content should be restored for complete localized copy.',
+            lead: 'Smart Food AI connects menu information, customer conversation, order coordination, and business operations into one practical AI-native service experience.',
+            support: 'Designed from real local-business workflow in Chiang Mai, the platform direction helps food-service teams communicate clearly and coordinate operations.',
             actionsLabel: 'Smart Food AI actions',
             actions: [
-                {label: 'Contact', href: '/contact/', variant: 'primary'},
+                {label: 'Explore workflow', href: '#workflow', variant: 'primary'},
+                {label: 'Business value', href: '#value', variant: 'secondary'},
             ],
             visual: {
                 ...image,
-                ariaLabel: 'Smart Food AI fallback visual',
+                ariaLabel: 'Smart Food AI service experience visual',
             },
         },
         proof: {
@@ -809,7 +808,7 @@ export function getFallbackSmartFoodAiContent(locale: string): SmartFoodAiConten
             paragraphs: [fallbackText.description],
             image,
             cards: [
-                {index: '01', title: 'Fallback', text: fallbackText.description},
+                {index: '01', title: 'Customer conversation', text: 'Support menu discovery, service questions, and clear ordering next steps.'},
             ],
         },
         workflow: {
@@ -817,24 +816,24 @@ export function getFallbackSmartFoodAiContent(locale: string): SmartFoodAiConten
             heading,
             steps: [
                 {
-                    title: 'Restore content',
-                    text: 'Repair or reseed Smart Food AI MongoDB content.',
+                    title: 'Understand the customer request',
+                    text: 'Receive natural-language questions about menus, price, availability, ordering, and service details.',
                     image,
                 },
             ],
         },
         features: {
             heading,
-            items: ['Static fallback content'],
+            items: ['Natural-language menu support', 'Customer response flow', 'Order coordination support'],
         },
         value: {
             id: 'value',
             heading,
             cards: [
-                {title: 'Availability', text: 'The public page remains available while content is restored.'},
+                {title: 'Better customer clarity', text: 'Customers receive clearer information about menu choices and ordering next steps.'},
             ],
         },
-        futureDirections: ['Restore complete localized MongoDB content.'],
+        futureDirections: ['Continue improving Smart Food AI as a production-ready food-service platform surface.'],
     };
 }
 
@@ -909,7 +908,7 @@ export function getFallbackTechnicalExpertiseContent(locale: string): TechnicalE
         feature: createFeature(),
         frontEnd: {
             title: 'Front End Development',
-            span: 'Static fallback',
+            span: 'User interface engineering',
             subTitle: fallbackText.description,
             angular,
             css3,
@@ -924,7 +923,7 @@ export function getFallbackTechnicalExpertiseContent(locale: string): TechnicalE
         },
         fullStack: {
             title: 'Full Stack Development',
-            span: 'Static fallback',
+            span: 'Application delivery',
             subTitle: fallbackText.description,
             dotnetcore,
             go,
@@ -937,7 +936,7 @@ export function getFallbackTechnicalExpertiseContent(locale: string): TechnicalE
         },
         devOps: {
             title: 'Cloud DevOps',
-            span: 'Static fallback',
+            span: 'Delivery operations',
             subTitle: fallbackText.description,
             appium,
             docker,
@@ -953,7 +952,7 @@ export function getFallbackTechnicalExpertiseContent(locale: string): TechnicalE
         },
         cloud: {
             title: 'Cloud Infrastructure',
-            span: 'Static fallback',
+            span: 'Cloud architecture',
             subTitle: fallbackText.description,
             stacks: [
                 {
@@ -968,24 +967,24 @@ export function getFallbackTechnicalExpertiseContent(locale: string): TechnicalE
         },
         web3: {
             title: 'Web3 Blockchain',
-            span: 'Static fallback',
+            span: 'Blockchain engineering',
             subTitle: fallbackText.description,
             services: createServiceGroup('Web3 Services'),
         },
         cloudSolution: {
             title: 'Cloud Infrastructure Systems Architecture',
             descriptions: [
-                {title: 'Static fallback', span: 'Availability', description: fallbackText.description},
+                {title: 'Cloud architecture', span: 'Platform capability', description: fallbackText.description},
             ],
             benefits: ['Public page availability'],
             sections: [
-                {title: 'Restore content', span: 'MongoDB', description: 'Repair or reseed localized technical expertise content.'},
+                {title: 'Architecture planning', span: 'Cloud readiness', description: 'Design reliable cloud foundations for applications, teams, and future platform growth.'},
             ],
             migrationProcess: [
                 {
-                    phase: 'Content restoration',
+                    phase: 'Discovery and architecture',
                     description: fallbackText.description,
-                    outcomes: ['MongoDB content restored'],
+                    outcomes: ['Clear delivery direction', 'Cloud readiness plan'],
                 },
             ],
         },

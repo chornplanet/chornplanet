@@ -1,58 +1,57 @@
-import {ILanguageOption} from "@/lib/model/ILanguage";
-import {ILanguageOptions} from "@/lib/model/ILanguage";
+import {ILanguageOption, ILanguageOptions} from "@/lib/model/ILanguage";
 
 export const LanguageOptionDefinition: ILanguageOptions = {
     th: {
         language: "th",
         label: "ภาษาไทย",
-        locale: "th-TH"
+        locale: "th-TH",
     },
     en: {
         language: "en",
         label: "English",
-        locale: "en-US"
+        locale: "en-US",
     },
     fr: {
         language: "fr",
         label: "Français",
-        locale: "fr-FR"
+        locale: "fr-FR",
     },
     ja: {
         language: "ja",
         label: "日本語",
-        locale: "ja-JP"
+        locale: "ja-JP",
     },
     zh: {
         language: "zh",
         label: "中文",
-        locale: "zh-CN"
+        locale: "zh-CN",
     },
     de: {
         language: "de",
-        label: "German",
-        locale: "de-DE"
+        label: "Deutsch",
+        locale: "de-DE",
     },
     nl: {
         language: "nl",
-        label: "Dutch",
-        locale: "nl-NL"
+        label: "Nederlands",
+        locale: "nl-NL",
     },
     da: {
         language: "da",
-        label: "Danish",
-        locale: "da-DA"
+        label: "Dansk",
+        locale: "da-DK",
     },
     fi: {
         language: "fi",
-        label: "Finnish",
-        locale: "fi-FI"
+        label: "Suomi",
+        locale: "fi-FI",
     },
     ko: {
         language: "ko",
-        label: "Korean",
-        locale: "ko-KR"
+        label: "한국어",
+        locale: "ko-KR",
     },
-}
+};
 
 export const LanguageCode = {
     en: LanguageOptionDefinition.en.language,
@@ -64,18 +63,31 @@ export const LanguageCode = {
     nl: LanguageOptionDefinition.nl.language,
     da: LanguageOptionDefinition.da.language,
     fi: LanguageOptionDefinition.fi.language,
-    ko: LanguageOptionDefinition.ko.language
-}
+    ko: LanguageOptionDefinition.ko.language,
+};
 
 export const LanguageOptionRecord: Record<string, ILanguageOption> = {
-    'en': LanguageOptionDefinition.en,
-    'th': LanguageOptionDefinition.th,
-    'fr': LanguageOptionDefinition.fr,
-    'ja': LanguageOptionDefinition.ja,
-    'zh': LanguageOptionDefinition.zh,
-    'de': LanguageOptionDefinition.de,
-    'nl': LanguageOptionDefinition.nl,
-    'da': LanguageOptionDefinition.da,
-    'fi': LanguageOptionDefinition.fi,
-    'ko': LanguageOptionDefinition.ko
-}
+    en: LanguageOptionDefinition.en,
+    th: LanguageOptionDefinition.th,
+    fr: LanguageOptionDefinition.fr,
+    ja: LanguageOptionDefinition.ja,
+    zh: LanguageOptionDefinition.zh,
+    de: LanguageOptionDefinition.de,
+    nl: LanguageOptionDefinition.nl,
+    da: LanguageOptionDefinition.da,
+    fi: LanguageOptionDefinition.fi,
+    ko: LanguageOptionDefinition.ko,
+};
+
+export const LanguageOptionList: ILanguageOption[] = [
+    LanguageOptionDefinition.en,
+    LanguageOptionDefinition.th,
+    LanguageOptionDefinition.fr,
+    LanguageOptionDefinition.ja,
+    LanguageOptionDefinition.zh,
+    LanguageOptionDefinition.de,
+    LanguageOptionDefinition.nl,
+    LanguageOptionDefinition.da,
+    LanguageOptionDefinition.fi,
+    LanguageOptionDefinition.ko,
+];

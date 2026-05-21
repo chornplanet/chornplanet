@@ -4,13 +4,7 @@ import {MetaLinks} from "@/metadata/metadataLink/MetaLinks";
 import {ISmartFoodAiMetadataContent} from "@/lib/model/ISmartFoodAiContent";
 import {normalizeSmartFoodAiContentLocale} from "@/core/domain/smart-food-ai-content.entity";
 import {getSmartFoodAiMetadataContent} from "@/lib/smart-food-ai-content/smartFoodAiContent.service";
-
-const STATIC_SMART_FOOD_AI_METADATA_FALLBACK: ISmartFoodAiMetadataContent = {
-    title: 'Smart Food AI | Chorn Planet',
-    description:
-        'Smart Food AI presents ChornPlanet\'s AI-native food service direction with public fallback metadata when live content is temporarily unavailable.',
-    openGraphTitle: 'Smart Food AI',
-};
+import {getSmartFoodAiStaticMetadataFallback} from "@/lib/smart-food-ai-content/smartFoodAiStaticFallback";
 
 async function loadMetadataContent(lang: string): Promise<ISmartFoodAiMetadataContent> {
     const normalizedLocale = normalizeSmartFoodAiContentLocale(lang);
@@ -21,6 +15,11 @@ async function loadMetadataContent(lang: string): Promise<ISmartFoodAiMetadataCo
         console.error(`[metadata] Smart Food AI metadata failed for locale="${normalizedLocale}"`, localeError);
     }
 
+    if (normalizedLocale === 'th') {
+        console.warn(`[metadata] Smart Food AI metadata using Thai static fallback for locale="${normalizedLocale}"`);
+        return getSmartFoodAiStaticMetadataFallback(normalizedLocale);
+    }
+
     if (normalizedLocale !== 'en') {
         try {
             return await getSmartFoodAiMetadataContent('en');
@@ -29,8 +28,8 @@ async function loadMetadataContent(lang: string): Promise<ISmartFoodAiMetadataCo
         }
     }
 
-    console.warn(`[metadata] Smart Food AI metadata using static fallback for locale="${normalizedLocale}"`);
-    return STATIC_SMART_FOOD_AI_METADATA_FALLBACK;
+    console.warn(`[metadata] Smart Food AI metadata using production-safe static fallback for locale="${normalizedLocale}"`);
+    return getSmartFoodAiStaticMetadataFallback(normalizedLocale);
 }
 
 function createMetadata(lang: string, content: ISmartFoodAiMetadataContent): Metadata {

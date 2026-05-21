@@ -8,8 +8,9 @@ export const sliceApp = createSlice({
     initialState: fallbackStateApp, // this will be overridden if preloadedState is passed
     reducers: {
         setLanguageOption: (state, action: { payload: { language: string } }) => {
-            state.languageOption = LanguageOptionRecord[action.payload.language]
-            state.language = action.payload.language
+            const languageOption = LanguageOptionRecord[action.payload.language] ?? LanguageOptionRecord.en;
+            state.languageOption = languageOption;
+            state.language = languageOption.language;
         },
         toggleMobileMenuVisible: (state) => {
             state.mobileMenuVisible = !state.mobileMenuVisible;

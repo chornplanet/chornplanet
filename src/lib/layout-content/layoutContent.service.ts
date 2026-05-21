@@ -9,8 +9,10 @@ import {LayoutContentService} from "@/core/services/layout-content.service";
 import {LayoutContentRepository} from "@/adapters/outbound/mongo.repository/layout-content.repository";
 import {INavbar} from "@/lib/model/INavbar";
 import {IFooter, IFooterDetail} from "@/lib/model/IFooter";
+import {ILanguageOption} from "@/lib/model/ILanguage";
 import {loadLocalizedContentWithFallback} from "@/lib/localized-content/localizedContentFallback";
 import {getFallbackLayoutContent} from "@/lib/static-content/publicContentFallbacks";
+import {LanguageOptionList, LanguageOptionRecord} from "@/lib/constants/languageOptions";
 
 const layoutContentService = new LayoutContentService(new LayoutContentRepository());
 const LAYOUT_CONTENT_LIST_TAG = 'layout-content';
@@ -65,15 +67,60 @@ const TIKTOK_CONTENT_DEVELOPMENT_FOOTER_LABELS: Record<string, string> = {
     zh: 'TikTok 创作者',
 };
 
-type MainNavbarGroup = 'World' | 'Outfit' | 'Media' | 'Commerce' | 'Smart Food' | 'Luxury';
+type MainNavbarGroup = 'Home' | 'Luxury' | 'Smart Food' | 'Style' | 'Smart City' | 'Smart Mobility' | 'Technology';
 
 const MAIN_NAVBAR_LABELS: Record<MainNavbarGroup, Record<string, string>> = {
-    World: {en: 'World', th: 'World', da: 'World', de: 'World', fi: 'World', fr: 'World', ja: 'World', ko: 'World', nl: 'World', zh: 'World'},
-    Outfit: {en: 'Outfit', th: 'Outfit', da: 'Outfit', de: 'Outfit', fi: 'Outfit', fr: 'Outfit', ja: 'Outfit', ko: 'Outfit', nl: 'Outfit', zh: 'Outfit'},
-    Media: {en: 'Media', th: 'Media', da: 'Media', de: 'Media', fi: 'Media', fr: 'Media', ja: 'Media', ko: 'Media', nl: 'Media', zh: 'Media'},
-    Commerce: {en: 'Commerce', th: 'Commerce', da: 'Commerce', de: 'Commerce', fi: 'Commerce', fr: 'Commerce', ja: 'Commerce', ko: 'Commerce', nl: 'Commerce', zh: 'Commerce'},
-    'Smart Food': {en: 'Smart Food', th: 'Smart Food', da: 'Smart Food', de: 'Smart Food', fi: 'Smart Food', fr: 'Smart Food', ja: 'Smart Food', ko: 'Smart Food', nl: 'Smart Food', zh: 'Smart Food'},
+    Home: {
+        en: 'Home',
+        th: 'หน้าแรก',
+        da: 'Hjem',
+        de: 'Startseite',
+        fi: 'Etusivu',
+        fr: 'Accueil',
+        ja: 'ホーム',
+        ko: '홈',
+        nl: 'Home',
+        zh: '首页',
+    },
     Luxury: {en: 'Luxury', th: 'Luxury', da: 'Luxury', de: 'Luxury', fi: 'Luxury', fr: 'Luxury', ja: 'Luxury', ko: 'Luxury', nl: 'Luxury', zh: 'Luxury'},
+    'Smart Food': {en: 'Smart Food', th: 'Smart Food', da: 'Smart Food', de: 'Smart Food', fi: 'Smart Food', fr: 'Smart Food', ja: 'Smart Food', ko: 'Smart Food', nl: 'Smart Food', zh: 'Smart Food'},
+    Style: {en: 'Style', th: 'Style', da: 'Style', de: 'Style', fi: 'Style', fr: 'Style', ja: 'Style', ko: 'Style', nl: 'Style', zh: 'Style'},
+    'Smart City': {
+        en: 'Smart City',
+        th: 'สมาร์ตซิตี้',
+        da: 'Smart City',
+        de: 'Smart City',
+        fi: 'Smart City',
+        fr: 'Smart City',
+        ja: 'スマートシティ',
+        ko: '스마트 시티',
+        nl: 'Smart City',
+        zh: '智慧城市',
+    },
+    'Smart Mobility': {
+        en: 'Smart Mobility',
+        th: 'สมาร์ตโมบิลิตี้',
+        da: 'Smart Mobility',
+        de: 'Smart Mobility',
+        fi: 'Smart Mobility',
+        fr: 'Smart Mobility',
+        ja: 'スマートモビリティ',
+        ko: '스마트 모빌리티',
+        nl: 'Smart Mobility',
+        zh: '智慧出行',
+    },
+    Technology: {
+        en: 'Technology',
+        th: 'เทคโนโลยี',
+        da: 'Teknologi',
+        de: 'Technologie',
+        fi: 'Teknologia',
+        fr: 'Technologie',
+        ja: 'テクノロジー',
+        ko: '기술',
+        nl: 'Technologie',
+        zh: '技术',
+    },
 };
 type MainNavbarItem = Pick<INavbar, 'group' | 'label' | 'link' | 'activeLinks'> & {
     matchGroups?: string[];
@@ -83,11 +130,13 @@ type MainNavbarItem = Pick<INavbar, 'group' | 'label' | 'link' | 'activeLinks'> 
 
 const MAIN_NAVBAR_ITEMS: MainNavbarItem[] = [
     {
-        group: 'World',
-        label: 'World',
-        link: '/world/',
+        group: 'Home',
+        label: 'Home',
+        link: '/',
         activeLinks: [],
-        matchLinks: ['/world', '/world/'],
+        matchGroups: ['World'],
+        matchLabels: ['World'],
+        matchLinks: ['/', '/world', '/world/'],
     },
     {
         group: 'Luxury',
@@ -107,25 +156,35 @@ const MAIN_NAVBAR_ITEMS: MainNavbarItem[] = [
         matchLinks: ['/smart-food', '/smart-food/', '/smart-food-ai', '/smart-food-ai/'],
     },
     {
-        group: 'Outfit',
-        label: 'Outfit',
-        link: '/outfit/',
+        group: 'Style',
+        label: 'Style',
+        link: '/style/',
         activeLinks: [],
-        matchLinks: ['/outfit', '/outfit/'],
+        matchLabels: ['Outfit'],
+        matchLinks: ['/style', '/style/', '/outfit', '/outfit/'],
     },
     {
-        group: 'Media',
-        label: 'Media',
-        link: '/media/',
+        group: 'Smart City',
+        label: 'Smart City',
+        link: '/smart-city/',
         activeLinks: [],
-        matchLinks: ['/media', '/media/'],
+        matchLinks: ['/smart-city', '/smart-city/'],
     },
     {
-        group: 'Commerce',
-        label: 'Commerce',
-        link: '/commerce/',
+        group: 'Smart Mobility',
+        label: 'Smart Mobility',
+        link: '/smart-mobility/chiang-mai/vision-smart-mobility-northern-gateway/',
         activeLinks: [],
-        matchLinks: ['/commerce', '/commerce/'],
+        matchLinks: ['/smart-mobility', '/smart-mobility/', '/smart-mobility/chiang-mai', '/smart-mobility/chiang-mai/vision-smart-mobility-northern-gateway/'],
+    },
+    {
+        group: 'Technology',
+        label: 'Technology',
+        link: '/technical-expertise/web-development/',
+        activeLinks: [],
+        matchGroups: ['Technical Expertise'],
+        matchLabels: ['Technical Expertise', 'AI Integration'],
+        matchLinks: ['/technical-expertise', '/technical-expertise/', '/technical-expertise/web-development', '/technical-expertise/web-development/', '/smart-food-ai', '/smart-food-ai/'],
     },
 ];
 function getLayoutContentTag(locale: string) {
@@ -396,7 +455,24 @@ function normalizeLayoutContent(content: LayoutContentPayload): LayoutContentPay
     return {
         ...smartFoodAiContent,
         footer: normalizePlatformFooter(normalizeYoutubeFooterConnect(smartFoodAiContent.footer)),
+        languageOptions: normalizeLanguageOptions(smartFoodAiContent.languageOptions),
     };
+}
+
+function normalizeLanguageOptions(languageOptions: ILanguageOption[] = []): ILanguageOption[] {
+    const optionsByLanguage = new Map(
+        languageOptions
+            .filter((option) => option?.language && LanguageOptionRecord[option.language])
+            .map((option) => [option.language, option])
+    );
+
+    return LanguageOptionList.map((defaultOption) => ({
+        ...defaultOption,
+        ...(optionsByLanguage.get(defaultOption.language) ?? {}),
+        language: defaultOption.language,
+        label: defaultOption.label,
+        locale: defaultOption.locale,
+    }));
 }
 
 export async function getLayoutContent(locale: string): Promise<LayoutContentPayload> {
