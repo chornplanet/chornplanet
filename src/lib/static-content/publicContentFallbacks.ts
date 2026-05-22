@@ -850,9 +850,8 @@ export function getFallbackLayoutContent(locale: string): LayoutContentPayload {
     };
 }
 
-export function getFallbackPolicyContent(locale: string): PolicyContentPayload {
+export function getPolicyContentFallbackPayload(locale: string): PolicyContentPayload {
     const normalizedLocale = normalizePolicyContentLocale(locale);
-    logStaticFallback('policy content', normalizedLocale);
 
     return {
         locale: normalizedLocale,
@@ -860,6 +859,13 @@ export function getFallbackPolicyContent(locale: string): PolicyContentPayload {
         termOfService: createTermsOfServiceFallback(),
         workplacePolicy: createWorkplacePolicyFallback(),
     };
+}
+
+export function getFallbackPolicyContent(locale: string): PolicyContentPayload {
+    const normalizedLocale = normalizePolicyContentLocale(locale);
+    logStaticFallback('policy content', normalizedLocale);
+
+    return getPolicyContentFallbackPayload(normalizedLocale);
 }
 
 export function getFallbackSmartCityChiangMaiContent(locale: string, slug: string): SmartCityChiangMaiContentPayload {

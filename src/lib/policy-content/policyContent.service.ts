@@ -8,7 +8,10 @@ import {
 import {PolicyContentService} from "@/core/services/policy-content.service";
 import {PolicyContentRepository} from "@/adapters/outbound/mongo.repository/policy-content.repository";
 import {loadLocalizedContentWithFallback} from "@/lib/localized-content/localizedContentFallback";
-import {getFallbackPolicyContent} from "@/lib/static-content/publicContentFallbacks";
+import {
+    getFallbackPolicyContent,
+    getPolicyContentFallbackPayload,
+} from "@/lib/static-content/publicContentFallbacks";
 import type {IPolicy, IPolicyContent, IPolicyDetail} from "@/lib/model/IPolicy";
 
 const policyContentService = new PolicyContentService(new PolicyContentRepository());
@@ -70,6 +73,48 @@ function getPolicyContentTag(locale: string) {
     return `policy-content:${normalizePolicyContentLocale(locale)}`;
 }
 
+function isRenderablePolicy(policy: IPolicy | undefined): policy is IPolicy {
+    return getPolicyContentIssues(policy, 'policy').length === 0;
+}
+
+function mergePublicPolicyContent(
+    locale: string,
+    databaseContent: PolicyContentResponse,
+    fallbackContent: PolicyContentPayload
+): PolicyContentPayload {
+    const merged = REQUIRED_POLICY_CONTENT_FIELDS.reduce((payload, field) => {
+        const candidate = databaseContent[field];
+
+        return {
+            ...payload,
+            [field]: isRenderablePolicy(candidate) ? candidate : fallbackContent[field],
+        };
+    }, {
+        locale: normalizePolicyContentLocale(locale),
+    } as PolicyContentPayload);
+
+    return merged;
+}
+
+async function findPolicyContentByLocale(locale: string): Promise<PolicyContentResponse | null> {
+    const normalizedLocale = normalizePolicyContentLocale(locale);
+
+    if (isDevelopment) {
+        return policyContentService.findByLocale(normalizedLocale);
+    }
+
+    const getCachedContent = unstable_cache(
+        async () => policyContentService.findByLocale(normalizedLocale),
+        ['policy-content-public-by-locale', normalizedLocale],
+        {
+            revalidate: 3600,
+            tags: [POLICY_CONTENT_LIST_TAG, getPolicyContentTag(normalizedLocale)],
+        }
+    );
+
+    return getCachedContent();
+}
+
 function assertCompletePolicyContent(
     locale: string,
     databaseContent: PolicyContentResponse | null
@@ -128,7 +173,18 @@ export async function getPolicyContentForPublicPage(locale: string): Promise<Pol
     return loadLocalizedContentWithFallback({
         locale: normalizedLocale,
         context: 'policy content public render',
-        load: getPolicyContent,
+        load: async (resolvedLocale) => {
+            const databaseContent = await findPolicyContentByLocale(resolvedLocale);
+
+            if (!databaseContent) {
+                throw new Error(`Policy content not found for locale "${resolvedLocale}"`);
+            }
+
+            return mergePublicPolicyContent(resolvedLocale, databaseContent, {
+                ...getPolicyContentFallbackPayload(resolvedLocale),
+                locale: normalizePolicyContentLocale(resolvedLocale),
+            });
+        },
         fallback: () => getFallbackPolicyContent(normalizedLocale),
     });
 }
