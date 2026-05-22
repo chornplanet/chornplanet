@@ -18,7 +18,7 @@ export function IsActiveNavbar(pathname: string, navbar: INavbar): boolean {
 
     const matchedGroup = NavbarGroups.find(
         (item) => item.firstPathname === firstPathname
-    )?.group ?? "Home";
+    )?.group;
 
     return navbar.group === matchedGroup;
 }

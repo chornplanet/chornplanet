@@ -29,7 +29,10 @@ function shouldShowTechnologyItem(item: IFooterDetail): boolean {
 }
 
 function getTechnologyItemLabel(item: IFooterDetail, lang: string): string {
-    if (normalizeFooterPath(item.link) === "/technical-expertise/web-development") {
+    if (
+        normalizeFooterPath(item.link) === "/technology" ||
+        normalizeFooterPath(item.link) === "/technical-expertise/web-development"
+    ) {
         return footerTechnology[lang] ?? footerTechnology.en;
     }
 
@@ -45,13 +48,21 @@ export default function FooterTechnology({lang, footer}: { lang: string, footer:
                 <ul className="quick-links ul-footer">
                     {footer.technology.items
                         .filter(shouldShowTechnologyItem)
-                        .map((item: IFooterDetail, index: number) => (
-                            <li key={index}>
-                                <Link href={item.link.startsWith("http") ? item.link : '/' + lang + item.link}>
-                                    {getTechnologyItemLabel(item, lang)}
-                                </Link>
-                            </li>
-                        ))}
+                        .map((item: IFooterDetail, index: number) => {
+                            const isExternalLink = item.link.startsWith("http");
+
+                            return (
+                                <li key={index}>
+                                    <Link
+                                        href={isExternalLink ? item.link : '/' + lang + item.link}
+                                        target={isExternalLink ? '_blank' : undefined}
+                                        rel={isExternalLink ? 'noopener noreferrer' : undefined}
+                                    >
+                                        {getTechnologyItemLabel(item, lang)}
+                                    </Link>
+                                </li>
+                            );
+                        })}
                 </ul>
             </div>
         </div>

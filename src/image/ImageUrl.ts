@@ -611,6 +611,16 @@ export const ImageUrl: IImageUrl = {
             },
         ]
     },
+    platform: {
+        home: {
+            hero: {
+                youtubeBanner: {
+                    title: "ChornPlanet platform home hero YouTube banner",
+                    path: "/images-platform/home/hero/youtube-banner-image.png"
+                }
+            }
+        }
+    },
     banner: {
         banner1: {
             title: "Chorn Planet's banner image",

@@ -10,8 +10,6 @@ import AosAnimation from "@/components/Layouts/AosAnimation";
 import {Metadata} from "next";
 import {SpeedInsights} from "@vercel/speed-insights/next";
 import {getLayoutContentForPublicPage} from "@/lib/layout-content/layoutContent.service";
-import {ILanguageOption} from "@/lib/model/ILanguage";
-import {LanguageOptionDefinition} from "@/lib/constants/languageOptions";
 
 import "@/styles/base/globals.scss";
 import "@/styles/vendor/bootstrap.min.css";
@@ -43,11 +41,6 @@ import "@/styles/pages/technology-page.scss";
 import "@/styles/layout/footer.scss";
 
 const dmSans = DM_Sans({subsets: ["latin"]});
-const PLATFORM_LANGUAGE_OPTIONS: ILanguageOption[] = [
-    LanguageOptionDefinition.th,
-    LanguageOptionDefinition.en,
-    LanguageOptionDefinition.zh,
-];
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://chornplanet.com"),
@@ -72,7 +65,7 @@ export default async function RoadmapLayout({children}: Readonly<{ children: Rea
                 <NavbarContainer
                     lang={lang}
                     navbar={layoutContent.navbar}
-                    languageOptions={PLATFORM_LANGUAGE_OPTIONS}
+                    languageOptions={layoutContent.languageOptions}
                 />
                 {children}
                 <FooterMain lang={lang} footer={layoutContent.footer}/>

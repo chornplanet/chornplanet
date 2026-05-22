@@ -5,5 +5,5 @@ export default async function Page() {
     const headersList = await headers();
     const lang = headersList.get("x-locale") || "en";
 
-    permanentRedirect(`/${lang}/history/`);
+    permanentRedirect(`/${lang}/about/`);
 }

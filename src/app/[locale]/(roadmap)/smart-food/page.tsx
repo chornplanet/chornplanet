@@ -1,7 +1,7 @@
 import type {Metadata} from "next";
 import {headers} from "next/headers";
 import SmartFoodAiLandingPage from "@/components/SmartFoodAi/SmartFoodAiLandingPage";
-import {getPlatformMetadata} from "@/lib/platform-content/platformContent";
+import {getPlatformMetadata} from "@/lib/platform-content/homeContent";
 import {getSmartFoodAiContentForPublicPage} from "@/lib/smart-food-ai-content/smartFoodAiContent.service";
 
 export async function generateMetadata(): Promise<Metadata> {

@@ -69,6 +69,8 @@ Public static fallbacks must also be production-safe copy, not engineering diagn
 
 When fixing a production Server Components render error, inspect the same failure pattern across every feature family touched by the shared loader, shared fallback data, metadata generator, layout, navbar, footer, image model, or route group. The fix is not complete until the regression risk is addressed at the shared source or explicitly documented as route-specific.
 
+When cropping 9:16 portrait, outfit, model, or civilization images into shorter landscape or mosaic slots, do not default to a vertical center crop if people are the subject. Use an upper portrait-safe crop anchor such as `object-position: 50% 18%`, keep horizontal crop centered, and verify the head/face remains visible across desktop, tablet, and mobile breakpoints.
+
 ## Commands
 
 - Install dependencies with the package manager already represented by the lockfiles in the workspace. `package.json` declares Yarn 4, while `package-lock.json` is present too; do not churn lockfiles unless the task requires dependency changes.
@@ -180,6 +182,50 @@ Reference `src/app/[locale]/(desktop)/smart-food-ai/page.tsx` for the localized 
 Reference `src/components/SmartFoodAi/SmartFoodAiLandingPage.tsx` for section structure and semantic element use, including `main`, `section`, `div`, heading tags, paragraphs, actions, repeated `article` cards, and `Image` components.
 
 Reference `src/styles/smart-food-ai.scss` for good fit across all views: responsive padding, margin, grid changes, font size, font color, heading/body color consistency, image sizing, section spacing, card spacing, and desktop/tablet/mobile breakpoints.
+
+### Responsive Viewport Standard
+
+ChornPlanet design work is desktop-priority, then tablet, then mobile. Every new page, major page update, hero section, navigation change, footer change, and reusable layout component must be designed and checked against the following viewport standard:
+
+```text
+Desktop primary reference 1: 1536 x 864
+Desktop primary reference 2: 1920 x 1080
+Tablet reference: 768 x 1024
+Mobile reference: 390 x 844
+Small mobile guardrail: 360 x 800
+```
+
+Desktop is the first priority during development. A desktop design is not accepted until it looks intentional at both `1536x864` and `1920x1080`. Do not tune a section for only one desktop size. The same hero, card grid, section rhythm, navigation, and footer should keep stable visual hierarchy across both desktop references.
+
+Desktop UX/UI requirements:
+
+- Use `1536x864` as the main working viewport for layout density, fold visibility, heading line count, and content rhythm.
+- Use `1920x1080` as the premium large-desktop validation viewport. The design may breathe more, but it must not become oversized, sparse, or visually disconnected.
+- Hero content should remain above the fold with a clear hint of the next section where the page pattern calls for it.
+- Avoid viewport-scaled type or spacing that causes headings, CTAs, cards, or image crops to behave differently between the two desktop references.
+- Keep major content widths constrained and intentional. Do not let paragraphs stretch across the full large desktop width.
+- Confirm image crops, especially people/outfit/civilization imagery, remain correctly framed at both desktop sizes.
+
+Tablet UX/UI requirements:
+
+- At tablet widths, switch multi-column desktop layouts into balanced one-column or two-column layouts before content becomes squeezed.
+- Preserve readable line length, consistent section padding, and clear CTA tap targets.
+- Remove decorative wrappers, borders, shadows, or nested grid padding when they reduce readability.
+- Check that navigation, cards, image aspect ratios, and footer groups do not overlap or create uneven gutters.
+
+Mobile UX/UI requirements:
+
+- Mobile layout must be readable and calm at `390x844`, with `360x800` used as a guardrail for tight screens.
+- Use single-column flow unless a compact two-column pattern is clearly more usable.
+- Keep buttons and links tappable, avoid horizontal scrolling, and ensure long labels wrap cleanly.
+- Align headings, body copy, images, and actions to a consistent readable content width.
+- Remove decorative borders, shadows, or outer card shells when they make content feel cramped.
+
+Responsive QA expectation:
+
+- For visual/frontend changes, check at least `1536x864`, `1920x1080`, `768x1024`, and `390x844` when practical.
+- For production-facing page changes, run `npm run build` before completion and mention any viewport that could not be manually checked.
+- When using browser screenshots or Playwright, prefer naming the checked viewports explicitly in the final report.
 
 Current preferred pattern for premium content sections:
 

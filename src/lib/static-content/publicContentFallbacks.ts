@@ -124,7 +124,7 @@ const TIKTOK_CREATOR_FOOTER_LABELS: Record<string, string> = {
     zh: 'TikTok 创作者',
 };
 
-type MainNavbarGroup = 'Home' | 'AI Luxury' | 'Smart City' | 'Smart Mobility' | 'Smart Food AI' | 'Technology';
+type MainNavbarGroup = 'Home' | 'AI Luxury' | 'Smart City' | 'Smart Mobility' | 'Smart Food AI' | 'About';
 
 const MAIN_NAVBAR_LABELS: Record<MainNavbarGroup, Record<string, string>> = {
     Home: {
@@ -187,17 +187,17 @@ const MAIN_NAVBAR_LABELS: Record<MainNavbarGroup, Record<string, string>> = {
         nl: 'AI Smart Food',
         zh: 'AI 智慧食品',
     },
-    Technology: {
-        en: 'Technology',
-        th: 'เทคโนโลยี',
-        da: 'Teknologi',
-        de: 'Technologie',
-        fi: 'Teknologia',
-        fr: 'Technologie',
-        ja: 'テクノロジー',
-        ko: '기술',
-        nl: 'Technologie',
-        zh: '技术',
+    About: {
+        en: 'About',
+        th: 'About',
+        da: 'About',
+        de: 'About',
+        fi: 'About',
+        fr: 'About',
+        ja: 'About',
+        ko: 'About',
+        nl: 'About',
+        zh: 'About',
     },
 };
 
@@ -423,7 +423,7 @@ function createFeature() {
         {
             title: 'Web Development',
             description: 'Deliver modern websites and service pages with strong performance and maintainable structure.',
-            link: '/technical-expertise/web-development/',
+            link: '/technology/',
             icon: 'flaticon-check',
         },
     ];
@@ -681,12 +681,13 @@ export function getFallbackLayoutContent(locale: string): LayoutContentPayload {
         createNavItem('Home', getMainNavbarLabel('Home', normalizedLocale), '/'),
         createNavItem('AI Luxury', getMainNavbarLabel('AI Luxury', normalizedLocale), '/ai-luxury'),
         createNavItem('Smart City', getMainNavbarLabel('Smart City', normalizedLocale), '/smart-city/'),
-        createNavItem('Smart Mobility', getMainNavbarLabel('Smart Mobility', normalizedLocale), '/smart-mobility/chiang-mai/vision-smart-mobility-northern-gateway/'),
+        createNavItem('Smart Mobility', getMainNavbarLabel('Smart Mobility', normalizedLocale), '/smart-mobility/'),
         createNavItem('Smart Food AI', getMainNavbarLabel('Smart Food AI', normalizedLocale), '/smart-food-ai/'),
-        createNavItem('Technology', getMainNavbarLabel('Technology', normalizedLocale), '/technical-expertise/web-development/'),
+        createNavItem('About', getMainNavbarLabel('About', normalizedLocale), '/about/'),
     ];
     const footerItems = [
         {label: 'Home', link: '/'},
+        {label: 'Technology', link: '/technology/'},
         {label: 'Contact', link: '/contact/'},
         {label: 'Terms of Service', link: '/terms-of-service/'},
         {label: 'Privacy Policy', link: '/privacy-policy/'},

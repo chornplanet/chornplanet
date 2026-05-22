@@ -1,6 +1,6 @@
 import Image from "next/image";
 import PlatformContentCard from "@/components/Platform/PlatformContentCard";
-import type {PlatformChannelContent} from "@/lib/platform-content/platformContent";
+import type {PlatformChannelContent} from "@/lib/platform-content/homeContent";
 
 export default function PlatformLandingPage({lang, content}: { lang: string; content: PlatformChannelContent }) {
     return (

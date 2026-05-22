@@ -22,42 +22,10 @@ export const UrlMaps: IUrlImageMap[] = [
         ]
     },
     {
-        url: '/history/',
-        images: [
-            {
-                path: ImageUrl.gallery.main.image750
-            }
-        ]
-    },
-    {
-        url: '/world/',
-        images: [
-            {
-                path: ImageUrl.home.slides[1].image750
-            }
-        ]
-    },
-    {
-        url: '/outfit/',
+        url: '/style/',
         images: [
             {
                 path: ImageUrl.gallery.slides[1].image750
-            }
-        ]
-    },
-    {
-        url: '/media/',
-        images: [
-            {
-                path: ImageUrl.llm.slides[0].image750
-            }
-        ]
-    },
-    {
-        url: '/commerce/',
-        images: [
-            {
-                path: ImageUrl.feature.suvarnabhumi.path
             }
         ]
     },
@@ -408,9 +376,9 @@ export const UrlMaps: IUrlImageMap[] = [
         images: []
     },
 
-    //technical-expertise/web-development
+    //technology
     {
-        url: '/technical-expertise/web-development/',
+        url: '/technology/',
         images: [
             {path: ImageUrl.frontend.frameworks.angular.thumbnail},
             {path: ImageUrl.frontend.frameworks.vue.thumbnail},

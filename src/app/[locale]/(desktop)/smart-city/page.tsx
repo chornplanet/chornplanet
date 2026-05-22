@@ -3,6 +3,7 @@
 import {headers} from "next/headers";
 import Link from "next/link";
 
+import HeroSection from "@/components/Home/HeroSection";
 import HumanDailyFlow from '@/components/Home/HumanDailyFlow'
 import LocalToGlobal from '@/components/Home/LocalToGlobal'
 import MobilityFocus from '@/components/Home/MobilityFocus'
@@ -21,29 +22,7 @@ export default async function SmartCityPage() {
     return (
         <main className="smart-city-main">
             <div className="container">
-                <section className="smart-city-main-hero">
-                    <div className="smart-city-main-hero__content">
-                        <h1>{smartCityMain.hero.title}</h1>
-
-                        {smartCityMain.hero.paragraphs.map((p, idx) => (
-                            <p key={idx}>{p}</p>
-                        ))}
-
-                        <div className="smart-city-main-hero__cta">
-                            <Link href={`/${lang}${smartCityMain.hero.cta.href}`}>
-                                {smartCityMain.hero.cta.label}
-                            </Link>
-                        </div>
-                    </div>
-
-                    <div className="smart-city-main-hero__image">
-                        <img
-                            src={smartCityMain.hero.image.url}
-                            alt={smartCityMain.hero.image.alt}
-                            loading="eager"
-                        />
-                    </div>
-                </section>
+                <HeroSection lang={lang} data={homePageContent.heroSection}/>
 
                 <section className="smart-city-main-nav">
                     <div className="smart-city-main-nav__grid">

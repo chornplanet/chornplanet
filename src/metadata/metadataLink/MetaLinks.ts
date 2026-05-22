@@ -13,7 +13,7 @@ export const MetaLinks: IMetaLinks = {
         }
     },
     about: {
-        canonical: "/about-chorn/",
+        canonical: "/about/",
         image: {
             url: "/images-opengraph/about/about-og-image.jpg" + MetadataImageVersion,
             alt: "Open graph image for about"

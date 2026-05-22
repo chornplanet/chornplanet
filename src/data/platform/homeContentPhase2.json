@@ -2,52 +2,53 @@
   "en": {
     "meta": {
       "home": {
-        "title": "ChornPlanet | Luxury Civilization Media & Commerce Platform",
-        "description": "ChornPlanet combines world-building, outfit civilization content, media, commerce, Smart Food, luxury projects, and analytics-assisted growth."
+        "title": "Chorn Planet | Luxury Civilization Media & Commerce Platform",
+        "description": "Chorn Planet combines world-building, outfit civilization content, media, commerce, Smart Food, luxury projects, and analytics-assisted growth."
       },
       "about": {
-        "title": "About ChornPlanet | Luxury Civilization Platform",
-        "description": "Learn how ChornPlanet connects civilization world-building, Chorn DNA outfit content, Smart Food, premium commerce, luxury projects, and media growth."
+        "title": "About Chorn Planet | Luxury Civilization Platform",
+        "description": "Learn how Chorn Planet connects civilization world-building, Chorn DNA outfit content, Smart Food, premium commerce, luxury projects, and media growth."
       },
       "history": {
-        "title": "ChornPlanet History | Origin and Platform Evolution",
-        "description": "The origin story of ChornPlanet, from technical systems and smart city thinking into a luxury civilization media and commerce platform."
+        "title": "Chorn Planet History | Origin and Platform Evolution",
+        "description": "The origin story of Chorn Planet, from technical systems and smart city thinking into a luxury civilization media and commerce platform."
       },
       "world": {
-        "title": "World | ChornPlanet Civilization Zones",
-        "description": "Explore ChornPlanet civilization zones, destination scenes, outfit contexts, and future story commerce connections."
+        "title": "World | Chorn Planet Civilization Zones",
+        "description": "Explore Chorn Planet civilization zones, destination scenes, outfit contexts, and future story commerce connections."
       },
       "outfit": {
-        "title": "Outfit | ChornPlanet Civilization Clothing",
+        "title": "Outfit | Chorn Planet Civilization Clothing",
         "description": "Lady, gentleman, and civilization clothing stories inspired by Chorn DNA, zones, lifestyle scenes, and future commerce."
       },
       "media": {
-        "title": "Media | ChornPlanet Daily Digest",
-        "description": "News, entertainment, AI, future lifestyle, platform stories, and editorial signals from ChornPlanet."
+        "title": "Media | Chorn Planet Daily Digest",
+        "description": "News, entertainment, AI, future lifestyle, platform stories, and editorial signals from Chorn Planet."
       },
       "commerce": {
-        "title": "Commerce | ChornPlanet Story Commerce",
+        "title": "Commerce | Chorn Planet Story Commerce",
         "description": "Premium story-commerce direction for outfits, Smart Food, lifestyle products, grocery concepts, and TikTok-first marketplace growth."
       },
       "smart-food": {
-        "title": "Smart Food | ChornPlanet Food Lifestyle System",
+        "title": "Smart Food | Chorn Planet Food Lifestyle System",
         "description": "Smart Food experience for favorite meals, future website ordering, LINE OA login, and food lifestyle storytelling."
       },
       "luxury": {
-        "title": "Luxury | ChornPlanet Premium Projects",
+        "title": "Luxury | Chorn Planet Premium Projects",
         "description": "Luxury project showcases for smart city destinations, Circular Mountain Crown, future mobility, and premium lifestyle investment stories."
       }
     },
     "home": {
       "hero": {
         "eyebrow": "Luxury Civilization Media & Commerce Platform",
-        "title": "ChornPlanet",
+        "title": "Chorn Planet",
         "subtitle": "A premium world for civilization zones, outfit stories, Smart Food lifestyle, luxury projects, and media-led commerce.",
-        "image": "/images/home/chorn-workplace-001-image-1200.webp",
-        "imageAlt": "ChornPlanet cinematic civilization platform visual",
+        "image": "/images-platform/home/hero/youtube-banner-image.png",
+        "imageAlt": "Chorn Planet cinematic civilization platform visual",
         "actions": [
           { "label": "Explore Today", "href": "/" },
-          { "label": "View Outfit Collection", "href": "/outfit/" },
+          { "label": "AI Luxury Platform", "href": "/luxury/" },
+          { "label": "View Outfit Collection", "href": "/style/" },
           { "label": "Discover Smart Food", "href": "/smart-food/" }
         ],
         "signals": ["World-building", "Story Commerce", "Smart Food", "Luxury Projects"]
@@ -55,7 +56,7 @@
       "sections": [
         {
           "id": "today",
-          "eyebrow": "Today on ChornPlanet",
+          "eyebrow": "Today on Chorn Planet",
           "title": "Daily platform signals",
           "description": "A curated entry point for outfit stories, AI digest, Smart Food highlights, and luxury project momentum.",
           "layout": "featured",
@@ -68,17 +69,17 @@
               "imageAlt": "Premium outfit story visual",
               "tags": ["Lady", "Chorn DNA", "Editorial"],
               "cta": "View Story",
-              "href": "/outfit/"
+              "href": "/style/"
             },
             {
-              "category": "Media",
+              "category": "AI & Technology",
               "title": "Technology / AI Digest",
               "description": "A daily digest layer for AI, technology, entertainment, and future lifestyle.",
               "image": "/images/llm-ai-integration/llm-ai-integration-01-750.webp",
               "imageAlt": "AI digest platform visual",
               "tags": ["AI", "Future Lifestyle"],
               "cta": "Read Digest",
-              "href": "/media/"
+              "href": "/technology/"
             },
             {
               "category": "Smart Food",
@@ -109,23 +110,23 @@
           "description": "Lady, gentleman, and civilization clothing concepts prepared for story posts, product narratives, and Chorn DNA direction.",
           "layout": "grid",
           "cards": [
-            { "category": "Lady", "title": "Lady Outfit", "description": "Elegant civilization looks for premium lifestyle scenes.", "image": "/images/gallery/chorn-global-003-image-750-1.webp", "imageAlt": "Lady outfit concept", "tags": ["Lady", "Luxury"], "cta": "View Collection", "href": "/outfit/" },
-            { "category": "Gentleman", "title": "Gentleman Outfit", "description": "Refined silhouettes for travel, urban, and resort contexts.", "image": "/images/gallery/chorn-global-004-image-750.webp", "imageAlt": "Gentleman outfit concept", "tags": ["Gentleman", "Travel"], "cta": "View Collection", "href": "/outfit/" },
-            { "category": "Civilization", "title": "Civilization Clothing", "description": "Clothing stories connected to zones, rituals, and future commerce.", "image": "/images/gallery/chorn-global-005-image-750.webp", "imageAlt": "Civilization clothing concept", "tags": ["Zone", "Chorn DNA"], "cta": "Open Channel", "href": "/outfit/" },
-            { "category": "Lanna", "title": "Lanna Future Luxury", "description": "Northern elegance translated into a premium future lifestyle.", "image": "/smart-mobility/chiang-mai/vision-smart-mobility-northern-gateway.png", "imageAlt": "Lanna future luxury concept", "tags": ["Lanna", "Future"], "cta": "Explore Look", "href": "/outfit/" }
+            { "category": "Lady", "title": "Lady Outfit", "description": "Elegant civilization looks for premium lifestyle scenes.", "image": "/images/gallery/chorn-global-003-image-750-1.webp", "imageAlt": "Lady outfit concept", "tags": ["Lady", "Luxury"], "cta": "View Collection", "href": "/style/" },
+            { "category": "Gentleman", "title": "Gentleman Outfit", "description": "Refined silhouettes for travel, urban, and resort contexts.", "image": "/images/gallery/chorn-global-004-image-750.webp", "imageAlt": "Gentleman outfit concept", "tags": ["Gentleman", "Travel"], "cta": "View Collection", "href": "/style/" },
+            { "category": "Civilization", "title": "Civilization Clothing", "description": "Clothing stories connected to zones, rituals, and future commerce.", "image": "/images/gallery/chorn-global-005-image-750.webp", "imageAlt": "Civilization clothing concept", "tags": ["Zone", "Chorn DNA"], "cta": "Open Channel", "href": "/style/" },
+            { "category": "Lanna", "title": "Lanna Future Luxury", "description": "Northern elegance translated into a premium future lifestyle.", "image": "/smart-mobility/chiang-mai/vision-smart-mobility-northern-gateway.png", "imageAlt": "Lanna future luxury concept", "tags": ["Lanna", "Future"], "cta": "Explore Look", "href": "/style/" }
           ]
         },
         {
           "id": "zones",
-          "eyebrow": "Explore ChornPlanet Zones",
+          "eyebrow": "Explore Chorn Planet Zones",
           "title": "World-building for stories, outfits, and commerce",
           "description": "Zones become the geography of content: each can connect to an outfit, a story, a product, and a luxury scene.",
           "layout": "compact",
           "cards": [
-            { "category": "Zone", "title": "Mountain", "description": "Highland travel and luxury civilization scenes.", "image": "/images/home/chorn-workplace-002-image-750.webp", "imageAlt": "Mountain zone", "tags": ["Travel", "Luxury"], "cta": "Enter Zone", "href": "/world/" },
-            { "category": "Zone", "title": "Coastal", "description": "Resort, commerce, and destination lifestyle stories.", "image": "/images/contact/slides/contact-slide-02-750.webp", "imageAlt": "Coastal zone", "tags": ["Resort", "Commerce"], "cta": "Enter Zone", "href": "/world/" },
-            { "category": "Zone", "title": "Lotus Pond", "description": "Soft nature-luxury atmosphere for editorial outfit stories.", "image": "/images/contact/slides/contact-slide-03-750.webp", "imageAlt": "Lotus pond zone", "tags": ["Lady", "Nature"], "cta": "Enter Zone", "href": "/world/" },
-            { "category": "Zone", "title": "Urban Core", "description": "Modern lifestyle, daily digest, Smart Food, and movement systems.", "image": "/images/home/chorn-workplace-005-image-750.webp", "imageAlt": "Urban core zone", "tags": ["Media", "Mobility"], "cta": "Enter Zone", "href": "/world/" }
+            { "category": "Zone", "title": "Mountain", "description": "Highland travel and luxury civilization scenes.", "image": "/images/home/chorn-workplace-002-image-750.webp", "imageAlt": "Mountain zone", "tags": ["Travel", "Luxury"], "cta": "Enter Zone", "href": "/" },
+            { "category": "Zone", "title": "Coastal", "description": "Resort, commerce, and destination lifestyle stories.", "image": "/images/contact/slides/contact-slide-02-750.webp", "imageAlt": "Coastal zone", "tags": ["Resort", "Commerce"], "cta": "Enter Zone", "href": "/" },
+            { "category": "Zone", "title": "Lotus Pond", "description": "Soft nature-luxury atmosphere for editorial outfit stories.", "image": "/images/contact/slides/contact-slide-03-750.webp", "imageAlt": "Lotus pond zone", "tags": ["Lady", "Nature"], "cta": "Enter Zone", "href": "/" },
+            { "category": "Zone", "title": "Urban Core", "description": "Modern lifestyle, daily digest, Smart Food, and movement systems.", "image": "/images/home/chorn-workplace-005-image-750.webp", "imageAlt": "Urban core zone", "tags": ["Media", "Mobility"], "cta": "Enter Zone", "href": "/" }
           ]
         },
         {
@@ -169,7 +170,7 @@
           "id": "luxury",
           "eyebrow": "Luxury Projects",
           "title": "Premium projects and investment-facing stories",
-          "description": "Luxury project pages give ChornPlanet a premium destination layer beyond ordinary company content.",
+          "description": "Luxury project pages give Chorn Planet a premium destination layer beyond ordinary company content.",
           "layout": "featured",
           "cards": [
             { "category": "Landing", "title": "Luxury Project Landing Page", "description": "A canonical place for premium project narratives and future showcases.", "image": "/images/home/chorn-workplace-001-image-750.webp", "imageAlt": "Luxury project landing", "tags": ["Luxury", "Project"], "cta": "Open Luxury", "href": "/luxury/" },
@@ -184,7 +185,7 @@
           "description": "This section prepares the future path from Google Analytics, Search Console, and platform signals into AI-assisted placement.",
           "layout": "compact",
           "cards": [
-            { "category": "Trending", "title": "Chorn DNA Outfit Direction", "description": "Visual identity and outfit logic prepared for later Chorn DNA validation.", "image": "/images/gallery/chorn-global-004-image-750.webp", "imageAlt": "Trending Chorn DNA direction", "tags": ["Chorn DNA", "Outfit"], "cta": "View Outfit", "href": "/outfit/" },
+            { "category": "Trending", "title": "Chorn DNA Outfit Direction", "description": "Visual identity and outfit logic prepared for later Chorn DNA validation.", "image": "/images/gallery/chorn-global-004-image-750.webp", "imageAlt": "Trending Chorn DNA direction", "tags": ["Chorn DNA", "Outfit"], "cta": "View Outfit", "href": "/style/" },
             { "category": "Trending", "title": "Smart Food Ordering Concept", "description": "A practical growth layer for food stories, favorite meals, and future orders.", "image": "/images/home/chorn-workplace-006-image-750.webp", "imageAlt": "Trending Smart Food concept", "tags": ["Smart Food"], "cta": "View Food", "href": "/smart-food/" },
             { "category": "Trending", "title": "Luxury Destination Narrative", "description": "Investor-facing stories connected to future mobility and premium places.", "image": "/smart-mobility/chiang-mai/hub-to-chiang-mai-airport.png", "imageAlt": "Trending luxury destination", "tags": ["Luxury", "Destination"], "cta": "View Luxury", "href": "/luxury/" }
           ]
@@ -192,14 +193,14 @@
       ]
     },
     "about": {
-      "eyebrow": "About ChornPlanet",
+      "eyebrow": "About Chorn Planet",
       "title": "A luxury civilization media and commerce platform",
-      "description": "ChornPlanet combines world-building, AI-assisted media, Chorn DNA-powered outfit and civilization content, premium commerce, Smart Food, luxury projects, and analytics-assisted growth.",
+      "description": "Chorn Planet combines world-building, AI-assisted media, Chorn DNA-powered outfit and civilization content, premium commerce, Smart Food, luxury projects, and analytics-assisted growth.",
       "image": "/images/about/about-chorn-image-1200.webp",
-      "imageAlt": "ChornPlanet platform about visual",
+      "imageAlt": "Chorn Planet platform about visual",
       "blocks": [
-        { "title": "Platform Overview", "body": "ChornPlanet is being repositioned from a technical services and smart city site into a premium platform that can hold civilization worlds, media, commerce, food lifestyle, and luxury project stories together." },
-        { "title": "What ChornPlanet Combines", "body": "The platform connects World, Outfit, Media, Commerce, Smart Food, and Luxury into one content and commerce architecture." },
+        { "title": "Platform Overview", "body": "Chorn Planet is being repositioned from a technical services and smart city site into a premium platform that can hold civilization worlds, media, commerce, food lifestyle, and luxury project stories together." },
+        { "title": "What Chorn Planet Combines", "body": "The platform connects World, Outfit, Media, Commerce, Smart Food, and Luxury into one content and commerce architecture." },
         { "title": "Chorn DNA Connection", "body": "Chorn DNA will later help validate outfit, zone, and civilization content logic before publication." },
         { "title": "Smart Food Connection", "body": "Smart Food gives the platform a practical daily lifestyle layer around meals, ordering concepts, LINE identity, and food stories." },
         { "title": "Commerce Direction", "body": "Commerce begins with story-led trust: outfit stories, food stories, luxury lifestyle products, grocery concepts, and TikTok-first marketplace growth." },
@@ -210,39 +211,39 @@
     "history": {
       "eyebrow": "History",
       "title": "From systems thinking to civilization platform",
-      "description": "ChornPlanet began with technical expertise, AI integration, smart city thinking, and platform architecture. The history route preserves that origin while the new About page explains the broader platform concept.",
+      "description": "Chorn Planet began with technical expertise, AI integration, smart city thinking, and platform architecture. The history route preserves that origin while the new About page explains the broader platform concept.",
       "image": "/images/gallery/chorn-global-001-image-1200.webp",
-      "imageAlt": "ChornPlanet origin and history visual",
+      "imageAlt": "Chorn Planet origin and history visual",
       "blocks": [
-        { "title": "Technical Origin", "body": "The early ChornPlanet identity focused on custom software, AI integration, cloud systems, web development, and connected platform work." },
+        { "title": "Technical Origin", "body": "The early Chorn Planet identity focused on custom software, AI integration, cloud systems, web development, and connected platform work." },
         { "title": "Smart City Foundation", "body": "Smart city and smart mobility content expanded the platform into human flow, urban systems, future mobility, and destination thinking." },
         { "title": "Media and Lifestyle Expansion", "body": "The next chapter adds daily media, outfit stories, luxury scenes, Smart Food, and commerce-ready content." },
-        { "title": "Platform Evolution", "body": "The current direction brings these threads together as ChornPlanet: a luxury civilization media and commerce platform." }
+        { "title": "Platform Evolution", "body": "The current direction brings these threads together as Chorn Planet: a luxury civilization media and commerce platform." }
       ]
     },
     "channels": {
       "world": {
         "eyebrow": "World",
         "title": "Civilization zones for stories, outfits, and destinations",
-        "description": "World is the geography of ChornPlanet: mountain, coastal, lotus pond, airport gateway, urban core, river valley, flower valley, and smart city zones.",
+        "description": "World is the geography of Chorn Planet: mountain, coastal, lotus pond, airport gateway, urban core, river valley, flower valley, and smart city zones.",
         "image": "/images/home/chorn-workplace-002-image-1200.webp",
-        "imageAlt": "ChornPlanet world zone visual",
+        "imageAlt": "Chorn Planet world zone visual",
         "cards": [
-          { "category": "Zone", "title": "Mountain", "description": "Highland travel, Circular Mountain Crown, and premium retreat storytelling.", "image": "/smart-mobility/chiang-mai/hub-to-doi-inthanon.png", "imageAlt": "Mountain zone", "tags": ["Mountain", "Luxury"], "cta": "Explore Zone", "href": "/world/" },
-          { "category": "Zone", "title": "Coastal", "description": "Resort lifestyle, coastal destination concepts, and commerce stories.", "image": "/images/contact/slides/contact-slide-02-750.webp", "imageAlt": "Coastal zone", "tags": ["Coastal", "Resort"], "cta": "Explore Zone", "href": "/world/" },
-          { "category": "Zone", "title": "Urban Core", "description": "Daily media, Smart Food, movement systems, and modern civilization scenes.", "image": "/smart-mobility/chiang-mai/urban-hub-san-sai-doi-saket.png", "imageAlt": "Urban core zone", "tags": ["Urban", "Media"], "cta": "Explore Zone", "href": "/world/" }
+          { "category": "Zone", "title": "Mountain", "description": "Highland travel, Circular Mountain Crown, and premium retreat storytelling.", "image": "/smart-mobility/chiang-mai/hub-to-doi-inthanon.png", "imageAlt": "Mountain zone", "tags": ["Mountain", "Luxury"], "cta": "Explore Zone", "href": "/" },
+          { "category": "Zone", "title": "Coastal", "description": "Resort lifestyle, coastal destination concepts, and commerce stories.", "image": "/images/contact/slides/contact-slide-02-750.webp", "imageAlt": "Coastal zone", "tags": ["Coastal", "Resort"], "cta": "Explore Zone", "href": "/" },
+          { "category": "Zone", "title": "Urban Core", "description": "Daily media, Smart Food, movement systems, and modern civilization scenes.", "image": "/smart-mobility/chiang-mai/urban-hub-san-sai-doi-saket.png", "imageAlt": "Urban core zone", "tags": ["Urban", "Media"], "cta": "Explore Zone", "href": "/" }
         ]
       },
       "outfit": {
         "eyebrow": "Outfit",
         "title": "Civilization clothing for lady, gentleman, and zone stories",
-        "description": "Outfit is the first visual commerce wedge for ChornPlanet, prepared for Chorn DNA-inspired styling and product narratives.",
+        "description": "Outfit is the first visual commerce wedge for Chorn Planet, prepared for Chorn DNA-inspired styling and product narratives.",
         "image": "/images/gallery/chorn-global-003-image-1200-1.webp",
-        "imageAlt": "ChornPlanet outfit channel visual",
+        "imageAlt": "Chorn Planet outfit channel visual",
         "cards": [
-          { "category": "Lady", "title": "Lady Outfit", "description": "Soft luxury looks for nature, city, and destination scenes.", "image": "/images/gallery/chorn-global-003-image-750-1.webp", "imageAlt": "Lady outfit", "tags": ["Lady", "Chorn DNA"], "cta": "View Outfit", "href": "/outfit/" },
-          { "category": "Gentleman", "title": "Gentleman Outfit", "description": "Travel-ready styling for premium city and resort moments.", "image": "/images/gallery/chorn-global-004-image-750.webp", "imageAlt": "Gentleman outfit", "tags": ["Gentleman", "Travel"], "cta": "View Outfit", "href": "/outfit/" },
-          { "category": "Civilization", "title": "Civilization Clothing", "description": "A story layer where clothing connects with zones, media, and commerce.", "image": "/images/gallery/global-slide-05-750.webp", "imageAlt": "Civilization clothing", "tags": ["Civilization", "Commerce"], "cta": "View Outfit", "href": "/outfit/" }
+          { "category": "Lady", "title": "Lady Outfit", "description": "Soft luxury looks for nature, city, and destination scenes.", "image": "/images/gallery/chorn-global-003-image-750-1.webp", "imageAlt": "Lady outfit", "tags": ["Lady", "Chorn DNA"], "cta": "View Outfit", "href": "/style/" },
+          { "category": "Gentleman", "title": "Gentleman Outfit", "description": "Travel-ready styling for premium city and resort moments.", "image": "/images/gallery/chorn-global-004-image-750.webp", "imageAlt": "Gentleman outfit", "tags": ["Gentleman", "Travel"], "cta": "View Outfit", "href": "/style/" },
+          { "category": "Civilization", "title": "Civilization Clothing", "description": "A story layer where clothing connects with zones, media, and commerce.", "image": "/images/gallery/global-slide-05-750.webp", "imageAlt": "Civilization clothing", "tags": ["Civilization", "Commerce"], "cta": "View Outfit", "href": "/style/" }
         ]
       },
       "media": {
@@ -250,11 +251,11 @@
         "title": "Daily digest for attention, discovery, and platform growth",
         "description": "Media gathers news, entertainment, AI, technology, platform stories, and lifestyle signals into a repeatable daily habit.",
         "image": "/images/llm-ai-integration/llm-ai-integration-01-1200.webp",
-        "imageAlt": "ChornPlanet media channel visual",
+        "imageAlt": "Chorn Planet media channel visual",
         "cards": [
           { "category": "AI", "title": "AI & Technology", "description": "Clear daily signals on AI tools, platform shifts, and practical technology.", "image": "/images/llm-ai-integration/llm-ai-integration-02-750.webp", "imageAlt": "AI media", "tags": ["AI", "Technology"], "cta": "Read Media", "href": "/media/" },
           { "category": "Entertainment", "title": "Entertainment", "description": "A culture layer for lightweight discovery and social distribution.", "image": "/images/gallery/chorn-global-002-image-750.webp", "imageAlt": "Entertainment media", "tags": ["Culture", "Digest"], "cta": "Read Media", "href": "/media/" },
-          { "category": "Platform", "title": "Platform News", "description": "Updates about ChornPlanet channels, projects, and growth direction.", "image": "/images/home/chorn-workplace-001-image-750.webp", "imageAlt": "Platform news", "tags": ["Platform", "News"], "cta": "Read Media", "href": "/media/" }
+          { "category": "Platform", "title": "Platform News", "description": "Updates about Chorn Planet channels, projects, and growth direction.", "image": "/images/home/chorn-workplace-001-image-750.webp", "imageAlt": "Platform news", "tags": ["Platform", "News"], "cta": "Read Media", "href": "/media/" }
         ]
       },
       "commerce": {
@@ -262,7 +263,7 @@
         "title": "Premium story commerce for products with context",
         "description": "Commerce is prepared around product stories, TikTok-first discovery, Smart Food, outfit drops, grocery concepts, and marketplace links.",
         "image": "/images/features/suvarnabhumi-airport-optimize.webp",
-        "imageAlt": "ChornPlanet commerce channel visual",
+        "imageAlt": "Chorn Planet commerce channel visual",
         "cards": [
           { "category": "Outfit", "title": "Outfit Commerce", "description": "Clothing narratives that can become shoppable stories.", "image": "/images/gallery/chorn-global-005-image-750.webp", "imageAlt": "Outfit commerce", "tags": ["Outfit", "Story"], "cta": "Explore Commerce", "href": "/commerce/" },
           { "category": "Food", "title": "Smart Food Commerce", "description": "Food stories and favorite meal concepts prepared for future order flows.", "image": "/images/home/chorn-workplace-006-image-750.webp", "imageAlt": "Smart Food commerce", "tags": ["Food", "Order Future"], "cta": "Explore Commerce", "href": "/commerce/" },
@@ -274,7 +275,7 @@
         "title": "Food lifestyle system for daily return habits",
         "description": "Smart Food is the practical lifestyle layer: favorite meals, order concepts, food stories, website flow, and future LINE OA login.",
         "image": "/images/banner/banner-llm-ai.webp",
-        "imageAlt": "ChornPlanet Smart Food channel visual",
+        "imageAlt": "Chorn Planet Smart Food channel visual",
         "cards": [
           { "category": "System", "title": "Smart Food System Project", "description": "The canonical Smart Food landing direction for platform and product development.", "image": "/images/banner/banner-llm-ai.webp", "imageAlt": "Smart Food system", "tags": ["System", "Project"], "cta": "Explore Smart Food", "href": "/smart-food/" },
           { "category": "Meal", "title": "Favorite Meal Concept", "description": "A personal layer for remembering meals, preferences, and future recommendations.", "image": "/images/home/chorn-workplace-003-image-750.webp", "imageAlt": "Favorite meal", "tags": ["Favorite", "Daily"], "cta": "Explore Smart Food", "href": "/smart-food/" },
@@ -284,9 +285,9 @@
       "luxury": {
         "eyebrow": "Luxury",
         "title": "Premium projects, future city scenes, and destination narratives",
-        "description": "Luxury holds the investor-facing and premium project side of ChornPlanet, from Circular Mountain Crown to coastal destination stories.",
+        "description": "Luxury holds the investor-facing and premium project side of Chorn Planet, from Circular Mountain Crown to coastal destination stories.",
         "image": "/smart-mobility/chiang-mai/vision-smart-mobility-northern-gateway.png",
-        "imageAlt": "ChornPlanet luxury channel visual",
+        "imageAlt": "Chorn Planet luxury channel visual",
         "cards": [
           { "category": "Project", "title": "Luxury Project Landing", "description": "A place for premium project narratives and future showcases.", "image": "/images/home/chorn-workplace-001-image-750.webp", "imageAlt": "Luxury landing", "tags": ["Luxury", "Project"], "cta": "View Luxury", "href": "/luxury/" },
           { "category": "Mountain", "title": "Circular Mountain Crown", "description": "A signature mountain destination and mobility-linked civilization idea.", "image": "/smart-mobility/chiang-mai/hub-to-doi-inthanon.png", "imageAlt": "Circular Mountain Crown", "tags": ["Mountain", "Crown"], "cta": "View Luxury", "href": "/luxury/" },
@@ -298,52 +299,52 @@
   "th": {
     "meta": {
       "home": {
-        "title": "ChornPlanet | แพลตฟอร์ม Luxury Civilization Media & Commerce",
-        "description": "ChornPlanet รวมโลกอารยธรรม คอนเทนต์ชุดแต่งกาย Media Commerce Smart Food โปรเจกต์ Luxury และการเติบโตด้วยข้อมูล"
+        "title": "Chorn Planet | แพลตฟอร์ม Luxury Civilization Media & Commerce",
+        "description": "Chorn Planet รวมโลกอารยธรรม คอนเทนต์ชุดแต่งกาย Media Commerce Smart Food โปรเจกต์ Luxury และการเติบโตด้วยข้อมูล"
       },
       "about": {
-        "title": "เกี่ยวกับ ChornPlanet | Luxury Civilization Platform",
-        "description": "รู้จัก ChornPlanet ในฐานะแพลตฟอร์มที่เชื่อม World, Outfit, Media, Commerce, Smart Food, Luxury และ Chorn DNA"
+        "title": "เกี่ยวกับ Chorn Planet | Luxury Civilization Platform",
+        "description": "รู้จัก Chorn Planet ในฐานะแพลตฟอร์มที่เชื่อม World, Outfit, Media, Commerce, Smart Food, Luxury และ Chorn DNA"
       },
       "history": {
-        "title": "ประวัติ ChornPlanet | จุดเริ่มต้นและวิวัฒนาการ",
-        "description": "เรื่องราวของ ChornPlanet จากงานระบบ เทคโนโลยี และ Smart City สู่ Luxury Civilization Media & Commerce Platform"
+        "title": "ประวัติ Chorn Planet | จุดเริ่มต้นและวิวัฒนาการ",
+        "description": "เรื่องราวของ Chorn Planet จากงานระบบ เทคโนโลยี และ Smart City สู่ Luxury Civilization Media & Commerce Platform"
       },
       "world": {
-        "title": "World | โซนอารยธรรม ChornPlanet",
+        "title": "World | โซนอารยธรรม Chorn Planet",
         "description": "สำรวจโซนอารยธรรม ฉาก Destination ชุดแต่งกาย และการเชื่อมต่อ Story Commerce ในอนาคต"
       },
       "outfit": {
-        "title": "Outfit | ชุดแต่งกายอารยธรรม ChornPlanet",
+        "title": "Outfit | ชุดแต่งกายอารยธรรม Chorn Planet",
         "description": "คอนเทนต์ชุด Lady, Gentleman และ Civilization Clothing ที่ต่อยอดจาก Chorn DNA และโซนต่าง ๆ"
       },
       "media": {
-        "title": "Media | ChornPlanet Daily Digest",
-        "description": "ข่าว Entertainment AI Future Lifestyle และ Platform Stories จาก ChornPlanet"
+        "title": "Media | Chorn Planet Daily Digest",
+        "description": "ข่าว Entertainment AI Future Lifestyle และ Platform Stories จาก Chorn Planet"
       },
       "commerce": {
-        "title": "Commerce | ChornPlanet Story Commerce",
+        "title": "Commerce | Chorn Planet Story Commerce",
         "description": "แนวทาง Story Commerce สำหรับ Outfit, Smart Food, Lifestyle Product, Grocery และ TikTok-first Marketplace"
       },
       "smart-food": {
-        "title": "Smart Food | ระบบ Food Lifestyle ของ ChornPlanet",
+        "title": "Smart Food | ระบบ Food Lifestyle ของ Chorn Planet",
         "description": "ประสบการณ์ Smart Food สำหรับเมนูโปรด แนวคิดการสั่งอาหารผ่านเว็บ LINE OA และ Food Story"
       },
       "luxury": {
-        "title": "Luxury | โปรเจกต์พรีเมียมของ ChornPlanet",
+        "title": "Luxury | โปรเจกต์พรีเมียมของ Chorn Planet",
         "description": "โปรเจกต์ Luxury, Smart City Destination, Circular Mountain Crown, Future Mobility และ Lifestyle Showcase"
       }
     },
     "home": {
       "hero": {
         "eyebrow": "Luxury Civilization Media & Commerce Platform",
-        "title": "ChornPlanet",
+        "title": "Chorn Planet",
         "subtitle": "โลกพรีเมียมสำหรับโซนอารยธรรม คอนเทนต์ชุดแต่งกาย Smart Food โปรเจกต์ Luxury และ Commerce ที่ขับเคลื่อนด้วย Media",
-        "image": "/images/home/chorn-workplace-001-image-1200.webp",
-        "imageAlt": "ภาพแพลตฟอร์มอารยธรรม ChornPlanet",
+        "image": "/images-platform/home/hero/youtube-banner-image.png",
+        "imageAlt": "ภาพแพลตฟอร์มอารยธรรม Chorn Planet",
         "actions": [
           { "label": "สำรวจวันนี้", "href": "/" },
-          { "label": "ดู Outfit Collection", "href": "/outfit/" },
+          { "label": "ดู Outfit Collection", "href": "/style/" },
           { "label": "ค้นพบ Smart Food", "href": "/smart-food/" }
         ],
         "signals": ["World-building", "Story Commerce", "Smart Food", "Luxury Projects"]
@@ -351,12 +352,12 @@
       "sections": [
         {
           "id": "today",
-          "eyebrow": "Today on ChornPlanet",
+          "eyebrow": "Today on Chorn Planet",
           "title": "สัญญาณประจำวันของแพลตฟอร์ม",
           "description": "จุดเริ่มต้นสำหรับ Outfit Story, AI Digest, Smart Food Highlight และ Luxury Project",
           "layout": "featured",
           "cards": [
-            { "category": "Outfit", "title": "Featured Outfit Story", "description": "ชุดแต่งกายอารยธรรมในมุม Premium Lifestyle และ Product Story", "image": "/images/gallery/chorn-global-002-image-750.webp", "imageAlt": "ภาพ Outfit Story", "tags": ["Lady", "Chorn DNA", "Editorial"], "cta": "ดู Story", "href": "/outfit/" },
+            { "category": "Outfit", "title": "Featured Outfit Story", "description": "ชุดแต่งกายอารยธรรมในมุม Premium Lifestyle และ Product Story", "image": "/images/gallery/chorn-global-002-image-750.webp", "imageAlt": "ภาพ Outfit Story", "tags": ["Lady", "Chorn DNA", "Editorial"], "cta": "ดู Story", "href": "/style/" },
             { "category": "Media", "title": "Technology / AI Digest", "description": "เลเยอร์ Daily Digest สำหรับ AI Technology Entertainment และ Future Lifestyle", "image": "/images/llm-ai-integration/llm-ai-integration-01-750.webp", "imageAlt": "ภาพ AI Digest", "tags": ["AI", "Future Lifestyle"], "cta": "อ่าน Digest", "href": "/media/" },
             { "category": "Smart Food", "title": "Smart Food Highlight", "description": "เมนูโปรด แนวคิด Order และ Food Story ที่เชื่อมกับชีวิตประจำวัน", "image": "/images/home/chorn-workplace-003-image-750.webp", "imageAlt": "ภาพ Smart Food", "tags": ["Food Story", "LINE Future"], "cta": "สำรวจอาหาร", "href": "/smart-food/" },
             { "category": "Luxury", "title": "Luxury Project Highlight", "description": "Destination พรีเมียม Future Mobility และเรื่องราวสำหรับนักลงทุน", "image": "/images/home/chorn-workplace-004-image-750.webp", "imageAlt": "ภาพ Luxury Project", "tags": ["Destination", "Future City"], "cta": "ดู Project", "href": "/luxury/" }
@@ -369,23 +370,23 @@
           "description": "แนวคิดชุด Lady, Gentleman และ Civilization Clothing สำหรับ Story Post, Product Narrative และ Chorn DNA",
           "layout": "grid",
           "cards": [
-            { "category": "Lady", "title": "Lady Outfit", "description": "ลุคอารยธรรมที่นุ่ม ลักชัวรี และเหมาะกับฉาก Lifestyle", "image": "/images/gallery/chorn-global-003-image-750-1.webp", "imageAlt": "Lady Outfit", "tags": ["Lady", "Luxury"], "cta": "ดู Collection", "href": "/outfit/" },
-            { "category": "Gentleman", "title": "Gentleman Outfit", "description": "ซิลลูเอตสำหรับการเดินทาง เมือง และรีสอร์ต", "image": "/images/gallery/chorn-global-004-image-750.webp", "imageAlt": "Gentleman Outfit", "tags": ["Gentleman", "Travel"], "cta": "ดู Collection", "href": "/outfit/" },
-            { "category": "Civilization", "title": "Civilization Clothing", "description": "เสื้อผ้าที่เชื่อมโซน เรื่องราว และ Commerce ในอนาคต", "image": "/images/gallery/chorn-global-005-image-750.webp", "imageAlt": "Civilization Clothing", "tags": ["Zone", "Chorn DNA"], "cta": "เปิด Channel", "href": "/outfit/" },
-            { "category": "Lanna", "title": "Lanna Future Luxury", "description": "ความงามล้านนาในบริบท Future Lifestyle พรีเมียม", "image": "/smart-mobility/chiang-mai/vision-smart-mobility-northern-gateway.png", "imageAlt": "Lanna Future Luxury", "tags": ["Lanna", "Future"], "cta": "สำรวจ Look", "href": "/outfit/" }
+            { "category": "Lady", "title": "Lady Outfit", "description": "ลุคอารยธรรมที่นุ่ม ลักชัวรี และเหมาะกับฉาก Lifestyle", "image": "/images/gallery/chorn-global-003-image-750-1.webp", "imageAlt": "Lady Outfit", "tags": ["Lady", "Luxury"], "cta": "ดู Collection", "href": "/style/" },
+            { "category": "Gentleman", "title": "Gentleman Outfit", "description": "ซิลลูเอตสำหรับการเดินทาง เมือง และรีสอร์ต", "image": "/images/gallery/chorn-global-004-image-750.webp", "imageAlt": "Gentleman Outfit", "tags": ["Gentleman", "Travel"], "cta": "ดู Collection", "href": "/style/" },
+            { "category": "Civilization", "title": "Civilization Clothing", "description": "เสื้อผ้าที่เชื่อมโซน เรื่องราว และ Commerce ในอนาคต", "image": "/images/gallery/chorn-global-005-image-750.webp", "imageAlt": "Civilization Clothing", "tags": ["Zone", "Chorn DNA"], "cta": "เปิด Channel", "href": "/style/" },
+            { "category": "Lanna", "title": "Lanna Future Luxury", "description": "ความงามล้านนาในบริบท Future Lifestyle พรีเมียม", "image": "/smart-mobility/chiang-mai/vision-smart-mobility-northern-gateway.png", "imageAlt": "Lanna Future Luxury", "tags": ["Lanna", "Future"], "cta": "สำรวจ Look", "href": "/style/" }
           ]
         },
         {
           "id": "zones",
-          "eyebrow": "Explore ChornPlanet Zones",
+          "eyebrow": "Explore Chorn Planet Zones",
           "title": "World-building สำหรับ Story, Outfit และ Commerce",
           "description": "แต่ละ Zone สามารถเชื่อม Outfit, Story, Product และ Luxury Scene ได้ในอนาคต",
           "layout": "compact",
           "cards": [
-            { "category": "Zone", "title": "Mountain", "description": "ฉาก Highland Travel และ Luxury Civilization", "image": "/images/home/chorn-workplace-002-image-750.webp", "imageAlt": "Mountain Zone", "tags": ["Travel", "Luxury"], "cta": "เข้า Zone", "href": "/world/" },
-            { "category": "Zone", "title": "Coastal", "description": "เรื่องราว Resort, Commerce และ Destination Lifestyle", "image": "/images/contact/slides/contact-slide-02-750.webp", "imageAlt": "Coastal Zone", "tags": ["Resort", "Commerce"], "cta": "เข้า Zone", "href": "/world/" },
-            { "category": "Zone", "title": "Lotus Pond", "description": "บรรยากาศ Nature Luxury สำหรับ Editorial Outfit", "image": "/images/contact/slides/contact-slide-03-750.webp", "imageAlt": "Lotus Pond Zone", "tags": ["Lady", "Nature"], "cta": "เข้า Zone", "href": "/world/" },
-            { "category": "Zone", "title": "Urban Core", "description": "เมือง Media, Smart Food และระบบการเคลื่อนที่", "image": "/images/home/chorn-workplace-005-image-750.webp", "imageAlt": "Urban Core Zone", "tags": ["Media", "Mobility"], "cta": "เข้า Zone", "href": "/world/" }
+            { "category": "Zone", "title": "Mountain", "description": "ฉาก Highland Travel และ Luxury Civilization", "image": "/images/home/chorn-workplace-002-image-750.webp", "imageAlt": "Mountain Zone", "tags": ["Travel", "Luxury"], "cta": "เข้า Zone", "href": "/" },
+            { "category": "Zone", "title": "Coastal", "description": "เรื่องราว Resort, Commerce และ Destination Lifestyle", "image": "/images/contact/slides/contact-slide-02-750.webp", "imageAlt": "Coastal Zone", "tags": ["Resort", "Commerce"], "cta": "เข้า Zone", "href": "/" },
+            { "category": "Zone", "title": "Lotus Pond", "description": "บรรยากาศ Nature Luxury สำหรับ Editorial Outfit", "image": "/images/contact/slides/contact-slide-03-750.webp", "imageAlt": "Lotus Pond Zone", "tags": ["Lady", "Nature"], "cta": "เข้า Zone", "href": "/" },
+            { "category": "Zone", "title": "Urban Core", "description": "เมือง Media, Smart Food และระบบการเคลื่อนที่", "image": "/images/home/chorn-workplace-005-image-750.webp", "imageAlt": "Urban Core Zone", "tags": ["Media", "Mobility"], "cta": "เข้า Zone", "href": "/" }
           ]
         },
         {
@@ -429,7 +430,7 @@
           "id": "luxury",
           "eyebrow": "Luxury Projects",
           "title": "โปรเจกต์พรีเมียมและเรื่องราวสำหรับนักลงทุน",
-          "description": "Luxury Project Page เพิ่มมิติ Premium Destination ให้ ChornPlanet",
+          "description": "Luxury Project Page เพิ่มมิติ Premium Destination ให้ Chorn Planet",
           "layout": "featured",
           "cards": [
             { "category": "Landing", "title": "Luxury Project Landing Page", "description": "พื้นที่หลักสำหรับ Premium Project Narrative และ Showcase ในอนาคต", "image": "/images/home/chorn-workplace-001-image-750.webp", "imageAlt": "Luxury Project Landing", "tags": ["Luxury", "Project"], "cta": "เปิด Luxury", "href": "/luxury/" },
@@ -444,7 +445,7 @@
           "description": "เตรียมเส้นทางจาก Google Analytics, Search Console และ Platform Signals สู่ AI-assisted placement",
           "layout": "compact",
           "cards": [
-            { "category": "Trending", "title": "Chorn DNA Outfit Direction", "description": "เตรียม Visual Identity และ Outfit Logic สำหรับ Chorn DNA Validation", "image": "/images/gallery/chorn-global-004-image-750.webp", "imageAlt": "Chorn DNA Direction", "tags": ["Chorn DNA", "Outfit"], "cta": "ดู Outfit", "href": "/outfit/" },
+            { "category": "Trending", "title": "Chorn DNA Outfit Direction", "description": "เตรียม Visual Identity และ Outfit Logic สำหรับ Chorn DNA Validation", "image": "/images/gallery/chorn-global-004-image-750.webp", "imageAlt": "Chorn DNA Direction", "tags": ["Chorn DNA", "Outfit"], "cta": "ดู Outfit", "href": "/style/" },
             { "category": "Trending", "title": "Smart Food Ordering Concept", "description": "เลเยอร์ Growth สำหรับ Food Story, Favorite Meal และ Order ในอนาคต", "image": "/images/home/chorn-workplace-006-image-750.webp", "imageAlt": "Smart Food Ordering Concept", "tags": ["Smart Food"], "cta": "ดู Smart Food", "href": "/smart-food/" },
             { "category": "Trending", "title": "Luxury Destination Narrative", "description": "เรื่องราวสำหรับนักลงทุนที่เชื่อม Future Mobility และ Premium Place", "image": "/smart-mobility/chiang-mai/hub-to-chiang-mai-airport.png", "imageAlt": "Luxury Destination Narrative", "tags": ["Luxury", "Destination"], "cta": "ดู Luxury", "href": "/luxury/" }
           ]
@@ -452,14 +453,14 @@
       ]
     },
     "about": {
-      "eyebrow": "เกี่ยวกับ ChornPlanet",
+      "eyebrow": "เกี่ยวกับ Chorn Planet",
       "title": "Luxury Civilization Media & Commerce Platform",
-      "description": "ChornPlanet รวม World-building, AI-assisted Media, คอนเทนต์ Outfit และ Civilization ที่ขับเคลื่อนด้วย Chorn DNA, Premium Commerce, Smart Food, Luxury Projects และ Analytics-assisted Growth",
+      "description": "Chorn Planet รวม World-building, AI-assisted Media, คอนเทนต์ Outfit และ Civilization ที่ขับเคลื่อนด้วย Chorn DNA, Premium Commerce, Smart Food, Luxury Projects และ Analytics-assisted Growth",
       "image": "/images/about/about-chorn-image-1200.webp",
-      "imageAlt": "ภาพเกี่ยวกับแพลตฟอร์ม ChornPlanet",
+      "imageAlt": "ภาพเกี่ยวกับแพลตฟอร์ม Chorn Planet",
       "blocks": [
-        { "title": "Platform Overview", "body": "ChornPlanet กำลังเปลี่ยนจากเว็บไซต์เทคโนโลยีและ Smart City ไปสู่แพลตฟอร์มพรีเมียมที่รองรับ Civilization World, Media, Commerce, Food Lifestyle และ Luxury Project" },
-        { "title": "What ChornPlanet Combines", "body": "แพลตฟอร์มเชื่อม World, Outfit, Media, Commerce, Smart Food และ Luxury ให้อยู่ในสถาปัตยกรรมคอนเทนต์เดียวกัน" },
+        { "title": "Platform Overview", "body": "Chorn Planet กำลังเปลี่ยนจากเว็บไซต์เทคโนโลยีและ Smart City ไปสู่แพลตฟอร์มพรีเมียมที่รองรับ Civilization World, Media, Commerce, Food Lifestyle และ Luxury Project" },
+        { "title": "What Chorn Planet Combines", "body": "แพลตฟอร์มเชื่อม World, Outfit, Media, Commerce, Smart Food และ Luxury ให้อยู่ในสถาปัตยกรรมคอนเทนต์เดียวกัน" },
         { "title": "Chorn DNA Connection", "body": "Chorn DNA จะช่วยตรวจสอบตรรกะของ Outfit, Zone และ Civilization Content ก่อนเผยแพร่ในอนาคต" },
         { "title": "Smart Food Connection", "body": "Smart Food คือเลเยอร์ชีวิตประจำวันผ่านเมนู ออร์เดอร์ในอนาคต LINE Identity และ Food Story" },
         { "title": "Commerce Direction", "body": "Commerce เริ่มจากความไว้วางใจผ่าน Story: Outfit Story, Food Story, Luxury Product, Grocery Concept และ TikTok-first Growth" },
@@ -470,14 +471,14 @@
     "history": {
       "eyebrow": "History",
       "title": "จาก Systems Thinking สู่ Civilization Platform",
-      "description": "ChornPlanet เริ่มจากงาน Technical Expertise, AI Integration, Smart City Thinking และ Platform Architecture ก่อนขยายสู่ Luxury Civilization Media & Commerce Platform",
+      "description": "Chorn Planet เริ่มจากงาน Technical Expertise, AI Integration, Smart City Thinking และ Platform Architecture ก่อนขยายสู่ Luxury Civilization Media & Commerce Platform",
       "image": "/images/gallery/chorn-global-001-image-1200.webp",
-      "imageAlt": "ภาพประวัติและจุดเริ่มต้น ChornPlanet",
+      "imageAlt": "ภาพประวัติและจุดเริ่มต้น Chorn Planet",
       "blocks": [
-        { "title": "Technical Origin", "body": "ตัวตนแรกของ ChornPlanet โฟกัส Custom Software, AI Integration, Cloud Systems, Web Development และงาน Connected Platform" },
+        { "title": "Technical Origin", "body": "ตัวตนแรกของ Chorn Planet โฟกัส Custom Software, AI Integration, Cloud Systems, Web Development และงาน Connected Platform" },
         { "title": "Smart City Foundation", "body": "คอนเทนต์ Smart City และ Smart Mobility ขยายแพลตฟอร์มไปสู่ Human Flow, Urban Systems, Future Mobility และ Destination Thinking" },
         { "title": "Media and Lifestyle Expansion", "body": "บทต่อไปเพิ่ม Daily Media, Outfit Stories, Luxury Scenes, Smart Food และ Commerce-ready Content" },
-        { "title": "Platform Evolution", "body": "ทิศทางปัจจุบันรวมทุกเส้นทางเป็น ChornPlanet: Luxury Civilization Media & Commerce Platform" }
+        { "title": "Platform Evolution", "body": "ทิศทางปัจจุบันรวมทุกเส้นทางเป็น Chorn Planet: Luxury Civilization Media & Commerce Platform" }
       ]
     },
     "channels": {}

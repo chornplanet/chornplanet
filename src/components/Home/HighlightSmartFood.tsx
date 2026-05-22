@@ -24,7 +24,7 @@ const chatOrderingStep: ChatOrderingStep[] = [
     text: "Customers can order through chat by selecting a meal, asking questions, or confirming their order in a simple conversation.",
     image: "/smart-food/process1-chat-ordering.png",
     alt: "Customer chat ordering interface for Smart Food",
-    link: "/smart-food-ai/",
+    link: "/smart-food/",
   },
   {
     lang: "th",
@@ -32,7 +32,7 @@ const chatOrderingStep: ChatOrderingStep[] = [
     text: "ลูกค้าสามารถสั่งอาหารผ่านแชตได้ โดยเลือกเมนู สอบถามข้อมูล หรือยืนยันคำสั่งซื้อผ่านบทสนทนาที่เข้าใจง่าย",
     image: "/smart-food/process1-chat-ordering.png",
     alt: "หน้าจอการสั่งอาหารผ่านแชตของลูกค้าสำหรับ Smart Food",
-    link: "/smart-food-ai/",
+    link: "/smart-food/",
   },
   {
     lang: "da",
@@ -40,7 +40,7 @@ const chatOrderingStep: ChatOrderingStep[] = [
     text: "Kunder kan bestille via chat ved at vælge et måltid, stille spørgsmål eller bekræfte deres bestilling i en enkel samtale.",
     image: "/smart-food/process1-chat-ordering.png",
     alt: "Kundegrænseflade til chatbestilling for Smart Food",
-    link: "/smart-food-ai/",
+    link: "/smart-food/",
   },
   {
     lang: "de",
@@ -48,7 +48,7 @@ const chatOrderingStep: ChatOrderingStep[] = [
     text: "Kunden können per Chat bestellen, indem sie ein Gericht auswählen, Fragen stellen oder ihre Bestellung in einem einfachen Gespräch bestätigen.",
     image: "/smart-food/process1-chat-ordering.png",
     alt: "Chat-Bestelloberfläche für Kunden von Smart Food",
-    link: "/smart-food-ai/",
+    link: "/smart-food/",
   },
   {
     lang: "fi",
@@ -56,7 +56,7 @@ const chatOrderingStep: ChatOrderingStep[] = [
     text: "Asiakkaat voivat tilata chatin kautta valitsemalla aterian, esittämällä kysymyksiä tai vahvistamalla tilauksensa yksinkertaisessa keskustelussa.",
     image: "/smart-food/process1-chat-ordering.png",
     alt: "Asiakkaan chat-tilausnäkymä Smart Food -palvelussa",
-    link: "/smart-food-ai/",
+    link: "/smart-food/",
   },
   {
     lang: "fr",
@@ -64,7 +64,7 @@ const chatOrderingStep: ChatOrderingStep[] = [
     text: "Les clients peuvent commander par chat en choisissant un repas, en posant des questions ou en confirmant leur commande dans une conversation simple.",
     image: "/smart-food/process1-chat-ordering.png",
     alt: "Interface de commande par chat pour les clients de Smart Food",
-    link: "/smart-food-ai/",
+    link: "/smart-food/",
   },
   {
     lang: "ja",
@@ -72,7 +72,7 @@ const chatOrderingStep: ChatOrderingStep[] = [
     text: "顧客はチャットを通じて、食事を選択したり、質問したり、簡単な会話の中で注文を確認したりできます。",
     image: "/smart-food/process1-chat-ordering.png",
     alt: "Smart Food の顧客向けチャット注文インターフェース",
-    link: "/smart-food-ai/",
+    link: "/smart-food/",
   },
   {
     lang: "ko",
@@ -80,7 +80,7 @@ const chatOrderingStep: ChatOrderingStep[] = [
     text: "고객은 채팅을 통해 메뉴를 선택하고, 질문을 하거나, 간단한 대화 안에서 주문을 확인할 수 있습니다.",
     image: "/smart-food/process1-chat-ordering.png",
     alt: "Smart Food 고객용 채팅 주문 인터페이스",
-    link: "/smart-food-ai/",
+    link: "/smart-food/",
   },
   {
     lang: "nl",
@@ -88,7 +88,7 @@ const chatOrderingStep: ChatOrderingStep[] = [
     text: "Klanten kunnen via chat bestellen door een maaltijd te kiezen, vragen te stellen of hun bestelling in een eenvoudig gesprek te bevestigen.",
     image: "/smart-food/process1-chat-ordering.png",
     alt: "Chatbestelinterface voor klanten van Smart Food",
-    link: "/smart-food-ai/",
+    link: "/smart-food/",
   },
   {
     lang: "zh",
@@ -96,7 +96,7 @@ const chatOrderingStep: ChatOrderingStep[] = [
     text: "客户可以通过聊天选择餐品、提出问题，或在简单对话中确认订单。",
     image: "/smart-food/process1-chat-ordering.png",
     alt: "Smart Food 客户聊天点餐界面",
-    link: "/smart-food-ai/",
+    link: "/smart-food/",
   },
 ];
 
