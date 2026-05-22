@@ -69,6 +69,8 @@ Public static fallbacks must also be production-safe copy, not engineering diagn
 
 When fixing a production Server Components render error, inspect the same failure pattern across every feature family touched by the shared loader, shared fallback data, metadata generator, layout, navbar, footer, image model, or route group. The fix is not complete until the regression risk is addressed at the shared source or explicitly documented as route-specific.
 
+For Open Graph, Twitter card, canonical, or SEO metadata changes, verify the rendered public route head, not only the source object that appears related. Some routes use legacy `src/metadata/...` maps while platform routes use active content helpers such as `getPlatformMetadata()`. Confirm the target URL emits the expected `<meta property="og:image">`, Twitter image metadata, and canonical values in the final HTML before shipping.
+
 When cropping 9:16 portrait, outfit, model, or civilization images into shorter landscape or mosaic slots, do not default to a vertical center crop if people are the subject. Use an upper portrait-safe crop anchor such as `object-position: 50% 18%`, keep horizontal crop centered, and verify the head/face remains visible across desktop, tablet, and mobile breakpoints.
 
 ## Commands
