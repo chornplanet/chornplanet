@@ -237,16 +237,146 @@ function logStaticFallback(context: string, locale: string, slug?: string) {
     );
 }
 
-function createPolicy(title: string) {
+function createPrivacyPolicyFallback() {
     return {
-        title,
-        subTitle: 'Platform policy summary',
-        description: fallbackText.description,
+        title: 'Privacy Policy',
+        subTitle: 'How Chorn Planet Handles Visitor Information',
+        description: 'Chorn Planet respects visitor privacy and keeps this policy available to explain how website information, cookies, and contact details may be handled.',
         contents: [
             {
-                title: 'Policy direction',
-                description: 'This page presents the current public policy direction for Chorn Planet visitors and partners.',
-                details: [],
+                title: 'Information We May Receive',
+                details: [
+                    {
+                        title: 'Website usage',
+                        description: 'We may receive basic technical information such as page visits, device type, browser type, referral source, and general interaction patterns when visitors use the website.',
+                    },
+                    {
+                        title: 'Contact information',
+                        description: 'If you contact Chorn Planet, we may receive the name, email address, message content, and related details you choose to provide.',
+                    },
+                ],
+            },
+            {
+                title: 'How Information Is Used',
+                details: [
+                    {
+                        title: 'Service improvement',
+                        description: 'Information may be used to improve website performance, understand public interest, respond to inquiries, and maintain a useful visitor experience.',
+                    },
+                    {
+                        title: 'Communication',
+                        description: 'Contact details may be used to reply to messages, coordinate requested discussions, or provide relevant information about Chorn Planet services.',
+                    },
+                ],
+            },
+            {
+                title: 'Cookies And Analytics',
+                details: [
+                    {
+                        title: 'Cookie use',
+                        description: 'The website may use cookies or similar technologies to support basic functionality, remember consent preferences, and understand aggregate website usage.',
+                    },
+                    {
+                        title: 'Visitor choice',
+                        description: 'Visitors can control cookies through browser settings. Some website features may work differently when cookies are disabled.',
+                    },
+                ],
+            },
+            {
+                title: 'Data Protection',
+                details: [
+                    {
+                        title: 'Safeguards',
+                        description: 'Chorn Planet aims to keep visitor information handled responsibly and to limit access to appropriate operational purposes.',
+                    },
+                    {
+                        title: 'Retention',
+                        description: 'Information is kept only as long as reasonably needed for the purpose it was provided, operational needs, or applicable requirements.',
+                    },
+                ],
+            },
+            {
+                title: 'Contact',
+                details: [
+                    {
+                        title: 'Questions',
+                        description: 'Visitors may contact Chorn Planet with privacy questions or requests related to information they have provided through the website.',
+                    },
+                ],
+            },
+        ],
+    };
+}
+
+function createTermsOfServiceFallback() {
+    return {
+        title: 'Terms of Service',
+        subTitle: 'Website Use Terms',
+        description: 'These terms describe the general conditions for accessing and using the Chorn Planet website and public content.',
+        contents: [
+            {
+                title: 'Use Of The Website',
+                description: 'Visitors may use the website for lawful, personal, informational, and business inquiry purposes.',
+                expand: 'You agree not to misuse the website, interfere with its operation, attempt unauthorized access, or use public content in a way that harms Chorn Planet, other visitors, or third-party rights.',
+            },
+            {
+                title: 'Public Content',
+                description: 'Website content is provided for general information, presentation, and communication about Chorn Planet projects, services, and platform direction.',
+                expand: 'Content may change over time. Chorn Planet aims to keep public information accurate, but does not guarantee that every page is complete, current, or suitable for every specific decision.',
+            },
+            {
+                title: 'Intellectual Property',
+                description: 'Text, images, branding, layouts, and other materials on the website belong to Chorn Planet or their respective rights holders unless stated otherwise.',
+                expand: 'Visitors may not copy, redistribute, sell, or reuse website materials for commercial purposes without permission.',
+            },
+            {
+                title: 'External Links And Services',
+                description: 'The website may link to external services, social platforms, partner pages, or third-party resources.',
+                expand: 'Chorn Planet is not responsible for the content, policies, security, or availability of external websites and services.',
+            },
+            {
+                title: 'Limitation Of Liability',
+                description: 'The website is provided on an as-available basis for public information and communication.',
+                expand: 'To the extent permitted by applicable law, Chorn Planet is not liable for indirect, incidental, or consequential loss arising from use of the website.',
+            },
+            {
+                title: 'Updates',
+                description: 'Chorn Planet may update these terms as the platform, services, and public website evolve.',
+                expand: 'Continued use of the website after updates means visitors accept the current version of these terms.',
+            },
+        ],
+    };
+}
+
+function createWorkplacePolicyFallback() {
+    return {
+        title: 'Workplace Policy',
+        subTitle: 'Public Workplace Direction',
+        description: 'This policy summarizes the workplace principles Chorn Planet expects across collaboration, communication, delivery, and professional conduct.',
+        contents: [
+            {
+                title: 'Professional Collaboration',
+                description: 'Chorn Planet values respectful collaboration, clear communication, and thoughtful decision-making across internal work, partner discussions, and public-facing delivery.',
+            },
+            {
+                title: 'Respect And Inclusion',
+                description: 'Everyone involved in Chorn Planet work should be treated with respect. Harassment, discrimination, intimidation, or abusive conduct is not acceptable.',
+            },
+            {
+                title: 'Responsible Work Practices',
+                description: 'Work should be handled with care for accuracy, privacy, security, and the long-term reputation of the platform and its partners.',
+            },
+            {
+                title: 'Confidentiality',
+                description: 'Private business information, partner discussions, unpublished plans, credentials, and internal materials should be protected and shared only with appropriate permission.',
+            },
+            {
+                title: 'Quality And Accountability',
+                description: 'Chorn Planet expects contributors and collaborators to take ownership of agreed work, communicate risks early, and maintain quality standards across product, content, and technical delivery.',
+            },
+            {
+                title: 'Policy Updates',
+                description: 'This workplace policy may evolve as Chorn Planet grows and as operating practices become more formal across teams, partners, and platform work.',
             },
         ],
     };
@@ -726,9 +856,9 @@ export function getFallbackPolicyContent(locale: string): PolicyContentPayload {
 
     return {
         locale: normalizedLocale,
-        privacyPolicy: createPolicy('Privacy Policy'),
-        termOfService: createPolicy('Terms of Service'),
-        workplacePolicy: createPolicy('Workplace Policy'),
+        privacyPolicy: createPrivacyPolicyFallback(),
+        termOfService: createTermsOfServiceFallback(),
+        workplacePolicy: createWorkplacePolicyFallback(),
     };
 }
 

@@ -9,6 +9,7 @@ import {PolicyContentService} from "@/core/services/policy-content.service";
 import {PolicyContentRepository} from "@/adapters/outbound/mongo.repository/policy-content.repository";
 import {loadLocalizedContentWithFallback} from "@/lib/localized-content/localizedContentFallback";
 import {getFallbackPolicyContent} from "@/lib/static-content/publicContentFallbacks";
+import type {IPolicy, IPolicyContent, IPolicyDetail} from "@/lib/model/IPolicy";
 
 const policyContentService = new PolicyContentService(new PolicyContentRepository());
 const POLICY_CONTENT_LIST_TAG = 'policy-content';
@@ -18,6 +19,52 @@ const REQUIRED_POLICY_CONTENT_FIELDS = [
     'termOfService',
     'workplacePolicy',
 ] as const;
+
+function hasText(value: unknown): value is string {
+    return typeof value === 'string' && value.trim().length > 0;
+}
+
+function hasRenderableDetail(detail: IPolicyDetail): boolean {
+    return hasText(detail.title) && hasText(detail.description);
+}
+
+function hasRenderableContent(content: IPolicyContent): boolean {
+    const hasDetails = Array.isArray(content.details) && content.details.some(hasRenderableDetail);
+
+    return hasText(content.title) && (
+        hasText(content.description) ||
+        hasText(content.expand) ||
+        hasDetails
+    );
+}
+
+function getPolicyContentIssues(policy: IPolicy | undefined, field: string): string[] {
+    const issues: string[] = [];
+
+    if (!policy) {
+        return [`${field} is missing`];
+    }
+
+    if (!hasText(policy.title)) {
+        issues.push(`${field}.title is missing`);
+    }
+
+    if (!hasText(policy.subTitle)) {
+        issues.push(`${field}.subTitle is missing`);
+    }
+
+    if (!hasText(policy.description)) {
+        issues.push(`${field}.description is missing`);
+    }
+
+    if (!Array.isArray(policy.contents) || policy.contents.length === 0) {
+        issues.push(`${field}.contents is empty`);
+    } else if (!policy.contents.some(hasRenderableContent)) {
+        issues.push(`${field}.contents has no renderable content`);
+    }
+
+    return issues;
+}
 
 function getPolicyContentTag(locale: string) {
     return `policy-content:${normalizePolicyContentLocale(locale)}`;
@@ -35,10 +82,17 @@ function assertCompletePolicyContent(
     }
 
     const missingFields = REQUIRED_POLICY_CONTENT_FIELDS.filter((field) => databaseContent[field] === undefined);
+    const nestedIssues = REQUIRED_POLICY_CONTENT_FIELDS.flatMap((field) =>
+        getPolicyContentIssues(databaseContent[field], field)
+    );
 
-    if (missingFields.length > 0) {
+    if (missingFields.length > 0 || nestedIssues.length > 0) {
         throw new Error(
-            `Policy content is incomplete for locale "${locale}". Missing fields: ${missingFields.join(', ')}`
+            `Policy content is incomplete for locale "${locale}". ` +
+            [
+                missingFields.length > 0 ? `Missing fields: ${missingFields.join(', ')}` : '',
+                nestedIssues.length > 0 ? `Invalid content: ${nestedIssues.join(', ')}` : '',
+            ].filter(Boolean).join('. ')
         );
     }
 
