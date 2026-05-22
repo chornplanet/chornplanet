@@ -97,6 +97,31 @@ type PlatformMeta = {
 const platformHomeOgImage =
   "/images-opengraph/images-platform/home/hero/youtube-banner-image.png";
 
+const platformOpenGraphImages: Partial<
+  Record<
+    PlatformRouteKey,
+    {
+      url: string;
+      width: number;
+      height: number;
+      alt: string;
+    }
+  >
+> = {
+  home: {
+    url: platformHomeOgImage,
+    width: 1200,
+    height: 630,
+    alt: "Chorn Planet platform homepage",
+  },
+  about: {
+    url: "/images-opengraph/about/about-og-image.jpg",
+    width: 1200,
+    height: 630,
+    alt: "Chorn Planet platform about page",
+  },
+};
+
 type PlatformContent = {
   meta: Partial<Record<PlatformRouteKey, PlatformMeta>>;
   home: PlatformHomeContent;
@@ -149,21 +174,10 @@ export function getPlatformMetadata(
     description: "Chorn Planet platform.",
   };
   const path = routeKey === "home" ? "/" : `/${routeKey}/`;
-  const imageMetadata =
-    routeKey === "home"
-      ? {
-          images: [
-            {
-              url: platformHomeOgImage,
-              width: 1200,
-              height: 630,
-              alt: "Chorn Planet platform homepage",
-            },
-          ],
-        }
-      : {};
+  const routeImage = platformOpenGraphImages[routeKey];
+  const imageMetadata = routeImage ? {images: [routeImage]} : {};
   const twitterImageMetadata =
-    routeKey === "home" ? { images: [platformHomeOgImage] } : {};
+    routeImage ? {images: [routeImage.url]} : {};
 
   return {
     title: resolvedMeta.title,

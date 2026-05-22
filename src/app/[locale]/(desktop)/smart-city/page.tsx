@@ -1,5 +1,6 @@
 // src/app/[locale]/smart-city/page.tsx
 
+import type {Metadata} from "next";
 import {headers} from "next/headers";
 import Link from "next/link";
 
@@ -12,6 +13,41 @@ import GlobalPatterns from '@/components/Home/GlobalPatterns'
 import UrbanSignals from '@/components/Home/UrbanSignals'
 import EditorialPositioning from '@/components/Home/EditorialPositioning'
 import {getHomePageContentForPublicPage} from "@/lib/homepage-content/homePageContent.service";
+
+const smartCityOgImage =
+    "/images-opengraph/smart-city/hero-section/city-shaped-by-people-move.png";
+
+export async function generateMetadata(): Promise<Metadata> {
+    return {
+        title: "Smart City | Chorn Planet",
+        description:
+            "Smart City from Chorn Planet studies human flow, mobility, public space, logistics, and city systems through practical urban observation.",
+        alternates: {
+            canonical: "/smart-city/",
+        },
+        openGraph: {
+            title: "Smart City | Chorn Planet",
+            description:
+                "Smart City from Chorn Planet studies human flow, mobility, public space, logistics, and city systems through practical urban observation.",
+            type: "website",
+            images: [
+                {
+                    url: smartCityOgImage,
+                    width: 1200,
+                    height: 630,
+                    alt: "Chorn Planet Smart City",
+                },
+            ],
+        },
+        twitter: {
+            card: "summary_large_image",
+            title: "Smart City | Chorn Planet",
+            description:
+                "Smart City from Chorn Planet studies human flow, mobility, public space, logistics, and city systems through practical urban observation.",
+            images: [smartCityOgImage],
+        },
+    };
+}
 
 export default async function SmartCityPage() {
     const headers15 = await headers();
