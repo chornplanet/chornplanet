@@ -10,7 +10,7 @@ Start with:
 - gentleman outfit
 - civilization clothing
 - premium fashion storytelling
-- Chorn DNA generated outfit/civilization posts
+- DNA generated outfit/civilization posts
 - TikTok-first social-commerce linking
 
 ## Future commerce categories

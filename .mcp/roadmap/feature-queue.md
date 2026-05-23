@@ -14,13 +14,13 @@ This queue converts the platform roadmap into implementation-sized branches. Cha
 ## Recommended Next Branches
 
 1. `feature/mcp-multi-repo`
-   - Define ChornPlanet and Chorn DNA `.mcp` cooperation.
+   - Define ChornPlanet and DNA `.mcp` cooperation.
 2. `feature/llm-visibility-files`
    - Add public-safe `llm.txt` and `llm-full.txt`.
 3. `feature/content-draft-foundation`
    - Draft-first content model and workflow.
 4. `feature/outfit-civilization-content-draft-pipeline`
-   - Chorn DNA-backed outfit/civilization drafts.
+   - DNA-backed outfit/civilization drafts.
 5. `feature/metadata-mongodb-migration`
    - Metadata service/repository design and first migration slice.
 6. `feature/analytics-growth-foundation`
@@ -41,6 +41,6 @@ This queue converts the platform roadmap into implementation-sized branches. Cha
 ## Queue Rules
 
 - Keep branches narrow.
-- Move completed plans from `.chatgpt/planning/` to `.chatgpt/achieved/`.
+- Move completed plans from `.planning/` to `.planning/achieved/`.
 - Do not combine runtime analytics credentials, publishing automation, commerce writes, or auth changes with documentation-only roadmap work.
 - Use `.mcp/repository/` maps before editing application code.

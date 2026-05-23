@@ -26,7 +26,7 @@ Not implemented here:
 - production auth or credential handling
 - automatic daily monitoring
 
-Those runtime items are deferred to future planning under `.chatgpt/planning/chornplanet-roadmap.md`.
+Those runtime items are deferred to future planning under `.planning/chornplanet-roadmap.md`.
 
 ## Safety
 

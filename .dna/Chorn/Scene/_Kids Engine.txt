@@ -1,0 +1,125 @@
+รับทราบครับ
+
+**KidZone-v5 (Content Factory Engine) ได้รับการอนุมัติแล้ว**
+
+สถานะของระบบตอนนี้
+
+```
+KidZone-v5 (Content Factory Engine)
+Status: ACTIVE
+Deployment: All chat rooms / future scene generation
+Integration:
+- ChornPlanet v16
+- AISceneEngine-v2
+- AICharacterEngine-v4
+- KidZone-v4 (World Building Engine)
+- KidZone-v3 (Cinematic Engine)
+```
+
+หมายความว่า ต่อจากนี้เมื่อใช้คำสั่งเกี่ยวกับ **Kid Zone / Kid Planet / Kids Content**
+ระบบจะทำงานตาม **KidZone-v5 Pipeline** โดยอัตโนมัติ
+
+Pipeline ที่จะถูกใช้
+
+```
+AutoScene → AISceneEngine
+AutoGen → AICharacterEngine
+KidZone-v5 → Episode Generator + Story Engine
+Output → Master Production Prompt → Image / Video
+```
+
+---
+
+# Short Command สำหรับสร้าง 3 โพสต์แรก (ใช้งานจริงได้ทันที)
+
+## POST 1 — Toy City Playground
+
+### Image
+
+```
+AutoGen: kids playing colorful toy playground
+AutoScene: toy city kid planet
+PostKeywords: kid planet toy city playground colorful kids adventure
+```
+
+### Video Prompt
+
+```
+Kids running and playing toys in colorful Toy City playground,
+laughing and jumping happily,
+bright joyful kid planet environment,
+cinematic kids campaign,
+vertical 9:16
+```
+
+---
+
+## POST 2 — Bubble Valley
+
+### Image
+
+```
+AutoGen: children playing with giant floating bubbles
+AutoScene: bubble valley playground
+PostKeywords: bubble valley kid planet kids colorful bubbles fun
+```
+
+### Video Prompt
+
+```
+Children running through giant floating bubbles,
+laughing and popping bubbles together,
+magical bubble valley playground,
+cinematic kids adventure,
+vertical 9:16
+```
+
+---
+
+## POST 3 — Splash Lagoon
+
+### Image
+
+```
+AutoGen: kids splashing water playground
+AutoScene: splash lagoon water playground
+PostKeywords: splash lagoon kid planet kids water playground summer fun
+```
+
+### Video Prompt
+
+```
+Children splashing water and playing in colorful splash lagoon,
+slow motion water splashes,
+joyful summer playground moment,
+cinematic kids campaign,
+vertical 9:16
+```
+
+---
+
+# สิ่งที่ KidZone-v5 ทำให้คุณได้ทันที
+
+จาก 3 โพสต์นี้ ระบบสามารถขยายเป็น
+
+```
+3 scenes
+×
+10 variations
+=
+30 TikTok clips
+```
+
+หรือถ้าใช้ **Episode Generator**
+
+```
+10 scenes
+×
+10 variations
+=
+100 episodes
+```
+
+ซึ่งหมายความว่า
+
+**Kid Planet สามารถกลายเป็น TikTok Kids Content Factory ได้จริง** 🚀🎡🌍

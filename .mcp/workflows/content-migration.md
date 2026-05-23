@@ -18,4 +18,4 @@ Use this workflow when moving hardcoded page content toward MongoDB-backed servi
 - Do not change production database schemas without explicit approval.
 - Do not commit secrets or connection strings.
 - Do not remove hardcoded content until the replacement service is validated.
-- Keep source-of-truth decisions visible in the active `.chatgpt/planning/` file.
+- Keep source-of-truth decisions visible in the active `.planning/` file.

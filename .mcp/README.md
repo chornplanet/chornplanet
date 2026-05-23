@@ -34,7 +34,7 @@ ChornPlanet can evolve as a mix of:
 - premium commerce platform
 - grocery and online supermarket platform
 - lady/gentleman outfit and civilization clothing platform
-- Chorn DNA / ChornPlanet civilization scene platform
+- DNA / ChornPlanet civilization scene platform
 - Smart Food web evolution and Line OA user experience layer
 - luxury project showcase and commerce layer
 - analytics-assisted growth platform
@@ -49,15 +49,15 @@ Long-term traffic growth direction:
 
 `.mcp` should help agents plan work that improves content quality, automation, commerce conversion, SEO/LLM visibility, analytics, and user retention.
 
-## Relationship with Chorn DNA
+## Relationship with DNA
 
-ChornPlanet content and outfit/civilization generation should follow the Chorn DNA workflow authority when generating StoryGenProduct / AutoScene / outfit posts.
+ChornPlanet content and outfit/civilization generation should follow the DNA workflow authority when generating StoryGenProduct / AutoScene / outfit posts.
 
-External authority:
+Local authority:
 
 ```text
-khachornchit/chorn-dna/.chatgpt/Agents.md
-khachornchit/chorn-dna/.chatgpt/System/World/Zones/Zone List.md
+.dna/.chatgpt/Agents.md
+.dna/.chatgpt/System/World/Zones/Zone List.md
 ```
 
 Important rule:
@@ -77,7 +77,7 @@ When ChatGPT or Codex starts work on ChornPlanet, read in this order:
 3. `.mcp/manifest.yaml`.
 4. Relevant `.mcp/repository/` maps for routing, locales, styling, UX, metadata, content, server, and deployment context.
 5. Relevant `.mcp/resources/`, `.mcp/policies/`, `.mcp/tools/`, and `.mcp/workflows/` files.
-6. Related `.chatgpt/planning/feature-*.md` file.
+6. Related `.planning/feature-*.md` file.
 7. Runtime app code, scripts, schemas, and content services.
 
 ## Repository understanding layer

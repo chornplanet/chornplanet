@@ -77,7 +77,7 @@ product_goals:
     - future Shopee, Lazada, Amazon links
   civilization:
     - ChornPlanet world and zone presentation
-    - outfit/clothing display through Chorn DNA workflow
+    - outfit/clothing display through DNA workflow
     - luxury civilization storytelling
   smart_food:
     - Line OA user login evolution
@@ -93,13 +93,13 @@ product_goals:
     - SEO and LLM visibility through llm.txt and llm-full.txt
     - on-demand aggregate growth summaries for planning
 
-external_authorities:
-  chorn_dna_agents:
-    repository: khachornchit/chorn-dna
+local_authorities:
+  dna_agents:
+    directory: .dna
     path: .chatgpt/Agents.md
     purpose: StoryGenProduct, AutoScene, ImagePrompt, VdoPrompt, StoryPostEngine workflow authority
-  chorn_dna_zone_list:
-    repository: khachornchit/chorn-dna
+  dna_zone_list:
+    directory: .dna
     path: .chatgpt/System/World/Zones/Zone List.md
     rule: Zone List -> Zone File -> exactly one Sub-Zone
 

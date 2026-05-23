@@ -1,17 +1,17 @@
-# Chorn DNA Authority Context
+# DNA Authority Context
 
-ChornPlanet outfit, civilization, StoryGenProduct, AutoScene, image/video prompt, and social-commerce story workflows should follow the Chorn DNA authority when applicable.
+ChornPlanet outfit, civilization, StoryGenProduct, AutoScene, image/video prompt, and social-commerce story workflows should follow the DNA authority when applicable.
 
-## External authority files
+## Local authority files
 
 ```text
-khachornchit/chorn-dna/.chatgpt/Agents.md
-khachornchit/chorn-dna/.chatgpt/System/World/Zones/Zone List.md
+.dna/.chatgpt/Agents.md
+.dna/.chatgpt/System/World/Zones/Zone List.md
 ```
 
 ## Command header pattern
 
-Use this command structure when integrating ChornPlanet content generation with Chorn DNA workflows:
+Use this command structure when integrating ChornPlanet content generation with DNA workflows:
 
 ```text
 StoryGenProduct: <attachments>

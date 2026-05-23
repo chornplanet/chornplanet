@@ -30,9 +30,9 @@ Agents must:
 - separate factual reporting from opinion or creative interpretation
 - clearly flag uncertainty
 
-## Chorn DNA content
+## DNA content
 
-For outfit and civilization posts, agents must follow the Chorn DNA authority:
+For outfit and civilization posts, agents must follow the DNA authority:
 
 ```text
 StoryGenProduct: <attachments>

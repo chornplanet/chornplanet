@@ -23,7 +23,7 @@ Recommended ChatGPT startup order:
 3. Read `.mcp/manifest.yaml`.
 4. Read the relevant `.mcp/resources/`, `.mcp/policies/`, `.mcp/tools/`, and `.mcp/workflows/` files.
 5. Read `.chatgpt/engine/ContentTranlation.md` when the feature involves website content, localization, multilingual copy, or MongoDB-backed translated content.
-6. Read or create the relevant `.chatgpt/planning/feature-<feature-name>.md` file.
+6. Read or create the relevant `.planning/feature-<feature-name>.md` file.
 7. Review runtime application code, scripts, schemas, and content services.
 
 Important distinction:
@@ -33,7 +33,7 @@ Important distinction:
 app/  = Next.js runtime application code and platform implementation
 ```
 
-When planning Chorn DNA, StoryGenProduct, AutoScene, outfit, clothing, or civilization content, ChatGPT should also reference the external Chorn DNA authority described in `.mcp/resources/chorn-dna-authority.md`.
+When planning DNA, StoryGenProduct, AutoScene, outfit, clothing, or civilization content, ChatGPT should also reference the local DNA authority in `.dna/` and the coordination notes in `.mcp/resources/dna-authority.md`.
 
 ## Roles
 
@@ -59,9 +59,9 @@ ChatGPT should:
 
 - Create planning items and scope for each feature.
 - Use **one branch per feature**, using the pattern `feature/<feature-name>` or the branch name approved by Khachornchit.
-- Write the proposed architecture, workflow, scope, assumptions, risks, and acceptance criteria into `.chatgpt/planning/feature-<feature-name>.md`.
+- Write the proposed architecture, workflow, scope, assumptions, risks, and acceptance criteria into `.planning/feature-<feature-name>.md`.
 - Include project-structure guidelines for each feature branch when architecture or folder layout changes are expected.
-- Use `.mcp/` as the shared source for product context, media strategy, commerce direction, Chorn DNA integration, Smart Food evolution, analytics, SEO/LLM visibility, safety policies, and workflows.
+- Use `.mcp/` as the shared source for product context, media strategy, commerce direction, DNA integration, Smart Food evolution, analytics, SEO/LLM visibility, safety policies, and workflows.
 - Follow `.chatgpt/engine/ContentTranlation.md` for web content generation, TH review workflow, regenerated EN, all-language translation, and MongoDB migration handoff.
 - Keep each feature plan focused, reviewable, and implementation-ready.
 - Avoid mixing multiple unrelated features in one branch or one planning document.
@@ -72,7 +72,7 @@ Codex is responsible for reviewing the feature planning document, implementing U
 
 Codex should:
 
-- Review the planning file under `.chatgpt/planning/`.
+- Review the planning file under `.planning/`.
 - Confirm or adjust the proposed architecture before implementation.
 - Implement the feature according to the agreed scope and Khachornchit's architecture direction.
 - Build UX/UI based on the first EN web content when the workflow calls for it.
@@ -95,7 +95,7 @@ Codex should:
 3. ChatGPT creates or updates a planning file:
 
    ```text
-   .chatgpt/planning/feature-<feature-name>.md
+   .planning/feature-<feature-name>.md
    ```
 
 4. The planning file should include:
@@ -123,7 +123,7 @@ Codex should:
 9. After the feature is completed and merged, move the planning document to:
 
    ```text
-   .chatgpt/achieved/feature-<feature-name>.md
+   .planning/achieved/feature-<feature-name>.md
    ```
 
 ## Web Content Generation and Translation Workflow
@@ -185,7 +185,7 @@ Reusable Page Components
 
 Avoid adding new hardcoded content arrays into page files unless explicitly temporary and documented in the active planning file.
 
-When the feature relates to media automation, outfit/civilization posting, commerce, Smart Food, analytics, SEO/LLM visibility, or Chorn DNA integration, ChatGPT should reference the relevant `.mcp/` resource, policy, tool, or workflow file.
+When the feature relates to media automation, outfit/civilization posting, commerce, Smart Food, analytics, SEO/LLM visibility, or DNA integration, ChatGPT should reference the relevant `.mcp/` resource, policy, tool, workflow file, and `.dna/` source material.
 
 ## Localized MongoDB Render Reliability
 
@@ -214,4 +214,4 @@ A feature is considered complete only when:
 - Tests or validation steps are completed.
 - Khachornchit's architecture direction has been followed.
 - The feature branch is ready for pull request or merge.
-- The planning file is moved from `.chatgpt/planning/` to `.chatgpt/achieved/` after completion.
+- The planning file is moved from `.planning/` to `.planning/achieved/` after completion.

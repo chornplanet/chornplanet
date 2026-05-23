@@ -42,7 +42,7 @@ The recommended starting wedge is outfit and civilization clothing posting.
 
 Reason:
 
-- it aligns with Chorn DNA
+- it aligns with DNA
 - it is visually attractive
 - it can support social commerce
 - it can link to TikTok first

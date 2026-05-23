@@ -24,10 +24,11 @@ Codex must treat `.mcp/` as the shared agent workspace layer for ChornPlanet.
 Use this mental model:
 
 ```text
-.chatgpt/ = ChatGPT planning and architecture handoff
-.codex/   = Codex implementation and validation rules
-.mcp/     = shared agent context, resources, tool contracts, policies, workflows
-app/      = Next.js runtime application code and platform implementation
+.planning/ = ChatGPT planning and architecture handoff
+.dna/      = local DNA authority and source material
+.codex/    = Codex implementation and validation rules
+.mcp/      = shared agent context, resources, tool contracts, policies, workflows
+app/       = Next.js runtime application code and platform implementation
 ```
 
 Codex startup order:
@@ -37,11 +38,11 @@ Codex startup order:
 3. Read `.mcp/manifest.yaml`.
 4. Read relevant `.mcp/repository/` maps before route, locale, styling, UX, metadata, content, server, or deployment work.
 5. Read relevant `.mcp/resources/`, `.mcp/policies/`, `.mcp/tools/`, and `.mcp/workflows/` files.
-6. Read the relevant `.chatgpt/planning/feature-<feature-name>.md` file when the work is planned.
+6. Read the relevant `.planning/feature-<feature-name>.md` file when the work is planned.
 7. Read `.chatgpt/engine/ContentTranlation.md` when the feature involves website content, localization, multilingual copy, or MongoDB-backed translated content.
 8. Review runtime application code, scripts, schemas, and content services.
 
-For media automation, outfit/civilization posting, commerce, Smart Food, analytics, SEO/LLM visibility, or Chorn DNA work, also read the matching `.mcp/` resource, policy, tool contract, or workflow file before implementing.
+For media automation, outfit/civilization posting, commerce, Smart Food, analytics, SEO/LLM visibility, or DNA work, also read the matching `.mcp/` resource, policy, tool contract, workflow file, and local `.dna/` authority material before implementing.
 
 When `.chatgpt/Agents.md` defines a feature-specific workflow, Codex should sync to the necessary handoff items without duplicating that full workflow here. In practice, Codex must honor the active ChatGPT planning, content-generation, translation, TH review, regenerated EN, all-language sync, MongoDB migration, and completion requirements that apply to the current task.
 
@@ -103,8 +104,8 @@ ChatGPT owns feature discovery, planning, architectural proposal, and scope defi
 
 ChatGPT should:
 
-- Create or update planning items for each feature under `.chatgpt/planning/`.
-- Use `.mcp/` as the shared source for product context, media strategy, commerce direction, Chorn DNA integration, Smart Food evolution, analytics, SEO/LLM visibility, safety policies, and workflows.
+- Create or update planning items for each feature under `.planning/`.
+- Use `.mcp/` as the shared source for product context, media strategy, commerce direction, DNA integration, Smart Food evolution, analytics, SEO/LLM visibility, safety policies, and workflows.
 - Keep feature plans focused, reviewable, and implementation-ready.
 - Avoid mixing multiple unrelated features in one branch or planning document.
 
@@ -114,7 +115,7 @@ Codex owns implementation, tests, validation, and code review readiness.
 
 Codex should:
 
-- Review the relevant `.chatgpt/planning/feature-<feature-name>.md` file when one exists.
+- Review the relevant `.planning/feature-<feature-name>.md` file when one exists.
 - Confirm or adjust the proposed architecture before implementation.
 - Implement according to the agreed scope and Khachornchit's architecture direction.
 - Add or update tests where applicable.
@@ -287,9 +288,9 @@ Current fix pattern:
 
 When this production symptom appears again, inspect Vercel function logs by digest/time first, then check MongoDB connectivity, missing/incomplete content records, and proxy request headers before changing page components.
 
-## Chorn DNA Authority
+## DNA Authority
 
-When planning or implementing StoryGenProduct, AutoScene, ImagePrompt, VdoPrompt, StoryPostEngine, outfit, clothing, or civilization content, reference `.mcp/resources/chorn-dna-authority.md` and the external Chorn DNA authority described there.
+When planning or implementing StoryGenProduct, AutoScene, ImagePrompt, VdoPrompt, StoryPostEngine, outfit, clothing, or civilization content, reference `.mcp/resources/dna-authority.md` and the local DNA authority in `.dna/`.
 
 Important rule:
 
@@ -321,7 +322,7 @@ Do not do these without explicit approval:
 - Read nearby files before editing. This project has repeated patterns; copying the closest working example is usually safer than inventing a new shape.
 - Keep diffs scoped. Do not reformat large generated-looking locale or metadata files unless the task requires it.
 - Preserve user changes in a dirty worktree. Check `git status --short` before and after meaningful edits.
-- For planned ChatGPT features, review the matching `.chatgpt/planning/feature-<feature-name>.md` file before implementation and keep the work on the matching `feature/<feature-name>` branch when that branch exists.
+- For planned ChatGPT features, review the matching `.planning/feature-<feature-name>.md` file before implementation and keep the work on the matching `feature/<feature-name>` branch when that branch exists.
 - For unplanned fixes or docs work, create a new task branch from the latest `main` before making changes. Use a clear prefix such as `fix/...`, `feature/...`, or `docs/...`; do not work directly on long-lived or previously completed task branches.
 - Prefer `rg` for searching.
 - Use `apply_patch` for manual edits.
@@ -343,7 +344,7 @@ ChatGPT owns discovery, planning, architectural proposals, and scope definition.
 3. ChatGPT creates or updates the planning file:
 
    ```text
-   .chatgpt/planning/feature-<feature-name>.md
+   .planning/feature-<feature-name>.md
    ```
 
 4. The planning file should include:
@@ -368,7 +369,7 @@ ChatGPT owns discovery, planning, architectural proposals, and scope definition.
 8. After the feature is completed, move the planning document to:
 
    ```text
-   .chatgpt/achieved/feature-<feature-name>.md
+   .planning/achieved/feature-<feature-name>.md
    ```
 
 ## Architecture Rule
@@ -414,7 +415,7 @@ When Khachornchit says `ship to main`, `ship -> main`, `ship`, or any alternativ
    ```
 
 6. Stop after pushing the feature branch unless Khachornchit has already provided an approval signal in the same request. Continue shipping only after an explicit approval signal such as `ship -> main`, `ship to main`, or equivalent.
-7. When shipping is approved, move the completed planning document from `.chatgpt/planning/` to `.chatgpt/achieved/` before shipping. If the planning file is already achieved or no matching planning file exists, leave planning files unchanged.
+7. When shipping is approved, move the completed planning document from `.planning/` to `.planning/achieved/` before shipping. If the planning file is already achieved or no matching planning file exists, leave planning files unchanged.
 8. Merge the latest `origin/main` into the feature branch:
 
    ```text

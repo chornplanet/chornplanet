@@ -14,7 +14,7 @@ Then agents must read:
 1. `.mcp/README.md`
 2. `.mcp/manifest.yaml`
 3. Relevant `.mcp/resources/`, `.mcp/policies/`, `.mcp/tools/`, and `.mcp/workflows/` files
-4. Relevant `.chatgpt/planning/feature-*.md` file
+4. Relevant `.planning/feature-*.md` file
 5. Runtime app code and scripts
 
 ## Authority model
@@ -33,7 +33,7 @@ Agents must:
 
 - preserve the current architecture direction toward MongoDB-backed content services
 - avoid adding new large hardcoded content arrays unless explicitly temporary
-- respect Chorn DNA authority for StoryGenProduct, AutoScene, and zone/sub-zone generation
+- respect DNA authority for StoryGenProduct, AutoScene, and zone/sub-zone generation
 - treat generated posts as drafts until publishing is approved
 - separate factual content from creative/editorial content
 - produce small, reviewable artifacts

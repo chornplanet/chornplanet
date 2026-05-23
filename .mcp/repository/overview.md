@@ -23,7 +23,7 @@ Use these files in order for implementation work:
 2. `.mcp/README.md` and `.mcp/manifest.yaml` for shared product and safety context.
 3. Relevant files under `.mcp/repository/`.
 4. Relevant `.mcp/resources`, `.mcp/policies`, `.mcp/tools`, and `.mcp/workflows`.
-5. The active `.chatgpt/planning/feature-*.md` file.
+5. The active `.planning/feature-*.md` file.
 6. Runtime files close to the proposed change.
 
 ## Important Correction
