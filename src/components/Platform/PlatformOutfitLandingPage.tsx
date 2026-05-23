@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import type {
   PlatformOutfitHeroImage,
   PlatformOutfitSet,
@@ -11,6 +12,10 @@ import {
 
 function getLocalizedAnchor(lang: string, id: string): string {
   return `/${lang}/style/#${id}`;
+}
+
+function getLocalizedOutfitHref(lang: string, id: string): string {
+  return `/${lang}/style/${id}/`;
 }
 
 function HeroImage({
@@ -130,37 +135,42 @@ export default function PlatformOutfitLandingPage({
         <div className="platform-outfit-grid">
           {content.outfitSets.map((outfitSet) => (
             <article key={outfitSet.id} className="platform-outfit-card">
-              <div className="platform-outfit-card__media">
-                <OutfitImage
-                  outfitSet={outfitSet}
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                />
-              </div>
-              <div className="platform-outfit-card__body">
-                <span>{outfitSet.audience}</span>
-                <h3>
-                  {getPlatformOutfitLocalizedText(
-                    outfitSet.title,
-                    content.locale,
-                  )}
-                </h3>
-                <p>
-                  {getPlatformOutfitLocalizedText(
-                    outfitSet.visualSummary,
-                    content.locale,
-                  )}
-                </p>
-                <div className="platform-outfit-card__meta">
-                  <strong>
-                    {outfitSet.subZoneRequired
-                      ? "Sub-Zone required"
-                      : "Zone-ready"}
-                  </strong>
-                  <small>
-                    {outfitSet.zoneDisplay[0] ?? outfitSet.zoneCandidates[0]}
-                  </small>
+              <Link
+                className="platform-outfit-card__link"
+                href={getLocalizedOutfitHref(lang, outfitSet.id)}
+              >
+                <div className="platform-outfit-card__media">
+                  <OutfitImage
+                    outfitSet={outfitSet}
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                  />
                 </div>
-              </div>
+                <div className="platform-outfit-card__body">
+                  <span>{outfitSet.audience}</span>
+                  <h3>
+                    {getPlatformOutfitLocalizedText(
+                      outfitSet.title,
+                      content.locale,
+                    )}
+                  </h3>
+                  <p>
+                    {getPlatformOutfitLocalizedText(
+                      outfitSet.visualSummary,
+                      content.locale,
+                    )}
+                  </p>
+                  <div className="platform-outfit-card__meta">
+                    <strong>
+                      {outfitSet.subZoneRequired
+                        ? "Sub-Zone required"
+                        : "Zone-ready"}
+                    </strong>
+                    <small>
+                      {outfitSet.zoneDisplay[0] ?? outfitSet.zoneCandidates[0]}
+                    </small>
+                  </div>
+                </div>
+              </Link>
             </article>
           ))}
         </div>

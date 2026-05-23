@@ -1,5 +1,11 @@
 import type { Metadata } from "next";
-import platformContent from "@/data/platform/homeContent.json";
+import platformHomeEnSeed from "@/data/home/en.seed.json";
+import platformHomeThSeed from "@/data/home/th.seed.json";
+
+const platformContent = {
+  en: platformHomeEnSeed,
+  th: platformHomeThSeed,
+};
 
 export type PlatformLocale = keyof typeof platformContent;
 export type PlatformRouteKey =
@@ -144,7 +150,7 @@ const contentByLocale = platformContent as Record<string, PlatformContentInput>;
 const defaultContent = contentByLocale.en as PlatformContent;
 
 export function getPlatformContent(locale: string): PlatformContent {
-  const localeContent = contentByLocale[locale] ?? {};
+  const localeContent = contentByLocale[locale] ?? defaultContent;
 
   return {
     ...defaultContent,

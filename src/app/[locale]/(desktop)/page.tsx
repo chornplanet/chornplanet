@@ -2,7 +2,6 @@
 
 import type { Metadata } from "next";
 import { headers } from "next/headers";
-import HighlightSmartFood from "@/components/Home/HighlightSmartFood";
 import PlatformHomePage from "@/components/Platform/PlatformHomePage";
 import {getPlatformContent, getPlatformMetadata} from "@/lib/platform-content/homeContent";
 
@@ -56,7 +55,6 @@ export default async function Home() {
       <PlatformHomePage
         lang={lang}
         content={content.home}
-        afterHero={<HighlightSmartFood lang={lang}/>}
       />
 
       <script

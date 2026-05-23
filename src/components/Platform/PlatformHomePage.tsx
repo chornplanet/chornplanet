@@ -8,6 +8,10 @@ import type {
   PlatformHomeContent,
   PlatformSection,
 } from "@/lib/platform-content/homeContent";
+import {
+  getPlatformOutfitLocalizedText,
+  getPlatformOutfitSets,
+} from "@/lib/platform-content/styleContent";
 
 function PlatformHomeSection({
   lang,
@@ -39,6 +43,65 @@ function PlatformHomeSection({
   );
 }
 
+function PlatformHomeOutfitSection({
+  lang,
+  section,
+}: {
+  lang: string;
+  section?: PlatformSection;
+}) {
+  const outfitSets = getPlatformOutfitSets(lang).slice(0, 9);
+
+  return (
+    <section className="platform-shell platform-outfit-detail-related">
+      <div className="platform-section__header">
+        <span>{section?.eyebrow ?? "Graceful Style"}</span>
+        <h2>{section?.title ?? "Explore outfit directions."}</h2>
+        <p>
+          {section?.description ??
+            "Move through the full Chorn Planet Style set and open each look directly from the homepage."}
+        </p>
+      </div>
+      <div className="platform-outfit-detail-related__grid">
+        {outfitSets.map((outfitSet) => (
+          <article key={outfitSet.id} className="platform-outfit-card">
+            <Link
+              className="platform-outfit-card__link"
+              href={`/${lang}/style/${outfitSet.id}/`}
+            >
+              <div className="platform-outfit-card__media">
+                <Image
+                  src={outfitSet.image.src}
+                  alt={outfitSet.image.alt}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 31vw"
+                  style={{ objectFit: "cover", objectPosition: "50% 18%" }}
+                />
+              </div>
+              <div className="platform-outfit-card__body">
+                <span>{outfitSet.audience}</span>
+                <h3>{getPlatformOutfitLocalizedText(outfitSet.title, lang)}</h3>
+                <p>
+                  {getPlatformOutfitLocalizedText(
+                    outfitSet.visualSummary,
+                    lang,
+                  )}
+                </p>
+                <div className="platform-outfit-card__meta">
+                  <strong>View Style</strong>
+                  <small>
+                    {outfitSet.zoneDisplay[0] ?? outfitSet.zoneCandidates[0]}
+                  </small>
+                </div>
+              </div>
+            </Link>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 export default function PlatformHomePage({
   lang,
   content,
@@ -48,6 +111,13 @@ export default function PlatformHomePage({
   content: PlatformHomeContent;
   afterHero?: ReactNode;
 }) {
+  const outfitSection = content.sections.find(
+    (section) => section.layout === "grid",
+  );
+  const platformSections = content.sections.filter(
+    (section) => section.layout !== "grid",
+  );
+
   return (
     <main className="platform-page platform-home">
       <section className="platform-hero">
@@ -82,10 +152,12 @@ export default function PlatformHomePage({
       ) : null}
 
       <div className="platform-shell">
-        {content.sections.map((section) => (
+        {platformSections.map((section) => (
           <PlatformHomeSection key={section.id} lang={lang} section={section} />
         ))}
       </div>
+
+      <PlatformHomeOutfitSection lang={lang} section={outfitSection} />
     </main>
   );
 }

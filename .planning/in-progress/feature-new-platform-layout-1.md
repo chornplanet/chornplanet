@@ -58,6 +58,7 @@ Phase 1 does not keep `World`, `Media`, `Commerce`, or `Technology` in the prima
 - `/history/` has been removed from the roadmap route group and footer links.
 - Platform home content has been renamed to `homeContent` and the Phase 2 backup is kept as `homeContentPhase2`.
 - Style page seed content has been renamed to `styleContent.seed.json` and its loader to `styleContent.ts`.
+- Style detail route `src/app/[locale]/(roadmap)/style/[slug]/page.tsx` adds premium outfit pages with gallery, TikTok CTA, and related outfit cards.
 - Home and Style content include image generation size metadata for future content workflows.
 
 ## Footer
