@@ -76,7 +76,7 @@ export default async function Page({ params }: PageParams) {
               />
               <FaTiktok className="platform-outfit-detail-cta__tiktok-icon" />
             </span>
-            <span>Explore and Buy on TikTok</span>
+            <span>Explore on TikTok</span>
           </a>
         </div>
         <div className="platform-outfit-detail-hero__media">
