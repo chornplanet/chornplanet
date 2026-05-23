@@ -219,6 +219,22 @@
         "link": "/technology/"
       },
       {
+        "title": "AI Smart Mobility",
+        "body": "AI Smart Mobility explores intelligent transportation, connected infrastructure, and future mobility experiences through the Chorn Planet MTS Network. It acts as the circulatory system connecting destinations, tourism, lifestyle environments, and future-ready civilization concepts.",
+        "tags": ["MTS Network", "Smart Infrastructure", "Future Mobility"],
+        "link": "/smart-mobility/"
+      },
+      {
+        "title": "Smart City Systems",
+        "body": "Smart City Systems explores how intelligent environments, connected infrastructure, mobility coordination, and human-centered urban experiences may evolve together. The platform observes how future cities can balance technology, movement, comfort, sustainability, and everyday life within connected civilization ecosystems.",
+        "tags": [
+          "Human-Centered Cities",
+          "Connected Infrastructure",
+          "Urban Intelligence"
+        ],
+        "link": "/smart-city/"
+      },
+      {
         "title": "AI Smart Food",
         "body": "Smart Food is the practical daily-life layer. It gives Chorn Planet a useful starting point around food discovery, menu information, customer experience, ordering concepts, and future AI-assisted food service flows.",
         "tags": ["Food Experience", "Ordering Concepts", "Daily Utility"],
@@ -235,22 +251,6 @@
         "body": "Style gives the platform a visual lifestyle layer. Outfit concepts become scenes, stories, and product direction across travel, culture, soft luxury, and future commerce.",
         "tags": ["Graceful Style", "Outfit Stories", "Future Commerce"],
         "link": "/style/"
-      },
-      {
-        "title": "AI Smart Mobility",
-        "body": "AI Smart Mobility explores intelligent transportation, connected infrastructure, and future mobility experiences through the Chorn Planet MTS Network. It acts as the circulatory system connecting destinations, tourism, lifestyle environments, and future-ready civilization concepts.",
-        "tags": ["MTS Network", "Smart Infrastructure", "Future Mobility"],
-        "link": "/smart-mobility/"
-      },
-      {
-        "title": "Smart City Systems",
-        "body": "Smart City Systems explores how intelligent environments, connected infrastructure, mobility coordination, and human-centered urban experiences may evolve together. The platform observes how future cities can balance technology, movement, comfort, sustainability, and everyday life within connected civilization ecosystems.",
-        "tags": [
-          "Human-Centered Cities",
-          "Connected Infrastructure",
-          "Urban Intelligence"
-        ],
-        "link": "/smart-city/"
       }
     ]
   },
