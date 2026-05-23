@@ -48,12 +48,7 @@
           "href": "/style/"
         }
       ],
-      "signals": [
-        "Smart Food",
-        "AI Luxury",
-        "Technology",
-        "Future Lifestyle"
-      ]
+      "signals": ["Smart Food", "AI Luxury", "Technology", "Future Lifestyle"]
     },
     "sections": [
       {
@@ -75,10 +70,7 @@
               "aspectRatio": "4:3",
               "positionKey": "home.sections.phase-1.smart-food"
             },
-            "tags": [
-              "Food",
-              "Platform"
-            ],
+            "tags": ["Food", "Platform"],
             "cta": "Explore Smart Food",
             "href": "/smart-food/"
           },
@@ -94,10 +86,7 @@
               "aspectRatio": "4:3",
               "positionKey": "home.sections.phase-1.ai-luxury"
             },
-            "tags": [
-              "Luxury",
-              "Projects"
-            ],
+            "tags": ["Luxury", "Projects"],
             "cta": "View Luxury",
             "href": "/luxury/"
           },
@@ -113,10 +102,7 @@
               "aspectRatio": "4:3",
               "positionKey": "home.sections.phase-1.technology"
             },
-            "tags": [
-              "AI",
-              "Engineering"
-            ],
+            "tags": ["AI", "Engineering"],
             "cta": "View Technology",
             "href": "/technology/"
           },
@@ -132,10 +118,7 @@
               "aspectRatio": "4:3",
               "positionKey": "home.sections.phase-1.style"
             },
-            "tags": [
-              "Style",
-              "Lifestyle"
-            ],
+            "tags": ["Style", "Lifestyle"],
             "cta": "View Style",
             "href": "/style/"
           }
@@ -160,10 +143,7 @@
               "aspectRatio": "4:3",
               "positionKey": "home.sections.outfit.lady"
             },
-            "tags": [
-              "Lady",
-              "Luxury"
-            ],
+            "tags": ["Lady", "Luxury"],
             "cta": "View Collection",
             "href": "/style/"
           },
@@ -179,10 +159,7 @@
               "aspectRatio": "4:3",
               "positionKey": "home.sections.outfit.gentleman"
             },
-            "tags": [
-              "Gentleman",
-              "Travel"
-            ],
+            "tags": ["Gentleman", "Travel"],
             "cta": "View Collection",
             "href": "/style/"
           },
@@ -198,10 +175,7 @@
               "aspectRatio": "4:3",
               "positionKey": "home.sections.outfit.civilization"
             },
-            "tags": [
-              "Zone",
-              "Chorn DNA"
-            ],
+            "tags": ["Zone", "Chorn DNA"],
             "cta": "Open Channel",
             "href": "/style/"
           },
@@ -217,10 +191,7 @@
               "aspectRatio": "4:3",
               "positionKey": "home.sections.outfit.lanna"
             },
-            "tags": [
-              "Lanna",
-              "Future"
-            ],
+            "tags": ["Lanna", "Future"],
             "cta": "Explore Look",
             "href": "/smart-mobility/"
           }
@@ -230,8 +201,8 @@
   },
   "about": {
     "eyebrow": "About Chorn Planet",
-    "title": "AI Lifestyle Systems",
-    "description": "Chorn Planet connects Smart Food, AI Luxury, Style, and practical technology into a focused platform for daily life, premium projects, and future-ready storytelling.",
+    "title": "AI Lifestyle & Civilization Systems",
+    "description": "Chorn Planet connects intelligent mobility, Smart Food, AI Luxury, Style, and practical technology into an evolving platform exploring future-ready living, connected environments, and human-centered digital experiences.",
     "image": "/images/about/about-chorn-image-1200.webp",
     "imageAlt": "Chorn Planet platform about visual",
     "imageGenerationSize": {
@@ -244,42 +215,42 @@
       {
         "title": "AI Native Platform",
         "body": "Chorn Planet is built as an AI-native platform, not only a content site. The first launch focuses on clear public surfaces that can later support smarter recommendations, content workflows, product storytelling, and useful service experiences.",
-        "tags": [
-          "AI Native",
-          "Platform Systems",
-          "Product Workflow"
-        ],
+        "tags": ["AI Native", "Platform Systems", "Product Workflow"],
         "link": "/technology/"
       },
       {
         "title": "AI Smart Food",
         "body": "Smart Food is the practical daily-life layer. It gives Chorn Planet a useful starting point around food discovery, menu information, customer experience, ordering concepts, and future AI-assisted food service flows.",
-        "tags": [
-          "Food Experience",
-          "Ordering Concepts",
-          "Daily Utility"
-        ],
+        "tags": ["Food Experience", "Ordering Concepts", "Daily Utility"],
         "link": "/smart-food/"
       },
       {
         "title": "AI Luxury",
         "body": "AI Luxury is the premium project layer for property, destination, and lifestyle narratives. It helps turn high-value projects into clearer stories, visual systems, and investor-ready platform content.",
-        "tags": [
-          "Premium Projects",
-          "Destination Stories",
-          "Investor Ready"
-        ],
+        "tags": ["Premium Projects", "Destination Stories", "Investor Ready"],
         "link": "/luxury/"
       },
       {
         "title": "Style and Outfit Direction",
         "body": "Style gives the platform a visual lifestyle layer. Outfit concepts become scenes, stories, and product direction across travel, culture, soft luxury, and future commerce.",
-        "tags": [
-          "Graceful Style",
-          "Outfit Stories",
-          "Future Commerce"
-        ],
+        "tags": ["Graceful Style", "Outfit Stories", "Future Commerce"],
         "link": "/style/"
+      },
+      {
+        "title": "AI Smart Mobility",
+        "body": "AI Smart Mobility explores intelligent transportation, connected infrastructure, and future mobility experiences through the Chorn Planet MTS Network. It acts as the circulatory system connecting destinations, tourism, lifestyle environments, and future-ready civilization concepts.",
+        "tags": ["MTS Network", "Smart Infrastructure", "Future Mobility"],
+        "link": "/smart-mobility/"
+      },
+      {
+        "title": "Smart City Systems",
+        "body": "Smart City Systems explores how intelligent environments, connected infrastructure, mobility coordination, and human-centered urban experiences may evolve together. The platform observes how future cities can balance technology, movement, comfort, sustainability, and everyday life within connected civilization ecosystems.",
+        "tags": [
+          "Human-Centered Cities",
+          "Connected Infrastructure",
+          "Urban Intelligence"
+        ],
+        "link": "/smart-city/"
       }
     ]
   },
