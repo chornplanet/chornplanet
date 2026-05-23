@@ -1118,29 +1118,31 @@
   }
 
   .platform-hero {
-    min-height: 92vh;
+    min-height: 0;
+    aspect-ratio: 16 / 9;
+  }
+
+  .platform-hero__media {
+    left: 50%;
+    right: auto;
+    width: 100vw;
+    transform: translateX(-50%);
+  }
+
+  .platform-hero__media img {
+    width: 100% !important;
+    max-width: none;
+    height: 100% !important;
   }
 
   .platform-hero__content {
-    left: 10px;
-    bottom: 10px;
-    width: 60%;
-    transform: none;
-    align-items: flex-start;
+    display: none;
   }
 
   .platform-hero__actions {
     grid-template-columns: 1fr;
     justify-content: flex-start;
     width: 100%;
-  }
-
-  .platform-hero__content h1 {
-    font-size: 3.35rem;
-  }
-
-  .platform-hero__content p {
-    font-size: 1rem;
   }
 
   .platform-hero__actions a {
