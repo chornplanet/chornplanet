@@ -64,6 +64,7 @@
 
   // i18n Ally
   "i18n-ally.enabled": false,
+  "i18n-ally.localesPaths": ["src/data/home", "src/data/style"],
 
   // Error Lens
   "errorLens.enabledDiagnosticLevels": ["error", "warning"],
