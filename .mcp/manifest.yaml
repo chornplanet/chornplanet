@@ -94,14 +94,22 @@ product_goals:
     - on-demand aggregate growth summaries for planning
 
 local_authorities:
-  dna_agents:
-    directory: .dna
-    path: .chatgpt/Agents.md
+  dna_media_generation_workflow:
+    directory: .chatgpt
+    path: MediaGenerationWorkflow.md
     purpose: StoryGenProduct, AutoScene, ImagePrompt, VdoPrompt, StoryPostEngine workflow authority
+  dna_version_control:
+    directory: .chatgpt
+    path: VersionControl.md
+    purpose: latest document version tracking for engines, contracts, systems, and workflow files
   dna_zone_list:
-    directory: .dna
-    path: .chatgpt/System/World/Zones/Zone List.md
+    directory: .chatgpt
+    path: system/world/Zones/Zone List.md
     rule: Zone List -> Zone File -> exactly one Sub-Zone
+  dna_manual:
+    directory: .dna
+    path: manual
+    purpose: manual examples and use cases
 
 agents:
   khachornchit:

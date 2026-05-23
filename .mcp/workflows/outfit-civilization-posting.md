@@ -11,8 +11,10 @@ Use DNA to create premium outfit/civilization content that can grow traffic and 
 Before creating outfit/civilization generation plans, read DNA authority:
 
 ```text
-.dna/.chatgpt/Agents.md
-.dna/.chatgpt/System/World/Zones/Zone List.md
+.chatgpt/MediaGenerationWorkflow.md
+.chatgpt/VersionControl.md
+.chatgpt/system/world/Zones/Zone List.md
+.dna/manual/
 ```
 
 ## Command pattern

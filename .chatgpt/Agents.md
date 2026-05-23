@@ -23,17 +23,24 @@ Recommended ChatGPT startup order:
 3. Read `.mcp/manifest.yaml`.
 4. Read the relevant `.mcp/resources/`, `.mcp/policies/`, `.mcp/tools/`, and `.mcp/workflows/` files.
 5. Read `.chatgpt/engine/ContentTranlation.md` when the feature involves website content, localization, multilingual copy, or MongoDB-backed translated content.
-6. Read or create the relevant `.planning/feature-<feature-name>.md` file.
-7. Review runtime application code, scripts, schemas, and content services.
+6. Read `.chatgpt/MediaGenerationWorkflow.md` when the feature involves media generation, StoryGenProduct, AutoScene, images, video prompts, outfit, clothing, civilization, or DNA-guided content.
+7. Read `.chatgpt/VersionControl.md` when working with ChatGPT engines, contracts, system files, world files, or media-generation workflow documents.
+8. Read or create the relevant `.planning/feature-<feature-name>.md` file.
+9. Review runtime application code, scripts, schemas, and content services.
 
 Important distinction:
 
 ```text
 .mcp/ = shared agent workspace and governance contract
+.chatgpt/engine/ = ChatGPT media/content engines
+.chatgpt/contract/ = media prompt and story output contracts
+.chatgpt/system/ = ChornPlanet system, design, ecosystem, and world authority files
+.planning/projects/ = project planning files moved out of DNA
+.dna/manual/ = DNA manual examples and use cases
 app/  = Next.js runtime application code and platform implementation
 ```
 
-When planning DNA, StoryGenProduct, AutoScene, outfit, clothing, or civilization content, ChatGPT should also reference the local DNA authority in `.dna/` and the coordination notes in `.mcp/resources/dna-authority.md`.
+When planning DNA, StoryGenProduct, AutoScene, outfit, clothing, or civilization content, ChatGPT should reference `.chatgpt/MediaGenerationWorkflow.md`, `.chatgpt/VersionControl.md`, `.chatgpt/system/`, `.chatgpt/engine/`, `.chatgpt/contract/`, `.dna/manual/`, and the coordination notes in `.mcp/resources/dna-authority.md` as relevant.
 
 ## Roles
 
@@ -63,6 +70,9 @@ ChatGPT should:
 - Include project-structure guidelines for each feature branch when architecture or folder layout changes are expected.
 - Use `.mcp/` as the shared source for product context, media strategy, commerce direction, DNA integration, Smart Food evolution, analytics, SEO/LLM visibility, safety policies, and workflows.
 - Follow `.chatgpt/engine/ContentTranlation.md` for web content generation, TH review workflow, regenerated EN, all-language translation, and MongoDB migration handoff.
+- Generate content and media, including image and video prompt outputs, for the platform according to the specified brief. Codex owns the layout, UX/UI, image size, video size, and implementation specifications that ChatGPT should follow.
+- Follow `.chatgpt/MediaGenerationWorkflow.md` for media generation, StoryGenProduct, AutoScene, image prompt, video prompt, outfit, clothing, civilization, and DNA-guided content work.
+- Use `.chatgpt/VersionControl.md` to track the latest document versions for ChatGPT engines, contracts, system files, world files, and media-generation workflow documents.
 - Keep each feature plan focused, reviewable, and implementation-ready.
 - Avoid mixing multiple unrelated features in one branch or one planning document.
 
@@ -185,7 +195,7 @@ Reusable Page Components
 
 Avoid adding new hardcoded content arrays into page files unless explicitly temporary and documented in the active planning file.
 
-When the feature relates to media automation, outfit/civilization posting, commerce, Smart Food, analytics, SEO/LLM visibility, or DNA integration, ChatGPT should reference the relevant `.mcp/` resource, policy, tool, workflow file, and `.dna/` source material.
+When the feature relates to media automation, outfit/civilization posting, commerce, Smart Food, analytics, SEO/LLM visibility, or DNA integration, ChatGPT should reference the relevant `.mcp/` resource, policy, tool, workflow file, `.chatgpt/MediaGenerationWorkflow.md`, `.chatgpt/VersionControl.md`, `.chatgpt/system/`, `.chatgpt/engine/`, `.chatgpt/contract/`, and `.dna/manual/` source material.
 
 ## Localized MongoDB Render Reliability
 

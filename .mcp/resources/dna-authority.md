@@ -5,8 +5,10 @@ ChornPlanet outfit, civilization, StoryGenProduct, AutoScene, image/video prompt
 ## Local authority files
 
 ```text
-.dna/.chatgpt/Agents.md
-.dna/.chatgpt/System/World/Zones/Zone List.md
+.chatgpt/MediaGenerationWorkflow.md
+.chatgpt/VersionControl.md
+.chatgpt/system/world/Zones/Zone List.md
+.dna/manual/
 ```
 
 ## Command header pattern

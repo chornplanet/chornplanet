@@ -46,10 +46,7 @@ export default function WebDevelopmentPageMain({
     "Luxury Platform",
     "Smart Food",
     "Style",
-    "Technology",
-    content.frontEnd.services.items[0]?.title ?? content.frontEnd.title,
-    content.fullStack.services.items[0]?.title ?? content.fullStack.title,
-    content.devOps.services.items[0]?.title ?? content.devOps.title,
+    "Technology"
   ];
 
   return (
@@ -90,12 +87,14 @@ export default function WebDevelopmentPageMain({
                 })}
               </div>
             </div>
+
             <div
               className="technology-hero__media"
               aria-label="Technology delivery visual system"
             >
               <SystemCapability lang={lang} />
             </div>
+
           </div>
         </div>
       </section>

@@ -56,8 +56,10 @@ ChornPlanet content and outfit/civilization generation should follow the DNA wor
 Local authority:
 
 ```text
-.dna/.chatgpt/Agents.md
-.dna/.chatgpt/System/World/Zones/Zone List.md
+.chatgpt/MediaGenerationWorkflow.md
+.chatgpt/VersionControl.md
+.chatgpt/system/world/Zones/Zone List.md
+.dna/manual/
 ```
 
 Important rule:

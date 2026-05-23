@@ -6,8 +6,8 @@ tools:
     purpose: Resolve Zone List -> Zone File -> exactly one Sub-Zone before generating outfit or civilization content.
     approval_required: false
     authority:
-      directory: .dna
-      zone_list_path: .chatgpt/System/World/Zones/Zone List.md
+      directory: .chatgpt
+      zone_list_path: system/world/Zones/Zone List.md
 
   dna.create_storygenproduct_request:
     status: proposed_contract

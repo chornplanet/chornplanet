@@ -1,4 +1,4 @@
-# .chatgpt/Agents.md
+# .chatgpt/MediaGenerationWorkflow.md
 
 Use this file as the ChatGPT execution entrypoint for the `.chatgpt` workflow.
 
@@ -83,7 +83,7 @@ Run only the core files required by the active command.
 1. Read .codex/Agents.md for collaboration and execution rules.
 2. Read this file to resolve the .chatgpt workflow.
 3. Resolve StoryGenProduct option parameters before routing.
-4. Read .chatgpt/AI Engine/AI Engine Router.md to identify the route.
+4. Read .chatgpt/engine/AI Engine Router.md to identify the route.
 5. Read only the engine files required by that route.
 6. Read only the contracts required by that route.
 7. Read system or use-case files only when the command needs world, zone, or scenario context.
@@ -137,9 +137,9 @@ Use the smallest valid contract set.
 
 ```text
 Always available:
-- .chatgpt/Contract/ImagePrompt.md
-- .chatgpt/Contract/VdoPrompt.md
-- .chatgpt/Contract/StoryPostEngine.md
+- .chatgpt/contract/ImagePrompt.md
+- .chatgpt/contract/VdoPrompt.md
+- .chatgpt/contract/StoryPostEngine.md
 
 Do not load removed or deprecated contracts.
 Do not recreate StoryWriter, StoryMomentumEngine, or StoryCommerceEngine as separate execution layers.
@@ -152,7 +152,7 @@ Zone selection must use the authoritative world files only.
 
 ```text
 Authority index:
-.chatgpt/System/World/Zones/Zone List.md
+.chatgpt/system/world/Zones/Zone List.md
 
 Resolution flow:
 1. Read Zone List.md.
@@ -247,7 +247,7 @@ Closing:
 
 ## Zone List Reference for Scene Diversity
 
-When AutoScene requires world/zone context, use `.chatgpt/System/World/Zones/Zone List.md` as the only authority index.
+When AutoScene requires world/zone context, use `.chatgpt/system/world/Zones/Zone List.md` as the only authority index.
 
 ```text
 Zone List is only the entry point.
@@ -305,8 +305,8 @@ Before writing ImagePrompt outputs:
 Load supporting files only when the command requires them.
 
 ```text
-.chatgpt/System/...
-.chatgpt/Use Cases/...
+.chatgpt/system/...
+.dna/manual/...
 .chatgpt/VersionControl.md
 ```
 
