@@ -543,7 +543,7 @@ expand only from valid primitives
 Supports:
 
 ```text
-Mountain
+Valley
 Coastal
 Urban
 Hybrid
@@ -629,7 +629,7 @@ a reusable environment unit
 
 Examples:
 
-## Mountain primitives
+## Valley primitives
 
 ```text
 arrival viewpoint
@@ -1001,7 +1001,7 @@ Fallback priority:
 ```text
 detected zone safe output
 → nearest valid tourism-compatible output
-→ Mountain-based safe output
+→ Valley-based safe output
 ```
 
 ---
@@ -1016,7 +1016,7 @@ If routing fails, recover in this order:
 3. Keep zone, replace invalid primitive with valid primitive
 4. Keep design authority, downgrade scene richness
 5. Fall back to safe tourism destination composition
-6. Fall back to Mountain-based safe output
+6. Fall back to Valley-based safe output
 ```
 
 Fallback must preserve:

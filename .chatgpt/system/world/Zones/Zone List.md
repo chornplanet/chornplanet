@@ -42,7 +42,7 @@ Once a Sub-Zone is selected:
 - Losing Sub-Zone identity
 
 -----
-Zone01-Mountain.md
+Zone01-Valley.md
 Zone02-Coastal.md
 Zone03-Sakura.md
 Zone04-Volcano.md
@@ -64,14 +64,14 @@ Zone19-Harbor-Port.md
 Zone20-National-Park.md
 Zone21-River-Valley-Tourism-System.md
 Zone22-Lotus-Pond-Sanctuary.md
-Zone23-Mountain-Cosmos-Valley.md
-Zone24-Mountain-Tulip-Valley.md
-Zone25-Mountain-Lavender-Valley.md
-Zone26-Mountain-Sunflower-Valley.md
-Zone27-Mountain-Cherry-Blossom-Valley.md
-Zone28-Mountain-Peony-Valley.md
-Zone29-Mountain-Marigold-Valley.md
-Zone30-Mountain-Hydrangea-Valley.md
-Zone31-Mountain-Poppy-Valley.md
-Zone32-Mountain-Lily-Valley.md
-Zone33-Mountain-Buffalo-Meadow-Sanctuary.md
+Zone23-Cosmos-Valley.md
+Zone24-Tulip-Valley.md
+Zone25-Lavender-Valley.md
+Zone26-Sunflower-Valley.md
+Zone27-Cherry-Blossom-Valley.md
+Zone28-Peony-Valley.md
+Zone29-Marigold-Valley.md
+Zone30-Hydrangea-Valley.md
+Zone31-Poppy-Valley.md
+Zone32-Lily-Valley.md
+Zone33-Buffalo-Meadow-Sanctuary.md

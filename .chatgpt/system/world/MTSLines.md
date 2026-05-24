@@ -134,7 +134,7 @@ They form the **primary mobility spine of ChornPlanet**.
 Connects the Highland Nature environments.
 
 ```
-Mountain
+Valley
 → Sakura
 → Snow
 → Crystal Lake
@@ -143,7 +143,7 @@ Mountain
 Purpose:
 
 ```
-mountain tourism
+valley tourism
 seasonal landscapes
 nature exploration travel
 ```
@@ -279,7 +279,7 @@ Secondary transfer hubs:
 
 ```
 Zone9 Golden Rice Valley
-Zone1 Mountain
+Zone1 Valley
 ```
 
 These hubs allow passengers to transfer between:
@@ -297,7 +297,7 @@ gateway lines
 The following table summarizes current MTS line connectivity. It is not the authoritative zone registry; use `.chatgpt/System/World/Zones/Zone List.md` for the full zone list.
 
 ```
-Zone1  Mountain
+Zone1  Valley
 → Highland Backbone Line
 
 Zone2  Coastal

@@ -176,7 +176,7 @@ All scenes must operate under one of the following environmental authorities.
 
 ---
 
-### Mountain — Origin Core
+### Valley — Origin Core
 
 Represents
 
@@ -203,7 +203,7 @@ travel energy
 Scenes must declare
 
 ```
-Mountain
+Valley
 Coastal
 Hybrid
 ```

@@ -142,7 +142,7 @@ Stations must visually integrate with the surrounding environment.
 
 Examples:
 
-Mountain
+Valley
 
 ```
 wood + stone alpine structures
@@ -171,7 +171,7 @@ Passengers must match the surrounding environment.
 
 Examples:
 
-Mountain
+Valley
 
 ```
 hikers
@@ -234,7 +234,7 @@ Rule:
 Examples:
 
 ```
-Mountain Lavender Valley → lavender
+Lavender Valley → lavender
 Sakura Station → sakura blossoms
 River Valley Station → river valley wildflowers
 ```
@@ -247,17 +247,17 @@ The following stations are officially registered for the current MTS-mapped zone
 
 ---
 
-## Zone1 — Mountain
+## Zone1 — Valley
 
 Stations:
 
 ```
-Mountain Station
-Mountain Lavender Valley Station
-Mountain Waterfall Valley Station
-Mountain Pine Ridge Station
-Mountain Sunrise Valley Station
-Mountain Mist Morning Station
+Valley Station
+Valley Lavender Valley Station
+Valley Waterfall Valley Station
+Valley Pine Ridge Station
+Valley Sunrise Valley Station
+Valley Mist Morning Station
 ```
 
 ---
@@ -469,7 +469,7 @@ AISceneEngine can generate station scenes automatically.
 Example commands:
 
 ```
-AutoScene: mountain mts station
+AutoScene: valley mts station
 AutoScene: sakura mts station blossom valley
 AutoScene: airport mts station terminal gateway
 AutoScene: rural mts station rice field

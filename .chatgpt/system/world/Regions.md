@@ -138,7 +138,7 @@ Continent: Continent01 Origin Continent
 Purpose:
 
 ```text
-mountain landscapes
+valley landscapes
 seasonal nature environments
 alpine tourism destinations
 ```
@@ -146,27 +146,28 @@ alpine tourism destinations
 Assigned zones:
 
 ```text
-Zone1  Mountain
+Zone1  Valley
 Zone3  Sakura
 Zone5  Snow
 Zone7  Crystal Lake
-Zone23 Mountain Cosmos Valley
-Zone24 Mountain Tulip Valley
-Zone25 Mountain Lavender Valley
-Zone26 Mountain Sunflower Valley
-Zone27 Mountain Cherry Blossom Valley
-Zone28 Mountain Peony Valley
-Zone29 Mountain Marigold Valley
-Zone30 Mountain Hydrangea Valley
-Zone31 Mountain Poppy Valley
-Zone32 Mountain Lily Valley
-Zone33 Mountain Buffalo Meadow Sanctuary
+
+Zone23 Cosmos Valley
+Zone24 Tulip Valley
+Zone25 Lavender Valley
+Zone26 Sunflower Valley
+Zone27 Cherry Blossom Valley
+Zone28 Peony Valley
+Zone29 Marigold Valley
+Zone30 Hydrangea Valley
+Zone31 Poppy Valley
+Zone32 Lily Valley
+Zone33 Buffalo Meadow Sanctuary
 ```
 
 Typical scenes:
 
 ```text
-mountain travel
+valley travel
 flower valley landscapes
 mist environments
 lake reflections

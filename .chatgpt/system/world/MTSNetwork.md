@@ -368,7 +368,7 @@ These hubs function as **inter-regional transfer centers**.
 Stations include:
 
 ```
-Mountain Station
+Valley Station
 Lavender Valley Station
 Waterfall Valley Station
 ```
@@ -453,7 +453,7 @@ Each MTS-mapped zone must contain at least one **primary MTS station**. The full
 Initial MTS-mapped zone examples:
 
 ```
-Zone1  Mountain → Mountain Station
+Zone1  Valley → Valley Station
 Zone2  Coastal → Coastal Station
 Zone3  Sakura → Sakura Station
 Zone4  Volcano → Volcano Station
@@ -493,7 +493,7 @@ flower identity
 
 Passenger diversity examples:
 
-Mountain
+Valley
 
 ```
 hikers
