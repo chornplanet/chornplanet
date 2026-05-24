@@ -49,10 +49,6 @@ const AI_SMART_FOOD_FOOTER_LABELS: Record<string, string> = {
     nl: 'AI Smart Food',
     zh: 'AI 智慧食品',
 };
-const YOUTUBE_FOOTER_LINK: IFooterDetail = {
-    label: 'Youtube',
-    link: 'https://www.youtube.com/@chornplanet',
-};
 const TIKTOK_CONTENT_DEVELOPMENT_FOOTER_LINK = 'https://tiktok.com/@chornplanet';
 const TIKTOK_CONTENT_DEVELOPMENT_FOOTER_LABELS: Record<string, string> = {
     en: 'TikTok Creator',
@@ -67,7 +63,7 @@ const TIKTOK_CONTENT_DEVELOPMENT_FOOTER_LABELS: Record<string, string> = {
     zh: 'TikTok 创作者',
 };
 
-type MainNavbarGroup = 'Home' | 'Luxury' | 'Smart Food' | 'Style' | 'Smart City' | 'Smart Mobility' | 'Technology';
+type MainNavbarGroup = 'Home' | 'Luxury' | 'Smart Food' | 'Style' | 'Smart City' | 'Smart Mobility' | 'About';
 
 const MAIN_NAVBAR_LABELS: Record<MainNavbarGroup, Record<string, string>> = {
     Home: {
@@ -109,17 +105,17 @@ const MAIN_NAVBAR_LABELS: Record<MainNavbarGroup, Record<string, string>> = {
         nl: 'Smart Mobility',
         zh: '智慧出行',
     },
-    Technology: {
-        en: 'Technology',
-        th: 'เทคโนโลยี',
-        da: 'Teknologi',
-        de: 'Technologie',
-        fi: 'Teknologia',
-        fr: 'Technologie',
-        ja: 'テクノロジー',
-        ko: '기술',
-        nl: 'Technologie',
-        zh: '技术',
+    About: {
+        en: 'About',
+        th: 'About',
+        da: 'About',
+        de: 'About',
+        fi: 'About',
+        fr: 'About',
+        ja: 'About',
+        ko: 'About',
+        nl: 'About',
+        zh: 'About',
     },
 };
 type MainNavbarItem = Pick<INavbar, 'group' | 'label' | 'link' | 'activeLinks'> & {
@@ -173,18 +169,18 @@ const MAIN_NAVBAR_ITEMS: MainNavbarItem[] = [
     {
         group: 'Smart Mobility',
         label: 'Smart Mobility',
-        link: '/smart-mobility/chiang-mai/vision-smart-mobility-northern-gateway/',
+        link: '/smart-mobility/',
         activeLinks: [],
         matchLinks: ['/smart-mobility', '/smart-mobility/', '/smart-mobility/chiang-mai', '/smart-mobility/chiang-mai/vision-smart-mobility-northern-gateway/'],
     },
     {
-        group: 'Technology',
-        label: 'Technology',
-        link: '/technical-expertise/web-development/',
+        group: 'About',
+        label: 'About',
+        link: '/about/',
         activeLinks: [],
-        matchGroups: ['Technical Expertise'],
-        matchLabels: ['Technical Expertise', 'AI Integration'],
-        matchLinks: ['/technical-expertise', '/technical-expertise/', '/technical-expertise/web-development', '/technical-expertise/web-development/', '/smart-food-ai', '/smart-food-ai/'],
+        matchGroups: ['About'],
+        matchLabels: ['About', 'About Chorn Planet'],
+        matchLinks: ['/about', '/about/', '/about-chorn', '/about-chorn/'],
     },
 ];
 function getLayoutContentTag(locale: string) {
@@ -378,27 +374,25 @@ function normalizeSmartFoodAiLayoutContent(content: LayoutContentPayload): Layou
     };
 }
 
-function normalizeYoutubeFooterConnect(footer: IFooter): IFooter {
-    const hasYoutube = footer.connect.items.some((item) => item.link === YOUTUBE_FOOTER_LINK.link);
+function shouldShowFooterConnectItem(item: IFooterDetail): boolean {
+    const label = item.label.toLowerCase();
+    const link = item.link.toLowerCase();
 
-    if (hasYoutube) {
-        return footer;
-    }
+    return !(
+        label === 'youtube' ||
+        label === 'facebook' ||
+        link.includes('youtube.com') ||
+        link.includes('youtu.be') ||
+        link.includes('facebook.com')
+    );
+}
 
-    const tiktokIndex = footer.connect.items.findIndex((item) => {
-        const label = item.label.toLowerCase();
-        const link = item.link.toLowerCase();
-        return label === 'tiktok' || link.includes('tiktok.com/@chornplanet');
-    });
-
-    const connectItems = [...footer.connect.items];
-    connectItems.splice(tiktokIndex >= 0 ? tiktokIndex + 1 : connectItems.length, 0, YOUTUBE_FOOTER_LINK);
-
+function normalizeFooterConnect(footer: IFooter): IFooter {
     return {
         ...footer,
         connect: {
             ...footer.connect,
-            items: connectItems,
+            items: footer.connect.items.filter(shouldShowFooterConnectItem),
         },
     };
 }
@@ -410,10 +404,7 @@ function normalizePlatformFooter(footer: IFooter): IFooter {
             title: 'Important Links',
             items: [
                 {label: 'About', link: '/about/'},
-                {label: 'History', link: '/history/'},
-                {label: 'Smart City', link: '/smart-city/'},
-                {label: 'Smart Mobility', link: '/smart-mobility/chiang-mai/vision-smart-mobility-northern-gateway/'},
-                {label: 'Technology', link: '/technical-expertise/web-development/'},
+                {label: 'Technology', link: '/technology/'},
                 {label: 'Contact', link: '/contact/'},
             ],
         },
@@ -422,28 +413,25 @@ function normalizePlatformFooter(footer: IFooter): IFooter {
             items: [
                 {label: 'Luxury Project', link: '/luxury/'},
                 {label: 'Smart Food System', link: '/smart-food/'},
-                {label: 'Outfit Scene', link: '/outfit/'},
+                {label: 'Graceful Style', link: '/style/'},
                 {label: 'Chorn Planet', link: '/'},
             ],
         },
         smartCity: {
             title: 'Platform',
             items: [
-                {label: 'World', link: '/world/'},
                 {label: 'Luxury', link: '/luxury/'},
                 {label: 'Smart Food', link: '/smart-food/'},
-                {label: 'Outfit', link: '/outfit/'},
-                {label: 'Media', link: '/media/'},
-                {label: 'Commerce', link: '/commerce/'},
+                {label: 'Style', link: '/style/'},
+                {label: 'Smart City', link: '/smart-city/'},
+                {label: 'Smart Mobility', link: '/smart-mobility/'},
             ],
         },
         technology: {
             title: 'Commerce',
             items: [
-                {label: 'Outfit Commerce', link: '/commerce/'},
-                {label: 'TikTok Soon', link: 'https://tiktok.com/@chornplanet'},
-                {label: 'Grocery Soon', link: '/commerce/'},
-                {label: 'Marketplace Links Soon', link: '/commerce/'},
+                {label: 'Outfit Commerce', link: '/style/'},
+                {label: 'TikTok', link: 'https://tiktok.com/@chornplanet'},
             ],
         },
     };
@@ -454,7 +442,7 @@ function normalizeLayoutContent(content: LayoutContentPayload): LayoutContentPay
 
     return {
         ...smartFoodAiContent,
-        footer: normalizePlatformFooter(normalizeYoutubeFooterConnect(smartFoodAiContent.footer)),
+        footer: normalizePlatformFooter(normalizeFooterConnect(smartFoodAiContent.footer)),
         languageOptions: normalizeLanguageOptions(smartFoodAiContent.languageOptions),
     };
 }

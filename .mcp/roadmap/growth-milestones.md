@@ -29,7 +29,7 @@ Focus:
 
 - Repeatable content draft pipeline.
 - Media topic clusters.
-- Outfit/civilization draft pipeline with Chorn DNA validation.
+- Outfit/civilization draft pipeline with DNA validation.
 - Better internal linking between topic hubs and conversion pages.
 
 Useful signals:
@@ -64,7 +64,7 @@ Focus:
 - Controlled automation with approval gates.
 - Mature media, commerce, Smart Food, luxury, and civilization content loops.
 - Strong operational analytics summaries.
-- Durable cross-repository cooperation with Chorn DNA and future MenuMatch.
+- Durable cross-repository cooperation with DNA and future MenuMatch.
 
 Useful signals:
 

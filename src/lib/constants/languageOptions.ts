@@ -81,13 +81,4 @@ export const LanguageOptionRecord: Record<string, ILanguageOption> = {
 
 export const LanguageOptionList: ILanguageOption[] = [
     LanguageOptionDefinition.en,
-    LanguageOptionDefinition.th,
-    LanguageOptionDefinition.fr,
-    LanguageOptionDefinition.ja,
-    LanguageOptionDefinition.zh,
-    LanguageOptionDefinition.de,
-    LanguageOptionDefinition.nl,
-    LanguageOptionDefinition.da,
-    LanguageOptionDefinition.fi,
-    LanguageOptionDefinition.ko,
 ];

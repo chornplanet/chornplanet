@@ -2,6 +2,20 @@ import React from "react";
 import {IFooter, IFooterDetail} from "@/lib/model/IFooter";
 import Link from "next/link";
 
+function shouldShowConnectItem(item: IFooterDetail): boolean {
+    const label = item.label.toLowerCase();
+    const link = item.link.toLowerCase();
+
+    return item.link !== undefined &&
+        label !== "contact" &&
+        link !== "/contact/" &&
+        label !== "youtube" &&
+        label !== "facebook" &&
+        !link.includes("youtube.com") &&
+        !link.includes("youtu.be") &&
+        !link.includes("facebook.com");
+}
+
 export default function FooterConnect({lang, footer}: { lang: string, footer: IFooter }) {
     return (
         <div className="footer-right-column">
@@ -10,10 +24,7 @@ export default function FooterConnect({lang, footer}: { lang: string, footer: IF
                 <div className="footer-bar footer-bar-bottom-addition"/>
                 <ul className="quick-links ul-footer">
                     {footer.connect.items
-                        .filter((item: IFooterDetail) => item.link !== undefined)
-                        .filter((item: IFooterDetail) => {
-                            return item.label.toLowerCase() !== "contact" && item.link !== "/contact/";
-                        })
+                        .filter(shouldShowConnectItem)
                         .map((item: IFooterDetail, index: number) => {
 
                             if (item.link.startsWith("http")) {

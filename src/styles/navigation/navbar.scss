@@ -12,6 +12,47 @@
   box-shadow: 0 16px 42px rgba(9, 22, 72, 0.28);
   position: relative;
   z-index: 100;
+  isolation: isolate;
+  overflow: hidden;
+
+  &::before,
+  &::after {
+    position: absolute;
+    content: "";
+    pointer-events: none;
+  }
+
+  &::before {
+    top: 8px;
+    left: max(14px, calc((100vw - 1440px) / 2 + 10px));
+    z-index: -1;
+    width: clamp(150px, 16vw, 270px);
+    height: clamp(70px, 7vw, 108px);
+    border-radius: 999px;
+    background:
+      radial-gradient(circle at 18% 48%, rgba(121, 243, 239, 0.42), transparent 31%),
+      radial-gradient(circle at 62% 42%, rgba(90, 104, 255, 0.38), transparent 36%),
+      linear-gradient(90deg, transparent 0 10%, rgba(175, 248, 255, 0.24) 42%, transparent 78%);
+    filter: blur(14px);
+    opacity: 0.92;
+    animation: navbarLogoAura 7s ease-in-out infinite alternate;
+  }
+
+  &::after {
+    top: 18px;
+    left: max(28px, calc((100vw - 1440px) / 2 + 28px));
+    z-index: -1;
+    width: clamp(180px, 18vw, 320px);
+    height: clamp(52px, 5vw, 78px);
+    border-radius: 999px;
+    background:
+      radial-gradient(ellipse at 12% 52%, rgba(255, 255, 255, 0.35) 0 2px, transparent 3px),
+      radial-gradient(ellipse at 84% 46%, rgba(121, 243, 239, 0.3) 0 1px, transparent 2px),
+      repeating-radial-gradient(ellipse at 20% 50%, transparent 0 13px, rgba(176, 244, 255, 0.18) 14px 15px, transparent 16px 28px);
+    opacity: 0.64;
+    transform: rotate(-5deg);
+    animation: navbarSignalWave 9s ease-in-out infinite;
+  }
 
   .main-navbar {
     .container {
@@ -43,7 +84,7 @@
 
   .add-navbar-logo {
     img {
-      width: 72px;
+      width: 56px;
       height: auto;
       display: block;
       filter:
@@ -120,7 +161,7 @@
 
     .add-navbar-logo {
       img {
-        width: 82px;
+        width: 64px;
       }
     }
   }
@@ -128,9 +169,36 @@
   @media (min-width: 1400px) {
     .add-navbar-logo {
       img {
-        width: 92px;
+        width: 72px;
       }
     }
+  }
+}
+
+@keyframes navbarLogoAura {
+  0% {
+    opacity: 0.74;
+    transform: translate3d(-8px, 0, 0) scaleX(0.95);
+  }
+
+  100% {
+    opacity: 0.98;
+    transform: translate3d(16px, 2px, 0) scaleX(1.08);
+  }
+}
+
+@keyframes navbarSignalWave {
+  0%,
+  100% {
+    background-position: 0 0, 0 0, 0 50%;
+    opacity: 0.48;
+    transform: translate3d(-10px, 0, 0) rotate(-5deg);
+  }
+
+  50% {
+    background-position: 18px 0, -12px 0, 36px 50%;
+    opacity: 0.72;
+    transform: translate3d(12px, 3px, 0) rotate(-3deg);
   }
 }
 

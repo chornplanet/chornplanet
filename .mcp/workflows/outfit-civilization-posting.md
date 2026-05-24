@@ -4,15 +4,17 @@ Use this workflow for lady/gentleman outfit, civilization clothing, and ChornPla
 
 ## Goal
 
-Use Chorn DNA to create premium outfit/civilization content that can grow traffic and support TikTok-first commerce.
+Use DNA to create premium outfit/civilization content that can grow traffic and support TikTok-first commerce.
 
 ## Required authority
 
-Before creating outfit/civilization generation plans, read Chorn DNA authority:
+Before creating outfit/civilization generation plans, read DNA authority:
 
 ```text
-khachornchit/chorn-dna/.chatgpt/Agents.md
-khachornchit/chorn-dna/.chatgpt/System/World/Zones/Zone List.md
+.chatgpt/MediaGenerationWorkflow.md
+.chatgpt/VersionControl.md
+.chatgpt/system/world/Zones/Zone List.md
+.dna/manual/
 ```
 
 ## Command pattern

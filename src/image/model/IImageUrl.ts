@@ -100,6 +100,13 @@ export interface IImageUrl {
         main: IImageUnit,
         slides: IImageResponsiveUnit[]
     },
+    platform: {
+        home: {
+            hero: {
+                youtubeBanner: IImageUnit,
+            },
+        },
+    },
     banner: {
         banner1: IImageUnit,
         mainBannerBg1: IImageUnit,

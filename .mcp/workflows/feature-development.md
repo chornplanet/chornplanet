@@ -9,13 +9,13 @@ ChatGPT:
 1. Read `.chatgpt/Agents.md`.
 2. Read `.mcp/README.md` and `.mcp/manifest.yaml`.
 3. Read relevant `.mcp/resources/`, `.mcp/policies/`, `.mcp/tools/`, and `.mcp/workflows/` files.
-4. Create or update `.chatgpt/planning/feature-<name>.md`.
+4. Create or update `.planning/feature-<name>.md`.
 
 Codex:
 
 1. Read `.codex/Agents.md`.
 2. Read `.mcp/README.md` and `.mcp/manifest.yaml`.
-3. Read relevant planning file under `.chatgpt/planning/`.
+3. Read relevant planning file under `.planning/`.
 4. Inspect code and tests.
 5. Implement with the smallest safe change.
 

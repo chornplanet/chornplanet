@@ -6,10 +6,6 @@ export const NavbarGroups: INavbarGroup[] = [
         firstPathname: "",
     },
     {
-        group: "World",
-        firstPathname: "world",
-    },
-    {
         group: "Luxury",
         firstPathname: "luxury",
     },
@@ -18,16 +14,28 @@ export const NavbarGroups: INavbarGroup[] = [
         firstPathname: "smart-food",
     },
     {
-        group: "Outfit",
+        group: "Style",
+        firstPathname: "style",
+    },
+    {
+        group: "Style",
         firstPathname: "outfit",
     },
     {
-        group: "Media",
-        firstPathname: "media",
+        group: "Smart City",
+        firstPathname: "smart-city",
     },
     {
-        group: "Commerce",
-        firstPathname: "commerce",
+        group: "Smart Mobility",
+        firstPathname: "smart-mobility",
+    },
+    {
+        group: "About",
+        firstPathname: "about",
+    },
+    {
+        group: "About",
+        firstPathname: "about-chorn",
     },
     {
         group: "Smart Food",

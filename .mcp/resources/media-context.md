@@ -48,7 +48,7 @@ analytics review
 
 ## AI image/video direction
 
-For outfit and civilization content, use Chorn DNA authority.
+For outfit and civilization content, use DNA authority.
 
 For news/entertainment/technology, use brand-safe visual generation and avoid misleading images.
 

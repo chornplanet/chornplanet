@@ -1,0 +1,262 @@
+{
+  "en": [
+    {
+      "title": "ERP",
+      "layer": "Business system",
+      "description": "Connects finance, inventory, procurement, sales, and operations into a clear business record.",
+      "tone": "enterprise"
+    },
+    {
+      "title": "MES",
+      "layer": "Production execution",
+      "description": "Coordinates manufacturing workflows, work orders, quality signals, and production visibility.",
+      "tone": "execution"
+    },
+    {
+      "title": "Logic Controller",
+      "layer": "Automation logic",
+      "description": "Translates process rules into reliable control actions across equipment and connected systems.",
+      "tone": "control"
+    },
+    {
+      "title": "Physical Layer",
+      "layer": "Real-world devices",
+      "description": "Represents machines, sensors, lines, facilities, and the operational environment where data begins.",
+      "tone": "physical"
+    }
+  ],
+  "th": [
+    {
+      "title": "ERP",
+      "layer": "ระบบธุรกิจ",
+      "description": "เชื่อมโยงการเงิน สินค้าคงคลัง การจัดซื้อ การขาย และการดำเนินงานให้อยู่ในบันทึกทางธุรกิจที่ชัดเจน",
+      "tone": "enterprise"
+    },
+    {
+      "title": "MES",
+      "layer": "การปฏิบัติการผลิต",
+      "description": "ประสานกระบวนการผลิต ใบสั่งงาน สัญญาณด้านคุณภาพ และการมองเห็นสถานะการผลิต",
+      "tone": "execution"
+    },
+    {
+      "title": "Logic Controller",
+      "layer": "ตรรกะการทำงานอัตโนมัติ",
+      "description": "แปลงกฎของกระบวนการให้เป็นคำสั่งควบคุมที่เชื่อถือได้ในอุปกรณ์และระบบที่เชื่อมต่อกัน",
+      "tone": "control"
+    },
+    {
+      "title": "Physical Layer",
+      "layer": "อุปกรณ์ในโลกจริง",
+      "description": "แสดงถึงเครื่องจักร เซ็นเซอร์ สายการผลิต สถานประกอบการ และสภาพแวดล้อมการปฏิบัติงานซึ่งเป็นจุดเริ่มต้นของข้อมูล",
+      "tone": "physical"
+    }
+  ],
+  "da": [
+    {
+      "title": "ERP",
+      "layer": "Forretningssystem",
+      "description": "Forbinder økonomi, lager, indkøb, salg og drift i en klar forretningsregistrering.",
+      "tone": "enterprise"
+    },
+    {
+      "title": "MES",
+      "layer": "Produktionsudførelse",
+      "description": "Koordinerer produktionsarbejdsgange, arbejdsordrer, kvalitetssignaler og synlighed i produktionen.",
+      "tone": "execution"
+    },
+    {
+      "title": "Logic Controller",
+      "layer": "Automatiseringslogik",
+      "description": "Omsætter procesregler til pålidelige kontrolhandlinger på tværs af udstyr og forbundne systemer.",
+      "tone": "control"
+    },
+    {
+      "title": "Physical Layer",
+      "layer": "Fysiske enheder",
+      "description": "Repræsenterer maskiner, sensorer, linjer, faciliteter og det driftsmiljø, hvor data begynder.",
+      "tone": "physical"
+    }
+  ],
+  "de": [
+    {
+      "title": "ERP",
+      "layer": "Geschäftssystem",
+      "description": "Verbindet Finanzen, Bestand, Beschaffung, Vertrieb und Betrieb in einer klaren Geschäftsaufzeichnung.",
+      "tone": "enterprise"
+    },
+    {
+      "title": "MES",
+      "layer": "Produktionsausführung",
+      "description": "Koordiniert Fertigungsabläufe, Arbeitsaufträge, Qualitätssignale und Transparenz in der Produktion.",
+      "tone": "execution"
+    },
+    {
+      "title": "Logic Controller",
+      "layer": "Automatisierungslogik",
+      "description": "Übersetzt Prozessregeln in verlässliche Steuerungsaktionen über Anlagen und verbundene Systeme hinweg.",
+      "tone": "control"
+    },
+    {
+      "title": "Physical Layer",
+      "layer": "Reale Geräte",
+      "description": "Repräsentiert Maschinen, Sensoren, Linien, Einrichtungen und die betriebliche Umgebung, in der Daten entstehen.",
+      "tone": "physical"
+    }
+  ],
+  "fi": [
+    {
+      "title": "ERP",
+      "layer": "Liiketoimintajärjestelmä",
+      "description": "Yhdistää talouden, varaston, hankinnan, myynnin ja toiminnan selkeäksi liiketoimintatiedoksi.",
+      "tone": "enterprise"
+    },
+    {
+      "title": "MES",
+      "layer": "Tuotannon toteutus",
+      "description": "Koordinoi valmistuksen työnkulkuja, työmääräyksiä, laatusignaaleja ja tuotannon näkyvyyttä.",
+      "tone": "execution"
+    },
+    {
+      "title": "Logic Controller",
+      "layer": "Automaatiologiikka",
+      "description": "Muuntaa prosessisäännöt luotettaviksi ohjaustoiminnoiksi laitteissa ja yhdistetyissä järjestelmissä.",
+      "tone": "control"
+    },
+    {
+      "title": "Physical Layer",
+      "layer": "Todellisen ympäristön laitteet",
+      "description": "Kuvaa koneita, antureita, tuotantolinjoja, tiloja ja toimintaympäristöä, jossa data syntyy.",
+      "tone": "physical"
+    }
+  ],
+  "fr": [
+    {
+      "title": "ERP",
+      "layer": "Système d’entreprise",
+      "description": "Relie la finance, les stocks, les achats, les ventes et les opérations dans un registre métier clair.",
+      "tone": "enterprise"
+    },
+    {
+      "title": "MES",
+      "layer": "Exécution de la production",
+      "description": "Coordonne les flux de fabrication, les ordres de travail, les signaux qualité et la visibilité de la production.",
+      "tone": "execution"
+    },
+    {
+      "title": "Logic Controller",
+      "layer": "Logique d’automatisation",
+      "description": "Traduit les règles de processus en actions de contrôle fiables sur les équipements et les systèmes connectés.",
+      "tone": "control"
+    },
+    {
+      "title": "Physical Layer",
+      "layer": "Dispositifs réels",
+      "description": "Représente les machines, capteurs, lignes, installations et l’environnement opérationnel où les données commencent.",
+      "tone": "physical"
+    }
+  ],
+  "ja": [
+    {
+      "title": "ERP",
+      "layer": "業務システム",
+      "description": "財務、在庫、調達、販売、業務運用を接続し、明確な業務記録として管理します。",
+      "tone": "enterprise"
+    },
+    {
+      "title": "MES",
+      "layer": "生産実行",
+      "description": "製造ワークフロー、作業指示、品質シグナル、生産状況の可視化を調整します。",
+      "tone": "execution"
+    },
+    {
+      "title": "Logic Controller",
+      "layer": "自動化ロジック",
+      "description": "プロセスルールを、設備および接続されたシステム全体で信頼性のある制御動作へ変換します。",
+      "tone": "control"
+    },
+    {
+      "title": "Physical Layer",
+      "layer": "実世界のデバイス",
+      "description": "機械、センサー、ライン、施設、およびデータが発生する運用環境を表します。",
+      "tone": "physical"
+    }
+  ],
+  "ko": [
+    {
+      "title": "ERP",
+      "layer": "비즈니스 시스템",
+      "description": "재무, 재고, 조달, 영업 및 운영을 명확한 비즈니스 기록으로 연결합니다.",
+      "tone": "enterprise"
+    },
+    {
+      "title": "MES",
+      "layer": "생산 실행",
+      "description": "제조 워크플로, 작업 지시, 품질 신호 및 생산 가시성을 조정합니다.",
+      "tone": "execution"
+    },
+    {
+      "title": "Logic Controller",
+      "layer": "자동화 로직",
+      "description": "공정 규칙을 장비와 연결된 시스템 전반에서 신뢰할 수 있는 제어 동작으로 변환합니다.",
+      "tone": "control"
+    },
+    {
+      "title": "Physical Layer",
+      "layer": "실제 장치",
+      "description": "기계, 센서, 라인, 시설 및 데이터가 시작되는 운영 환경을 나타냅니다.",
+      "tone": "physical"
+    }
+  ],
+  "nl": [
+    {
+      "title": "ERP",
+      "layer": "Bedrijfssysteem",
+      "description": "Verbindt financiën, voorraad, inkoop, verkoop en operatie in een duidelijke bedrijfsregistratie.",
+      "tone": "enterprise"
+    },
+    {
+      "title": "MES",
+      "layer": "Productie-uitvoering",
+      "description": "Coördineert productieprocessen, werkorders, kwaliteitssignalen en zichtbaarheid van de productie.",
+      "tone": "execution"
+    },
+    {
+      "title": "Logic Controller",
+      "layer": "Automatiseringslogica",
+      "description": "Zet procesregels om in betrouwbare besturingsacties binnen apparatuur en verbonden systemen.",
+      "tone": "control"
+    },
+    {
+      "title": "Physical Layer",
+      "layer": "Fysieke apparaten",
+      "description": "Vertegenwoordigt machines, sensoren, lijnen, faciliteiten en de operationele omgeving waar data ontstaat.",
+      "tone": "physical"
+    }
+  ],
+  "zh_CN": [
+    {
+      "title": "ERP",
+      "layer": "业务系统",
+      "description": "将财务、库存、采购、销售和运营连接为清晰的业务记录。",
+      "tone": "enterprise"
+    },
+    {
+      "title": "MES",
+      "layer": "生产执行",
+      "description": "协调制造流程、工单、质量信号和生产可视性。",
+      "tone": "execution"
+    },
+    {
+      "title": "Logic Controller",
+      "layer": "自动化逻辑",
+      "description": "将流程规则转化为设备和互联系统中的可靠控制动作。",
+      "tone": "control"
+    },
+    {
+      "title": "Physical Layer",
+      "layer": "现实设备",
+      "description": "表示机器、传感器、产线、设施以及数据开始产生的运行环境。",
+      "tone": "physical"
+    }
+  ]
+}

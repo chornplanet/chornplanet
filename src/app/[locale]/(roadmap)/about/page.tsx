@@ -1,7 +1,7 @@
 import type {Metadata} from "next";
 import {headers} from "next/headers";
 import PlatformStoryPage from "@/components/Platform/PlatformStoryPage";
-import {getPlatformContent, getPlatformMetadata} from "@/lib/platform-content/platformContent";
+import {getPlatformContent, getPlatformMetadata} from "@/lib/platform-content/homeContent";
 
 export async function generateMetadata(): Promise<Metadata> {
     const headersList = await headers();
@@ -14,5 +14,5 @@ export default async function Page() {
     const lang = headersList.get("x-locale") || "en";
     const content = getPlatformContent(lang);
 
-    return <PlatformStoryPage content={content.about}/>;
+    return <PlatformStoryPage lang={lang} content={content.about}/>;
 }

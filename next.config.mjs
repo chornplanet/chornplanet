@@ -70,6 +70,12 @@ const nextConfig = {
                 }]
             },
             {
+                source: "/images-platform/:path*",
+                headers: [{
+                    key: "Cache-Control", value: "public, max-age=31536000, immutable"
+                }]
+            },
+            {
                 source: "/smart-mobility/:path*",
                 headers: [{
                     key: "Cache-Control", value: "public, max-age=31536000, immutable"
@@ -122,6 +128,10 @@ const nextConfig = {
                 destination: 'https://cdn.chornplanet.com/smart-food/:path*'
             },
             {
+                source: '/images-opengraph/images-platform/:path*',
+                destination: 'https://cdn.chornplanet.com/images-platform/:path*'
+            },
+            {
                 source: '/images-opengraph/:path*',
                 destination: 'https://cdn.chornplanet.com/images-opengraph/:path*'
             },
@@ -136,13 +146,13 @@ const nextConfig = {
                 destination: 'https://cdn.chornplanet.com/images/:path*',
                 permanent: true,
             },
-
-            // Smart Mobility
             {
-                source: '/:lang/smart-mobility/',
-                destination: '/:lang/smart-mobility/chiang-mai/vision-smart-mobility-northern-gateway',
+                source: '/images-platform/:path*',
+                destination: 'https://cdn.chornplanet.com/images-platform/:path*',
                 permanent: true,
             },
+
+            // Smart Mobility
             {
                 source: '/smart-mobility/:path*',
                 destination: 'https://cdn.chornplanet.com/smart-mobility/:path*',
@@ -165,8 +175,8 @@ const nextConfig = {
 
             // Technology
             {
-                source: '/:lang/technology/',
-                destination: '/:lang/technical-expertise/web-development/',
+                source: '/:lang/technical-expertise/web-development/',
+                destination: '/:lang/technology/',
                 permanent: true,
             },
 
@@ -177,10 +187,20 @@ const nextConfig = {
                 permanent: true,
             },
 
-            //  About
+            // About
             {
-                source: '/:lang/about/',
-                destination: '/:lang/about-chorn/',
+                source: '/about-chorn/',
+                destination: '/about/',
+                permanent: true,
+            },
+            {
+                source: '/:lang/about-chorn/',
+                destination: '/:lang/about/',
+                permanent: true,
+            },
+            {
+                source: '/:lang/outfit/',
+                destination: '/:lang/style/',
                 permanent: true,
             },
         ]

@@ -1,12 +1,29 @@
 import React from "react";
 import Link from "next/link";
-import {IFooter} from "@/lib/model/IFooter";
+import {IFooter, IFooterDetail} from "@/lib/model/IFooter";
+
+function findFooterPolicyLink(
+    footer: IFooter,
+    matchPath: string,
+    fallbackLabel: string
+): IFooterDetail {
+    const normalizedMatchPath = matchPath.replace(/\/$/, "");
+    const policyLink = footer.important.items.find((item) => {
+        const normalizedLink = item.link.replace(/\/$/, "");
+        return normalizedLink === normalizedMatchPath || item.label === fallbackLabel;
+    });
+
+    return policyLink ?? {
+        label: fallbackLabel,
+        link: matchPath,
+    };
+}
 
 export default function Information({lang, footer}: { lang: string, footer: IFooter }) {
     const year = new Date().getFullYear()
-    const termOfService = footer.important.items[2]
-    const privacyPolicy = footer.important.items[3]
-    const workplacePolicy = footer.important.items[4]
+    const termOfService = findFooterPolicyLink(footer, "/terms-of-service/", "Terms of Service")
+    const privacyPolicy = findFooterPolicyLink(footer, "/privacy-policy/", "Privacy Policy")
+    const workplacePolicy = findFooterPolicyLink(footer, "/workplace-policy/", "Workplace Policy")
 
     return (
         <div className="copyright-area">

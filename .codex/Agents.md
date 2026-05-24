@@ -24,10 +24,11 @@ Codex must treat `.mcp/` as the shared agent workspace layer for ChornPlanet.
 Use this mental model:
 
 ```text
-.chatgpt/ = ChatGPT planning and architecture handoff
-.codex/   = Codex implementation and validation rules
-.mcp/     = shared agent context, resources, tool contracts, policies, workflows
-app/      = Next.js runtime application code and platform implementation
+.planning/ = ChatGPT planning and architecture handoff
+.dna/      = local DNA authority and source material
+.codex/    = Codex implementation and validation rules
+.mcp/      = shared agent context, resources, tool contracts, policies, workflows
+app/       = Next.js runtime application code and platform implementation
 ```
 
 Codex startup order:
@@ -37,11 +38,11 @@ Codex startup order:
 3. Read `.mcp/manifest.yaml`.
 4. Read relevant `.mcp/repository/` maps before route, locale, styling, UX, metadata, content, server, or deployment work.
 5. Read relevant `.mcp/resources/`, `.mcp/policies/`, `.mcp/tools/`, and `.mcp/workflows/` files.
-6. Read the relevant `.chatgpt/planning/feature-<feature-name>.md` file when the work is planned.
+6. Read the relevant `.planning/feature-<feature-name>.md` file when the work is planned.
 7. Read `.chatgpt/engine/ContentTranlation.md` when the feature involves website content, localization, multilingual copy, or MongoDB-backed translated content.
 8. Review runtime application code, scripts, schemas, and content services.
 
-For media automation, outfit/civilization posting, commerce, Smart Food, analytics, SEO/LLM visibility, or Chorn DNA work, also read the matching `.mcp/` resource, policy, tool contract, or workflow file before implementing.
+For media automation, outfit/civilization posting, commerce, Smart Food, analytics, SEO/LLM visibility, or DNA work, also read the matching `.mcp/` resource, policy, tool contract, workflow file, and local `.dna/` authority material before implementing.
 
 When `.chatgpt/Agents.md` defines a feature-specific workflow, Codex should sync to the necessary handoff items without duplicating that full workflow here. In practice, Codex must honor the active ChatGPT planning, content-generation, translation, TH review, regenerated EN, all-language sync, MongoDB migration, and completion requirements that apply to the current task.
 
@@ -68,6 +69,10 @@ Static fallbacks must be render-safe. Do not pass empty image paths, missing arr
 Public static fallbacks must also be production-safe copy, not engineering diagnostics. Do not expose wording such as `Static fallback`, `Restore Content`, `Repair or reseed`, `MongoDB content unavailable`, collection names, seed status, or internal recovery instructions to public visitors. Feature-specific public pages should use dedicated product-facing fallback modules under the feature namespace when generic fallback wording would leak maintenance details; keep metadata fallback aligned with the page fallback.
 
 When fixing a production Server Components render error, inspect the same failure pattern across every feature family touched by the shared loader, shared fallback data, metadata generator, layout, navbar, footer, image model, or route group. The fix is not complete until the regression risk is addressed at the shared source or explicitly documented as route-specific.
+
+For Open Graph, Twitter card, canonical, or SEO metadata changes, verify the rendered public route head, not only the source object that appears related. Some routes use legacy `src/metadata/...` maps while platform routes use active content helpers such as `getPlatformMetadata()`. Confirm the target URL emits the expected `<meta property="og:image">`, Twitter image metadata, and canonical values in the final HTML before shipping.
+
+When cropping 9:16 portrait, outfit, model, or civilization images into shorter landscape or mosaic slots, do not default to a vertical center crop if people are the subject. Use an upper portrait-safe crop anchor such as `object-position: 50% 18%`, keep horizontal crop centered, and verify the head/face remains visible across desktop, tablet, and mobile breakpoints.
 
 ## Commands
 
@@ -99,8 +104,8 @@ ChatGPT owns feature discovery, planning, architectural proposal, and scope defi
 
 ChatGPT should:
 
-- Create or update planning items for each feature under `.chatgpt/planning/`.
-- Use `.mcp/` as the shared source for product context, media strategy, commerce direction, Chorn DNA integration, Smart Food evolution, analytics, SEO/LLM visibility, safety policies, and workflows.
+- Create or update planning items for each feature under `.planning/`.
+- Use `.mcp/` as the shared source for product context, media strategy, commerce direction, DNA integration, Smart Food evolution, analytics, SEO/LLM visibility, safety policies, and workflows.
 - Keep feature plans focused, reviewable, and implementation-ready.
 - Avoid mixing multiple unrelated features in one branch or planning document.
 
@@ -110,7 +115,7 @@ Codex owns implementation, tests, validation, and code review readiness.
 
 Codex should:
 
-- Review the relevant `.chatgpt/planning/feature-<feature-name>.md` file when one exists.
+- Review the relevant `.planning/feature-<feature-name>.md` file when one exists.
 - Confirm or adjust the proposed architecture before implementation.
 - Implement according to the agreed scope and Khachornchit's architecture direction.
 - Add or update tests where applicable.
@@ -181,6 +186,50 @@ Reference `src/components/SmartFoodAi/SmartFoodAiLandingPage.tsx` for section st
 
 Reference `src/styles/smart-food-ai.scss` for good fit across all views: responsive padding, margin, grid changes, font size, font color, heading/body color consistency, image sizing, section spacing, card spacing, and desktop/tablet/mobile breakpoints.
 
+### Responsive Viewport Standard
+
+ChornPlanet design work is desktop-priority, then tablet, then mobile. Every new page, major page update, hero section, navigation change, footer change, and reusable layout component must be designed and checked against the following viewport standard:
+
+```text
+Desktop primary reference 1: 1536 x 864
+Desktop primary reference 2: 1920 x 1080
+Tablet reference: 768 x 1024
+Mobile reference: 390 x 844
+Small mobile guardrail: 360 x 800
+```
+
+Desktop is the first priority during development. A desktop design is not accepted until it looks intentional at both `1536x864` and `1920x1080`. Do not tune a section for only one desktop size. The same hero, card grid, section rhythm, navigation, and footer should keep stable visual hierarchy across both desktop references.
+
+Desktop UX/UI requirements:
+
+- Use `1536x864` as the main working viewport for layout density, fold visibility, heading line count, and content rhythm.
+- Use `1920x1080` as the premium large-desktop validation viewport. The design may breathe more, but it must not become oversized, sparse, or visually disconnected.
+- Hero content should remain above the fold with a clear hint of the next section where the page pattern calls for it.
+- Avoid viewport-scaled type or spacing that causes headings, CTAs, cards, or image crops to behave differently between the two desktop references.
+- Keep major content widths constrained and intentional. Do not let paragraphs stretch across the full large desktop width.
+- Confirm image crops, especially people/outfit/civilization imagery, remain correctly framed at both desktop sizes.
+
+Tablet UX/UI requirements:
+
+- At tablet widths, switch multi-column desktop layouts into balanced one-column or two-column layouts before content becomes squeezed.
+- Preserve readable line length, consistent section padding, and clear CTA tap targets.
+- Remove decorative wrappers, borders, shadows, or nested grid padding when they reduce readability.
+- Check that navigation, cards, image aspect ratios, and footer groups do not overlap or create uneven gutters.
+
+Mobile UX/UI requirements:
+
+- Mobile layout must be readable and calm at `390x844`, with `360x800` used as a guardrail for tight screens.
+- Use single-column flow unless a compact two-column pattern is clearly more usable.
+- Keep buttons and links tappable, avoid horizontal scrolling, and ensure long labels wrap cleanly.
+- Align headings, body copy, images, and actions to a consistent readable content width.
+- Remove decorative borders, shadows, or outer card shells when they make content feel cramped.
+
+Responsive QA expectation:
+
+- For visual/frontend changes, check at least `1536x864`, `1920x1080`, `768x1024`, and `390x844` when practical.
+- For production-facing page changes, run `npm run build` before completion and mention any viewport that could not be manually checked.
+- When using browser screenshots or Playwright, prefer naming the checked viewports explicitly in the final report.
+
 Current preferred pattern for premium content sections:
 
 - On mobile/tablet widths below `992px`, avoid nested card spacing that makes content feel squeezed. Flatten section grids when needed by removing outer grid padding, left/right margins, column gutters, decorative borders, background cards, and shadows.
@@ -239,9 +288,9 @@ Current fix pattern:
 
 When this production symptom appears again, inspect Vercel function logs by digest/time first, then check MongoDB connectivity, missing/incomplete content records, and proxy request headers before changing page components.
 
-## Chorn DNA Authority
+## DNA Authority
 
-When planning or implementing StoryGenProduct, AutoScene, ImagePrompt, VdoPrompt, StoryPostEngine, outfit, clothing, or civilization content, reference `.mcp/resources/chorn-dna-authority.md` and the external Chorn DNA authority described there.
+When planning or implementing StoryGenProduct, AutoScene, ImagePrompt, VdoPrompt, StoryPostEngine, outfit, clothing, or civilization content, reference `.mcp/resources/dna-authority.md` and the local DNA authority in `.dna/`.
 
 Important rule:
 
@@ -273,7 +322,7 @@ Do not do these without explicit approval:
 - Read nearby files before editing. This project has repeated patterns; copying the closest working example is usually safer than inventing a new shape.
 - Keep diffs scoped. Do not reformat large generated-looking locale or metadata files unless the task requires it.
 - Preserve user changes in a dirty worktree. Check `git status --short` before and after meaningful edits.
-- For planned ChatGPT features, review the matching `.chatgpt/planning/feature-<feature-name>.md` file before implementation and keep the work on the matching `feature/<feature-name>` branch when that branch exists.
+- For planned ChatGPT features, review the matching `.planning/feature-<feature-name>.md` file before implementation and keep the work on the matching `feature/<feature-name>` branch when that branch exists.
 - For unplanned fixes or docs work, create a new task branch from the latest `main` before making changes. Use a clear prefix such as `fix/...`, `feature/...`, or `docs/...`; do not work directly on long-lived or previously completed task branches.
 - Prefer `rg` for searching.
 - Use `apply_patch` for manual edits.
@@ -295,7 +344,7 @@ ChatGPT owns discovery, planning, architectural proposals, and scope definition.
 3. ChatGPT creates or updates the planning file:
 
    ```text
-   .chatgpt/planning/feature-<feature-name>.md
+   .planning/feature-<feature-name>.md
    ```
 
 4. The planning file should include:
@@ -320,7 +369,7 @@ ChatGPT owns discovery, planning, architectural proposals, and scope definition.
 8. After the feature is completed, move the planning document to:
 
    ```text
-   .chatgpt/achieved/feature-<feature-name>.md
+   .planning/achieved/feature-<feature-name>.md
    ```
 
 ## Architecture Rule
@@ -366,7 +415,7 @@ When Khachornchit says `ship to main`, `ship -> main`, `ship`, or any alternativ
    ```
 
 6. Stop after pushing the feature branch unless Khachornchit has already provided an approval signal in the same request. Continue shipping only after an explicit approval signal such as `ship -> main`, `ship to main`, or equivalent.
-7. When shipping is approved, move the completed planning document from `.chatgpt/planning/` to `.chatgpt/achieved/` before shipping. If the planning file is already achieved or no matching planning file exists, leave planning files unchanged.
+7. When shipping is approved, move the completed planning document from `.planning/` to `.planning/achieved/` before shipping. If the planning file is already achieved or no matching planning file exists, leave planning files unchanged.
 8. Merge the latest `origin/main` into the feature branch:
 
    ```text

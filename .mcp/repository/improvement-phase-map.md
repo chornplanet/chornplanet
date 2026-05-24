@@ -22,7 +22,7 @@ This map gives ChatGPT and Codex a phase-by-phase path for growing ChornPlanet w
 
 ## Phase 4: Outfit/Civilization Draft Pipeline
 
-- Follow Chorn DNA authority.
+- Follow DNA authority.
 - Enforce `Zone List -> Zone File -> exactly one Sub-Zone`.
 - Generate drafts only until external posting is approved.
 

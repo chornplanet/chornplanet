@@ -1,7 +1,7 @@
 "use client"
 
 import {INavbar} from "@/lib/model/INavbar";
-import React from "react";
+import React, {useCallback, useEffect} from "react";
 import {useMobileMenuVisible} from "@/provider/hooks/hookStateApp";
 import {usePathname} from "next/navigation";
 import Link from "next/link";
@@ -18,9 +18,16 @@ export default function DesktopNavbarContainer({lang, navbar}: { lang: string, n
     const classOne = mobileMenuVisible
         ? "collapse navbar-collapse"
         : "collapse navbar-collapse show";
-    const closeMobileMenu = () => {
+    const closeMobileMenu = useCallback(() => {
         dispatch(setMobileMenuVisible(true));
-    };
+    }, [dispatch]);
+    const handleNavItemClick = useCallback(() => {
+        window.setTimeout(closeMobileMenu, 0);
+    }, [closeMobileMenu]);
+
+    useEffect(() => {
+        closeMobileMenu();
+    }, [closeMobileMenu, pathname]);
 
     return (
         <div className={classOne} id="navbarSupportedContent">
@@ -30,7 +37,11 @@ export default function DesktopNavbarContainer({lang, navbar}: { lang: string, n
                         (navbar: INavbar, index) => {
                             const isActiveNavbar = IsActiveNavbar(pathname, navbar)
                             return (
-                                <Link key={index} href={"/" + lang + navbar.link} onClick={closeMobileMenu}>
+                                <Link
+                                    key={index}
+                                    href={"/" + lang + navbar.link}
+                                    onClick={handleNavItemClick}
+                                >
                                     <div key={index} className={clsx("nav-line1-item", {
                                         "active": isActiveNavbar
                                     })}>

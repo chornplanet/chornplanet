@@ -63,9 +63,8 @@
   "typescript.updateImportsOnFileMove.enabled": "always",
 
   // i18n Ally
-  "i18n-ally.localesPaths": ["src/data"],
-  "i18n-ally.enabledFrameworks": ["react"],
-  "i18n-ally.keystyle": "nested",
+  "i18n-ally.enabled": false,
+  "i18n-ally.localesPaths": ["src/data/home", "src/data/style"],
 
   // Error Lens
   "errorLens.enabledDiagnosticLevels": ["error", "warning"],

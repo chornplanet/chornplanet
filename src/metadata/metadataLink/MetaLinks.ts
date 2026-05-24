@@ -13,7 +13,7 @@ export const MetaLinks: IMetaLinks = {
         }
     },
     about: {
-        canonical: "/about-chorn/",
+        canonical: "/about/",
         image: {
             url: "/images-opengraph/about/about-og-image.jpg" + MetadataImageVersion,
             alt: "Open graph image for about"
@@ -85,8 +85,8 @@ export const MetaLinks: IMetaLinks = {
     home: {
         canonical: "/",
         image: {
-            url: "/images-opengraph/smart-city/hero-section/city-shaped-by-people-move.png"+ MetadataImageVersion,
-            alt: "Open graph image for home flexible workplace"
+            url: "/images-opengraph/images-platform/home/hero/youtube-banner-image.png",
+            alt: "Open graph image for Chorn Planet platform homepage"
         }
     },
     llmAi: {

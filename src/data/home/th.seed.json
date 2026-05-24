@@ -1,0 +1,258 @@
+{
+  "meta": {
+    "home": {
+      "title": "Chorn Planet | Smart Food, Luxury, Technology and Lifestyle Platform",
+      "description": "Chorn Planet starts Phase 1 with a focused platform for Smart Food, AI Luxury, Technology, Style, Smart City, and Smart Mobility."
+    },
+    "about": {
+      "title": "About Chorn Planet | AI Native Lifestyle Platform",
+      "description": "Chorn Planet is an AI-native platform connecting Smart Food, AI Luxury, Style, and practical technology into useful lifestyle systems."
+    },
+    "smart-food": {
+      "title": "Smart Food | Chorn Planet",
+      "description": "Smart Food is the first practical daily-life platform direction for Chorn Planet."
+    },
+    "luxury": {
+      "title": "AI Luxury | Chorn Planet",
+      "description": "AI Luxury presents premium project, property, and destination concepts from Chorn Planet."
+    }
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "Phase 1 Platform Launch",
+      "title": "Chorn Planet",
+      "subtitle": "A focused first step for Smart Food, AI Luxury, Technology, Style, Smart City, and Smart Mobility.",
+      "image": "/images-platform/home/hero/youtube-banner-image.png",
+      "imageAlt": "Chorn Planet platform launch visual",
+      "imageGenerationSize": {
+        "width": 2560,
+        "height": 1440,
+        "aspectRatio": "16:9",
+        "positionKey": "home.hero"
+      },
+      "actions": [
+        {
+          "label": "Smart Food",
+          "href": "/smart-food/"
+        },
+        {
+          "label": "AI Luxury",
+          "href": "/luxury/"
+        },
+        {
+          "label": "Technology",
+          "href": "/technology/"
+        },
+        {
+          "label": "Style",
+          "href": "/style/"
+        }
+      ],
+      "signals": ["Smart Food", "AI Luxury", "Technology", "Future Lifestyle"]
+    },
+    "sections": [
+      {
+        "id": "phase-1",
+        "eyebrow": "First Platform Layer",
+        "title": "Smart Food, AI Luxury, Technology, and Style in one place",
+        "description": "The first launch keeps Chorn Planet clear and useful, connecting daily food systems, premium project stories, practical technology, and visual lifestyle content.",
+        "layout": "featured",
+        "cards": [
+          {
+            "category": "Smart Food",
+            "title": "Smart Food System",
+            "description": "A daily-life product direction around food discovery, ordering concepts, and customer experience.",
+            "image": "/smart-food/process5-receiving.png",
+            "imageAlt": "Smart Food system visual",
+            "imageGenerationSize": {
+              "width": 1200,
+              "height": 900,
+              "aspectRatio": "4:3",
+              "positionKey": "home.sections.phase-1.smart-food"
+            },
+            "tags": ["Food", "Platform"],
+            "cta": "Explore Smart Food",
+            "href": "/smart-food/"
+          },
+          {
+            "category": "AI Luxury",
+            "title": "Premium Project Stories",
+            "description": "A focused layer for luxury real estate, destination narratives, and future lifestyle concepts.",
+            "image": "/images/ai-luxury/hero-ai-luxury-real-estate-platform.png",
+            "imageAlt": "AI Luxury platform visual",
+            "imageGenerationSize": {
+              "width": 1200,
+              "height": 900,
+              "aspectRatio": "4:3",
+              "positionKey": "home.sections.phase-1.ai-luxury"
+            },
+            "tags": ["Luxury", "Projects"],
+            "cta": "View Luxury",
+            "href": "/luxury/"
+          },
+          {
+            "category": "Technology",
+            "title": "Technology Platform",
+            "description": "A practical home for software, AI, cloud, and platform engineering capability.",
+            "image": "/images/features/morning-sky-optimize.webp",
+            "imageAlt": "Technology platform visual",
+            "imageGenerationSize": {
+              "width": 1200,
+              "height": 900,
+              "aspectRatio": "4:3",
+              "positionKey": "home.sections.phase-1.technology"
+            },
+            "tags": ["AI", "Engineering"],
+            "cta": "View Technology",
+            "href": "/technology/"
+          },
+          {
+            "category": "Style",
+            "title": "Style and Outfit Direction",
+            "description": "A lightweight lifestyle channel for visual identity, outfit concepts, and future commerce stories.",
+            "image": "/images-platform/styles/09-coastal-mts-traveler.png",
+            "imageAlt": "Style and outfit visual",
+            "imageGenerationSize": {
+              "width": 1200,
+              "height": 900,
+              "aspectRatio": "4:3",
+              "positionKey": "home.sections.phase-1.style"
+            },
+            "tags": ["Style", "Lifestyle"],
+            "cta": "View Style",
+            "href": "/style/"
+          }
+        ]
+      },
+      {
+        "id": "outfit",
+        "eyebrow": "Graceful Style",
+        "title": "Turn outfits into scenes, stories, and product direction",
+        "description": "The Style channel starts with outfit concepts for women, men, travel, culture, and soft luxury, preparing each look for future content and commerce.",
+        "layout": "grid",
+        "cards": [
+          {
+            "category": "Lady",
+            "title": "Lady Outfit",
+            "description": "Elegant civilization looks for premium lifestyle scenes.",
+            "image": "/images-platform/styles/05-lotus-lanna-ceremony.png",
+            "imageAlt": "Lady outfit concept",
+            "imageGenerationSize": {
+              "width": 1200,
+              "height": 900,
+              "aspectRatio": "4:3",
+              "positionKey": "home.sections.outfit.lady"
+            },
+            "tags": ["Lady", "Luxury"],
+            "cta": "View Collection",
+            "href": "/style/"
+          },
+          {
+            "category": "Gentleman",
+            "title": "Gentleman Outfit",
+            "description": "Refined silhouettes for travel, urban, and resort contexts.",
+            "image": "/images-platform/styles/06-mountain-hydrangea-gentleman.png",
+            "imageAlt": "Gentleman outfit concept",
+            "imageGenerationSize": {
+              "width": 1200,
+              "height": 900,
+              "aspectRatio": "4:3",
+              "positionKey": "home.sections.outfit.gentleman"
+            },
+            "tags": ["Gentleman", "Travel"],
+            "cta": "View Collection",
+            "href": "/style/"
+          },
+          {
+            "category": "Civilization",
+            "title": "Civilization Clothing",
+            "description": "Clothing stories connected to zones, rituals, and future commerce.",
+            "image": "/images-platform/styles/02-coastal-resort-floral.png",
+            "imageAlt": "Civilization clothing concept",
+            "imageGenerationSize": {
+              "width": 1200,
+              "height": 900,
+              "aspectRatio": "4:3",
+              "positionKey": "home.sections.outfit.civilization"
+            },
+            "tags": ["Zone", "Chorn DNA"],
+            "cta": "Open Channel",
+            "href": "/style/"
+          },
+          {
+            "category": "Lanna",
+            "title": "Lanna Future Luxury",
+            "description": "Northern elegance translated into a premium future lifestyle.",
+            "image": "/smart-mobility/chiang-mai/vision-smart-mobility-northern-gateway.png",
+            "imageAlt": "Lanna future luxury concept",
+            "imageGenerationSize": {
+              "width": 1200,
+              "height": 900,
+              "aspectRatio": "4:3",
+              "positionKey": "home.sections.outfit.lanna"
+            },
+            "tags": ["Lanna", "Future"],
+            "cta": "Explore Look",
+            "href": "/smart-mobility/"
+          }
+        ]
+      }
+    ]
+  },
+  "about": {
+    "eyebrow": "About Chorn Planet",
+    "title": "Future Civilization Platform",
+    "description": "Chorn Planet connects intelligent mobility, Smart Food, AI Luxury, Style, and practical technology into an evolving platform exploring future-ready living, connected environments, and human-centered digital experiences.",
+    "image": "/images/about/about-chorn-image-1200.webp",
+    "imageAlt": "Chorn Planet platform about visual",
+    "imageGenerationSize": {
+      "width": 1600,
+      "height": 1000,
+      "aspectRatio": "8:5",
+      "positionKey": "about.hero"
+    },
+    "blocks": [
+      {
+        "title": "AI Native Platform",
+        "body": "Chorn Planet is built as an AI-native platform, not only a content site. The first launch focuses on clear public surfaces that can later support smarter recommendations, content workflows, product storytelling, and useful service experiences.",
+        "tags": ["AI Native", "Platform Systems", "Product Workflow"],
+        "link": "/technology/"
+      },
+      {
+        "title": "AI Smart Mobility",
+        "body": "AI Smart Mobility explores intelligent transportation, connected infrastructure, and future mobility experiences through the Chorn Planet MTS Network. It acts as the circulatory system connecting destinations, tourism, lifestyle environments, and future-ready civilization concepts.",
+        "tags": ["MTS Network", "Smart Infrastructure", "Future Mobility"],
+        "link": "/smart-mobility/"
+      },
+      {
+        "title": "Smart City Systems",
+        "body": "Smart City Systems explores how intelligent environments, connected infrastructure, mobility coordination, and human-centered urban experiences may evolve together. The platform observes how future cities can balance technology, movement, comfort, sustainability, and everyday life within connected civilization ecosystems.",
+        "tags": [
+          "Human-Centered Cities",
+          "Connected Infrastructure",
+          "Urban Intelligence"
+        ],
+        "link": "/smart-city/"
+      },
+      {
+        "title": "AI Smart Food",
+        "body": "Smart Food is the practical daily-life layer. It gives Chorn Planet a useful starting point around food discovery, menu information, customer experience, ordering concepts, and future AI-assisted food service flows.",
+        "tags": ["Food Experience", "Ordering Concepts", "Daily Utility"],
+        "link": "/smart-food/"
+      },
+      {
+        "title": "AI Luxury",
+        "body": "AI Luxury is the premium project layer for property, destination, and lifestyle narratives. It helps turn high-value projects into clearer stories, visual systems, and investor-ready platform content.",
+        "tags": ["Premium Projects", "Destination Stories", "Investor Ready"],
+        "link": "/luxury/"
+      },
+      {
+        "title": "Style and Outfit Direction",
+        "body": "Style gives the platform a visual lifestyle layer. Outfit concepts become scenes, stories, and product direction across travel, culture, soft luxury, and future commerce.",
+        "tags": ["Graceful Style", "Outfit Stories", "Future Commerce"],
+        "link": "/style/"
+      }
+    ]
+  },
+  "channels": {}
+}

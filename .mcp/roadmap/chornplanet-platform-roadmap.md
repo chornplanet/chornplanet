@@ -10,7 +10,7 @@ ChornPlanet should evolve from a public Next.js website into a platform that com
 - SEO and LLM-visible topic hubs
 - premium commerce and TikTok-first product linking
 - lady/gentleman outfit and civilization clothing presentation
-- Chorn DNA-backed civilization scene authority
+- DNA-backed civilization scene authority
 - Smart Food web evolution
 - luxury project showcase and commerce expansion
 - analytics-assisted growth planning
@@ -94,7 +94,7 @@ Rules:
 
 Purpose:
 
-- Create draft-only outfit and civilization content pipeline using Chorn DNA authority.
+- Create draft-only outfit and civilization content pipeline using DNA authority.
 
 Candidate branch:
 
@@ -152,7 +152,7 @@ ChatGPT / Codex needs growth insight
   -> .mcp analytics tool contract / workflow
   -> approved internal API, export, or report
   -> aggregate AI-readable summary
-  -> .chatgpt/planning/feature-*.md
+  -> .planning/feature-*.md
   -> Khachornchit approval
   -> Codex implementation branch
 ```
@@ -255,4 +255,4 @@ feature/luxury-project-commerce-expansion
 
 ## Feature Branch Queue
 
-Use `.mcp/roadmap/feature-queue.md` as the operational queue. Each feature should have a focused `.chatgpt/planning/feature-*.md` before Codex implementation.
+Use `.mcp/roadmap/feature-queue.md` as the operational queue. Each feature should have a focused `.planning/feature-*.md` before Codex implementation.

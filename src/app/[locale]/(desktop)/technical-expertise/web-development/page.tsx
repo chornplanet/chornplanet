@@ -1,11 +1,9 @@
 import React from "react";
-import CloudExperience from "@/components/Common/CloudExperience";
 import {Metadata} from "next";
 import {SchemaMarkupServicePage} from "@/components/GoogleSchemaMarkup/SchemaMarkupServicePage";
 import WebDevelopmentPageMain from "@/components/Services/WebDevelopment/WebDevelopmentPageMain";
 import {headers} from "next/headers";
 import {MetadataWebDevelopment} from "@/metadata/main/MetadataWebDevelopment";
-import HomeFeatureMain from "@/components/Features/HomeFeatureMain";
 import {getTechnicalExpertiseContentForPublicPage} from "@/lib/technical-expertise-content/technicalExpertiseContent.service";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -26,17 +24,6 @@ export default async function Page() {
                 content={content}
             />
 
-            <section className="technology-premium-module technology-premium-module--feature">
-                <div className="technology-premium-container">
-                    <HomeFeatureMain lang={lang} feature={content.feature} isHideTopTitle={true}/>
-                </div>
-            </section>
-
-            <section className="technology-premium-module technology-premium-module--cloud-experience">
-                <div className="technology-premium-container">
-                    <CloudExperience lang={lang} cloud={content.cloud}/>
-                </div>
-            </section>
             <SchemaMarkupServicePage
                 name="Web Development Services | Chorn Planet | Custom Software & Technology Solutions"
                 description="Explore Chorn Planet's web development services, including expertise in Next.js, React, Angular, Vue, and more. Chorn Planet offers tailored solutions for businesses across various domains such as Digital Marketing, Blockchain, E-Commerce, and more."
