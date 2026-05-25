@@ -19,7 +19,7 @@ export default async function Home() {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     name: "Chorn Planet | Future Mobility & Smart City Systems Designer, Connected Systems & Early IoT Platforms, Concept to Architecture, System Design & Development",
-    logo: "https://chornplanet.com/images/logo/chorn-logo-2025-circle-md.png",
+    logo: "https://chornplanet.com/images/logo/logo-romance-male.png",
     "@id": "https://chornplanet.com",
     url: "https://chornplanet.com",
     contactPoint: {

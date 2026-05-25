@@ -4,174 +4,45 @@
 
 feature/mts-future-civilization-platform
 
----
+## Objective
 
-# Objective
+Make Smart Mobility the MTS future civilization layer of Chorn Planet: a connected system for intelligent mobility, future tourism, lifestyle storytelling, and human-centered infrastructure.
 
-Transform the Smart Mobility ecosystem into the first large-scale MTS future civilization experience platform aligned with the Chorn Planet civilization framework.
+## Implemented Outline
 
-The MTS Network should become:
-- the circulatory system of Chorn Planet civilization
-- an intelligent mobility infrastructure layer
-- a connected tourism and lifestyle ecosystem
-- a future civilization mobility experience
+- Replaced the roadmap Smart Mobility landing page with the MTS platform experience.
+- Added a full-bleed randomized MTS station hero on `/smart-mobility/`.
+- Added Coastal and Valley MTS sections with 3-card desktop rows and 6 random station cards per line.
+- Added MTS station detail pages at `/smart-mobility/mts/[slug]/`.
+- Added station detail backlinks to the MTS system and Circulatory Story.
+- Added the Circulatory Story page at `/story/`.
+- Added homepage Circulatory System and Circulatory Story entry points.
+- Added Story to the main navbar and Platform footer group.
+- Added Future Chiang Mai to Footer -> Projects.
+- Kept Chiang Mai Smart Mobility pages as separate legacy/future project pages, not embedded in the new MTS landing/detail flow.
 
----
+## Main Files
 
-# Core Direction
+- `src/app/[locale]/(roadmap)/smart-mobility/page.tsx`
+- `src/app/[locale]/(roadmap)/smart-mobility/mts/[slug]/page.tsx`
+- `src/app/[locale]/(roadmap)/story/page.tsx`
+- `src/components/Platform/PlatformHomePage.tsx`
+- `src/lib/platform-content/smartMobilityContent.ts`
+- `src/data/smart-mobility/coastal/en.coastal.json`
+- `src/data/smart-mobility/valley/en.valley.json`
+- `src/data/story/sofa-couple/en.sofa-couple.json`
+- `src/styles/platform/platform.scss`
+- `src/lib/layout-content/layoutContent.service.ts`
 
-Chorn Planet is evolving into:
+## Content Strategy
 
-> A Future Civilization Platform exploring how humanity, AI, mobility, infrastructure, lifestyle, and intelligent environments may evolve together.
+- English seed content is the starting source.
+- Other locales display English until dedicated translations are added.
+- Future station groups can join the shared `/smart-mobility/mts/[slug]/` route namespace.
 
-The MTS system is not only transportation.
+## Future Ideas
 
-It represents:
-- intelligent mobility
-- civilization connectivity
-- future tourism
-- smart infrastructure
-- human-centered future environments
-
----
-
-# Implementation Scope
-
-## Smart Mobility Page Updates
-
-Update:
-
-- src/app/[locale]/(roadmap)/smart-mobility/page.tsx
-
-Add:
-
-- src/app/[locale]/(roadmap)/smart-mobility/[slug]/page.tsx
-
----
-
-# Existing Component Integration
-
-Existing component:
-
-```ts
-import {
-  generateSmartMobilityChiangMaiMetadata,
-  SmartMobilityChiangMaiPage,
-} from "../../(desktop)/smart-mobility/chiang-mai/smartMobilityChiangMaiPage";
-```
-
-Implementation direction:
-
-- Add new MTS civilization experience section above
-- Move SmartMobilityChiangMaiPage lower in the page
-- Preserve Chiang Mai smart mobility content as operational and real-world grounding layer
-
----
-
-# Data Architecture
-
-Create:
-
-- src/data/smart-mobility/en.seed.json
-
-Initial structure:
-
-```json
-{
-  "type": "MTS",
-  "zone": "Coastal",
-  "world_map": "...",
-  "mts_line": "...",
-  "mts_network": "...",
-  "mts_station": "...",
-  "name": "Beach Gateway",
-  "image": {
-    "src": "/images-platform/smart-mobility/mts-coastal1-beach-gateway.png",
-    "alt": "...",
-    "story": "..."
-  }
-}
-```
-
----
-
-# MTS Station Groups
-
-## Coastal Line
-
-1. Beach Gateway
-2. Coral Bay Marina
-3. Coconut Beach Garden
-4. Island Panorama Point
-5. White Sand Resort District
-6. Sunrise Ocean Deck
-7. Tropical Lagoon Bay
-8. Ocean Cliff Horizon
-9. Seaside Market Promenade
-10. Grand Coastal Terminal
-
----
-
-## Valley Line
-
-1. Valley Gateway
-2. Lavender Valley
-3. Waterfall Valley (White Lily)
-4. Pine Ridge (Alpine Daisy)
-5. Sunrise Valley (Golden Wildflowers)
-6. Mist Morning (Blue Hydrangea)
-7. Flower Valley Station
-8. Alpine Garden Station
-9. Cliff Horizon Station
-10. Grand Alpine Terminal
-
----
-
-# Civilization Alignment Review
-
-Review and refine:
-
-- .chatgpt/system/civilization/*
-- .chatgpt/system/world/WorldMap.md
-- .chatgpt/system/world/MTSLines.md
-- .chatgpt/system/world/MTSNetwork.md
-- .chatgpt/system/world/MTSStations.md
-
-Ensure all systems align with:
-- coherent future civilization direction
-- intelligent mobility philosophy
-- human-centered environments
-- luxury future tourism
-- connected infrastructure ecosystems
-
----
-
-# Storytelling Direction
-
-Every MTS station should feel like:
-- part of a living civilization
-- emotionally aspirational
-- technologically intelligent
-- globally cinematic
-- integrated with nature
-- human-centered
-
-The station story content should align with:
-- Future Civilization Platform
-- AI-integrated living
-- intelligent mobility
-- smart infrastructure
-- future tourism ecosystems
-
----
-
-# Future Expansion
-
-Future roadmap may include:
-- interactive MTS network map
-- animated route systems
-- district visualization
-- AI mobility systems
-- smart city integration
-- future infrastructure storytelling
-- lunar and Martian mobility concepts
+- Interactive MTS network map.
+- Animated route visualization.
+- More station groups beyond Coastal and Valley.
+- AI mobility systems and smart city integration.

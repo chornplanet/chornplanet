@@ -1,0 +1,82 @@
+{
+  "title": "Back to Home by MTS",
+  "story": "A young couple returns home through the mountain valley using the MTS. After arriving at Mountain Station, they walk together along the quiet road to their modern hillside home. As evening falls, they settle into the warm living room, share a gentle conversation on the sofa, and end the day relaxing together in a reclining chair with a peaceful mountain view.",
+  "image": {
+    "src": "/images-platform/story/sofa-couple/01-back-to-home-by-mts-vertical.png",
+    "alt": "A young couple walks hand in hand beside an MTS train at Mountain Station, surrounded by a scenic mountain valley."
+  },
+  "imageGenerationSize": {
+    "width": 1024,
+    "height": 1536,
+    "aspectRatio": "2:3",
+    "positionKey": "story.main"
+  },
+  "openGraphImage": {
+    "src": "/images-platform/story/sofa-couple/01-back-to-home-by-mts.png",
+    "imageGenerationSize": {
+      "width": 1536,
+      "height": 1024,
+      "aspectRatio": "3:2",
+      "positionKey": "story.openGraphImage"
+    }
+  },
+  "tiktok": "https://vt.tiktok.com/ZSx9u714U/",
+  "images": [
+    {
+      "title": "Relaxing on the Reclining Sofa",
+      "description": "After getting home, the couple relaxes indoors. The woman reclines comfortably on a soft chair while the man sits beside her, holding her hand near the large window overlooking the mountain landscape.",
+      "image": {
+        "src": "/images-platform/story/sofa-couple/02-relaxing-on-the-reclining-sofa.png",
+        "alt": "A couple relaxes by a large mountain-view window, with the woman reclining in a soft chair and the man gently holding her hand."
+      },
+      "imageGenerationSize": {
+        "width": 1024,
+        "height": 1536,
+        "aspectRatio": "2:3",
+        "positionKey": "story.card"
+      }
+    },
+    {
+      "title": "Walking Home in the Valley",
+      "description": "The couple walks hand in hand along a quiet valley road at dusk, heading home through the peaceful mountain scenery.",
+      "image": {
+        "src": "/images-platform/story/sofa-couple/03-waling-home-in-valley.png",
+        "alt": "A young couple walks hand in hand along a winding road in a mountain valley at sunset."
+      },
+      "imageGenerationSize": {
+        "width": 1024,
+        "height": 1536,
+        "aspectRatio": "2:3",
+        "positionKey": "story.card"
+      }
+    },
+    {
+      "title": "Arriving at Home",
+      "description": "The couple reaches their modern hillside home and approaches the warmly lit living space, ready to spend a quiet evening together.",
+      "image": {
+        "src": "/images-platform/story/sofa-couple/04-arriving-at-home.png",
+        "alt": "A couple walks toward a modern mountain home with warm interior lights glowing through large glass doors."
+      },
+      "imageGenerationSize": {
+        "width": 1024,
+        "height": 1536,
+        "aspectRatio": "2:3",
+        "positionKey": "story.card"
+      }
+    },
+    {
+      "title": "Sitting on the Sofa Conversation",
+      "description": "Inside the cozy living room, the couple sits close together on the sofa, smiling and talking over warm drinks in a calm evening atmosphere.",
+      "image": {
+        "src": "/images-platform/story/sofa-couple/05-sitting-on-sofa-conversation.png",
+        "alt": "A couple sits together on a cozy sofa in a warmly lit living room, smiling and talking beside a coffee table with mugs."
+      },
+      "imageGenerationSize": {
+        "width": 1024,
+        "height": 1536,
+        "aspectRatio": "2:3",
+        "positionKey": "story.card"
+      }
+    }
+  ]
+}

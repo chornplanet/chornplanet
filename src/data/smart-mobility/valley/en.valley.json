@@ -1,0 +1,212 @@
+[
+  {
+    "type": "MTS",
+    "zone": "Valley",
+    "world_map": "Valley Smart Mobility Region",
+    "mts_line": "Valley Line",
+    "mts_network": "Chorn Planet MTS Network",
+    "mts_station": "MTS Valley 1",
+    "slug": "mts-valley-1-valley-gateway",
+    "name": "Valley Gateway",
+    "story": "Valley Gateway welcomes travelers into the intelligent alpine mobility ecosystem where nature, smart transportation, and future exploration environments coexist peacefully.",
+    "image": {
+      "src": "/images-platform/smart-mobility/mts-valley1-valley-gateway.png",
+      "alt": "MTS Valley 1 Valley Gateway mountain station"
+    },
+    "imageGenerationSize": {
+      "width": 1536,
+      "height": 1024,
+      "aspectRatio": "3:2",
+      "positionKey": "mts.card"
+    }
+  },
+  {
+    "type": "MTS",
+    "zone": "Valley",
+    "world_map": "Valley Smart Mobility Region",
+    "mts_line": "Valley Line",
+    "mts_network": "Chorn Planet MTS Network",
+    "mts_station": "MTS Valley 2",
+    "slug": "mts-valley-2-lavender-valley",
+    "name": "Lavender Valley",
+    "story": "Lavender Valley combines floral environments, cinematic transportation experiences, and AI-assisted mobility systems within a calming future civilization landscape.",
+    "image": {
+      "src": "/images-platform/smart-mobility/mts-valley2-lavender-valley.png",
+      "alt": "MTS Valley 2 Lavender Valley intelligent station"
+    },
+    "imageGenerationSize": {
+      "width": 1536,
+      "height": 1024,
+      "aspectRatio": "3:2",
+      "positionKey": "mts.card"
+    }
+  },
+  {
+    "type": "MTS",
+    "zone": "Valley",
+    "world_map": "Valley Smart Mobility Region",
+    "mts_line": "Valley Line",
+    "mts_network": "Chorn Planet MTS Network",
+    "mts_station": "MTS Valley 3",
+    "slug": "mts-valley-3-waterfall-valley-white-lily",
+    "name": "Waterfall Valley (White Lily)",
+    "story": "Waterfall Valley integrates natural waterfall environments, elegant infrastructure, and intelligent tourism systems into a connected future mobility experience.",
+    "image": {
+      "src": "/images-platform/smart-mobility/mts-valley3-waterfall-valley-white-lily.png",
+      "alt": "MTS Valley 3 Waterfall Valley White Lily future station"
+    },
+    "imageGenerationSize": {
+      "width": 1536,
+      "height": 1024,
+      "aspectRatio": "3:2",
+      "positionKey": "mts.card"
+    }
+  },
+  {
+    "type": "MTS",
+    "zone": "Valley",
+    "world_map": "Valley Smart Mobility Region",
+    "mts_line": "Valley Line",
+    "mts_network": "Chorn Planet MTS Network",
+    "mts_station": "MTS Valley 4",
+    "slug": "mts-valley-4-pine-ridge-alpine-daisy",
+    "name": "Pine Ridge (Alpine Daisy)",
+    "story": "Pine Ridge explores elevated mountain mobility, intelligent environmental integration, and peaceful alpine civilization experiences inspired by future sustainable living.",
+    "image": {
+      "src": "/images-platform/smart-mobility/mts-valley4-pine-ridge-alpine-daisy.png",
+      "alt": "MTS Valley 4 Pine Ridge Alpine Daisy elevated station"
+    },
+    "imageGenerationSize": {
+      "width": 1536,
+      "height": 1024,
+      "aspectRatio": "3:2",
+      "positionKey": "mts.card"
+    }
+  },
+  {
+    "type": "MTS",
+    "zone": "Valley",
+    "world_map": "Valley Smart Mobility Region",
+    "mts_line": "Valley Line",
+    "mts_network": "Chorn Planet MTS Network",
+    "mts_station": "MTS Valley 5",
+    "slug": "mts-valley-5-sunrise-valley-golden-wildflowers",
+    "name": "Sunrise Valley (Golden Wildflowers)",
+    "story": "Sunrise Valley blends golden mountain landscapes, emotionally warm transportation design, and intelligent tourism mobility into an inspiring future civilization destination.",
+    "image": {
+      "src": "/images-platform/smart-mobility/mts-valley5-sunrise-valley-golden-wildflowers.png",
+      "alt": "MTS Valley 5 Sunrise Valley Golden Wildflowers station"
+    },
+    "imageGenerationSize": {
+      "width": 1536,
+      "height": 1024,
+      "aspectRatio": "3:2",
+      "positionKey": "mts.card"
+    }
+  },
+  {
+    "type": "MTS",
+    "zone": "Valley",
+    "world_map": "Valley Smart Mobility Region",
+    "mts_line": "Valley Line",
+    "mts_network": "Chorn Planet MTS Network",
+    "mts_station": "MTS Valley 6",
+    "slug": "mts-valley-6-mist-morning-blue-hydrangea",
+    "name": "Mist Morning (Blue Hydrangea)",
+    "story": "Mist Morning creates a cinematic mobility atmosphere where intelligent transportation systems move seamlessly through fog-covered alpine environments and floral landscapes.",
+    "image": {
+      "src": "/images-platform/smart-mobility/mts-valley6-mist-morning-blue-hydrangea.png",
+      "alt": "MTS Valley 6 Mist Morning Blue Hydrangea intelligent mobility station"
+    },
+    "imageGenerationSize": {
+      "width": 1536,
+      "height": 1024,
+      "aspectRatio": "3:2",
+      "positionKey": "mts.card"
+    }
+  },
+  {
+    "type": "MTS",
+    "zone": "Valley",
+    "world_map": "Valley Smart Mobility Region",
+    "mts_line": "Valley Line",
+    "mts_network": "Chorn Planet MTS Network",
+    "mts_station": "MTS Valley 7",
+    "slug": "mts-valley-7-flower-valley-station",
+    "name": "Flower Valley Station",
+    "story": "Flower Valley Station connects intelligent tourism experiences, elegant floral environments, and future-ready mountain transportation systems into a harmonious civilization ecosystem.",
+    "image": {
+      "src": "/images-platform/smart-mobility/mts-valley7-flower-valley-station.png",
+      "alt": "MTS Valley 7 Flower Valley Station future mobility hub"
+    },
+    "imageGenerationSize": {
+      "width": 1536,
+      "height": 1024,
+      "aspectRatio": "3:2",
+      "positionKey": "mts.card"
+    }
+  },
+  {
+    "type": "MTS",
+    "zone": "Valley",
+    "world_map": "Valley Smart Mobility Region",
+    "mts_line": "Valley Line",
+    "mts_network": "Chorn Planet MTS Network",
+    "mts_station": "MTS Valley 8",
+    "slug": "mts-valley-8-alpine-garden-station",
+    "name": "Alpine Garden Station",
+    "story": "Alpine Garden Station integrates intelligent transportation, luxury alpine tourism, and environmentally connected infrastructure into a peaceful future civilization retreat.",
+    "image": {
+      "src": "/images-platform/smart-mobility/mts-valley8-alpine-garden-station.png",
+      "alt": "MTS Valley 8 Alpine Garden Station luxury mobility environment"
+    },
+    "imageGenerationSize": {
+      "width": 1536,
+      "height": 1024,
+      "aspectRatio": "3:2",
+      "positionKey": "mts.card"
+    }
+  },
+  {
+    "type": "MTS",
+    "zone": "Valley",
+    "world_map": "Valley Smart Mobility Region",
+    "mts_line": "Valley Line",
+    "mts_network": "Chorn Planet MTS Network",
+    "mts_station": "MTS Valley 9",
+    "slug": "mts-valley-9-cliff-horizon-station",
+    "name": "Cliff Horizon Station",
+    "story": "Cliff Horizon Station explores cinematic cliffside transportation, intelligent infrastructure systems, and emotionally inspiring mountain exploration experiences.",
+    "image": {
+      "src": "/images-platform/smart-mobility/mts-valley9-cliff-horizon-station.png",
+      "alt": "MTS Valley 9 Cliff Horizon Station elevated mobility architecture"
+    },
+    "imageGenerationSize": {
+      "width": 1536,
+      "height": 1024,
+      "aspectRatio": "3:2",
+      "positionKey": "mts.card"
+    }
+  },
+  {
+    "type": "MTS",
+    "zone": "Valley",
+    "world_map": "Valley Smart Mobility Region",
+    "mts_line": "Valley Line",
+    "mts_network": "Chorn Planet MTS Network",
+    "mts_station": "MTS Valley 10",
+    "slug": "mts-valley-10-grand-alpine-terminal",
+    "name": "Grand Alpine Terminal",
+    "story": "Grand Alpine Terminal serves as the central intelligent transportation gateway connecting alpine districts, future tourism systems, and human-centered mountain civilization experiences.",
+    "image": {
+      "src": "/images-platform/smart-mobility/mts-valley10-grand-alpine-terminal.png",
+      "alt": "MTS Valley 10 Grand Alpine Terminal future transportation hub"
+    },
+    "imageGenerationSize": {
+      "width": 1536,
+      "height": 1024,
+      "aspectRatio": "3:2",
+      "positionKey": "mts.card"
+    }
+  }
+]

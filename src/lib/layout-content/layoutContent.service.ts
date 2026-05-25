@@ -63,7 +63,7 @@ const TIKTOK_CONTENT_DEVELOPMENT_FOOTER_LABELS: Record<string, string> = {
     zh: 'TikTok 创作者',
 };
 
-type MainNavbarGroup = 'Home' | 'Luxury' | 'Smart Food' | 'Style' | 'Smart City' | 'Smart Mobility' | 'About';
+type MainNavbarGroup = 'Home' | 'Luxury' | 'Smart Food' | 'Style' | 'Smart City' | 'Smart Mobility' | 'Story' | 'About';
 
 const MAIN_NAVBAR_LABELS: Record<MainNavbarGroup, Record<string, string>> = {
     Home: {
@@ -105,6 +105,7 @@ const MAIN_NAVBAR_LABELS: Record<MainNavbarGroup, Record<string, string>> = {
         nl: 'Smart Mobility',
         zh: '智慧出行',
     },
+    Story: {en: 'Story', th: 'Story', da: 'Story', de: 'Story', fi: 'Story', fr: 'Story', ja: 'Story', ko: 'Story', nl: 'Story', zh: 'Story'},
     About: {
         en: 'About',
         th: 'About',
@@ -171,7 +172,14 @@ const MAIN_NAVBAR_ITEMS: MainNavbarItem[] = [
         label: 'Smart Mobility',
         link: '/smart-mobility/',
         activeLinks: [],
-        matchLinks: ['/smart-mobility', '/smart-mobility/', '/smart-mobility/chiang-mai', '/smart-mobility/chiang-mai/vision-smart-mobility-northern-gateway/'],
+        matchLinks: ['/smart-mobility', '/smart-mobility/', '/smart-mobility/mts', '/smart-mobility/mts/', '/smart-mobility/chiang-mai', '/smart-mobility/chiang-mai/vision-smart-mobility-northern-gateway/'],
+    },
+    {
+        group: 'Story',
+        label: 'Story',
+        link: '/story/',
+        activeLinks: [],
+        matchLinks: ['/story', '/story/'],
     },
     {
         group: 'About',
@@ -414,6 +422,7 @@ function normalizePlatformFooter(footer: IFooter): IFooter {
                 {label: 'Luxury Project', link: '/luxury/'},
                 {label: 'Smart Food System', link: '/smart-food/'},
                 {label: 'Graceful Style', link: '/style/'},
+                {label: 'Future Chiang Mai', link: '/smart-mobility/chiang-mai/vision-smart-mobility-northern-gateway/'},
                 {label: 'Chorn Planet', link: '/'},
             ],
         },
@@ -423,6 +432,7 @@ function normalizePlatformFooter(footer: IFooter): IFooter {
                 {label: 'Luxury', link: '/luxury/'},
                 {label: 'Smart Food', link: '/smart-food/'},
                 {label: 'Style', link: '/style/'},
+                {label: 'Story', link: '/story/'},
                 {label: 'Smart City', link: '/smart-city/'},
                 {label: 'Smart Mobility', link: '/smart-mobility/'},
             ],
