@@ -1275,7 +1275,7 @@
 }
 
 .platform-home-sofa-story__media,
-.platform-home-sofa-story__cards figure {
+.platform-home-sofa-story__card-media {
   position: relative;
   overflow: hidden;
   margin: 0;
@@ -1393,29 +1393,56 @@
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 12px;
   align-content: stretch;
+  grid-auto-rows: 1fr;
 }
 
-.platform-home-sofa-story__cards figure {
+.platform-home-sofa-story__cards figure,
+.platform-home-sofa-story__cards a {
+  margin: 0;
+}
+
+.platform-home-sofa-story__card-media {
+  --platform-home-sofa-story-caption-height: 72px;
+
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) var(--platform-home-sofa-story-caption-height);
+  height: 100%;
   aspect-ratio: 1 / 1;
+  color: inherit;
+  text-decoration: none;
+  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
 }
 
-.platform-home-sofa-story__cards figcaption {
-  position: absolute;
-  left: 10px;
-  right: 10px;
-  bottom: 10px;
-  display: inline-flex;
-  min-height: 30px;
+a.platform-home-sofa-story__card-media:hover {
+  transform: translateY(-4px);
+  border-color: rgba(79, 217, 255, 0.52);
+  box-shadow: 0 28px 74px rgba(17, 39, 109, 0.16);
+}
+
+a.platform-home-sofa-story__card-media:hover img {
+  transform: scale(1.04);
+}
+
+.platform-home-sofa-story__card-image {
+  position: relative;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.platform-home-sofa-story__card-image img {
+  transition: transform 220ms ease;
+}
+
+.platform-home-sofa-story__cards figcaption,
+.platform-home-sofa-story__card-caption {
+  display: flex;
+  height: var(--platform-home-sofa-story-caption-height);
   align-items: center;
-  padding: 6px 9px;
-  border: 1px solid rgba(255, 255, 255, 0.34);
-  border-radius: 6px;
-  background: rgba(6, 16, 43, 0.54);
-  color: #ffffff;
-  font-size: 0.72rem;
-  font-weight: 900;
-  line-height: 1.2;
-  backdrop-filter: blur(12px);
+  padding: 10px 12px 12px;
+  color: var(--platform-ink);
+  font-size: 0.98rem;
+  line-height: 1.28;
+  overflow: hidden;
 }
 
 .platform-mts-page {
@@ -1711,6 +1738,10 @@
     min-height: 420px;
   }
 
+  .platform-home-sofa-story__card-media {
+    --platform-home-sofa-story-caption-height: 78px;
+  }
+
   .platform-mts-full-hero {
     min-height: min(780px, 76svh);
   }
@@ -1952,6 +1983,19 @@
 
   .platform-home-sofa-story__copy {
     padding: 18px;
+  }
+
+  .platform-home-sofa-story__card-media {
+    --platform-home-sofa-story-caption-height: 58px;
+
+    aspect-ratio: 4 / 5;
+  }
+
+  .platform-home-sofa-story__cards figcaption,
+  .platform-home-sofa-story__card-caption {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
   }
 
   .platform-home-sofa-story__actions,

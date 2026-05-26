@@ -197,7 +197,74 @@
           }
         ]
       }
-    ]
+    ],
+    "circular": {
+      "title": "Circular System Story",
+      "span": "Future Circular System",
+      "description": "A young couple returns home through the mountain valley using the MTS, moving from quiet alpine stations back into the warmth of their hillside home. Their journey does not end at one destination: the same circular mobility system can carry them outward again to coastal stations, sunrise ocean decks, marina districts, lavender valleys, and mountain gateways, connecting home, travel, rest, and future civilization through one intelligent MTS network.",
+      "categories": [
+        {
+          "title": "Relaxing on the Reclining Sofa",
+          "description": "After getting home, the couple relaxes indoors. The woman reclines comfortably on a soft chair while the man sits beside her, holding her hand near the large window overlooking the mountain landscape.",
+          "image": {
+            "src": "/images-platform/story/sofa-couple/02-relaxing-on-the-reclining-sofa.png",
+            "alt": "A couple relaxes by a large mountain-view window, with the woman reclining in a soft chair and the man gently holding her hand."
+          },
+          "imageGenerationSize": {
+            "width": 1024,
+            "height": 1536,
+            "aspectRatio": "2:3",
+            "positionKey": "home.circular.sofa"
+          },
+          "link": "/story"
+        },
+        {
+          "title": "Lavender Valley",
+          "description": "Lavender Valley combines floral environments, cinematic transportation experiences, and AI-assisted mobility systems within a calming future civilization landscape.",
+          "image": {
+            "src": "/images-platform/smart-mobility/mts-valley2-lavender-valley.png",
+            "alt": "MTS Valley 2 Lavender Valley intelligent station"
+          },
+          "imageGenerationSize": {
+            "width": 1536,
+            "height": 1024,
+            "aspectRatio": "3:2",
+            "positionKey": "home.circular.valley"
+          },
+          "link": "/smart-mobility/mts/mts-valley-2-lavender-valley"
+        },
+        {
+          "title": "Coral Bay Marina",
+          "description": "Coral Bay Marina integrates luxury coastal mobility, marine tourism experiences, and intelligent waterfront infrastructure into a connected future civilization ecosystem.",
+          "image": {
+            "src": "/images-platform/smart-mobility/mts-coastal2-coral-bay-marina.png",
+            "alt": "MTS Coastal 2 Coral Bay Marina intelligent marina station"
+          },
+          "imageGenerationSize": {
+            "width": 1536,
+            "height": 1024,
+            "aspectRatio": "3:2",
+            "positionKey": "home.circular.coastal-marina"
+          },
+          "link": "/smart-mobility/mts/mts-coastal-2-coral-bay-marina"
+        },
+        {
+          "title": "Sunrise Ocean Deck",
+          "description": "Sunrise Ocean Deck combines panoramic ocean mobility, intelligent environmental systems, and emotionally inspiring transportation experiences for future coastal living.",
+          "image": {
+            "src": "/images-platform/smart-mobility/mts-coastal6-sunrise-ocean-deck.png",
+            "alt": "MTS Coastal 6 Sunrise Ocean Deck future station"
+          },
+          "imageGenerationSize": {
+            "width": 1536,
+            "height": 1024,
+            "aspectRatio": "3:2",
+            "positionKey": "home.circular.coastal-sunrise"
+          },
+          "link": "/smart-mobility/mts/mts-coastal-6-sunrise-ocean-deck"
+        }
+      ]
+    }
   },
   "about": {
     "eyebrow": "About Chorn Planet",

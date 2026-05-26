@@ -7,6 +7,7 @@ import PlatformContentCard, {
   getLocalizedHref,
 } from "@/components/Platform/PlatformContentCard";
 import type {
+  PlatformCircularContent,
   PlatformHomeContent,
   PlatformSection,
 } from "@/lib/platform-content/homeContent";
@@ -48,10 +49,12 @@ function PlatformHomeSection({
 
 export function PlatformHomeCircularSystemSection({
   lang,
+  circular,
   showStoryLink = true,
   showTiktokLink = false,
 }: {
   lang: string;
+  circular: PlatformCircularContent;
   showStoryLink?: boolean;
   showTiktokLink?: boolean;
 }) {
@@ -85,11 +88,11 @@ export function PlatformHomeCircularSystemSection({
           </div>
           <div className="platform-home-sofa-story__content">
             <div className="platform-home-sofa-story__copy">
-              <span>Future Home Story</span>
+              <span>{circular.span}</span>
               <h3 id="platform-home-sofa-story-title">
-                {sofaCoupleStory.title}
+                {circular.title}
               </h3>
-              <p>{sofaCoupleStory.story}</p>
+              <p>{circular.description}</p>
               <div className="platform-home-sofa-story__actions">
                 {showStoryLink ? (
                   <Link
@@ -131,17 +134,25 @@ export function PlatformHomeCircularSystemSection({
               </div>
             </div>
             <div className="platform-home-sofa-story__cards">
-              {sofaCoupleStory.images.slice(0, 4).map((storyImage) => (
-                <figure key={storyImage.image.src}>
-                  <Image
-                    src={storyImage.image.src}
-                    alt={storyImage.image.alt}
-                    fill
-                    sizes="(max-width: 640px) 50vw, 18vw"
-                    style={{ objectFit: "cover" }}
-                  />
-                  <figcaption>{storyImage.title}</figcaption>
-                </figure>
+              {circular.categories.slice(0, 4).map((storyImage) => (
+                <Link
+                  key={storyImage.image.src}
+                  className="platform-home-sofa-story__card-media"
+                  href={getLocalizedHref(lang, storyImage.link)}
+                >
+                  <div className="platform-home-sofa-story__card-image">
+                    <Image
+                      src={storyImage.image.src}
+                      alt={storyImage.image.alt}
+                      fill
+                      sizes="(max-width: 640px) 50vw, 18vw"
+                      style={{ objectFit: "cover" }}
+                    />
+                  </div>
+                  <span className="platform-home-sofa-story__card-caption">
+                    {storyImage.title}
+                  </span>
+                </Link>
               ))}
             </div>
           </div>
@@ -189,9 +200,7 @@ function PlatformHomeOutfitSection({
               </div>
               <div className="platform-outfit-card__body">
                 <span>{outfitSet.audience}</span>
-                <h3>
-                  {getPlatformOutfitLocalizedText(outfitSet.title, lang)}
-                </h3>
+                <h3>{getPlatformOutfitLocalizedText(outfitSet.title, lang)}</h3>
                 <p>
                   {getPlatformOutfitLocalizedText(
                     outfitSet.visualSummary,
@@ -268,7 +277,10 @@ export default function PlatformHomePage({
         ))}
       </div>
 
-      <PlatformHomeCircularSystemSection lang={lang} />
+      <PlatformHomeCircularSystemSection
+        lang={lang}
+        circular={content.circular}
+      />
       <PlatformHomeOutfitSection lang={lang} section={outfitSection} />
     </main>
   );

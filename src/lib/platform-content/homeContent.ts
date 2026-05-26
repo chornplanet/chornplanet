@@ -43,6 +43,24 @@ export type PlatformCard = {
   href: string;
 };
 
+export type PlatformCircularItem = {
+  title: string;
+  description: string;
+  link: string;
+  image: {
+    src: string;
+    alt: string;
+  };
+  imageGenerationSize?: PlatformImageGenerationSize;
+};
+
+export type PlatformCircularContent = {
+  title: string;
+  span: string;
+  description: string;
+  categories: PlatformCircularItem[];
+};
+
 export type PlatformSection = {
   id: string;
   eyebrow: string;
@@ -66,6 +84,7 @@ export type PlatformHero = {
 export type PlatformHomeContent = {
   hero: PlatformHero;
   sections: PlatformSection[];
+  circular: PlatformCircularContent;
 };
 
 export type PlatformTextBlock = {

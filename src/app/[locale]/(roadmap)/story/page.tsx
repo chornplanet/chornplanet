@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { PlatformHomeCircularSystemSection } from "@/components/Platform/PlatformHomePage";
+import PlatformStorySection from "@/components/Story/PlatformStorySection";
 import {
   getSmartMobilityContent,
   type MtsStation,
@@ -103,7 +103,7 @@ export default async function Page({ params }: PageParams) {
 
   return (
     <main className="platform-page platform-home platform-story-index-page">
-      <PlatformHomeCircularSystemSection
+      <PlatformStorySection
         lang={locale}
         showStoryLink={false}
         showTiktokLink
