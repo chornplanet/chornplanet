@@ -6,22 +6,11 @@ import WevDevelopmentFrontEnd from "@/components/Services/WebDevelopment/WevDeve
 import WebDevelopmentDevOps from "@/components/Services/WebDevelopment/WebDevelopmentDevOps";
 import { TechnicalExpertiseContentPayload } from "@/core/domain/technical-expertise-content.entity";
 import aiPlatformDevelopment from "./aiPlatformDevelopment.json";
-import HomeFeatureMain from "@/components/Features/HomeFeatureMain";
 import CloudExperience from "@/components/Common/CloudExperience";
+import { truncateText } from "@/lib/truncateText";
+import type { IFeatureStack } from "@/lib/model/IFeature";
 
 type AiPlatformDevelopmentLocale = keyof typeof aiPlatformDevelopment;
-const capabilityHighlightLinks: Record<string, string> = {
-  "Luxury Platform": "/ai-luxury",
-  "Smart Food": "/smart-food",
-  Style: "/style/",
-  Technology: "/technology",
-};
-const capabilityHighlightClasses: Record<string, string> = {
-  "Luxury Platform": "technology-hero__action--luxury",
-  "Smart Food": "technology-hero__action--food",
-  Style: "technology-hero__action--style",
-  Technology: "technology-hero__action--technology",
-};
 
 function getAiPlatformDevelopmentContent(lang: string) {
   const normalizedLang = lang === "zh" ? "zh_cn" : lang;
@@ -41,95 +30,83 @@ export default function WebDevelopmentPageMain({
   const featureContent = content.feature;
   const langx = getAiPlatformDevelopmentContent(lang);
   const localTitle = langx.title;
-  const localDescription = langx.description;
-  const capabilityHighlights = [
-    "Luxury Platform",
-    "Smart Food",
-    "Style",
-    "Technology"
-  ];
 
   return (
     <main className="technology-premium-page">
-      <section className="technology-hero">
-        <div className="technology-premium-container">
-          <div>
-            <p className="technology-eyebrow">{featureContent.span}</p>
+      <section className="policy-page__hero technology-document-hero">
+        <div className="platform-shell policy-page__hero-inner">
+          <div className="technology-document-hero__heading">
+            <span className="platform-eyebrow">{featureContent.span}</span>
             <h1>{localTitle}</h1>
+            <h2>
+              Technical documentation for Chorn Planet&apos;s AI-native platform
+            </h2>
           </div>
-          <div className="technology-hero__grid">
-            <div className="technology-hero__content">
-              <p className="technology-hero__lead">{localDescription}</p>
-
-              <div
-                className="technology-hero__actions"
-                aria-label="Technology capabilities"
-              >
-                {capabilityHighlights.map((item) => {
-                  const className =
-                    capabilityHighlightClasses[item] ??
-                    "technology-hero__action--system";
-                  const href = capabilityHighlightLinks[item];
-
-                  return href ? (
-                    <Link
-                      className={className}
-                      href={`/${lang}${href}`}
-                      key={item}
-                    >
-                      {item}
-                    </Link>
-                  ) : (
-                    <span className={className} key={item}>
-                      {item}
-                    </span>
-                  );
-                })}
-              </div>
-            </div>
-
-            <div
-              className="technology-hero__media"
-              aria-label="Technology delivery visual system"
-            >
-              <SystemCapability lang={lang} />
-            </div>
-
+          <div className="policy-page__hero-copy">
+            <p>
+              This technology page acts as a planning document for Chorn
+              Planet&apos;s future technical ecosystem, connecting AI platform
+              development, technical expertise pages, cloud operations, web
+              systems, and system capability layers into one practical roadmap
+              for delivery and long-term architecture.
+            </p>
           </div>
+          <aside
+            className="policy-page__summary"
+            aria-label={`${localTitle} summary`}
+          >
+            <span>Planning Document</span>
+            <strong>4</strong>
+            <small>system layers</small>
+          </aside>
         </div>
       </section>
 
-      <section className="technology-premium-module technology-premium-module--stacks">
+      <section
+        className="technology-system-capability"
+        aria-label="Technology system capability layers"
+      >
         <div className="technology-premium-container">
-          <WevDevelopmentFrontEnd lang={lang} frontEnd={content.frontEnd} />
+          <h1>System Capability</h1>
+          <SystemCapability lang={lang} />
         </div>
       </section>
 
-      <section className="technology-premium-module technology-premium-module--stacks">
-        <div className="technology-premium-container">
-          <WebDevelopmentBackEnd lang={lang} fullStack={content.fullStack} />
-        </div>
-      </section>
-
-      <section className="technology-premium-module technology-premium-module--stacks">
-        <div className="technology-premium-container">
-          <WebDevelopmentDevOps lang={lang} devOps={content.devOps} />
-        </div>
+      <section className="technology-premium-module technology-premium-module--stacks technology-premium-container">
+        <h1 className="technology-premium-module__title">
+          Technology Delivery Stack
+        </h1>
+        <WevDevelopmentFrontEnd lang={lang} frontEnd={content.frontEnd} />
+        <WebDevelopmentBackEnd lang={lang} fullStack={content.fullStack} />
+        <WebDevelopmentDevOps lang={lang} devOps={content.devOps} />
       </section>
 
       <section className="technology-premium-module technology-premium-module--feature">
         <div className="technology-premium-container">
-          <HomeFeatureMain
-            lang={lang}
-            feature={content.feature}
-            isHideTopTitle={true}
-          />
-        </div>
-      </section>
-
-      <section className="technology-premium-module technology-premium-module--cloud-experience">
-        <div className="technology-premium-container">
-          <CloudExperience lang={lang} cloud={content.cloud} />
+          <h1 className="technology-premium-module__title">
+            Platform Delivery Model
+          </h1>
+          <div className="technology-feature-grid">
+            {content.feature.stacks.map(
+              (stack: IFeatureStack, index: number) => (
+                <div key={index} className="home-feature-container">
+                  <Link href={`/${lang}${stack.link}`}>
+                    <div className="custom-single-features-box feature-box">
+                      <div className="icon feature-box-icon">
+                        <i className={`${stack.icon} feature-icon hover-rotate`} />
+                        <span className="feature-box-title">
+                          {stack.title}
+                        </span>
+                      </div>
+                      <p className="feature-box-description">
+                        {truncateText(stack.description, 110)}
+                      </p>
+                    </div>
+                  </Link>
+                </div>
+              ),
+            )}
+          </div>
         </div>
       </section>
     </main>
