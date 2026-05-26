@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import type { PlatformStoryContent } from "@/lib/platform-content/homeContent";
 
@@ -20,20 +19,24 @@ export default function PlatformStoryPage({
 
   return (
     <main className="platform-page platform-story-page">
-      <section className="platform-channel-hero platform-channel-hero--story">
-        <div className="platform-channel-hero__copy">
-          <span className="platform-eyebrow">{content.eyebrow}</span>
-          <h1>{content.title}</h1>
-          <p>{content.description}</p>
-        </div>
-        <div className="platform-channel-hero__media">
-          <Image
-            src={content.image}
-            alt={content.imageAlt}
-            fill
-            priority
-            sizes="(max-width: 992px) 100vw, 44vw"
-          />
+      <section className="policy-page__hero technology-document-hero">
+        <div className="platform-shell policy-page__hero-inner">
+          <div className="technology-document-hero__heading">
+            <span className="platform-eyebrow">{content.eyebrow}</span>
+            <h1>{content.title}</h1>
+            <h2>Chorn Planet&apos;s future civilization platform</h2>
+          </div>
+          <div className="policy-page__hero-copy">
+            <p>{content.description}</p>
+          </div>
+          <aside
+            className="policy-page__summary"
+            aria-label={`${content.title} summary`}
+          >
+            <span>Platform Document</span>
+            <strong>{content.blocks.length}</strong>
+            <small>platform layers</small>
+          </aside>
         </div>
       </section>
 
