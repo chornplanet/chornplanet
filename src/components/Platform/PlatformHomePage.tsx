@@ -79,8 +79,8 @@ export function PlatformHomeCircularSystemSection({
         >
           <div className="platform-home-sofa-story__media">
             <Image
-              src={sofaCoupleStory.image.src}
-              alt={sofaCoupleStory.image.alt}
+              src={sofaCoupleStory.imagePortrait.src}
+              alt={sofaCoupleStory.imagePortrait.alt}
               fill
               sizes="(max-width: 991px) 100vw, 50vw"
               style={{ objectFit: "cover" }}

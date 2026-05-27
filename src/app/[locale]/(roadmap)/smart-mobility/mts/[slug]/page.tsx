@@ -64,12 +64,12 @@ export default async function Page({ params }: PageParams) {
         </div>
         <div className="platform-outfit-detail-hero__media">
           <Image
+            className="platform-mts-hero__image"
             src={station.image.src}
             alt={station.image.alt}
             fill
             priority
             sizes="(max-width: 991px) 100vw, 48vw"
-            style={{ objectFit: "cover" }}
           />
         </div>
       </section>

@@ -67,14 +67,16 @@ export default async function Page({ params }: PageParams) {
   return (
     <main className="platform-page platform-mts-page">
       <section className="platform-mts-full-hero">
-        <Image
-          src={heroStation.image.src}
-          alt={heroStation.image.alt}
-          fill
-          priority
-          sizes="100vw"
-          style={{ objectFit: "cover" }}
-        />
+        <div className="platform-mts-full-hero__media">
+          <Image
+            className="platform-mts-full-hero__image"
+            src={heroStation.image.src}
+            alt={heroStation.image.alt}
+            fill
+            priority
+            sizes="100vw"
+          />
+        </div>
         <div className="platform-mts-full-hero__content">
           <small>CHORN PLANET - {heroStation.name}</small>
         </div>

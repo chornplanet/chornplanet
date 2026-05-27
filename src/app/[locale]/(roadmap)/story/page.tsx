@@ -74,7 +74,7 @@ export async function generateMetadata({
           url: openGraphImage.src,
           width: openGraphImage.imageGenerationSize.width,
           height: openGraphImage.imageGenerationSize.height,
-          alt: sofaCoupleStory.image.alt,
+          alt: sofaCoupleStory.imageLandscape.alt,
         },
       ],
     },

@@ -1,15 +1,15 @@
 {
   "title": "Living in the Circular System",
   "story": "A young couple returns home through the mountain valley using the MTS. After arriving at Mountain Station, they walk together along the quiet road to their modern hillside home. As evening falls, they settle into the warm living room, share a gentle conversation on the sofa, and end the day relaxing together in a reclining chair with a peaceful mountain view.",
-  "image": {
-    "src": "/images-platform/story/sofa-couple/01-back-to-home-by-mts-vertical.png",
-    "alt": "A young couple walks hand in hand beside an MTS train at Mountain Station, surrounded by a scenic mountain valley."
+  "imageLandscape": {
+    "src": "/images-platform/story/sofa-couple/01-back-to-home-by-mts.png",
+    "alt": "A young couple walks hand in hand beside an MTS train at Mountain Station, surrounded by a scenic mountain valley.",
+    "aspectRatio": "16:9"
   },
-  "imageGenerationSize": {
-    "width": 1024,
-    "height": 1536,
-    "aspectRatio": "2:3",
-    "positionKey": "story.main"
+  "imagePortrait": {
+    "src": "/images-platform/story/sofa-couple/01-back-to-home-by-mts-vertical.png",
+    "alt": "A young couple walks hand in hand beside an MTS train at Mountain Station, surrounded by a scenic mountain valley.",
+    "aspectRatio": "9:16"
   },
   "openGraphImage": {
     "src": "/images-platform/story/sofa-couple/01-back-to-home-by-mts.png",
