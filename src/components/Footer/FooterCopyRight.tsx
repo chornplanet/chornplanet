@@ -32,7 +32,7 @@ export default function Information({lang, footer}: { lang: string, footer: IFoo
                     <div className="row align-items-center">
                         <div className="col-lg-6 col-md-6">
                             <p>
-                                Copyright &copy; {year} by <a href={'/' + lang}>Chorn Planet</a>
+                                Copyright &copy; {year} by <Link href={'/' + lang}>Chorn Planet</Link>
                             </p>
                         </div>
 

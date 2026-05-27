@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 type AiLuxuryImage = {
   src: string;
@@ -278,13 +279,13 @@ export default function AiLuxuryLandingPage() {
                 aria-label={heroContent.actionsLabel}
               >
                 {heroContent.actions.map((action) => (
-                  <a
+                  <Link
                     key={action.label}
                     href={action.href}
                     className={`ai-luxury-button ai-luxury-button--${action.variant}`}
                   >
                     {action.label}
-                  </a>
+                  </Link>
                 ))}
               </div>
               <div

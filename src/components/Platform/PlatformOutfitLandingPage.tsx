@@ -81,12 +81,12 @@ export default function PlatformOutfitLandingPage({
           <h1>{content.hero.title}</h1>
           <p>{content.hero.description}</p>
           <div className="platform-outfit-hero__actions">
-            <a href={getLocalizedAnchor(lang, "featured-outfit-sets")}>
+            <Link href={getLocalizedAnchor(lang, "featured-outfit-sets")}>
               {content.hero.primaryCta}
-            </a>
-            <a href={getLocalizedAnchor(lang, "zone-pairing")}>
+            </Link>
+            <Link href={getLocalizedAnchor(lang, "zone-pairing")}>
               {content.hero.secondaryCta}
-            </a>
+            </Link>
           </div>
         </div>
         <div

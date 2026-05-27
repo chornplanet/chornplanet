@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { ImageUrl } from "@/image/ImageUrl";
 
 export default function BottomImageLeft() {
@@ -7,7 +8,7 @@ export default function BottomImageLeft() {
     <div className="social-left">
       <div className="left-row">
         <div className="about-icon-symbol">
-          <a href="https://chornplanet.com" className="chorn" target="_self">
+          <Link href="/" className="chorn">
             <Image
               src={ImageUrl.logo.rec.sm.path}
               alt={ImageUrl.logo.rec.sm.title}
@@ -15,12 +16,12 @@ export default function BottomImageLeft() {
               height={30}
               style={{ width: "auto", height: "auto" }}
             />
-          </a>
+          </Link>
         </div>
         <div className="chorn-text">
-          <a href="https://chornplanet.com" target="_self">
+          <Link href="/">
             www.chornplanet.com
-          </a>
+          </Link>
         </div>
       </div>
     </div>

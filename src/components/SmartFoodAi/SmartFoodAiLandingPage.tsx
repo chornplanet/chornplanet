@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import {ISmartFoodAiImage, ISmartFoodAiContent} from "@/lib/model/ISmartFoodAiContent";
 
 function SmartFoodAiImage({
@@ -64,13 +65,13 @@ export default function SmartFoodAiLandingPage({ content }: { content: ISmartFoo
                 aria-label={content.hero.actionsLabel}
               >
                 {content.hero.actions.map((action) => (
-                  <a
+                  <Link
                     key={action.href}
                     href={action.href}
                     className={`smart-food-ai-button smart-food-ai-button--${action.variant}`}
                   >
                     {action.label}
-                  </a>
+                  </Link>
                 ))}
               </div>
             </div>
