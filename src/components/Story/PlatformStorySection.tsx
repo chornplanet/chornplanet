@@ -15,6 +15,17 @@ export default function PlatformStorySection({
 }) {
   return (
     <>
+      <section className="platform-story-landscape-hero">
+        <Image
+          className="platform-story-landscape-hero__image"
+          src={sofaCoupleStory.imageLandscape.src}
+          alt={sofaCoupleStory.imageLandscape.alt}
+          fill
+          priority
+          sizes="100vw"
+        />
+      </section>
+
       <section className="platform-shell platform-outfit-detail-related platform-home-sofa-story platform-home-sofa-story--intro">
         <div className="platform-section__header platform-home-sofa-story__section1">
           <span>{"Circulatory System Story"}</span>
@@ -25,17 +36,6 @@ export default function PlatformStorySection({
             warmth of home, love, rest and everyday civilization.
           </p>
         </div>
-      </section>
-
-      <section className="platform-story-landscape-hero">
-        <Image
-          className="platform-story-landscape-hero__image"
-          src={sofaCoupleStory.imageLandscape.src}
-          alt={sofaCoupleStory.imageLandscape.alt}
-          fill
-          priority
-          sizes="100vw"
-        />
       </section>
 
       <section className="platform-shell platform-outfit-detail-related platform-home-sofa-story platform-home-sofa-story--feature">
