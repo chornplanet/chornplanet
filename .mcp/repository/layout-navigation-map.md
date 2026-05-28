@@ -5,7 +5,7 @@
 Main localized layout:
 
 ```text
-src/app/[locale]/(desktop)/layout.tsx
+src/app/[locale]/(legacy)/layout.tsx
 ```
 
 Responsibilities:
@@ -28,10 +28,10 @@ Primary navigation files:
 
 Navigation styling:
 
-- `src/styles/x-navbar.scss`
-- `src/styles/x-navbar-premium.scss`
-- `src/styles/x-navbar-language.scss`
-- `src/styles/x-icon.scss`
+- `src/styles/navigation/navbar.scss`
+- `src/styles/navigation/navbar-premium.scss`
+- `src/styles/navigation/navbar-language.scss`
+- `src/styles/utilities/additional-icon.scss`
 
 ## Footer Components
 
@@ -41,15 +41,30 @@ Primary footer files:
 - `src/components/Footer/FooterCopyRight.tsx`
 - `src/components/Footer/Left/FooterLogoSocial.tsx`
 - `src/components/Footer/smart-footer/*`
-- `src/styles/footer.scss`
+- `src/styles/layout/footer.scss`
 
 ## Navigation Content Source
 
-Layout/nav/footer copy comes through `getLayoutContent(lang)`. Inspect:
+Layout/nav/footer copy comes through `getLayoutContent(lang)`. Current platform launch normalization happens in `src/lib/layout-content/layoutContent.service.ts`, including the primary navigation:
+
+```text
+Home
+Luxury
+Smart Food
+Style
+Smart City
+Smart Mobility
+Story
+About
+```
+
+Inspect:
 
 - `src/lib/layout-content/layoutContent.service.ts`
 - `server/core/services/layout-content.service.ts`
 - `server/adapters/outbound/mongo.repository/layout-content.repository.ts`
+
+Current footer normalization keeps `Platform`, `Projects`, `Commerce`, `Important Links`, and `Connect` aligned with the platform architecture, removes YouTube/Facebook from Connect, and keeps TikTok as an external commerce link.
 
 ## Future Expansion Guidance
 

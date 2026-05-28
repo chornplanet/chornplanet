@@ -9,7 +9,7 @@ ChatGPT / Codex needs growth insight
   -> .mcp analytics tool contract or workflow
   -> approved internal API, export, or report
   -> aggregate AI-readable result
-  -> ChatGPT creates or updates .planning/feature-*.md
+  -> ChatGPT creates or updates .planning/in-progress/feature-*.md
   -> Khachornchit approves priority
   -> Codex creates an implementation branch
   -> release, content, SEO, UX, or instrumentation improvement

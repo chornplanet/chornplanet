@@ -2,13 +2,23 @@
 
 ## Current Content Pattern
 
-The current repository does not have `src/data/`. Runtime content is mostly organized as client-facing loader modules under:
+MongoDB-backed runtime content is mostly organized as client-facing loader modules under:
 
 ```text
 src/lib/*-content/
 ```
 
 These loaders connect to server services and Mongo repositories.
+
+The current platform layer also has seed/fallback content under:
+
+```text
+src/lib/platform-content/
+src/data/smart-mobility/
+src/data/story/
+```
+
+Use `.planning/achieved/released.md` to find the source paths for released platform features before deciding whether a content area is MongoDB-backed, static fallback, or temporary seed data.
 
 ## Content Loader Areas
 
@@ -21,6 +31,7 @@ These loaders connect to server services and Mongo repositories.
 - `src/lib/policy-content/`
 - `src/lib/smart-city-chiang-mai-content/`
 - `src/lib/smart-city-landing-content/`
+- `src/lib/smart-food-ai-content/`
 - `src/lib/smart-mobility-chiang-mai-content/`
 - `src/lib/technical-expertise-content/`
 

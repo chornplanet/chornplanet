@@ -16,7 +16,7 @@ src/metadata
 Existing pages import hardcoded metadata aggregators directly. Example:
 
 ```ts
-// src/app/[locale]/(desktop)/about-chorn/page.tsx
+// src/app/[locale]/(legacy)/about-chorn/page.tsx
 import {MetadataAbout} from "@/metadata/main/MetadataAbout";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -79,7 +79,7 @@ src/app/[locale]/.../page.tsx generateMetadata()
 Example confirmed page:
 
 ```text
-src/app/[locale]/(desktop)/about-chorn/page.tsx
+src/app/[locale]/(legacy)/about-chorn/page.tsx
 ```
 
 It imports:

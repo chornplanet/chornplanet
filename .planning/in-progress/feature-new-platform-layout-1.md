@@ -2,28 +2,31 @@
 
 Repository: `khachornchit/chornplanet`
 Branch: `feature/new-platform-layout`
-Status: Ready to Ship
+Status: In Progress - aligned to current implementation
 Owner: Khachornchit Chief Architect -> ChatGPT planning -> Codex implementation
 
 ## Phase 1 Goal
 
-Ship the first platform-facing layout pass after merging the latest `main` branch into the current feature branch.
+Ship the first platform-facing ChornPlanet layout: platform home, platform navigation, footer normalization, Luxury, Smart Food, Style, Story, and the MTS future civilization layer for Smart Mobility.
 
-Phase 1 keeps the latest `main` branch page ownership for existing mature routes where appropriate while introducing the new ChornPlanet platform theme, logo direction, navigation shape, footer theme/content, and canonical Phase 1 platform channels.
+Phase 1 keeps mature legacy route families available while the platform route group becomes the main public presentation layer.
 
-## Phase 1 Scope
+## Current Implementation Snapshot
 
-- Keep the new ChornPlanet logo direction.
-- Keep the latest blue platform theme.
-- Keep the new themed footer and current footer content direction.
-- Preserve the latest `main` branch behavior for existing mature pages that remain outside the new platform route work.
-- Keep route rendering stable for existing locales, but expose English only in the language button for launch.
-- Use the new theme where the Phase 1 platform routes are active.
-- Keep the language dropdown disabled for launch.
+- Home uses `src/components/Platform/PlatformHomePage.tsx` from `src/app/[locale]/(legacy)/page.tsx`.
+- Platform content lives in `src/lib/platform-content/homeContent.ts`, `styleContent.ts`, and `smartMobilityContent.ts`.
+- Platform routes live under `src/app/[locale]/(roadmap)/`; the route group is hidden from the public URL.
+- Luxury route: `/luxury/`.
+- Smart Food route: `/smart-food/`, backed by the Smart Food AI public content loader.
+- Style route: `/style/` plus `/style/[slug]/`.
+- Story route: `/story/`.
+- Smart Mobility MTS route: `/smart-mobility/` plus `/smart-mobility/mts/[slug]/`.
+- Layout navigation and footer are normalized in `src/lib/layout-content/layoutContent.service.ts`.
+- Existing Chiang Mai Smart Mobility pages remain under `/smart-mobility/chiang-mai/...` as legacy/future-project pages.
 
-## Phase 1 Navigation
+## Primary Navigation
 
-Primary navigation labels for Phase 1:
+Current Phase 1 primary navigation:
 
 ```text
 Home
@@ -32,94 +35,96 @@ Smart Food
 Style
 Smart City
 Smart Mobility
+Story
 About
 ```
 
-Route ownership:
+Navigation behavior:
 
-- `Home` uses the Phase 2 platform home page layout during Phase 1, with the Smart Food highlight placed directly under the platform hero.
-- `Luxury` uses the new theme and route `/luxury/`.
-- `Smart Food` uses the new theme and route `/smart-food/`.
-- `Style` uses the new platform style route.
-- `Smart City` uses the latest `main` branch page.
-- `Smart Mobility` uses the latest `main` branch page.
-- `About` uses the platform story layout and route `/about/`.
-
-Phase 1 does not keep `World`, `Media`, `Commerce`, or `Technology` in the primary navigation.
-
-## Phase 1 Page Decisions
-
-- Keep Phase 1 focused on navigation, theme, footer, Luxury, Smart Food, and Style.
-- Do not complete the new platform Home, Media, or Commerce landing-page experience in Phase 1.
-- Move pending Media and Commerce page/component work into Phase 2 planning.
-- Home route ownership moved to the platform home layout during Phase 1.
-- `/about/` keeps the current platform story layout/content for Phase 1.
-- `/about-chorn/` redirects to `/about/`.
-- `/history/` has been removed from the roadmap route group and footer links.
-- Platform home content has been renamed to `homeContent` and the Phase 2 backup is kept as `homeContentPhase2`.
-- Style page seed content has been renamed to `styleContent.seed.json` and its loader to `styleContent.ts`.
-- Style detail route `src/app/[locale]/(roadmap)/style/[slug]/page.tsx` adds premium outfit pages with gallery, TikTok CTA, and related outfit cards.
-- Home and Style content include image generation size metadata for future content workflows.
+- `Smart City` highlights on `/smart-city/` and Smart City detail routes.
+- `Smart Mobility` highlights on `/smart-mobility/`, MTS routes, and Chiang Mai Smart Mobility routes.
+- `Story` highlights on `/story/`.
+- `About` highlights on `/about/` and `/about-chorn/`.
+- Language options remain normalized from `LanguageOptionList`; exposed behavior should stay launch-safe.
 
 ## Footer
 
-Footer direction:
+Footer normalization in `layoutContent.service.ts` is the current source for Phase 1 footer shape:
 
-- Keep the new theme.
-- Keep platform/footer content grouping from the feature branch.
-- Preserve links to important legacy pages so existing Smart City, Smart Mobility, and Technology content remains discoverable.
-- Do not expose removed or deferred Phase 1 routes as primary navigation.
-- Footer Platform includes Luxury, Smart Food, Style, Smart City, and Smart Mobility. Media and Commerce are deferred to Phase 2.
-- Footer Commerce includes Outfit Commerce and TikTok only.
-- Footer Commerce `Outfit Commerce` links to `/style/`.
-- Footer Commerce `TikTok` links to `https://tiktok.com/@chornplanet` and opens in a new browser tab.
-- Footer Important Links includes Technology.
-- Footer Important Links does not include History.
-- Footer Connect does not include YouTube or Facebook.
+- Platform: Luxury, Smart Food, Style, Story, Smart City, Smart Mobility.
+- Projects: Luxury Project, Smart Food System, Graceful Style, Future Chiang Mai, Chorn Planet.
+- Commerce: Outfit Commerce and TikTok.
+- Important Links: About, Technology, Contact.
+- Connect removes YouTube and Facebook.
 
-## Navbar Active State
+## Platform Pages
 
-- Smart City must highlight on `/smart-city/` and Smart City detail routes.
-- Smart Mobility must highlight on `/smart-mobility/...` routes.
-- About must highlight on `/about/` and `/about-chorn/` routes.
+### Home
 
-## Language Strategy
+- Uses the platform hero and platform sections from `homeContent`.
+- Includes Circulatory System / Circulatory Story entry points.
+- Includes Style outfit cards on the homepage.
+- Uses the sofa-couple story data from `src/data/story/sofa-couple/en.sofa-couple.json`.
 
-- Existing locale routes remain render-safe:
+### Luxury
 
-```text
-da, de, en, fi, fr, ja, ko, nl, th, zh
-```
+- Uses `src/app/[locale]/(roadmap)/luxury/page.tsx`.
+- Uses the platform metadata helper from `homeContent`.
+- Renders the AI Luxury page component for the platform launch.
 
-- Show only a static English language button for launch.
-- Keep the language dropdown disabled.
-- New platform labels and footer content remain render-safe across supported locales.
+### Smart Food
 
-## Home Hero And Navigation Polish
+- Uses `src/app/[locale]/(roadmap)/smart-food/page.tsx`.
+- Loads production-safe Smart Food AI content through `getSmartFoodAiContentForPublicPage(lang)`.
+- Uses platform metadata key `smart-food`.
 
-- Home hero signal chips were removed for a cleaner Phase 1 hero.
-- Home hero CTA buttons use equal-width premium styling across desktop, tablet, and mobile.
-- The first hero CTA keeps a stronger primary gradient; secondary CTAs use a glass treatment.
-- Mobile hero content is left aligned near the lower-left of the image.
-- Navbar logo image keeps the simple logo treatment.
-- The navbar background layer behind the logo includes a subtle animated aura and signal-wave effect for a premium hi-tech feel.
+### Style
 
-## About Page Polish
+- Uses `src/app/[locale]/(roadmap)/style/page.tsx`.
+- Detail pages use `src/app/[locale]/(roadmap)/style/[slug]/page.tsx`.
+- Seed content lives in `src/lib/platform-content/styleContent.ts`.
+- Detail pages include gallery, TikTok CTA, portrait-safe image crops, and related outfit cards.
 
-- About content blocks now use complete Phase 1 copy.
-- About blocks include tags and route links.
-- About page UI renders tags as premium chips and includes link buttons for each block.
+### Story
+
+- Uses `src/app/[locale]/(roadmap)/story/page.tsx`.
+- Renders `PlatformStorySection`.
+- Links the sofa-couple story to related Valley and Coastal MTS station pages.
+
+### Smart Mobility / MTS
+
+- Uses `src/app/[locale]/(roadmap)/smart-mobility/page.tsx`.
+- `src/lib/platform-content/smartMobilityContent.ts` loads Coastal and Valley station seed JSON.
+- Landing hero randomizes the featured MTS station.
+- Coastal and Valley sections show randomized station cards.
+- Station detail pages live at `/smart-mobility/mts/[slug]/`.
+- Station details link back to the MTS network and Circulatory Story.
+
+## Content Strategy
+
+- English platform seed content is the current working source for Style, Story, and MTS station data.
+- MongoDB-backed loaders remain the preferred target for durable public content.
+- Public loaders must stay render-safe with requested locale -> English -> static fallback behavior when available.
+- Platform seed data should be treated as seed/fallback until a future MongoDB migration plan is approved.
+
+## Deferred To Later Phases
+
+- Full Media landing page.
+- Full Commerce landing page.
+- Interactive MTS network map.
+- Animated route visualization.
+- More MTS station groups beyond Coastal and Valley.
+- MongoDB migration for current platform seed data.
+- Dedicated translations for current MTS/Story/Style seed content.
 
 ## Acceptance Criteria
 
-- Latest `origin/main` is merged into `feature/new-platform-layout`.
-- Phase 1 plan lives at `.chatgpt/in-progress/feature-new-platform-layout-1.md`.
-- Phase 2 plan lives at `.chatgpt/planning/feature-new-platform-layout-2.md`.
-- Primary navigation is Phase 1 aligned.
-- Footer uses the new platform theme/content direction.
-- Home uses the platform home layout for Phase 1.
-- Media and Commerce platform landing/page component work is deferred to Phase 2.
-- History route and footer link are removed.
-- Language dropdown is disabled and English is the only exposed language button.
-- No merge conflict markers remain.
-- `npm run build` passes before the task is considered complete.
+- Primary navigation matches the Phase 1 platform list including Story.
+- Footer groups match current platform normalization.
+- Home, Luxury, Smart Food, Style, Story, Smart City, Smart Mobility, and About routes render with localized prefixes.
+- `/smart-mobility/` presents the MTS future civilization platform.
+- `/smart-mobility/mts/[slug]/` renders station details and related station cards.
+- `/story/` renders the Circulatory Story and links back to MTS stations.
+- Chiang Mai Smart Mobility routes remain reachable as separate legacy/future-project pages.
+- `.planning/achieved/released.md` remains the only file under `.planning/achieved/`.
+- `npm run build` passes before shipping production-facing runtime changes.

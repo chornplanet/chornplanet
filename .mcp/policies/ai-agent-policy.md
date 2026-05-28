@@ -13,9 +13,10 @@ Then agents must read:
 
 1. `.mcp/README.md`
 2. `.mcp/manifest.yaml`
-3. Relevant `.mcp/resources/`, `.mcp/policies/`, `.mcp/tools/`, and `.mcp/workflows/` files
-4. Relevant `.planning/feature-*.md` file
-5. Runtime app code and scripts
+3. `.planning/achieved/released.md`
+4. Relevant `.mcp/resources/`, `.mcp/policies/`, `.mcp/tools/`, and `.mcp/workflows/` files
+5. Relevant `.planning/in-progress/feature-*.md` file
+6. Runtime app code and scripts
 
 ## Authority model
 

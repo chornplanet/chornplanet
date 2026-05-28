@@ -7,7 +7,7 @@ ChornPlanet is SCSS-first. Tailwind is installed and configured, but most existi
 Global imports live in:
 
 ```text
-src/app/[locale]/(desktop)/layout.tsx
+src/app/[locale]/(legacy)/layout.tsx
 ```
 
 ## Imported Style Groups

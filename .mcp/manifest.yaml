@@ -21,7 +21,7 @@ repository_understanding:
     read_before_runtime_edits: true
   important_paths:
     app_router: src/app
-    localized_public_pages: src/app/[locale]/(desktop)
+    localized_public_pages: src/app/[locale]/(legacy)
     api_routes: src/app/api
     locale_source: src/lib/SiteUrlLocales.ts
     proxy_locale_headers: src/proxy.ts
@@ -36,6 +36,13 @@ repository_understanding:
     - keep route, locale, metadata, sitemap, and content changes aligned
     - avoid production behavior changes in documentation-only features
     - treat .codex/Agents.md as Codex execution rules and .mcp/repository as shared repository maps
+
+release_index:
+  primary: .planning/achieved/released.md
+  directory_rule: .planning/achieved contains only released.md
+  purpose: compact completed-feature index with Feature, Category, and Source Path columns
+  detail_rule: agents inspect listed source paths and .mcp/repository maps instead of relying on verbose achieved planning archives
+  mcp_release_directory: not used
 
 roadmap:
   directory: .mcp/roadmap
@@ -120,12 +127,14 @@ agents:
       - .chatgpt/Agents.md
       - .mcp/README.md
       - .mcp/manifest.yaml
+      - .planning/achieved/released.md
   codex:
     role: implementation, tests, validation, PR readiness
     startup_files:
       - .codex/Agents.md
       - .mcp/README.md
       - .mcp/manifest.yaml
+      - .planning/achieved/released.md
   future_mcp_server:
     role: expose safe tools/resources to AI clients for content, commerce, analytics, and repository workflows
 

@@ -123,7 +123,7 @@ Next
 
 ## Previous `/ai-luxury`
 
-- Previous route group path: `src/app/[locale]/(desktop)/ai-luxury`.
+- Previous route group path: `src/app/[locale]/(legacy)/ai-luxury`.
 - New canonical route group path: `src/app/[locale]/(roadmap)/luxury`.
 - Public URL target: `/[locale]/luxury/`.
 - The completed AI Luxury content foundation should be refined into the broader Luxury channel.
@@ -132,7 +132,7 @@ Next
 
 ## Previous `/smart-food-ai`
 
-- Previous route group path: `src/app/[locale]/(desktop)/smart-food-ai`.
+- Previous route group path: `src/app/[locale]/(legacy)/smart-food-ai`.
 - New canonical route group path: `src/app/[locale]/(roadmap)/smart-food`.
 - Public URL target: `/[locale]/smart-food/`.
 - The completed Smart Food AI content foundation should be refined into the broader Smart Food channel.
@@ -168,7 +168,7 @@ src/app/[locale]/(roadmap)/...
 ```
 
 This repository already uses `[locale]` as the parent app segment and has an
-existing `src/app/[locale]/(desktop)/...` route group. The roadmap platform must
+existing `src/app/[locale]/(legacy)/...` route group. The roadmap platform must
 therefore be a sibling route group under `[locale]`, not `src/app/(roadmap)/[locale]/...`.
 
 Do not create a separate duplicated roadmap document or a second competing page
@@ -180,7 +180,7 @@ possible.
 The existing desktop route group is:
 
 ```text
-src/app/[locale]/(desktop)
+src/app/[locale]/(legacy)
 ```
 
 The new roadmap route group is:
@@ -189,22 +189,22 @@ The new roadmap route group is:
 src/app/[locale]/(roadmap)
 ```
 
-The existing desktop layout at `src/app/[locale]/(desktop)/layout.tsx` owns the
+The existing desktop layout at `src/app/[locale]/(legacy)/layout.tsx` owns the
 current global SCSS imports, `AppProvider`, cookie consent, navbar, footer, AOS,
 go-to-top behavior, and speed insights. The roadmap platform can use the same
-base behavior, but it cannot inherit the sibling `(desktop)` layout directly by
+base behavior, but it cannot inherit the sibling `(legacy)` layout directly by
 filesystem nesting.
 
 Implementation should choose one explicit layout approach:
 
-- Extract the shared shell from `src/app/[locale]/(desktop)/layout.tsx` into a
-  reusable layout component/helper and use it from both `(desktop)` and
+- Extract the shared shell from `src/app/[locale]/(legacy)/layout.tsx` into a
+  reusable layout component/helper and use it from both `(legacy)` and
   `(roadmap)` layouts.
 - Or create `src/app/[locale]/(roadmap)/layout.tsx` that intentionally mirrors
   the desktop base while allowing roadmap-specific navigation, footer, body
   class, or style decisions.
 
-Avoid having the same public path implemented in both `(desktop)` and
+Avoid having the same public path implemented in both `(legacy)` and
 `(roadmap)` at the same time. If a path moves to `(roadmap)`, the old path
 should become a redirect/canonical strategy or be removed from the competing
 route group.
@@ -272,7 +272,7 @@ Public URLs should remain clean:
 Refactor:
 
 ```text
-src/app/[locale]/(desktop)/ai-luxury
+src/app/[locale]/(legacy)/ai-luxury
 ```
 
 Into:
@@ -294,7 +294,7 @@ Guidance:
 Refactor:
 
 ```text
-src/app/[locale]/(desktop)/smart-food-ai
+src/app/[locale]/(legacy)/smart-food-ai
 ```
 
 Into:
@@ -570,12 +570,12 @@ Recommended next implementation features:
 - The roadmap remains one seamless planning structure in this file.
 - The next implementation branch is clearly `feature/new-platform-layout`.
 - New public platform channels are implemented under `src/app/[locale]/(roadmap)/...`.
-- Existing `src/app/[locale]/(desktop)/...` routes are preserved unless specific routes are intentionally refactored or redirected.
+- Existing `src/app/[locale]/(legacy)/...` routes are preserved unless specific routes are intentionally refactored or redirected.
 - The `(roadmap)` layout strategy is explicit: shared extracted shell or separate roadmap layout based on the existing desktop base.
 - Primary navigation uses World / Outfit / Media / Commerce / Smart Food / Luxury.
 - Legacy technical pages are preserved in footer links where applicable.
-- `src/app/[locale]/(desktop)/ai-luxury` is refactored to `src/app/[locale]/(roadmap)/luxury` or redirected/canonicalized cleanly.
-- `src/app/[locale]/(desktop)/smart-food-ai` is refactored to `src/app/[locale]/(roadmap)/smart-food` or redirected/canonicalized cleanly.
+- `src/app/[locale]/(legacy)/ai-luxury` is refactored to `src/app/[locale]/(roadmap)/luxury` or redirected/canonicalized cleanly.
+- `src/app/[locale]/(legacy)/smart-food-ai` is refactored to `src/app/[locale]/(roadmap)/smart-food` or redirected/canonicalized cleanly.
 - Public URLs target `/[locale]/luxury/` and `/[locale]/smart-food/`.
 - `/[locale]/world/`, `/[locale]/outfit/`, `/[locale]/media/`, `/[locale]/commerce/`, `/[locale]/smart-food/`, `/[locale]/luxury/`, `/[locale]/about/`, and `/[locale]/history/` work.
 - Homepage communicates “Luxury Civilization Media & Commerce Platform”.

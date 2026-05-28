@@ -138,7 +138,7 @@ Dev and production routing follow-up:
 - A shipped `main` build still produced production server errors and local 404s for `/smart-mobility/chiang-mai/vision-smart-mobility-northern-gateway/` in multiple locales.
 - The dynamic `[slug]` route was removed for Smart Mobility Chiang Mai because the nested dynamic route was still fragile across dev and deployed builds.
 - The six known Smart Mobility Chiang Mai slugs now have explicit concrete route folders again, each delegating to the shared `smartMobilityChiangMaiPage.tsx` helper for metadata, MongoDB public loading, static fallback, and optional AI rendering.
-- The concrete route files are intentionally kept as route-entry shims only; shared behavior belongs in `src/app/[locale]/(desktop)/smart-mobility/chiang-mai/smartMobilityChiangMaiPage.tsx`.
+- The concrete route files are intentionally kept as route-entry shims only; shared behavior belongs in `src/app/[locale]/(legacy)/smart-mobility/chiang-mai/smartMobilityChiangMaiPage.tsx`.
 - Do not force static fallback content in `next dev`. Local development should still exercise MongoDB content first so missing or incomplete database records are visible while editing.
 - The parent `/smart-mobility/chiang-mai/` page now redirects to `/smart-mobility/chiang-mai/vision-smart-mobility-northern-gateway/` instead of re-exporting the child page.
 - After restarting the dev server, `/en/smart-mobility/chiang-mai/vision-smart-mobility-northern-gateway/`, `/th/smart-mobility/chiang-mai/vision-smart-mobility-northern-gateway/`, `/fr/smart-mobility/chiang-mai/vision-smart-mobility-northern-gateway/`, and `/ja/smart-mobility/chiang-mai/vision-smart-mobility-northern-gateway/` each returned HTTP 200 locally on sequential fresh dev checks.

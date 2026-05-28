@@ -36,11 +36,12 @@ Codex startup order:
 1. Read `.codex/Agents.md`.
 2. Read `.mcp/README.md`.
 3. Read `.mcp/manifest.yaml`.
-4. Read relevant `.mcp/repository/` maps before route, locale, styling, UX, metadata, content, server, or deployment work.
-5. Read relevant `.mcp/resources/`, `.mcp/policies/`, `.mcp/tools/`, and `.mcp/workflows/` files.
-6. Read the relevant `.planning/feature-<feature-name>.md` file when the work is planned.
-7. Read `.chatgpt/engine/ContentTranlation.md` when the feature involves website content, localization, multilingual copy, or MongoDB-backed translated content.
-8. Review runtime application code, scripts, schemas, and content services.
+4. Read `.planning/achieved/released.md` to understand completed feature families and their source-code entry points.
+5. Read relevant `.mcp/repository/` maps before route, locale, styling, UX, metadata, content, server, or deployment work.
+6. Read relevant `.mcp/resources/`, `.mcp/policies/`, `.mcp/tools/`, and `.mcp/workflows/` files.
+7. Read the relevant `.planning/in-progress/feature-<feature-name>.md` file when the work is planned.
+8. Read `.chatgpt/engine/ContentTranlation.md` when the feature involves website content, localization, multilingual copy, or MongoDB-backed translated content.
+9. Review runtime application code, scripts, schemas, and content services.
 
 For media automation, outfit/civilization posting, commerce, Smart Food, analytics, SEO/LLM visibility, or DNA work, also read the matching `.mcp/` resource, policy, tool contract, workflow file, and local `.dna/` authority material before implementing.
 
@@ -115,7 +116,7 @@ Codex owns implementation, tests, validation, and code review readiness.
 
 Codex should:
 
-- Review the relevant `.planning/feature-<feature-name>.md` file when one exists.
+- Review the relevant `.planning/in-progress/feature-<feature-name>.md` file when one exists.
 - Confirm or adjust the proposed architecture before implementation.
 - Implement according to the agreed scope and Khachornchit's architecture direction.
 - Add or update tests where applicable.
@@ -160,7 +161,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 ## Styling
 
-- Global styles are imported in `src/app/[locale]/(desktop)/layout.tsx`.
+- Global styles are imported in `src/app/[locale]/(legacy)/layout.tsx`.
 - Main SCSS files include `globals.scss`, `style.scss`, `responsive.scss`, `addition.scss`, navbar `x-*` files, smart-city/smart-mobility feature files, and `footer.scss`.
 - Prefer existing SCSS patterns over new styling systems.
 - Avoid adding Tailwind utility-heavy markup to files that already follow SCSS component classes.
@@ -175,12 +176,12 @@ export async function generateMetadata(): Promise<Metadata> {
 Use the Smart Food AI page as the active reference for responsive UX, visual consistency, element structure, and SCSS style across desktop, tablet, and mobile views:
 
 ```text
-src/app/[locale]/(desktop)/smart-food-ai/page.tsx
+src/app/[locale]/(legacy)/smart-food-ai/page.tsx
 src/components/SmartFoodAi/SmartFoodAiLandingPage.tsx
 src/styles/smart-food-ai.scss
 ```
 
-Reference `src/app/[locale]/(desktop)/smart-food-ai/page.tsx` for the localized page route pattern, metadata loading, `headers()` locale lookup, and clean handoff into a page component.
+Reference `src/app/[locale]/(legacy)/smart-food-ai/page.tsx` for the localized page route pattern, metadata loading, `headers()` locale lookup, and clean handoff into a page component.
 
 Reference `src/components/SmartFoodAi/SmartFoodAiLandingPage.tsx` for section structure and semantic element use, including `main`, `section`, `div`, heading tags, paragraphs, actions, repeated `article` cards, and `Image` components.
 
@@ -247,7 +248,7 @@ Current preferred pattern for premium content sections:
 
 For a new localized public page:
 
-1. Add `page.tsx` under `src/app/[locale]/(desktop)/<route>/`.
+1. Add `page.tsx` under `src/app/[locale]/(legacy)/<route>/`.
 2. Read `lang` from `await headers()`.
 3. Add or reuse typed content through `src/lib/*-content/` and the matching server content service when the content is durable.
 4. Add metadata for all 10 locales under `src/metadata/`.
@@ -322,7 +323,7 @@ Do not do these without explicit approval:
 - Read nearby files before editing. This project has repeated patterns; copying the closest working example is usually safer than inventing a new shape.
 - Keep diffs scoped. Do not reformat large generated-looking locale or metadata files unless the task requires it.
 - Preserve user changes in a dirty worktree. Check `git status --short` before and after meaningful edits.
-- For planned ChatGPT features, review the matching `.planning/feature-<feature-name>.md` file before implementation and keep the work on the matching `feature/<feature-name>` branch when that branch exists.
+- For planned ChatGPT features, review the matching `.planning/in-progress/feature-<feature-name>.md` file before implementation and keep the work on the matching `feature/<feature-name>` branch when that branch exists.
 - For unplanned fixes or docs work, create a new task branch from the latest `main` before making changes. Use a clear prefix such as `fix/...`, `feature/...`, or `docs/...`; do not work directly on long-lived or previously completed task branches.
 - Prefer `rg` for searching.
 - Use `apply_patch` for manual edits.
@@ -344,7 +345,7 @@ ChatGPT owns discovery, planning, architectural proposals, and scope definition.
 3. ChatGPT creates or updates the planning file:
 
    ```text
-   .planning/feature-<feature-name>.md
+   .planning/in-progress/feature-<feature-name>.md
    ```
 
 4. The planning file should include:
@@ -366,11 +367,13 @@ ChatGPT owns discovery, planning, architectural proposals, and scope definition.
 
 7. Khachornchit reviews or approves the final result when architectural or source-of-truth decisions are involved.
 
-8. After the feature is completed, move the planning document to:
+8. After the feature is completed, summarize it as one row in:
 
    ```text
-   .planning/achieved/feature-<feature-name>.md
+   .planning/achieved/released.md
    ```
+
+   `.planning/achieved/` must contain only `released.md`. Do not keep completed per-feature planning files there. The release row should stay compact with only `Feature`, `Category`, and `Source Path`; agents should use the source paths and `.mcp/repository/` maps to inspect implementation detail directly.
 
 ## Architecture Rule
 
@@ -415,7 +418,7 @@ When Khachornchit says `ship to main`, `ship -> main`, `ship`, or any alternativ
    ```
 
 6. Stop after pushing the feature branch unless Khachornchit has already provided an approval signal in the same request. Continue shipping only after an explicit approval signal such as `ship -> main`, `ship to main`, or equivalent.
-7. When shipping is approved, move the completed planning document from `.planning/` to `.planning/achieved/` before shipping. If the planning file is already achieved or no matching planning file exists, leave planning files unchanged.
+7. When shipping is approved, add or update the completed feature row in `.planning/achieved/released.md` before shipping. If a detailed planning file is no longer active, remove it from `.planning/in-progress/`; do not create per-feature files under `.planning/achieved/`.
 8. Merge the latest `origin/main` into the feature branch:
 
    ```text

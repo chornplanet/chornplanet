@@ -41,6 +41,7 @@ This queue converts the platform roadmap into implementation-sized branches. Cha
 ## Queue Rules
 
 - Keep branches narrow.
-- Move completed plans from `.planning/` to `.planning/achieved/`.
+- Keep active plans under `.planning/in-progress/`.
+- Add completed releases to `.planning/achieved/released.md` and keep `.planning/achieved/` limited to that one file.
 - Do not combine runtime analytics credentials, publishing automation, commerce writes, or auth changes with documentation-only roadmap work.
 - Use `.mcp/repository/` maps before editing application code.

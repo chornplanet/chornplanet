@@ -20,5 +20,5 @@ desktop base without adding more global files at the root.
 
 - Put new platform layout styles in `platform/`, preferably with a stable prefix such as `.platform-*`, `.platform-home-*`, or `.platform-channel-*`.
 - Keep page/channel styles scoped under a root page class to avoid leaking into legacy routes.
-- Preserve import order when extracting shared layout code from `(desktop)` to `(roadmap)`: base, vendor, external package CSS, legacy/utilities, navigation/layout, then feature/page styles.
+- Preserve import order when extracting shared layout code from `(legacy)` to `(roadmap)`: base, vendor, external package CSS, legacy/utilities, navigation/layout, then feature/page styles.
 - Avoid editing `legacy/style.scss` and `legacy/responsive.scss` unless the change is intentionally touching the inherited template.

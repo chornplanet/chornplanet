@@ -28,7 +28,7 @@ This issue is especially visible on localized routes because the application sup
 
 ### Routing and Locale Context
 
-- Localized pages live under `src/app/[locale]/(desktop)/...`.
+- Localized pages live under `src/app/[locale]/(legacy)/...`.
 - `src/proxy.ts` forwards `x-locale`, `x-cookie-consent`, and `x-pathname` through request headers for Server Components.
 - Pages commonly read locale using `await headers()` and `headers().get('x-locale') || 'en'`.
 
@@ -157,7 +157,7 @@ Start with homepage because it is the common language-switch target.
 
 Target files to inspect first:
 
-- `src/app/[locale]/(desktop)/page.tsx`
+- `src/app/[locale]/(legacy)/page.tsx`
 - `src/lib/homepage-content/homePageContent.service.ts`
 - `server/core/domain/homepage-content.entity.ts`
 - `server/adapters/outbound/mongo.repository/homepage-content.repository.ts`
@@ -236,7 +236,7 @@ Possible updates:
 
 ```text
 src/lib/homepage-content/homePageContent.service.ts
-src/app/[locale]/(desktop)/page.tsx
+src/app/[locale]/(legacy)/page.tsx
 .chatgpt/Agents.md
 .codex/Agents.md
 package.json

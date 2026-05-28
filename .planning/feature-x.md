@@ -33,7 +33,7 @@ This feature should improve the homepage as a premium production showcase withou
 The current homepage route is:
 
 ```text
-src/app/[locale]/(desktop)/page.tsx
+src/app/[locale]/(legacy)/page.tsx
 ```
 
 Current render order inside `<main>`:
@@ -106,7 +106,7 @@ src/components/SmartFoodAi/SmartFoodAiLandingPage.tsx
 Current Smart Food AI route:
 
 ```text
-src/app/[locale]/(desktop)/smart-food-ai/page.tsx
+src/app/[locale]/(legacy)/smart-food-ai/page.tsx
 ```
 
 The page is already production-style and uses:
@@ -128,7 +128,7 @@ The homepage intro section should visually connect to this existing page but sho
 Current global desktop layout imports styles in:
 
 ```text
-src/app/[locale]/(desktop)/layout.tsx
+src/app/[locale]/(legacy)/layout.tsx
 ```
 
 Existing imported home-related SCSS includes:
@@ -391,7 +391,7 @@ export default function HomeSmartFoodIntro({ lang }: { lang: string }) {
 Update:
 
 ```text
-src/app/[locale]/(desktop)/page.tsx
+src/app/[locale]/(legacy)/page.tsx
 ```
 
 Add imports:
@@ -446,7 +446,7 @@ src/styles/home-platform-showcase.scss
 Import in:
 
 ```text
-src/app/[locale]/(desktop)/layout.tsx
+src/app/[locale]/(legacy)/layout.tsx
 ```
 
 near:
@@ -670,8 +670,8 @@ Do not block this feature on full 10-language translation.
 3. Create `src/components/Home/HomeBannerSection.tsx`.
 4. Create `src/components/Home/HomeSmartFoodIntro.tsx`.
 5. Create `src/styles/home-platform-showcase.scss`.
-6. Import the new SCSS file in `src/app/[locale]/(desktop)/layout.tsx`.
-7. Update `src/app/[locale]/(desktop)/page.tsx` render order.
+6. Import the new SCSS file in `src/app/[locale]/(legacy)/layout.tsx`.
+7. Update `src/app/[locale]/(legacy)/page.tsx` render order.
 8. Verify links resolve to:
 
 ```text

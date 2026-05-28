@@ -20,7 +20,7 @@ da, de, en, fi, fr, ja, ko, nl, th, zh
 
 ## Layout Locale Use
 
-`src/app/[locale]/(desktop)/layout.tsx`:
+`src/app/[locale]/(legacy)/layout.tsx`:
 
 - sets `<html lang={lang}>`
 - keeps `data-scroll-behavior="smooth"`

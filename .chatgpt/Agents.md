@@ -21,12 +21,13 @@ Recommended ChatGPT startup order:
 1. Read this file.
 2. Read `.mcp/README.md`.
 3. Read `.mcp/manifest.yaml`.
-4. Read the relevant `.mcp/resources/`, `.mcp/policies/`, `.mcp/tools/`, and `.mcp/workflows/` files.
-5. Read `.chatgpt/engine/ContentTranlation.md` when the feature involves website content, localization, multilingual copy, or MongoDB-backed translated content.
-6. Read `.chatgpt/MediaGenerationWorkflow.md` when the feature involves media generation, StoryGenProduct, AutoScene, images, video prompts, outfit, clothing, civilization, or DNA-guided content.
-7. Read `.chatgpt/VersionControl.md` when working with ChatGPT engines, contracts, system files, world files, or media-generation workflow documents.
-8. Read or create the relevant `.planning/feature-<feature-name>.md` file.
-9. Review runtime application code, scripts, schemas, and content services.
+4. Read `.planning/achieved/released.md` for completed feature families and source-code entry points.
+5. Read the relevant `.mcp/resources/`, `.mcp/policies/`, `.mcp/tools/`, and `.mcp/workflows/` files.
+6. Read `.chatgpt/engine/ContentTranlation.md` when the feature involves website content, localization, multilingual copy, or MongoDB-backed translated content.
+7. Read `.chatgpt/MediaGenerationWorkflow.md` when the feature involves media generation, StoryGenProduct, AutoScene, images, video prompts, outfit, clothing, civilization, or DNA-guided content.
+8. Read `.chatgpt/VersionControl.md` when working with ChatGPT engines, contracts, system files, world files, or media-generation workflow documents.
+9. Read or create the relevant `.planning/in-progress/feature-<feature-name>.md` file.
+10. Review runtime application code, scripts, schemas, and content services.
 
 Important distinction:
 
@@ -66,7 +67,7 @@ ChatGPT should:
 
 - Create planning items and scope for each feature.
 - Use **one branch per feature**, using the pattern `feature/<feature-name>` or the branch name approved by Khachornchit.
-- Write the proposed architecture, workflow, scope, assumptions, risks, and acceptance criteria into `.planning/feature-<feature-name>.md`.
+- Write the proposed architecture, workflow, scope, assumptions, risks, and acceptance criteria into `.planning/in-progress/feature-<feature-name>.md`.
 - Include project-structure guidelines for each feature branch when architecture or folder layout changes are expected.
 - Use `.mcp/` as the shared source for product context, media strategy, commerce direction, DNA integration, Smart Food evolution, analytics, SEO/LLM visibility, safety policies, and workflows.
 - Follow `.chatgpt/engine/ContentTranlation.md` for web content generation, TH review workflow, regenerated EN, all-language translation, and MongoDB migration handoff.
@@ -82,7 +83,7 @@ Codex is responsible for reviewing the feature planning document, implementing U
 
 Codex should:
 
-- Review the planning file under `.planning/`.
+- Review the planning file under `.planning/in-progress/`.
 - Confirm or adjust the proposed architecture before implementation.
 - Implement the feature according to the agreed scope and Khachornchit's architecture direction.
 - Build UX/UI based on the first EN web content when the workflow calls for it.
@@ -105,7 +106,7 @@ Codex should:
 3. ChatGPT creates or updates a planning file:
 
    ```text
-   .planning/feature-<feature-name>.md
+   .planning/in-progress/feature-<feature-name>.md
    ```
 
 4. The planning file should include:
@@ -133,8 +134,10 @@ Codex should:
 9. After the feature is completed and merged, move the planning document to:
 
    ```text
-   .planning/achieved/feature-<feature-name>.md
+   .planning/achieved/released.md
    ```
+
+   `.planning/achieved/` is a compact release index, not a detailed archive. Keep only `released.md` in that directory. Add one row per completed feature using only `Feature`, `Category`, and `Source Path`; deeper detail should come from the listed source paths and `.mcp/repository/` maps.
 
 ## Web Content Generation and Translation Workflow
 
@@ -224,4 +227,4 @@ A feature is considered complete only when:
 - Tests or validation steps are completed.
 - Khachornchit's architecture direction has been followed.
 - The feature branch is ready for pull request or merge.
-- The planning file is moved from `.planning/` to `.planning/achieved/` after completion.
+- The release row is added to `.planning/achieved/released.md` after completion, and detailed in-progress planning files are removed once they are no longer active.

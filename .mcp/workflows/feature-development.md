@@ -8,16 +8,18 @@ ChatGPT:
 
 1. Read `.chatgpt/Agents.md`.
 2. Read `.mcp/README.md` and `.mcp/manifest.yaml`.
-3. Read relevant `.mcp/resources/`, `.mcp/policies/`, `.mcp/tools/`, and `.mcp/workflows/` files.
-4. Create or update `.planning/feature-<name>.md`.
+3. Read `.planning/achieved/released.md` to avoid replanning completed feature families.
+4. Read relevant `.mcp/resources/`, `.mcp/policies/`, `.mcp/tools/`, and `.mcp/workflows/` files.
+5. Create or update `.planning/in-progress/feature-<name>.md`.
 
 Codex:
 
 1. Read `.codex/Agents.md`.
 2. Read `.mcp/README.md` and `.mcp/manifest.yaml`.
-3. Read relevant planning file under `.planning/`.
-4. Inspect code and tests.
-5. Implement with the smallest safe change.
+3. Read `.planning/achieved/released.md` for completed feature source paths.
+4. Read relevant planning file under `.planning/in-progress/`.
+5. Inspect code and tests.
+6. Implement with the smallest safe change.
 
 ## 2. Preserve architecture direction
 
@@ -59,4 +61,7 @@ A feature is complete only after:
 - validation is complete
 - Khachornchit's architecture direction is followed
 - branch is ready for PR or merge
-- planning file is archived after completion
+- `.planning/achieved/released.md` has one compact row for the completed feature
+- completed detailed planning files are removed from `.planning/in-progress/`
+
+Do not create per-feature files in `.planning/achieved/`; that directory should contain only `released.md`.

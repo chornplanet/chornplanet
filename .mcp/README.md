@@ -78,9 +78,10 @@ When ChatGPT or Codex starts work on ChornPlanet, read in this order:
 2. `.mcp/README.md`.
 3. `.mcp/manifest.yaml`.
 4. Relevant `.mcp/repository/` maps for routing, locales, styling, UX, metadata, content, server, and deployment context.
-5. Relevant `.mcp/resources/`, `.mcp/policies/`, `.mcp/tools/`, and `.mcp/workflows/` files.
-6. Related `.planning/feature-*.md` file.
-7. Runtime app code, scripts, schemas, and content services.
+5. `.planning/achieved/released.md` for completed feature families and source-code entry points.
+6. Relevant `.mcp/resources/`, `.mcp/policies/`, `.mcp/tools/`, and `.mcp/workflows/` files.
+7. Related `.planning/in-progress/feature-*.md` file.
+8. Runtime app code, scripts, schemas, and content services.
 
 ## Repository understanding layer
 
@@ -107,6 +108,16 @@ On-demand analytics planning contracts live in:
 ```
 
 The analytics layer is documentation and contract design first. It does not connect to Google Search Console, Google Analytics, Vercel, commerce, or social APIs by itself. Runtime analytics API routes and server services require explicit approval for credentials, authorization, and source-of-truth properties before implementation.
+
+## Release index
+
+Completed feature families are indexed in:
+
+```text
+.planning/achieved/released.md
+```
+
+Keep release history there instead of moving it into `.mcp/release`. `.mcp` remains the shared agent workspace and codebase map layer; the achieved release index remains under `.planning/achieved/` and points agents to the source paths they should inspect directly.
 
 ## Source-of-truth principle
 
