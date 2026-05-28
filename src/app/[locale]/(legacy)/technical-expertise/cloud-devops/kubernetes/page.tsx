@@ -1,5 +1,4 @@
 import React from "react";
-import CloudExperience from "@/components/Common/CloudExperience";
 import ServicesDetailsKubernetes from "@/components/Services/cloud-devops/kubernetes/ServicesDetailsKubernetes";
 import {Metadata} from "next";
 import {getTechnicalExpertiseContentForPublicPage} from "@/lib/technical-expertise-content/technicalExpertiseContent.service";
@@ -19,7 +18,7 @@ export default async function Page() {
     const technicalContent = await getTechnicalExpertiseContentForPublicPage(lang);
 
     return (
-        <div className="smart-container-top">
+        <div>
             <ServicesDetailsKubernetes
                 lang={lang}
                 stack={technicalContent.devOps.kubernetes}
@@ -27,7 +26,6 @@ export default async function Page() {
                 fullStack={technicalContent.fullStack}
                 devOps={technicalContent.devOps}
             />
-            <CloudExperience lang={lang} cloud={technicalContent.cloud}/>
             <SchemaMarkupServicePage
                 name="Kubernetes DevOps Services | Chorn Planet"
                 description="Chorn Planet provides Kubernetes-based DevOps services for automating deployment, scaling, and management of containerized applications."

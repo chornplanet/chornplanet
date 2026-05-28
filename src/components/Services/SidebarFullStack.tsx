@@ -15,7 +15,7 @@ export default function SidebarFullStack({lang, fullStack}: { lang: string; full
             <div className="services-details-information ml-10 border-top">
                 <ul className="framework-list">
                     {fullStack.stacks.map((item: IFullStackStack, index: number) => {
-                        const label = item.features[0]?.title ?? item.title;
+                        const label = item.title;
                         const icon = item.image ? <Image src={item.image} alt={item.alt} width="50" height="50"/> : null;
 
                         if (pathname.includes(item.link)) {

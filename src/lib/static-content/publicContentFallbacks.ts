@@ -28,7 +28,7 @@ import {normalizeSmartMobilityChiangMaiContentLocale} from "@/core/domain/smart-
 import {normalizeTechnicalExpertiseContentLocale} from "@/core/domain/technical-expertise-content.entity";
 import {LanguageOptionList} from "@/lib/constants/languageOptions";
 
-const STATIC_FALLBACK_IMAGE_SRC = '/images/logo/logo-romance-male.png';
+const STATIC_FALLBACK_IMAGE_SRC = '/images/home/chorn-workplace-001-image-1200.webp';
 
 const EMPTY_RESPONSIVE_IMAGE: IImageResponsiveUnit = {
     title: 'Chorn Planet platform image',
@@ -594,18 +594,18 @@ function createAiLanding(name: string) {
     };
 }
 
-function createTechStack(title: string, link: string) {
+function createTechStack(title: string, link: string, image = '') {
     return {
         title,
         description: fallbackText.description,
-        image: '',
+        image,
         alt: title,
         readMore: 'Read more',
         link,
         features: [
-            {title: 'Overview', description: fallbackText.description, list: []},
-            {title: 'Use cases', description: fallbackText.description, list: ['Product delivery', 'Platform engineering']},
-            {title: 'Delivery note', description: fallbackText.description, list: []},
+            {title, description: fallbackText.description, list: []},
+            {title: `${title} use cases`, description: fallbackText.description, list: ['Product delivery', 'Platform engineering']},
+            {title: `${title} delivery approach`, description: fallbackText.description, list: []},
         ],
         faqs: [],
         frameworks: [],
@@ -1013,29 +1013,29 @@ export function getFallbackSmartMobilityChiangMaiContent(
 export function getFallbackTechnicalExpertiseContent(locale: string): TechnicalExpertiseContentPayload {
     const normalizedLocale = normalizeTechnicalExpertiseContentLocale(locale);
     logStaticFallback('technical expertise content', normalizedLocale);
-    const angular = createTechStack('Angular Development', '/technical-expertise/front-end-developer/angular-developer/');
-    const css3 = createTechStack('CSS3 Development', '/technical-expertise/front-end-developer/css3-developer/');
-    const html5 = createTechStack('HTML5 Development', '/technical-expertise/front-end-developer/html5-developer/');
-    const nextjs = createTechStack('Next.js Development', '/technical-expertise/front-end-developer/nextjs-developer/');
-    const react = createTechStack('React Development', '/technical-expertise/front-end-developer/react-developer/');
-    const typescript = createTechStack('TypeScript Development', '/technical-expertise/front-end-developer/typescript-developer/');
-    const vue = createTechStack('Vue Development', '/technical-expertise/front-end-developer/vue-developer/');
-    const javascript = createTechStack('JavaScript Development', '/technical-expertise/front-end-developer/javascript-developer/');
-    const dotnetcore = createTechStack('.NET Core Development', '/technical-expertise/full-stack-developer/dotnetcore-developer/');
-    const go = createTechStack('Go Development', '/technical-expertise/full-stack-developer/go-developer/');
-    const java = createTechStack('Java Spring Boot Development', '/technical-expertise/full-stack-developer/java-spring-boot-developer/');
-    const nodejs = createTechStack('Node.js Development', '/technical-expertise/full-stack-developer/nodejs-developer/');
-    const php = createTechStack('PHP Development', '/technical-expertise/full-stack-developer/php-developer/');
-    const python = createTechStack('Python Development', '/technical-expertise/full-stack-developer/python-developer/');
-    const appium = createTechStack('Appium', '/technical-expertise/cloud-devops/appium/');
-    const docker = createTechStack('Docker', '/technical-expertise/cloud-devops/docker/');
-    const github = createTechStack('GitHub', '/technical-expertise/cloud-devops/github/');
-    const gitlab = createTechStack('GitLab', '/technical-expertise/cloud-devops/gitlab/');
-    const jenkins = createTechStack('Jenkins', '/technical-expertise/cloud-devops/jenkins/');
-    const kubernetes = createTechStack('Kubernetes', '/technical-expertise/cloud-devops/kubernetes/');
-    const postman = createTechStack('Postman', '/technical-expertise/cloud-devops/postman/');
-    const selenium = createTechStack('Selenium', '/technical-expertise/cloud-devops/selenium/');
-    const soapui = createTechStack('SoapUI', '/technical-expertise/cloud-devops/soapui/');
+    const angular = createTechStack('Angular Development', '/technical-expertise/front-end-developer/angular-developer/', '/images/technical-expertise/frontend/framework/angular-thumbnail.webp');
+    const css3 = createTechStack('CSS3 Development', '/technical-expertise/front-end-developer/css3-developer/', '/images/technical-expertise/frontend/framework/css3-thumbnail.webp');
+    const html5 = createTechStack('HTML5 Development', '/technical-expertise/front-end-developer/html5-developer/', '/images/technical-expertise/frontend/framework/html5-thumbnail.webp');
+    const nextjs = createTechStack('Next.js Development', '/technical-expertise/front-end-developer/nextjs-developer/', '/images/technical-expertise/frontend/framework/nextjs-thumbnail.webp');
+    const react = createTechStack('React Development', '/technical-expertise/front-end-developer/react-developer/', '/images/technical-expertise/frontend/framework/react-thumbnail.webp');
+    const typescript = createTechStack('TypeScript Development', '/technical-expertise/front-end-developer/typescript-developer/', '/images/technical-expertise/frontend/framework/typescript-thumbnail.webp');
+    const vue = createTechStack('Vue Development', '/technical-expertise/front-end-developer/vue-developer/', '/images/technical-expertise/frontend/framework/vue-thumbnail.webp');
+    const javascript = createTechStack('JavaScript Development', '/technical-expertise/front-end-developer/javascript-developer/', '/images/technical-expertise/frontend/framework/javascript-thumbnail.webp');
+    const dotnetcore = createTechStack('.NET Core Development', '/technical-expertise/full-stack-developer/dotnetcore-developer/', '/images/technical-expertise/backend/framework/dotnetcore-thumbnail.webp');
+    const go = createTechStack('Go Development', '/technical-expertise/full-stack-developer/go-developer/', '/images/technical-expertise/backend/framework/go-thumbnail.webp');
+    const java = createTechStack('Java Spring Boot Development', '/technical-expertise/full-stack-developer/java-spring-boot-developer/', '/images/technical-expertise/backend/framework/java-thumbnail.webp');
+    const nodejs = createTechStack('Node.js Development', '/technical-expertise/full-stack-developer/nodejs-developer/', '/images/technical-expertise/backend/framework/nodejs-thumbnail.webp');
+    const php = createTechStack('PHP Development', '/technical-expertise/full-stack-developer/php-developer/', '/images/technical-expertise/backend/framework/php-thumbnail.webp');
+    const python = createTechStack('Python Development', '/technical-expertise/full-stack-developer/python-developer/', '/images/technical-expertise/backend/framework/python-thumbnail.webp');
+    const appium = createTechStack('Appium', '/technical-expertise/cloud-devops/appium/', '/images/technical-expertise/devops/framework/appium-thumbnail.webp');
+    const docker = createTechStack('Docker', '/technical-expertise/cloud-devops/docker/', '/images/technical-expertise/devops/framework/docker-thumbnail.webp');
+    const github = createTechStack('GitHub', '/technical-expertise/cloud-devops/github/', '/images/technical-expertise/devops/framework/github-thumbnail.webp');
+    const gitlab = createTechStack('GitLab', '/technical-expertise/cloud-devops/gitlab/', '/images/technical-expertise/devops/framework/gitlab-thumbnail.webp');
+    const jenkins = createTechStack('Jenkins', '/technical-expertise/cloud-devops/jenkins/', '/images/technical-expertise/devops/framework/jenkins-thumbnail.webp');
+    const kubernetes = createTechStack('Kubernetes', '/technical-expertise/cloud-devops/kubernetes/', '/images/technical-expertise/devops/framework/kube-thumbnail.webp');
+    const postman = createTechStack('Postman', '/technical-expertise/cloud-devops/postman/', '/images/technical-expertise/devops/framework/postman-thumbnail.webp');
+    const selenium = createTechStack('Selenium', '/technical-expertise/cloud-devops/selenium/', '/images/technical-expertise/devops/framework/selenium-thumbnail.webp');
+    const soapui = createTechStack('SoapUI', '/technical-expertise/cloud-devops/soapui/', '/images/technical-expertise/devops/framework/soapui-thumbnail.webp');
 
     return {
         locale: normalizedLocale,

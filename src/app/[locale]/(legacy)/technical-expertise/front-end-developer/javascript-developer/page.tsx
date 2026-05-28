@@ -1,7 +1,6 @@
 import React from "react";
 import ServicesDetailsJavaScript
     from "@/components/Services/frontend-development/javascript/ServicesDetailsJavaScript";
-import CloudExperience from "@/components/Common/CloudExperience";
 import {Metadata} from "next";
 import {SchemaMarkupServicePage} from "@/components/GoogleSchemaMarkup/SchemaMarkupServicePage";
 import {headers} from "next/headers";
@@ -17,10 +16,10 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function Page() {
     const headers15 = await headers();
     const lang = headers15.get('x-locale') || 'en';
-    const {frontEnd, fullStack, devOps, cloud} = await getTechnicalExpertiseContentForPublicPage(lang);
+    const {frontEnd, fullStack, devOps} = await getTechnicalExpertiseContentForPublicPage(lang);
 
     return (
-        <div className="smart-container-top">
+        <div>
             <ServicesDetailsJavaScript
                 lang={lang}
                 stack={frontEnd.javascript}
@@ -28,7 +27,6 @@ export default async function Page() {
                 fullStack={fullStack}
                 devOps={devOps}
             />
-            <CloudExperience lang={lang} cloud={cloud}/>
             <SchemaMarkupServicePage
                 name="JavaScript | Chorn Planet - Custom Software Development Experts"
                 description="Learn how Chorn Planet leverages JavaScript to build scalable, robust, and efficient custom software solutions for businesses across industries."

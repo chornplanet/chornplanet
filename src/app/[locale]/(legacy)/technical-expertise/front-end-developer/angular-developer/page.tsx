@@ -1,6 +1,5 @@
 import React from "react";
 import ServicesDetailsAngular from "@/components/Services/frontend-development/angular/ServicesDetailsAngular";
-import CloudExperience from "@/components/Common/CloudExperience";
 import {Metadata} from "next";
 import {SchemaMarkupServicePage} from "@/components/GoogleSchemaMarkup/SchemaMarkupServicePage";
 import {headers} from "next/headers";
@@ -16,10 +15,10 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function Page() {
     const headers15 = await headers();
     const lang = headers15.get('x-locale') || 'en';
-    const {frontEnd, fullStack, devOps, cloud} = await getTechnicalExpertiseContentForPublicPage(lang);
+    const {frontEnd, fullStack, devOps} = await getTechnicalExpertiseContentForPublicPage(lang);
 
     return (
-        <div className="smart-container-top">
+        <div>
             <ServicesDetailsAngular
                 lang={lang}
                 stack={frontEnd.angular}
@@ -27,7 +26,6 @@ export default async function Page() {
                 fullStack={fullStack}
                 devOps={devOps}
             />
-            <CloudExperience lang={lang} cloud={cloud}/>
             <SchemaMarkupServicePage
                 name="Angular Development Services | Chorn Planet"
                 description="Expert Angular development services by Chorn Planet. Build dynamic, scalable, and high-performance web applications using Angular."

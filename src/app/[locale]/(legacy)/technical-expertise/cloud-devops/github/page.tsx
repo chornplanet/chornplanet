@@ -1,5 +1,4 @@
 import React from "react";
-import CloudExperience from "@/components/Common/CloudExperience";
 import ServicesDetailsGitHub from "@/components/Services/cloud-devops/github/ServicesDetailsGitHub";
 import {Metadata} from "next";
 import {getTechnicalExpertiseContentForPublicPage} from "@/lib/technical-expertise-content/technicalExpertiseContent.service";
@@ -19,7 +18,7 @@ export default async function Page() {
     const technicalContent = await getTechnicalExpertiseContentForPublicPage(lang);
 
     return (
-        <div className="smart-container-top">
+        <div>
             <ServicesDetailsGitHub
                 lang={lang}
                 stack={technicalContent.devOps.github}
@@ -27,7 +26,6 @@ export default async function Page() {
                 fullStack={technicalContent.fullStack}
                 devOps={technicalContent.devOps}
             />
-            <CloudExperience lang={lang} cloud={technicalContent.cloud}/>
             <SchemaMarkupServicePage
                 name="GitHub DevOps Services | Chorn Planet"
                 description="Chorn Planet offers DevOps services integrating GitHub for version control, continuous integration, and automated workflows."

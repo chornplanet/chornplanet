@@ -87,6 +87,22 @@
     max-width: 760px;
     color: #40516c;
   }
+
+  .policy-page__hero-copy p + p {
+    margin-top: 12px;
+  }
+}
+
+.services-details-area.pb-50.container {
+  width: min(
+    calc(100% - var(--technology-content-gutter, clamp(72px, 6vw, 120px))),
+    var(--technology-content-rail, 1240px)
+  );
+  max-width: var(--technology-content-rail, 1240px);
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 0;
+  padding-left: 0;
 }
 
 @media (min-width: 992px) and (max-width: 1599px) {
@@ -1163,6 +1179,7 @@
 @media (max-width: 991px) {
   .technology-premium-container,
   .technology-document-hero .policy-page__hero-inner,
+  .services-details-area.pb-50.container,
   .technology-premium-module--ai .services-area > .container,
   .technology-premium-module--ai .services-area .container,
   .technology-premium-module--cloud .services-area > .container,
@@ -1271,6 +1288,7 @@
 @media (max-width: 575px) {
   .technology-premium-container,
   .technology-document-hero .policy-page__hero-inner,
+  .services-details-area.pb-50.container,
   .technology-premium-module--ai .services-area > .container,
   .technology-premium-module--ai .services-area .container,
   .technology-premium-module--cloud .services-area > .container,

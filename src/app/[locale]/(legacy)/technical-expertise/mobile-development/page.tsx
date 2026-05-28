@@ -10,7 +10,7 @@ export default async function Page() {
     const {feature, mobileDevelopment} = await getTechnicalExpertiseContentForPublicPage(lang);
 
     return (
-        <div className="smart-container-top">
+        <div>
             <PageBanner pageTitle={mobileDevelopment.pageTitle}/>
             <HomeFeatureMain lang={lang} feature={feature}/>
         </div>

@@ -2,7 +2,6 @@ import React from "react";
 import {Metadata} from "next";
 import {SchemaMarkupServicePage} from "@/components/GoogleSchemaMarkup/SchemaMarkupServicePage";
 import Web3PageMain from "@/components/Services/web3-blockchain-development/Web3PageMain";
-import CloudExperience from "@/components/Common/CloudExperience";
 import {headers} from "next/headers";
 import {MetadataWeb3} from "@/metadata/main/MetadataWeb3";
 import HomeFeatureMain from "@/components/Features/HomeFeatureMain";
@@ -20,9 +19,8 @@ export default async function Page() {
     const content = await getTechnicalExpertiseContentForPublicPage(lang);
 
     return (
-        <div className="smart-container-top">
+        <div>
             <Web3PageMain lang={lang} web3={content.web3}/>
-            <CloudExperience lang={lang} cloud={content.cloud}/>
             <HomeFeatureMain lang={lang} feature={content.feature}/>
             <SchemaMarkupServicePage
                 name="Web3 Blockchain Smart Contract Development | Chorn Planet | Custom Blockchain Solutions"

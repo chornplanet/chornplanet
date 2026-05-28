@@ -1,5 +1,4 @@
 import React from "react";
-import CloudExperience from "@/components/Common/CloudExperience";
 import ServicesDetailsDotNetCore
     from "@/components/Services/fullstack-development/dotnetcore/ServicesDetailsDotNetCore";
 import {Metadata} from "next";
@@ -17,10 +16,10 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function Page() {
     const headers15 = await headers();
     const lang = headers15.get('x-locale') || 'en';
-    const {frontEnd, fullStack, devOps, cloud} = await getTechnicalExpertiseContentForPublicPage(lang);
+    const {frontEnd, fullStack, devOps} = await getTechnicalExpertiseContentForPublicPage(lang);
 
     return (
-        <div className="smart-container-top">
+        <div>
             <ServicesDetailsDotNetCore
                 lang={lang}
                 stack={fullStack.dotnetcore}
@@ -28,7 +27,6 @@ export default async function Page() {
                 fullStack={fullStack}
                 devOps={devOps}
             />
-            <CloudExperience lang={lang} cloud={cloud}/>
             <SchemaMarkupServicePage
                 name=".NET Core C# Full Stack Development | Chorn Planet"
                 description="Chorn Planet offers .NET Core C# full stack development services to build modern, scalable, and secure web applications."

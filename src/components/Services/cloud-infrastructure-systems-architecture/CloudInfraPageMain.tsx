@@ -1,5 +1,4 @@
 import React from "react";
-import {DefaultShape} from "@/components/Shape/DefaultShape";
 import CloudInfraModuleLeft from "@/components/Services/cloud-infrastructure-systems-architecture/CloudInfraModuleLeft";
 import CloudInfraModuleRight
     from "@/components/Services/cloud-infrastructure-systems-architecture/CloudInfraModuleRight";
@@ -26,8 +25,6 @@ const CloudInfraPageMain: React.FC<{
                     </div>
                 </div>
             </div>
-
-            <DefaultShape/>
         </>
     );
 };

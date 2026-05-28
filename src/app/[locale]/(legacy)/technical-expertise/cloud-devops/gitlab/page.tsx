@@ -1,5 +1,4 @@
 import React from "react";
-import CloudExperience from "@/components/Common/CloudExperience";
 import ServicesDetailsGitLab from "@/components/Services/cloud-devops/gitlab/ServicesDetailsGitLab";
 import {Metadata} from "next";
 import {getTechnicalExpertiseContentForPublicPage} from "@/lib/technical-expertise-content/technicalExpertiseContent.service";
@@ -19,7 +18,7 @@ export default async function Page() {
     const technicalContent = await getTechnicalExpertiseContentForPublicPage(lang);
 
     return (
-        <div className="smart-container-top">
+        <div>
             <ServicesDetailsGitLab
                 lang={lang}
                 stack={technicalContent.devOps.gitlab}
@@ -27,7 +26,6 @@ export default async function Page() {
                 fullStack={technicalContent.fullStack}
                 devOps={technicalContent.devOps}
             />
-            <CloudExperience lang={lang} cloud={technicalContent.cloud}/>
             <SchemaMarkupServicePage
                 name="GitLab DevOps Services | Chorn Planet"
                 description="Chorn Planet provides GitLab-based DevOps services for continuous integration, automation, and version control solutions."

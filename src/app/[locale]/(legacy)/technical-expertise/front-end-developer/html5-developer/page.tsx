@@ -1,6 +1,5 @@
 import React from "react";
 import ServicesDetailsHtml5 from "@/components/Services/frontend-development/html5/ServicesDetailsHtml5";
-import CloudExperience from "@/components/Common/CloudExperience";
 import {Metadata} from "next";
 import {SchemaMarkupServicePage} from "@/components/GoogleSchemaMarkup/SchemaMarkupServicePage";
 import {headers} from "next/headers";
@@ -16,10 +15,10 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function Page() {
     const headers15 = await headers();
     const lang = headers15.get('x-locale') || 'en';
-    const {frontEnd, fullStack, devOps, cloud} = await getTechnicalExpertiseContentForPublicPage(lang);
+    const {frontEnd, fullStack, devOps} = await getTechnicalExpertiseContentForPublicPage(lang);
 
     return (
-        <div className="smart-container-top">
+        <div>
             <ServicesDetailsHtml5
                 lang={lang}
                 stack={frontEnd.html5}
@@ -27,7 +26,6 @@ export default async function Page() {
                 fullStack={fullStack}
                 devOps={devOps}
             />
-            <CloudExperience lang={lang} cloud={cloud}/>
             <SchemaMarkupServicePage
                 name="HTML5 Development Services | Chorn Planet"
                 description="Chorn Planet offers expert HTML5 development services to create responsive and engaging web applications."

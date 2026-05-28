@@ -1,5 +1,4 @@
 import React from "react";
-import CloudExperience from "@/components/Common/CloudExperience";
 import ServicesDetailsPostman from "@/components/Services/cloud-devops/postman/ServicesDetailsPostman";
 import {Metadata} from "next";
 import {getTechnicalExpertiseContentForPublicPage} from "@/lib/technical-expertise-content/technicalExpertiseContent.service";
@@ -19,7 +18,7 @@ export default async function Page() {
     const technicalContent = await getTechnicalExpertiseContentForPublicPage(lang);
 
     return (
-        <div className="smart-container-top">
+        <div>
             <ServicesDetailsPostman
                 lang={lang}
                 stack={technicalContent.devOps.postman}
@@ -27,7 +26,6 @@ export default async function Page() {
                 fullStack={technicalContent.fullStack}
                 devOps={technicalContent.devOps}
             />
-            <CloudExperience lang={lang} cloud={technicalContent.cloud}/>
             <SchemaMarkupServicePage
                 name="Postman API Testing Services | Chorn Planet"
                 description="Chorn Planet provides API testing services using Postman to ensure the reliability and performance of your web services."

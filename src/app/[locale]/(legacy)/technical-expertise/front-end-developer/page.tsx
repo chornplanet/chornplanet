@@ -1,6 +1,5 @@
 import React from "react";
 import FrontEndPageMain from "@/components/Services/frontend-development/FrontEndPageMain";
-import CloudExperience from "@/components/Common/CloudExperience";
 import {Metadata} from "next";
 import {SchemaMarkupServicePage} from "@/components/GoogleSchemaMarkup/SchemaMarkupServicePage";
 import {headers} from "next/headers";
@@ -20,9 +19,8 @@ export default async function Page() {
     const content = await getTechnicalExpertiseContentForPublicPage(lang);
 
     return (
-        <div className="smart-container-top">
+        <div>
             <FrontEndPageMain lang={lang} frontEnd={content.frontEnd}/>
-            <CloudExperience lang={lang} cloud={content.cloud}/>
             <HomeFeatureMain lang={lang} feature={content.feature}/>
             <SchemaMarkupServicePage
                 name="Frontend Development Services | Chorn Planet"

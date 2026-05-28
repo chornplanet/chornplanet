@@ -1,6 +1,5 @@
 import React from "react";
 import FooterMain from "@/components/Footer/FooterMain";
-import CloudExperience from "@/components/Common/CloudExperience";
 import ServicesDetailsJenkins from "@/components/Services/cloud-devops/jenkins/ServicesDetailsJenkins";
 import {Metadata} from "next";
 import {getTechnicalExpertiseContentForPublicPage} from "@/lib/technical-expertise-content/technicalExpertiseContent.service";
@@ -20,7 +19,7 @@ export default async function Page() {
     const technicalContent = await getTechnicalExpertiseContentForPublicPage(lang);
 
     return (
-        <div className="smart-container-top">
+        <div>
             <ServicesDetailsJenkins
                 lang={lang}
                 stack={technicalContent.devOps.jenkins}
@@ -28,7 +27,6 @@ export default async function Page() {
                 fullStack={technicalContent.fullStack}
                 devOps={technicalContent.devOps}
             />
-            <CloudExperience lang={lang} cloud={technicalContent.cloud}/>
             <FooterMain lang={lang}/>
             <SchemaMarkupServicePage
                 name="Jenkins DevOps Services | Chorn Planet"

@@ -1,6 +1,5 @@
 import React from "react";
 import FullStackPageMain from "@/components/Services/fullstack-development/FullStackPageMain";
-import CloudExperience from "@/components/Common/CloudExperience";
 import {Metadata} from "next";
 import {SchemaMarkupServicePage} from "@/components/GoogleSchemaMarkup/SchemaMarkupServicePage";
 import {headers} from "next/headers";
@@ -20,9 +19,8 @@ export default async function Page() {
     const content = await getTechnicalExpertiseContentForPublicPage(lang);
 
     return (
-        <div className="smart-container-top">
+        <div>
             <FullStackPageMain lang={lang} fullStack={content.fullStack}/>
-            <CloudExperience lang={lang} cloud={content.cloud}/>
             <HomeFeatureMain lang={lang} feature={content.feature}/>
             <SchemaMarkupServicePage
                 name="Back-End & API Development Services | Chorn Planet"

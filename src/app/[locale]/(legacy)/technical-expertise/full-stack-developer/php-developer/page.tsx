@@ -1,6 +1,5 @@
 import React from "react";
 import ServicesDetailsPhp from "@/components/Services/fullstack-development/php/ServicesDetailsPhp";
-import CloudExperience from "@/components/Common/CloudExperience";
 import {Metadata} from "next";
 import {SchemaMarkupServicePage} from "@/components/GoogleSchemaMarkup/SchemaMarkupServicePage";
 import {headers} from "next/headers";
@@ -16,10 +15,10 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function Page() {
     const headers15 = await headers();
     const lang = headers15.get('x-locale') || 'en';
-    const {frontEnd, fullStack, devOps, cloud} = await getTechnicalExpertiseContentForPublicPage(lang);
+    const {frontEnd, fullStack, devOps} = await getTechnicalExpertiseContentForPublicPage(lang);
 
     return (
-        <div className="smart-container-top">
+        <div>
             <ServicesDetailsPhp
                 lang={lang}
                 stack={fullStack.php}
@@ -27,7 +26,6 @@ export default async function Page() {
                 fullStack={fullStack}
                 devOps={devOps}
             />
-            <CloudExperience lang={lang} cloud={cloud}/>
             <SchemaMarkupServicePage
                 name="PHP Full Stack Development | Chorn Planet"
                 description="Chorn Planet offers PHP full stack development services for building dynamic and scalable web applications."

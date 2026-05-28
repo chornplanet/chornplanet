@@ -1,5 +1,4 @@
 import React from "react";
-import {DefaultShape} from "@/components/Shape/DefaultShape";
 import FullStackModuleBottom from "@/components/Services/fullstack-development/FullStackModuleBottom";
 import FullStackModuleLeft from "@/components/Services/fullstack-development/FullStackModuleLeft";
 import FullStackModuleRight from "@/components/Services/fullstack-development/FullStackModuleRight";
@@ -21,7 +20,6 @@ const FullStackPageMain: React.FC<{ lang: string, fullStack: IFullStack }> = ({l
                         <FullStackModuleBottom lang={lang} fullStack={content}/>
                     </div>
                 </div>
-                <DefaultShape/>
             </div>
         </>
     );

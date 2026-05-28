@@ -1,5 +1,4 @@
 import React from "react";
-import {DefaultShape} from "@/components/Shape/DefaultShape";
 import FrontEndModuleBottom from "./FrontEndModuleBottom";
 import FrontEndModuleLeft from "@/components/Services/frontend-development/FrontEndModuleLeft";
 import FrontEndRightImages from "@/components/Services/frontend-development/FrontEndModuleRight";
@@ -22,7 +21,6 @@ const FrontEndPageMain: React.FC<{ lang: string, frontEnd: IFrontEnd }> = ({lang
                     </div>
                 </div>
             </div>
-            <DefaultShape/>
         </>
     );
 };

@@ -1,6 +1,5 @@
 import React from "react";
 import Image from "next/image";
-import {DefaultShape} from "@/components/Shape/DefaultShape";
 import SidebarDevOps from "@/components/Services/SidebarDevOps";
 import SidebarFrontEnd from "@/components/Services/SidebarFrontEnd";
 import SidebarFullStack from "@/components/Services/SidebarFullStack";
@@ -9,6 +8,7 @@ import FullStackServiceFaq from "@/components/Services/fullstack-development/Ful
 import {IFrontEnd} from "@/lib/model/IFrontEnd";
 import {IFullStack} from "@/lib/model/IFullStack";
 import {IDevOps} from "@/lib/model/IDevOps";
+import TechnicalExpertiseHero from "@/components/Services/TechnicalExpertiseHero";
 
 export default function FullStackServiceDetails(
     {lang, stack, image, frontEnd, fullStack, devOps}: {
@@ -22,17 +22,10 @@ export default function FullStackServiceDetails(
 ) {
     return (
         <>
-            <div className="services-details-area pb-50">
-                <div className="container">
-                    <div className="row">
-                        <div className="col-lg-8 col-md-12">
-                            <div className="services-details-desc">
-                                <h1>{stack.features[0].title}</h1>
-                                <p>{stack.features[0].description}</p>
-
-                                <h2 className="pt-4">{stack.features[1].title}</h2>
-                                <p>{stack.features[1].description}</p>
-
+            <TechnicalExpertiseHero features={stack.features}/>
+            <div className="services-details-area pb-50 container">
+                    <div className="services-details-layout">
+                        <div className="services-details-desc">
                                 <div className="services-details-features">
                                     <div className="row align-items-center">
                                         <Image
@@ -70,18 +63,15 @@ export default function FullStackServiceDetails(
                                 ))}
 
                                 <FullStackServiceFaq faqs={stack.faqs}/>
-                            </div>
                         </div>
 
-                        <div className="col-lg-4 col-md-12">
+                        <div className="services-details-sidebar">
                             <SidebarFrontEnd lang={lang} frontEnd={frontEnd}/>
                             <SidebarFullStack lang={lang} fullStack={fullStack}/>
                             <SidebarDevOps lang={lang} devOps={devOps}/>
                         </div>
                     </div>
-                </div>
             </div>
-            <DefaultShape/>
         </>
     );
 }

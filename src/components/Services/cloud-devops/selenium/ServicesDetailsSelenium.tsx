@@ -6,26 +6,19 @@ import {IDevOps} from "@/lib/model/IDevOps";
 import ServiceFaqSelenium from "./ServiceFaqSelenium";
 import Image from "next/image";
 import {ImageUrl} from "@/image/ImageUrl";
-import {DefaultShape} from "@/components/Shape/DefaultShape";
 import SidebarFullStack from "@/components/Services/SidebarFullStack";
 import SidebarFrontEnd from "@/components/Services/SidebarFrontEnd";
 import SidebarDevOps from "@/components/Services/SidebarDevOps";
+import TechnicalExpertiseHero from "@/components/Services/TechnicalExpertiseHero";
 
 export default function ServicesDetailsSelenium({lang, stack, frontEnd, fullStack, devOps}: { lang: string; stack: IDevOpsStack; frontEnd: IFrontEnd; fullStack: IFullStack; devOps: IDevOps }) {
     const content = stack;
     return (
         <>
-            <div className="services-details-area pb-50">
-                <div className="container">
-                    <div className="row">
-                        <div className="col-lg-8 col-md-12">
-                            <div className="services-details-desc">
-                                <h1>{content.features[0].title}</h1>
-                                <p>{content.features[0].description}</p>
-
-                                <h2 className="pt-4">{content.features[1].title}</h2>
-                                <p>{content.features[1].description}</p>
-
+            <TechnicalExpertiseHero features={content.features}/>
+            <div className="services-details-area pb-50 container">
+                    <div className="services-details-layout">
+                        <div className="services-details-desc">
                                 <div className="services-details-features">
                                     <div className="row align-items-center">
                                         <Image
@@ -60,18 +53,15 @@ export default function ServicesDetailsSelenium({lang, stack, frontEnd, fullStac
                                     <p>{content.features[2].description}</p>
                                 </div>
                                 <ServiceFaqSelenium stack={content}/>
-                            </div>
                         </div>
 
-                        <div className="col-lg-4 col-md-12">
+                        <div className="services-details-sidebar">
                             <SidebarFrontEnd lang={lang} frontEnd={frontEnd}/>
                             <SidebarFullStack lang={lang} fullStack={fullStack}/>
                             <SidebarDevOps lang={lang} devOps={devOps}/>
                         </div>
                     </div>
-                </div>
             </div>
-            <DefaultShape/>
         </>
     )
 }

@@ -18,7 +18,7 @@ export default async function Page() {
     const {service, demo, media} = await getAiCompanionsContentForPublicPage(lang);
 
     return (
-        <div className="smart-container-top">
+        <div>
             <AiSolutionsMain lang={lang} service={service} llmSlides={media.llmSlides}/>
             <AiCompanionsPage lang={lang} demo={demo}/>
         </div>

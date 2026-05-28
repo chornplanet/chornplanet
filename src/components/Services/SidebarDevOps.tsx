@@ -15,7 +15,7 @@ export default function SidebarDevOps({lang, devOps}: { lang: string; devOps: ID
             <div className="services-details-information ml-10 border-top">
                 <ul className="framework-list">
                     {devOps.stacks.map((item: IDevOpsStack, index: number) => {
-                        const label = item.features[0]?.title ?? item.title;
+                        const label = item.title;
                         const icon = item.image ? <Image src={item.image} alt={item.alt} width="40" height="40"/> : null;
 
                         if (pathname.includes(item.link)) {
