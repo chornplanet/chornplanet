@@ -93,7 +93,7 @@ Footer normalization in `layoutContent.service.ts` is the current source for Pha
 
 ### Smart Mobility / MTS
 
-- Uses `src/app/[locale]/(roadmap)/smart-mobility/page.tsx`.
+- Uses `src/app/[locale]/(legacy)/smart-mobility/page.tsx`.
 - `src/lib/platform-content/smartMobilityContent.ts` loads Coastal and Valley station seed JSON.
 - Landing hero randomizes the featured MTS station.
 - Coastal and Valley sections show randomized station cards.

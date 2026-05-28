@@ -10,6 +10,7 @@ function SmartFoodAiImage({
   fill = false,
   priority = false,
   sizes,
+  variant = "default",
 }: {
   image: ISmartFoodAiImage;
   className?: string;
@@ -18,9 +19,32 @@ function SmartFoodAiImage({
   fill?: boolean;
   priority?: boolean;
   sizes?: string;
+  variant?: "default" | "hero" | "proof" | "workflow";
 }) {
-  if (!image.src) {
-    return <div className={className} aria-label={image.alt} role="img" />;
+  if (!image.src || image.src === "/fallback-content.svg") {
+    return (
+      <div
+        className={[
+          "smart-food-ai-generated-visual",
+          `smart-food-ai-generated-visual--${variant}`,
+          className,
+        ].filter(Boolean).join(" ")}
+        aria-label={image.alt}
+        role="img"
+      >
+        <div className="smart-food-ai-generated-visual__screen">
+          <span className="smart-food-ai-generated-visual__status" />
+          <span className="smart-food-ai-generated-visual__line smart-food-ai-generated-visual__line--wide" />
+          <span className="smart-food-ai-generated-visual__line" />
+          <span className="smart-food-ai-generated-visual__line smart-food-ai-generated-visual__line--short" />
+          <div className="smart-food-ai-generated-visual__cards">
+            <span />
+            <span />
+            <span />
+          </div>
+        </div>
+      </div>
+    );
   }
 
   if (fill) {
@@ -85,6 +109,7 @@ export default function SmartFoodAiLandingPage({ content }: { content: ISmartFoo
                 width={1200}
                 height={800}
                 priority
+                variant="hero"
               />
             </div>
           </div>
@@ -112,6 +137,7 @@ export default function SmartFoodAiLandingPage({ content }: { content: ISmartFoo
                 width={900}
                 height={760}
                 sizes="(max-width: 991px) 100vw, 42vw"
+                variant="proof"
               />
             </div>
           </div>
@@ -146,6 +172,7 @@ export default function SmartFoodAiLandingPage({ content }: { content: ISmartFoo
                     image={step.image}
                     fill
                     sizes="(max-width: 767px) 100vw, (max-width: 1199px) 50vw, 33vw"
+                    variant="workflow"
                   />
                 </div>
                 <div className="smart-food-ai-workflow__content">

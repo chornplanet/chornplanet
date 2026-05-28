@@ -29,7 +29,7 @@ export function getSmartFoodAiStaticMetadataFallback(locale: string): ISmartFood
 
 export function getSmartFoodAiStaticFallback(locale: string): SmartFoodAiContentPayload {
     const normalizedLocale = normalizeSmartFoodAiContentLocale(locale);
-    const image = {src: '/fallback-content.svg', alt: 'Smart Food AI service workflow'};
+    const image = {src: '', alt: 'Smart Food AI service workflow'};
 
     if (normalizedLocale === 'th') {
         return {

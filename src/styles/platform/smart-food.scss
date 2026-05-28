@@ -133,6 +133,116 @@
   height: auto;
 }
 
+.smart-food-ai-generated-visual {
+  position: relative;
+  display: grid;
+  min-height: 320px;
+  overflow: hidden;
+  place-items: center;
+  background:
+    linear-gradient(135deg, rgba(255, 250, 242, 0.92), rgba(238, 222, 196, 0.86)),
+    radial-gradient(circle at 18% 20%, rgba(215, 149, 69, 0.32), transparent 34%),
+    radial-gradient(circle at 82% 76%, rgba(61, 117, 92, 0.28), transparent 34%);
+}
+
+.smart-food-ai-generated-visual::before {
+  position: absolute;
+  inset: 8%;
+  border: 1px solid rgba(30, 45, 37, 0.12);
+  content: "";
+}
+
+.smart-food-ai-generated-visual__screen {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  width: min(76%, 560px);
+  gap: 14px;
+  padding: clamp(22px, 4vw, 42px);
+  border: 1px solid rgba(255, 255, 255, 0.62);
+  background: rgba(22, 36, 30, 0.86);
+  box-shadow: 0 28px 78px rgba(21, 31, 27, 0.24);
+  color: #fffaf2;
+}
+
+.smart-food-ai-generated-visual__status {
+  width: 58px;
+  height: 58px;
+  border: 2px solid rgba(245, 207, 148, 0.72);
+  background:
+    radial-gradient(circle at 50% 50%, #d79545 0 5px, transparent 6px),
+    conic-gradient(from 18deg, #5ac8a7, #f5cf94, #d79545, #5ac8a7);
+  border-radius: 50%;
+  box-shadow: 0 0 30px rgba(215, 149, 69, 0.28);
+}
+
+.smart-food-ai-generated-visual__line {
+  display: block;
+  width: 72%;
+  height: 12px;
+  border-radius: 99px;
+  background: rgba(255, 250, 242, 0.58);
+}
+
+.smart-food-ai-generated-visual__line--wide {
+  width: 92%;
+}
+
+.smart-food-ai-generated-visual__line--short {
+  width: 46%;
+  background: rgba(245, 207, 148, 0.82);
+}
+
+.smart-food-ai-generated-visual__cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.smart-food-ai-generated-visual__cards span {
+  display: block;
+  aspect-ratio: 1 / 0.72;
+  border: 1px solid rgba(255, 250, 242, 0.18);
+  background:
+    linear-gradient(145deg, rgba(245, 207, 148, 0.34), rgba(90, 200, 167, 0.16)),
+    rgba(255, 250, 242, 0.08);
+}
+
+.smart-food-ai-generated-visual--proof {
+  min-height: 360px;
+}
+
+.smart-food-ai-generated-visual--workflow {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+}
+
+.smart-food-ai-generated-visual--workflow::before {
+  inset: 10px;
+}
+
+.smart-food-ai-generated-visual--workflow .smart-food-ai-generated-visual__screen {
+  width: 76%;
+  gap: 8px;
+  padding: 20px;
+}
+
+.smart-food-ai-generated-visual--workflow .smart-food-ai-generated-visual__status {
+  width: 38px;
+  height: 38px;
+}
+
+.smart-food-ai-generated-visual--workflow .smart-food-ai-generated-visual__line {
+  height: 8px;
+}
+
+.smart-food-ai-generated-visual--workflow .smart-food-ai-generated-visual__cards {
+  gap: 8px;
+  margin-top: 4px;
+}
+
 .smart-food-ai-hero__panel {
   position: absolute;
   left: 22px;

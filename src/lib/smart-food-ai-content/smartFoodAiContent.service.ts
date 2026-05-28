@@ -96,18 +96,6 @@ export async function getSmartFoodAiContent(locale: string): Promise<SmartFoodAi
 export async function getSmartFoodAiContentForPublicPage(locale: string): Promise<SmartFoodAiContentPayload> {
     const normalizedLocale = normalizeSmartFoodAiContentLocale(locale);
 
-    if (normalizedLocale === 'th') {
-        try {
-            return await getSmartFoodAiContent(normalizedLocale);
-        } catch (localeError) {
-            console.error(
-                `[localized-content] Smart Food AI content public render failed for locale="${normalizedLocale}"`,
-                localeError
-            );
-            return getSmartFoodAiStaticFallback(normalizedLocale);
-        }
-    }
-
     return loadLocalizedContentWithFallback({
         locale: normalizedLocale,
         context: 'Smart Food AI content public render',

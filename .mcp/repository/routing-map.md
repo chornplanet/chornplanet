@@ -17,7 +17,7 @@
 - Platform Smart Food: `src/app/[locale]/(roadmap)/smart-food/page.tsx`.
 - Platform Style: `src/app/[locale]/(roadmap)/style/page.tsx` and `src/app/[locale]/(roadmap)/style/[slug]/page.tsx`.
 - Platform Story: `src/app/[locale]/(roadmap)/story/page.tsx`.
-- MTS Smart Mobility: `src/app/[locale]/(roadmap)/smart-mobility/page.tsx`, `src/app/[locale]/(roadmap)/smart-mobility/mts/page.tsx`, and `src/app/[locale]/(roadmap)/smart-mobility/mts/[slug]/page.tsx`.
+- MTS Smart Mobility: `src/app/[locale]/(legacy)/smart-mobility/page.tsx`, `src/app/[locale]/(legacy)/smart-mobility/mts/page.tsx`, and `src/app/[locale]/(legacy)/smart-mobility/mts/[slug]/page.tsx`.
 - Static brand/service pages: `about-chorn`, `contact`, `gallery`, policies, and terms.
 - AI companion pages: `ai-companions`, `ai-companions/aom`, `ai-companions/fah`, `ai-companions/ploy`.
 - Smart City pages: `smart-city`, `smart-city/[slug]`, and `smart-city/chiang-mai/[slug]`.
@@ -29,7 +29,7 @@
 - `src/app/[locale]/(legacy)/smart-city/[slug]/page.tsx`
 - `src/app/[locale]/(legacy)/smart-city/chiang-mai/[slug]/page.tsx`
 - `src/app/[locale]/(roadmap)/style/[slug]/page.tsx`
-- `src/app/[locale]/(roadmap)/smart-mobility/mts/[slug]/page.tsx`
+- `src/app/[locale]/(legacy)/smart-mobility/mts/[slug]/page.tsx`
 
 Dynamic route sitemap entries come from:
 

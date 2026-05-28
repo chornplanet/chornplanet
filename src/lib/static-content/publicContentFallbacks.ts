@@ -28,7 +28,7 @@ import {normalizeSmartMobilityChiangMaiContentLocale} from "@/core/domain/smart-
 import {normalizeTechnicalExpertiseContentLocale} from "@/core/domain/technical-expertise-content.entity";
 import {LanguageOptionList} from "@/lib/constants/languageOptions";
 
-const STATIC_FALLBACK_IMAGE_SRC = '/fallback-content.svg';
+const STATIC_FALLBACK_IMAGE_SRC = '/images/logo/logo-romance-male.png';
 
 const EMPTY_RESPONSIVE_IMAGE: IImageResponsiveUnit = {
     title: 'Chorn Planet platform image',
