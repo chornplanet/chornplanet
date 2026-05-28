@@ -1,0 +1,31 @@
+{
+  "title": "AI POS Platform",
+  "subtitle": "AI-native conversational POS SaaS powered by MenuMatch, LineBot, and Bill Processing",
+  "summary": "MenuMatch + LineBot can be positioned as an AI-native POS SaaS platform because they already handle ordering, menu intelligence, transaction orchestration, payment automation, and operational workflow in a real business environment.",
+  "items": [
+    {
+      "title": "Customer Ordering Workflow",
+      "description": "Transforms customer natural-language ordering into structured transactions, pricing, and operational workflows in real time."
+    },
+    {
+      "title": "Conversational Cashier",
+      "description": "LineBot acts as an AI cashier and ordering terminal through LINE OA, replacing traditional manual order-taking interfaces."
+    },
+    {
+      "title": "POS Transaction Engine",
+      "description": "MenuMatch serves as the core POS engine handling menu matching, quantity parsing, validation, pricing, and structured order generation."
+    },
+    {
+      "title": "Payment Automation",
+      "description": "Bill Processing extends the platform into payment verification and operational accounting through OCR and automation workflows."
+    },
+    {
+      "title": "SaaS-ready Architecture",
+      "description": "Built with cloud-native APIs, database-driven processing, AI orchestration, and reusable services ready to scale across multiple stores."
+    },
+    {
+      "title": "Beyond Traditional POS",
+      "description": "Combines conversational AI, recommendation, RAG retrieval, transaction generation, and operations into an AI-native commerce platform beyond a standard POS system."
+    }
+  ]
+}
