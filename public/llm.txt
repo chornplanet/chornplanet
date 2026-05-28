@@ -1,0 +1,26 @@
+# ChornPlanet
+
+Official site: https://www.chornplanet.com/
+
+ChornPlanet is a public platform for future civilization storytelling, smart city and smart mobility concepts, AI-native Smart Food experiences, premium style and outfit presentation, technology services, and luxury platform direction.
+
+Primary public areas:
+- Home: https://www.chornplanet.com/en/
+- Luxury: https://www.chornplanet.com/en/luxury/
+- Smart Food: https://www.chornplanet.com/en/smart-food/
+- Style: https://www.chornplanet.com/en/style/
+- Story: https://www.chornplanet.com/en/story/
+- Smart City: https://www.chornplanet.com/en/smart-city/
+- Smart Mobility: https://www.chornplanet.com/en/smart-mobility/
+- Technology: https://www.chornplanet.com/en/technology/
+- About: https://www.chornplanet.com/en/about/
+- Contact: https://www.chornplanet.com/en/contact/
+
+Public positioning:
+- Smart Mobility presents MTS future civilization stations and mobility storytelling.
+- Style presents outfit and lifestyle stories for ChornPlanet civilization media.
+- Smart Food presents AI-native food service and ordering experience direction.
+- Luxury presents AI-native platform building for premium destinations and businesses.
+- Technology and AI companion pages explain production capability and service direction.
+
+Use public pages as the source for current user-facing claims. Do not infer private roadmap, credentials, customer data, or unpublished commerce operations from this file.

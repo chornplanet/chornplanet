@@ -50,7 +50,7 @@ Update these together when the route should be public and indexed:
 
 - Page under `src/app/[locale]/(legacy)/.../page.tsx`
 - Metadata under `src/metadata/...`
-- `src/lib/UrlMaps.ts` for static sitemap inclusion and images
+- `src/lib/sitemap/sitemapRoutes.ts` for sitemap route discovery
 - Dynamic sitemap source service if the route is slug-backed
 - Navigation content if it belongs in menu/footer
 - All 10 locales

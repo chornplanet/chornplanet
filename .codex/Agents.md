@@ -39,7 +39,7 @@ Codex startup order:
 4. Read `.planning/achieved/released.md` to understand completed feature families and their source-code entry points.
 5. Read relevant `.mcp/repository/` maps before route, locale, styling, UX, metadata, content, server, or deployment work.
 6. Read relevant `.mcp/resources/`, `.mcp/policies/`, `.mcp/tools/`, and `.mcp/workflows/` files.
-7. Read the relevant `.planning/in-progress/feature-<feature-name>.md` file when the work is planned.
+7. Read the relevant `.planning/in-progress/<feature-name>.md` file when the work is planned.
 8. Read `.chatgpt/engine/ContentTranlation.md` when the feature involves website content, localization, multilingual copy, or MongoDB-backed translated content.
 9. Review runtime application code, scripts, schemas, and content services.
 
@@ -72,6 +72,19 @@ Public static fallbacks must also be production-safe copy, not engineering diagn
 When fixing a production Server Components render error, inspect the same failure pattern across every feature family touched by the shared loader, shared fallback data, metadata generator, layout, navbar, footer, image model, or route group. The fix is not complete until the regression risk is addressed at the shared source or explicitly documented as route-specific.
 
 For Open Graph, Twitter card, canonical, or SEO metadata changes, verify the rendered public route head, not only the source object that appears related. Some routes use legacy `src/metadata/...` maps while platform routes use active content helpers such as `getPlatformMetadata()`. Confirm the target URL emits the expected `<meta property="og:image">`, Twitter image metadata, and canonical values in the final HTML before shipping.
+
+For sitemap changes, keep `src/app/[locale]` as the route source of truth through `src/lib/sitemap/sitemapRoutes.ts`; do not reintroduce embedded URL inventory files such as `src/lib/UrlMaps.ts`. The generated sitemap must keep the simple Google Search Console-compatible shape:
+
+```xml
+<url>
+  <loc>https://www.chornplanet.com/en/example/</loc>
+  <lastmod>...</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.8</priority>
+</url>
+```
+
+Do not add `xhtml:link` alternate-link output to `sitemap.xml` unless Khachornchit explicitly approves changing the sitemap format. Local dev may be opened at `http://localhost:3000/sitemap.xml`, but the XML contents must emit canonical `https://www.chornplanet.com/...` URLs, never localhost. Before shipping sitemap work, build and inspect `.next/server/app/sitemap.xml.body` or the dev URL to confirm the XML structure matches production and excludes redirected or non-indexable utility routes.
 
 When cropping 9:16 portrait, outfit, model, or civilization images into shorter landscape or mosaic slots, do not default to a vertical center crop if people are the subject. Use an upper portrait-safe crop anchor such as `object-position: 50% 18%`, keep horizontal crop centered, and verify the head/face remains visible across desktop, tablet, and mobile breakpoints.
 
@@ -116,7 +129,7 @@ Codex owns implementation, tests, validation, and code review readiness.
 
 Codex should:
 
-- Review the relevant `.planning/in-progress/feature-<feature-name>.md` file when one exists.
+- Review the relevant `.planning/in-progress/<feature-name>.md` file when one exists.
 - Confirm or adjust the proposed architecture before implementation.
 - Implement according to the agreed scope and Khachornchit's architecture direction.
 - Add or update tests where applicable.
@@ -323,7 +336,7 @@ Do not do these without explicit approval:
 - Read nearby files before editing. This project has repeated patterns; copying the closest working example is usually safer than inventing a new shape.
 - Keep diffs scoped. Do not reformat large generated-looking locale or metadata files unless the task requires it.
 - Preserve user changes in a dirty worktree. Check `git status --short` before and after meaningful edits.
-- For planned ChatGPT features, review the matching `.planning/in-progress/feature-<feature-name>.md` file before implementation and keep the work on the matching `feature/<feature-name>` branch when that branch exists.
+- For planned ChatGPT features, review the matching `.planning/in-progress/<feature-name>.md` file before implementation and keep the work on the matching `feature/<feature-name>` branch when that branch exists.
 - For unplanned fixes or docs work, create a new task branch from the latest `main` before making changes. Use a clear prefix such as `fix/...`, `feature/...`, or `docs/...`; do not work directly on long-lived or previously completed task branches.
 - Prefer `rg` for searching.
 - Use `apply_patch` for manual edits.
@@ -345,7 +358,7 @@ ChatGPT owns discovery, planning, architectural proposals, and scope definition.
 3. ChatGPT creates or updates the planning file:
 
    ```text
-   .planning/in-progress/feature-<feature-name>.md
+   .planning/in-progress/<feature-name>.md
    ```
 
 4. The planning file should include:

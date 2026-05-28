@@ -24,11 +24,13 @@ export async function generateMetadata(): Promise<Metadata> {
 
 `src/app/sitemap.ts`:
 
-- imports `UrlMaps` from `src/lib/UrlMaps.ts`
 - imports locales and site URL from `src/lib/SiteUrlLocales.ts`
-- adds dynamic Smart City routes from content services
+- delegates route inventory to `src/lib/sitemap/sitemapRoutes.ts`
+- discovers static public routes from `src/app/[locale]`
+- adds dynamic Smart City, MTS, and Style detail routes from content services or platform seed data
+- filters redirected and non-indexable utility routes
 - emits localized URLs with trailing slashes
-- includes images for static URL map entries
+- emits language alternates for each localized URL
 
 ## Robots
 
@@ -36,11 +38,11 @@ export async function generateMetadata(): Promise<Metadata> {
 
 - allows public crawling
 - disallows `/api/openai` and `/_next/static/`
-- points to `https://chornplanet.com/sitemap.xml`
+- points to `https://www.chornplanet.com/sitemap.xml`
 
-## URL And Image Maps
+## Route And Image Sources
 
-- Static sitemap route inventory: `src/lib/UrlMaps.ts`
+- Sitemap route inventory: `src/lib/sitemap/sitemapRoutes.ts`
 - Public image registry: `src/image/ImageUrl.ts`
 - OpenGraph image rewrite behavior: `next.config.mjs`
 
@@ -53,5 +55,5 @@ Future `llm.txt` and `llm-full.txt` should be public-facing summaries only. They
 - Add metadata for all 10 locales.
 - Keep canonical URLs and alternate language URLs aligned.
 - Add schema markup for public service pages when useful.
-- Update sitemap source for any indexed route.
+- Add a `page.tsx` under `src/app/[locale]` for static indexed routes, or add a dynamic resolver in `src/lib/sitemap/sitemapRoutes.ts` for dynamic slug routes.
 - Keep titles/descriptions human and accurate; avoid keyword stuffing.

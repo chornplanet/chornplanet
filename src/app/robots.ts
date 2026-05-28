@@ -12,7 +12,7 @@ export default function robots(): MetadataRoute.Robots {
             },
         ],
         sitemap: [
-            'https://chornplanet.com/sitemap.xml',
+            'https://www.chornplanet.com/sitemap.xml',
         ],
     };
 }

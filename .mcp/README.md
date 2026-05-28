@@ -80,7 +80,7 @@ When ChatGPT or Codex starts work on ChornPlanet, read in this order:
 4. Relevant `.mcp/repository/` maps for routing, locales, styling, UX, metadata, content, server, and deployment context.
 5. `.planning/achieved/released.md` for completed feature families and source-code entry points.
 6. Relevant `.mcp/resources/`, `.mcp/policies/`, `.mcp/tools/`, and `.mcp/workflows/` files.
-7. Related `.planning/in-progress/feature-*.md` file.
+7. Related `.planning/in-progress/*.md` file.
 8. Runtime app code, scripts, schemas, and content services.
 
 ## Repository understanding layer

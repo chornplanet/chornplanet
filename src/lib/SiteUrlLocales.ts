@@ -1,4 +1,4 @@
-export const SITE_URL = "https://chornplanet.com";
+export const SITE_URL = "https://www.chornplanet.com";
 
 export const LOCALES = [
     'da',

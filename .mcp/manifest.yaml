@@ -25,7 +25,7 @@ repository_understanding:
     api_routes: src/app/api
     locale_source: src/lib/SiteUrlLocales.ts
     proxy_locale_headers: src/proxy.ts
-    url_sitemap_map: src/lib/UrlMaps.ts
+    sitemap_route_inventory: src/lib/sitemap/sitemapRoutes.ts
     image_registry: src/image/ImageUrl.ts
     metadata: src/metadata
     content_loaders: src/lib/*-content

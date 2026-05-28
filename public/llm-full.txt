@@ -1,0 +1,82 @@
+# ChornPlanet Public AI Guide
+
+Official site: https://www.chornplanet.com/
+Default language route: https://www.chornplanet.com/en/
+Sitemap: https://www.chornplanet.com/sitemap.xml
+
+## Overview
+
+ChornPlanet is a public Next.js platform for future civilization storytelling, smart city and smart mobility concepts, AI-native Smart Food experiences, premium style and outfit presentation, technology services, and luxury platform direction.
+
+The site combines platform storytelling with practical public pages for AI companion work, technology capability, Smart City, Smart Mobility, Smart Food, Style, Story, About, Contact, and public policy pages.
+
+## Main Public Categories
+
+### Future Civilization And Mobility
+
+Smart Mobility presents MTS future civilization stations, future tourism movement, intelligent mobility, human-centered infrastructure, and lifestyle storytelling.
+
+Key pages:
+- https://www.chornplanet.com/en/smart-mobility/
+- https://www.chornplanet.com/en/story/
+
+### Smart City
+
+Smart City pages present Chiang Mai and future city concepts, including public smart infrastructure and mobility-related planning narratives.
+
+Key page:
+- https://www.chornplanet.com/en/smart-city/
+
+### Style And Outfit Civilization
+
+Style presents outfit directions, lifestyle scenes, and ChornPlanet civilization media intended for premium public storytelling and future commerce discovery.
+
+Key page:
+- https://www.chornplanet.com/en/style/
+
+### Smart Food
+
+Smart Food presents AI-native food service and ordering experience direction. Public copy should be understood as platform positioning and product direction, not a claim of unrestricted live ordering across every channel.
+
+Key pages:
+- https://www.chornplanet.com/en/smart-food/
+- https://www.chornplanet.com/en/smart-food-ai/
+
+### Luxury Platform Direction
+
+Luxury presents AI-native platform building for premium destinations, hospitality, real estate, tourism, and lifestyle businesses.
+
+Key pages:
+- https://www.chornplanet.com/en/luxury/
+- https://www.chornplanet.com/en/ai-luxury/
+
+### Technology And AI Capability
+
+Technology and AI companion pages explain ChornPlanet production capability, web development, AI services, and AI companion concepts.
+
+Key pages:
+- https://www.chornplanet.com/en/technology/
+- https://www.chornplanet.com/en/ai-companions/
+- https://www.chornplanet.com/en/ai-companions/fah/
+
+## Localization
+
+ChornPlanet supports localized public routes for:
+
+da, de, en, fi, fr, ja, ko, nl, th, zh
+
+The English route is the best public fallback when a specific localized page is incomplete.
+
+## Discovery Guidance
+
+For current public URL discovery, use:
+- https://www.chornplanet.com/sitemap.xml
+- https://www.chornplanet.com/robots.txt
+
+For route-level meaning, prefer the public page content and page metadata over internal repository or planning files. Public pages and the sitemap are the intended discovery sources for search engines and AI assistants.
+
+## Public-Safety Boundary
+
+This file is public. It does not include secrets, credentials, private customer data, private analytics configuration, unpublished marketplace operations, or internal implementation details.
+
+If a page describes a future integration, commerce channel, automation workflow, or analytics-assisted growth direction, interpret it as public product direction unless the page explicitly states that the capability is live.

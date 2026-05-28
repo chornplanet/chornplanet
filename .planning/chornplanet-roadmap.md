@@ -287,7 +287,7 @@ Guidance:
 - Reposition from a narrow AI Luxury page into the broader ChornPlanet Luxury channel.
 - Do not duplicate the page under both route groups unless a temporary redirect is required.
 - Preserve SEO value with redirect or canonical strategy from `/[locale]/ai-luxury/` to `/[locale]/luxury/`.
-- Update metadata, UrlMaps, sitemap, and internal links.
+- Update metadata, sitemap route discovery, and internal links.
 
 ### Smart Food AI -> Smart Food
 
@@ -309,7 +309,7 @@ Guidance:
 - Reposition from a narrow Smart Food AI page into the broader ChornPlanet Smart Food channel.
 - Do not duplicate the page under both route groups unless a temporary redirect is required.
 - Preserve SEO value with redirect or canonical strategy from `/[locale]/smart-food-ai/` to `/[locale]/smart-food/`.
-- Update metadata, UrlMaps, sitemap, and internal links.
+- Update metadata, sitemap route discovery, and internal links.
 
 ## Platform Channel Meanings
 
@@ -582,6 +582,6 @@ Recommended next implementation features:
 - Homepage links to Smart Food and Luxury project sections.
 - Thai and English content are refined first.
 - Existing 10-language routing support is preserved.
-- Metadata, UrlMaps, sitemap, redirects, and internal links are updated or explicitly handled.
+- Metadata, sitemap route discovery, redirects, and internal links are updated or explicitly handled.
 - `yarn lint` passes.
 - `yarn build` passes.

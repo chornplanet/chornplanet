@@ -10,7 +10,7 @@ ChatGPT:
 2. Read `.mcp/README.md` and `.mcp/manifest.yaml`.
 3. Read `.planning/achieved/released.md` to avoid replanning completed feature families.
 4. Read relevant `.mcp/resources/`, `.mcp/policies/`, `.mcp/tools/`, and `.mcp/workflows/` files.
-5. Create or update `.planning/in-progress/feature-<name>.md`.
+5. Create or update `.planning/in-progress/<name>.md`.
 
 Codex:
 

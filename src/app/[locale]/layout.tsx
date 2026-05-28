@@ -53,7 +53,7 @@ import "@/styles/layout/footer.scss";
 const dmSans = DM_Sans({subsets: ["latin"]});
 
 export const metadata: Metadata = {
-    metadataBase: new URL("https://chornplanet.com"),
+    metadataBase: new URL("https://www.chornplanet.com"),
 };
 
 export default async function LocaleLayout({children}: Readonly<{ children: React.ReactNode }>) {

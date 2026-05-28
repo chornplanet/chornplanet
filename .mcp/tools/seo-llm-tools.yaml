@@ -10,7 +10,7 @@ tools:
       - src/metadata
       - src/app/sitemap.ts
       - src/app/robots.ts
-      - src/lib/UrlMaps.ts
+      - src/lib/sitemap/sitemapRoutes.ts
 
   seo.create_content_cluster_plan:
     status: proposed_contract
@@ -44,7 +44,7 @@ tools:
     status: proposed_contract
     risk: low
     mode: read_only_analysis
-    purpose: Compare public page routes, dynamic content slugs, UrlMaps entries, and sitemap output expectations.
+    purpose: Compare public page routes, dynamic content slugs, redirect rules, and sitemap output expectations.
     approval_required: false
 
 principles:

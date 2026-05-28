@@ -15,7 +15,7 @@ Then agents must read:
 2. `.mcp/manifest.yaml`
 3. `.planning/achieved/released.md`
 4. Relevant `.mcp/resources/`, `.mcp/policies/`, `.mcp/tools/`, and `.mcp/workflows/` files
-5. Relevant `.planning/in-progress/feature-*.md` file
+5. Relevant `.planning/in-progress/*.md` file
 6. Runtime app code and scripts
 
 ## Authority model

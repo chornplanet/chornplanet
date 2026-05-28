@@ -26,7 +26,7 @@ Recommended ChatGPT startup order:
 6. Read `.chatgpt/engine/ContentTranlation.md` when the feature involves website content, localization, multilingual copy, or MongoDB-backed translated content.
 7. Read `.chatgpt/MediaGenerationWorkflow.md` when the feature involves media generation, StoryGenProduct, AutoScene, images, video prompts, outfit, clothing, civilization, or DNA-guided content.
 8. Read `.chatgpt/VersionControl.md` when working with ChatGPT engines, contracts, system files, world files, or media-generation workflow documents.
-9. Read or create the relevant `.planning/in-progress/feature-<feature-name>.md` file.
+9. Read or create the relevant `.planning/in-progress/<feature-name>.md` file.
 10. Review runtime application code, scripts, schemas, and content services.
 
 Important distinction:
@@ -67,7 +67,7 @@ ChatGPT should:
 
 - Create planning items and scope for each feature.
 - Use **one branch per feature**, using the pattern `feature/<feature-name>` or the branch name approved by Khachornchit.
-- Write the proposed architecture, workflow, scope, assumptions, risks, and acceptance criteria into `.planning/in-progress/feature-<feature-name>.md`.
+- Write the proposed architecture, workflow, scope, assumptions, risks, and acceptance criteria into `.planning/in-progress/<feature-name>.md`.
 - Include project-structure guidelines for each feature branch when architecture or folder layout changes are expected.
 - Use `.mcp/` as the shared source for product context, media strategy, commerce direction, DNA integration, Smart Food evolution, analytics, SEO/LLM visibility, safety policies, and workflows.
 - Follow `.chatgpt/engine/ContentTranlation.md` for web content generation, TH review workflow, regenerated EN, all-language translation, and MongoDB migration handoff.
@@ -106,7 +106,7 @@ Codex should:
 3. ChatGPT creates or updates a planning file:
 
    ```text
-   .planning/in-progress/feature-<feature-name>.md
+   .planning/in-progress/<feature-name>.md
    ```
 
 4. The planning file should include:

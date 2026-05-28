@@ -152,7 +152,7 @@ ChatGPT / Codex needs growth insight
   -> .mcp analytics tool contract / workflow
   -> approved internal API, export, or report
   -> aggregate AI-readable summary
-  -> .planning/in-progress/feature-*.md
+  -> .planning/in-progress/*.md
   -> Khachornchit approval
   -> Codex implementation branch
 ```
@@ -255,4 +255,4 @@ feature/luxury-project-commerce-expansion
 
 ## Feature Branch Queue
 
-Use `.mcp/roadmap/feature-queue.md` as the operational queue. Each feature should have a focused `.planning/in-progress/feature-*.md` before Codex implementation, and completed features should be summarized in `.planning/achieved/released.md`.
+Use `.mcp/roadmap/feature-queue.md` as the operational queue. Each feature should have a focused `.planning/in-progress/*.md` before Codex implementation, and completed features should be summarized in `.planning/achieved/released.md`.

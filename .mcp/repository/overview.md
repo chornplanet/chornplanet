@@ -15,7 +15,7 @@ This directory is the repository-understanding layer for agents. Read it after `
 - Platform seed/loaders for the new platform layout live under `src/lib/platform-content/`; some current platform seed content is intentionally file-backed under `src/data/` until it is migrated.
 - Server architecture lives under `server/core`, `server/adapters`, and `server/infrastructure`.
 - Metadata lives under `src/metadata/`, with Next metadata routes in `src/app/robots.ts` and `src/app/sitemap.ts`.
-- Image registry and sitemap image paths use `src/image/ImageUrl.ts` and `src/lib/UrlMaps.ts`.
+- Public images use `src/image/ImageUrl.ts`; sitemap route discovery uses `src/lib/sitemap/sitemapRoutes.ts`.
 
 ## Agent Source Order
 
@@ -26,7 +26,7 @@ Use these files in order for implementation work:
 3. Relevant files under `.mcp/repository/`.
 4. Relevant `.mcp/resources`, `.mcp/policies`, `.mcp/tools`, and `.mcp/workflows`.
 5. `.planning/achieved/released.md` for released feature source paths.
-6. The active `.planning/in-progress/feature-*.md` file.
+6. The active `.planning/in-progress/*.md` file.
 7. Runtime files close to the proposed change.
 
 ## Release Index
