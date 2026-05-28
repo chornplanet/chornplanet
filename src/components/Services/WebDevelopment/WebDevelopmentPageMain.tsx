@@ -1,4 +1,3 @@
-import React from "react";
 import Link from "next/link";
 import SystemCapability from "@/components/Services/WebDevelopment/SystemCapability";
 import WebDevelopmentBackEnd from "@/components/Services/WebDevelopment/WebDevelopmentBackEnd";
@@ -6,7 +5,6 @@ import WevDevelopmentFrontEnd from "@/components/Services/WebDevelopment/WevDeve
 import WebDevelopmentDevOps from "@/components/Services/WebDevelopment/WebDevelopmentDevOps";
 import { TechnicalExpertiseContentPayload } from "@/core/domain/technical-expertise-content.entity";
 import aiPlatformDevelopment from "./aiPlatformDevelopment.json";
-import CloudExperience from "@/components/Common/CloudExperience";
 import { truncateText } from "@/lib/truncateText";
 import type { IFeatureStack } from "@/lib/model/IFeature";
 
@@ -55,7 +53,7 @@ export default function WebDevelopmentPageMain({
             className="policy-page__summary"
             aria-label={`${localTitle} summary`}
           >
-            <span>Planning Document</span>
+            <span>Technical Capability</span>
             <strong>4</strong>
             <small>system layers</small>
           </aside>
@@ -93,10 +91,10 @@ export default function WebDevelopmentPageMain({
                   <Link href={`/${lang}${stack.link}`}>
                     <div className="custom-single-features-box feature-box">
                       <div className="icon feature-box-icon">
-                        <i className={`${stack.icon} feature-icon hover-rotate`} />
-                        <span className="feature-box-title">
-                          {stack.title}
-                        </span>
+                        <i
+                          className={`${stack.icon} feature-icon hover-rotate`}
+                        />
+                        <span className="feature-box-title">{stack.title}</span>
                       </div>
                       <p className="feature-box-description">
                         {truncateText(stack.description, 110)}

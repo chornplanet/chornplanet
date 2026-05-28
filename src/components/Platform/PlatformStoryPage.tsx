@@ -33,7 +33,7 @@ export default function PlatformStoryPage({
             className="policy-page__summary"
             aria-label={`${content.title} summary`}
           >
-            <span>Platform Document</span>
+            <span>{content.eyebrow}</span>
             <strong>{content.blocks.length}</strong>
             <small>platform layers</small>
           </aside>
