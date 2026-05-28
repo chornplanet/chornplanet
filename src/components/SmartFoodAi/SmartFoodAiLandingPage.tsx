@@ -1,6 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import {ISmartFoodAiImage, ISmartFoodAiContent} from "@/lib/model/ISmartFoodAiContent";
+import {
+  ISmartFoodAiImage,
+  ISmartFoodAiContent,
+} from "@/lib/model/ISmartFoodAiContent";
 
 function SmartFoodAiImage({
   image,
@@ -28,7 +31,9 @@ function SmartFoodAiImage({
           "smart-food-ai-generated-visual",
           `smart-food-ai-generated-visual--${variant}`,
           className,
-        ].filter(Boolean).join(" ")}
+        ]
+          .filter(Boolean)
+          .join(" ")}
         aria-label={image.alt}
         role="img"
       >
@@ -71,7 +76,11 @@ function SmartFoodAiImage({
   );
 }
 
-export default function SmartFoodAiLandingPage({ content }: { content: ISmartFoodAiContent }) {
+export default function SmartFoodAiLandingPage({
+  content,
+}: {
+  content: ISmartFoodAiContent;
+}) {
   return (
     <main className="smart-food-ai-page">
       <section className="smart-food-ai-hero">
@@ -131,7 +140,10 @@ export default function SmartFoodAiLandingPage({ content }: { content: ISmartFoo
                 <p key={paragraph}>{paragraph}</p>
               ))}
             </div>
-            <div className="smart-food-ai-section-heading__right">
+
+            {/* Fix image rendering issue */}
+
+            {/* <div className="smart-food-ai-section-heading__right">
               <SmartFoodAiImage
                 image={content.proof.image}
                 width={900}
@@ -139,7 +151,18 @@ export default function SmartFoodAiLandingPage({ content }: { content: ISmartFoo
                 sizes="(max-width: 991px) 100vw, 42vw"
                 variant="proof"
               />
+            </div> */}
+
+            <div className="smart-food-ai-section-heading__right">
+              <Image
+                src={"/smart-food/chat-ordering.png"}
+                alt="Smart Food AI serving customers in Chiang Mai through chat food ordering"
+                width={900}
+                height={760}
+                sizes="(max-width: 991px) 100vw, 42vw"
+              />
             </div>
+
           </div>
           <div className="smart-food-ai-proof__grid">
             {content.proof.cards.map((card) => (
@@ -215,7 +238,9 @@ export default function SmartFoodAiLandingPage({ content }: { content: ISmartFoo
                 {content.value.heading.eyebrow}
               </p>
               <h2>{content.value.heading.title}</h2>
-              {content.value.heading.text && <p>{content.value.heading.text}</p>}
+              {content.value.heading.text && (
+                <p>{content.value.heading.text}</p>
+              )}
             </div>
             <div className="smart-food-ai-value__cards">
               {content.value.cards.map((item) => (
