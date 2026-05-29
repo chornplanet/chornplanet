@@ -59,7 +59,17 @@ export default async function Page({ params }: PageParams) {
           </div>
           <div className="platform-mts-hero__actions">
             <Link href={`/${locale}/smart-mobility/`}>Circulatory System</Link>
-            <Link href={`/${locale}/story/`}>Circulatory Story</Link>
+            <Link href={`/${locale}/story/`}>Story</Link>
+            <Link
+              href={`/${locale}/smart-mobility/mts/mts-valley-2-lavender-valley/`}
+            >
+              Valley Gateway
+            </Link>
+            <Link
+              href={`/${locale}/smart-mobility/mts/mts-coastal-1-beach-gateway/`}
+            >
+              Beach Gateway
+            </Link>
           </div>
         </div>
         <div className="platform-outfit-detail-hero__media">
