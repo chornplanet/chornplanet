@@ -157,11 +157,11 @@ This layer should be added later after the free economy and inventory system are
 
 Simple MVP levels:
 
-| Level | Type | Description |
-|---|---|---|
-| Primary | Free | Free account with 10M Genesis Points |
-| Premium | Paid | Paid membership with premium access and special assets |
-| Founder | Limited / campaign | Early supporter or special campaign tier |
+| Level   | Type               | Description                                            |
+| ------- | ------------------ | ------------------------------------------------------ |
+| Primary | Free               | Free account with 10M Genesis Points                   |
+| Premium | Paid               | Paid membership with premium access and special assets |
+| Founder | Limited / campaign | Early supporter or special campaign tier               |
 
 Future expanded progression:
 
@@ -186,16 +186,16 @@ Genesis Points can buy starter assets only.
 
 Example pricing:
 
-| Asset Type | Example Price | Currency |
-|---|---:|---|
-| Common outfit | 50,000 | Genesis Points |
-| Common scene | 100,000 | Genesis Points |
-| Starter character | 200,000 | Genesis Points |
-| Beginner MTS pass | 150,000 | Genesis Points |
-| Basic badge | 20,000 | Genesis Points |
-| Rare outfit | 1,000 | Chorn Credits |
-| Premium scene | 500 | Premium Gems |
-| Limited founder badge | Campaign only | Unlock |
+| Asset Type            | Example Price | Currency       |
+| --------------------- | ------------: | -------------- |
+| Common outfit         |        50,000 | Genesis Points |
+| Common scene          |       100,000 | Genesis Points |
+| Starter character     |       200,000 | Genesis Points |
+| Beginner MTS pass     |       150,000 | Genesis Points |
+| Basic badge           |        20,000 | Genesis Points |
+| Rare outfit           |         1,000 | Chorn Credits  |
+| Premium scene         |           500 | Premium Gems   |
+| Limited founder badge | Campaign only | Unlock         |
 
 ## Recommended Registration Flow
 
