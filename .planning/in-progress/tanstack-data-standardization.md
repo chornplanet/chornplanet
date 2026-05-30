@@ -26,6 +26,11 @@ Later rollout pages:
 - Story
 - About
 
+## Guide to implement the TanStack
+
+- See `.planning\in-progress\tanstack-query-strategy.md`
+- Replace the existing legacy with TanStack completely
+
 ## Existing Situation
 
 ### Home
@@ -150,20 +155,72 @@ Suggested public content fields:
 
 ## Public Image Normalization
 
-Implement a small image normalizer before content reaches page components.
+Implement a shared image normalizer before content reaches page components.
 
 Required behavior:
 
 - Trim image `src`.
 - Ensure local public asset paths start with `/`.
-- Reject empty image paths.
-- Convert missing or invalid image values to `/fallback-content.svg`.
-- Preserve alt text where available.
-- Provide safe fallback alt text when missing.
+- Preserve valid CDN / remote image URLs as-is.
+- Reject empty, missing, or invalid image paths.
+- Do **not** convert missing or invalid images to `/fallback-content.svg`.
+- Do **not** use any local fallback image path.
+- Preserve `alt` text where available.
+- Provide safe fallback `alt` text when missing.
 - Preserve declared image generation metadata where available.
-- Return predictable image object shape for both Home and Smart Food.
+- Return a predictable image object shape for both Home and Smart Food.
+- Allow page components to decide how to handle a missing image, such as hiding the image block, showing a placeholder UI, or logging validation issues.
 
-Then replace or update `SmartFoodAiImage` so it uses the shared normalizer. The component should no longer contain one-off hardcoded path fixes.
+## Component Cleanup
+
+Remove `SmartFoodAiImage` completely.
+
+Do not create a middle image-rendering component only for Smart Food. It can introduce unnecessary dependency, deployment risk, and long-term maintenance complexity.
+
+Smart Food and the same level components should use Next.js `Image` directly with normalized image data from the shared image normalizer.
+
+The shared normalizer should handle only data normalization:
+
+- trim `src`
+- validate `src`
+- preserve CDN / remote URLs
+- ensure local public paths start with `/`
+- preserve `alt`
+- provide fallback `alt`
+- preserve image generation metadata
+- return predictable shape
+
+The component should handle rendering:
+
+```tsx
+import Image from "next/image";
+
+const image = normalizePublicImage(item.image, {
+  fallbackAlt: item.title ?? "Smart Food image",
+});
+
+if (!image.src) {
+  return null;
+}
+
+return (
+  <Image
+    src={image.src}
+    alt={image.alt}
+    width={image.imageGenerationSize?.width ?? 1200}
+    height={image.imageGenerationSize?.height ?? 800}
+    sizes="(max-width: 768px) 100vw, 50vw"
+  />
+);
+```
+
+Final principle:
+
+```txt
+Do not wrap Next.js Image unless there is strong shared behavior across many pages.
+```
+
+For this case, direct `Image` + shared normalizer is cleaner, safer, and easier to maintain.
 
 ## TanStack Query Standardization
 
@@ -175,8 +232,8 @@ Add TanStack Query:
 
 Recommended public defaults:
 
-- `staleTime`: 10 minutes.
-- `gcTime`: 30 minutes.
+- `staleTime`: 1-day.
+- `gcTime`: 2-days.
 - `refetchOnWindowFocus`: false for public page content.
 
 Use stable query keys:
