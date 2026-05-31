@@ -109,7 +109,9 @@ export default function SmartFoodAiLandingPage({
               </div>
             </div>
 
-            <div
+            {/* It worked when removed the SmartFoodAiImage. */}
+
+            {/* <div
               className="smart-food-ai-hero__visual"
               aria-label={content.hero.visual.ariaLabel}
             >
@@ -119,6 +121,19 @@ export default function SmartFoodAiLandingPage({
                 height={800}
                 priority
                 variant="hero"
+              />
+            </div> */}
+
+            <div
+              className="smart-food-ai-hero__visual"
+              aria-label="Smart Food AI visual story"
+            >
+              <Image
+                src={content.hero.visual.src}
+                alt={content.hero.visual.alt}
+                width={1200}
+                height={800}
+                sizes="(max-width: 991px) 100vw, 42vw"
               />
             </div>
           </div>
@@ -141,7 +156,7 @@ export default function SmartFoodAiLandingPage({
               ))}
             </div>
 
-            {/* Fix image rendering issue */}
+            {/* It worked when removed the SmartFoodAiImage. */}
 
             {/* <div className="smart-food-ai-section-heading__right">
               <SmartFoodAiImage
@@ -155,14 +170,13 @@ export default function SmartFoodAiLandingPage({
 
             <div className="smart-food-ai-section-heading__right">
               <Image
-                src={"/smart-food/chat-ordering.png"}
-                alt="Smart Food AI serving customers in Chiang Mai through chat food ordering"
+                src={content.proof.image.src}
+                alt={content.proof.image.alt}
                 width={900}
                 height={760}
                 sizes="(max-width: 991px) 100vw, 42vw"
               />
             </div>
-
           </div>
           <div className="smart-food-ai-proof__grid">
             {content.proof.cards.map((card) => (
@@ -191,11 +205,21 @@ export default function SmartFoodAiLandingPage({
                 className="smart-food-ai-workflow__item"
               >
                 <div className="smart-food-ai-workflow__image">
-                  <SmartFoodAiImage
+                  {/* It worked when removed the SmartFoodAiImage. */}
+
+                  {/* <SmartFoodAiImage
                     image={step.image}
                     fill
                     sizes="(max-width: 767px) 100vw, (max-width: 1199px) 50vw, 33vw"
                     variant="workflow"
+                  /> */}
+
+                  <Image
+                    src={step.image.src}
+                    alt={step.image.alt}
+                    width={760}
+                    height={1200}
+                    sizes="(max-width: 767px) 100vw, (max-width: 1199px) 50vw, 33vw"
                   />
                 </div>
                 <div className="smart-food-ai-workflow__content">

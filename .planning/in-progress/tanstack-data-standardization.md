@@ -193,25 +193,33 @@ The shared normalizer should handle only data normalization:
 The component should handle rendering:
 
 ```tsx
-import Image from "next/image";
+            {/* It worked when removed the SmartFoodAiImage. */}
 
-const image = normalizePublicImage(item.image, {
-  fallbackAlt: item.title ?? "Smart Food image",
-});
+            {/* <div
+              className="smart-food-ai-hero__visual"
+              aria-label={content.hero.visual.ariaLabel}
+            >
+              <SmartFoodAiImage
+                image={content.hero.visual}
+                width={1200}
+                height={800}
+                priority
+                variant="hero"
+              />
+            </div> */}
 
-if (!image.src) {
-  return null;
-}
-
-return (
-  <Image
-    src={image.src}
-    alt={image.alt}
-    width={image.imageGenerationSize?.width ?? 1200}
-    height={image.imageGenerationSize?.height ?? 800}
-    sizes="(max-width: 768px) 100vw, 50vw"
-  />
-);
+            <div
+              className="smart-food-ai-hero__visual"
+              aria-label="Smart Food AI visual story"
+            >
+              <Image
+                src={content.hero.visual.src}
+                alt={content.hero.visual.alt}
+                width={1200}
+                height={800}
+                sizes="(max-width: 991px) 100vw, 42vw"
+              />
+            </div>
 ```
 
 Final principle:
