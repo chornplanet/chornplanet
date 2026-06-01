@@ -281,8 +281,8 @@
     "blocks": [
       {
         "title": "AI Native Platform",
-        "body": "Chorn Planet is built as an AI-native platform, not only a content site. The first launch focuses on clear public surfaces that can later support smarter recommendations, content workflows, product storytelling, and useful service experiences.",
-        "tags": ["AI Native", "Platform Systems", "Product Workflow"],
+        "body": "Chorn Planet is an AI-native platform that brings together AI Smart Food, AI POS, AI Luxury, Style, and practical technology into one evolving digital ecosystem. It connects with core system capabilities, including ERP, MES, Logic Controller, and the Physical Layer.",
+        "tags": ["AI Native", "ERP", "MES", "Logic Controller", "Physical Layer", "Workflow"],
         "link": "/technology/"
       },
       {
