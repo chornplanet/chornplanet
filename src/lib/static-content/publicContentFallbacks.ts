@@ -27,6 +27,7 @@ import {normalizeSmartFoodAiContentLocale} from "@/core/domain/smart-food-ai-con
 import {normalizeSmartMobilityChiangMaiContentLocale} from "@/core/domain/smart-mobility-chiang-mai-content.entity";
 import {normalizeTechnicalExpertiseContentLocale} from "@/core/domain/technical-expertise-content.entity";
 import {LanguageOptionList} from "@/lib/constants/languageOptions";
+import smartCityFallbackContent from "@/data/smart-city/en.smart-city.json";
 
 const STATIC_FALLBACK_IMAGE_SRC = '/images/home/chorn-workplace-001-image-1200.webp';
 
@@ -697,101 +698,19 @@ export function getFallbackGalleryContent(locale: string): GalleryContentPayload
 export function getFallbackHomePageContent(locale: string): HomePageContentPayload {
     const normalizedLocale = normalizeHomePageLocale(locale);
     logStaticFallback('homepage content', normalizedLocale);
-    const image = {url: STATIC_FALLBACK_IMAGE_SRC, alt: 'Chorn Planet platform overview'};
-    const dailyFlow = {
-        title: 'Daily flow',
-        paragraph: fallbackText.description,
-        image,
-        category: 'platform',
-        signalFocus: ['content reliability'],
-        landingUrl: '/smart-city/',
-    };
+    const content = JSON.parse(JSON.stringify(smartCityFallbackContent)) as HomePageContentPayload;
 
     return {
+        ...content,
         locale: normalizedLocale,
-        heroSection: {
-            headline: 'Chorn Planet',
-            paragraph: fallbackText.description,
-            softTexts: [],
-            image,
-            purpose: 'Platform overview',
-            narrativeRole: 'overview',
-            section: 'hero',
-            category: 'platform',
-            signalFocus: ['content reliability'],
-            landingUrl: '/smart-city/',
-        },
         humanDailyFlow: {
-            headline: 'Human Daily Flow',
-            paragraph: fallbackText.description,
-            morningFlow: dailyFlow,
-            middayFlow: dailyFlow,
-            eveningFlow: dailyFlow,
-            purpose: 'Platform overview',
-            narrativeRole: 'overview',
-            section: 'daily-flow',
-            category: 'platform',
+            ...content.humanDailyFlow,
             lang: normalizedLocale,
         },
         localToGlobal: {
-            headline: 'Local to Global',
-            paragraph: fallbackText.description,
-            items: [],
-            purpose: 'Platform overview',
-            narrativeRole: 'overview',
-            section: 'local-to-global',
-            category: 'platform',
-            signalFocus: ['content reliability'],
-            landingUrl: '/smart-city/',
+            ...content.localToGlobal,
             lang: normalizedLocale,
         },
-        systemExplainers: {
-            headline: 'System Explainers',
-            paragraph: fallbackText.description,
-            systems: [],
-        },
-        mobilityFocus: {
-            headline: 'Mobility Focus',
-            paragraph: fallbackText.description,
-            signals: [],
-        },
-        citySystems: {
-            headline: 'City Systems',
-            paragraph: fallbackText.description,
-            systems: [],
-        },
-        globalPatterns: {
-            headline: 'Global Patterns',
-            paragraph: fallbackText.description,
-            signals: [],
-        },
-        urbanSignals: {
-            headline: 'Urban Signals',
-            paragraph: fallbackText.description,
-            signals: [],
-        },
-        editorialPositioning: {
-            headline: 'Editorial Positioning',
-            paragraphs: [fallbackText.description],
-            principles: [],
-        },
-        smartCityMain: {
-            hero: {
-                title: 'Smart City',
-                paragraphs: [fallbackText.description],
-                cta: {
-                    label: 'Explore',
-                    href: '/smart-city/',
-                },
-                image,
-            },
-            navigation: {
-                headline: 'Smart City Signals',
-                items: [],
-            },
-        },
-        smartCityHighlight: createSmartCityItem('smart-city-overview'),
-        smartCityTags: ['Smart City', 'Platform'],
     };
 }
 

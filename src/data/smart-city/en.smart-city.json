@@ -1,0 +1,349 @@
+{
+  "locale": "en",
+  "heroSection": {
+    "headline": "Smart City",
+    "paragraph": "Chorn Planet studies how human movement, public space, mobility, food systems, and infrastructure signals can shape smarter city experiences from Chiang Mai to global audiences.",
+    "softTexts": [
+      {
+        "title": "Observe human flow",
+        "description": "Start with how people move, pause, gather, eat, work, and return home across the day."
+      },
+      {
+        "title": "Translate signals into systems",
+        "description": "Connect visible city patterns to mobility, service, infrastructure, and platform decisions."
+      }
+    ],
+    "image": {
+      "url": "/smart-city/hero-section/city-shaped-by-people-move.png",
+      "alt": "People moving through a Chorn Planet Smart City environment"
+    },
+    "purpose": "Smart city editorial overview",
+    "narrativeRole": "city systems introduction",
+    "section": "hero",
+    "category": "smart-city",
+    "signalFocus": ["human flow", "mobility", "public space"],
+    "landingUrl": "/smart-city/when-human-life-shapes-the-city/"
+  },
+  "humanDailyFlow": {
+    "headline": "Human Daily Flow",
+    "paragraph": "A smart city becomes easier to understand when daily life is read as a sequence of human flows: morning movement, midday services, and evening return patterns.",
+    "morningFlow": {
+      "title": "Morning city movement",
+      "paragraph": "Morning routines reveal how streets, transit edges, food stops, workplaces, and public space begin to synchronize before the city reaches full speed.",
+      "image": {
+        "url": "/smart-city/human-daily-flow/morning.png",
+        "alt": "Morning movement through a smart city district"
+      },
+      "category": "morning-flow",
+      "signalFocus": ["commute rhythm", "street demand", "food access"],
+      "landingUrl": "/smart-city/human-daily-flow-morning/"
+    },
+    "middayFlow": {
+      "title": "Midday service rhythm",
+      "paragraph": "Midday activity shows where people pause, order food, cross districts, use services, and turn ordinary convenience into measurable urban demand.",
+      "image": {
+        "url": "/smart-city/human-daily-flow/midday.png",
+        "alt": "Midday service rhythm in a smart city"
+      },
+      "category": "midday-flow",
+      "signalFocus": ["service demand", "walkable access", "daily convenience"],
+      "landingUrl": "/smart-city/when-human-life-shapes-the-city/"
+    },
+    "eveningFlow": {
+      "title": "Evening return flow",
+      "paragraph": "Evening movement connects homes, restaurants, mobility links, and public comfort, showing how the city settles into a different pattern after work.",
+      "image": {
+        "url": "/smart-city/human-daily-flow/evening.png",
+        "alt": "Evening return flow through city streets"
+      },
+      "category": "evening-flow",
+      "signalFocus": ["return trips", "public comfort", "local destinations"],
+      "landingUrl": "/smart-city/human-daily-flow-evening/"
+    },
+    "purpose": "Daily urban observation",
+    "narrativeRole": "human flow sequence",
+    "section": "daily-flow",
+    "category": "smart-city",
+    "lang": "en"
+  },
+  "localToGlobal": {
+    "headline": "Local to Global",
+    "paragraph": "Chiang Mai can be observed as a local prototype for patterns that matter globally: walkability, tourism pressure, service timing, mobility corridors, and civic comfort.",
+    "items": [
+      {
+        "title": "Chiang Mai as a living prototype",
+        "description": "Local streets, markets, campuses, old-city edges, and mountain connections create a practical lens for future city systems.",
+        "image": {
+          "url": "/smart-city/editorial/local-as-global-prototype.png",
+          "alt": "Chiang Mai local life as a smart city prototype"
+        },
+        "signalFocus": ["local context", "urban prototype", "tourism pressure"]
+      },
+      {
+        "title": "Signals that travel",
+        "description": "Patterns found in one city can inform wider thinking about service design, mobility planning, public comfort, and platform readiness.",
+        "image": {
+          "url": "/smart-city/global-patterns/local-signals.png",
+          "alt": "Local city signals translated into global patterns"
+        },
+        "signalFocus": [
+          "repeatable pattern",
+          "platform learning",
+          "global relevance"
+        ]
+      }
+    ],
+    "purpose": "Local-to-global city interpretation",
+    "narrativeRole": "prototype framing",
+    "section": "local-to-global",
+    "category": "smart-city",
+    "signalFocus": ["local prototype", "global pattern"],
+    "landingUrl": "/smart-city/editorial-local-as-global-prototype/",
+    "lang": "en"
+  },
+  "systemExplainers": {
+    "headline": "System Explainers",
+    "paragraph": "Smart City content connects visible city life to the systems behind it, from mobility and services to data, comfort, and governance readiness.",
+    "systems": [
+      {
+        "title": "Movement and pause",
+        "description": "A city must support both efficient movement and meaningful places to stop.",
+        "image": {
+          "url": "/smart-city/city-systems/movement-and-pause.png",
+          "alt": "Movement and pause in a smart city system"
+        }
+      },
+      {
+        "title": "Density and comfort",
+        "description": "Useful density depends on shade, access, safety, service rhythm, and public-space quality.",
+        "image": {
+          "url": "/smart-city/city-systems/density-and-comfort.png",
+          "alt": "Density and comfort in an urban system"
+        }
+      }
+    ]
+  },
+  "mobilityFocus": {
+    "headline": "Mobility Focus",
+    "paragraph": "Mobility is treated as a city experience, not only a transport asset: the important question is how people move between homes, services, destinations, and public spaces.",
+    "signals": [
+      {
+        "title": "Corridors with purpose",
+        "description": "Mobility routes become more useful when they connect real daily needs rather than only technical infrastructure points.",
+        "image": {
+          "url": "/smart-mobility/chiang-mai/urban-hub-san-sai-doi-saket.png",
+          "alt": "Smart mobility corridor connecting urban districts"
+        },
+        "signalFocus": ["corridor demand", "access", "daily route"],
+        "landingUrl": "/smart-mobility/chiang-mai/urban-hub-san-sai-doi-saket/"
+      },
+      {
+        "title": "Airport and destination links",
+        "description": "Regional gateways, tourist movement, and local daily trips need to be understood together instead of as separate systems.",
+        "image": {
+          "url": "/smart-mobility/chiang-mai/hub-chiang-mai-airport.png",
+          "alt": "Smart mobility airport connection for Chiang Mai"
+        },
+        "signalFocus": [
+          "gateway access",
+          "tourism flow",
+          "regional connection"
+        ],
+        "landingUrl": "/smart-mobility/chiang-mai/hub-to-chiang-mai-airport/"
+      }
+    ]
+  },
+  "citySystems": {
+    "headline": "City Systems",
+    "paragraph": "Smart city value appears when separate signals become a coordinated system across movement, comfort, service timing, public space, and decision support.",
+    "systems": [
+      {
+        "title": "Efficiency and rhythm",
+        "description": "City systems should reduce friction while preserving the rhythm of local life and public space.",
+        "image": {
+          "url": "/smart-city/city-systems/efficiency-and-rhythm.png",
+          "alt": "Efficiency and rhythm in a smart city"
+        },
+        "balanceSignals": ["faster flow", "local rhythm", "service timing"],
+        "landingUrl": "/smart-city/city-systems-efficiency-and-rhythm/"
+      },
+      {
+        "title": "Movement and pause",
+        "description": "The same district needs routes for movement and comfortable places where people can stop, wait, meet, and recover.",
+        "image": {
+          "url": "/smart-city/city-systems/movement-and-pause.png",
+          "alt": "Movement and pause balanced in public space"
+        },
+        "balanceSignals": ["route clarity", "rest points", "public comfort"],
+        "landingUrl": "/smart-city/city-systems-movement-and-pause/"
+      },
+      {
+        "title": "Density and comfort",
+        "description": "Dense environments work best when shade, access, safety, food, seating, and information are planned as one experience.",
+        "image": {
+          "url": "/smart-city/city-systems/density-and-comfort.png",
+          "alt": "Density and comfort in a city district"
+        },
+        "balanceSignals": ["urban density", "shade", "access"],
+        "landingUrl": "/smart-city/city-systems-density-and-comfort/"
+      }
+    ]
+  },
+  "globalPatterns": {
+    "headline": "Global Patterns",
+    "paragraph": "The page turns local observation into reusable patterns for cities, platforms, and civic service design beyond one place.",
+    "signals": [
+      {
+        "title": "Human-first observation",
+        "description": "Start with the visible experience of people before choosing technology, dashboards, or infrastructure language.",
+        "image": {
+          "url": "/smart-city/editorial/human-first-observation.png",
+          "alt": "Human-first smart city observation"
+        },
+        "signalFocus": ["people first", "urban behavior", "field observation"],
+        "landingUrl": "/smart-city/editorial-human-first-observation/"
+      },
+      {
+        "title": "Systems before technology",
+        "description": "Technology becomes useful when it supports a clear system of movement, services, information, and public comfort.",
+        "image": {
+          "url": "/smart-city/editorial/system-before-technology.png",
+          "alt": "Smart city systems before technology"
+        },
+        "signalFocus": [
+          "system design",
+          "technology fit",
+          "operational clarity"
+        ],
+        "landingUrl": "/smart-city/editorial-system-before-technology/"
+      }
+    ]
+  },
+  "urbanSignals": {
+    "headline": "Urban Signals",
+    "paragraph": "Urban signals are the practical clues that reveal whether a district is easy to move through, comfortable to stay in, and ready for smarter services.",
+    "signals": [
+      {
+        "title": "Queue and wait behavior",
+        "description": "Waiting patterns show where service capacity, shade, information, and pedestrian comfort need better coordination.",
+        "signalFocus": ["queues", "waiting", "comfort"],
+        "image": {
+          "url": "/smart-city/urban-signals/queue-and-wait.png",
+          "alt": "Queue and wait behavior in public space"
+        },
+        "landingUrl": "/smart-city/when-human-life-shapes-the-city/"
+      },
+      {
+        "title": "Food and service demand",
+        "description": "Food stops and service touchpoints reveal how daily demand moves through neighborhoods and public corridors.",
+        "signalFocus": ["food demand", "service access", "daily life"],
+        "image": {
+          "url": "/smart-city/urban-signals/food-and-service.png",
+          "alt": "Food and service demand in a smart city"
+        },
+        "landingUrl": "/smart-city/human-daily-flow-morning/"
+      },
+      {
+        "title": "Public comfort signals",
+        "description": "Shade, seating, crossings, lighting, noise, and perceived safety determine whether people can use the city comfortably.",
+        "signalFocus": ["comfort", "safety", "public realm"],
+        "image": {
+          "url": "/smart-city/urban-signals/public-comfort.png",
+          "alt": "Public comfort signals in a city district"
+        },
+        "landingUrl": "/smart-city/city-systems-density-and-comfort/"
+      }
+    ]
+  },
+  "editorialPositioning": {
+    "headline": "Editorial Positioning",
+    "paragraphs": [
+      "Chorn Planet presents Smart City as an editorial and systems lens: observe daily life first, then explain what the city may need from mobility, services, public space, and technology.",
+      "The content avoids treating technology as the headline. It frames smart city thinking around human flow, local context, and practical system signals."
+    ],
+    "principles": [
+      {
+        "title": "Human life shapes the city",
+        "description": "People, routines, and local behavior are the starting point for every smart city interpretation.",
+        "image": {
+          "url": "/smart-city/hero/when-human-life-shapes-the-city.png",
+          "alt": "Human life shaping a smart city"
+        },
+        "landingUrl": "/smart-city/when-human-life-shapes-the-city/"
+      },
+      {
+        "title": "Local context matters",
+        "description": "A useful system respects the city that already exists before proposing future infrastructure.",
+        "image": {
+          "url": "/smart-city/editorial/local-as-global-prototype.png",
+          "alt": "Local context in a smart city prototype"
+        },
+        "landingUrl": "/smart-city/editorial-local-as-global-prototype/"
+      },
+      {
+        "title": "Systems before technology",
+        "description": "Technology earns its place when the city system, user need, and operational role are clear.",
+        "image": {
+          "url": "/smart-city/editorial/system-before-technology.png",
+          "alt": "Systems before technology in smart city planning"
+        },
+        "landingUrl": "/smart-city/editorial-system-before-technology/"
+      }
+    ]
+  },
+  "smartCityMain": {
+    "hero": {
+      "title": "Smart City",
+      "paragraphs": [
+        "Chorn Planet studies how human movement, public space, mobility, food systems, and infrastructure signals can shape smarter city experiences from Chiang Mai to global audiences."
+      ],
+      "cta": {
+        "label": "Read the Smart City story",
+        "href": "/smart-city/when-human-life-shapes-the-city/"
+      },
+      "image": {
+        "url": "/smart-city/hero-section/city-shaped-by-people-move.png",
+        "alt": "People moving through a Chorn Planet Smart City environment"
+      }
+    },
+    "navigation": {
+      "headline": "Smart City Signals",
+      "items": [
+        {
+          "title": "Human Daily Flow",
+          "description": "Read the city through morning, midday, and evening movement patterns.",
+          "href": "/smart-city/human-daily-flow-morning/"
+        },
+        {
+          "title": "City Systems",
+          "description": "Connect mobility, density, service rhythm, comfort, and public space.",
+          "href": "/smart-city/city-systems-efficiency-and-rhythm/"
+        },
+        {
+          "title": "Editorial Lens",
+          "description": "Understand why human-first observation comes before technology choices.",
+          "href": "/smart-city/editorial-human-first-observation/"
+        }
+      ]
+    }
+  },
+  "smartCityHighlight": {
+    "sceneNumber": "Overview",
+    "sceneName": "Smart City Overview",
+    "title": "Smart City Chiang Mai",
+    "concept": "Urban intelligence and future city planning",
+    "description": "Chorn Planet studies how human movement, public space, mobility, food systems, and infrastructure signals can shape smarter city experiences from Chiang Mai to global audiences.",
+    "features": [
+      {
+        "title": "Smart City direction",
+        "description": "A public overview of smart city, mobility, and civic platform ideas for Chiang Mai."
+      }
+    ],
+    "link": "/smart-city/chiang-mai/smart-city-overview/",
+    "media": {
+      "image_url": "/smart-city/hero-section/city-shaped-by-people-move.png",
+      "image_tags": ["Smart City", "Chiang Mai"]
+    }
+  },
+  "smartCityTags": ["Smart City", "Human Flow", "Mobility", "Public Space"]
+}
