@@ -1,4 +1,4 @@
-export interface ISmartFoodAiImage {
+export interface ISmartFoodAiContentImage {
   src: string;
   alt: string;
 }
@@ -12,7 +12,7 @@ export interface ISmartFoodAiAction {
 export interface ISmartFoodAiWorkflowStep {
   title: string;
   text: string;
-  image: ISmartFoodAiImage;
+  image: ISmartFoodAiContentImage;
 }
 
 export interface ISmartFoodAiProofCard {
@@ -47,14 +47,14 @@ export interface ISmartFoodAiContent {
     support: string;
     actionsLabel: string;
     actions: ISmartFoodAiAction[];
-    visual: ISmartFoodAiImage & {
+    visual: ISmartFoodAiContentImage & {
       ariaLabel: string;
     };
   };
   proof: {
     heading: ISmartFoodAiSectionHeading;
     paragraphs: string[];
-    image: ISmartFoodAiImage;
+    image: ISmartFoodAiContentImage;
     cards: ISmartFoodAiProofCard[];
   };
   workflow: {

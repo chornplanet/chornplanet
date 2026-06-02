@@ -2,165 +2,194 @@
 
 ## 1. Purpose
 
-This procedure defines the ChornPlanet standard for content generation, rewriting, translation, localization, and multilingual review.
+This document defines the ChornPlanet standard for website content generation, translation, localization, and multilingual review.
 
-The default writing style is **clear public communication with executive-grade discipline**.
+All ChornPlanet public content must be:
 
-For both **English and Thai**, ChornPlanet content must read as if it is written or approved by a **CEO, CTO, Director of Information System Development, Head of Engineering, or Chief Architect**.
+- Easy to read
+- Easy to understand
+- Suitable for general users
+- Polite and respectful
+- Safe for all supported locales and cultures
+- Accurate to the approved product or service status
+- Implementation-ready for reusable web components and database-backed content services
 
-The content must be clear, structured, credible, operationally accurate, and suitable for public business and technology communication.
+The default writing style is **clear public communication**.
+
+When content is legal, privacy, policy, investor-facing, government-facing, infrastructure-facing, or AI-disclosure related, the tone must become more conservative and formal while still remaining readable for general users.
+
+This standard prevents:
+
+- slang or rude language
+- culturally sensitive wording
+- discriminatory wording
+- over-promotional wording
+- unsupported claims
+- future guarantees
+- confusing technical language
+- literal translations that sound unnatural or unsafe in the target language
 
 ---
 
 ## 2. Scope
 
-This procedure applies to:
+This standard applies to all ChornPlanet generated and translated content, including but not limited to:
 
 - Public website pages
 - Landing pages
 - Product and service pages
-- Smart Food pages
-- Smart city, mobility, MTS, and infrastructure pages
-- Platform and system capability pages
+- Smart Food and commerce/service platform pages
+- Smart city, mobility, MTS, infrastructure, and system explanation pages
+- ChornPlanet world, zone, outfit, clothing, civilization, and luxury pages
 - AI-generated or conceptual content disclosures
-- Terms of Service and Privacy Policy content
+- Terms of Service
+- Privacy Policy
+- Investor-facing pages
+- Government or policy-oriented content
 - Static JSON content
 - MongoDB-backed content
+- Reusable page components
+- Server content loaders
 - Metadata, page titles, descriptions, captions, image alt text, and UX labels
-- Executive summaries and business-facing platform descriptions
+
+This standard applies to both static and dynamically generated content.
 
 ---
 
-## 3. Core Standard
+## 3. Target Languages & Review Sequence
 
-All generated, rewritten, or translated content must be:
+Translations must be reviewed **language-by-language**, not treated as unvalidated bulk translation.
 
-- Easy to read
-- Easy to understand
-- Polite and respectful
-- Accurate to the approved product or service status
-- Safe for all supported locales and cultures
-- Professional enough for public publication
-- Implementation-ready for reusable web components and database-backed content services
-- Clear enough for general users and strong enough for executive review
+### Required Language Set
 
-Avoid:
+1. EN
+2. TH
+3. DA
+4. DE
+5. FI
+6. FR
+7. JA
+8. KO
+9. NL
+10. ZH_CN
 
-- Casual wording in official content
-- Unsupported claims
-- Future guarantees
-- Over-promotional wording
-- Confusing technical language
-- Literal translation that sounds unnatural in the target language
-- Vague executive wording that does not explain real capability, status, scope, or value
+Each language must preserve the same product meaning while adapting naturally to its own cultural and language norms.
 
----
+Literal equivalence is secondary to:
 
-## 4. Executive-Grade EN and TH Writing
-
-English and Thai are the primary authority languages for ChornPlanet communication.
-
-Executive-grade writing means the content must explain:
-
-1. Purpose
-2. Scope
-3. Capability
-4. Operating model
-5. Current status
-6. User or business value
-7. Governance, reliability, or system clarity where relevant
-
-The writing must be strategic, structured, credible, and readable. It must not become too complex, too casual, too technical, or too promotional.
+- User understanding
+- Cultural safety
+- Legal and policy safety
+- Product accuracy
+- Natural readability
 
 ---
 
-## 5. English Executive Writing Standard
+## 4. Core Translation Principles
 
-English content must be clear, globally readable, and suitable for business, technology, platform, and system communication.
+### 4.1 General User Plain-Language Default
 
-English writing should be:
+The default ChornPlanet language style must be clear enough for general users.
 
-- Clear
-- Strategic
-- Concise
-- Credible
-- Operationally grounded
-- Internationally understandable
-- Professional without sounding inflated
+All generated or translated content should:
 
-Prefer:
+- Use short, clear sentences where possible
+- Prefer common words over complex words
+- Explain technical ideas in simple terms when the page is public-facing
+- Avoid unnecessary jargon
+- Avoid overly academic, legalistic, or bureaucratic wording unless the content type requires it
+- Avoid local slang, internet slang, and informal speech that may not translate well
+- Avoid aggressive, dramatic, or emotionally exaggerated wording
+- Avoid language that makes the user feel pressured, judged, excluded, or confused
 
-- “designed to support”
-- “connects”
-- “helps structure”
-- “provides visibility”
-- “coordinates”
-- “enables”
-- “supports”
-
-Avoid hype-driven wording such as “ultimate,” “revolutionary,” “world-changing,” or “guaranteed” unless explicitly approved and supported.
-
-Example:
+The goal is:
 
 ```text
-ChornPlanet is an AI-native platform designed to connect content, services, and digital operating workflows. It focuses on practical AI adoption across food, lifestyle, commerce, and connected environments, while keeping product status, service scope, and user-facing communication clear.
+Clear enough for general users.
+Professional enough for public publication.
+Safe enough for every supported locale.
+Accurate enough for product and service truth.
 ```
 
 ---
 
-## 6. Thai Executive Writing Standard
+### 4.2 Polite, Respectful, and Family-Safe Language
 
-Thai content must be natural, professional, and suitable for official ChornPlanet communication.
+All content must be suitable for public website publication across different cultures.
 
-Thai writing should be:
+Do not use:
 
-- สุภาพ
-- ชัดเจน
-- เป็นระบบ
-- น่าเชื่อถือ
-- มีมุมมองเชิงกลยุทธ์
-- สะท้อนความเข้าใจด้านระบบและการดำเนินงาน
-- เหมาะสำหรับการสื่อสารของผู้บริหาร เทคโนโลยี แพลตฟอร์ม และองค์กร
-- อ่านเข้าใจได้สำหรับผู้ใช้งานทั่วไป
+- Rude words
+- Profanity
+- Sexualized wording
+- Insults
+- Shaming language
+- Mocking tone
+- Degrading words
+- Violent or threatening language
+- Political attack language
+- Religious disrespect
+- Ethnic, national, gender, age, disability, or class stereotypes
+- Words that may create unnecessary fear, panic, or social conflict
 
-Prefer Thai wording that explains purpose, capability, operating model, business value, system reliability, and governance.
+If source wording is too strong, soften it into neutral and respectful language.
 
-Use professional Thai wording such as:
+Examples:
 
-- สามารถ
-- ออกแบบมาเพื่อ
-- สนับสนุน
-- เชื่อมโยง
-- บริหารจัดการ
-- สอดคล้องกับ
-- ภายใต้ขอบเขต
-- ในบริบทของ
-- เชิงระบบ
-- ความต่อเนื่องในการดำเนินงาน
-
-Avoid casual official-content wording such as:
-
-- นะคะ
-- เลยค่ะ
-- จ้า
-- เก่งมาก
-- สุดล้ำ
-- เปลี่ยนโลก
-- ทำทุกอย่างอัตโนมัติ
-
-Example:
-
-```text
-ChornPlanet เป็นแพลตฟอร์ม AI-native ที่พัฒนาเพื่อเชื่อมโยงคอนเทนต์ บริการ และระบบปฏิบัติการดิจิทัลเข้าด้วยกัน โดยมุ่งเน้นการนำ AI มาใช้สนับสนุนการทำงานจริงในบริบทของธุรกิจ อาหาร ไลฟ์สไตล์ และสภาพแวดล้อมเมืองแห่งอนาคต
-```
+| Avoid | Prefer |
+| --- | --- |
+| This system destroys the old model. | This system provides a different operating model. |
+| The best solution for everyone. | A solution designed to support this use case. |
+| Users will definitely gain more sales. | Users may use the system to support sales workflows. |
+| Everyone must use this. | The service is available for users who need this workflow. |
 
 ---
 
-## 7. Product and Service Truth
+### 4.3 Cultural and Locale Safety
 
-Content must preserve the factual status approved by the Chief Architect.
+Each locale must sound natural and culturally appropriate.
 
-Do not imply that a product, service, system, AI feature, commerce flow, or automation is live, production-ready, fully automated, guaranteed, available worldwide, officially partnered, certified, or superior to competitors unless this is explicitly approved or clearly present in the source content.
+Translations must avoid:
+
+- Culture-specific jokes or idioms
+- Wordplay that does not translate well
+- Local stereotypes
+- Sensitive historical or political references unless explicitly required and approved
+- Religious or national symbols used casually or commercially without purpose
+- Overly direct wording that may sound rude in high-context cultures
+- Overly casual wording that may sound unprofessional in formal cultures
+- Overly formal wording that may sound cold or confusing in public UX content
+
+Adaptation is required when literal translation creates cultural risk.
+
+Examples:
+
+- JA and KO should avoid overly forceful claims or direct commands in public content.
+- DE and FR should prioritize precision, legal clarity, and clear data or service status.
+- DA, FI, and NL should remain simple, practical, and not exaggerated.
+- ZH_CN should avoid politically sensitive or culturally ambiguous wording unless the source content explicitly requires it and the meaning is safe.
+- TH should be natural, polite, easy to read, and accurate to the Chief Architect-approved business meaning.
+
+---
+
+### 4.4 Product and Service Truth
+
+Translations must preserve the factual status approved by the Chief Architect.
+
+Do not imply that a product, service, system, AI feature, commerce flow, or automation is:
+
+- live
+- production-ready
+- fully automated
+- guaranteed
+- available worldwide
+- officially partnered
+- government-approved
+- investor-ready
+- legally certified
+- superior to competitors
+
+unless this is explicitly approved or clearly present in the source content.
 
 When status is uncertain, use safe wording such as:
 
@@ -175,46 +204,170 @@ When status is uncertain, use safe wording such as:
 
 ---
 
-## 8. Tone Modes by Content Type
+### 4.5 Non-Promotional and Non-Speculative Discipline
 
-### 8.1 Public Website Mode
+ChornPlanet content may describe systems, services, concepts, workflows, design methods, and operations.
 
-Use clear, warm, trustworthy, and executive-ready wording when the content represents ChornPlanet as a platform, system, or business direction.
+It must not overpromise outcomes.
 
-### 8.2 UX/UI Microcopy Mode
+Avoid wording that implies:
 
-Use short, direct, friendly, and unambiguous wording. Do not force formal executive language into small buttons or labels.
+- guaranteed success
+- guaranteed revenue
+- guaranteed growth
+- guaranteed ranking
+- guaranteed search traffic
+- guaranteed AI performance
+- certain future social, environmental, or economic outcomes
+- universal suitability for all users
+- superiority without evidence
 
-### 8.3 Policy / Privacy / Terms Mode
+Prefer descriptive wording:
 
-Use clear, conservative, careful, and non-marketing wording.
-
-### 8.4 Investor / Partner / Infrastructure Mode
-
-Use formal, neutral, governance-aware, evidence-based, and system-oriented wording.
-
-### 8.5 Commerce / Product Story Mode
-
-Use helpful, descriptive, trustworthy, and purchase-supportive wording without pressure.
-
-### 8.6 Platform / System Capability Mode
-
-Use executive-level, system-oriented, operationally clear, governance-aware, and business-value-aware wording.
-
-For ERP, MES, Logic Controller, Physical Layer, AI-native platform, AI POS, AI Smart Food, MongoDB-backed content, system architecture, operational workflows, and integration pages:
-
-- Explain the capability in practical operating terms.
-- Separate current capability, planned capability, and conceptual direction.
-- Avoid making architecture sound fully implemented when it is only a target design.
-- Connect technical capability to data flow, service flow, operational visibility, control, reliability, or user experience.
+| Avoid | Prefer |
+| --- | --- |
+| This will transform the future of cities. | This describes a framework for future city planning. |
+| The most advanced AI food system. | An AI-assisted food ordering and recommendation system. |
+| Guaranteed to increase traffic. | Designed to support traffic growth through structured content. |
+| The ultimate platform. | A platform that combines content, services, and system workflows. |
 
 ---
 
-## 9. Output Format Rules
+### 4.6 Technical Clarity for General Users
+
+When explaining technical topics, use a layered style:
+
+1. Start with a simple explanation.
+2. Add operational detail only when useful.
+3. Keep implementation detail separate from user-facing benefit.
+4. Avoid unnecessary acronyms unless explained.
+
+Example:
+
+```text
+MongoDB stores content records so the website can load pages dynamically. This helps ChornPlanet manage many localized pages without hardcoding every page manually.
+```
+
+Do not write public content as if it is only for engineers unless the target page is technical documentation.
+
+---
+
+## 5. Tone Modes by Content Type
+
+Use the correct tone mode for each content type.
+
+### 5.1 Public Website / General User Mode
+
+Use for landing pages, platform pages, product pages, story pages, Smart Food pages, style pages, world pages, mobility pages, and most user-facing content.
+
+Tone:
+
+- Clear
+- Warm but not casual
+- Helpful
+- Polite
+- Natural
+- Trustworthy
+- Not exaggerated
+
+### 5.2 UX/UI Microcopy Mode
+
+Use for buttons, labels, cards, forms, empty states, error states, and navigation.
+
+Tone:
+
+- Short
+- Direct
+- Friendly
+- Unambiguous
+- Action-oriented without pressure
+
+Rules:
+
+- Do not use long sentences.
+- Do not add legal or marketing wording inside buttons.
+- Avoid confusing verbs.
+- Keep meaning consistent across locales.
+
+### 5.3 Policy / Privacy / Terms Mode
+
+Use for Terms of Service, Privacy Policy, consent, rights, legal notices, and data processing explanations.
+
+Tone:
+
+- Clear
+- Conservative
+- Legally careful
+- Easy to understand
+- No marketing language
+
+Rules:
+
+- Preserve data minimization and purpose limitation.
+- Do not expand data processing scope during translation.
+- Do not imply automated decision-making unless it is factually implemented.
+- Avoid vague legal wording when clearer wording is possible.
+
+### 5.4 Investor / Government / Infrastructure Mode
+
+Use only when the page or document is clearly intended for investor, government, policy, or infrastructure review.
+
+Tone:
+
+- Formal
+- Neutral
+- Governance-aware
+- Evidence-based
+- No exaggeration
+
+This mode should still be readable by general users where possible.
+
+### 5.5 Media / Digest / News Follow-Up Mode
+
+Use for news, entertainment, technology follow-up, daily digest, and factual content.
+
+Tone:
+
+- Neutral
+- Source-aware
+- Copyright-safe
+- Non-sensational
+- Clear about facts versus analysis
+
+Rules:
+
+- Do not copy full articles.
+- Do not overstate claims from sources.
+- Do not use clickbait.
+- Do not use shocking or fear-based framing.
+- Include source tracking when required.
+
+### 5.6 Commerce / Product Story Mode
+
+Use for product stories, TikTok-first product links, Smart Food commerce, outfit, clothing, and service pages.
+
+Tone:
+
+- Helpful
+- Descriptive
+- Trustworthy
+- Purchase-supportive but not pushy
+
+Rules:
+
+- Avoid false scarcity.
+- Avoid guaranteed results.
+- Avoid unsupported superiority claims.
+- Avoid pressuring the user.
+- Product availability, pricing, and delivery status must be accurate when stated.
+
+---
+
+## 6. Output Format Rules
 
 Translations must be returned in the **identical structure and format** as the source content.
 
-Mandatory requirements:
+### Mandatory Requirements
 
 - Same object structure
 - Same keys
@@ -228,50 +381,160 @@ Mandatory requirements:
 - Same implementation values unless the task explicitly requires a change
 - Only user-facing text values may be adjusted during translation
 
-Do not:
+### Prohibited
 
-- Add new keys during translation
-- Remove fields during translation
-- Reorder content blocks during translation
-- Embed translator commentary inside JSON or implementation output
-- Change image paths, anchors, IDs, route values, or implementation values unless explicitly requested
-- Translate brand names, product names, file paths, route paths, or code identifiers unless explicitly required
+- Adding new keys during translation
+- Removing fields during translation
+- Reordering content blocks during translation
+- Embedding translator commentary inside JSON or implementation output
+- Changing image paths, anchors, IDs, route values, or implementation values unless explicitly requested
+- Translating brand names, product names, file paths, route paths, or code identifiers unless explicitly required
+
+If clarification or explanation is necessary, provide it **outside** the translated structure.
 
 ---
 
-## 10. Web Content Generation and Translation Workflow
+## 7. Web Content Generation and Translation Workflow
+
+This workflow governs feature pages and public ChornPlanet web content.
 
 ### Stage 1 — Generate First Web Content Based on EN
 
-Generate initial EN content with clear structure, neutral product positioning, and executive-grade English where needed.
+ChatGPT generates the first canonical web content in EN.
 
-### Stage 2 — Codex Develops UX/UI Based on EN
+EN is used at this stage to define:
 
-Codex implements or updates reusable UX/UI while preserving content shape and locale separation.
+- Page purpose
+- Section structure
+- UX copy direction
+- Component content blocks
+- Initial JSON shape or content schema
+- Clear general-user wording
+- Neutral product/service positioning
+
+The initial EN content must be implementation-ready but remains a draft until Chief Architect review is completed.
+
+---
+
+### Stage 2 — Codex Develops New UX/UI Based on EN
+
+Codex implements or updates the UX/UI using the EN content as the first working source.
+
+Codex should:
+
+- Build reusable page components
+- Preserve content shape and keys
+- Avoid embedding new hardcoded arrays directly into page files unless temporary and documented
+- Keep UI layout decoupled from locale-specific content
+- Ensure the page can later consume localized JSON or MongoDB-backed content
+
+---
 
 ### Stage 3 — ChatGPT Translates EN to TH
 
-Translate EN into TH using natural, professional, executive-grade Thai while preserving structure and product meaning.
+ChatGPT translates the EN source into TH while preserving:
+
+- Same JSON structure
+- Same keys
+- Same ordering
+- Same routes, anchors, image paths, and implementation values
+- Natural Thai readability
+- Polite and general-user-friendly Thai wording
+- Product meaning accuracy
+
+TH must not be a literal translation if literal translation weakens product accuracy, user understanding, or cultural clarity.
+
+---
 
 ### Stage 4 — Chief Architect Reviews and Refines TH
 
-Khachornchit, as Chief Architect, reviews and refines the TH version. The refined TH becomes the product meaning authority when it clarifies business status, service status, system capability, operating model, or strategic positioning.
+Khachornchit, as Chief Architect, reviews and refines the TH version.
+
+The refined TH version becomes the **product meaning authority** for the feature when it clarifies product truth, business status, service status, or strategic positioning.
+
+Examples of Chief Architect corrections include:
+
+- Replacing “showcase” wording with “serves customers in Chiang Mai” when the service is active
+- Clarifying whether a feature is operating, planned, under development, or future direction
+- Correcting product names such as TrueMoney Wallet, Menu Match, LINE OA, or local program names
+- Removing wording that sounds like recruitment, CEO targeting, investor marketing, unsupported sales positioning, or overclaiming
+- Adjusting tone so Thai content sounds natural, polite, and clear for general users
+
+---
 
 ### Stage 5 — ChatGPT Regenerates EN Based on Refined TH
 
-Regenerate EN from the approved TH meaning using natural executive-grade English.
+After Chief Architect review, ChatGPT regenerates EN from the refined TH version.
+
+This regenerated EN becomes the **canonical multilingual source** for all non-Thai translations.
+
+The regenerated EN must:
+
+- Preserve the corrected TH meaning
+- Use natural plain English
+- Avoid over-promotional phrasing
+- Reflect real service status accurately
+- Preserve JSON structure exactly
+- Be suitable for general users and international localization
+
+---
 
 ### Stage 6 — ChatGPT Generates All Languages Based on Regenerated EN
 
-Generate DA, DE, FI, FR, JA, KO, NL, and ZH_CN from the regenerated EN while preserving approved meaning, structure, and locale safety.
+ChatGPT generates the remaining language versions from the regenerated EN.
+
+Required output languages:
+
+- DA
+- DE
+- FI
+- FR
+- JA
+- KO
+- NL
+- ZH_CN
+
+Each language must preserve:
+
+- Same object structure
+- Same keys and nesting
+- Same ordering
+- Same implementation values
+- Same product meaning approved through TH review and regenerated EN
+- Natural readability in the target language
+- Cultural and public-facing safety
+
+Each language must be reviewed independently for cultural, legal, policy, and user-readability safety.
+
+---
 
 ### Stage 7 — Codex Implements All Language Logic
 
-Wire all language files or content records into the page loader with safe locale fallback behavior.
+Codex implements the localized content logic for the page.
+
+Codex should:
+
+- Wire all language files or content records into the page loader
+- Ensure locale fallback behavior: requested locale → EN → static fallback if available
+- Avoid page crashes when a non-English locale is missing or incomplete
+- Preserve route and anchor behavior across locales
+- Keep content rendering reusable and schema-safe
+- Add or update tests only when routing, loader, schema, or rendering logic changes
+
+---
 
 ### Stage 8 — Codex Migrates Hardcoded Translation to MongoDB
 
-When ready, migrate hardcoded translation into MongoDB based on the existing ChornPlanet structure.
+When the feature is ready for database-backed content, Codex migrates hardcoded translation into MongoDB based on the existing ChornPlanet structure.
+
+Codex should add or update:
+
+- `lib` content schema or repository logic
+- Server-side content loader/service logic
+- MongoDB repository access based on existing patterns
+- Locale fallback logic
+- Seed/migration scripts when needed
+- Audit logic when locale completeness must be checked
 
 Target architecture:
 
@@ -287,25 +550,204 @@ Typed Content Schema
 Reusable Page Components
 ```
 
+Hardcoded JSON may remain only as:
+
+- Temporary static fallback
+- Seed data
+- Development fixture
+- Explicitly documented migration bridge
+
+---
+
+## 8. Terms of Service Translation Rules
+
+### 8.1 Tone Requirements
+
+ToS translations must remain:
+
+- Legally conservative
+- Clear for general users
+- Policy-safe
+- Public-facing
+- Government-review compatible when needed
+
+Language must be accurate and careful, but not unnecessarily difficult.
+
+---
+
+### 8.2 Quote Inclusion Rule
+
+The following quote may be embedded only when legally appropriate and not framed as marketing:
+
+> “Chorn Digital is not selling a future. He is showing that he understands how futures are designed, evaluated, and governed.”
+
+The quote must:
+
+- Be presented as contextual philosophy, not promotional messaging
+- Not appear as branding emphasis
+- Not create forward-looking interpretation risk
+- Not replace clear legal or policy explanation
+
+---
+
+### 8.3 Prohibited Language
+
+Avoid wording that implies:
+
+- Guarantees
+- Promises
+- Service-level commitments beyond explicit contractual terms
+- Product superiority claims
+- Forward-looking certainty
+- Marketing tone
+- User blame or unfair limitation
+
+---
+
+## 9. Privacy Policy Translation Rules
+
+### 9.1 Privacy-Minimal Default Standard
+
+All translations must assume:
+
+- No personal data collection unless strictly necessary and stated
+- Clear purpose limitation
+- Clear disclosure of data categories
+- Explicit consent where legally required
+- Clear user rights language where required
+
+No inferred or implied processing expansion is permitted.
+
+---
+
+### 9.2 GDPR & Strict EU Alignment
+
+Privacy translations must align with strict privacy principles, including:
+
+- Data minimization
+- Lawful basis clarity
+- Transparent retention logic
+- Clear data subject rights language
+- Clear contact or request process when present in the source
+- No vague processing statements
+
+---
+
+### 9.3 AI / Conceptual Content Disclosure Rule
+
+If AI-generated or conceptual content is referenced, the translation must:
+
+- Clearly state that content may be AI-generated and/or conceptual when relevant
+- Avoid expanding the implied scope of data processing
+- Avoid profiling assumptions
+- Avoid behavioral tracking implications unless explicitly accurate
+- Avoid implying automated decision-making unless factually implemented
+
+Disclosure must remain factual, limited, and understandable.
+
+---
+
+## 10. Forbidden and Sensitive Language Guide
+
+This section guides wording safety for all locales.
+
+### 10.1 Always Avoid
+
+Avoid:
+
+- Profanity
+- Sexualized wording
+- Hate, harassment, or demeaning language
+- Stereotypes about nationality, ethnicity, gender, religion, age, disability, social class, or occupation
+- Shaming language
+- Mocking tone
+- Threatening or violent language
+- Political persuasion or attack language
+- Religious disrespect
+- Exaggerated fear-based language
+- Unsupported health, financial, legal, or safety claims
+- Misleading urgency or scarcity
+- Overconfident AI claims
+
+### 10.2 Use Safer Replacements
+
+| Risky style | Safer style |
+| --- | --- |
+| aggressive | clear and direct |
+| sales pressure | helpful guidance |
+| dramatic | factual |
+| absolute | conditional or descriptive |
+| slang | standard language |
+| culturally narrow | internationally understandable |
+| technical-only | explained in plain language |
+
+### 10.3 Brand and Product Names
+
+Do not translate or alter brand names unless an approved local name exists.
+
+Examples:
+
+- ChornPlanet
+- Chorn Digital
+- Smart Food
+- Menu Match
+- LINE OA
+- TrueMoney Wallet
+- TikTok
+- Shopee
+- Lazada
+- Amazon
+- MongoDB Atlas
+- Next.js
+
 ---
 
 ## 11. Operational Translation Workflow Standard
 
 ### 11.1 EN as Initial Generation Source
 
-EN functions as the first generation source for web content and UX/UI development. The initial EN version must follow executive-grade English when the content represents platform direction, system capability, business positioning, or public ChornPlanet communication.
+EN functions as the first generation source for web content and UX/UI development.
+
+The first EN version is not always the final semantic authority. It is a working source for structure, UX, and initial implementation.
+
+---
 
 ### 11.2 TH as Chief Architect Review Authority
 
-After Chief Architect review, the refined TH version becomes the authority for corrected product meaning, business positioning, system capability, and executive-level Thai communication quality.
+After Chief Architect review, the refined TH version becomes the authority for corrected product meaning and business positioning.
 
-If TH corrects the product status, business truth, system meaning, or strategic positioning, ChatGPT must regenerate EN from TH before generating all other languages.
+If TH corrects the product status or business truth, ChatGPT must regenerate EN from TH before generating all other languages.
+
+---
 
 ### 11.3 Regenerated EN as Multilingual Source
 
 The regenerated EN version becomes the source for DA, DE, FI, FR, JA, KO, NL, and ZH_CN.
 
-This ensures all languages follow the Chief Architect-approved TH meaning while preserving international readability and executive-grade clarity where relevant.
+This ensures all languages follow the Chief Architect-approved TH meaning while preserving international readability.
+
+---
+
+### 11.4 Locale-Specific Conservative Adaptation
+
+Each language version must be reviewed under its local norms.
+
+If literal translation introduces cultural, legal, or user-understanding risk, adaptation is mandatory.
+
+Safe adaptation > literal accuracy.
+
+---
+
+### 11.5 Acceptable Output Standard
+
+Every translated version must be acceptable for:
+
+- Public website publication
+- General user readability
+- Cross-cultural publication
+- Policy and privacy review where relevant
+- Investor or government stakeholder review where relevant
+- Production implementation in ChornPlanet web pages
 
 ---
 
@@ -316,6 +758,8 @@ Every translated and generated output must satisfy:
 - Easy to read in the target language
 - Natural and neutral in the target language
 - Polite and respectful
+- Free from profanity, rude wording, hate, stereotypes, and culturally unsafe phrasing
+- Free from idioms and rhetorical exaggeration unless clearly safe and useful
 - No unsupported marketing claims
 - No future guarantee language
 - No user pressure or manipulative wording
@@ -324,8 +768,6 @@ Every translated and generated output must satisfy:
 - AI disclosure included only when relevant
 - No expansion of scope beyond original content
 - Same format and implementation structure as the source
-- English output follows CEO / CTO / Director of Information System Development-level professional wording when the content is official, platform-related, system-related, business-facing, or public-facing
-- Thai output follows CEO / CTO / Director of Information System Development-level professional wording when the content is official, platform-related, system-related, business-facing, or public-facing
 - Ready for locale rendering or MongoDB migration
 
 Failure on any checkpoint requires revision.
@@ -355,16 +797,8 @@ When the user says:
 
 Legacy process sequence:
 
-1. Review and refine EN using executive-grade English where relevant
-2. Provide TH version using executive-grade Thai where relevant
+1. Review and refine EN
+2. Provide TH version
 3. Wait for the next instruction group only when the user explicitly requests staged translation
-
-When the user asks to write, rewrite, improve, translate, or localize Thai or English content for ChornPlanet:
-
-1. Preserve approved product meaning and factual status
-2. Apply the correct tone mode by content type
-3. Use executive-grade EN/TH communication when the content is official, platform-related, system-related, public-facing, business-facing, or stakeholder-facing
-4. Avoid hype, unsupported claims, and vague executive wording
-5. Preserve implementation structure when content is JSON, code-adjacent, route-based, or component-bound
 
 ---

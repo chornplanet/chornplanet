@@ -1,80 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import {
-  ISmartFoodAiImage,
-  ISmartFoodAiContent,
-} from "@/lib/model/ISmartFoodAiContent";
-
-function SmartFoodAiImage({
-  image,
-  className,
-  width,
-  height,
-  fill = false,
-  priority = false,
-  sizes,
-  variant = "default",
-}: {
-  image: ISmartFoodAiImage;
-  className?: string;
-  width?: number;
-  height?: number;
-  fill?: boolean;
-  priority?: boolean;
-  sizes?: string;
-  variant?: "default" | "hero" | "proof" | "workflow";
-}) {
-  if (!image.src || image.src === "/fallback-content.svg") {
-    return (
-      <div
-        className={[
-          "smart-food-ai-generated-visual",
-          `smart-food-ai-generated-visual--${variant}`,
-          className,
-        ]
-          .filter(Boolean)
-          .join(" ")}
-        aria-label={image.alt}
-        role="img"
-      >
-        <div className="smart-food-ai-generated-visual__screen">
-          <span className="smart-food-ai-generated-visual__status" />
-          <span className="smart-food-ai-generated-visual__line smart-food-ai-generated-visual__line--wide" />
-          <span className="smart-food-ai-generated-visual__line" />
-          <span className="smart-food-ai-generated-visual__line smart-food-ai-generated-visual__line--short" />
-          <div className="smart-food-ai-generated-visual__cards">
-            <span />
-            <span />
-            <span />
-          </div>
-        </div>
-      </div>
-    );
-  }
-
-  if (fill) {
-    return (
-      <Image
-        src={image.src}
-        alt={image.alt}
-        fill
-        priority={priority}
-        sizes={sizes}
-      />
-    );
-  }
-
-  return (
-    <Image
-      src={image.src}
-      alt={image.alt}
-      width={width ?? 1200}
-      height={height ?? 800}
-      priority={priority}
-      sizes={sizes}
-    />
-  );
-}
+import { ISmartFoodAiContent } from "@/lib/model/ISmartFoodAiContent";
 
 export default function SmartFoodAiLandingPage({
   content,
@@ -109,30 +35,16 @@ export default function SmartFoodAiLandingPage({
               </div>
             </div>
 
-            {/* It worked when removed the SmartFoodAiImage. */}
-
-            {/* <div
-              className="smart-food-ai-hero__visual"
-              aria-label={content.hero.visual.ariaLabel}
-            >
-              <SmartFoodAiImage
-                image={content.hero.visual}
-                width={1200}
-                height={800}
-                priority
-                variant="hero"
-              />
-            </div> */}
-
             <div
               className="smart-food-ai-hero__visual"
-              aria-label="Smart Food AI visual story"
+              aria-label={content.hero.visual.ariaLabel}
             >
               <Image
                 src={content.hero.visual.src}
                 alt={content.hero.visual.alt}
                 width={1200}
                 height={800}
+                priority
                 sizes="(max-width: 991px) 100vw, 42vw"
               />
             </div>
@@ -155,18 +67,6 @@ export default function SmartFoodAiLandingPage({
                 <p key={paragraph}>{paragraph}</p>
               ))}
             </div>
-
-            {/* It worked when removed the SmartFoodAiImage. */}
-
-            {/* <div className="smart-food-ai-section-heading__right">
-              <SmartFoodAiImage
-                image={content.proof.image}
-                width={900}
-                height={760}
-                sizes="(max-width: 991px) 100vw, 42vw"
-                variant="proof"
-              />
-            </div> */}
 
             <div className="smart-food-ai-section-heading__right">
               <Image
@@ -205,15 +105,6 @@ export default function SmartFoodAiLandingPage({
                 className="smart-food-ai-workflow__item"
               >
                 <div className="smart-food-ai-workflow__image">
-                  {/* It worked when removed the SmartFoodAiImage. */}
-
-                  {/* <SmartFoodAiImage
-                    image={step.image}
-                    fill
-                    sizes="(max-width: 767px) 100vw, (max-width: 1199px) 50vw, 33vw"
-                    variant="workflow"
-                  /> */}
-
                   <Image
                     src={step.image.src}
                     alt={step.image.alt}
