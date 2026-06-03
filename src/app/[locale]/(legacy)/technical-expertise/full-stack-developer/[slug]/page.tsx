@@ -5,7 +5,6 @@ import PlatformFullStackDetailPage from "@/components/Services/fullstack-develop
 import { getPlatformFullstackContent } from "@/lib/platform-content/fullstackContent";
 import {
   getFullstackRouteBySlug,
-  getFullstackRoutes,
   type FullstackMetadataKey,
 } from "@/lib/platform-content/fullstackRoutes";
 import { MetadataDotnetCore } from "@/metadata/main/backend/MetadataDotnetCore";
@@ -30,12 +29,6 @@ const metadataByKey: Record<FullstackMetadataKey, Record<string, Metadata>> = {
   php: MetadataPhp,
   python: MetadataPython,
 };
-
-export function generateStaticParams() {
-  return getFullstackRoutes().map((route) => ({
-    slug: route.slug,
-  }));
-}
 
 export async function generateMetadata({
   params,

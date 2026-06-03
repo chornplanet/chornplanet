@@ -5,7 +5,6 @@ import PlatformFrontEndDetailPage from "@/components/Services/frontend-developme
 import { getPlatformFrontendContent } from "@/lib/platform-content/frontendContent";
 import {
   getFrontendRouteBySlug,
-  getFrontendRoutes,
   type FrontendMetadataKey,
 } from "@/lib/platform-content/frontendRoutes";
 import { MetadataAngular } from "@/metadata/main/frontend/MetadataAngular";
@@ -34,12 +33,6 @@ const metadataByKey: Record<FrontendMetadataKey, Record<string, Metadata>> = {
   typescript: MetadataTypeScript,
   vue: MetadataVue,
 };
-
-export function generateStaticParams() {
-  return getFrontendRoutes().map((route) => ({
-    slug: route.slug,
-  }));
-}
 
 export async function generateMetadata({
   params,

@@ -5,7 +5,6 @@ import PlatformCloudDevOpsDetailPage from "@/components/Services/cloud-devops/Pl
 import { getPlatformCloudDevopsContent } from "@/lib/platform-content/cloudDevopsContent";
 import {
   getCloudDevopsRouteBySlug,
-  getCloudDevopsRoutes,
   type CloudDevopsMetadataKey,
 } from "@/lib/platform-content/cloudDevopsRoutes";
 import { MetadataAppium } from "@/metadata/main/devops/MetadataAppium";
@@ -36,12 +35,6 @@ const metadataByKey: Record<CloudDevopsMetadataKey, Record<string, Metadata>> = 
   selenium: MetadataSelenium,
   soapui: MetadataSoapUI,
 };
-
-export function generateStaticParams() {
-  return getCloudDevopsRoutes().map((route) => ({
-    slug: route.slug,
-  }));
-}
 
 export async function generateMetadata({
   params,
