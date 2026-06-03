@@ -1,0 +1,94 @@
+{
+  "routes": [
+    {
+      "slug": "appium",
+      "stackKey": "appium",
+      "metadataKey": "appium",
+      "schema": {
+        "name": "Appium Testing Services | Chorn Planet",
+        "description": "Chorn Planet offers Appium testing services for automated mobile app testing across multiple platforms to ensure high-quality performance.",
+        "url": "https://chornplanet.com/en/technical-expertise/cloud-devops/appium/"
+      }
+    },
+    {
+      "slug": "docker",
+      "stackKey": "docker",
+      "metadataKey": "docker",
+      "schema": {
+        "name": "Docker DevOps Services | Chorn Planet",
+        "description": "Chorn Planet offers Docker-based DevOps services for efficient containerization and scalable application deployment.",
+        "url": "https://chornplanet.com/en/technical-expertise/cloud-devops/docker/"
+      }
+    },
+    {
+      "slug": "github",
+      "stackKey": "github",
+      "metadataKey": "github",
+      "schema": {
+        "name": "GitHub DevOps Services | Chorn Planet",
+        "description": "Chorn Planet offers DevOps services integrating GitHub for version control, continuous integration, and automated workflows.",
+        "url": "https://chornplanet.com/en/technical-expertise/cloud-devops/github/"
+      }
+    },
+    {
+      "slug": "gitlab",
+      "stackKey": "gitlab",
+      "metadataKey": "gitlab",
+      "schema": {
+        "name": "GitLab DevOps Services | Chorn Planet",
+        "description": "Chorn Planet provides GitLab-based DevOps services for continuous integration, automation, and version control solutions.",
+        "url": "https://chornplanet.com/en/technical-expertise/cloud-devops/gitlab/"
+      }
+    },
+    {
+      "slug": "jenkins",
+      "stackKey": "jenkins",
+      "metadataKey": "jenkins",
+      "schema": {
+        "name": "Jenkins DevOps Services | Chorn Planet",
+        "description": "Chorn Planet offers Jenkins-based DevOps services for automating builds, testing, and deployment in your development pipeline.",
+        "url": "https://chornplanet.com/en/technical-expertise/cloud-devops/jenkins/"
+      }
+    },
+    {
+      "slug": "kubernetes",
+      "stackKey": "kubernetes",
+      "metadataKey": "kubernetes",
+      "schema": {
+        "name": "Kubernetes DevOps Services | Chorn Planet",
+        "description": "Chorn Planet provides Kubernetes-based DevOps services for automating deployment, scaling, and management of containerized applications.",
+        "url": "https://chornplanet.com/en/technical-expertise/cloud-devops/kubernetes/"
+      }
+    },
+    {
+      "slug": "postman",
+      "stackKey": "postman",
+      "metadataKey": "postman",
+      "schema": {
+        "name": "Postman API Testing Services | Chorn Planet",
+        "description": "Chorn Planet provides API testing services using Postman to ensure the reliability and performance of your web services.",
+        "url": "https://chornplanet.com/en/technical-expertise/cloud-devops/postman/"
+      }
+    },
+    {
+      "slug": "selenium",
+      "stackKey": "selenium",
+      "metadataKey": "selenium",
+      "schema": {
+        "name": "Selenium Testing Services | Chorn Planet",
+        "description": "Chorn Planet offers comprehensive Selenium testing services to ensure the quality and performance of your applications through automated testing.",
+        "url": "https://chornplanet.com/en/technical-expertise/cloud-devops/selenium/"
+      }
+    },
+    {
+      "slug": "soapui",
+      "stackKey": "soapui",
+      "metadataKey": "soapui",
+      "schema": {
+        "name": "SoapUI Testing Services | Chorn Planet",
+        "description": "Chorn Planet provides expert SoapUI testing services to ensure your web services and APIs are thoroughly tested and reliable.",
+        "url": "https://chornplanet.com/en/technical-expertise/cloud-devops/soapui/"
+      }
+    }
+  ]
+}

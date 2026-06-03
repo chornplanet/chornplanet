@@ -31,6 +31,16 @@ export function getLegacyPublicRedirects() {
             permanent: true,
         },
         {
+            source: '/ai-luxury/',
+            destination: '/luxury/',
+            permanent: true,
+        },
+        {
+            source: '/:lang/ai-luxury/',
+            destination: '/:lang/luxury/',
+            permanent: true,
+        },
+        {
             source: '/:lang/outfit/',
             destination: '/:lang/style/',
             permanent: true,

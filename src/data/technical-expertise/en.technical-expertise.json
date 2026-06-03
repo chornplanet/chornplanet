@@ -1,0 +1,44 @@
+{
+  "routes": [
+    {
+      "slug": "ai-solutions",
+      "pageKey": "aiSolutions",
+      "metadataKey": "aiSolutions"
+    },
+    {
+      "slug": "cloud-infrastructure-systems-architecture",
+      "pageKey": "cloudInfrastructure",
+      "metadataKey": "cloudInfrastructure",
+      "schema": {
+        "name": "Cloud Solution Architecture & Systems Analysis | Chorn Planet | AWS, Azure, GCP, DigitalOcean",
+        "description": "Chorn Planet delivers expert cloud solution architecture and system analysis services. We optimize cloud infrastructures across AWS, Azure, GCP, and DigitalOcean, ensuring performance, scalability, and cost-efficiency.",
+        "url": "https://chornplanet.com/en/technical-expertise/cloud-solution-architecture-systems-analysis/"
+      }
+    },
+    {
+      "slug": "mobile-development",
+      "pageKey": "mobileDevelopment",
+      "metadataKey": "mobileDevelopment"
+    },
+    {
+      "slug": "web-development",
+      "pageKey": "webDevelopment",
+      "metadataKey": "webDevelopment",
+      "schema": {
+        "name": "Web Development Services | Chorn Planet | Custom Software & Technology Solutions",
+        "description": "Explore Chorn Planet's web development services, including expertise in Next.js, React, Angular, Vue, and more. Chorn Planet offers tailored solutions for businesses across various domains such as Digital Marketing, Blockchain, E-Commerce, and more.",
+        "url": "https://chornplanet.com/en/technical-expertise/web-development/"
+      }
+    },
+    {
+      "slug": "web3-blockchain-smart-contract-development",
+      "pageKey": "web3",
+      "metadataKey": "web3",
+      "schema": {
+        "name": "Web3 Blockchain Smart Contract Development | Chorn Planet | Custom Blockchain Solutions",
+        "description": "Discover Chorn Planet's expertise in Web3 blockchain and smart contract development. Chorn Planet build decentralized applications (DApps) using Solidity, Ethereum, Polygon, and integrate with technologies like Hardhat, Ganache, and MetaMask.",
+        "url": "https://chornplanet.com/en/technical-expertise/web3-blockchain-smart-contract-development/"
+      }
+    }
+  ]
+}

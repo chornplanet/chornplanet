@@ -1,0 +1,64 @@
+{
+  "routes": [
+    {
+      "slug": "dotnetcore-developer",
+      "stackKey": "dotnetcore",
+      "metadataKey": "dotnetcore",
+      "schema": {
+        "name": ".NET Core C# Full Stack Development | Chorn Planet",
+        "description": "Chorn Planet offers .NET Core C# full stack development services to build modern, scalable, and secure web applications.",
+        "url": "https://chornplanet.com/en/technical-expertise/full-stack-developer/dotnetcore-developer/"
+      }
+    },
+    {
+      "slug": "go-developer",
+      "stackKey": "go",
+      "metadataKey": "go",
+      "schema": {
+        "name": "Go Full Stack Development | Chorn Planet",
+        "description": "Chorn Planet offers Go full stack development services for building efficient and scalable web applications.",
+        "url": "https://chornplanet.com/en/technical-expertise/full-stack-developer/go-developer/"
+      }
+    },
+    {
+      "slug": "java-spring-boot-developer",
+      "stackKey": "java",
+      "metadataKey": "java",
+      "schema": {
+        "name": "Java Spring Boot Full Stack Development | Chorn Planet",
+        "description": "Chorn Planet offers Java Spring Boot full stack development services to build robust and scalable enterprise applications.",
+        "url": "https://chornplanet.com/en/technical-expertise/full-stack-developer/java-spring-boot-developer/"
+      }
+    },
+    {
+      "slug": "nodejs-developer",
+      "stackKey": "nodejs",
+      "metadataKey": "nodejs",
+      "schema": {
+        "name": "Node.js Full Stack Development | Chorn Planet",
+        "description": "Chorn Planet offers Node.js full stack development services for building scalable and efficient applications.",
+        "url": "https://chornplanet.com/en/technical-expertise/full-stack-developer/nodejs-developer/"
+      }
+    },
+    {
+      "slug": "php-developer",
+      "stackKey": "php",
+      "metadataKey": "php",
+      "schema": {
+        "name": "PHP Full Stack Development | Chorn Planet",
+        "description": "Chorn Planet offers PHP full stack development services for building dynamic and scalable web applications.",
+        "url": "https://chornplanet.com/en/technical-expertise/full-stack-developer/php-developer/"
+      }
+    },
+    {
+      "slug": "python-developer",
+      "stackKey": "python",
+      "metadataKey": "python",
+      "schema": {
+        "name": "Python Full Stack Development | Chorn Planet",
+        "description": "Chorn Planet offers Python full stack development services to build dynamic and scalable web applications.",
+        "url": "https://chornplanet.com/en/technical-expertise/full-stack-developer/python-developer/"
+      }
+    }
+  ]
+}

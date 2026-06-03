@@ -4,7 +4,7 @@ import { headers } from "next/headers";
 import { SchemaMarkupServicePage } from "@/components/GoogleSchemaMarkup/SchemaMarkupServicePage";
 import WebDevelopmentPageMain from "@/components/Services/WebDevelopment/WebDevelopmentPageMain";
 import { MetadataWebDevelopment } from "@/metadata/main/MetadataWebDevelopment";
-import { getTechnicalExpertiseContentForPublicPage } from "@/lib/technical-expertise-content/technicalExpertiseContent.service";
+import { getPlatformTechnologyContent } from "@/lib/platform-content/technologyContent";
 
 export async function generateMetadata(): Promise<Metadata> {
   const headersList = await headers();
@@ -15,7 +15,7 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function Page() {
   const headersList = await headers();
   const lang = headersList.get("x-locale") || "en";
-  const content = await getTechnicalExpertiseContentForPublicPage(lang);
+  const content = await getPlatformTechnologyContent(lang);
 
   return (
     <div className="technology-page-shell">

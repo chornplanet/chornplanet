@@ -1,0 +1,84 @@
+{
+  "routes": [
+    {
+      "slug": "angular-developer",
+      "stackKey": "angular",
+      "metadataKey": "angular",
+      "schema": {
+        "name": "Angular Development Services | Chorn Planet",
+        "description": "Expert Angular development services by Chorn Planet. Build dynamic, scalable, and high-performance web applications using Angular.",
+        "url": "https://chornplanet.com/en/technical-expertise/front-end-developer/angular-developer/"
+      }
+    },
+    {
+      "slug": "css3-developer",
+      "stackKey": "css3",
+      "metadataKey": "css3",
+      "schema": {
+        "name": "CSS3 Development Services | Chorn Planet",
+        "description": "Enhance your web applications with Chorn Planet's CSS3 development services for modern and visually appealing designs.",
+        "url": "https://chornplanet.com/en/technical-expertise/front-end-developer/css3-developer/"
+      }
+    },
+    {
+      "slug": "html5-developer",
+      "stackKey": "html5",
+      "metadataKey": "html5",
+      "schema": {
+        "name": "HTML5 Development Services | Chorn Planet",
+        "description": "Chorn Planet offers expert HTML5 development services to create responsive and engaging web applications.",
+        "url": "https://chornplanet.com/en/technical-expertise/front-end-developer/html5-developer/"
+      }
+    },
+    {
+      "slug": "javascript-developer",
+      "stackKey": "javascript",
+      "metadataKey": "javascript",
+      "schema": {
+        "name": "JavaScript | Chorn Planet - Custom Software Development Experts",
+        "description": "Learn how Chorn Planet leverages JavaScript to build scalable, robust, and efficient custom software solutions for businesses across industries.",
+        "url": "https://chornplanet.com/en/technical-expertise/front-end-developer/javascript-developer/"
+      }
+    },
+    {
+      "slug": "nextjs-developer",
+      "stackKey": "nextjs",
+      "metadataKey": "nextjs",
+      "schema": {
+        "name": "Next.js Development Services | Chorn Planet",
+        "description": "Expert Next.js development services by Chorn Planet. Enhance your web applications with scalable and high-performance solutions using Next.js.",
+        "url": "https://chornplanet.com/en/technical-expertise/front-end-developer/nextjs-developer/"
+      }
+    },
+    {
+      "slug": "react-developer",
+      "stackKey": "react",
+      "metadataKey": "react",
+      "schema": {
+        "name": "React Development Services | Chorn Planet",
+        "description": "Chorn Planet provides top-tier React development services. Build dynamic and responsive user interfaces with React.",
+        "url": "https://chornplanet.com/en/technical-expertise/front-end-developer/react-developer/"
+      }
+    },
+    {
+      "slug": "typescript-developer",
+      "stackKey": "typescript",
+      "metadataKey": "typescript",
+      "schema": {
+        "name": "TypeScript | Chorn Planet - Custom Software Development Experts",
+        "description": "Learn how Chorn Planet leverages TypeScript to build scalable, robust, and efficient custom software solutions for businesses across industries.",
+        "url": "https://chornplanet.com/en/technical-expertise/front-end-developer/typescript-developer/"
+      }
+    },
+    {
+      "slug": "vue-developer",
+      "stackKey": "vue",
+      "metadataKey": "vue",
+      "schema": {
+        "name": "Vue.js Development Services | Chorn Planet",
+        "description": "Chorn Planet specializes in Vue.js development to create interactive and scalable web applications.",
+        "url": "https://chornplanet.com/en/technical-expertise/front-end-developer/vue-developer/"
+      }
+    }
+  ]
+}

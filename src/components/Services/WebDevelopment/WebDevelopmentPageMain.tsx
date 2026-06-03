@@ -1,12 +1,15 @@
+"use client";
+
 import Link from "next/link";
 import SystemCapability from "@/components/Services/WebDevelopment/SystemCapability";
 import WebDevelopmentBackEnd from "@/components/Services/WebDevelopment/WebDevelopmentBackEnd";
 import WevDevelopmentFrontEnd from "@/components/Services/WebDevelopment/WevDevelopmentFrontEnd";
 import WebDevelopmentDevOps from "@/components/Services/WebDevelopment/WebDevelopmentDevOps";
-import { TechnicalExpertiseContentPayload } from "@/core/domain/technical-expertise-content.entity";
 import aiPlatformDevelopment from "./aiPlatformDevelopment.json";
 import { truncateText } from "@/lib/truncateText";
 import type { IFeatureStack } from "@/lib/model/IFeature";
+import type { PlatformTechnologyContent } from "@/lib/platform-content/technologyContent";
+import { usePlatformTechnologyContent } from "@/lib/platform-content/usePlatformTechnologyContent";
 
 type AiPlatformDevelopmentLocale = keyof typeof aiPlatformDevelopment;
 
@@ -23,9 +26,11 @@ export default function WebDevelopmentPageMain({
   content,
 }: {
   lang: string;
-  content: TechnicalExpertiseContentPayload;
+  content: PlatformTechnologyContent;
 }) {
-  const featureContent = content.feature;
+  const { data: cachedContent } = usePlatformTechnologyContent(lang, content);
+  const technologyContent = cachedContent ?? content;
+  const featureContent = technologyContent.feature;
   const langx = getAiPlatformDevelopmentContent(lang);
   const localTitle = langx.title;
 
@@ -74,9 +79,15 @@ export default function WebDevelopmentPageMain({
         <h1 className="technology-premium-module__title">
           Technology Delivery Stack
         </h1>
-        <WevDevelopmentFrontEnd lang={lang} frontEnd={content.frontEnd} />
-        <WebDevelopmentBackEnd lang={lang} fullStack={content.fullStack} />
-        <WebDevelopmentDevOps lang={lang} devOps={content.devOps} />
+        <WevDevelopmentFrontEnd
+          lang={lang}
+          frontEnd={technologyContent.frontEnd}
+        />
+        <WebDevelopmentBackEnd
+          lang={lang}
+          fullStack={technologyContent.fullStack}
+        />
+        <WebDevelopmentDevOps lang={lang} devOps={technologyContent.devOps} />
       </section>
 
       <section className="technology-premium-module technology-premium-module--feature">
@@ -85,7 +96,7 @@ export default function WebDevelopmentPageMain({
             Platform Delivery Model
           </h1>
           <div className="technology-feature-grid">
-            {content.feature.stacks.map(
+            {technologyContent.feature.stacks.map(
               (stack: IFeatureStack, index: number) => (
                 <div key={index} className="home-feature-container">
                   <Link href={`/${lang}${stack.link}`}>

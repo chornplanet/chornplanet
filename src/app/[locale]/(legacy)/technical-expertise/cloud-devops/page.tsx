@@ -1,27 +1,24 @@
-import React from "react";
-import CloudDevOpsModuleMain from "@/components/Services/cloud-devops/CloudDevOpsModuleMain";
-import {Metadata} from "next";
-import {SchemaMarkupServicePage} from "@/components/GoogleSchemaMarkup/SchemaMarkupServicePage";
-import {headers} from "next/headers";
-import {MetadataBackEndMain} from "@/metadata/main/backend/MetadataBackEndMain";
-import HomeFeatureMain from "@/components/Features/HomeFeatureMain";
-import {getTechnicalExpertiseContentForPublicPage} from "@/lib/technical-expertise-content/technicalExpertiseContent.service";
+import { SchemaMarkupServicePage } from "@/components/GoogleSchemaMarkup/SchemaMarkupServicePage";
+import PlatformCloudDevOpsPage from "@/components/Services/cloud-devops/PlatformCloudDevOpsPage";
+import { getPlatformCloudDevopsContent } from "@/lib/platform-content/cloudDevopsContent";
+import { MetadataDevOpsMain } from "@/metadata/main/devops/MetadataDevOpsMain";
+import type { Metadata } from "next";
+import { headers } from "next/headers";
 
 export async function generateMetadata(): Promise<Metadata> {
     const headers15 = await headers();
     const lang = headers15.get('x-locale') || 'en';
-    return MetadataBackEndMain[lang]
+    return MetadataDevOpsMain[lang]
 }
 
 export default async function Page() {
     const headers15 = await headers();
     const lang = headers15.get('x-locale') || 'en';
-    const content = await getTechnicalExpertiseContentForPublicPage(lang);
+    const content = await getPlatformCloudDevopsContent(lang);
 
     return (
         <div>
-            <CloudDevOpsModuleMain lang={lang} devOps={content.devOps}/>
-            <HomeFeatureMain lang={lang} feature={content.feature}/>
+            <PlatformCloudDevOpsPage lang={lang} content={content}/>
             <SchemaMarkupServicePage
                 name="DevOps & Testing Services | Chorn Planet"
                 description="Chorn Planet offers expert DevOps and testing services to streamline your software development process. Ensure high performance and quality with our continuous integration, automated testing, and cloud-based solutions."

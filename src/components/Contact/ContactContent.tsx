@@ -1,17 +1,22 @@
+"use client";
+
 import React from "react";
 import ContactLeft from "@/components/Contact/ContactLeft";
 import ContactRight from "@/components/Contact/ContactRight";
 import {ContactGalleryBottom} from "@/components/Contact/ContactGalleryBottom";
-import {IContact, IContactSocialLink} from "@/lib/model/IContact";
+import type { PlatformContactContent } from "@/lib/platform-content/contactContent";
+import { usePlatformContactContent } from "@/lib/platform-content/usePlatformContactContent";
 
 export default function ContactContent({
-    contact,
-    socialLinks,
+    lang,
+    content,
 }: {
-    contact: IContact;
-    socialLinks: IContactSocialLink[];
+    lang: string;
+    content: PlatformContactContent;
 }) {
-    const contactInfo = contact.contactInfo;
+    const {data: cachedContent} = usePlatformContactContent(lang, content);
+    const contactContent = cachedContent ?? content;
+    const contactInfo = contactContent.contact.contactInfo;
     const title = contactInfo?.title || "Business Inquiries & Collaborations";
 
     return (
@@ -23,7 +28,10 @@ export default function ContactContent({
                     </div>
                     <div className="row contact-premium-grid">
                         <ContactLeft/>
-                        <ContactRight contact={contact} socialLinks={socialLinks}/>
+                        <ContactRight
+                            contact={contactContent.contact}
+                            socialLinks={contactContent.socialLinks}
+                        />
                     </div>
                 </div>
 

@@ -50,6 +50,8 @@ const AI_SMART_FOOD_FOOTER_LABELS: Record<string, string> = {
     zh: 'AI 智慧食品',
 };
 const TIKTOK_CONTENT_DEVELOPMENT_FOOTER_LINK = 'https://tiktok.com/@chornplanet';
+const GITHUB_FOOTER_LINK = 'https://github.com/chornplanet';
+const LINKEDIN_FOOTER_LINK = 'https://www.linkedin.com/company/chornplanet/';
 const TIKTOK_CONTENT_DEVELOPMENT_FOOTER_LABELS: Record<string, string> = {
     en: 'TikTok Creator',
     th: 'TikTok ครีเอเตอร์',
@@ -395,12 +397,35 @@ function shouldShowFooterConnectItem(item: IFooterDetail): boolean {
     );
 }
 
+function normalizeFooterConnectItem(item: IFooterDetail): IFooterDetail {
+    const label = item.label.toLowerCase();
+    const link = item.link.toLowerCase();
+
+    if (label === 'github' || link.includes('github.com/chorndigital')) {
+        return {
+            ...item,
+            link: GITHUB_FOOTER_LINK,
+        };
+    }
+
+    if (label === 'linkedin' || link.includes('linkedin.com/in/khachornchit')) {
+        return {
+            ...item,
+            link: LINKEDIN_FOOTER_LINK,
+        };
+    }
+
+    return item;
+}
+
 function normalizeFooterConnect(footer: IFooter): IFooter {
     return {
         ...footer,
         connect: {
             ...footer.connect,
-            items: footer.connect.items.filter(shouldShowFooterConnectItem),
+            items: footer.connect.items
+                .filter(shouldShowFooterConnectItem)
+                .map(normalizeFooterConnectItem),
         },
     };
 }
