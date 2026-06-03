@@ -26,8 +26,8 @@ export default function PlatformContentCard({
         aria-label={card.title}
       >
         <Image
-          src={card.image}
-          alt={card.imageAlt}
+          src={card.image.src}
+          alt={card.image.alt}
           fill
           sizes="(max-width: 768px) 100vw, 33vw"
         />

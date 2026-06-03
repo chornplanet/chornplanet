@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.7",
+    "@tanstack/react-query": "^5.101.0",
     "@types/aos": "^3.0.7",
     "@types/fslightbox-react": "^1.7.7",
     "@vercel/speed-insights": "^1.1.0",

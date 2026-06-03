@@ -1,18 +1,27 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { ShoppingBag } from "lucide-react";
 import { FaTiktok } from "react-icons/fa";
-import sofaCoupleStory from "@/data/story/sofa-couple/en.sofa-couple.json";
+import type { PlatformStoryContent } from "@/lib/platform-content/storyContent";
+import { usePlatformStoryContent } from "@/lib/platform-content/usePlatformStoryContent";
 
 export default function PlatformStorySection({
   lang,
+  content,
   showStoryLink = true,
   showTiktokLink = false,
 }: {
   lang: string;
+  content: PlatformStoryContent;
   showStoryLink?: boolean;
   showTiktokLink?: boolean;
 }) {
+  const { data: cachedContent } = usePlatformStoryContent(lang, content);
+  const storyContent = cachedContent ?? content;
+  const sofaCoupleStory = storyContent.sofaCoupleStory;
+
   return (
     <>
       <section className="platform-story-landscape-hero">

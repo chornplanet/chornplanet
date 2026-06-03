@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import type {
@@ -9,6 +11,7 @@ import {
   getPlatformOutfitExampleImagePath,
   getPlatformOutfitLocalizedText,
 } from "@/lib/platform-content/styleContent";
+import {usePlatformStyleContent} from "@/lib/platform-content/usePlatformStyleContent";
 
 function getLocalizedAnchor(lang: string, id: string): string {
   return `/${lang}/style/#${id}`;
@@ -64,12 +67,14 @@ export default function PlatformOutfitLandingPage({
   lang: string;
   content: ResolvedPlatformOutfitContent;
 }) {
+  const {data: cachedContent} = usePlatformStyleContent(lang, content);
+  const styleContent = cachedContent ?? content;
   const [primaryHeroImage, secondaryHeroImage, tertiaryHeroImage] =
-    content.hero.images;
-  const featuredSection = content.layoutSections.find(
+    styleContent.hero.images;
+  const featuredSection = styleContent.layoutSections.find(
     (section) => section.id === "featured-outfit-sets",
   );
-  const zoneSection = content.layoutSections.find(
+  const zoneSection = styleContent.layoutSections.find(
     (section) => section.id === "zone-pairing",
   );
 
@@ -77,21 +82,21 @@ export default function PlatformOutfitLandingPage({
     <main className="platform-page platform-outfit-page">
       <section className="platform-outfit-hero">
         <div className="platform-outfit-hero__copy">
-          <span className="platform-eyebrow">{content.hero.eyebrow}</span>
-          <h1>{content.hero.title}</h1>
-          <p>{content.hero.description}</p>
+          <span className="platform-eyebrow">{styleContent.hero.eyebrow}</span>
+          <h1>{styleContent.hero.title}</h1>
+          <p>{styleContent.hero.description}</p>
           <div className="platform-outfit-hero__actions">
             <Link href={getLocalizedAnchor(lang, "featured-outfit-sets")}>
-              {content.hero.primaryCta}
+              {styleContent.hero.primaryCta}
             </Link>
             <Link href={getLocalizedAnchor(lang, "zone-pairing")}>
-              {content.hero.secondaryCta}
+              {styleContent.hero.secondaryCta}
             </Link>
           </div>
         </div>
         <div
           className="platform-outfit-hero__mosaic"
-          aria-label={content.hero.imageStrategy}
+          aria-label={styleContent.hero.imageStrategy}
         >
           {primaryHeroImage && (
             <figure className="platform-outfit-hero__tile platform-outfit-hero__tile--1">
@@ -114,7 +119,7 @@ export default function PlatformOutfitLandingPage({
       </section>
 
       <section className="platform-shell platform-outfit-intro">
-        {content.layoutSections.slice(0, 3).map((section) => (
+        {styleContent.layoutSections.slice(0, 3).map((section) => (
           <article key={section.id} className="platform-outfit-intro__item">
             <span>{section.label}</span>
             <h2>{section.title}</h2>
@@ -130,10 +135,10 @@ export default function PlatformOutfitLandingPage({
         <div className="platform-section__header">
           <span>{featuredSection?.label ?? "Featured Sets"}</span>
           <h2>{featuredSection?.title ?? "Starter outfit sets"}</h2>
-          <p>{featuredSection?.description ?? content.hero.imageStrategy}</p>
+          <p>{featuredSection?.description ?? styleContent.hero.imageStrategy}</p>
         </div>
         <div className="platform-outfit-grid">
-          {content.outfitSets.map((outfitSet) => (
+          {styleContent.outfitSets.map((outfitSet) => (
             <article key={outfitSet.id} className="platform-outfit-card">
               <Link
                 className="platform-outfit-card__link"
@@ -150,13 +155,13 @@ export default function PlatformOutfitLandingPage({
                   <h3>
                     {getPlatformOutfitLocalizedText(
                       outfitSet.title,
-                      content.locale,
+                      styleContent.locale,
                     )}
                   </h3>
                   <p>
                     {getPlatformOutfitLocalizedText(
                       outfitSet.visualSummary,
-                      content.locale,
+                      styleContent.locale,
                     )}
                   </p>
                   <div className="platform-outfit-card__meta">
@@ -179,25 +184,25 @@ export default function PlatformOutfitLandingPage({
       <section className="platform-shell platform-outfit-section platform-outfit-section--audience">
         <div className="platform-section__header">
           <span>
-            {content.layoutSections.find(
+            {styleContent.layoutSections.find(
               (section) => section.id === "audience-groups",
             )?.label ?? "Audience"}
           </span>
           <h2>
-            {content.layoutSections.find(
+            {styleContent.layoutSections.find(
               (section) => section.id === "audience-groups",
             )?.title ?? "Audience groups"}
           </h2>
           <p>
             {
-              content.layoutSections.find(
+              styleContent.layoutSections.find(
                 (section) => section.id === "audience-groups",
               )?.description
             }
           </p>
         </div>
         <div className="platform-outfit-audience">
-          {content.audienceGroups.map((group) => (
+          {styleContent.audienceGroups.map((group) => (
             <article key={group.id}>
               <h3>{group.title}</h3>
               <p>{group.description}</p>
@@ -215,10 +220,10 @@ export default function PlatformOutfitLandingPage({
           <h2>
             {zoneSection?.title ?? "Every look is prepared for zone resolution"}
           </h2>
-          <p>{content.zonePairingNote}</p>
+          <p>{styleContent.zonePairingNote}</p>
         </div>
         <div className="platform-outfit-zone__grid">
-          {content.outfitSets.slice(0, 6).map((outfitSet) => {
+          {styleContent.outfitSets.slice(0, 6).map((outfitSet) => {
             const zones = outfitSet.zoneDisplay.length
               ? outfitSet.zoneDisplay
               : outfitSet.zoneCandidates;
@@ -228,7 +233,7 @@ export default function PlatformOutfitLandingPage({
                 <h3>
                   {getPlatformOutfitLocalizedText(
                     outfitSet.title,
-                    content.locale,
+                    styleContent.locale,
                   )}
                 </h3>
                 <div className="platform-outfit-zone__tags">

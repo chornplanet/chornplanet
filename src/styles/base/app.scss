@@ -1,0 +1,40 @@
+@use "sass:meta";
+
+@include meta.load-css("./globals.scss");
+@include meta.load-css("../vendor/bootstrap.min.css");
+@include meta.load-css("../vendor/animate.css");
+@include meta.load-css("../vendor/boxicons.min.css");
+@include meta.load-css("../vendor/flaticon.css");
+@include meta.load-css("react-accessible-accordion/dist/fancy-example.css");
+@include meta.load-css("swiper/swiper-bundle.css");
+
+@include meta.load-css("../legacy/style.scss");
+@include meta.load-css("../legacy/responsive.scss");
+@include meta.load-css("../utilities/additional.scss");
+@include meta.load-css("../navigation/navbar.scss");
+@include meta.load-css("../navigation/navbar-premium.scss");
+@include meta.load-css("../navigation/navbar-language.scss");
+@include meta.load-css("../utilities/additional-color.scss");
+@include meta.load-css("../utilities/additional-icon.scss");
+
+@include meta.load-css("../smart-city/smart-bottom.scss");
+@include meta.load-css("../smart-city/smart-right.scss");
+@include meta.load-css("../home/home-slide-full.scss");
+@include meta.load-css("../smart-city/smart-privacy.scss");
+@include meta.load-css("../home/smart-hero-section.scss");
+@include meta.load-css("../home/human-daily-flow.sass.scss");
+@include meta.load-css("../home/local-to-global.scss");
+@include meta.load-css("../home/system-explainers.scss");
+@include meta.load-css("../home/mobility-focus.scss");
+@include meta.load-css("../home/city-systems.scss");
+@include meta.load-css("../home/global-patterns.scss");
+@include meta.load-css("../home/urban-signals.scss");
+@include meta.load-css("../home/editorial-positioning.scss");
+@include meta.load-css("../smart-city/smart-city-slug.scss");
+@include meta.load-css("../smart-city/smart-mobility-premium.scss");
+@include meta.load-css("../smart-city/smart-city-main.scss");
+@include meta.load-css("../platform/platform.scss");
+@include meta.load-css("../platform/smart-food.scss");
+@include meta.load-css("../platform/luxury.scss");
+@include meta.load-css("../pages/technology-page.scss");
+@include meta.load-css("../layout/footer.scss");

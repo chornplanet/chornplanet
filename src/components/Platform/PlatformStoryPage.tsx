@@ -1,5 +1,8 @@
+"use client";
+
 import Link from "next/link";
 import type { PlatformStoryContent } from "@/lib/platform-content/homeContent";
+import { usePlatformAboutContent } from "@/lib/platform-content/usePlatformAboutContent";
 
 export default function PlatformStoryPage({
   lang,
@@ -8,6 +11,9 @@ export default function PlatformStoryPage({
   lang: string;
   content: PlatformStoryContent;
 }) {
+  const { data: cachedContent } = usePlatformAboutContent(lang, content);
+  const aboutContent = cachedContent ?? content;
+
   const getLocalizedHref = (href: string) => {
     if (href.startsWith("http")) {
       return href;
@@ -22,26 +28,26 @@ export default function PlatformStoryPage({
       <section className="policy-page__hero technology-document-hero">
         <div className="platform-shell policy-page__hero-inner">
           <div className="technology-document-hero__heading">
-            <span className="platform-eyebrow">{content.eyebrow}</span>
-            <h1>{content.title}</h1>
+            <span className="platform-eyebrow">{aboutContent.eyebrow}</span>
+            <h1>{aboutContent.title}</h1>
             <h2>Chorn Planet&apos;s future civilization platform</h2>
           </div>
           <div className="policy-page__hero-copy">
-            <p>{content.description}</p>
+            <p>{aboutContent.description}</p>
           </div>
           <aside
             className="policy-page__summary"
-            aria-label={`${content.title} summary`}
+            aria-label={`${aboutContent.title} summary`}
           >
-            <span>{content.eyebrow}</span>
-            <strong>{content.blocks.length}</strong>
+            <span>{aboutContent.eyebrow}</span>
+            <strong>{aboutContent.blocks.length}</strong>
             <small>platform layers</small>
           </aside>
         </div>
       </section>
 
       <section className="platform-shell platform-story-blocks">
-        {content.blocks.map((block) => (
+        {aboutContent.blocks.map((block) => (
           <article key={block.title} className="platform-story-block">
             <div className="platform-story-block__content">
               <h2>{block.title}</h2>

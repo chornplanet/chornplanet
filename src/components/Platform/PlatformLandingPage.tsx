@@ -12,7 +12,7 @@ export default function PlatformLandingPage({lang, content}: { lang: string; con
                     <p>{content.description}</p>
                 </div>
                 <div className="platform-channel-hero__media">
-                    <Image src={content.image} alt={content.imageAlt} fill priority sizes="(max-width: 992px) 100vw, 44vw"/>
+                    <Image src={content.image.src} alt={content.image.alt} fill priority sizes="(max-width: 992px) 100vw, 44vw"/>
                 </div>
             </section>
 

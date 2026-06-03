@@ -22,9 +22,9 @@
       "eyebrow": "Phase 1 Platform Launch",
       "title": "Chorn Planet",
       "subtitle": "A focused first step for Smart Food, AI Luxury, Technology, Style, Smart City, and Smart Mobility.",
-      "image": "/images-platform/home/hero/youtube-banner-image.png",
-      "imageAlt": "Chorn Planet platform launch visual",
-      "imageGenerationSize": {
+      "image": {
+        "src": "/images-platform/home/hero/youtube-banner-image.png",
+        "alt": "Chorn Planet platform launch visual",
         "width": 2560,
         "height": 1440,
         "aspectRatio": "16:9",
@@ -48,7 +48,12 @@
           "href": "/style/"
         }
       ],
-      "signals": ["Smart Food", "AI Luxury", "Technology", "Future Lifestyle"]
+      "signals": [
+        "Smart Food",
+        "AI Luxury",
+        "Technology",
+        "Future Lifestyle"
+      ]
     },
     "sections": [
       {
@@ -62,15 +67,18 @@
             "category": "Smart Food",
             "title": "Smart Food System",
             "description": "A daily-life product direction around food discovery, ordering concepts, and customer experience.",
-            "image": "/smart-food/process5-receiving.png",
-            "imageAlt": "Smart Food system visual",
-            "imageGenerationSize": {
+            "image": {
+              "src": "/smart-food/process5-receiving.png",
+              "alt": "Smart Food system visual",
               "width": 1200,
               "height": 900,
               "aspectRatio": "4:3",
               "positionKey": "home.sections.phase-1.smart-food"
             },
-            "tags": ["Food", "Platform"],
+            "tags": [
+              "Food",
+              "Platform"
+            ],
             "cta": "Explore Smart Food",
             "href": "/smart-food/"
           },
@@ -78,15 +86,18 @@
             "category": "AI Luxury",
             "title": "Premium Project Stories",
             "description": "A focused layer for luxury real estate, destination narratives, and future lifestyle concepts.",
-            "image": "/images/ai-luxury/hero-ai-luxury-real-estate-platform.png",
-            "imageAlt": "AI Luxury platform visual",
-            "imageGenerationSize": {
+            "image": {
+              "src": "/images/ai-luxury/hero-ai-luxury-real-estate-platform.png",
+              "alt": "AI Luxury platform visual",
               "width": 1200,
               "height": 900,
               "aspectRatio": "4:3",
               "positionKey": "home.sections.phase-1.ai-luxury"
             },
-            "tags": ["Luxury", "Projects"],
+            "tags": [
+              "Luxury",
+              "Projects"
+            ],
             "cta": "View Luxury",
             "href": "/luxury/"
           },
@@ -94,15 +105,18 @@
             "category": "Technology",
             "title": "Technology Platform",
             "description": "A practical home for software, AI, cloud, and platform engineering capability.",
-            "image": "/images/features/morning-sky-optimize.webp",
-            "imageAlt": "Technology platform visual",
-            "imageGenerationSize": {
+            "image": {
+              "src": "/images/features/morning-sky-optimize.webp",
+              "alt": "Technology platform visual",
               "width": 1200,
               "height": 900,
               "aspectRatio": "4:3",
               "positionKey": "home.sections.phase-1.technology"
             },
-            "tags": ["AI", "Engineering"],
+            "tags": [
+              "AI",
+              "Engineering"
+            ],
             "cta": "View Technology",
             "href": "/technology/"
           },
@@ -110,15 +124,18 @@
             "category": "Style",
             "title": "Style and Outfit Direction",
             "description": "A lightweight lifestyle channel for visual identity, outfit concepts, and future commerce stories.",
-            "image": "/images-platform/styles/09-coastal-mts-traveler.png",
-            "imageAlt": "Style and outfit visual",
-            "imageGenerationSize": {
+            "image": {
+              "src": "/images-platform/styles/09-coastal-mts-traveler.png",
+              "alt": "Style and outfit visual",
               "width": 1200,
               "height": 900,
               "aspectRatio": "4:3",
               "positionKey": "home.sections.phase-1.style"
             },
-            "tags": ["Style", "Lifestyle"],
+            "tags": [
+              "Style",
+              "Lifestyle"
+            ],
             "cta": "View Style",
             "href": "/style/"
           }
@@ -135,15 +152,18 @@
             "category": "Lady",
             "title": "Lady Outfit",
             "description": "Elegant civilization looks for premium lifestyle scenes.",
-            "image": "/images-platform/styles/05-lotus-lanna-ceremony.png",
-            "imageAlt": "Lady outfit concept",
-            "imageGenerationSize": {
+            "image": {
+              "src": "/images-platform/styles/05-lotus-lanna-ceremony.png",
+              "alt": "Lady outfit concept",
               "width": 1200,
               "height": 900,
               "aspectRatio": "4:3",
               "positionKey": "home.sections.outfit.lady"
             },
-            "tags": ["Lady", "Luxury"],
+            "tags": [
+              "Lady",
+              "Luxury"
+            ],
             "cta": "View Collection",
             "href": "/style/"
           },
@@ -151,15 +171,18 @@
             "category": "Gentleman",
             "title": "Gentleman Outfit",
             "description": "Refined silhouettes for travel, urban, and resort contexts.",
-            "image": "/images-platform/styles/06-mountain-hydrangea-gentleman.png",
-            "imageAlt": "Gentleman outfit concept",
-            "imageGenerationSize": {
+            "image": {
+              "src": "/images-platform/styles/06-mountain-hydrangea-gentleman.png",
+              "alt": "Gentleman outfit concept",
               "width": 1200,
               "height": 900,
               "aspectRatio": "4:3",
               "positionKey": "home.sections.outfit.gentleman"
             },
-            "tags": ["Gentleman", "Travel"],
+            "tags": [
+              "Gentleman",
+              "Travel"
+            ],
             "cta": "View Collection",
             "href": "/style/"
           },
@@ -167,15 +190,18 @@
             "category": "Civilization",
             "title": "Civilization Clothing",
             "description": "Clothing stories connected to zones, rituals, and future commerce.",
-            "image": "/images-platform/styles/02-coastal-resort-floral.png",
-            "imageAlt": "Civilization clothing concept",
-            "imageGenerationSize": {
+            "image": {
+              "src": "/images-platform/styles/02-coastal-resort-floral.png",
+              "alt": "Civilization clothing concept",
               "width": 1200,
               "height": 900,
               "aspectRatio": "4:3",
               "positionKey": "home.sections.outfit.civilization"
             },
-            "tags": ["Zone", "Chorn DNA"],
+            "tags": [
+              "Zone",
+              "Chorn DNA"
+            ],
             "cta": "Open Channel",
             "href": "/style/"
           },
@@ -183,15 +209,18 @@
             "category": "Lanna",
             "title": "Lanna Future Luxury",
             "description": "Northern elegance translated into a premium future lifestyle.",
-            "image": "/smart-mobility/chiang-mai/vision-smart-mobility-northern-gateway.png",
-            "imageAlt": "Lanna future luxury concept",
-            "imageGenerationSize": {
+            "image": {
+              "src": "/smart-mobility/chiang-mai/vision-smart-mobility-northern-gateway.png",
+              "alt": "Lanna future luxury concept",
               "width": 1200,
               "height": 900,
               "aspectRatio": "4:3",
               "positionKey": "home.sections.outfit.lanna"
             },
-            "tags": ["Lanna", "Future"],
+            "tags": [
+              "Lanna",
+              "Future"
+            ],
             "cta": "Explore Look",
             "href": "/smart-mobility/"
           }
@@ -208,9 +237,7 @@
           "description": "After getting home, the couple relaxes indoors. The woman reclines comfortably on a soft chair while the man sits beside her, holding her hand near the large window overlooking the mountain landscape.",
           "image": {
             "src": "/images-platform/story/sofa-couple/02-relaxing-on-the-reclining-sofa.png",
-            "alt": "A couple relaxes by a large mountain-view window, with the woman reclining in a soft chair and the man gently holding her hand."
-          },
-          "imageGenerationSize": {
+            "alt": "A couple relaxes by a large mountain-view window, with the woman reclining in a soft chair and the man gently holding her hand.",
             "width": 1024,
             "height": 1536,
             "aspectRatio": "2:3",
@@ -223,9 +250,7 @@
           "description": "Lavender Valley combines floral environments, cinematic transportation experiences, and AI-assisted mobility systems within a calming future civilization landscape.",
           "image": {
             "src": "/images-platform/smart-mobility/mts-valley2-lavender-valley.png",
-            "alt": "MTS Valley 2 Lavender Valley intelligent station"
-          },
-          "imageGenerationSize": {
+            "alt": "MTS Valley 2 Lavender Valley intelligent station",
             "width": 1536,
             "height": 1024,
             "aspectRatio": "3:2",
@@ -238,9 +263,7 @@
           "description": "Coral Bay Marina integrates luxury coastal mobility, marine tourism experiences, and intelligent waterfront infrastructure into a connected future civilization ecosystem.",
           "image": {
             "src": "/images-platform/smart-mobility/mts-coastal2-coral-bay-marina.png",
-            "alt": "MTS Coastal 2 Coral Bay Marina intelligent marina station"
-          },
-          "imageGenerationSize": {
+            "alt": "MTS Coastal 2 Coral Bay Marina intelligent marina station",
             "width": 1536,
             "height": 1024,
             "aspectRatio": "3:2",
@@ -253,9 +276,7 @@
           "description": "Sunrise Ocean Deck combines panoramic ocean mobility, intelligent environmental systems, and emotionally inspiring transportation experiences for future coastal living.",
           "image": {
             "src": "/images-platform/smart-mobility/mts-coastal6-sunrise-ocean-deck.png",
-            "alt": "MTS Coastal 6 Sunrise Ocean Deck future station"
-          },
-          "imageGenerationSize": {
+            "alt": "MTS Coastal 6 Sunrise Ocean Deck future station",
             "width": 1536,
             "height": 1024,
             "aspectRatio": "3:2",
@@ -268,11 +289,11 @@
   },
   "about": {
     "eyebrow": "About Chorn Planet",
-    "title": "AI Future Civilization Platform",
+    "title": "Future Civilization Platform",
     "description": "Chorn Planet connects intelligent mobility, Smart Food, AI Luxury, Style, and practical technology into an evolving platform exploring future-ready living, connected environments, and human-centered digital experiences.",
-    "image": "/images/about/about-chorn-image-1200.webp",
-    "imageAlt": "Chorn Planet platform about visual",
-    "imageGenerationSize": {
+    "image": {
+      "src": "/images/about/about-chorn-image-1200.webp",
+      "alt": "Chorn Planet platform about visual",
       "width": 1600,
       "height": 1000,
       "aspectRatio": "8:5",
@@ -281,14 +302,25 @@
     "blocks": [
       {
         "title": "AI Native Platform",
-        "body": "Chorn Planet is built as an AI-native platform, not only a content site. The first launch focuses on clear public surfaces that can later support smarter recommendations, content workflows, product storytelling, and useful service experiences.",
-        "tags": ["AI Native", "Platform Systems", "Product Workflow"],
+        "body": "Chorn Planet is an AI-native platform that brings together AI Smart Food, AI POS, AI Luxury, Style, and practical technology into one evolving digital ecosystem. It connects with core system capabilities, including ERP, MES, Logic Controller, and the Physical Layer.",
+        "tags": [
+          "AI Native",
+          "ERP",
+          "MES",
+          "Logic Controller",
+          "Physical Layer",
+          "Workflow"
+        ],
         "link": "/technology/"
       },
       {
         "title": "AI Smart Mobility",
         "body": "AI Smart Mobility explores intelligent transportation, connected infrastructure, and future mobility experiences through the Chorn Planet MTS Network. It acts as the circulatory system connecting destinations, tourism, lifestyle environments, and future-ready civilization concepts.",
-        "tags": ["MTS Network", "Smart Infrastructure", "Future Mobility"],
+        "tags": [
+          "MTS Network",
+          "Smart Infrastructure",
+          "Future Mobility"
+        ],
         "link": "/smart-mobility/"
       },
       {
@@ -304,19 +336,31 @@
       {
         "title": "AI Smart Food",
         "body": "Smart Food is the practical daily-life layer. It gives Chorn Planet a useful starting point around food discovery, menu information, customer experience, ordering concepts, and future AI-assisted food service flows.",
-        "tags": ["Food Experience", "Ordering Concepts", "Daily Utility"],
+        "tags": [
+          "Food Experience",
+          "Ordering Concepts",
+          "Daily Utility"
+        ],
         "link": "/smart-food/"
       },
       {
         "title": "AI Luxury",
         "body": "AI Luxury is the premium project layer for property, destination, and lifestyle narratives. It helps turn high-value projects into clearer stories, visual systems, and investor-ready platform content.",
-        "tags": ["Premium Projects", "Destination Stories", "Investor Ready"],
+        "tags": [
+          "Premium Projects",
+          "Destination Stories",
+          "Investor Ready"
+        ],
         "link": "/luxury/"
       },
       {
         "title": "Style and Outfit Direction",
         "body": "Style gives the platform a visual lifestyle layer. Outfit concepts become scenes, stories, and product direction across travel, culture, soft luxury, and future commerce.",
-        "tags": ["Graceful Style", "Outfit Stories", "Future Commerce"],
+        "tags": [
+          "Graceful Style",
+          "Outfit Stories",
+          "Future Commerce"
+        ],
         "link": "/style/"
       }
     ]

@@ -15,5 +15,5 @@ export default async function Page() {
     const lang = headersList.get("x-locale") || "en";
     const content = await getSmartFoodAiContentForPublicPage(lang);
 
-    return <SmartFoodAiLandingPage content={content}/>;
+    return <SmartFoodAiLandingPage lang={lang} content={content}/>;
 }

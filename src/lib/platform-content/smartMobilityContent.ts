@@ -51,6 +51,15 @@ export type SmartMobilityContent = {
   lines: MtsLine[];
 };
 
+export type SmartMobilityLandingLine = Omit<MtsLine, "stations"> & {
+  stations: MtsStation[];
+};
+
+export type SmartMobilityLandingContent = Omit<SmartMobilityContent, "lines"> & {
+  heroStation: MtsStation;
+  lines: SmartMobilityLandingLine[];
+};
+
 const DEFAULT_LOCALE = "en";
 const coastalStations = coastalStationsSeed as MtsStation[];
 const valleyStations = valleyStationsSeed as MtsStation[];
@@ -150,6 +159,21 @@ export function getRandomSmartMobilityStations(
 
 export function getRandomSmartMobilityStation(): MtsStation {
   return allStations[Math.floor(Math.random() * allStations.length)] ?? allStations[0];
+}
+
+export function getSmartMobilityLandingContent(
+  locale?: string | null,
+): SmartMobilityLandingContent {
+  const content = getSmartMobilityContent(locale);
+
+  return {
+    ...content,
+    heroStation: getRandomSmartMobilityStation(),
+    lines: content.lines.map((line) => ({
+      ...line,
+      stations: getRandomSmartMobilityStations(line.stations, 6),
+    })),
+  };
 }
 
 export function getSmartMobilityMetadata(

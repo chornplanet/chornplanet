@@ -6,7 +6,7 @@ import {
   getSmartMobilityContent,
   type MtsStation,
 } from "@/lib/platform-content/smartMobilityContent";
-import sofaCoupleStory from "@/data/story/sofa-couple/en.sofa-couple.json";
+import { getPlatformStoryContent } from "@/lib/platform-content/storyContent";
 
 type PageParams = {
   params: Promise<{
@@ -54,6 +54,8 @@ export async function generateMetadata({
   params,
 }: PageParams): Promise<Metadata> {
   const { locale } = await params;
+  const storyContent = getPlatformStoryContent(locale);
+  const sofaCoupleStory = storyContent.sofaCoupleStory;
   const title = `${sofaCoupleStory.title} | Chorn Planet Story`;
   const description = sofaCoupleStory.story;
   const openGraphImage = sofaCoupleStory.openGraphImage;
@@ -89,6 +91,7 @@ export async function generateMetadata({
 
 export default async function Page({ params }: PageParams) {
   const { locale } = await params;
+  const storyContent = getPlatformStoryContent(locale);
   const smartMobilityContent = getSmartMobilityContent(locale);
   const valleyStations =
     smartMobilityContent.lines.find((line) => line.id === "valley")?.stations ??
@@ -105,6 +108,7 @@ export default async function Page({ params }: PageParams) {
     <main className="platform-page platform-home platform-story-index-page">
       <PlatformStorySection
         lang={locale}
+        content={storyContent}
         showStoryLink={false}
         showTiktokLink
       />

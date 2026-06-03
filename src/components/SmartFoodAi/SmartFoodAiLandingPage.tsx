@@ -1,29 +1,37 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { ISmartFoodAiContent } from "@/lib/model/ISmartFoodAiContent";
+import {usePlatformSmartFoodContent} from "@/lib/platform-content/usePlatformSmartFoodContent";
 
 export default function SmartFoodAiLandingPage({
+  lang,
   content,
 }: {
+  lang: string;
   content: ISmartFoodAiContent;
 }) {
+  const {data: cachedContent} = usePlatformSmartFoodContent(lang, content);
+  const smartFoodContent = cachedContent ?? content;
+
   return (
     <main className="smart-food-ai-page">
       <section className="smart-food-ai-hero">
         <div className="container">
           <div className="smart-food-ai-hero__grid">
             <div className="smart-food-ai-hero__content">
-              <p className="smart-food-ai-eyebrow">{content.hero.eyebrow}</p>
-              <h1>{content.hero.title}</h1>
-              <p className="smart-food-ai-hero__lead">{content.hero.lead}</p>
+              <p className="smart-food-ai-eyebrow">{smartFoodContent.hero.eyebrow}</p>
+              <h1>{smartFoodContent.hero.title}</h1>
+              <p className="smart-food-ai-hero__lead">{smartFoodContent.hero.lead}</p>
               <p className="smart-food-ai-hero__support">
-                {content.hero.support}
+                {smartFoodContent.hero.support}
               </p>
               <div
                 className="smart-food-ai-actions"
-                aria-label={content.hero.actionsLabel}
+                aria-label={smartFoodContent.hero.actionsLabel}
               >
-                {content.hero.actions.map((action) => (
+                {smartFoodContent.hero.actions.map((action) => (
                   <Link
                     key={action.href}
                     href={action.href}
@@ -37,11 +45,11 @@ export default function SmartFoodAiLandingPage({
 
             <div
               className="smart-food-ai-hero__visual"
-              aria-label={content.hero.visual.ariaLabel}
+              aria-label={smartFoodContent.hero.visual.ariaLabel}
             >
               <Image
-                src={content.hero.visual.src}
-                alt={content.hero.visual.alt}
+                src={smartFoodContent.hero.visual.src}
+                alt={smartFoodContent.hero.visual.alt}
                 width={1200}
                 height={800}
                 priority
@@ -56,22 +64,22 @@ export default function SmartFoodAiLandingPage({
         <div className="container">
           <div className="smart-food-ai-section-heading--center">
             <p className="smart-food-ai-eyebrow">
-              {content.proof.heading.eyebrow}
+              {smartFoodContent.proof.heading.eyebrow}
             </p>
-            <h2>{content.proof.heading.title}</h2>
+            <h2>{smartFoodContent.proof.heading.title}</h2>
           </div>
 
           <div className="smart-food-ai-section-heading smart-food-ai-section-heading--split">
             <div className="smart-food-ai-section-heading__left">
-              {content.proof.paragraphs.map((paragraph) => (
+              {smartFoodContent.proof.paragraphs.map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
               ))}
             </div>
 
             <div className="smart-food-ai-section-heading__right">
               <Image
-                src={content.proof.image.src}
-                alt={content.proof.image.alt}
+                src={smartFoodContent.proof.image.src}
+                alt={smartFoodContent.proof.image.alt}
                 width={900}
                 height={760}
                 sizes="(max-width: 991px) 100vw, 42vw"
@@ -79,7 +87,7 @@ export default function SmartFoodAiLandingPage({
             </div>
           </div>
           <div className="smart-food-ai-proof__grid">
-            {content.proof.cards.map((card) => (
+            {smartFoodContent.proof.cards.map((card) => (
               <article key={card.index}>
                 <span>{card.index}</span>
                 <h3>{card.title}</h3>
@@ -90,16 +98,16 @@ export default function SmartFoodAiLandingPage({
         </div>
       </section>
 
-      <section id={content.workflow.id} className="smart-food-ai-workflow">
+      <section id={smartFoodContent.workflow.id} className="smart-food-ai-workflow">
         <div className="container">
           <div className="smart-food-ai-section-heading smart-food-ai-section-heading--center">
             <p className="smart-food-ai-eyebrow">
-              {content.workflow.heading.eyebrow}
+              {smartFoodContent.workflow.heading.eyebrow}
             </p>
-            <h2>{content.workflow.heading.title}</h2>
+            <h2>{smartFoodContent.workflow.heading.title}</h2>
           </div>
           <div className="smart-food-ai-workflow__list">
-            {content.workflow.steps.map((step, index) => (
+            {smartFoodContent.workflow.steps.map((step, index) => (
               <article
                 key={step.title}
                 className="smart-food-ai-workflow__item"
@@ -130,12 +138,12 @@ export default function SmartFoodAiLandingPage({
         <div className="container">
           <div className="smart-food-ai-section-heading">
             <p className="smart-food-ai-eyebrow">
-              {content.features.heading.eyebrow}
+              {smartFoodContent.features.heading.eyebrow}
             </p>
-            <h2>{content.features.heading.title}</h2>
+            <h2>{smartFoodContent.features.heading.title}</h2>
           </div>
           <div className="smart-food-ai-card-grid">
-            {content.features.items.map((feature) => (
+            {smartFoodContent.features.items.map((feature) => (
               <article key={feature} className="smart-food-ai-feature-card">
                 <span aria-hidden="true" />
                 <h3>{feature}</h3>
@@ -145,20 +153,20 @@ export default function SmartFoodAiLandingPage({
         </div>
       </section>
 
-      <section id={content.value.id} className="smart-food-ai-value">
+      <section id={smartFoodContent.value.id} className="smart-food-ai-value">
         <div className="container">
           <div className="smart-food-ai-value__grid">
             <div className="smart-food-ai-section-heading">
               <p className="smart-food-ai-eyebrow">
-                {content.value.heading.eyebrow}
+                {smartFoodContent.value.heading.eyebrow}
               </p>
-              <h2>{content.value.heading.title}</h2>
-              {content.value.heading.text && (
-                <p>{content.value.heading.text}</p>
+              <h2>{smartFoodContent.value.heading.title}</h2>
+              {smartFoodContent.value.heading.text && (
+                <p>{smartFoodContent.value.heading.text}</p>
               )}
             </div>
             <div className="smart-food-ai-value__cards">
-              {content.value.cards.map((item) => (
+              {smartFoodContent.value.cards.map((item) => (
                 <article key={item.title}>
                   <h3>{item.title}</h3>
                   <p>{item.text}</p>

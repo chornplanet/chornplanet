@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import platformHomeEnSeed from "@/data/home/en.seed.json";
-import platformHomeThSeed from "@/data/home/th.seed.json";
+import platformHomeEnSeed from "@/data/home/en.home.json";
+import platformHomeThSeed from "@/data/home/th.home.json";
 
 const platformContent = {
   en: platformHomeEnSeed,
@@ -31,13 +31,16 @@ export type PlatformImageGenerationSize = {
   positionKey: string;
 };
 
+export type PlatformImage = PlatformImageGenerationSize & {
+  src: string;
+  alt: string;
+};
+
 export type PlatformCard = {
   category: string;
   title: string;
   description: string;
-  image: string;
-  imageAlt: string;
-  imageGenerationSize?: PlatformImageGenerationSize;
+  image: PlatformImage;
   tags: string[];
   cta: string;
   href: string;
@@ -47,11 +50,7 @@ export type PlatformCircularItem = {
   title: string;
   description: string;
   link: string;
-  image: {
-    src: string;
-    alt: string;
-  };
-  imageGenerationSize?: PlatformImageGenerationSize;
+  image: PlatformImage;
 };
 
 export type PlatformCircularContent = {
@@ -74,9 +73,7 @@ export type PlatformHero = {
   eyebrow: string;
   title: string;
   subtitle: string;
-  image: string;
-  imageAlt: string;
-  imageGenerationSize?: PlatformImageGenerationSize;
+  image: PlatformImage;
   actions: PlatformAction[];
   signals: string[];
 };
@@ -98,9 +95,7 @@ export type PlatformStoryContent = {
   eyebrow: string;
   title: string;
   description: string;
-  image: string;
-  imageAlt: string;
-  imageGenerationSize?: PlatformImageGenerationSize;
+  image: PlatformImage;
   blocks: PlatformTextBlock[];
 };
 
@@ -108,9 +103,7 @@ export type PlatformChannelContent = {
   eyebrow: string;
   title: string;
   description: string;
-  image: string;
-  imageAlt: string;
-  imageGenerationSize?: PlatformImageGenerationSize;
+  image: PlatformImage;
   cards: PlatformCard[];
 };
 
@@ -160,7 +153,9 @@ type PlatformContent = {
   >;
 };
 
-type PlatformContentInput = Partial<Omit<PlatformContent, "meta" | "channels">> & {
+type PlatformContentInput = Partial<
+  Omit<PlatformContent, "meta" | "channels">
+> & {
   meta?: Partial<Record<PlatformRouteKey, PlatformMeta>>;
   channels?: PlatformContent["channels"];
 };
@@ -200,9 +195,8 @@ export function getPlatformMetadata(
   };
   const path = routeKey === "home" ? "/" : `/${routeKey}/`;
   const routeImage = platformOpenGraphImages[routeKey];
-  const imageMetadata = routeImage ? {images: [routeImage]} : {};
-  const twitterImageMetadata =
-    routeImage ? {images: [routeImage.url]} : {};
+  const imageMetadata = routeImage ? { images: [routeImage] } : {};
+  const twitterImageMetadata = routeImage ? { images: [routeImage.url] } : {};
 
   return {
     title: resolvedMeta.title,

@@ -3,7 +3,10 @@
 import type { Metadata } from "next";
 import { headers } from "next/headers";
 import PlatformHomePage from "@/components/Platform/PlatformHomePage";
-import {getPlatformContent, getPlatformMetadata} from "@/lib/platform-content/homeContent";
+import {
+  getPlatformContent,
+  getPlatformMetadata,
+} from "@/lib/platform-content/homeContent";
 
 export async function generateMetadata(): Promise<Metadata> {
   const headers15 = await headers();
@@ -52,10 +55,7 @@ export default async function Home() {
 
   return (
     <>
-      <PlatformHomePage
-        lang={lang}
-        content={content.home}
-      />
+      <PlatformHomePage lang={lang} content={content.home} />
 
       <script
         type="application/ld+json"

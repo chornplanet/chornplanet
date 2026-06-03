@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
@@ -15,6 +17,7 @@ import {
   getPlatformOutfitLocalizedText,
   getPlatformOutfitSets,
 } from "@/lib/platform-content/styleContent";
+import { usePlatformHomeContent } from "@/lib/platform-content/usePlatformHomeContent";
 import sofaCoupleStory from "@/data/story/sofa-couple/en.sofa-couple.json";
 
 function PlatformHomeSection({
@@ -89,9 +92,7 @@ export function PlatformHomeCircularSystemSection({
           <div className="platform-home-sofa-story__content">
             <div className="platform-home-sofa-story__copy">
               <span>{circular.span}</span>
-              <h3 id="platform-home-sofa-story-title">
-                {circular.title}
-              </h3>
+              <h3 id="platform-home-sofa-story-title">{circular.title}</h3>
               <p>{circular.description}</p>
               <div className="platform-home-sofa-story__actions">
                 {showStoryLink ? (
@@ -231,10 +232,12 @@ export default function PlatformHomePage({
   content: PlatformHomeContent;
   afterHero?: ReactNode;
 }) {
-  const outfitSection = content.sections.find(
+  const { data: cachedContent } = usePlatformHomeContent(lang, content);
+  const homeContent = cachedContent ?? content;
+  const outfitSection = homeContent.sections.find(
     (section) => section.layout === "grid",
   );
-  const platformSections = content.sections.filter(
+  const platformSections = homeContent.sections.filter(
     (section) => section.layout !== "grid",
   );
 
@@ -243,8 +246,8 @@ export default function PlatformHomePage({
       <section className="platform-hero">
         <div className="platform-hero__media">
           <Image
-            src={content.hero.image}
-            alt={content.hero.imageAlt}
+            src={homeContent.hero.image.src}
+            alt={homeContent.hero.image.alt}
             fill
             priority
             sizes="100vw"
@@ -253,7 +256,7 @@ export default function PlatformHomePage({
         <div className="platform-hero__overlay" />
         <div className="platform-shell platform-hero__content">
           <div className="platform-hero__actions">
-            {content.hero.actions.map((action) => (
+            {homeContent.hero.actions.map((action) => (
               <Link
                 key={action.href}
                 href={getLocalizedHref(lang, action.href)}
@@ -279,7 +282,7 @@ export default function PlatformHomePage({
 
       <PlatformHomeCircularSystemSection
         lang={lang}
-        circular={content.circular}
+        circular={homeContent.circular}
       />
       <PlatformHomeOutfitSection lang={lang} section={outfitSection} />
     </main>

@@ -21,6 +21,16 @@ export function getLegacyPublicRedirects() {
             permanent: true,
         },
         {
+            source: '/smart-food-ai/',
+            destination: '/smart-food/',
+            permanent: true,
+        },
+        {
+            source: '/:lang/smart-food-ai/',
+            destination: '/:lang/smart-food/',
+            permanent: true,
+        },
+        {
             source: '/:lang/outfit/',
             destination: '/:lang/style/',
             permanent: true,
