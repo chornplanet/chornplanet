@@ -1,0 +1,30 @@
+{
+  "detail": {
+    "backLinkLabel": "MTS Network",
+    "stationTagsAriaLabel": "Station tags",
+    "actions": [
+      {
+        "label": "Circulatory System",
+        "href": "/smart-mobility/"
+      },
+      {
+        "label": "Story",
+        "href": "/story/"
+      },
+      {
+        "label": "Valley Gateway",
+        "href": "/smart-mobility/mts/mts-valley-2-lavender-valley/"
+      },
+      {
+        "label": "Beach Gateway",
+        "href": "/smart-mobility/mts/mts-coastal-1-beach-gateway/"
+      }
+    ],
+    "related": {
+      "eyebrow": "More MTS Stations",
+      "title": "Continue through the mobility network.",
+      "description": "Move across the Chorn Planet MTS station set and open another future civilization node directly from this page."
+    },
+    "relatedCardCta": "View Station"
+  }
+}

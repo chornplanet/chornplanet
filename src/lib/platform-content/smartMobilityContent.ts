@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import coastalStationsSeed from "@/data/smart-mobility/coastal/en.coastal.json";
+import mtsContentSeed from "@/data/smart-mobility/mts/en.mts.json";
 import valleyStationsSeed from "@/data/smart-mobility/valley/en.valley.json";
 
 export type MtsImageGenerationSize = {
@@ -60,8 +61,32 @@ export type SmartMobilityLandingContent = Omit<SmartMobilityContent, "lines"> & 
   lines: SmartMobilityLandingLine[];
 };
 
+export type SmartMobilityMtsDetailAction = {
+  label: string;
+  href: string;
+};
+
+export type SmartMobilityMtsDetailContent = {
+  backLinkLabel: string;
+  stationTagsAriaLabel: string;
+  actions: SmartMobilityMtsDetailAction[];
+  related: {
+    eyebrow: string;
+    title: string;
+    description: string;
+  };
+  relatedCardCta: string;
+};
+
+export type SmartMobilityStationDetailContent = {
+  detail: SmartMobilityMtsDetailContent;
+  station: MtsStation;
+  relatedStations: MtsStation[];
+};
+
 const DEFAULT_LOCALE = "en";
 const coastalStations = coastalStationsSeed as MtsStation[];
+const mtsContent = mtsContentSeed as { detail: SmartMobilityMtsDetailContent };
 const valleyStations = valleyStationsSeed as MtsStation[];
 const allStations = [...coastalStations, ...valleyStations];
 const smartMobilityOgImage =
@@ -144,6 +169,22 @@ export function getRelatedSmartMobilityStations(
   );
 
   return [...sameLineStations, ...otherStations].slice(0, limit);
+}
+
+export function getSmartMobilityStationDetailContent(
+  slug: string,
+): SmartMobilityStationDetailContent | undefined {
+  const station = getSmartMobilityStationBySlug(slug);
+
+  if (!station) {
+    return undefined;
+  }
+
+  return {
+    detail: mtsContent.detail,
+    station,
+    relatedStations: getRelatedSmartMobilityStations(station.slug),
+  };
 }
 
 export function getRandomSmartMobilityStations(

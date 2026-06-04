@@ -1625,7 +1625,7 @@ a.platform-home-sofa-story__card-media:hover img {
   margin-top: 18px;
 }
 
-.platform-mts-hero__actions a {
+.platform-mts-hero__action {
   display: inline-flex;
   min-height: 44px;
   align-items: center;
@@ -1642,9 +1642,10 @@ a.platform-home-sofa-story__card-media:hover img {
   transition: transform 160ms ease, box-shadow 160ms ease;
 }
 
-.platform-mts-hero__actions a:first-child {
+.platform-mts-hero__action--active {
   background: linear-gradient(135deg, #79f3ef 0%, #4fd9ff 48%, #5a68ff 100%);
   color: #06102b;
+  cursor: default;
 }
 
 .platform-mts-hero__actions a:hover {
@@ -2129,7 +2130,7 @@ a.platform-home-sofa-story__card-media:hover img {
     width: 100%;
   }
 
-  .platform-mts-hero__actions a {
+  .platform-mts-hero__action {
     width: 100%;
   }
 
