@@ -187,6 +187,10 @@ export function getSmartMobilityStationDetailContent(
   };
 }
 
+export function getSmartMobilityMtsDetailActions(): SmartMobilityMtsDetailAction[] {
+  return [...mtsContent.detail.actions];
+}
+
 export function getRandomSmartMobilityStations(
   stations: MtsStation[],
   limit = 6,

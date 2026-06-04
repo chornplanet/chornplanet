@@ -5,7 +5,7 @@ import Link from "next/link";
 import { ISmartFoodAiContent } from "@/lib/model/ISmartFoodAiContent";
 import {usePlatformSmartFoodContent} from "@/lib/platform-content/usePlatformSmartFoodContent";
 
-export default function SmartFoodAiLandingPage({
+export default function SmartFoodLandingPage({
   lang,
   content,
 }: {

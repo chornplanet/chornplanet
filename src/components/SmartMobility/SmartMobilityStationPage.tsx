@@ -8,14 +8,7 @@ import type {
   SmartMobilityStationDetailContent,
 } from "@/lib/platform-content/smartMobilityContent";
 import { usePlatformSmartMobilityMTSContent } from "@/lib/platform-content/usePlatformSmartMobilityMTSContent";
-
-function getLocalizedHref(locale: string, href: string) {
-  if (/^https?:\/\//.test(href)) {
-    return href;
-  }
-
-  return `/${locale}${href.startsWith("/") ? href : `/${href}`}`;
-}
+import SmartMobilityActions from "./SmartMobilityActions";
 
 function getActiveMtsGatewaySlug(slug: string) {
   if (slug.startsWith("mts-valley")) {
@@ -27,10 +20,6 @@ function getActiveMtsGatewaySlug(slug: string) {
   }
 
   return null;
-}
-
-function isActionForGateway(actionHref: string, gatewaySlug: string | null) {
-  return Boolean(gatewaySlug && actionHref.includes(`/mts/${gatewaySlug}/`));
 }
 
 function RelatedMtsStationCard({
@@ -71,7 +60,7 @@ function RelatedMtsStationCard({
   );
 }
 
-export default function PlatformSmartMobilityStationPage({
+export default function SmartMobilityStationPage({
   locale,
   slug,
   content,
@@ -93,62 +82,23 @@ export default function PlatformSmartMobilityStationPage({
     <main className="platform-page platform-mts-page platform-mts-detail-page">
       <section className="platform-outfit-detail-hero platform-mts-hero">
         <div className="platform-outfit-detail-hero__copy">
-          <Link
-            className="platform-outfit-detail-hero__back"
-            href={`/${locale}/smart-mobility/`}
-          >
-            {detail.backLinkLabel}
-          </Link>
+          <SmartMobilityActions
+            locale={locale}
+            activeHref={
+              activeGatewaySlug
+                ? `/smart-mobility/mts/${activeGatewaySlug}/`
+                : undefined
+            }
+            activeLabel={station.name}
+          />
+
           <span className="platform-eyebrow">{station.mts_station}</span>
           <div className="platform-mts-station-summary">
             <strong>{station.name}</strong>
             <p>{station.story}</p>
           </div>
-
-          <div
-            className="platform-outfit-detail-tags"
-            aria-label={detail.stationTagsAriaLabel}
-          >
-            <span>{station.zone}</span>
-            <span>{station.mts_line}</span>
-            <span>{station.world_map}</span>
-            <span>{station.mts_network}</span>
-          </div>
-
-          <div className="platform-mts-hero__actions">
-            {detail.actions.map((action) => {
-              const isActiveGateway = isActionForGateway(
-                action.href,
-                activeGatewaySlug,
-              );
-              const label = isActiveGateway
-                ? detail.backLinkLabel
-                : action.label;
-
-              if (isActiveGateway) {
-                return (
-                  <span
-                    key={action.href}
-                    className="platform-mts-hero__action platform-mts-hero__action--active"
-                    aria-current="page"
-                  >
-                    {station.name}
-                  </span>
-                );
-              }
-
-              return (
-                <Link
-                  key={action.href}
-                  className="platform-mts-hero__action"
-                  href={getLocalizedHref(locale, action.href)}
-                >
-                  {label}
-                </Link>
-              );
-            })}
-          </div>
         </div>
+
         <div className="platform-outfit-detail-hero__media">
           <Image
             className="platform-mts-hero__image"

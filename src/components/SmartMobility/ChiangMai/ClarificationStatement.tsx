@@ -1,7 +1,7 @@
 import React from "react";
 import {ISmartSection} from "@/lib/model/ISmartMobility";
 
-export default function SmartMobilityClarificationStatement(
+export default function ClarificationStatement(
     {safeStatement}: { lang: string; safeStatement?: ISmartSection['safeStatement'] }
 ) {
     return (

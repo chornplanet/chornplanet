@@ -112,6 +112,7 @@ export default async function Page({ params }: PageParams) {
         showStoryLink={false}
         showTiktokLink
       />
+
       <section className="platform-shell platform-outfit-detail-related platform-story-mts-backlinks">
         <div className="platform-section__header">
           <span>MTS Backlinks</span>

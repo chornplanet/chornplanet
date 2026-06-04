@@ -7,6 +7,7 @@ import type {
   SmartMobilityLandingContent,
 } from "@/lib/platform-content/smartMobilityContent";
 import { usePlatformSmartMobilityContent } from "@/lib/platform-content/usePlatformSmartMobilityContent";
+import SmartMobilityActions from "./SmartMobilityActions";
 
 function MtsStationCard({
   locale,
@@ -44,7 +45,7 @@ function MtsStationCard({
   );
 }
 
-export default function PlatformSmartMobilityPage({
+export default function SmartMobilityPage({
   locale,
   content,
 }: {
@@ -74,6 +75,14 @@ export default function PlatformSmartMobilityPage({
         <div className="platform-mts-full-hero__content">
           <small>CHORN PLANET - {heroStation.name}</small>
         </div>
+      </section>
+
+      <section className="platform-shell platform-mts-action-nav">
+        <SmartMobilityActions
+          locale={locale}
+          activeHref="/smart-mobility/"
+          style={{ marginBottom: 18 }}
+        />
       </section>
 
       {smartMobilityContent.lines.map((line) => (

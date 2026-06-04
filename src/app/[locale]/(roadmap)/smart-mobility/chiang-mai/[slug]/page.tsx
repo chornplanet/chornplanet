@@ -3,8 +3,8 @@ import { notFound } from "next/navigation";
 import {
   generateSmartMobilityChiangMaiMetadata,
   isSmartMobilityChiangMaiSlug,
-} from "@/components/SmartMobility/ChiangMai/smartMobilityChiangMaiRoutes";
-import { SmartMobilityChiangMaiPage } from "@/components/SmartMobility/ChiangMai/smartMobilityChiangMaiPage";
+} from "@/components/SmartMobility/ChiangMai/ChiangMaiRoutes";
+import { SmartMobilityChiangMaiPage } from "@/components/SmartMobility/ChiangMai/ChiangMaiPage";
 import { getSmartMobilityChiangMaiContentForPublicPage } from "@/lib/smart-mobility-chiang-mai-content/smartMobilityChiangMaiContent.service";
 
 export const dynamic = "force-dynamic";

@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ShoppingBag } from "lucide-react";
 import { FaTiktok } from "react-icons/fa";
+import SmartMobilityActions from "@/components/SmartMobility/SmartMobilityActions";
 import type { PlatformStoryContent } from "@/lib/platform-content/storyContent";
 import { usePlatformStoryContent } from "@/lib/platform-content/usePlatformStoryContent";
 
@@ -32,6 +33,14 @@ export default function PlatformStorySection({
           fill
           priority
           sizes="100vw"
+        />
+      </section>
+
+      <section className="platform-shell platform-mts-action-nav">
+        <SmartMobilityActions
+          locale={lang}
+          activeHref="/story/"
+          style={{ marginBottom: 18 }}
         />
       </section>
 

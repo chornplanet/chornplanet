@@ -1,6 +1,6 @@
 import type {Metadata} from "next";
 import {headers} from "next/headers";
-import SmartFoodAiLandingPage from "@/components/SmartFoodAi/SmartFoodAiLandingPage";
+import SmartFoodLandingPage from "@/components/SmartFood/SmartFoodLandingPage";
 import {getPlatformMetadata} from "@/lib/platform-content/homeContent";
 import {getSmartFoodAiContentForPublicPage} from "@/lib/smart-food-ai-content/smartFoodAiContent.service";
 
@@ -15,5 +15,5 @@ export default async function Page() {
     const lang = headersList.get("x-locale") || "en";
     const content = await getSmartFoodAiContentForPublicPage(lang);
 
-    return <SmartFoodAiLandingPage lang={lang} content={content}/>;
+    return <SmartFoodLandingPage lang={lang} content={content}/>;
 }

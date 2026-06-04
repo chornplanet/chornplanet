@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import {ISmartImage} from "@/lib/model/ISmartMobility";
 
-export default function SmartMobilityChiangMaiRight(
+export default function RightChiangMai(
     {lang, rightItems}: {
         lang: string,
         rightItems: ISmartImage[]

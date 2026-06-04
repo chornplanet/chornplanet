@@ -100,7 +100,7 @@ This feature should not delete or heavily rewrite the existing `HeroSection`. In
 Current Smart Food AI page component:
 
 ```text
-src/components/SmartFoodAi/SmartFoodAiLandingPage.tsx
+src/components/SmartFood/SmartFoodLandingPage.tsx
 ```
 
 Current Smart Food AI route:

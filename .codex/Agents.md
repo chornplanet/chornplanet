@@ -192,13 +192,13 @@ Use the Smart Food AI page as the active reference for responsive UX, visual con
 
 ```text
 src/app/[locale]/(legacy)/smart-food-ai/page.tsx
-src/components/SmartFoodAi/SmartFoodAiLandingPage.tsx
+src/components/SmartFood/SmartFoodLandingPage.tsx
 src/styles/smart-food-ai.scss
 ```
 
 Reference `src/app/[locale]/(legacy)/smart-food-ai/page.tsx` for the localized page route pattern, metadata loading, `headers()` locale lookup, and clean handoff into a page component.
 
-Reference `src/components/SmartFoodAi/SmartFoodAiLandingPage.tsx` for section structure and semantic element use, including `main`, `section`, `div`, heading tags, paragraphs, actions, repeated `article` cards, and `Image` components.
+Reference `src/components/SmartFood/SmartFoodLandingPage.tsx` for section structure and semantic element use, including `main`, `section`, `div`, heading tags, paragraphs, actions, repeated `article` cards, and `Image` components.
 
 Reference `src/styles/smart-food-ai.scss` for good fit across all views: responsive padding, margin, grid changes, font size, font color, heading/body color consistency, image sizing, section spacing, card spacing, and desktop/tablet/mobile breakpoints.
 

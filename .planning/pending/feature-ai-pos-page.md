@@ -27,6 +27,6 @@ Use `src/data/smart-food/en.pos.json` as the initial EN source of truth.
 `/en/smart-food/ai-pos`
 
 ## Implementation Notes for Codex
-- Review `src/components/SmartFoodAi/SmartFoodAiLandingPage.tsx`
+- Review `src/components/SmartFood/SmartFoodLandingPage.tsx`
 - Reuse existing Smart Food visual language where possible
 - Prefer database-backed structure later; static JSON acceptable in phase 1

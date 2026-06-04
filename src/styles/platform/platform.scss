@@ -1581,7 +1581,11 @@ a.platform-home-sofa-story__card-media:hover img {
   gap: 0;
   width: 100%;
   min-height: 0;
-  padding: 0 0 clamp(54px, 6vw, 82px);
+  padding: 0 0 clamp(18px, 3vw, 36px);
+}
+
+.platform-mts-detail-page .platform-outfit-detail-related {
+  padding-top: clamp(18px, 3vw, 36px);
 }
 
 .platform-mts-detail-page .platform-outfit-detail-hero__media {
@@ -1608,10 +1612,29 @@ a.platform-home-sofa-story__card-media:hover img {
 }
 
 .platform-mts-detail-page .platform-outfit-detail-hero__copy {
+  display: grid;
+  gap: 12px;
   order: 2;
   width: min(1280px, calc(100% - 32px));
   margin: 0 auto;
-  padding-top: clamp(18px, 3vw, 34px);
+  padding-top: clamp(16px, 2.5vw, 28px);
+}
+
+.platform-mts-detail-page .platform-mts-hero__actions {
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+
+.platform-mts-detail-page .platform-outfit-detail-hero__back {
+  margin-top: 2px;
+}
+
+.platform-mts-detail-page .platform-eyebrow {
+  margin-top: 0;
+}
+
+.platform-mts-detail-page .platform-mts-station-summary {
+  margin-top: 2px;
 }
 
 .platform-mts-hero__media {
@@ -1631,15 +1654,17 @@ a.platform-home-sofa-story__card-media:hover img {
   align-items: center;
   justify-content: center;
   padding: 0 16px;
-  border: 1px solid rgba(79, 217, 255, 0.36);
+  border: 1px solid rgba(79, 217, 255, 0.34);
   border-radius: 6px;
-  background: #081234;
-  color: #ffffff;
+  background: rgba(255, 255, 255, 0.92);
+  color: #07142f;
   font-size: 0.88rem;
   font-weight: 900;
   text-decoration: none;
-  box-shadow: 0 16px 34px rgba(17, 39, 109, 0.14);
-  transition: transform 160ms ease, box-shadow 160ms ease;
+  box-shadow: 0 12px 28px rgba(17, 39, 109, 0.1);
+  backdrop-filter: blur(10px);
+  transition: transform 160ms ease, border-color 160ms ease,
+    background 160ms ease, box-shadow 160ms ease, color 160ms ease;
 }
 
 .platform-mts-hero__action--active {
@@ -1650,7 +1675,19 @@ a.platform-home-sofa-story__card-media:hover img {
 
 .platform-mts-hero__actions a:hover {
   transform: translateY(-2px);
+  border-color: rgba(121, 243, 239, 0.56);
+  background: #ffffff;
+  color: #06102b;
   box-shadow: 0 22px 44px rgba(17, 39, 109, 0.18);
+}
+
+.platform-mts-action-nav {
+  padding-top: clamp(28px, 4vw, 44px);
+  padding-bottom: 0;
+}
+
+.platform-mts-action-nav .platform-mts-hero__actions {
+  margin-top: 0;
 }
 
 .platform-mts-intro {
@@ -2118,7 +2155,7 @@ a.platform-home-sofa-story__card-media:hover img {
     width: 100%;
     margin: 0;
     padding-top: 0;
-    padding-bottom: 44px;
+    padding-bottom: 24px;
   }
 
   .platform-mts-detail-page .platform-outfit-detail-hero__copy {

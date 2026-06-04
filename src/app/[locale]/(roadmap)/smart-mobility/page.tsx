@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import PlatformSmartMobilityPage from "@/components/SmartMobility/PlatformSmartMobilityPage";
+import SmartMobilityPage from "@/components/SmartMobility/SmartMobilityPage";
 import {
   getSmartMobilityLandingContent,
   getSmartMobilityMetadata,
@@ -23,5 +23,5 @@ export default async function Page({ params }: PageParams) {
   const { locale } = await params;
   const content = getSmartMobilityLandingContent(locale);
 
-  return <PlatformSmartMobilityPage locale={locale} content={content} />;
+  return <SmartMobilityPage locale={locale} content={content} />;
 }

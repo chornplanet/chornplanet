@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import PlatformSmartMobilityStationPage from "@/components/SmartMobility/PlatformSmartMobilityStationPage";
+import SmartMobilityStationPage from "@/components/SmartMobility/SmartMobilityStationPage";
 import {
   getSmartMobilityStationDetailContent,
   getSmartMobilityStationMetadata,
@@ -32,7 +32,7 @@ export default async function Page({ params }: PageParams) {
   }
 
   return (
-    <PlatformSmartMobilityStationPage
+    <SmartMobilityStationPage
       locale={locale}
       slug={slug}
       content={content}

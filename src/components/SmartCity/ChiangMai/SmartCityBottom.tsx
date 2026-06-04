@@ -1,7 +1,7 @@
 import React from "react";
-import SmartMobilityClarificationStatement
-    from "@/components/SmartMobility/ChiangMai/Common/SmartMobilityClarificationStatement";
-import SmartMobilityBottomImage from "../../SmartMobility/ChiangMai/Common/SmartMobilityBottomImage";
+import ClarificationStatement
+    from "@/components/SmartMobility/ChiangMai/ClarificationStatement";
+import BottomImage from "../../SmartMobility/ChiangMai/BottomImage";
 import {ISmartCityItem} from "@/lib/model/ISmartCity";
 import {SmartCityChiangMaiBottomContent} from "@/lib/model/ISmartCityChiangMai";
 
@@ -40,14 +40,14 @@ export default function SmartCityBottom(
                 </ul>
 
                 <div className="smart-city-clarification-statement">
-                    <SmartMobilityClarificationStatement
+                    <ClarificationStatement
                         lang={lang}
                         safeStatement={bottomContent?.safeStatement}
                     />
                 </div>
 
                 {bottomContent?.bottomCards && (
-                    <SmartMobilityBottomImage
+                    <BottomImage
                         lang={lang}
                         bottomCards={bottomContent.bottomCards}
                     />
