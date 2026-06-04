@@ -4,8 +4,9 @@ import PlatformSmartMobilityStationPage from "@/components/SmartMobility/Platfor
 import {
   getSmartMobilityStationDetailContent,
   getSmartMobilityStationMetadata,
-  getSmartMobilityStations,
 } from "@/lib/platform-content/smartMobilityContent";
+
+export const dynamic = "force-dynamic";
 
 type PageParams = {
   params: Promise<{
@@ -20,12 +21,6 @@ export async function generateMetadata({
   const { locale, slug } = await params;
 
   return getSmartMobilityStationMetadata({ locale, slug });
-}
-
-export function generateStaticParams() {
-  return getSmartMobilityStations().map((station) => ({
-    slug: station.slug,
-  }));
 }
 
 export default async function Page({ params }: PageParams) {

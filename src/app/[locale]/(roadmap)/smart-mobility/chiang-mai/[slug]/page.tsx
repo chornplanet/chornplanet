@@ -2,11 +2,12 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import {
   generateSmartMobilityChiangMaiMetadata,
-  getSmartMobilityChiangMaiSlugs,
   isSmartMobilityChiangMaiSlug,
 } from "@/components/SmartMobility/ChiangMai/smartMobilityChiangMaiRoutes";
 import { SmartMobilityChiangMaiPage } from "@/components/SmartMobility/ChiangMai/smartMobilityChiangMaiPage";
 import { getSmartMobilityChiangMaiContentForPublicPage } from "@/lib/smart-mobility-chiang-mai-content/smartMobilityChiangMaiContent.service";
+
+export const dynamic = "force-dynamic";
 
 type PageParams = {
   params: Promise<{
@@ -14,10 +15,6 @@ type PageParams = {
     slug: string;
   }>;
 };
-
-export function generateStaticParams() {
-  return getSmartMobilityChiangMaiSlugs().map((slug) => ({ slug }));
-}
 
 export async function generateMetadata({
   params,
@@ -50,10 +47,6 @@ export default async function Page({ params }: PageParams) {
   }
 
   return (
-    <SmartMobilityChiangMaiPage
-      locale={locale}
-      slug={slug}
-      content={content}
-    />
+    <SmartMobilityChiangMaiPage locale={locale} slug={slug} content={content} />
   );
 }
