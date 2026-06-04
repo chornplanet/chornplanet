@@ -57,6 +57,8 @@ Before deployment or shipping to `main`, Codex must run a regression pass approp
 - `npm run build`
 - Any targeted route/content audit, e2e test, or manual localized URL check that matches the touched feature area
 
+When Khachornchit says `ship to main with complete workflow`, Codex must execute the full Branch And Ship Flow. This command explicitly requires staging and committing all current work with `git add -A` and `git commit`, then shipping `main` to every configured push remote. For this repository, the required `main` push remotes are `origin`, `chatgpt`, and `korapak`. Do not report the ship complete until all configured remote pushes have succeeded, unless Khachornchit explicitly narrows the instruction.
+
 For MongoDB-backed public content, metadata, layout, or image changes, verify that each public-safe loader still follows this fallback chain:
 
 ```text
@@ -412,7 +414,15 @@ Avoid adding new hardcoded content arrays into page files unless explicitly temp
 
 Use this flow when preparing a fix, feature, docs update, or other task for production:
 
-When Khachornchit says `ship to main`, `ship -> main`, `ship`, or any alternative with the same meaning, Codex must treat it as approval to execute the complete ship flow below. Do not shortcut by committing directly on `main` or pushing only `origin/main` unless Khachornchit explicitly narrows the instruction.
+When Khachornchit says `ship to main`, `ship -> main`, `ship`, `ship to main with complete workflow`, or any alternative with the same meaning, Codex must treat it as approval to execute the complete ship flow below. The complete ship flow means `main` must be pushed to every configured push remote for this repository, not only `origin/main`, unless Khachornchit explicitly narrows the instruction.
+
+Current required `main` push remotes:
+
+```text
+origin
+chatgpt
+korapak
+```
 
 1. Start from the approved feature branch for the current task. When the user explicitly asks to continue from the current branch, finish the task on that branch.
 2. Implement the change on the feature branch and preserve any intended `.codex/` updates on the same branch.
@@ -453,13 +463,15 @@ When Khachornchit says `ship to main`, `ship -> main`, `ship`, or any alternativ
    git merge <feature-branch>
    ```
 
-11. Push `main` to all required remotes:
+11. Push `main` to every configured push remote. For the current ChornPlanet repository, `ship to main with complete workflow` requires all of these pushes to succeed:
 
    ```text
    git push origin main
    git push chatgpt main
    git push korapak main
    ```
+
+    Do not report the ship as complete after only `git push origin main`. If one remote push fails, report the failed remote and the successful remotes clearly, then resolve the blocker or ask Khachornchit how to proceed.
 
 12. Delete the remote feature branch after `main` is pushed:
 
