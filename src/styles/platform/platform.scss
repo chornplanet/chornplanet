@@ -2167,8 +2167,34 @@ a.platform-home-sofa-story__card-media:hover img {
     width: 100%;
   }
 
+  .platform-mts-hero__actions {
+    gap: 8px;
+  }
+
   .platform-mts-hero__action {
     width: 100%;
+    min-height: 48px;
+    justify-content: flex-start;
+    padding: 12px 14px;
+    text-align: left;
+    line-height: 1.28;
+    box-shadow: 0 10px 24px rgba(17, 39, 109, 0.08);
+  }
+
+  .platform-mts-hero__action--active {
+    position: relative;
+    padding-left: 18px;
+    border-color: rgba(79, 217, 255, 0.58);
+    box-shadow: 0 14px 30px rgba(79, 217, 255, 0.18);
+  }
+
+  .platform-mts-hero__action--active::before {
+    content: "";
+    width: 3px;
+    align-self: stretch;
+    margin: -2px 10px -2px 0;
+    border-radius: 999px;
+    background: rgba(6, 16, 43, 0.72);
   }
 
   .platform-outfit-detail-related__grid {
