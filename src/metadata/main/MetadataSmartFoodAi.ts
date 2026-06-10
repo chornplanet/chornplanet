@@ -3,8 +3,8 @@ import {metadataLink} from "@/metadata/metadataLink/metadataLink";
 import {MetaLinks} from "@/metadata/metadataLink/MetaLinks";
 import {ISmartFoodAiMetadataContent} from "@/lib/model/ISmartFoodAiContent";
 import {normalizeSmartFoodAiContentLocale} from "@/core/domain/smart-food-ai-content.entity";
-import {getSmartFoodAiMetadataContent} from "@/lib/smart-food-ai-content/smartFoodAiContent.service";
-import {getSmartFoodAiStaticMetadataFallback} from "@/lib/smart-food-ai-content/smartFoodAiStaticFallback";
+import {getSmartFoodAiMetadataContent} from "@/lib/smart-food-content/smartFoodContent.service";
+import {getSmartFoodAiStaticMetadataFallback} from "@/lib/smart-food-content/smartFoodStaticFallback";
 
 async function loadMetadataContent(lang: string): Promise<ISmartFoodAiMetadataContent> {
     const normalizedLocale = normalizeSmartFoodAiContentLocale(lang);

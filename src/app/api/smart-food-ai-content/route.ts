@@ -5,7 +5,7 @@ import {
     getAllSmartFoodAiContent,
     getSmartFoodAiContent,
     upsertSmartFoodAiContent,
-} from "@/lib/smart-food-ai-content/smartFoodAiContent.service";
+} from "@/lib/smart-food-content/smartFoodContent.service";
 import {PartialSmartFoodAiContentPayload} from "@/core/domain/smart-food-ai-content.entity";
 
 export async function GET(req: Request) {

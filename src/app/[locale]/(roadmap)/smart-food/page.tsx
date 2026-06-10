@@ -2,7 +2,7 @@ import type {Metadata} from "next";
 import {headers} from "next/headers";
 import SmartFoodLandingPage from "@/components/SmartFood/SmartFoodLandingPage";
 import {getPlatformMetadata} from "@/lib/platform-content/homeContent";
-import {getSmartFoodAiContentForPublicPage} from "@/lib/smart-food-ai-content/smartFoodAiContent.service";
+import {getSmartFoodAiContentForPublicPage} from "@/lib/smart-food-content/smartFoodContent.service";
 
 export async function generateMetadata(): Promise<Metadata> {
     const headersList = await headers();

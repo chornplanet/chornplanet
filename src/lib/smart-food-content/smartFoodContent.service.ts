@@ -9,7 +9,7 @@ import {
 import {SmartFoodAiContentService} from "@/core/services/smart-food-ai-content.service";
 import {SmartFoodAiContentRepository} from "@/adapters/outbound/mongo.repository/smart-food-ai-content.repository";
 import {loadLocalizedContentWithFallback} from "@/lib/localized-content/localizedContentFallback";
-import {getSmartFoodAiStaticFallback} from "@/lib/smart-food-ai-content/smartFoodAiStaticFallback";
+import {getSmartFoodAiStaticFallback} from "@/lib/smart-food-content/smartFoodStaticFallback";
 
 const smartFoodAiContentService = new SmartFoodAiContentService(new SmartFoodAiContentRepository());
 const SMART_FOOD_AI_CONTENT_LIST_TAG = 'smart-food-ai-content';
