@@ -1,0 +1,155 @@
+{
+  "locale": "en",
+  "metadata": {
+    "title": "Smart Food AI | Chorn Planet",
+    "description": "Smart Food AI by ChornPlanet presents an AI-native food service workflow for menu discovery, ordering support, operations coordination, and local business growth.",
+    "openGraphTitle": "Smart Food AI"
+  },
+  "hero": {
+    "eyebrow": "AI-native food service platform",
+    "title": "Smart Food AI",
+    "lead": "Smart Food AI connects menu information, customer conversation, order coordination, and business operations into one practical AI-native service experience.",
+    "support": "Designed from real local-business workflow in Chiang Mai, the page presents ChornPlanet's capability to turn food-service operations into a clear, scalable digital platform.",
+    "actionsLabel": "Smart Food AI actions",
+    "actions": [
+      {
+        "label": "Explore workflow",
+        "href": "#workflow",
+        "variant": "primary"
+      },
+      {
+        "label": "Business value",
+        "href": "#value",
+        "variant": "secondary"
+      }
+    ],
+    "visual": {
+      "src": "/smart-food/smart-food-overview.png",
+      "alt": "Smart Food AI platform serving customers in Chiang Mai",
+      "ariaLabel": "Smart Food AI visual story"
+    }
+  },
+  "proof": {
+    "heading": {
+      "eyebrow": "Production direction",
+      "title": "Built for real food-service operations",
+      "text": "Smart Food AI presents a clear product direction for AI-native food-service operations, customer communication, and business workflow support."
+    },
+    "paragraphs": [
+      "Smart Food AI supports restaurant and food-service teams that need accurate menu communication, order readiness, payment confirmation, and operational follow-up.",
+      "The platform direction focuses on practical customer experience first: helping people understand menus, choose items, confirm orders, and move smoothly toward fulfillment."
+    ],
+    "image": {
+      "src": "/smart-food/chat-ordering.png",
+      "alt": "Smart Food AI serving customers in Chiang Mai through chat food ordering"
+    },
+    "cards": [
+      {
+        "index": "01",
+        "title": "Customer conversation",
+        "text": "Support customers with menu discovery, item clarification, ordering guidance, and friendly service communication."
+      },
+      {
+        "index": "02",
+        "title": "Operational coordination",
+        "text": "Help connect customer requests with store operations, finance confirmation, and preparation flow."
+      },
+      {
+        "index": "03",
+        "title": "Platform readiness",
+        "text": "Show how ChornPlanet can transform a real business workflow into a premium AI-native product surface."
+      }
+    ]
+  },
+  "workflow": {
+    "id": "workflow",
+    "heading": {
+      "eyebrow": "Workflow",
+      "title": "From customer request to service action",
+      "text": "A simple end-to-end view of how Smart Food AI supports food-service operations."
+    },
+    "steps": [
+      {
+        "title": "AI Chat Ordering",
+        "text": "Customers can order through AI-assisted chat by selecting a menu item, asking questions, or confirming an order through a simple conversation.",
+        "image": {
+          "src": "/smart-food/process1-chat-ordering.png",
+          "alt": "AI chat ordering interface for Smart Food customers"
+        }
+      },
+      {
+        "title": "Bill Processing",
+        "text": "The system confirms the order total, receives payment information or a payment slip, and checks the bill before moving the order to the next step.",
+        "image": {
+          "src": "/smart-food/process2-bill-processing.png",
+          "alt": "Smart Food bill processing and payment verification"
+        }
+      },
+      {
+        "title": "Cooking",
+        "text": "The kitchen team prepares the confirmed order using fresh ingredients, a clear workflow, and consistent food quality standards.",
+        "image": {
+          "src": "/smart-food/process3-cooking.png",
+          "alt": "Kitchen team preparing a confirmed Smart Food order"
+        }
+      },
+      {
+        "title": "Delivery",
+        "text": "The rider picks up the completed order and delivers it to the customer according to the Smart Food service workflow.",
+        "image": {
+          "src": "/smart-food/process4-delivery.png",
+          "alt": "Smart Food delivery workflow with rider handoff"
+        }
+      },
+      {
+        "title": "Receiving",
+        "text": "The customer receives the food through a clear handover process, completing the service journey from ordering to receiving the meal.",
+        "image": {
+          "src": "/smart-food/process5-receiving.png",
+          "alt": "Customer receiving a completed Smart Food order"
+        }
+      }
+    ]
+  },
+  "features": {
+    "heading": {
+      "eyebrow": "Capabilities",
+      "title": "Practical AI support for food-service growth"
+    },
+    "items": [
+      "Natural-language menu and ordering support",
+      "Clear customer response flow for menu, price, and service questions",
+      "Payment and order-status coordination support",
+      "Operational handoff between customer service, finance, and preparation teams",
+      "Content-ready structure for multilingual and database-backed publishing",
+      "Premium ChornPlanet presentation for partners, investors, and future customers"
+    ]
+  },
+  "value": {
+    "id": "value",
+    "heading": {
+      "eyebrow": "Business value",
+      "title": "A real AI-native product surface, not only a concept page",
+      "text": "Smart Food AI helps ChornPlanet demonstrate practical platform capability through a workflow that local businesses can understand and use."
+    },
+    "cards": [
+      {
+        "title": "Better customer clarity",
+        "text": "Customers receive clearer information about menu choices, prices, and ordering next steps."
+      },
+      {
+        "title": "Better team coordination",
+        "text": "Teams can align customer service, finance confirmation, and order processing around a more structured workflow."
+      },
+      {
+        "title": "Better platform positioning",
+        "text": "The page communicates ChornPlanet as an AI-native production platform with real commercial direction."
+      }
+    ]
+  },
+  "futureDirections": [
+    "Continue expanding localized Smart Food AI content for partners, customers, and future product stories.",
+    "Continue improving Smart Food AI as a production-ready food-service platform surface.",
+    "Preserve safe public wording without exposing internal technical architecture."
+  ]
+}
