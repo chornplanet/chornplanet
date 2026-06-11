@@ -46,10 +46,9 @@ release_index:
 
 roadmap:
   directory: .mcp/roadmap
-  primary: .mcp/roadmap/chornplanet-platform-roadmap.md
-  feature_queue: .mcp/roadmap/feature-queue.md
+  primary: .mcp/roadmap/business-core.md
   growth_milestones: .mcp/roadmap/growth-milestones.md
-  purpose: phase-by-phase platform roadmap for media, commerce, civilization, Smart Food, analytics, SEO/LLM visibility, automation, and luxury expansion
+  purpose: business-core platform roadmap plus simplified growth milestones and implementation queue for media, commerce, civilization, Smart Food, analytics, SEO/LLM visibility, automation, and luxury expansion
 
 analytics_workspace:
   directory: .mcp/analytics

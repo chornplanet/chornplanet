@@ -51,7 +51,7 @@ Current repository guidance already supports this strategy:
 - `.chatgpt/Agents.md` requires feature planning under `.planning/in-progress/`.
 - `.mcp/README.md` defines ChornPlanet as a content, media, commerce, civilization, Smart Food, luxury, and analytics-assisted growth platform.
 - `.mcp/manifest.yaml` identifies the current architecture direction as MongoDB Atlas-backed content services.
-- `.mcp/roadmap/chornplanet-platform-roadmap.md` includes SEO/LLM visibility, content draft foundation, analytics growth foundation, daily media digest draft pipeline, and controlled publishing automation.
+- `.mcp/roadmap/growth-milestones.md` includes SEO/LLM visibility, content draft foundation, analytics growth foundation, daily media digest draft pipeline, and controlled publishing automation.
 - `src/lib/sitemap/sitemapRoutes.ts` already discovers localized static routes and several dynamic route families.
 
 The next step is to extend this into a durable content inventory and sitemap grouping strategy.
