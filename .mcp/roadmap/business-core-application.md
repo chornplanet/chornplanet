@@ -2,6 +2,6 @@
 
 ## 1. Purpose
 
-The **Business Core Application** is the core operating platform for managing business operations, business platforms, initiatives, capabilities, governance, execution, and measurable outcomes.
+The **Business Core Application** is the reusable core backend for running and governing multiple businesses. It provides one operating layer for business operations, portfolio management, workflows, customers, orders, finance, ROI, SLA/SLO/SLI, AI adoption, technical execution, and management dashboards.
 
-It is not only a project tracker and not only a dashboard. It is the reusable business backend that supports multiple businesses, including **Chorn Planet**, Smart Food, AI Media, Luxury AI Studio, LINE
+This application should support **all businesses**, including **Chorn Planet**, Smart
