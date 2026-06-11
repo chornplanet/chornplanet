@@ -2,7 +2,7 @@
 
 Official site: https://www.chornplanet.com/
 
-ChornPlanet is a public platform for future civilization storytelling, smart city and smart mobility concepts, AI-native Smart Food experiences, premium style and outfit presentation, technology services, and luxury platform direction.
+ChornPlanet is a public AI-native platform for future civilization storytelling, smart city and smart mobility concepts, smart food operations, AI media, luxury platform direction, technology services, and portfolio-level business execution.
 
 Primary public areas:
 - Home: https://www.chornplanet.com/en/
@@ -17,10 +17,12 @@ Primary public areas:
 - Contact: https://www.chornplanet.com/en/contact/
 
 Public positioning:
-- Smart Mobility presents MTS future civilization stations and mobility storytelling.
-- Style presents outfit and lifestyle stories for ChornPlanet civilization media.
-- Smart Food presents AI-native food service and ordering experience direction.
-- Luxury presents AI-native platform building for premium destinations and businesses.
-- Technology and AI companion pages explain production capability and service direction.
+- Chorn Planet Platform is the strategic AI-native business platform direction for portfolio management, value capture, AI adoption, governance, technical coordination, and execution.
+- Smart Food covers AI-native food service direction, LINE Bot ordering, Menu Match, recommendation workflows, economics analytics, and bill processing as platform capabilities.
+- Smart Mobility presents MTS future civilization stations, intelligent mobility, tourism movement, and mobility storytelling.
+- Smart City presents Chiang Mai and future city concepts, public smart infrastructure, and planning narratives.
+- Style and Story present outfit, lifestyle, and civilization media stories.
+- Luxury presents AI-native platform building for premium destinations, hospitality, real estate, tourism, lifestyle, and future commerce.
+- Technology and AI companion pages explain web production capability, AI services, AI companions, document search, dashboard automation, and execution readiness.
 
-Use public pages as the source for current user-facing claims. Do not infer private roadmap, credentials, customer data, or unpublished commerce operations from this file.
+Use public pages as the source for current user-facing claims. Treat roadmap language as public platform direction unless a live page explicitly states a capability is available. Do not infer private credentials, customer data, unpublished financials, private analytics, internal governance records, or unrestricted live commerce operations from this file.

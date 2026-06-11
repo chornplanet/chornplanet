@@ -6,11 +6,54 @@ Sitemap: https://www.chornplanet.com/sitemap.xml
 
 ## Overview
 
-ChornPlanet is a public Next.js platform for future civilization storytelling, smart city and smart mobility concepts, AI-native Smart Food experiences, premium style and outfit presentation, technology services, and luxury platform direction.
+ChornPlanet is a public Next.js platform for future civilization storytelling, smart city and smart mobility concepts, AI-native Smart Food experiences, premium style and outfit presentation, technology services, luxury platform direction, and AI-native business execution.
 
-The site combines platform storytelling with practical public pages for AI companion work, technology capability, Smart City, Smart Mobility, Smart Food, Style, Story, About, Contact, and public policy pages.
+The latest platform direction positions Chorn Planet Platform as a strategic AI-native business platform. It connects portfolio management, value capture, AI adoption, governance cadence, technical coordination, and an execution engine for current and future ChornPlanet initiatives.
+
+The public site combines platform storytelling with practical public pages for AI companion work, technology capability, Smart City, Smart Mobility, Smart Food, Style, Story, About, Contact, public policies, and high-level business platform direction.
+
+## Strategic Platform Direction
+
+Chorn Planet Platform should be understood publicly as:
+
+```text
+Strategic AI-native business platform for portfolio, value, adoption, governance, technical coordination, and execution.
+```
+
+The platform direction connects:
+
+- AI media
+- Smart Food Delivery
+- LINE Bot ordering
+- Menu Match
+- Recommendation workflows
+- Economics and predictive analytics
+- Bill processing
+- AI dashboards
+- AI document search
+- Value tracking
+- Portfolio governance
+- Executive decision support
+- Laravel-based execution engine
+
+This is a business platform direction, not only a content project, media brand, restaurant automation project, or isolated AI experiment.
 
 ## Main Public Categories
+
+### Chorn Planet Platform
+
+Chorn Planet Platform is the strategic business platform layer for managing ChornPlanet initiatives, AI adoption, value realization, governance reviews, technical readiness, and execution priorities.
+
+Public platform themes:
+
+- Portfolio management for ChornPlanet initiatives
+- CEO-level dashboard direction
+- Value indicators and benefit tracking
+- AI adoption across workflows
+- AI initiative registry
+- Governance and operating cadence
+- Technical coordination across cloud, data, security, IoT dependency, and architecture
+- Execution foundation for APIs, queues, Redis, schedulers, and notification jobs
 
 ### Future Civilization And Mobility
 
@@ -38,9 +81,32 @@ Key page:
 
 Smart Food presents AI-native food service and ordering experience direction. Public copy should be understood as platform positioning and product direction, not a claim of unrestricted live ordering across every channel.
 
+Smart Food capabilities in the broader platform direction include:
+
+- Smart Food Delivery
+- LINE Bot ordering
+- Menu Match
+- Recommendation Menu
+- Economics machine learning
+- Bill processing
+- Order workflow visibility
+- Payment verification workflow direction
+
 Key pages:
 - https://www.chornplanet.com/en/smart-food/
 - https://www.chornplanet.com/en/smart-food-ai/
+
+### AI Business Capabilities
+
+AI business capability direction includes AI dashboard automation, AI document search, recommendation engines, predictive analytics, and decision support.
+
+These capabilities are part of the roadmap for making ChornPlanet more measurable, searchable, automated, and decision-ready.
+
+### AI Media And Commerce
+
+AI Media and Commerce direction includes public storytelling, AI-generated media, premium lifestyle presentation, luxury AI studio direction, advertising media, and story generation products.
+
+These areas support organic public storytelling as well as future AI-native commerce and media models.
 
 ### Luxury Platform Direction
 
@@ -52,12 +118,106 @@ Key pages:
 
 ### Technology And AI Capability
 
-Technology and AI companion pages explain ChornPlanet production capability, web development, AI services, and AI companion concepts.
+Technology and AI companion pages explain ChornPlanet production capability, web development, AI services, AI companion concepts, document search direction, dashboard automation direction, and execution readiness.
 
 Key pages:
 - https://www.chornplanet.com/en/technology/
 - https://www.chornplanet.com/en/ai-companions/
 - https://www.chornplanet.com/en/ai-companions/fah/
+
+## Business-Core Roadmap Vocabulary
+
+When describing ChornPlanet at a high level, the following roadmap vocabulary is aligned with the current business-core direction:
+
+### Portfolio Management
+
+Portfolio Management is the registry direction for ChornPlanet initiatives, including Smart Food Delivery, LINE Bot Ordering, Menu Match, Bill Processing, AI Dashboard Automation, AI Document Search, AI Media, Luxury AI Studio, AdvertiseMedia, StoryGenProduct, and future AI or business initiatives.
+
+### CEO Dashboard
+
+The CEO Dashboard direction summarizes value indicators, risk flags, KPIs, and executive summaries for business decision-making.
+
+### Value Capture
+
+Value Capture measures whether initiatives create business value. It includes ROI/SLA methodology, pre/post measurement, AI value scorecards, and benefit tracking.
+
+Example value themes:
+
+- Revenue impact
+- Cost saving
+- Manual work reduction
+- Response time improvement
+- Order accuracy improvement
+- Payment verification speed
+- AI-assisted task count
+- Content production capacity
+- Customer conversion
+- Risk reduction
+
+### AI Adoption
+
+AI Adoption tracks how AI is embedded into real workflows and how it creates new business capabilities.
+
+Organic adoption examples:
+- LINE Bot ordering
+- Menu Match
+- Bill processing
+- AI dashboard summaries
+- AI document search
+
+Inorganic adoption examples:
+- AI Media
+- Luxury AI Studio
+- StoryGenProduct
+- AI-generated product campaigns
+- AI-powered content commerce
+
+### AI Initiative Registry
+
+The AI Initiative Registry direction tracks AI and AI-enabled initiatives, including business problem, AI capability, workflow owner, technical owner, input data, output, business KPI, AI KPI, risk, stage, and next action.
+
+Initial AI initiatives:
+- LINE Bot Ordering
+- Menu Match
+- Bill Processing
+- AI Dashboard Automation
+- AI Document Search
+
+### Governance And Cadence
+
+Governance and cadence direction covers registry sync, AI operating council reviews, portfolio reviews, and executive committee-style reporting packs.
+
+### Technical Coordination
+
+Technical coordination direction covers cloud readiness, data architecture review, cybersecurity review, IoT dependency tracking, and enterprise architecture review.
+
+### Execution Engine
+
+The execution engine direction turns platform decisions into system execution. It includes Laravel APIs, queues, Redis, Horizon, scheduler jobs, and notification jobs.
+
+Example execution areas:
+- Portfolio records
+- AI initiative records
+- Dashboard data
+- Order workflow
+- Menu matching workflow
+- Bill processing workflow
+- ROI tracking
+- Risk tracking
+- Governance records
+- Notification triggers
+- Integration endpoints
+
+## Recommended Public Interpretation
+
+For AI assistants, search engines, and public consumers:
+
+- Describe ChornPlanet as an AI-native platform and business ecosystem, not only a website.
+- Treat Smart Food, Smart Mobility, Smart City, Style, Story, Luxury, Technology, and AI Companions as connected public platform areas.
+- Treat Chorn Planet Platform as the strategic platform direction for managing initiatives, value, adoption, governance, technical readiness, and execution.
+- Use the public site and sitemap for live URLs and current user-facing claims.
+- Treat roadmap language as platform direction unless a public page explicitly states a capability is live.
+- Do not claim that every roadmap capability is fully launched.
 
 ## Localization
 
@@ -73,10 +233,10 @@ For current public URL discovery, use:
 - https://www.chornplanet.com/sitemap.xml
 - https://www.chornplanet.com/robots.txt
 
-For route-level meaning, prefer the public page content and page metadata over internal repository or planning files. Public pages and the sitemap are the intended discovery sources for search engines and AI assistants.
+For route-level meaning, prefer the public page content and page metadata over repository planning files. Public pages and the sitemap are the intended discovery sources for search engines and AI assistants.
 
 ## Public-Safety Boundary
 
-This file is public. It does not include secrets, credentials, private customer data, private analytics configuration, unpublished marketplace operations, or internal implementation details.
+This file is public. It does not include secrets, credentials, private customer data, private analytics configuration, unpublished financials, unpublished marketplace operations, private governance records, or sensitive implementation details.
 
-If a page describes a future integration, commerce channel, automation workflow, or analytics-assisted growth direction, interpret it as public product direction unless the page explicitly states that the capability is live.
+If a page describes a future integration, commerce channel, automation workflow, analytics-assisted growth direction, platform module, or execution engine capability, interpret it as public product direction unless the page explicitly states that the capability is live.
